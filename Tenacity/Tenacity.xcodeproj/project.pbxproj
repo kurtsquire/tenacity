@@ -7,73 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42A2B2C3210A70E2004C931D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2C2210A70E2004C931D /* AppDelegate.swift */; };
-		42A2B2C5210A70E2004C931D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2C4210A70E2004C931D /* ViewController.swift */; };
-		42A2B2C8210A70E2004C931D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B2C6210A70E2004C931D /* Main.storyboard */; };
-		42A2B2CA210A70E3004C931D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B2C9210A70E3004C931D /* Assets.xcassets */; };
-		42A2B2CD210A70E3004C931D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B2CB210A70E3004C931D /* LaunchScreen.storyboard */; };
-		42A2B2D8210A70E4004C931D /* TenacityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2D7210A70E4004C931D /* TenacityTests.swift */; };
-		42A2B2E3210A70E4004C931D /* TenacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2E2210A70E4004C931D /* TenacityUITests.swift */; };
-		42A2B2E8210A70E4004C931D /* Tenacity WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42A2B2E7210A70E4004C931D /* Tenacity WatchKit App.app */; };
-		42A2B2EE210A70E4004C931D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B2EC210A70E4004C931D /* Interface.storyboard */; };
-		42A2B2F0210A70E4004C931D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B2EF210A70E4004C931D /* Assets.xcassets */; };
-		42A2B2F7210A70E4004C931D /* Tenacity WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42A2B2F6210A70E4004C931D /* Tenacity WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		42A2B2FC210A70E4004C931D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2FB210A70E4004C931D /* InterfaceController.swift */; };
-		42A2B2FE210A70E4004C931D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2FD210A70E4004C931D /* ExtensionDelegate.swift */; };
-		42A2B300210A70E4004C931D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2B2FF210A70E4004C931D /* NotificationController.swift */; };
-		42A2B302210A70E5004C931D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A2B301210A70E5004C931D /* Assets.xcassets */; };
+		42110B5E210A767B00E43031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B5D210A767B00E43031 /* AppDelegate.swift */; };
+		42110B60210A767B00E43031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B5F210A767B00E43031 /* ViewController.swift */; };
+		42110B63210A767B00E43031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42110B61210A767B00E43031 /* Main.storyboard */; };
+		42110B65210A768900E43031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42110B64210A768900E43031 /* Assets.xcassets */; };
+		42110B68210A768900E43031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42110B66210A768900E43031 /* LaunchScreen.storyboard */; };
+		42110B73210A768900E43031 /* TenacityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B72210A768900E43031 /* TenacityTests.swift */; };
+		42110B7E210A768900E43031 /* TenacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B7D210A768900E43031 /* TenacityUITests.swift */; };
+		42110B91210A775000E43031 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42110B8F210A775000E43031 /* Interface.storyboard */; };
+		42110B93210A775200E43031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42110B92210A775200E43031 /* Assets.xcassets */; };
+		42110B9A210A775200E43031 /* Tenacity_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42110B99210A775200E43031 /* Tenacity_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42110B9F210A775200E43031 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B9E210A775200E43031 /* InterfaceController.swift */; };
+		42110BA1210A775200E43031 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110BA0210A775200E43031 /* ExtensionDelegate.swift */; };
+		42110BA3210A775200E43031 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110BA2210A775200E43031 /* NotificationController.swift */; };
+		42110BA5210A775300E43031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42110BA4210A775300E43031 /* Assets.xcassets */; };
+		42110BAA210A775300E43031 /* Tenacity_Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42110B8D210A775000E43031 /* Tenacity_Watch.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		42A2B2D4210A70E4004C931D /* PBXContainerItemProxy */ = {
+		42110B6F210A768900E43031 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 42A2B2B7210A70E1004C931D /* Project object */;
+			containerPortal = 42110B52210A767B00E43031 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42A2B2BE210A70E1004C931D;
+			remoteGlobalIDString = 42110B59210A767B00E43031;
 			remoteInfo = Tenacity;
 		};
-		42A2B2DF210A70E4004C931D /* PBXContainerItemProxy */ = {
+		42110B7A210A768900E43031 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 42A2B2B7210A70E1004C931D /* Project object */;
+			containerPortal = 42110B52210A767B00E43031 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42A2B2BE210A70E1004C931D;
+			remoteGlobalIDString = 42110B59210A767B00E43031;
 			remoteInfo = Tenacity;
 		};
-		42A2B2E9210A70E4004C931D /* PBXContainerItemProxy */ = {
+		42110B9B210A775200E43031 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 42A2B2B7210A70E1004C931D /* Project object */;
+			containerPortal = 42110B52210A767B00E43031 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42A2B2E6210A70E4004C931D;
-			remoteInfo = "Tenacity WatchKit App";
+			remoteGlobalIDString = 42110B98210A775200E43031;
+			remoteInfo = "Tenacity_Watch Extension";
 		};
-		42A2B2F8210A70E4004C931D /* PBXContainerItemProxy */ = {
+		42110BA8210A775300E43031 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 42A2B2B7210A70E1004C931D /* Project object */;
+			containerPortal = 42110B52210A767B00E43031 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42A2B2F5210A70E4004C931D;
-			remoteInfo = "Tenacity WatchKit Extension";
+			remoteGlobalIDString = 42110B8C210A775000E43031;
+			remoteInfo = Tenacity_Watch;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		42A2B30A210A70E5004C931D /* Embed App Extensions */ = {
+		42110BAE210A775300E43031 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				42A2B2F7210A70E4004C931D /* Tenacity WatchKit Extension.appex in Embed App Extensions */,
+				42110B9A210A775200E43031 /* Tenacity_Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B30E210A70E5004C931D /* Embed Watch Content */ = {
+		42110BB2210A775300E43031 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				42A2B2E8210A70E4004C931D /* Tenacity WatchKit App.app in Embed Watch Content */,
+				42110BAA210A775300E43031 /* Tenacity_Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,55 +81,55 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		42A2B2BF210A70E2004C931D /* Tenacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A2B2C2210A70E2004C931D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42A2B2C4210A70E2004C931D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		42A2B2C7210A70E2004C931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42A2B2C9210A70E3004C931D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42A2B2CC210A70E3004C931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42A2B2CE210A70E3004C931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A2B2D3210A70E4004C931D /* TenacityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenacityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A2B2D7210A70E4004C931D /* TenacityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenacityTests.swift; sourceTree = "<group>"; };
-		42A2B2D9210A70E4004C931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A2B2DE210A70E4004C931D /* TenacityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenacityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A2B2E2210A70E4004C931D /* TenacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenacityUITests.swift; sourceTree = "<group>"; };
-		42A2B2E4210A70E4004C931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A2B2E7210A70E4004C931D /* Tenacity WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenacity WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A2B2ED210A70E4004C931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		42A2B2EF210A70E4004C931D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42A2B2F1210A70E4004C931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A2B2F6210A70E4004C931D /* Tenacity WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tenacity WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42A2B2FB210A70E4004C931D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		42A2B2FD210A70E4004C931D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		42A2B2FF210A70E4004C931D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		42A2B301210A70E5004C931D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42A2B303210A70E5004C931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A2B304210A70E5004C931D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		42110B5A210A767B00E43031 /* Tenacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42110B5D210A767B00E43031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42110B5F210A767B00E43031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42110B62210A767B00E43031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42110B64210A768900E43031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42110B67210A768900E43031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42110B69210A768900E43031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42110B6E210A768900E43031 /* TenacityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenacityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42110B72210A768900E43031 /* TenacityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenacityTests.swift; sourceTree = "<group>"; };
+		42110B74210A768900E43031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42110B79210A768900E43031 /* TenacityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenacityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42110B7D210A768900E43031 /* TenacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenacityUITests.swift; sourceTree = "<group>"; };
+		42110B7F210A768900E43031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42110B8D210A775000E43031 /* Tenacity_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenacity_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42110B90210A775000E43031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		42110B92210A775200E43031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42110B94210A775200E43031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42110B99210A775200E43031 /* Tenacity_Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tenacity_Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42110B9E210A775200E43031 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		42110BA0210A775200E43031 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		42110BA2210A775200E43031 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		42110BA4210A775300E43031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42110BA6210A775300E43031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42110BA7210A775300E43031 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42A2B2BC210A70E1004C931D /* Frameworks */ = {
+		42110B57210A767B00E43031 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2D0210A70E4004C931D /* Frameworks */ = {
+		42110B6B210A768900E43031 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2DB210A70E4004C931D /* Frameworks */ = {
+		42110B76210A768900E43031 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2F3210A70E4004C931D /* Frameworks */ = {
+		42110B96210A775200E43031 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,206 +139,206 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42A2B2B6210A70E1004C931D = {
+		42110B51210A767B00E43031 = {
 			isa = PBXGroup;
 			children = (
-				42A2B2C1210A70E2004C931D /* Tenacity */,
-				42A2B2D6210A70E4004C931D /* TenacityTests */,
-				42A2B2E1210A70E4004C931D /* TenacityUITests */,
-				42A2B2EB210A70E4004C931D /* Tenacity WatchKit App */,
-				42A2B2FA210A70E4004C931D /* Tenacity WatchKit Extension */,
-				42A2B2C0210A70E2004C931D /* Products */,
+				42110B5C210A767B00E43031 /* Tenacity */,
+				42110B71210A768900E43031 /* TenacityTests */,
+				42110B7C210A768900E43031 /* TenacityUITests */,
+				42110B8E210A775000E43031 /* Tenacity_Watch */,
+				42110B9D210A775200E43031 /* Tenacity_Watch Extension */,
+				42110B5B210A767B00E43031 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		42A2B2C0210A70E2004C931D /* Products */ = {
+		42110B5B210A767B00E43031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2BF210A70E2004C931D /* Tenacity.app */,
-				42A2B2D3210A70E4004C931D /* TenacityTests.xctest */,
-				42A2B2DE210A70E4004C931D /* TenacityUITests.xctest */,
-				42A2B2E7210A70E4004C931D /* Tenacity WatchKit App.app */,
-				42A2B2F6210A70E4004C931D /* Tenacity WatchKit Extension.appex */,
+				42110B5A210A767B00E43031 /* Tenacity.app */,
+				42110B6E210A768900E43031 /* TenacityTests.xctest */,
+				42110B79210A768900E43031 /* TenacityUITests.xctest */,
+				42110B8D210A775000E43031 /* Tenacity_Watch.app */,
+				42110B99210A775200E43031 /* Tenacity_Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42A2B2C1210A70E2004C931D /* Tenacity */ = {
+		42110B5C210A767B00E43031 /* Tenacity */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2C2210A70E2004C931D /* AppDelegate.swift */,
-				42A2B2C4210A70E2004C931D /* ViewController.swift */,
-				42A2B2C6210A70E2004C931D /* Main.storyboard */,
-				42A2B2C9210A70E3004C931D /* Assets.xcassets */,
-				42A2B2CB210A70E3004C931D /* LaunchScreen.storyboard */,
-				42A2B2CE210A70E3004C931D /* Info.plist */,
+				42110B5D210A767B00E43031 /* AppDelegate.swift */,
+				42110B5F210A767B00E43031 /* ViewController.swift */,
+				42110B61210A767B00E43031 /* Main.storyboard */,
+				42110B64210A768900E43031 /* Assets.xcassets */,
+				42110B66210A768900E43031 /* LaunchScreen.storyboard */,
+				42110B69210A768900E43031 /* Info.plist */,
 			);
 			path = Tenacity;
 			sourceTree = "<group>";
 		};
-		42A2B2D6210A70E4004C931D /* TenacityTests */ = {
+		42110B71210A768900E43031 /* TenacityTests */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2D7210A70E4004C931D /* TenacityTests.swift */,
-				42A2B2D9210A70E4004C931D /* Info.plist */,
+				42110B72210A768900E43031 /* TenacityTests.swift */,
+				42110B74210A768900E43031 /* Info.plist */,
 			);
 			path = TenacityTests;
 			sourceTree = "<group>";
 		};
-		42A2B2E1210A70E4004C931D /* TenacityUITests */ = {
+		42110B7C210A768900E43031 /* TenacityUITests */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2E2210A70E4004C931D /* TenacityUITests.swift */,
-				42A2B2E4210A70E4004C931D /* Info.plist */,
+				42110B7D210A768900E43031 /* TenacityUITests.swift */,
+				42110B7F210A768900E43031 /* Info.plist */,
 			);
 			path = TenacityUITests;
 			sourceTree = "<group>";
 		};
-		42A2B2EB210A70E4004C931D /* Tenacity WatchKit App */ = {
+		42110B8E210A775000E43031 /* Tenacity_Watch */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2EC210A70E4004C931D /* Interface.storyboard */,
-				42A2B2EF210A70E4004C931D /* Assets.xcassets */,
-				42A2B2F1210A70E4004C931D /* Info.plist */,
+				42110B8F210A775000E43031 /* Interface.storyboard */,
+				42110B92210A775200E43031 /* Assets.xcassets */,
+				42110B94210A775200E43031 /* Info.plist */,
 			);
-			path = "Tenacity WatchKit App";
+			path = Tenacity_Watch;
 			sourceTree = "<group>";
 		};
-		42A2B2FA210A70E4004C931D /* Tenacity WatchKit Extension */ = {
+		42110B9D210A775200E43031 /* Tenacity_Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				42A2B2FB210A70E4004C931D /* InterfaceController.swift */,
-				42A2B2FD210A70E4004C931D /* ExtensionDelegate.swift */,
-				42A2B2FF210A70E4004C931D /* NotificationController.swift */,
-				42A2B301210A70E5004C931D /* Assets.xcassets */,
-				42A2B303210A70E5004C931D /* Info.plist */,
-				42A2B304210A70E5004C931D /* PushNotificationPayload.apns */,
+				42110B9E210A775200E43031 /* InterfaceController.swift */,
+				42110BA0210A775200E43031 /* ExtensionDelegate.swift */,
+				42110BA2210A775200E43031 /* NotificationController.swift */,
+				42110BA4210A775300E43031 /* Assets.xcassets */,
+				42110BA6210A775300E43031 /* Info.plist */,
+				42110BA7210A775300E43031 /* PushNotificationPayload.apns */,
 			);
-			path = "Tenacity WatchKit Extension";
+			path = "Tenacity_Watch Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42A2B2BE210A70E1004C931D /* Tenacity */ = {
+		42110B59210A767B00E43031 /* Tenacity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A2B30F210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity" */;
+			buildConfigurationList = 42110B82210A768900E43031 /* Build configuration list for PBXNativeTarget "Tenacity" */;
 			buildPhases = (
-				42A2B2BB210A70E1004C931D /* Sources */,
-				42A2B2BC210A70E1004C931D /* Frameworks */,
-				42A2B2BD210A70E1004C931D /* Resources */,
-				42A2B30E210A70E5004C931D /* Embed Watch Content */,
+				42110B56210A767B00E43031 /* Sources */,
+				42110B57210A767B00E43031 /* Frameworks */,
+				42110B58210A767B00E43031 /* Resources */,
+				42110BB2210A775300E43031 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				42A2B2EA210A70E4004C931D /* PBXTargetDependency */,
+				42110BA9210A775300E43031 /* PBXTargetDependency */,
 			);
 			name = Tenacity;
 			productName = Tenacity;
-			productReference = 42A2B2BF210A70E2004C931D /* Tenacity.app */;
+			productReference = 42110B5A210A767B00E43031 /* Tenacity.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42A2B2D2210A70E4004C931D /* TenacityTests */ = {
+		42110B6D210A768900E43031 /* TenacityTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A2B312210A70E5004C931D /* Build configuration list for PBXNativeTarget "TenacityTests" */;
+			buildConfigurationList = 42110B85210A768900E43031 /* Build configuration list for PBXNativeTarget "TenacityTests" */;
 			buildPhases = (
-				42A2B2CF210A70E4004C931D /* Sources */,
-				42A2B2D0210A70E4004C931D /* Frameworks */,
-				42A2B2D1210A70E4004C931D /* Resources */,
+				42110B6A210A768900E43031 /* Sources */,
+				42110B6B210A768900E43031 /* Frameworks */,
+				42110B6C210A768900E43031 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				42A2B2D5210A70E4004C931D /* PBXTargetDependency */,
+				42110B70210A768900E43031 /* PBXTargetDependency */,
 			);
 			name = TenacityTests;
 			productName = TenacityTests;
-			productReference = 42A2B2D3210A70E4004C931D /* TenacityTests.xctest */;
+			productReference = 42110B6E210A768900E43031 /* TenacityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		42A2B2DD210A70E4004C931D /* TenacityUITests */ = {
+		42110B78210A768900E43031 /* TenacityUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A2B315210A70E5004C931D /* Build configuration list for PBXNativeTarget "TenacityUITests" */;
+			buildConfigurationList = 42110B88210A768900E43031 /* Build configuration list for PBXNativeTarget "TenacityUITests" */;
 			buildPhases = (
-				42A2B2DA210A70E4004C931D /* Sources */,
-				42A2B2DB210A70E4004C931D /* Frameworks */,
-				42A2B2DC210A70E4004C931D /* Resources */,
+				42110B75210A768900E43031 /* Sources */,
+				42110B76210A768900E43031 /* Frameworks */,
+				42110B77210A768900E43031 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				42A2B2E0210A70E4004C931D /* PBXTargetDependency */,
+				42110B7B210A768900E43031 /* PBXTargetDependency */,
 			);
 			name = TenacityUITests;
 			productName = TenacityUITests;
-			productReference = 42A2B2DE210A70E4004C931D /* TenacityUITests.xctest */;
+			productReference = 42110B79210A768900E43031 /* TenacityUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		42A2B2E6210A70E4004C931D /* Tenacity WatchKit App */ = {
+		42110B8C210A775000E43031 /* Tenacity_Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A2B30B210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity WatchKit App" */;
+			buildConfigurationList = 42110BAF210A775300E43031 /* Build configuration list for PBXNativeTarget "Tenacity_Watch" */;
 			buildPhases = (
-				42A2B2E5210A70E4004C931D /* Resources */,
-				42A2B30A210A70E5004C931D /* Embed App Extensions */,
+				42110B8B210A775000E43031 /* Resources */,
+				42110BAE210A775300E43031 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				42A2B2F9210A70E4004C931D /* PBXTargetDependency */,
+				42110B9C210A775200E43031 /* PBXTargetDependency */,
 			);
-			name = "Tenacity WatchKit App";
-			productName = "Tenacity WatchKit App";
-			productReference = 42A2B2E7210A70E4004C931D /* Tenacity WatchKit App.app */;
+			name = Tenacity_Watch;
+			productName = Tenacity_Watch;
+			productReference = 42110B8D210A775000E43031 /* Tenacity_Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		42A2B2F5210A70E4004C931D /* Tenacity WatchKit Extension */ = {
+		42110B98210A775200E43031 /* Tenacity_Watch Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42A2B307210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity WatchKit Extension" */;
+			buildConfigurationList = 42110BAB210A775300E43031 /* Build configuration list for PBXNativeTarget "Tenacity_Watch Extension" */;
 			buildPhases = (
-				42A2B2F2210A70E4004C931D /* Sources */,
-				42A2B2F3210A70E4004C931D /* Frameworks */,
-				42A2B2F4210A70E4004C931D /* Resources */,
+				42110B95210A775200E43031 /* Sources */,
+				42110B96210A775200E43031 /* Frameworks */,
+				42110B97210A775200E43031 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Tenacity WatchKit Extension";
-			productName = "Tenacity WatchKit Extension";
-			productReference = 42A2B2F6210A70E4004C931D /* Tenacity WatchKit Extension.appex */;
+			name = "Tenacity_Watch Extension";
+			productName = "Tenacity_Watch Extension";
+			productReference = 42110B99210A775200E43031 /* Tenacity_Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		42A2B2B7210A70E1004C931D /* Project object */ = {
+		42110B52210A767B00E43031 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = PLL;
 				TargetAttributes = {
-					42A2B2BE210A70E1004C931D = {
+					42110B59210A767B00E43031 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					42A2B2D2210A70E4004C931D = {
+					42110B6D210A768900E43031 = {
 						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 42A2B2BE210A70E1004C931D;
+						TestTargetID = 42110B59210A767B00E43031;
 					};
-					42A2B2DD210A70E4004C931D = {
+					42110B78210A768900E43031 = {
 						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 42A2B2BE210A70E1004C931D;
+						TestTargetID = 42110B59210A767B00E43031;
 					};
-					42A2B2E6210A70E4004C931D = {
+					42110B8C210A775000E43031 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					42A2B2F5210A70E4004C931D = {
+					42110B98210A775200E43031 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 42A2B2BA210A70E1004C931D /* Build configuration list for PBXProject "Tenacity" */;
+			buildConfigurationList = 42110B55210A767B00E43031 /* Build configuration list for PBXProject "Tenacity" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,146 +346,146 @@
 				en,
 				Base,
 			);
-			mainGroup = 42A2B2B6210A70E1004C931D;
-			productRefGroup = 42A2B2C0210A70E2004C931D /* Products */;
+			mainGroup = 42110B51210A767B00E43031;
+			productRefGroup = 42110B5B210A767B00E43031 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42A2B2BE210A70E1004C931D /* Tenacity */,
-				42A2B2D2210A70E4004C931D /* TenacityTests */,
-				42A2B2DD210A70E4004C931D /* TenacityUITests */,
-				42A2B2E6210A70E4004C931D /* Tenacity WatchKit App */,
-				42A2B2F5210A70E4004C931D /* Tenacity WatchKit Extension */,
+				42110B59210A767B00E43031 /* Tenacity */,
+				42110B6D210A768900E43031 /* TenacityTests */,
+				42110B78210A768900E43031 /* TenacityUITests */,
+				42110B8C210A775000E43031 /* Tenacity_Watch */,
+				42110B98210A775200E43031 /* Tenacity_Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		42A2B2BD210A70E1004C931D /* Resources */ = {
+		42110B58210A767B00E43031 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B2CD210A70E3004C931D /* LaunchScreen.storyboard in Resources */,
-				42A2B2CA210A70E3004C931D /* Assets.xcassets in Resources */,
-				42A2B2C8210A70E2004C931D /* Main.storyboard in Resources */,
+				42110B68210A768900E43031 /* LaunchScreen.storyboard in Resources */,
+				42110B65210A768900E43031 /* Assets.xcassets in Resources */,
+				42110B63210A767B00E43031 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2D1210A70E4004C931D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42A2B2DC210A70E4004C931D /* Resources */ = {
+		42110B6C210A768900E43031 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2E5210A70E4004C931D /* Resources */ = {
+		42110B77210A768900E43031 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B2F0210A70E4004C931D /* Assets.xcassets in Resources */,
-				42A2B2EE210A70E4004C931D /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2F4210A70E4004C931D /* Resources */ = {
+		42110B8B210A775000E43031 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B302210A70E5004C931D /* Assets.xcassets in Resources */,
+				42110B93210A775200E43031 /* Assets.xcassets in Resources */,
+				42110B91210A775000E43031 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42110B97210A775200E43031 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42110BA5210A775300E43031 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		42A2B2BB210A70E1004C931D /* Sources */ = {
+		42110B56210A767B00E43031 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B2C5210A70E2004C931D /* ViewController.swift in Sources */,
-				42A2B2C3210A70E2004C931D /* AppDelegate.swift in Sources */,
+				42110B60210A767B00E43031 /* ViewController.swift in Sources */,
+				42110B5E210A767B00E43031 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2CF210A70E4004C931D /* Sources */ = {
+		42110B6A210A768900E43031 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B2D8210A70E4004C931D /* TenacityTests.swift in Sources */,
+				42110B73210A768900E43031 /* TenacityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2DA210A70E4004C931D /* Sources */ = {
+		42110B75210A768900E43031 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B2E3210A70E4004C931D /* TenacityUITests.swift in Sources */,
+				42110B7E210A768900E43031 /* TenacityUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A2B2F2210A70E4004C931D /* Sources */ = {
+		42110B95210A775200E43031 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A2B300210A70E4004C931D /* NotificationController.swift in Sources */,
-				42A2B2FE210A70E4004C931D /* ExtensionDelegate.swift in Sources */,
-				42A2B2FC210A70E4004C931D /* InterfaceController.swift in Sources */,
+				42110BA3210A775200E43031 /* NotificationController.swift in Sources */,
+				42110BA1210A775200E43031 /* ExtensionDelegate.swift in Sources */,
+				42110B9F210A775200E43031 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		42A2B2D5210A70E4004C931D /* PBXTargetDependency */ = {
+		42110B70210A768900E43031 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42A2B2BE210A70E1004C931D /* Tenacity */;
-			targetProxy = 42A2B2D4210A70E4004C931D /* PBXContainerItemProxy */;
+			target = 42110B59210A767B00E43031 /* Tenacity */;
+			targetProxy = 42110B6F210A768900E43031 /* PBXContainerItemProxy */;
 		};
-		42A2B2E0210A70E4004C931D /* PBXTargetDependency */ = {
+		42110B7B210A768900E43031 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42A2B2BE210A70E1004C931D /* Tenacity */;
-			targetProxy = 42A2B2DF210A70E4004C931D /* PBXContainerItemProxy */;
+			target = 42110B59210A767B00E43031 /* Tenacity */;
+			targetProxy = 42110B7A210A768900E43031 /* PBXContainerItemProxy */;
 		};
-		42A2B2EA210A70E4004C931D /* PBXTargetDependency */ = {
+		42110B9C210A775200E43031 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42A2B2E6210A70E4004C931D /* Tenacity WatchKit App */;
-			targetProxy = 42A2B2E9210A70E4004C931D /* PBXContainerItemProxy */;
+			target = 42110B98210A775200E43031 /* Tenacity_Watch Extension */;
+			targetProxy = 42110B9B210A775200E43031 /* PBXContainerItemProxy */;
 		};
-		42A2B2F9210A70E4004C931D /* PBXTargetDependency */ = {
+		42110BA9210A775300E43031 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42A2B2F5210A70E4004C931D /* Tenacity WatchKit Extension */;
-			targetProxy = 42A2B2F8210A70E4004C931D /* PBXContainerItemProxy */;
+			target = 42110B8C210A775000E43031 /* Tenacity_Watch */;
+			targetProxy = 42110BA8210A775300E43031 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		42A2B2C6210A70E2004C931D /* Main.storyboard */ = {
+		42110B61210A767B00E43031 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42A2B2C7210A70E2004C931D /* Base */,
+				42110B62210A767B00E43031 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		42A2B2CB210A70E3004C931D /* LaunchScreen.storyboard */ = {
+		42110B66210A768900E43031 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42A2B2CC210A70E3004C931D /* Base */,
+				42110B67210A768900E43031 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		42A2B2EC210A70E4004C931D /* Interface.storyboard */ = {
+		42110B8F210A775000E43031 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42A2B2ED210A70E4004C931D /* Base */,
+				42110B90210A775000E43031 /* Base */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		42A2B305210A70E5004C931D /* Debug */ = {
+		42110B80210A768900E43031 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -553,7 +553,7 @@
 			};
 			name = Debug;
 		};
-		42A2B306210A70E5004C931D /* Release */ = {
+		42110B81210A768900E43031 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -607,85 +607,7 @@
 			};
 			name = Release;
 		};
-		42A2B308210A70E5004C931D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Tenacity WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
-			};
-			name = Debug;
-		};
-		42A2B309210A70E5004C931D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Tenacity WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
-			};
-			name = Release;
-		};
-		42A2B30C210A70E5004C931D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				IBSC_MODULE = Tenacity_WatchKit_Extension;
-				INFOPLIST_FILE = "Tenacity WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
-			};
-			name = Debug;
-		};
-		42A2B30D210A70E5004C931D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				IBSC_MODULE = Tenacity_WatchKit_Extension;
-				INFOPLIST_FILE = "Tenacity WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
-			};
-			name = Release;
-		};
-		42A2B310210A70E5004C931D /* Debug */ = {
+		42110B83210A768900E43031 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -695,14 +617,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		42A2B311210A70E5004C931D /* Release */ = {
+		42110B84210A768900E43031 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -712,14 +634,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.Tenacity;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		42A2B313210A70E5004C931D /* Debug */ = {
+		42110B86210A768900E43031 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -731,7 +653,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.TenacityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -739,7 +661,7 @@
 			};
 			name = Debug;
 		};
-		42A2B314210A70E5004C931D /* Release */ = {
+		42110B87210A768900E43031 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -751,7 +673,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.TenacityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -759,7 +681,7 @@
 			};
 			name = Release;
 		};
-		42A2B316210A70E5004C931D /* Debug */ = {
+		42110B89210A768900E43031 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -770,7 +692,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.TenacityUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -778,7 +700,7 @@
 			};
 			name = Debug;
 		};
-		42A2B317210A70E5004C931D /* Release */ = {
+		42110B8A210A768900E43031 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -789,72 +711,150 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.TenacityUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Tenacity;
+			};
+			name = Release;
+		};
+		42110BAC210A775300E43031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tenacity_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		42110BAD210A775300E43031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tenacity_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		42110BB0210A775300E43031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Tenacity_Watch_Extension;
+				INFOPLIST_FILE = Tenacity_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		42110BB1210A775300E43031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Tenacity_Watch_Extension;
+				INFOPLIST_FILE = Tenacity_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = tenacity.Tenacity.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42A2B2BA210A70E1004C931D /* Build configuration list for PBXProject "Tenacity" */ = {
+		42110B55210A767B00E43031 /* Build configuration list for PBXProject "Tenacity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B305210A70E5004C931D /* Debug */,
-				42A2B306210A70E5004C931D /* Release */,
+				42110B80210A768900E43031 /* Debug */,
+				42110B81210A768900E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A2B307210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity WatchKit Extension" */ = {
+		42110B82210A768900E43031 /* Build configuration list for PBXNativeTarget "Tenacity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B308210A70E5004C931D /* Debug */,
-				42A2B309210A70E5004C931D /* Release */,
+				42110B83210A768900E43031 /* Debug */,
+				42110B84210A768900E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A2B30B210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity WatchKit App" */ = {
+		42110B85210A768900E43031 /* Build configuration list for PBXNativeTarget "TenacityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B30C210A70E5004C931D /* Debug */,
-				42A2B30D210A70E5004C931D /* Release */,
+				42110B86210A768900E43031 /* Debug */,
+				42110B87210A768900E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A2B30F210A70E5004C931D /* Build configuration list for PBXNativeTarget "Tenacity" */ = {
+		42110B88210A768900E43031 /* Build configuration list for PBXNativeTarget "TenacityUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B310210A70E5004C931D /* Debug */,
-				42A2B311210A70E5004C931D /* Release */,
+				42110B89210A768900E43031 /* Debug */,
+				42110B8A210A768900E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A2B312210A70E5004C931D /* Build configuration list for PBXNativeTarget "TenacityTests" */ = {
+		42110BAB210A775300E43031 /* Build configuration list for PBXNativeTarget "Tenacity_Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B313210A70E5004C931D /* Debug */,
-				42A2B314210A70E5004C931D /* Release */,
+				42110BAC210A775300E43031 /* Debug */,
+				42110BAD210A775300E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42A2B315210A70E5004C931D /* Build configuration list for PBXNativeTarget "TenacityUITests" */ = {
+		42110BAF210A775300E43031 /* Build configuration list for PBXNativeTarget "Tenacity_Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42A2B316210A70E5004C931D /* Debug */,
-				42A2B317210A70E5004C931D /* Release */,
+				42110BB0210A775300E43031 /* Debug */,
+				42110BB1210A775300E43031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 42A2B2B7210A70E1004C931D /* Project object */;
+	rootObject = 42110B52210A767B00E43031 /* Project object */;
 }
