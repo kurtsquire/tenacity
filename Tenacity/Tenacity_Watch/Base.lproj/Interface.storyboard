@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6dO-2c-eaL">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
                     <items>
-                        <label width="1" height="1" alignment="left" text="tap" textAlignment="center" id="XAu-JL-SbY">
+                        <label width="1" height="157" alignment="left" text="tap" textAlignment="center" id="XAu-JL-SbY">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="e9l-z6-B65">
                                     <connections>
@@ -29,7 +29,22 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="341"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="7TT-LC-M0d">
+            <objects>
+                <controller id="6dO-2c-eaL">
+                    <items>
+                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Breathing" id="Iuh-S0-gMH">
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="jL6-Mi-DSQ"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="570" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
