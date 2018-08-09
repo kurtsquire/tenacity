@@ -41,13 +41,20 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func screenTap(_ sender: Any) {
-        x+=1
-        print(x)
-        myLabel.setText(String(x))
+        tapCount+=1
+        print(tapCount)
+        myLabel.setText(String(tapCount))
         hapticCaller()
     }
     
+    @IBOutlet var swipe: WKSwipeGestureRecognizer!
     
+    @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
+        tapCount+=10
+        print(tapCount)
+        myLabel.setText(String(tapCount))
+        hapticCaller()
+    }
     
     
     

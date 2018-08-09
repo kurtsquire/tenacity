@@ -21,11 +21,17 @@
                                         <action selector="screenTap:" destination="AgC-eL-Hgc" id="8k0-wk-qSo"/>
                                     </connections>
                                 </tapGestureRecognizer>
+                                <swipeGestureRecognizer id="NF6-7i-sfg">
+                                    <connections>
+                                        <action selector="swipe:" destination="AgC-eL-Hgc" id="vLh-n1-qNn"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </label>
                     </items>
                     <connections>
                         <outlet property="myLabel" destination="XAu-JL-SbY" id="ecz-Bt-fuy"/>
+                        <outlet property="swipe" destination="NF6-7i-sfg" id="A81-Jb-tDP"/>
                     </connections>
                 </controller>
             </objects>
