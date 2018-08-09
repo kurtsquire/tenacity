@@ -36,7 +36,8 @@ class InterfaceController: WKInterfaceController {
     
     func hapticCaller() {
         if (tapCount % hapticCount == 0){
-            // call vibrate
+            //WKInterfaceDevice.current().play(.success)     ---TEST WHEN WE HAVE A PHYSICAL WATCH AND IOS DEVICE
+            
         }
     }
     
