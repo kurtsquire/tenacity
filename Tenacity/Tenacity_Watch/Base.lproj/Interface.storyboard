@@ -31,6 +31,7 @@
                     </items>
                     <connections>
                         <outlet property="myLabel" destination="XAu-JL-SbY" id="ecz-Bt-fuy"/>
+                        <outlet property="screenTapp" destination="e9l-z6-B65" id="rtp-1F-fE7"/>
                         <outlet property="swipe" destination="NF6-7i-sfg" id="A81-Jb-tDP"/>
                     </connections>
                 </controller>
