@@ -12,6 +12,9 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    var hapticCount: Int = 5
+    var tapCount = 0
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -31,11 +34,20 @@ class InterfaceController: WKInterfaceController {
     var x = 0
     @IBOutlet var myLabel: WKInterfaceLabel!
     
+    func hapticCaller() {
+        if (tapCount % hapticCount == 0){
+            // call vibrate
+        }
+    }
+    
     @IBAction func screenTap(_ sender: Any) {
         x+=1
         print(x)
         myLabel.setText(String(x))
+        hapticCaller()
     }
+    
+    
     
     
     
