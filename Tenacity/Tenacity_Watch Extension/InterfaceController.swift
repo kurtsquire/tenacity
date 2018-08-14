@@ -49,7 +49,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
         tapCount+=1
-        print(tapCount)
+        print(String(tapCount)+" "+String(NSDate().timeIntervalSince1970))
         myLabel.setText(String(tapCount))
         hapticCallerTap()
     }
@@ -58,7 +58,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         tapCount+=1
-        print(tapCount)
+        print(String(tapCount)+" "+String(NSDate().timeIntervalSince1970))
         myLabel.setText(String(tapCount))
         hapticCallerSwipe()
     }
