@@ -14,6 +14,10 @@ class InterfaceController: WKInterfaceController {
 
     var hapticCount: Int = 5
     var tapCount = 0
+    var epoch: Date = Date(timeIntervalSince1970: <#T##TimeInterval#>)
+//    let seshItems: Dictionary = ["Inputs":[], "TimeStapms":[], "Pof":false]
+//    var cycleDic:  = [:]
+    var seshGroups: Dictionary< Int, Dictionary< String, Any > > = [:]
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -49,7 +53,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
         tapCount+=1
-        print(String(tapCount)+" "+String(NSDate().timeIntervalSince1970))
+        print(String(tapCount)+" "+epoch.description)
         myLabel.setText(String(tapCount))
         hapticCallerTap()
     }
@@ -58,7 +62,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         tapCount+=1
-        print(String(tapCount)+" "+String(NSDate().timeIntervalSince1970))
+        print(String(tapCount)+" "+epoch.description)
         myLabel.setText(String(tapCount))
         hapticCallerSwipe()
     }
