@@ -17,7 +17,8 @@ class InterfaceController: WKInterfaceController {
     var epoch: Date = Date(timeIntervalSince1970: <#T##TimeInterval#>)
 //    let seshItems: Dictionary = ["Inputs":[], "TimeStapms":[], "Pof":false]
 //    var cycleDic:  = [:]
-    var seshGroups: Dictionary< Int, Dictionary< String, Any > > = [:]
+//    var seshGroups: Dictionary< Int, Dictionary< String, Any > > = [:]
+    var seshGroups = [Int:[String:Any]] ()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
