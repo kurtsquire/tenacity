@@ -14,11 +14,13 @@ class InterfaceController: WKInterfaceController {
 
     var hapticCount: Int = 5
     var tapCount = 0
-    var epoch: Date = Date(timeIntervalSince1970: <#T##TimeInterval#>)
 //    let seshItems: Dictionary = ["Inputs":[], "TimeStapms":[], "Pof":false]
 //    var cycleDic:  = [:]
 //    var seshGroups: Dictionary< Int, Dictionary< String, Any > > = [:]
     var seshGroups = [Int:[String:Any]] ()
+    var current_cycle: [String] = []
+    var current_ts: [TimeInterval] = []
+    var cycleCount: Int = 0
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -39,23 +41,39 @@ class InterfaceController: WKInterfaceController {
     var x = 0
     @IBOutlet var myLabel: WKInterfaceLabel!
     
+    func getTime() -> TimeInterval {
+        return Date().timeIntervalSince1970
+    }
+    
     func hapticCallerTap() {
         if (tapCount % hapticCount == 0){
+            cycleCount+=1
             WKInterfaceDevice.current().play(.failure)
+            seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
+            current_cycle.removeAll()
+            current_ts.removeAll()
+            print(seshGroups)
         }
     }
     func hapticCallerSwipe() {
         if (tapCount % hapticCount == 0){
+            cycleCount+=1
             WKInterfaceDevice.current().play(.success)
+            seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":true]
+            current_cycle.removeAll()
+            current_ts.removeAll()
+            print(seshGroups)
         }
     }
     
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
+        current_ts.append(getTime())
         tapCount+=1
-        print(String(tapCount)+" "+epoch.description)
+//        print(String(tapCount)+" "+getTime().description)
         myLabel.setText(String(tapCount))
+        current_cycle.append("T")
         hapticCallerTap()
     }
     
@@ -63,8 +81,9 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         tapCount+=1
-        print(String(tapCount)+" "+epoch.description)
+//        print(String(tapCount)+" "+getTime().description)
         myLabel.setText(String(tapCount))
+        current_cycle.append("S")
         hapticCallerSwipe()
     }
     
