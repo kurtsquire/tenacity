@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController {
 
     var hapticCount: Int = 5
     var tapCount = 0
+    var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
     var seshGroups = [Int:[String:Any]] ()
     var current_cycle: [String] = []
     var current_ts: [Date] = []
@@ -22,8 +23,8 @@ class InterfaceController: WKInterfaceController {
     
     //Gets session accuracy and returns it as a string. Needs to be improved so that it shows a percent and not a decimal
     func getSeshAccuracy(dictionary:[Int:[String:Any]]) -> String {
-        var total: Int = 0
-        var true_total: Int = 0
+        var total: Float = 0
+        var true_total: Float = 0
         for (_,dict) in dictionary {
             for (dataType, data) in dict{
                 if dataType == "ToF" && isEqual(type: Bool.self, a: data, b: true) == true{
@@ -32,7 +33,9 @@ class InterfaceController: WKInterfaceController {
             }
             total+=1
         }
-        return String(true_total/total * 100) + "%"
+        print(total)
+        print(true_total)
+        return String(Double(true_total/total*100)) + "%"
     }
  
     // This function is used to compare Any variable types as swift will not let you use the == comparison if a var is declared as Any
@@ -50,6 +53,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
         current_ts.append(Date())
         tapCount+=1
+        cycleTapCount+=1
         myLabel.setText(String(tapCount))
         current_cycle.append("T")
         hapticCallerTap()
@@ -60,30 +64,44 @@ class InterfaceController: WKInterfaceController {
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         current_ts.append(Date())
         tapCount+=1
+        cycleTapCount+=1
         myLabel.setText(String(tapCount))
         current_cycle.append("S")
         hapticCallerSwipe()
     }
     
     func hapticCallerTap() {
-        if (tapCount % hapticCount == 0){
+        if (cycleTapCount % hapticCount == 0){
             cycleCount+=1
             WKInterfaceDevice.current().play(.failure)
             seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
             current_cycle.removeAll()
             current_ts.removeAll()
+            cycleTapCount = 0
             print(seshGroups)
             print(getSeshAccuracy(dictionary: seshGroups))
         }
     }
     func hapticCallerSwipe() {
-        if (tapCount % hapticCount == 0){
+        if (cycleTapCount % hapticCount == 0){
             cycleCount+=1
             WKInterfaceDevice.current().play(.success)
             seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":true]
             current_cycle.removeAll()
             current_ts.removeAll()
+            cycleTapCount = 0
             print(seshGroups)
+            print(getSeshAccuracy(dictionary: seshGroups))
+        }
+        else{
+            cycleCount+=1
+            WKInterfaceDevice.current().play(.failure)
+            seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
+            current_cycle.removeAll()
+            current_ts.removeAll()
+            cycleTapCount = 0
+            print(seshGroups)
+            print(getSeshAccuracy(dictionary: seshGroups))
         }
     }
     
