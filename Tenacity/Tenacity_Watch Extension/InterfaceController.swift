@@ -18,8 +18,32 @@ class InterfaceController: WKInterfaceController {
     var current_cycle: [String] = []
     var current_ts: [Date] = []
     var cycleCount: Int = 0
-    @IBOutlet var myLabel: WKInterfaceLabel!
     
+    
+    //Gets session accuracy and returns it as a string. Needs to be improved so that it shows a percent and not a decimal
+    func getSeshAccuracy(dictionary:[Int:[String:Any]]) -> String {
+        var total: Int = 0
+        var true_total: Int = 0
+        for (_,dict) in dictionary {
+            for (dataType, data) in dict{
+                if dataType == "ToF" && isEqual(type: Bool.self, a: data, b: true) == true{
+                    true_total+=1
+                }
+            }
+            total+=1
+        }
+        return String(true_total/total * 100) + "%"
+    }
+ 
+    // This function is used to compare Any variable types as swift will not let you use the == comparison if a var is declared as Any
+    func isEqual<T: Equatable>(type: T.Type, a: Any, b: Any) -> Bool? {
+        guard let a = a as? T, let b = b as? T else { return nil }
+        
+        return a == b
+    }
+    
+    
+    @IBOutlet var myLabel: WKInterfaceLabel!
     
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
     
@@ -49,6 +73,7 @@ class InterfaceController: WKInterfaceController {
             current_cycle.removeAll()
             current_ts.removeAll()
             print(seshGroups)
+            print(getSeshAccuracy(dictionary: seshGroups))
         }
     }
     func hapticCallerSwipe() {
