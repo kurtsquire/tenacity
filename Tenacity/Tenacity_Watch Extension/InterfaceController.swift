@@ -20,6 +20,38 @@ class InterfaceController: WKInterfaceController {
     var current_ts: [Date] = []
     var cycleCount: Int = 0
     
+    var seconds = 60
+    var timer = Timer()
+    
+    @IBOutlet var timerLabel: WKInterfaceLabel!
+    
+    @IBOutlet var timerSlider: WKInterfaceSlider!
+    @IBAction func timerSlider(_ value: Float) {
+        seconds = Int(value)
+        timerLabel.setText(String(seconds))
+        print(seconds)
+    }
+    
+    //@IBOutlet var StartSeshButton: WKInterfaceButton!
+    //@IBAction func StartSeshButton(_sender: Any) {
+      //  StartSessionTimer()
+    //}
+    
+    
+    @objc func counter(){
+        seconds -= 1
+        print(seconds)
+        if (seconds == 0){
+            timer.invalidate()
+        }
+    }
+    
+    func StartSessionTimer(){
+        if (tapCount == 0){
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (InterfaceController.counter), userInfo: nil, repeats: true)
+        }
+    }
+    
     
     //Gets session accuracy and returns it as a string. Needs to be improved so that it shows a percent and not a decimal
     func getSeshAccuracy(dictionary:[Int:[String:Any]]) -> String {
@@ -51,6 +83,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
+        StartSessionTimer()
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1

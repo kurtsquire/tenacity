@@ -36,22 +36,34 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="341"/>
+            <point key="canvasLocation" x="550" y="347"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="7TT-LC-M0d">
             <objects>
-                <controller id="6dO-2c-eaL">
+                <controller id="6dO-2c-eaL" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
                     <items>
-                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Breathing" id="Iuh-S0-gMH">
+                        <label width="40" height="39" alignment="center" text="60" textAlignment="center" id="Tr8-a1-wGU"/>
+                        <slider width="1" alignment="center" value="60" minimum="30" maximum="120" steps="3" id="BiM-fA-gYW">
                             <connections>
+                                <action selector="timerSlider:" destination="6dO-2c-eaL" id="sRR-DT-fP2"/>
+                            </connections>
+                        </slider>
+                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Start" id="Iuh-S0-gMH">
+                            <connections>
+                                <action selector="StartSeshButton" destination="6dO-2c-eaL" id="nuu-ki-t7b"/>
                                 <segue destination="AgC-eL-Hgc" kind="push" id="jL6-Mi-DSQ"/>
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="StartSeshButton" destination="Iuh-S0-gMH" id="cLf-Dt-gIO"/>
+                        <outlet property="timerLabel" destination="Tr8-a1-wGU" id="abG-d1-ki0"/>
+                        <outlet property="timerSlider" destination="BiM-fA-gYW" id="Gmh-so-cNe"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="570" y="345"/>
+            <point key="canvasLocation" x="220" y="248"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
