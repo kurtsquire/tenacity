@@ -9,18 +9,22 @@
 import WatchKit
 import Foundation
 
+//ALL DATA THAT MUST BE USED OUTSIDE OF THE CURRENT SCENE MUST BE PUT HERE
+var seconds = 60
+var seshGroups = [Int:[String:Any]] ()
+var cycleCount: Int = 0
 
 class InterfaceController: WKInterfaceController {
 
     var hapticCount: Int = 5
     var tapCount = 0
     var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
-    var seshGroups = [Int:[String:Any]] ()
+    
     var current_cycle: [String] = []
     var current_ts: [Date] = []
-    var cycleCount: Int = 0
     
-    var seconds = 60
+    
+    
     var timer = Timer()
     
     @IBOutlet var timerLabel: WKInterfaceLabel!
