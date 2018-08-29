@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
                     <items>
-                        <label width="1" height="157" alignment="left" text="tap" textAlignment="center" id="XAu-JL-SbY">
+                        <label width="100" height="107" alignment="center" text="Tap" textAlignment="center" id="XAu-JL-SbY">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="e9l-z6-B65">
                                     <connections>
@@ -28,6 +28,11 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </label>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="End Session" id="gVc-gm-rec">
+                            <connections>
+                                <segue destination="WCl-ih-gmI" kind="push" id="haq-Bj-jau"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="myLabel" destination="XAu-JL-SbY" id="ecz-Bt-fuy"/>
@@ -36,25 +41,46 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="550" y="347"/>
+            <point key="canvasLocation" x="531" y="51"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qSv-cs-hbc">
+            <objects>
+                <controller id="WCl-ih-gmI">
+                    <items>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Return Home" id="oEU-vQ-aUp">
+                            <connections>
+                                <segue destination="6dO-2c-eaL" kind="push" id="Dmm-S0-Fgj"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="875" y="51"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="7TT-LC-M0d">
             <objects>
                 <controller id="6dO-2c-eaL" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
                     <items>
-                        <label width="40" height="39" alignment="center" text="60" textAlignment="center" id="Tr8-a1-wGU"/>
-                        <slider width="1" alignment="center" value="60" minimum="30" maximum="120" steps="3" id="BiM-fA-gYW">
+                        <label width="1" alignment="center" text="Home Screen" textAlignment="center" id="ZRY-Py-Mrx"/>
+                        <separator alignment="left" id="8wk-E3-YTO"/>
+                        <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="Tr8-a1-wGU"/>
+                        <slider width="1" alignment="center" verticalAlignment="center" value="60" minimum="30" maximum="120" steps="3" id="BiM-fA-gYW">
                             <connections>
                                 <action selector="timerSlider:" destination="6dO-2c-eaL" id="sRR-DT-fP2"/>
                             </connections>
                         </slider>
-                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Start" id="Iuh-S0-gMH">
+                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Tenacity" id="Iuh-S0-gMH">
                             <connections>
                                 <action selector="StartSeshButton" destination="6dO-2c-eaL" id="nuu-ki-t7b"/>
                                 <segue destination="AgC-eL-Hgc" kind="push" id="jL6-Mi-DSQ"/>
                             </connections>
                         </button>
+                        <separator alignment="left" verticalAlignment="center" id="QGn-aZ-6aa"/>
+                        <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="GcQ-yn-qju"/>
+                        <slider width="1" alignment="left" verticalAlignment="center" value="1" maximum="3" steps="3" id="7om-bc-ER2"/>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="F4a-Ii-aGw"/>
                     </items>
                     <connections>
                         <outlet property="StartSeshButton" destination="Iuh-S0-gMH" id="cLf-Dt-gIO"/>
@@ -63,7 +89,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="248"/>
+            <point key="canvasLocation" x="157" y="51"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
