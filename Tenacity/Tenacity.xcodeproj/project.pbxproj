@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420C82692138971100CC43DE /* RoutineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C82672138965700CC43DE /* RoutineInterfaceController.swift */; };
 		42110B5E210A767B00E43031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B5D210A767B00E43031 /* AppDelegate.swift */; };
 		42110B60210A767B00E43031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42110B5F210A767B00E43031 /* ViewController.swift */; };
 		42110B63210A767B00E43031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42110B61210A767B00E43031 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		420C82672138965700CC43DE /* RoutineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineInterfaceController.swift; sourceTree = "<group>"; };
 		42110B5A210A767B00E43031 /* Tenacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenacity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42110B5D210A767B00E43031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42110B5F210A767B00E43031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		42110B9D210A775200E43031 /* Tenacity_Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				420C82672138965700CC43DE /* RoutineInterfaceController.swift */,
 				42110B9E210A775200E43031 /* InterfaceController.swift */,
 				42110BA0210A775200E43031 /* ExtensionDelegate.swift */,
 				42110BA2210A775200E43031 /* NotificationController.swift */,
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420C82692138971100CC43DE /* RoutineInterfaceController.swift in Sources */,
 				42110BA3210A775200E43031 /* NotificationController.swift in Sources */,
 				42110BA1210A775200E43031 /* ExtensionDelegate.swift in Sources */,
 				42110B9F210A775200E43031 /* InterfaceController.swift in Sources */,

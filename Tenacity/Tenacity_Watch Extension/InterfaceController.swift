@@ -13,6 +13,7 @@ import Foundation
 var seconds = 60
 var seshGroups = [Int:[String:Any]] ()
 var cycleCount: Int = 0
+var device = WKInterfaceDevice.current()
 
 class InterfaceController: WKInterfaceController {
 
