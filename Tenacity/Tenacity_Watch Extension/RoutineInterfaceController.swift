@@ -33,7 +33,7 @@ class RoutineInterfaceController: WKInterfaceController {
             let appendstr = "\(tuple.0): \(tuple.1) \n"
             str = "\(str) \(appendstr)"
         }
-        ToDoList.setText(str)
+        //ToDoList.setText(str)
     }
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6dO-2c-eaL">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qM2-do-BGe">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Tenacity Game-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
+                <controller identifier="Tenacity Game" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
                     <items>
                         <label width="100" height="107" alignment="center" text="Tap" textAlignment="center" id="XAu-JL-SbY">
                             <gestureRecognizers>
@@ -21,7 +21,7 @@
                                         <action selector="screenTap:" destination="AgC-eL-Hgc" id="8k0-wk-qSo"/>
                                     </connections>
                                 </tapGestureRecognizer>
-                                <swipeGestureRecognizer id="NF6-7i-sfg">
+                                <swipeGestureRecognizer direction="8" id="NF6-7i-sfg">
                                     <connections>
                                         <action selector="swipe:" destination="AgC-eL-Hgc" id="vLh-n1-qNn"/>
                                     </connections>
@@ -41,16 +41,16 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="531" y="51"/>
+            <point key="canvasLocation" x="462" y="340"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Tenacity End Screen-->
         <scene sceneID="qSv-cs-hbc">
             <objects>
-                <controller id="WCl-ih-gmI">
+                <controller identifier="Tenacity End Screen" id="WCl-ih-gmI">
                     <items>
                         <button width="1" alignment="center" verticalAlignment="center" title="Return Home" id="oEU-vQ-aUp">
                             <connections>
-                                <segue destination="6dO-2c-eaL" kind="push" id="Dmm-S0-Fgj"/>
+                                <segue destination="qM2-do-BGe" kind="push" id="8E3-Hv-YRV"/>
                             </connections>
                         </button>
                     </items>
@@ -58,33 +58,42 @@
             </objects>
             <point key="canvasLocation" x="875" y="51"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Main Menu-->
+        <scene sceneID="ZF6-iW-frg">
+            <objects>
+                <controller identifier="Main Menu" id="qM2-do-BGe" customClass="RoutineInterfaceController" customModule="Tenacity_Watch_Extension">
+                    <items>
+                        <group width="1" height="63" alignment="left" id="HN8-Vb-jqn">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" id="JVB-Tr-nS3"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Tenacity" id="F4a-Ii-aGw">
+                            <connections>
+                                <segue destination="6dO-2c-eaL" kind="push" id="39T-S0-Tra"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-156" y="72"/>
+        </scene>
+        <!--Tenacity Start Screen-->
         <scene sceneID="7TT-LC-M0d">
             <objects>
-                <controller id="6dO-2c-eaL" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
+                <controller identifier="Tenacity Start Screen" id="6dO-2c-eaL" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
                     <items>
-                        <label width="1" alignment="center" text="Home Screen" textAlignment="center" id="ZRY-Py-Mrx"/>
-                        <separator alignment="left" id="8wk-E3-YTO"/>
+                        <label width="1" alignment="center" text="Tenacity" textAlignment="center" id="ZRY-Py-Mrx"/>
                         <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="Tr8-a1-wGU"/>
                         <slider width="1" alignment="center" verticalAlignment="center" value="60" minimum="30" maximum="120" steps="3" id="BiM-fA-gYW">
                             <connections>
                                 <action selector="timerSlider:" destination="6dO-2c-eaL" id="sRR-DT-fP2"/>
                             </connections>
                         </slider>
-                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Tenacity" id="Iuh-S0-gMH">
+                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Start" id="Iuh-S0-gMH">
                             <connections>
                                 <action selector="StartSeshButton" destination="6dO-2c-eaL" id="nuu-ki-t7b"/>
                                 <segue destination="AgC-eL-Hgc" kind="push" id="jL6-Mi-DSQ"/>
-                            </connections>
-                        </button>
-                        <separator alignment="left" verticalAlignment="center" id="QGn-aZ-6aa"/>
-                        <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="GcQ-yn-qju"/>
-                        <slider width="1" alignment="left" verticalAlignment="center" value="1" maximum="3" steps="3" id="7om-bc-ER2"/>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="F4a-Ii-aGw"/>
-                        <separator alignment="left" verticalAlignment="bottom" id="u8u-fg-KsV"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Routine Building" id="I0f-Ny-jvO">
-                            <connections>
-                                <segue destination="teI-SE-J4H" kind="push" id="WLi-pA-sJo"/>
                             </connections>
                         </button>
                     </items>
@@ -95,7 +104,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="157" y="51"/>
+            <point key="canvasLocation" x="126" y="375"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -112,22 +121,6 @@
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="224" y="723"/>
-        </scene>
-        <!--Routine Interface Controller-->
-        <scene sceneID="SnC-Ic-QKs">
-            <objects>
-                <controller id="teI-SE-J4H" customClass="RoutineInterfaceController" customModule="Tenacity_Watch_Extension">
-                    <items>
-                        <label alignment="center" text="Label" id="JVB-Tr-nS3"/>
-                        <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="nQK-OA-gNA"/>
-                    </items>
-                    <connections>
-                        <outlet property="CurrentDate" destination="JVB-Tr-nS3" id="BHK-Bw-9Py"/>
-                        <outlet property="ToDoList" destination="nQK-OA-gNA" id="IPa-on-WNg"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="439" y="446"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
