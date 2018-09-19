@@ -50,13 +50,11 @@ class InterfaceController: WKInterfaceController {
             timer.invalidate()
         }
     }
-
     
     func StartSessionTimer(){
         if (tapCount == 0){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (InterfaceController.counter), userInfo: nil, repeats: true)
         }
-       
     }
     
     
