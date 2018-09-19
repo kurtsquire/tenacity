@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6dO-2c-eaL">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZBb-XV-VXg">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,7 +50,7 @@
                     <items>
                         <button width="1" alignment="center" verticalAlignment="center" title="Return Home" id="oEU-vQ-aUp">
                             <connections>
-                                <segue destination="6dO-2c-eaL" kind="push" id="Dmm-S0-Fgj"/>
+                                <segue destination="ZBb-XV-VXg" kind="push" id="DXl-ub-FIB"/>
                             </connections>
                         </button>
                     </items>
@@ -59,32 +59,41 @@
             <point key="canvasLocation" x="875" y="51"/>
         </scene>
         <!--Interface Controller-->
+        <scene sceneID="7tY-ig-pkS">
+            <objects>
+                <controller id="ZBb-XV-VXg">
+                    <items>
+                        <label width="1" alignment="center" text="Home Screen" textAlignment="center" id="ZRY-Py-Mrx"/>
+                        <button width="1" alignment="left" title="Breath Counting" id="Jnu-d0-vmU">
+                            <connections>
+                                <segue destination="6dO-2c-eaL" kind="push" id="4IS-JB-YO6"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Routine Building" id="0Wn-AO-cjc">
+                            <connections>
+                                <segue destination="teI-SE-J4H" kind="push" id="aFu-ZJ-B2f"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-142" y="61"/>
+        </scene>
+        <!--Interface Controller-->
         <scene sceneID="7TT-LC-M0d">
             <objects>
                 <controller id="6dO-2c-eaL" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
                     <items>
-                        <label width="1" alignment="center" text="Home Screen" textAlignment="center" id="ZRY-Py-Mrx"/>
-                        <separator alignment="left" id="8wk-E3-YTO"/>
                         <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="Tr8-a1-wGU"/>
                         <slider width="1" alignment="center" verticalAlignment="center" value="60" minimum="30" maximum="120" steps="3" id="BiM-fA-gYW">
                             <connections>
                                 <action selector="timerSlider:" destination="6dO-2c-eaL" id="sRR-DT-fP2"/>
                             </connections>
                         </slider>
-                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Tenacity" id="Iuh-S0-gMH">
+                        <button width="1" height="37" alignment="left" verticalAlignment="center" title="Start" id="Iuh-S0-gMH">
                             <connections>
                                 <action selector="StartSeshButton" destination="6dO-2c-eaL" id="nuu-ki-t7b"/>
                                 <segue destination="AgC-eL-Hgc" kind="push" id="jL6-Mi-DSQ"/>
-                            </connections>
-                        </button>
-                        <separator alignment="left" verticalAlignment="center" id="QGn-aZ-6aa"/>
-                        <label width="40" height="39" alignment="center" verticalAlignment="center" text="60" textAlignment="center" id="GcQ-yn-qju"/>
-                        <slider width="1" alignment="left" verticalAlignment="center" value="1" maximum="3" steps="3" id="7om-bc-ER2"/>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="F4a-Ii-aGw"/>
-                        <separator alignment="left" verticalAlignment="bottom" id="u8u-fg-KsV"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Routine Building" id="I0f-Ny-jvO">
-                            <connections>
-                                <segue destination="teI-SE-J4H" kind="push" id="WLi-pA-sJo"/>
                             </connections>
                         </button>
                     </items>
