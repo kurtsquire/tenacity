@@ -28,6 +28,21 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </label>
+                        <group width="76" height="76" alignment="center" verticalAlignment="center" hidden="YES" radius="39" id="OeM-uD-3sT">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="nEK-f5-Hin">
+                                    <connections>
+                                        <action selector="buttontap:" destination="AgC-eL-Hgc" id="HuJ-Nk-N5X"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                                <swipeGestureRecognizer id="l92-Qo-xit">
+                                    <connections>
+                                        <action selector="buttonswipe:" destination="AgC-eL-Hgc" id="C2T-1J-GjG"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.01164490638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="End Session" id="gVc-gm-rec">
                             <connections>
                                 <action selector="EndSession" destination="AgC-eL-Hgc" id="h66-Ou-kRV"/>
@@ -42,13 +57,14 @@
                     <connections>
                         <outlet property="EndSessionButton" destination="gVc-gm-rec" id="9Bi-7v-L9e"/>
                         <outlet property="ReHome" destination="iKy-O9-qn7" id="PxD-US-EHw"/>
+                        <outlet property="animebutton" destination="OeM-uD-3sT" id="HRd-S9-Kx2"/>
                         <outlet property="myLabel" destination="XAu-JL-SbY" id="ecz-Bt-fuy"/>
                         <outlet property="screenTapp" destination="e9l-z6-B65" id="rtp-1F-fE7"/>
                         <outlet property="swipe" destination="NF6-7i-sfg" id="A81-Jb-tDP"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="531" y="51"/>
+            <point key="canvasLocation" x="999" y="62"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="7tY-ig-pkS">

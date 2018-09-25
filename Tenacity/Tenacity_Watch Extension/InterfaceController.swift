@@ -17,6 +17,7 @@ var device = WKInterfaceDevice.current()
 
 class InterfaceController: WKInterfaceController {
 
+    var seshbegin = true
     var seshend = false
     var hapticCount: Int = 5
     var tapCount = 0
@@ -33,8 +34,10 @@ class InterfaceController: WKInterfaceController {
         EndSessionButton.setHidden(true)
         ReHome.setEnabled(true)
         ReHome.setHidden(false)
+        myLabel.setHidden(false)
         myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
     }
+    
     
     var timer = Timer()
     
@@ -94,14 +97,14 @@ class InterfaceController: WKInterfaceController {
         return a == b
     }
     
-    
-    @IBOutlet var myLabel: WKInterfaceLabel!
-    
-    @IBOutlet var screenTapp: WKTapGestureRecognizer!
-    
-    @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
+    func tap() -> Void {
         if(seshend){
             return
+        }
+        if(seshbegin){
+            seshbegin = false
+            myLabel.setHidden(true)
+            animebutton.setHidden(false)
         }
         StartSessionTimer()
         current_ts.append(Date())
@@ -112,11 +115,14 @@ class InterfaceController: WKInterfaceController {
         hapticCallerTap()
     }
     
-    @IBOutlet var swipe: WKSwipeGestureRecognizer!
-    
-    @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
+    func swipes() -> Void{
         if(seshend){
             return
+        }
+        if(seshbegin){
+            seshbegin = false
+            myLabel.setHidden(true)
+            animebutton.setHidden(false)
         }
         current_ts.append(Date())
         tapCount+=1
@@ -124,6 +130,31 @@ class InterfaceController: WKInterfaceController {
         myLabel.setText(String(tapCount))
         current_cycle.append("S")
         hapticCallerSwipe()
+    }
+    
+    @IBAction func buttontap(_ sender: WKTapGestureRecognizer) {
+        tap()
+    }
+    
+    @IBAction func buttonswipe(_ sender: WKSwipeGestureRecognizer) {
+        swipes()
+    }
+    
+    @IBOutlet var animebutton: WKInterfaceGroup!
+    
+    @IBOutlet var myLabel: WKInterfaceLabel!
+    
+    @IBOutlet var screenTapp: WKTapGestureRecognizer!
+    
+    @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
+        tap()
+        
+    }
+    
+    @IBOutlet var swipe: WKSwipeGestureRecognizer!
+    
+    @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
+        swipes()
     }
     
     func hapticCallerTap() {
