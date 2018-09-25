@@ -17,6 +17,7 @@ var device = WKInterfaceDevice.current()
 
 class InterfaceController: WKInterfaceController {
 
+    var seshend = false
     var hapticCount: Int = 5
     var tapCount = 0
     var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
@@ -24,11 +25,22 @@ class InterfaceController: WKInterfaceController {
     var current_cycle: [String] = []
     var current_ts: [Date] = []
     
+    @IBOutlet var EndSessionButton: WKInterfaceButton!
     
+    @IBAction func EndSession() {
+        seshend = true
+        EndSessionButton.setEnabled(false)
+        EndSessionButton.setHidden(true)
+        ReHome.setEnabled(true)
+        ReHome.setHidden(false)
+        myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
+    }
     
     var timer = Timer()
     
     @IBOutlet var timerLabel: WKInterfaceLabel!
+    
+    @IBOutlet var ReHome: WKInterfaceButton!
     
     @IBOutlet var timerSlider: WKInterfaceSlider!
     @IBAction func timerSlider(_ value: Float) {
@@ -88,6 +100,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
+        if(seshend){
+            return
+        }
         StartSessionTimer()
         current_ts.append(Date())
         tapCount+=1
@@ -100,6 +115,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var swipe: WKSwipeGestureRecognizer!
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
+        if(seshend){
+            return
+        }
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1
