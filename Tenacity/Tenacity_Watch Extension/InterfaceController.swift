@@ -102,22 +102,32 @@ class InterfaceController: WKInterfaceController {
         if count == 0 {
             animebutton.setWidth(76)
             animebutton.setHeight(76)
+            animebutton.setCornerRadius(39)
         }
         if count == 1 {
             animebutton.setWidth(80)
             animebutton.setHeight(80)
+            animebutton.setCornerRadius(45)
         }
         if count == 2 {
             animebutton.setWidth(90)
             animebutton.setHeight(90)
+            animebutton.setCornerRadius(50)
         }
         if count == 3 {
             animebutton.setWidth(100)
             animebutton.setHeight(100)
+            animebutton.setCornerRadius(55)
         }
         if count == 4 {
             animebutton.setWidth(110)
             animebutton.setHeight(110)
+            animebutton.setCornerRadius(60)
+        }
+        if count == 5{
+            animebutton.setWidth(120)
+            animebutton.setHeight(120)
+            animebutton.setCornerRadius(60)
         }
     }
     
