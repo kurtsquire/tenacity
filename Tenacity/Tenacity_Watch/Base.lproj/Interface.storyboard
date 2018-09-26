@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
                     <items>
-                        <label width="100" height="107" alignment="center" text="Tap" textAlignment="center" numberOfLines="0" id="XAu-JL-SbY">
+                        <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="XAu-JL-SbY">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="e9l-z6-B65">
                                     <connections>

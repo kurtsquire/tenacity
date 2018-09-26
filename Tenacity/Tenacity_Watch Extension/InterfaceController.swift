@@ -35,6 +35,7 @@ class InterfaceController: WKInterfaceController {
         ReHome.setEnabled(true)
         ReHome.setHidden(false)
         myLabel.setHidden(false)
+        animebutton.setHidden(true)
         myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
     }
     
