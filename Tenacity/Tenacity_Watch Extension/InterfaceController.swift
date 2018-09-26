@@ -98,11 +98,35 @@ class InterfaceController: WKInterfaceController {
         return a == b
     }
     
+    func animatebutton(count: Int) -> Void {
+        if count == 0 {
+            animebutton.setWidth(76)
+            animebutton.setHeight(76)
+        }
+        if count == 1 {
+            animebutton.setWidth(80)
+            animebutton.setHeight(80)
+        }
+        if count == 2 {
+            animebutton.setWidth(90)
+            animebutton.setHeight(90)
+        }
+        if count == 3 {
+            animebutton.setWidth(100)
+            animebutton.setHeight(100)
+        }
+        if count == 4 {
+            animebutton.setWidth(110)
+            animebutton.setHeight(110)
+        }
+    }
+    
     func tap() -> Void {
         if(seshend){
             return
         }
         if(seshbegin){
+            animatebutton(count: cycleTapCount)
             seshbegin = false
             myLabel.setHidden(true)
             animebutton.setHidden(false)
@@ -111,6 +135,7 @@ class InterfaceController: WKInterfaceController {
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1
+        animatebutton(count: cycleTapCount)
         myLabel.setText(String(tapCount))
         current_cycle.append("T")
         hapticCallerTap()
@@ -121,6 +146,7 @@ class InterfaceController: WKInterfaceController {
             return
         }
         if(seshbegin){
+            animatebutton(count: cycleTapCount)
             seshbegin = false
             myLabel.setHidden(true)
             animebutton.setHidden(false)
@@ -128,6 +154,7 @@ class InterfaceController: WKInterfaceController {
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1
+        animatebutton(count: cycleTapCount)
         myLabel.setText(String(tapCount))
         current_cycle.append("S")
         hapticCallerSwipe()
@@ -166,6 +193,7 @@ class InterfaceController: WKInterfaceController {
             current_cycle.removeAll()
             current_ts.removeAll()
             cycleTapCount = 0
+            animatebutton(count: cycleTapCount)
             print(seshGroups)
             print(getSeshAccuracy(dictionary: seshGroups))
         }
@@ -178,6 +206,7 @@ class InterfaceController: WKInterfaceController {
             current_cycle.removeAll()
             current_ts.removeAll()
             cycleTapCount = 0
+            animatebutton(count: cycleTapCount)
             print(seshGroups)
             print(getSeshAccuracy(dictionary: seshGroups))
         }
@@ -188,6 +217,7 @@ class InterfaceController: WKInterfaceController {
             current_cycle.removeAll()
             current_ts.removeAll()
             cycleTapCount = 0
+            animatebutton(count: cycleTapCount)
             print(seshGroups)
             print(getSeshAccuracy(dictionary: seshGroups))
         }
