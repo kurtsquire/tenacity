@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4244A63C216C22E900C7A59E /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4244A63B216C22E900C7A59E /* Schedule.storyboard */; };
+		4244A640216C2C9200C7A59E /* BreatheGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4244A63F216C2C9200C7A59E /* BreatheGame.storyboard */; };
 		425CE78F216C101100EE3A44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE78E216C101100EE3A44 /* AppDelegate.swift */; };
 		425CE791216C101100EE3A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE790216C101100EE3A44 /* ViewController.swift */; };
 		425CE794216C101100EE3A44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425CE792216C101100EE3A44 /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4244A63B216C22E900C7A59E /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		4244A63F216C2C9200C7A59E /* BreatheGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BreatheGame.storyboard; sourceTree = "<group>"; };
 		425CE78B216C101100EE3A44 /* TenacityV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenacityV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425CE78E216C101100EE3A44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		425CE790216C101100EE3A44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				425CE7B8216C101400EE3A44 /* Interface.storyboard */,
+				4244A63F216C2C9200C7A59E /* BreatheGame.storyboard */,
+				4244A63B216C22E900C7A59E /* Schedule.storyboard */,
 				425CE7BB216C101500EE3A44 /* Assets.xcassets */,
 				425CE7BD216C101500EE3A44 /* Info.plist */,
 			);
@@ -390,7 +396,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				425CE7BC216C101500EE3A44 /* Assets.xcassets in Resources */,
+				4244A640216C2C9200C7A59E /* BreatheGame.storyboard in Resources */,
 				425CE7BA216C101400EE3A44 /* Interface.storyboard in Resources */,
+				4244A63C216C22E900C7A59E /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
