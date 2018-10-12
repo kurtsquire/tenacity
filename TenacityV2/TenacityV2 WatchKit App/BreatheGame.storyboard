@@ -12,7 +12,7 @@
         <!--Breathe Main-->
         <scene sceneID="7rC-xk-Hf4">
             <objects>
-                <controller identifier="Breathe Main" id="2Te-ZM-Pri" customClass="InterfaceController" customModule="Tenacity_Watch_Extension">
+                <controller identifier="Breathe Main" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <label width="61" height="51" alignment="center" text="60" textAlignment="center" id="K3z-cc-2DT">
                             <fontDescription key="font" type="system" pointSize="20"/>
@@ -41,7 +41,7 @@
         <!--Breathe-->
         <scene sceneID="FLq-KG-iBL">
             <objects>
-                <controller identifier="Breathe" id="KPJ-Gv-cVQ" customClass="InterfaceController" customModule="Tenacity_Watch" customModuleProvider="target">
+                <controller identifier="Breathe" id="KPJ-Gv-cVQ" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu">
                             <gestureRecognizers>
@@ -77,7 +77,11 @@
                                 <action selector="EndSession" destination="KPJ-Gv-cVQ" id="X7n-ll-Ng4"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" hidden="YES" title="Return Home" enabled="NO" id="kEr-PB-94e"/>
+                        <button width="1" alignment="left" hidden="YES" title="Return Home" enabled="NO" id="kEr-PB-94e">
+                            <connections>
+                                <action selector="ReturnHome" destination="KPJ-Gv-cVQ" id="93W-Z3-3B8"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="EndSessionButton" destination="neS-OY-XE9" id="GOe-Rx-TcR"/>

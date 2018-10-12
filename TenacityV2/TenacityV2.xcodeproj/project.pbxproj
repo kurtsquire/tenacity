@@ -24,6 +24,7 @@
 		425CE7CA216C101500EE3A44 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE7C9216C101500EE3A44 /* ExtensionDelegate.swift */; };
 		425CE7CC216C101500EE3A44 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE7CB216C101500EE3A44 /* NotificationController.swift */; };
 		425CE7CE216C101500EE3A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425CE7CD216C101500EE3A44 /* Assets.xcassets */; };
+		425CE7E721710BB400EE3A44 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE7E621710BB400EE3A44 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		425CE7CD216C101500EE3A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		425CE7CF216C101500EE3A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425CE7D0216C101500EE3A44 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		425CE7E621710BB400EE3A44 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				425CE7CD216C101500EE3A44 /* Assets.xcassets */,
 				425CE7CF216C101500EE3A44 /* Info.plist */,
 				425CE7D0216C101500EE3A44 /* PushNotificationPayload.apns */,
+				425CE7E621710BB400EE3A44 /* GameController.swift */,
 			);
 			path = "TenacityV2 WatchKit Extension";
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				425CE7CC216C101500EE3A44 /* NotificationController.swift in Sources */,
+				425CE7E721710BB400EE3A44 /* GameController.swift in Sources */,
 				425CE7CA216C101500EE3A44 /* ExtensionDelegate.swift in Sources */,
 				425CE7C8216C101500EE3A44 /* InterfaceController.swift in Sources */,
 			);
