@@ -102,12 +102,22 @@ class GameController: WKInterfaceController {
     }
     
     func animatebutton(count: Int) -> Void {
-        for i in 0...hapticCount {
-            if count == i {
-                animebutton.setWidth(76+CGFloat(i*5))
-                animebutton.setHeight(76+CGFloat(i*5))
-                animebutton.setCornerRadius(39+CGFloat(i*5))
-            }
+//        for i in 0...hapticCount {
+//            if count == i {
+//                animebutton.setWidth(76+CGFloat(i*5))
+//                animebutton.setHeight(76+CGFloat(i*5))
+//                animebutton.setCornerRadius(39+CGFloat(i*5))
+//            }
+//        }
+        if count%2 == 0{
+            animebutton.setWidth(76)
+            animebutton.setHeight(76)
+            animebutton.setCornerRadius(39)
+        }
+        else{
+            animebutton.setWidth(150)
+            animebutton.setHeight(150)
+            animebutton.setCornerRadius(76.97)
         }
     }
     
