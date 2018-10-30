@@ -32,24 +32,6 @@
             </objects>
             <point key="canvasLocation" x="171" y="870"/>
         </scene>
-        <!--Interface Controller-->
-        <scene sceneID="3Jl-eV-PDX">
-            <objects>
-                <controller id="X2A-1O-WHc">
-                    <items>
-                        <group width="1" alignment="left" layout="overlap" spacing="0.0" id="lba-fm-hL1">
-                            <items>
-                                <button width="1" alignment="left" title="Button" id="Rvn-Hy-CAC">
-                                    <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.77568493150684936" colorSpace="custom" customColorSpace="sRGB"/>
-                                </button>
-                            </items>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="397" y="427"/>
-        </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
@@ -57,18 +39,19 @@
             </objects>
             <point key="canvasLocation" x="419" y="870"/>
         </scene>
-        <!--Game Menu-->
+        <!--Main Menu-->
         <scene sceneID="I5M-Gd-aUY">
             <objects>
-                <controller identifier="Game Menu" id="NTV-tI-VkP">
+                <controller identifier="Main Menu" id="NTV-tI-VkP" customClass="InterfaceController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <group width="1" height="40" alignment="left" layout="overlap" spacing="0.0" id="oJ9-e6-bzw">
+                        <group width="1" height="40" alignment="left" id="TSy-uy-hyW">
                             <items>
-                                <button width="400" height="2" alignment="left" title="Button" backgroundImage="tile001" id="39Y-rZ-3Ft">
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button width="1" height="40" alignment="left" title="Schedule" backgroundImage="Button" id="CeU-Md-8hp">
+                                    <connections>
+                                        <action selector="scheduleAction" destination="NTV-tI-VkP" id="HAA-H6-jRR"/>
+                                    </connections>
                                 </button>
                             </items>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </group>
                         <button width="1" height="75" alignment="left" title="Breathe" id="F8f-BH-JLT">
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,12 +60,17 @@
                                 <segue destination="qBv-zQ-62v" kind="push" id="27A-E9-15l"/>
                             </connections>
                         </button>
-                        <button width="1" height="75" alignment="left" id="uH2-JN-7Z6">
+                        <button width="1" height="75" alignment="left" hidden="YES" title="Breathe Edit" id="uH2-JN-7Z6">
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </button>
                     </items>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <connections>
+                        <outlet property="breatheButton" destination="F8f-BH-JLT" id="eJ5-pe-pyv"/>
+                        <outlet property="breatheEditButton" destination="uH2-JN-7Z6" id="GRP-RQ-Xx7"/>
+                        <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="397" y="89.5"/>

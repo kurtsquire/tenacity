@@ -12,6 +12,8 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
     
+    var schedulePressed = false
+    
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -29,4 +31,25 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBOutlet var scheduleButton: WKInterfaceButton!
+    @IBOutlet var breatheButton: WKInterfaceButton!
+    @IBOutlet var breatheEditButton: WKInterfaceButton!
+    @IBAction func scheduleAction() {
+        if schedulePressed == false{
+            schedulePressed = true
+            scheduleButton.setTitle("Editing")
+            breatheButton.setHidden(true)
+            breatheEditButton.setHidden(false)
+            scheduleButton.setBackgroundImageNamed("Pressed")
+            scheduleButton.setAlpha(0.9)
+        }
+        else if schedulePressed == true{
+            schedulePressed = false
+            scheduleButton.setTitle("Schedule")
+            breatheButton.setHidden(false)
+            breatheEditButton.setHidden(true)
+            scheduleButton.setBackgroundImageNamed("Button")
+            scheduleButton.setAlpha(1)
+        }
+    }
 }
