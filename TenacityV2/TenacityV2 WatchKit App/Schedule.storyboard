@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--Schedule-->
@@ -14,39 +14,10 @@
             <objects>
                 <controller identifier="Schedule" id="6dQ-K3-QSb">
                     <items>
-                        <button width="1" alignment="left" title="Date" id="Khu-7Q-PcG"/>
-                        <table alignment="left" id="WGv-yK-dZB">
-                            <items>
-                                <tableRow id="4tk-S8-ynl">
-                                    <group key="rootItem" width="1" alignment="left" id="KQG-gw-CKv" userLabel="Row1">
-                                        <items>
-                                            <group width="1" height="1" alignment="left" verticalAlignment="center" id="AwB-gA-CFN">
-                                                <items>
-                                                    <label width="85" alignment="left" verticalAlignment="center" text="Breathe" id="2jI-nX-NPN"/>
-                                                    <button width="30" height="30" alignment="right" verticalAlignment="center" title="+" id="qdV-1M-uAg"/>
-                                                </items>
-                                            </group>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow id="he0-Tt-UVd">
-                                    <group key="rootItem" width="1" alignment="left" id="4NU-ra-vmh" userLabel="Row2">
-                                        <items>
-                                            <group width="1" alignment="left" id="ljn-fX-HAH">
-                                                <items>
-                                                    <group width="1" height="1" alignment="left" verticalAlignment="center" id="Vwp-8e-RLN">
-                                                        <items>
-                                                            <label width="85" alignment="left" verticalAlignment="center" text="Times" id="hIT-vS-dj6"/>
-                                                            <button width="30" height="30" alignment="right" verticalAlignment="center" title="-" id="hdJ-vz-ZT7"/>
-                                                        </items>
-                                                    </group>
-                                                </items>
-                                            </group>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <picker height="90" alignment="center" style="sequence" id="XyL-df-x4K"/>
+                        <button alignment="left" id="Gdm-qp-3mD">
+                            <group key="contentGroup" width="1" height="57" alignment="left" layout="vertical" id="85C-z0-DoE"/>
+                        </button>
                     </items>
                 </controller>
             </objects>
