@@ -16,7 +16,15 @@
                     <items>
                         <picker height="90" alignment="center" style="sequence" id="XyL-df-x4K"/>
                         <button alignment="left" id="Gdm-qp-3mD">
-                            <group key="contentGroup" width="1" height="57" alignment="left" layout="vertical" id="85C-z0-DoE"/>
+                            <group key="contentGroup" width="1" height="57" alignment="left" layout="vertical" id="85C-z0-DoE">
+                                <items>
+                                    <label height="32" alignment="center" text="add" textAlignment="center" id="xdE-dj-PIH">
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                    </label>
+                                    <label alignment="center" verticalAlignment="bottom" text="game name" id="PZr-yd-ubA"/>
+                                </items>
+                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
                         </button>
                     </items>
                 </controller>
