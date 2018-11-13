@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--Schedule-->
@@ -53,16 +53,19 @@
                                 </button>
                             </items>
                         </group>
-                        <button width="1" height="75" alignment="left" title="Breathe" id="F8f-BH-JLT">
+                        <button width="1" height="75" alignment="left" accessibilityIdentifier="breathe_btn" title="Breathe" id="F8f-BH-JLT">
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
                             <connections>
-                                <segue destination="qBv-zQ-62v" kind="push" id="27A-E9-15l"/>
+                                <segue destination="qBv-zQ-62v" kind="push" identifier="breath_btn_game" id="27A-E9-15l"/>
                             </connections>
                         </button>
                         <button width="1" height="75" alignment="left" hidden="YES" title="Breathe Edit" id="uH2-JN-7Z6">
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
+                            <connections>
+                                <segue destination="4Ql-4j-WRe" kind="modal" identifier="breathe_btn_schedule" id="95X-e6-Ozn"/>
+                            </connections>
                         </button>
                     </items>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>

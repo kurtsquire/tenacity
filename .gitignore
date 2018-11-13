@@ -1,0 +1,6 @@
+# General
+.DS_Store
+
+# Tenacity Specific
+TenacityV2/TenacityV2.xcodeproj/project.xcworkspace/xcuserdata/*
+TenacityV2/TenacityV2.xcodeproj/xcuserdata/*
