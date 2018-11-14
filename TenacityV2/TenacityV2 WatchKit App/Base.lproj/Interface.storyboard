@@ -9,13 +9,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Schedule-->
-        <scene sceneID="QsI-G5-SgY">
-            <objects>
-                <controllerPlaceholder referencedIdentifier="Schedule" id="4Ql-4j-WRe"/>
-            </objects>
-            <point key="canvasLocation" x="766" y="400"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -64,7 +57,7 @@
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" pointSize="20"/>
                             <connections>
-                                <segue destination="4Ql-4j-WRe" kind="modal" identifier="breathe_btn_schedule" id="95X-e6-Ozn"/>
+                                <action selector="editBtnPressed" destination="NTV-tI-VkP" id="xZe-Uz-bAa"/>
                             </connections>
                         </button>
                     </items>

@@ -14,11 +14,15 @@ class ScheduleController: WKInterfaceController {
 
     @IBOutlet var TimePicker: WKInterfacePicker!
     @IBOutlet var APMPicker: WKInterfacePicker!
+    @IBOutlet var GameName: WKInterfaceLabel!
+    @IBOutlet var AddBtn: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+
+    GameName.setText(context as! String)
     }
 
     override func willActivate() {
@@ -44,11 +48,24 @@ class ScheduleController: WKInterfaceController {
         super.didDeactivate()
     }
     
+    var apm = ""
+    var time = ""
+    
     @IBAction func APMPicker(_ value: Int) {
-          NSLog("Time Picker: \(["AM","PM"][value]) selected.")
+        apm = ["AM","PM"][value]
     }
     
     @IBAction func pickerSelectedItem(_ value: Int) {
-        NSLog("Time Picker: \(Array((0...12))[value]) selected.")
+        time = String(Array((0...12))[value])
     }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        print(segueIdentifier)
+        if segueIdentifier == "schedule_to_main" {
+            return ["apm": apm, "time": time]
+        }
+
+        return ""
+    }
+    
 }

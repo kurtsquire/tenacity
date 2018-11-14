@@ -13,12 +13,16 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     
     var schedulePressed = false
-    
+    @IBOutlet var scheduleButton: WKInterfaceButton!
+    @IBOutlet var breatheButton: WKInterfaceButton!
+    @IBOutlet var breatheEditButton: WKInterfaceButton!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        if context != nil {
+            setScheduleStatus()
+        }
     }
     
     override func willActivate() {
@@ -31,17 +35,11 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    @IBOutlet var scheduleButton: WKInterfaceButton!
-    @IBOutlet var breatheButton: WKInterfaceButton!
-    @IBOutlet var breatheEditButton: WKInterfaceButton!
+    
     @IBAction func scheduleAction() {
         if schedulePressed == false{
             schedulePressed = true
-            scheduleButton.setTitle("Editing")
-            breatheButton.setHidden(true)
-            breatheEditButton.setHidden(false)
-            scheduleButton.setBackgroundImageNamed("Pressed")
-            scheduleButton.setAlpha(0.9)
+            setScheduleStatus()
         }
         else if schedulePressed == true{
             schedulePressed = false
@@ -51,5 +49,17 @@ class InterfaceController: WKInterfaceController {
             scheduleButton.setBackgroundImageNamed("Button")
             scheduleButton.setAlpha(1)
         }
+    }
+    
+    func setScheduleStatus() {
+        scheduleButton.setTitle("Editing")
+        breatheButton.setHidden(true)
+        breatheEditButton.setHidden(false)
+    scheduleButton.setBackgroundImageNamed("Pressed")
+        scheduleButton.setAlpha(0.9)
+    }
+    
+    @IBAction func editBtnPressed() {
+        presentController(withName: "Schedule", context: "Breathe Game")
     }
 }

@@ -24,8 +24,8 @@
                                 <action selector="APMPicker:" destination="6dQ-K3-QSb" id="2Yi-Qr-qZN"/>
                             </connections>
                         </picker>
-                        <button alignment="left" id="Gdm-qp-3mD">
-                            <group key="contentGroup" width="1" height="57" alignment="left" layout="vertical" id="85C-z0-DoE">
+                        <button alignment="center" id="Gdm-qp-3mD">
+                            <group key="contentGroup" width="134" height="57" alignment="left" layout="vertical" id="85C-z0-DoE">
                                 <items>
                                     <label height="32" alignment="center" text="add" textAlignment="center" id="xdE-dj-PIH">
                                         <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
@@ -34,15 +34,27 @@
                                 </items>
                                 <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <segue destination="j1O-Sc-k0R" kind="modal" identifier="schedule_to_main" id="ZyM-Cg-nLU"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="APMPicker" destination="nXT-8e-55U" id="EyA-Lt-eyj"/>
+                        <outlet property="AddBtn" destination="Gdm-qp-3mD" id="m8b-dO-4N2"/>
+                        <outlet property="GameName" destination="PZr-yd-ubA" id="ehO-Kx-fcz"/>
                         <outlet property="TimePicker" destination="XyL-df-x4K" id="0hL-Wn-6KH"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="49" y="62"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="cwF-jc-zqR">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Main Menu" id="j1O-Sc-k0R"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="268"/>
         </scene>
     </scenes>
 </document>
