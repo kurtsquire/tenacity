@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -46,16 +46,40 @@
                                 </button>
                             </items>
                         </group>
-                        <button width="1" height="75" alignment="left" accessibilityIdentifier="breathe_btn" title="Breathe" id="F8f-BH-JLT">
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="system" pointSize="20"/>
+                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="F8f-BH-JLT">
+                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
+                                <items>
+                                    <group width="1" height="25" alignment="left" id="c9f-qc-JFV">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Time" id="aJg-HW-Scb"/>
+                                            <label alignment="right" verticalAlignment="center" text="O O O " id="Q40-uM-5me"/>
+                                        </items>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="bottom" text="Breathe" id="3O7-6s-vds">
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
                             <connections>
                                 <segue destination="qBv-zQ-62v" kind="push" identifier="breath_btn_game" id="27A-E9-15l"/>
                             </connections>
                         </button>
-                        <button width="1" height="75" alignment="left" hidden="YES" title="Breathe Edit" id="uH2-JN-7Z6">
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="system" pointSize="20"/>
+                        <button alignment="left" id="uH2-JN-7Z6">
+                            <group key="contentGroup" width="1" height="70" alignment="left" hidden="YES" layout="vertical" id="gt2-Xi-8Xb">
+                                <items>
+                                    <group width="1" height="25" alignment="left" id="PRd-kw-B9f">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Time" id="Fdu-JD-5Qf"/>
+                                            <label alignment="right" verticalAlignment="center" text="O O O " id="TRz-Ai-gnE"/>
+                                        </items>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="bottom" text="Breathe" id="0OZ-s4-OmA">
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.77568493149999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
                             <connections>
                                 <action selector="editBtnPressed" destination="NTV-tI-VkP" id="xZe-Uz-bAa"/>
                             </connections>
@@ -69,7 +93,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="397" y="89.5"/>
+            <point key="canvasLocation" x="397" y="88.5"/>
         </scene>
         <!--Breathe Main-->
         <scene sceneID="WM9-Uf-r2d">
