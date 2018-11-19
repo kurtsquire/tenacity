@@ -17,6 +17,14 @@ class ScheduleController: WKInterfaceController {
     @IBOutlet var GameName: WKInterfaceLabel!
     @IBOutlet var AddBtn: WKInterfaceButton!
     
+    var apm:String
+    var time:String
+    
+    override init() {
+        self.apm = "AM"
+        self.time = "1"
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -29,7 +37,7 @@ class ScheduleController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        let timePickerItems: [WKPickerItem] = (0...12).map {
+        let timePickerItems: [WKPickerItem] = (1...12).map {
             let timePickerItem = WKPickerItem()
             timePickerItem.title = String($0)
             return timePickerItem
@@ -48,21 +56,18 @@ class ScheduleController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    var apm = ""
-    var time = ""
-    
     @IBAction func APMPicker(_ value: Int) {
-        apm = ["AM","PM"][value]
+        self.apm = ["AM","PM"][value]
     }
     
     @IBAction func pickerSelectedItem(_ value: Int) {
-        time = String(Array((0...12))[value])
+        self.time = String(Array((1...12))[value])
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         print(segueIdentifier)
         if segueIdentifier == "schedule_to_main" {
-            return ["apm": apm, "time": time]
+            return self.time + " " + self.apm
         }
 
         return ""

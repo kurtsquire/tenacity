@@ -17,11 +17,17 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var breatheButton: WKInterfaceButton!
     @IBOutlet var breatheEditButton: WKInterfaceButton!
 
+    @IBOutlet var breatheFreLabel: WKInterfaceLabel!
+    @IBOutlet var breatheTimeLabel: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         if context != nil {
-            setScheduleStatus()
+            breatheTimeLabel.setText(context as! String)
+        }
+        else{
+            breatheFreLabel.setHidden(true)
+            breatheTimeLabel.setHidden(true)
         }
     }
     

@@ -65,8 +65,8 @@
                                 <segue destination="qBv-zQ-62v" kind="push" identifier="breath_btn_game" id="27A-E9-15l"/>
                             </connections>
                         </button>
-                        <button alignment="left" id="uH2-JN-7Z6">
-                            <group key="contentGroup" width="1" height="70" alignment="left" hidden="YES" layout="vertical" id="gt2-Xi-8Xb">
+                        <button alignment="left" hidden="YES" id="uH2-JN-7Z6">
+                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="gt2-Xi-8Xb">
                                 <items>
                                     <group width="1" height="25" alignment="left" id="PRd-kw-B9f">
                                         <items>
@@ -89,6 +89,8 @@
                     <connections>
                         <outlet property="breatheButton" destination="F8f-BH-JLT" id="eJ5-pe-pyv"/>
                         <outlet property="breatheEditButton" destination="uH2-JN-7Z6" id="GRP-RQ-Xx7"/>
+                        <outlet property="breatheFreLabel" destination="Q40-uM-5me" id="XAR-o1-5JL"/>
+                        <outlet property="breatheTimeLabel" destination="aJg-HW-Scb" id="Lci-B9-4ky"/>
                         <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
                     </connections>
                 </controller>
