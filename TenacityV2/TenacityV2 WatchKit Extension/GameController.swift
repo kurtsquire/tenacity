@@ -25,8 +25,22 @@ class GameController: WKInterfaceController {
     
     var current_cycle: [String] = []
     var current_ts: [Date] = []
+    var timer = Timer()
     
+    @IBOutlet var animebutton: WKInterfaceGroup!
+    @IBOutlet var myLabel: WKInterfaceLabel!
+    @IBOutlet var screenTapp: WKTapGestureRecognizer!
     @IBOutlet var EndSessionButton: WKInterfaceButton!
+    @IBOutlet var timerLabel: WKInterfaceLabel!
+    @IBOutlet var ReHome: WKInterfaceButton!
+    @IBOutlet var timerSlider: WKInterfaceSlider!
+    @IBOutlet var swipe: WKSwipeGestureRecognizer!
+    @IBOutlet var BlackSpot: WKInterfaceButton!
+    @IBOutlet var Ring1: WKInterfaceButton!
+    @IBOutlet var Ring2: WKInterfaceButton!
+    @IBOutlet var Ring3: WKInterfaceButton!
+    @IBOutlet var Ring4: WKInterfaceButton!
+    @IBOutlet var Ring5: WKInterfaceButton!
     
     @IBAction func EndSession() {
         seshend = true
@@ -39,27 +53,16 @@ class GameController: WKInterfaceController {
         myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
     }
     
-    
-    var timer = Timer()
-    
-    @IBOutlet var timerLabel: WKInterfaceLabel!
-    
-    @IBOutlet var ReHome: WKInterfaceButton!
-    
+
     @IBAction func ReturnHome() {
         self.popToRootController()
     }
-    @IBOutlet var timerSlider: WKInterfaceSlider!
+
     @IBAction func timerSlider(_ value: Float) {
         seconds = Int(value)
         timerLabel.setText(String(seconds))
         print(seconds)
     }
-    
-    //@IBOutlet var StartSeshButton: WKInterfaceButton!
-    //@IBAction func StartSeshButton(_sender: Any) {
-    //  StartSessionTimer()
-    //}
     
     
     @objc func counter(){
@@ -101,24 +104,58 @@ class GameController: WKInterfaceController {
         return a == b
     }
     
-    func animatebutton(count: Int) -> Void {
-//        for i in 0...hapticCount {
-//            if count == i {
-//                animebutton.setWidth(76+CGFloat(i*5))
-//                animebutton.setHeight(76+CGFloat(i*5))
-//                animebutton.setCornerRadius(39+CGFloat(i*5))
-//            }
-//        }
-        if count%2 == 0{
-            animebutton.setWidth(76)
-            animebutton.setHeight(76)
-            animebutton.setCornerRadius(39)
+    func animatebutton() -> Void {
+        Ring1.setAlpha(0.5)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // change 2 to desired number of seconds
+            self.Ring1.setAlpha(1)
+            self.Ring2.setAlpha(0.5)
         }
-        else{
-            animebutton.setWidth(150)
-            animebutton.setHeight(150)
-            animebutton.setCornerRadius(76.97)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // change 2 to desired number of seconds
+            self.Ring1.setAlpha(0.5)
+            self.Ring2.setAlpha(1)
+            self.Ring3.setAlpha(0.5)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // change 2 to desired number of seconds
+            self.Ring1.setAlpha(0)
+            self.Ring2.setAlpha(0.5)
+            self.Ring3.setAlpha(1)
+            self.Ring4.setAlpha(0.5)
+            self.set_black(set: 45)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // change 2 to desired number of seconds
+            self.Ring2.setAlpha(0)
+            self.Ring3.setAlpha(0.5)
+            self.Ring4.setAlpha(1)
+            self.Ring5.setAlpha(0.5)
+            self.set_black(set: 60)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
+            self.Ring3.setAlpha(0)
+            self.Ring4.setAlpha(0.5)
+            self.Ring5.setAlpha(1)
+            self.set_black(set: 75)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { // change 2 to desired number of seconds
+            self.Ring4.setAlpha(0)
+            self.Ring5.setAlpha(0.5)
+            self.set_black(set: 90)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { // change 2 to desired number of seconds
+            self.Ring5.setAlpha(0)
+            self.reset_black()
+        }
+    }
+    
+    func reset_black() -> Void {
+        BlackSpot.setWidth(30)
+        BlackSpot.setHeight(30)
+        return
+    }
+    
+    func set_black(set: CGFloat) -> Void {
+        BlackSpot.setWidth(set)
+        BlackSpot.setHeight(set)
+        return
     }
     
     func tap() -> Void {
@@ -126,7 +163,7 @@ class GameController: WKInterfaceController {
             return
         }
         if(seshbegin){
-            animatebutton(count: cycleTapCount)
+            animatebutton()
             seshbegin = false
             myLabel.setHidden(true)
             animebutton.setHidden(false)
@@ -135,7 +172,7 @@ class GameController: WKInterfaceController {
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1
-        animatebutton(count: cycleTapCount)
+        animatebutton()
         myLabel.setText(String(tapCount))
         current_cycle.append("T")
         hapticCallerTap()
@@ -146,7 +183,7 @@ class GameController: WKInterfaceController {
             return
         }
         if(seshbegin){
-            animatebutton(count: cycleTapCount)
+            animatebutton()
             seshbegin = false
             myLabel.setHidden(true)
             animebutton.setHidden(false)
@@ -154,7 +191,7 @@ class GameController: WKInterfaceController {
         current_ts.append(Date())
         tapCount+=1
         cycleTapCount+=1
-        animatebutton(count: cycleTapCount)
+        animatebutton()
         myLabel.setText(String(tapCount))
         current_cycle.append("S")
         hapticCallerSwipe()
@@ -168,18 +205,14 @@ class GameController: WKInterfaceController {
         swipes()
     }
     
-    @IBOutlet var animebutton: WKInterfaceGroup!
-    
-    @IBOutlet var myLabel: WKInterfaceLabel!
-    
-    @IBOutlet var screenTapp: WKTapGestureRecognizer!
+
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
         tap()
         
     }
     
-    @IBOutlet var swipe: WKSwipeGestureRecognizer!
+
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         swipes()
@@ -192,7 +225,7 @@ class GameController: WKInterfaceController {
         current_cycle.removeAll()
         current_ts.removeAll()
         cycleTapCount = 0
-        animatebutton(count: cycleTapCount)
+        animatebutton()
         print(seshGroups)
         print(getSeshAccuracy(dictionary: seshGroups))
     }
@@ -204,7 +237,7 @@ class GameController: WKInterfaceController {
         current_cycle.removeAll()
         current_ts.removeAll()
         cycleTapCount = 0
-        animatebutton(count: cycleTapCount)
+        animatebutton()
         print(seshGroups)
         print(getSeshAccuracy(dictionary: seshGroups))
     }
