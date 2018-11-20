@@ -19,18 +19,20 @@ class ScheduleController: WKInterfaceController {
     
     var apm:String
     var time:String
+    var game:String
     
     override init() {
         self.apm = "AM"
         self.time = "1"
+        self.game = "Default"
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-
-    GameName.setText(context as! String)
+    self.game = context as! String
+    GameName.setText(self.game)
     }
 
     override func willActivate() {
@@ -66,7 +68,7 @@ class ScheduleController: WKInterfaceController {
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         if segueIdentifier == "schedule_to_main" {
-            return self.time + " " + self.apm
+            return ["content": self.time + " " + self.apm, "game": self.game]
         }
 
         return ""

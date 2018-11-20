@@ -51,7 +51,7 @@
                                 <items>
                                     <group width="1" height="25" alignment="left" id="c9f-qc-JFV">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Time" id="aJg-HW-Scb"/>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="aJg-HW-Scb"/>
                                             <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="Q40-uM-5me"/>
                                         </items>
                                     </group>
@@ -65,29 +65,53 @@
                                 <action selector="breatheBtnPressed" destination="NTV-tI-VkP" id="zb9-7J-jpO"/>
                             </connections>
                         </button>
-                        <button alignment="left" hidden="YES" id="uH2-JN-7Z6">
-                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="gt2-Xi-8Xb">
+                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="rE2-Fy-kIk">
+                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="AeW-8I-AqL">
                                 <items>
-                                    <group width="1" height="25" alignment="left" id="PRd-kw-B9f">
+                                    <group width="1" height="25" alignment="left" id="5Vd-A4-bB1">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Time" id="Fdu-JD-5Qf"/>
-                                            <label alignment="right" verticalAlignment="center" text="O O O " id="TRz-Ai-gnE"/>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="00g-Lj-PJc"/>
+                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="CDH-cO-xsm"/>
                                         </items>
                                     </group>
-                                    <label alignment="left" verticalAlignment="bottom" text="Breathe" id="0OZ-s4-OmA">
-                                        <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                    <label alignment="left" verticalAlignment="bottom" text="Line Attack" id="mwC-zP-fS7">
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                                     </label>
                                 </items>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.77568493149999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <action selector="lineAtkBtnPressed" destination="NTV-tI-VkP" id="xEh-3V-w5F"/>
+                            </connections>
+                        </button>
+                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="U7s-di-oV3">
+                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="lhL-d8-PzN">
+                                <items>
+                                    <group width="1" height="25" alignment="left" id="peS-1g-KpZ">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="Fme-6C-9FC"/>
+                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="E7B-DV-OrC"/>
+                                        </items>
+                                    </group>
+                                    <label alignment="left" verticalAlignment="bottom" text="GPS Draw" id="hLx-ey-Rz1">
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <action selector="gpsDrawBtnPressed" destination="NTV-tI-VkP" id="BiX-UT-BSh"/>
+                            </connections>
                         </button>
                     </items>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     <connections>
                         <outlet property="breatheBtnGrp" destination="Fkz-lZ-JKG" id="qwZ-v3-pvX"/>
-                        <outlet property="breatheButton" destination="F8f-BH-JLT" id="eJ5-pe-pyv"/>
-                        <outlet property="breatheFreLabel" destination="Q40-uM-5me" id="XAR-o1-5JL"/>
                         <outlet property="breatheTimeLabel" destination="aJg-HW-Scb" id="Lci-B9-4ky"/>
+                        <outlet property="gpmDrawTimeLabel" destination="Fme-6C-9FC" id="JkC-qe-RxT"/>
+                        <outlet property="gpsDrawBtnGrp" destination="lhL-d8-PzN" id="dTs-dA-HtZ"/>
+                        <outlet property="lineAtkBtnGrp" destination="AeW-8I-AqL" id="gH4-E2-Wi8"/>
+                        <outlet property="lineAtkTimeLabel" destination="00g-Lj-PJc" id="Dhu-cE-9cl"/>
                         <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
                     </connections>
                 </controller>
