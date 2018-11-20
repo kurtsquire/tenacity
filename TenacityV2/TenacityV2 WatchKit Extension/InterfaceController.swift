@@ -14,20 +14,18 @@ class InterfaceController: WKInterfaceController {
     
     var schedulePressed = false
     @IBOutlet var scheduleButton: WKInterfaceButton!
+    @IBOutlet var breatheBtnGrp: WKInterfaceGroup!
     @IBOutlet var breatheButton: WKInterfaceButton!
-    @IBOutlet var breatheEditButton: WKInterfaceButton!
-
     @IBOutlet var breatheFreLabel: WKInterfaceLabel!
     @IBOutlet var breatheTimeLabel: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        setTitle("")
         if context != nil {
             breatheTimeLabel.setText(context as! String)
         }
         else{
             breatheFreLabel.setHidden(true)
-            breatheTimeLabel.setHidden(true)
         }
     }
     
@@ -45,27 +43,24 @@ class InterfaceController: WKInterfaceController {
     @IBAction func scheduleAction() {
         if schedulePressed == false{
             schedulePressed = true
-            setScheduleStatus()
+            scheduleButton.setTitle("Editing")
+            var editColor = UIColor.init(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
+            breatheBtnGrp.setBackgroundColor(editColor)
         }
         else if schedulePressed == true{
             schedulePressed = false
+            var defaultColor = UIColor.init(red: 32/255, green: 148/255, blue: 250/255, alpha: 1)
             scheduleButton.setTitle("Schedule")
-            breatheButton.setHidden(false)
-            breatheEditButton.setHidden(true)
-            scheduleButton.setBackgroundImageNamed("Button")
-            scheduleButton.setAlpha(1)
+            breatheBtnGrp.setBackgroundColor(defaultColor)
         }
     }
     
-    func setScheduleStatus() {
-        scheduleButton.setTitle("Editing")
-        breatheButton.setHidden(true)
-        breatheEditButton.setHidden(false)
-    scheduleButton.setBackgroundImageNamed("Pressed")
-        scheduleButton.setAlpha(0.9)
-    }
-    
-    @IBAction func editBtnPressed() {
-        presentController(withName: "Schedule", context: "Breathe Game")
+    @IBAction func breatheBtnPressed() {
+        if schedulePressed == false{
+            presentController(withName: "Breathe Main", context: "Breathe Game")
+        }
+        else{
+            presentController(withName: "Schedule", context: "Breathe Game")
+        }
     }
 }

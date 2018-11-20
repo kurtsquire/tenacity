@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -52,7 +52,7 @@
                                     <group width="1" height="25" alignment="left" id="c9f-qc-JFV">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Time" id="aJg-HW-Scb"/>
-                                            <label alignment="right" verticalAlignment="center" text="O O O " id="Q40-uM-5me"/>
+                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="Q40-uM-5me"/>
                                         </items>
                                     </group>
                                     <label alignment="left" verticalAlignment="bottom" text="Breathe" id="3O7-6s-vds">
@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
-                                <segue destination="qBv-zQ-62v" kind="push" identifier="breath_btn_game" id="27A-E9-15l"/>
+                                <action selector="breatheBtnPressed" destination="NTV-tI-VkP" id="zb9-7J-jpO"/>
                             </connections>
                         </button>
                         <button alignment="left" hidden="YES" id="uH2-JN-7Z6">
@@ -80,15 +80,12 @@
                                 </items>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.77568493149999995" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
-                            <connections>
-                                <action selector="editBtnPressed" destination="NTV-tI-VkP" id="xZe-Uz-bAa"/>
-                            </connections>
                         </button>
                     </items>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     <connections>
+                        <outlet property="breatheBtnGrp" destination="Fkz-lZ-JKG" id="qwZ-v3-pvX"/>
                         <outlet property="breatheButton" destination="F8f-BH-JLT" id="eJ5-pe-pyv"/>
-                        <outlet property="breatheEditButton" destination="uH2-JN-7Z6" id="GRP-RQ-Xx7"/>
                         <outlet property="breatheFreLabel" destination="Q40-uM-5me" id="XAR-o1-5JL"/>
                         <outlet property="breatheTimeLabel" destination="aJg-HW-Scb" id="Lci-B9-4ky"/>
                         <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
@@ -96,13 +93,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="397" y="88.5"/>
-        </scene>
-        <!--Breathe Main-->
-        <scene sceneID="WM9-Uf-r2d">
-            <objects>
-                <controllerPlaceholder referencedIdentifier="Breathe Main" id="qBv-zQ-62v"/>
-            </objects>
-            <point key="canvasLocation" x="843" y="2"/>
         </scene>
     </scenes>
 </document>

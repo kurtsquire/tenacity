@@ -65,7 +65,6 @@ class ScheduleController: WKInterfaceController {
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-        print(segueIdentifier)
         if segueIdentifier == "schedule_to_main" {
             return self.time + " " + self.apm
         }
