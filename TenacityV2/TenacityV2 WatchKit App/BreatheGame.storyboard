@@ -59,7 +59,7 @@
                         </label>
                         <group width="136" height="108" alignment="center" verticalAlignment="center" hidden="YES" layout="overlap" radius="39" id="KQy-Mj-k0N">
                             <items>
-                                <button alignment="center" verticalAlignment="center" alpha="0.0" id="t78-me-hdE" userLabel="Ring-5">
+                                <button alignment="center" verticalAlignment="center" id="t78-me-hdE" userLabel="Ring-5">
                                     <group key="contentGroup" width="105" height="105" alignment="left" radius="52.5" id="iGD-XM-ISD">
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
@@ -84,14 +84,14 @@
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
                                 </button>
-                                <button alignment="center" verticalAlignment="center" id="d0G-wP-jyr" userLabel="BlackSpot">
-                                    <group key="contentGroup" width="30" height="30" alignment="left" radius="15" id="zqQ-xK-51q">
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </group>
-                                </button>
                                 <button alignment="center" verticalAlignment="center" id="wbv-dx-jyR">
                                     <group key="contentGroup" width="30" height="30" alignment="left" radius="15" id="axf-EO-l0N">
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" id="d0G-wP-jyr" userLabel="BlackSpot">
+                                    <group key="contentGroup" width="100" height="100" alignment="left" radius="50" id="zqQ-xK-51q">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </group>
                                 </button>
                             </items>
@@ -120,7 +120,8 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="BlackSpot" destination="d0G-wP-jyr" id="7Nb-s1-BOK"/>
+                        <outlet property="BlackSpot" destination="zqQ-xK-51q" id="Nh1-NT-CCZ"/>
+                        <outlet property="Button" destination="wbv-dx-jyR" id="Jr0-4v-vB4"/>
                         <outlet property="EndSessionButton" destination="neS-OY-XE9" id="GOe-Rx-TcR"/>
                         <outlet property="ReHome" destination="kEr-PB-94e" id="xJd-wD-X98"/>
                         <outlet property="Ring1" destination="t9A-zJ-rAy" id="eER-DU-iBb"/>

@@ -35,12 +35,14 @@ class GameController: WKInterfaceController {
     @IBOutlet var ReHome: WKInterfaceButton!
     @IBOutlet var timerSlider: WKInterfaceSlider!
     @IBOutlet var swipe: WKSwipeGestureRecognizer!
-    @IBOutlet var BlackSpot: WKInterfaceButton!
+    @IBOutlet var BlackSpot: WKInterfaceGroup!
     @IBOutlet var Ring1: WKInterfaceButton!
     @IBOutlet var Ring2: WKInterfaceButton!
     @IBOutlet var Ring3: WKInterfaceButton!
     @IBOutlet var Ring4: WKInterfaceButton!
     @IBOutlet var Ring5: WKInterfaceButton!
+    @IBOutlet var BreatheButton: WKInterfaceButton!
+    @IBOutlet var Button: WKInterfaceButton!
     
     @IBAction func EndSession() {
         seshend = true
@@ -105,15 +107,22 @@ class GameController: WKInterfaceController {
     }
     
     func animatebutton() -> Void {
+        Ring5.setAlpha(0)
+        set_black(set: 30)
+        BlackSpot.setAlpha(0)
+        Button.setAlpha(1)
         Ring1.setAlpha(0.5)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(1)
             self.Ring2.setAlpha(0.5)
+            self.BlackSpot.setAlpha(0.5)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0.5)
             self.Ring2.setAlpha(1)
             self.Ring3.setAlpha(0.5)
+            self.BlackSpot.setAlpha(1)
+            self.Button.setAlpha(0)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0)
@@ -141,20 +150,23 @@ class GameController: WKInterfaceController {
             self.set_black(set: 90)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { // change 2 to desired number of seconds
-            self.Ring5.setAlpha(0)
+            self.Ring5.setAlpha(1)
             self.reset_black()
         }
     }
     
     func reset_black() -> Void {
-        BlackSpot.setWidth(30)
-        BlackSpot.setHeight(30)
+        BlackSpot.setWidth(100)
+        BlackSpot.setHeight(100)
+        BlackSpot.setCornerRadius(100/2)
+        BlackSpot.setAlpha(1)
         return
     }
     
     func set_black(set: CGFloat) -> Void {
         BlackSpot.setWidth(set)
         BlackSpot.setHeight(set)
+        BlackSpot.setCornerRadius(set/2)
         return
     }
     
