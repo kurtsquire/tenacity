@@ -13,9 +13,13 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     
     var schedulePressed = false
+    var timer :Timer?
+    var red = 32, green = 148, blue = 250
+    var editColor: UIColor?
     let breatheGame = "Breathe Game"
     let lineAtkGame = "Line Attack Game"
     let gpsDrawGame = "GPS Draw Game"
+    let semaphore = DispatchSemaphore(value: 1)
     @IBOutlet var scheduleButton: WKInterfaceButton!
     @IBOutlet var breatheBtnGrp: WKInterfaceGroup!
     @IBOutlet var breatheTimeLabel: WKInterfaceLabel!
@@ -54,20 +58,46 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    @objc func fireTimer() {
+        self.changeBtnColor()
+    }
+    
+    func changeBtnColor(){
+        self.red = (self.red + 30) % 255
+        self.green = (self.green + 30) % 255
+        self.blue = (self.blue + 30) % 255
+        self.editColor = UIColor.init(red: CGFloat(self.red)/255, green: CGFloat(self.green)/255, blue: CGFloat(self.blue)/255, alpha: 1)
+        animate(withDuration: 1) {
+            self.breatheBtnGrp.setBackgroundColor(self.editColor)
+            self.lineAtkBtnGrp.setBackgroundColor(self.editColor)
+            self.gpsDrawBtnGrp.setBackgroundColor(self.editColor)
+        }
+    }
+    
+    func startTimer(){
+        if(self.timer == nil){
+            print("start")
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
+        }
+        self.changeBtnColor()
+    }
     
     @IBAction func scheduleAction() {
+        var defaultColor = UIColor.init(red: 32/255, green: 148/255, blue: 250/255, alpha: 1)
         if schedulePressed == false{
             schedulePressed = true
             scheduleButton.setTitle("Editing")
-            var editColor = UIColor.init(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
-            breatheBtnGrp.setBackgroundColor(editColor)
-            lineAtkBtnGrp.setBackgroundColor(editColor)
-            gpsDrawBtnGrp.setBackgroundColor(editColor)
+            
+            startTimer()
         }
         else if schedulePressed == true{
             schedulePressed = false
-            var defaultColor = UIColor.init(red: 32/255, green: 148/255, blue: 250/255, alpha: 1)
+            if (self.timer != nil){
+                print("stop")
+                self.timer!.invalidate()
+                self.timer = nil
+            }
             scheduleButton.setTitle("Schedule")
             breatheBtnGrp.setBackgroundColor(defaultColor)
             lineAtkBtnGrp.setBackgroundColor(defaultColor)
@@ -102,3 +132,4 @@ class InterfaceController: WKInterfaceController {
         }
     }
 }
+

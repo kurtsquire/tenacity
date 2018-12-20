@@ -32,7 +32,7 @@
                                     </label>
                                     <label alignment="center" verticalAlignment="bottom" text="game name" id="PZr-yd-ubA"/>
                                 </items>
-                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
                                 <segue destination="j1O-Sc-k0R" kind="modal" identifier="schedule_to_main" id="ZyM-Cg-nLU"/>
