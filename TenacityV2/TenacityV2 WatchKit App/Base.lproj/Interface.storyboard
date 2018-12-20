@@ -49,10 +49,21 @@
                         <button alignment="left" accessibilityIdentifier="breathe_btn" id="F8f-BH-JLT">
                             <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
                                 <items>
-                                    <group width="1" height="25" alignment="left" id="c9f-qc-JFV">
+                                    <group width="136" height="28" alignment="left" id="c9f-qc-JFV">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="aJg-HW-Scb"/>
-                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="Q40-uM-5me"/>
+                                            <group width="89" height="27" alignment="right" id="bdA-YG-IQq" userLabel="Frequency Tags">
+                                                <items>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="D6g-bb-Hpp"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="aqa-wI-gjk"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="6LE-SU-Lpb"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="eRP-AN-3fl"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="JOE-1Y-lpK"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="EaA-7U-Q51"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="wGO-1m-acN"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="eoH-g7-sNo"/>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <label alignment="left" verticalAlignment="bottom" text="Breathe" id="3O7-6s-vds">
@@ -108,6 +119,14 @@
                     <connections>
                         <outlet property="breatheBtnGrp" destination="Fkz-lZ-JKG" id="qwZ-v3-pvX"/>
                         <outlet property="breatheTimeLabel" destination="aJg-HW-Scb" id="Lci-B9-4ky"/>
+                        <outlet property="empty1" destination="D6g-bb-Hpp" id="Em5-x7-ees"/>
+                        <outlet property="empty2" destination="aqa-wI-gjk" id="Bfz-nd-XKN"/>
+                        <outlet property="empty3" destination="6LE-SU-Lpb" id="9iU-8I-QM2"/>
+                        <outlet property="empty4" destination="eRP-AN-3fl" id="YrA-wT-tdz"/>
+                        <outlet property="filled1" destination="JOE-1Y-lpK" id="tgi-wr-wTE"/>
+                        <outlet property="filled2" destination="EaA-7U-Q51" id="eZA-l9-yZM"/>
+                        <outlet property="filled3" destination="wGO-1m-acN" id="nZb-xk-Spv"/>
+                        <outlet property="filled4" destination="eoH-g7-sNo" id="m97-Oh-WsU"/>
                         <outlet property="gpmDrawTimeLabel" destination="Fme-6C-9FC" id="JkC-qe-RxT"/>
                         <outlet property="gpsDrawBtnGrp" destination="lhL-d8-PzN" id="dTs-dA-HtZ"/>
                         <outlet property="lineAtkBtnGrp" destination="AeW-8I-AqL" id="gH4-E2-Wi8"/>

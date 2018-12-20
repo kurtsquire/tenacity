@@ -27,6 +27,35 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var lineAtkTimeLabel: WKInterfaceLabel!
     @IBOutlet var gpsDrawBtnGrp: WKInterfaceGroup!
     @IBOutlet var gpmDrawTimeLabel: WKInterfaceLabel!
+
+    @IBOutlet var empty1: WKInterfaceImage!
+    @IBOutlet var empty2: WKInterfaceImage!
+    @IBOutlet var empty3: WKInterfaceImage!
+    @IBOutlet var empty4: WKInterfaceImage!
+    @IBOutlet var filled1: WKInterfaceImage!
+    @IBOutlet var filled2: WKInterfaceImage!
+    @IBOutlet var filled3: WKInterfaceImage!
+    @IBOutlet var filled4: WKInterfaceImage!
+
+//    @IBOutlet var filledFreCircles: [WKInterfaceImage]!
+    func changeFreTagColor(gameName:String, white:Int, green:Int){
+        var emptyFreCircle:[WKInterfaceImage] = [empty1, empty2, empty3, empty4]
+        var filledFreCircle:[WKInterfaceImage] = [filled1, filled2, filled3, filled4]
+        for i in 0...3{
+            emptyFreCircle[i].setHidden(false)
+        }
+        print(String(white)+String(green))
+        for i in 0..<(4 - white){
+            emptyFreCircle[i].setHidden(true)
+        }
+        for i in 0...3{
+            filledFreCircle[i].setHidden(false)
+        }
+        for i in 0..<(4 - green){
+            filledFreCircle[i].setHidden(true)
+        }
+    }
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -35,6 +64,7 @@ class InterfaceController: WKInterfaceController {
             if timeApm["game"] == breatheGame {
                 breatheTimeLabel.setHidden(false)
                 breatheTimeLabel.setText(timeApm["content"])
+                changeFreTagColor(gameName: "Breathe Game", white: 1, green: 2)
             }
             else if timeApm["game"] == lineAtkGame {
                 lineAtkTimeLabel.setHidden(false)
@@ -58,6 +88,8 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+
     
     @objc func fireTimer() {
         self.changeBtnColor()
