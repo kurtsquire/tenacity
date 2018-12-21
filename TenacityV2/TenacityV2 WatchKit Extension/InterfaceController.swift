@@ -96,11 +96,14 @@ class InterfaceController: WKInterfaceController {
     }
     
     func changeBtnColor(){
-        self.red = (self.red + 30) % 255
-        self.green = (self.green + 30) % 255
-        self.blue = (self.blue + 30) % 255
+        var random = Int.random(in: 1 ... 3)
+        if(random == 1){self.red = (self.red + 50) % 255}
+        else if(random == 2){
+            self.green = (self.green + 50) % 255
+        }
+        else{self.blue = (self.blue + 50) % 255}
         self.editColor = UIColor.init(red: CGFloat(self.red)/255, green: CGFloat(self.green)/255, blue: CGFloat(self.blue)/255, alpha: 1)
-        animate(withDuration: 1) {
+        animate(withDuration: 0.8) {
             self.breatheBtnGrp.setBackgroundColor(self.editColor)
             self.lineAtkBtnGrp.setBackgroundColor(self.editColor)
             self.gpsDrawBtnGrp.setBackgroundColor(self.editColor)
@@ -110,7 +113,7 @@ class InterfaceController: WKInterfaceController {
     func startTimer(){
         if(self.timer == nil){
             print("start")
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
         }
         self.changeBtnColor()
     }
