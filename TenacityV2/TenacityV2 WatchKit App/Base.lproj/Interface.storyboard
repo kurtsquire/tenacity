@@ -46,22 +46,22 @@
                                 </button>
                             </items>
                         </group>
-                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="F8f-BH-JLT">
-                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
+                        <button alignment="center" accessibilityIdentifier="breathe_btn" id="F8f-BH-JLT">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
                                 <items>
-                                    <group width="136" height="28" alignment="left" id="c9f-qc-JFV">
+                                    <group width="1" alignment="left" id="c9f-qc-JFV">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="aJg-HW-Scb"/>
                                             <group width="89" height="27" alignment="right" id="bdA-YG-IQq" userLabel="Frequency Tags">
                                                 <items>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="D6g-bb-Hpp"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="aqa-wI-gjk"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="6LE-SU-Lpb"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_empty" id="eRP-AN-3fl"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="JOE-1Y-lpK"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="EaA-7U-Q51"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="wGO-1m-acN"/>
-                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" image="circle_filled" contentMode="redraw" id="eoH-g7-sNo"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="D6g-bb-Hpp"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="aqa-wI-gjk"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="6LE-SU-Lpb"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="eRP-AN-3fl"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="JOE-1Y-lpK"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="EaA-7U-Q51"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="wGO-1m-acN"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="eoH-g7-sNo"/>
                                                 </items>
                                             </group>
                                         </items>
@@ -82,7 +82,6 @@
                                     <group width="1" height="25" alignment="left" id="5Vd-A4-bB1">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="00g-Lj-PJc"/>
-                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="CDH-cO-xsm"/>
                                         </items>
                                     </group>
                                     <label alignment="left" verticalAlignment="bottom" text="Line Attack" id="mwC-zP-fS7">
@@ -101,7 +100,6 @@
                                     <group width="1" height="25" alignment="left" id="peS-1g-KpZ">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="Fme-6C-9FC"/>
-                                            <label alignment="right" verticalAlignment="center" hidden="YES" text="O O O " id="E7B-DV-OrC"/>
                                         </items>
                                     </group>
                                     <label alignment="left" verticalAlignment="bottom" text="GPS Draw" id="hLx-ey-Rz1">
@@ -135,7 +133,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="397" y="88.5"/>
+            <point key="canvasLocation" x="397" y="87.5"/>
         </scene>
     </scenes>
 </document>
