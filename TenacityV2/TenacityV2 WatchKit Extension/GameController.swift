@@ -55,7 +55,9 @@ class GameController: WKInterfaceController {
     @IBOutlet var HeartRate: WKInterfaceLabel!
     
     @IBAction func EndSesh() {
-        self.presentController(withName: "Breathe Final", context: "finalscene")
+        if (tapCount != 0){
+            self.presentController(withName: "Breathe Final", context: "finalscene")
+        }
     }
     func DisplayInfo() {
         GroupAccuracy.setText(getSeshAccuracy(dictionary: seshGroups))
