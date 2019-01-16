@@ -143,10 +143,10 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func breatheBtnPressed() {
         if schedulePressed == false{
-            presentController(withName: "Breathe Main", context: "Breathe Game")
+            pushController(withName: "Breathe Main", context: "Breathe Game")
         }
         else{
-            presentController(withName: "Schedule", context: breatheGame)
+            pushController(withName: "Schedule", context: breatheGame)
         }
     }
     

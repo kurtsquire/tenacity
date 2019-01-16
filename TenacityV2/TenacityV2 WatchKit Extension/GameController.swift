@@ -14,18 +14,23 @@ var seconds = 60
 var seshGroups = [Int:[String:Any]] ()
 var cycleCount: Int = 0
 var device = WKInterfaceDevice.current()
+var tapCount = 0
+var wrong = 0
+
 
 class GameController: WKInterfaceController {
     
     var seshbegin = true
     var seshend = false
     var hapticCount: Int = 5
-    var tapCount = 0
+    
     var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
     
     var current_cycle: [String] = []
     var current_ts: [Date] = []
     var timer = Timer()
+    
+    
     
     @IBOutlet var animebutton: WKInterfaceGroup!
     @IBOutlet var myLabel: WKInterfaceLabel!
@@ -43,7 +48,20 @@ class GameController: WKInterfaceController {
     @IBOutlet var BreatheButton: WKInterfaceButton!
     @IBOutlet var Button: WKInterfaceButton!
     
-
+    //final screen labels
+    @IBOutlet var TapAccuracy: WKInterfaceLabel!
+    @IBOutlet var GroupAccuracy: WKInterfaceLabel!
+    @IBOutlet var BreatheRate: WKInterfaceLabel!
+    @IBOutlet var HeartRate: WKInterfaceLabel!
+    
+    @IBAction func EndSesh() {
+        self.presentController(withName: "Breathe Final", context: "finalscene")
+    }
+    func DisplayInfo() {
+        GroupAccuracy.setText(getSeshAccuracy(dictionary: seshGroups))
+        TapAccuracy.setText(String(tapCount-wrong/tapCount))
+    }
+    
     @IBAction func timerSlider(_ value: Float) {
         seconds = Int(value)
         timerLabel.setText(String(seconds))
@@ -228,6 +246,7 @@ class GameController: WKInterfaceController {
     
     func fail(){
         cycleCount+=1
+        wrong+=1
         WKInterfaceDevice.current().play(.failure)
         seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
         current_cycle.removeAll()
@@ -252,11 +271,17 @@ class GameController: WKInterfaceController {
         }
     }
     
-    //    override func awake(withContext context: Any?) {
-    //        super.awake(withContext: context)
-    //        // Configure interface objects here.
-    //    }
-    //
+        override func awake(withContext context: Any?) {
+            super.awake(withContext: context)
+            if(context == nil){
+                print("nope")
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "finalscene"))!{
+                DisplayInfo()
+            }
+            // Configure interface objects here.
+        }
+    
     //    override func willActivate() {
     //        // This method is called when watch view controller is about to be visible to user
     //        super.willActivate()
