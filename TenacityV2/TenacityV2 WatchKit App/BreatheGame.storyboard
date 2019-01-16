@@ -43,7 +43,7 @@
             <objects>
                 <controller identifier="Breathe" id="KPJ-Gv-cVQ" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu">
+                        <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu" userLabel="Tap Label">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="0fP-tN-T8g">
                                     <connections>
@@ -110,12 +110,7 @@
                         </group>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="End Session" id="neS-OY-XE9">
                             <connections>
-                                <action selector="EndSession" destination="KPJ-Gv-cVQ" id="X7n-ll-Ng4"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" hidden="YES" title="Return Home" enabled="NO" id="kEr-PB-94e">
-                            <connections>
-                                <action selector="ReturnHome" destination="KPJ-Gv-cVQ" id="93W-Z3-3B8"/>
+                                <segue destination="HrM-3P-rCB" kind="modal" id="kDc-Zf-gpU"/>
                             </connections>
                         </button>
                     </items>
@@ -123,7 +118,6 @@
                         <outlet property="BlackSpot" destination="zqQ-xK-51q" id="Nh1-NT-CCZ"/>
                         <outlet property="Button" destination="wbv-dx-jyR" id="Jr0-4v-vB4"/>
                         <outlet property="EndSessionButton" destination="neS-OY-XE9" id="GOe-Rx-TcR"/>
-                        <outlet property="ReHome" destination="kEr-PB-94e" id="xJd-wD-X98"/>
                         <outlet property="Ring1" destination="t9A-zJ-rAy" id="eER-DU-iBb"/>
                         <outlet property="Ring2" destination="gvk-ou-fO6" id="qd0-50-iuW"/>
                         <outlet property="Ring3" destination="hrY-OB-ErC" id="JEU-Vd-sla"/>
@@ -141,7 +135,7 @@
         <!--Breathe Final-->
         <scene sceneID="P9f-nV-lub">
             <objects>
-                <controller identifier="Breathe Final" id="HrM-3P-rCB">
+                <controller identifier="Breathe Final" id="HrM-3P-rCB" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="D3G-ex-REE" userLabel="Stats_Table">
                             <items>
@@ -245,7 +239,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="614" y="51"/>
+            <point key="canvasLocation" x="614" y="52"/>
         </scene>
     </scenes>
 </document>

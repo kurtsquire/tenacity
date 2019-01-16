@@ -32,7 +32,6 @@ class GameController: WKInterfaceController {
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
     @IBOutlet var EndSessionButton: WKInterfaceButton!
     @IBOutlet var timerLabel: WKInterfaceLabel!
-    @IBOutlet var ReHome: WKInterfaceButton!
     @IBOutlet var timerSlider: WKInterfaceSlider!
     @IBOutlet var swipe: WKSwipeGestureRecognizer!
     @IBOutlet var BlackSpot: WKInterfaceGroup!
@@ -44,21 +43,6 @@ class GameController: WKInterfaceController {
     @IBOutlet var BreatheButton: WKInterfaceButton!
     @IBOutlet var Button: WKInterfaceButton!
     
-    @IBAction func EndSession() {
-        seshend = true
-        EndSessionButton.setEnabled(false)
-        EndSessionButton.setHidden(true)
-        ReHome.setEnabled(true)
-        ReHome.setHidden(false)
-        myLabel.setHidden(false)
-        animebutton.setHidden(true)
-        myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
-    }
-    
-
-    @IBAction func ReturnHome() {
-        self.popToRootController()
-    }
 
     @IBAction func timerSlider(_ value: Float) {
         seconds = Int(value)
