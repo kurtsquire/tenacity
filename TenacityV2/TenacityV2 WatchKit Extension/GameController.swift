@@ -60,8 +60,13 @@ class GameController: WKInterfaceController {
         }
     }
     func DisplayInfo() {
+        print("Taps: " + String(tapCount))
+        print("Wrong: " + String(wrong))
+        print("Right " + String(tapCount-wrong))
         GroupAccuracy.setText(getSeshAccuracy(dictionary: seshGroups))
-        TapAccuracy.setText(String(tapCount-wrong/tapCount))
+        let right = Double(tapCount)-Double(wrong)
+        let tapacc = Int((right/Double(tapCount))*Double(100))
+        TapAccuracy.setText(String(tapacc)+"%")
     }
     
     @IBAction func timerSlider(_ value: Float) {
@@ -100,7 +105,7 @@ class GameController: WKInterfaceController {
         }
         print(total)
         print(true_total)
-        return String(Double(true_total/total*100)) + "%"
+        return String(Int(true_total/total*100)) + "%"
     }
     
     // This function is used to compare Any variable types as swift will not let you use the == comparison if a var is declared as Any
