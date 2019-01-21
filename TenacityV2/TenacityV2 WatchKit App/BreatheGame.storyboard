@@ -192,32 +192,7 @@
                                                         <label alignment="left" verticalAlignment="bottom" text="12" numberOfLines="0" id="ev5-To-cZI" userLabel="BreathRate">
                                                             <fontDescription key="font" type="italicSystem" pointSize="22"/>
                                                         </label>
-                                                        <label alignment="left" verticalAlignment="bottom" text="per min" textAlignment="center" numberOfLines="0" id="CrK-FA-7lZ">
-                                                            <fontDescription key="font" type="italicSystem" pointSize="9"/>
-                                                        </label>
-                                                    </items>
-                                                </group>
-                                            </items>
-                                        </group>
-                                    </items>
-                                </group>
-                                <group alignment="left" verticalAlignment="center" spacing="3" id="3qf-zn-cVd">
-                                    <items>
-                                        <imageView width="40" height="40" alignment="left" image="hearts" id="gf3-cQ-bwq">
-                                            <color key="tintColor" red="0.98171418909999997" green="0.1153780375" blue="0.036509147890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </imageView>
-                                        <group alignment="left" layout="vertical" spacing="0.0" id="AOB-vr-Caq">
-                                            <items>
-                                                <label alignment="left" text="Heart Rate" id="bV3-8F-JqR">
-                                                    <color key="textColor" red="0.98171418909999997" green="0.1153780375" blue="0.036509147890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="10"/>
-                                                </label>
-                                                <group alignment="left" spacing="1" id="ifw-5F-sgw">
-                                                    <items>
-                                                        <label alignment="left" verticalAlignment="bottom" text="60" numberOfLines="0" id="2a4-Px-Gf9" userLabel="HeartRate">
-                                                            <fontDescription key="font" type="italicSystem" pointSize="22"/>
-                                                        </label>
-                                                        <label alignment="left" verticalAlignment="bottom" text="per min" textAlignment="center" numberOfLines="0" id="W9r-hb-yxh">
+                                                        <label alignment="left" verticalAlignment="bottom" text="per second" textAlignment="center" numberOfLines="0" id="CrK-FA-7lZ" userLabel="per second">
                                                             <fontDescription key="font" type="italicSystem" pointSize="9"/>
                                                         </label>
                                                     </items>
@@ -235,7 +210,6 @@
                     <connections>
                         <outlet property="BreatheRate" destination="ev5-To-cZI" id="npb-0m-6Fs"/>
                         <outlet property="GroupAccuracy" destination="Tey-KL-5KL" id="sMX-wh-hb6"/>
-                        <outlet property="HeartRate" destination="2a4-Px-Gf9" id="Dy3-NJ-7wl"/>
                         <outlet property="TapAccuracy" destination="UNL-l4-r7E" id="Tgk-ux-sQt"/>
                     </connections>
                 </controller>

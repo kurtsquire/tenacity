@@ -67,6 +67,10 @@ class GameController: WKInterfaceController {
         let right = Double(tapCount)-Double(wrong)
         let tapacc = Int((right/Double(tapCount))*Double(100))
         TapAccuracy.setText(String(tapacc)+"%")
+        
+        let intervalAvg = calcIntervalAvg(intervals: findTimeDeltas(dictionary: seshGroups))    // calculating seconds per breath
+        let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
+        BreatheRate.setText(String(format:"%.2f", breathsPerSec))
     }
     
     @IBAction func timerSlider(_ value: Float) {
@@ -276,6 +280,59 @@ class GameController: WKInterfaceController {
         else{
             fail()
         }
+    }
+    
+    func findTimeDeltas(dictionary:[Int:[String:Any]]) -> [TimeInterval] {  // call this function in calculateBreathRate to gather time deltas
+        
+        var timeDeltas : [TimeInterval] = []    // creating empty array
+        
+        if dictionary.isEmpty == true {         // checking to see if there were any inputs/tap groups
+            return timeDeltas                   // return empty array if dictionary is empty
+        }
+        
+        for (groupNum, dict) in dictionary {
+            
+            let stampList = dict["timeStamps"] as! [Date]
+            var i = 0                                   // counter for (n-1)th date object in array
+            
+            if groupNum == 1 {
+                if dict.count > 1 {                     // if first group contains more than one date object
+                    for stamp in stampList[1...]{       // skip first date, iterate over other dates in the array
+                        
+                        timeDeltas.append(stamp.timeIntervalSince(stampList[i]))    // append time difference of (n)th date - (n-1)th date
+                        i += 1                          // increment counter
+                    }
+                }
+            } else {
+                let lastStamp = (dictionary[groupNum - 1]!["timeStamps"] as! [Date]).last   // find the last date in the previous group
+                let currStamp = (dict["timeStamps"] as! [Date]).first                       // find the first date in the current group
+                
+                timeDeltas.append((currStamp!.timeIntervalSince(lastStamp!)))       // appending timeInterval between first date of current group and last date of previous group
+                
+                if dict.count > 1 {
+                    for stamp in stampList[1...]{       // skip first date, iterate over other dates in the list
+                        
+                        timeDeltas.append(stamp.timeIntervalSince(stampList[i]))    // append time difference of (n)th date - (n-1)th date
+                        i += 1                          // increment counter
+                    }
+                }
+            }
+        }
+        return timeDeltas
+    }
+    
+    func calcIntervalAvg(intervals: [TimeInterval]) -> Double {     // calculates the average of a list of intervals
+        var intervalAvg = Double()
+        var intervalSum = Double()
+        let intervalCount = Double(intervals.count)
+        
+        for time in intervals {
+            intervalSum += time
+        }
+        
+        intervalAvg = (intervalSum / intervalCount)
+        
+        return intervalAvg
     }
     
         override func awake(withContext context: Any?) {
