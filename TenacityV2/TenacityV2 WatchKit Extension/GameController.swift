@@ -129,6 +129,7 @@ class GameController: WKInterfaceController {
             self.Ring1.setAlpha(1)
             self.Ring2.setAlpha(0.5)
             self.BlackSpot.setAlpha(0.5)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0.5)
@@ -136,6 +137,7 @@ class GameController: WKInterfaceController {
             self.Ring3.setAlpha(0.5)
             self.BlackSpot.setAlpha(1)
             self.Button.setAlpha(0)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0)
@@ -143,6 +145,7 @@ class GameController: WKInterfaceController {
             self.Ring3.setAlpha(1)
             self.Ring4.setAlpha(0.5)
             self.set_black(set: 45)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // change 2 to desired number of seconds
             self.Ring2.setAlpha(0)
@@ -150,21 +153,25 @@ class GameController: WKInterfaceController {
             self.Ring4.setAlpha(1)
             self.Ring5.setAlpha(0.5)
             self.set_black(set: 60)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
             self.Ring3.setAlpha(0)
             self.Ring4.setAlpha(0.5)
             self.Ring5.setAlpha(1)
             self.set_black(set: 75)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { // change 2 to desired number of seconds
             self.Ring4.setAlpha(0)
             self.Ring5.setAlpha(0.5)
             self.set_black(set: 90)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { // change 2 to desired number of seconds
             self.Ring5.setAlpha(1)
             self.reset_black()
+            WKInterfaceDevice.current().play(.click)
         }
     }
     
