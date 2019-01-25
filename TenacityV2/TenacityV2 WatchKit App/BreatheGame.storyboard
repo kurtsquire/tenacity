@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--Breathe Main-->
@@ -14,23 +14,21 @@
             <objects>
                 <controller identifier="Breathe Main" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label width="61" height="51" alignment="center" text="60" textAlignment="center" id="K3z-cc-2DT">
+                        <label width="61" height="51" alignment="center" text="5" textAlignment="center" id="K3z-cc-2DT">
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </label>
-                        <slider width="1" alignment="center" verticalAlignment="bottom" value="60" minimum="30" maximum="120" steps="3" id="aYJ-LM-sHM">
+                        <slider width="1" alignment="center" verticalAlignment="bottom" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
                             <connections>
                                 <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
                             </connections>
                         </slider>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
                             <connections>
-                                <action selector="StartSeshButton" destination="2Te-ZM-Pri" id="vd3-PH-tWB"/>
-                                <segue destination="KPJ-Gv-cVQ" kind="modal" id="YYD-km-zs1"/>
+                                <action selector="StartGame" destination="2Te-ZM-Pri" id="3WK-fL-4ta"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
-                        <outlet property="StartSeshButton" destination="08R-uK-JaF" id="O2L-pI-AaQ"/>
                         <outlet property="timerLabel" destination="K3z-cc-2DT" id="kBS-T8-GrR"/>
                         <outlet property="timerSlider" destination="aYJ-LM-sHM" id="86u-TQ-RL8"/>
                     </connections>
@@ -43,7 +41,7 @@
             <objects>
                 <controller identifier="Breathe" id="KPJ-Gv-cVQ" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu" userLabel="Tap Label">
+                        <label width="1" height="1" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu" userLabel="Tap Label">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="0fP-tN-T8g">
                                     <connections>
@@ -57,7 +55,7 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </label>
-                        <group width="136" height="108" alignment="center" verticalAlignment="center" hidden="YES" layout="overlap" radius="39" id="KQy-Mj-k0N">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" layout="overlap" radius="39" id="KQy-Mj-k0N">
                             <items>
                                 <button alignment="center" verticalAlignment="center" id="t78-me-hdE" userLabel="Ring-5">
                                     <group key="contentGroup" width="105" height="105" alignment="left" radius="52.5" id="iGD-XM-ISD">
@@ -108,16 +106,10 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </group>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="End Session" id="neS-OY-XE9">
-                            <connections>
-                                <action selector="EndSesh" destination="KPJ-Gv-cVQ" id="IhT-zN-dt1"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="BlackSpot" destination="zqQ-xK-51q" id="Nh1-NT-CCZ"/>
                         <outlet property="Button" destination="wbv-dx-jyR" id="Jr0-4v-vB4"/>
-                        <outlet property="EndSessionButton" destination="neS-OY-XE9" id="GOe-Rx-TcR"/>
                         <outlet property="Ring1" destination="t9A-zJ-rAy" id="eER-DU-iBb"/>
                         <outlet property="Ring2" destination="gvk-ou-fO6" id="qd0-50-iuW"/>
                         <outlet property="Ring3" destination="hrY-OB-ErC" id="JEU-Vd-sla"/>
@@ -201,7 +193,11 @@
                                         </group>
                                     </items>
                                 </group>
-                                <button width="1" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq"/>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq">
+                                    <connections>
+                                        <action selector="Finish" destination="HrM-3P-rCB" id="DeI-F4-slQ"/>
+                                    </connections>
+                                </button>
                             </items>
                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             <edgeInsets key="margins" left="5" right="0.0" top="3" bottom="5"/>

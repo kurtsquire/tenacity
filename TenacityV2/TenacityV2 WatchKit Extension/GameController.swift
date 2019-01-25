@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 //ALL DATA THAT MUST BE USED OUTSIDE OF THE CURRENT SCENE MUST BE PUT HERE
-var seconds = 60
+var seconds = 5
 var seshGroups = [Int:[String:Any]] ()
 var cycleCount: Int = 0
 var device = WKInterfaceDevice.current()
@@ -35,7 +35,6 @@ class GameController: WKInterfaceController {
     @IBOutlet var animebutton: WKInterfaceGroup!
     @IBOutlet var myLabel: WKInterfaceLabel!
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
-    @IBOutlet var EndSessionButton: WKInterfaceButton!
     @IBOutlet var timerLabel: WKInterfaceLabel!
     @IBOutlet var timerSlider: WKInterfaceSlider!
     @IBOutlet var swipe: WKSwipeGestureRecognizer!
@@ -45,16 +44,14 @@ class GameController: WKInterfaceController {
     @IBOutlet var Ring3: WKInterfaceButton!
     @IBOutlet var Ring4: WKInterfaceButton!
     @IBOutlet var Ring5: WKInterfaceButton!
-    @IBOutlet var BreatheButton: WKInterfaceButton!
     @IBOutlet var Button: WKInterfaceButton!
     
     //final screen labels
     @IBOutlet var TapAccuracy: WKInterfaceLabel!
     @IBOutlet var GroupAccuracy: WKInterfaceLabel!
     @IBOutlet var BreatheRate: WKInterfaceLabel!
-    @IBOutlet var HeartRate: WKInterfaceLabel!
     
-    @IBAction func EndSesh() {
+    func EndSesh() {
         if (tapCount != 0){
             self.presentController(withName: "Breathe Final", context: "finalscene")
         }
@@ -73,17 +70,31 @@ class GameController: WKInterfaceController {
         BreatheRate.setText(String(format:"%.2f", breathsPerSec))
     }
     
+    @IBAction func StartGame() {
+        self.presentController(withName: "Breathe", context: "game")
+    }
+    
     @IBAction func timerSlider(_ value: Float) {
         seconds = Int(value)
         timerLabel.setText(String(seconds))
         print(seconds)
     }
     
+    @IBAction func Finish() {
+        seconds = 5
+        seshGroups = [Int:[String:Any]] ()
+        cycleCount = 0
+        device = WKInterfaceDevice.current()
+        tapCount = 0
+        wrong = 0
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
+    }
     
     @objc func counter(){
         seconds -= 1
         print(seconds)
-        if (seconds == 0){
+        if (seconds <= 0){
+            EndSesh()
             timer.invalidate()
         }
     }
@@ -348,7 +359,14 @@ class GameController: WKInterfaceController {
                 print("nope")
             }
             else if (isEqual(type: String.self, a: context as Any, b: "finalscene"))!{
+                WKInterfaceController.reloadRootControllers(withNames: ["Breathe Final"], contexts: ["final"])
                 DisplayInfo()
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "final"))!{
+                DisplayInfo()
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "game"))!{
+                WKInterfaceController.reloadRootControllers(withNames: ["Breathe"], contexts: ["Breathe"])
             }
             // Configure interface objects here.
         }
