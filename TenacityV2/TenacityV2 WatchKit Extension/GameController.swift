@@ -71,7 +71,7 @@ class GameController: WKInterfaceController {
     }
     
     @IBAction func StartGame() {
-        self.presentController(withName: "Breathe", context: "game")
+        WKInterfaceController.reloadRootControllers(withNames: ["Breathe"], contexts: ["Breathe"])
     }
     
     @IBAction func timerSlider(_ value: Float) {
