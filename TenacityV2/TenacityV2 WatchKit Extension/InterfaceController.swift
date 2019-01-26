@@ -112,7 +112,6 @@ class InterfaceController: WKInterfaceController {
     
     func startTimer(){
         if(self.timer == nil){
-            print("start")
             self.timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector:  #selector(fireTimer), userInfo: nil, repeats: true)
         }
         self.changeBtnColor()
@@ -129,7 +128,6 @@ class InterfaceController: WKInterfaceController {
         else if schedulePressed == true{
             schedulePressed = false
             if (self.timer != nil){
-                print("stop")
                 self.timer!.invalidate()
                 self.timer = nil
             }

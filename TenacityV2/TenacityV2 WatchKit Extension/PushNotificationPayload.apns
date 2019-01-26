@@ -1,8 +1,8 @@
 {
     "aps": {
         "alert": {
-            "body": "Test message",
-            "title": "Optional title"
+            "body": "Time to Play Game!",
+            "gameName": "Breathe"
         },
         "category": "myCategory",
         "thread-id":"5280"

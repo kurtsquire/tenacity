@@ -12,25 +12,18 @@
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <notificationController id="YCC-NB-fut" customClass="NotificationController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Time to Play! " id="IdU-wH-bcW"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf" customClass="NotificationController" customModule="TenacityV2_WatchKit_Extension"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="AL4-kl-RoB" kind="relationship" relationship="dynamicNotificationInterface" id="JWG-94-N1t"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="171" y="870"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="TenacityV2_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="419" y="870"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="I5M-Gd-aUY">
@@ -134,6 +127,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="397" y="87.5"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="4Ms-oN-DDZ">
+            <objects>
+                <controller id="AL4-kl-RoB" customClass="NotificationController" customModule="TenacityV2_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Time to Play! " id="Txf-yV-1Hg"/>
+                    </items>
+                    <connections>
+                        <outlet property="gameNameLabel" destination="Txf-yV-1Hg" id="coo-13-uvN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="870"/>
         </scene>
     </scenes>
 </document>
