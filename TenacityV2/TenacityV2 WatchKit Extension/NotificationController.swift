@@ -31,12 +31,12 @@ class NotificationController: WKUserNotificationInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
     override func didReceive(_ notification: UNNotification, withCompletion completionHandler: @escaping (WKUserNotificationInterfaceType) -> Swift.Void) {
-        // After populating your dynamic notification interface call the completion block.
-//        let gameName = "Time to play " + notification["aps"]!["gameName"]!
-//        gameNameLabel.setText("Time to play "+gameName+"!")
-        print("this method is called")
+        print("notification is received!")
+//         After populating your dynamic notification interface call the completion block.
+        let gameName = "Time to play " + notification.request.content.body
+        gameNameLabel.setText("Time to play game \(gameName)!")
         print(notification)
         
         completionHandler(.custom)

@@ -66,10 +66,8 @@ class ScheduleController: WKInterfaceController {
         
         if (tempTime != -1){
             dateComponents.hour = tempTime
-            dateComponents.minute = 7
-            
+            dateComponents.minute = 55
 
-            // Create the trigger as a repeating event.
             let trigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents, repeats: false)
         
@@ -89,6 +87,8 @@ class ScheduleController: WKInterfaceController {
                     print(error)
                 }
             }
+            
+            print("notification has been set at \(tempTime)")
         }
     }
 
