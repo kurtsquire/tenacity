@@ -106,10 +106,22 @@ class ScheduleController: WKInterfaceController {
         self.time = String(Array((1...12))[value])
     }
     
+    func modifyLocalStorage(time:String, apm:String, gameName:String){
+        let defaults = UserDefaults.standard
+        var gameInfo = UserDefaults.standard.object(forKey: "gameInfo") as? [String : [String : String]]
+        if gameInfo == nil {
+            gameInfo = [gameName: ["time": time, "apm": apm]]
+        }
+        else{
+            gameInfo![gameName] = ["time": time, "apm": apm]
+        }
+        defaults.set(gameInfo, forKey: "gameInfo")
+    }
+    
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         if segueIdentifier == "schedule_to_main" {
             self.notificationTrigger(time: self.time, apm: self.apm, gameName: self.game)
-            
+            self.modifyLocalStorage(time: self.time, apm: self.apm, gameName: self.game)
             return ["content": self.time + " " + self.apm, "game": self.game]
         }
 

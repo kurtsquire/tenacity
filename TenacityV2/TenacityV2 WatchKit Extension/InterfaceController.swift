@@ -74,24 +74,44 @@ class InterfaceController: WKInterfaceController {
                 print(error)
             }
         }
+        
+        // remove 'cancel'
         setTitle("")
-        if let timeApm = context as? [String: String]{
-            if timeApm["game"] == breatheGame {
+        
+        // get the set timing from other apps
+        let gameInfo = UserDefaults.standard.object(forKey: "gameInfo") as? [String : [String : String]]
+        print("gameInfo \(gameInfo)")
+        if gameInfo != nil{
+            if let val: [String: String] = gameInfo![breatheGame] as? [String : String] {
+                print("breathe timing found")
                 breatheTimeLabel.setHidden(false)
-                breatheTimeLabel.setText(timeApm["content"])
+                breatheTimeLabel.setText(val["time"]! + val["apm"]!)
                 changeFreTagColor(gameName: "Breathe Game", white: 1, green: 2)
             }
-            else if timeApm["game"] == lineAtkGame {
+            if let val: [String: String] = gameInfo![lineAtkGame] as? [String : String] {
+                print("line atk game timing found")
                 lineAtkTimeLabel.setHidden(false)
-                lineAtkTimeLabel.setText(timeApm["content"])
-            }
-            else if timeApm["game"] == gpsDrawGame {
-                gpmDrawTimeLabel.setHidden(false)
-                gpmDrawTimeLabel.setText(timeApm["content"])
+                lineAtkTimeLabel.setText(val["time"]! + val["apm"]!)
             }
         }
         else{
+            print("no game info found!")
         }
+//        if let timeApm = context as? [String: String]{
+//            if timeApm["game"] == breatheGame {
+//
+//
+//            }
+//            else if timeApm["game"] == lineAtkGame {
+//                lineAtkTimeLabel.setHidden(false)
+//                lineAtkTimeLabel.setText(timeApm["content"])
+//            }
+//            else if timeApm["game"] == gpsDrawGame {
+//                gpmDrawTimeLabel.setHidden(false)
+//                gpmDrawTimeLabel.setText(timeApm["content"])
+//            }
+//        }
+      
     }
     
     override func willActivate() {
