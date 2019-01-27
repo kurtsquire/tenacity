@@ -56,8 +56,7 @@ class ScheduleController: WKInterfaceController {
     func notificationTrigger(time:String, apm:String, gameName:String){
         // Configure the recurring date.
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
-        let test = Calendar.current.date(byAdding: .day, value: 0, to: Date())
-        var dateComponents = Calendar(identifier: .gregorian).dateComponents(Set(arrayLiteral: .timeZone, .year, .month, .day, .hour, .minute, .second), from: test!)
+        var dateComponents = Calendar(identifier: .gregorian).dateComponents(Set(arrayLiteral: .timeZone, .year, .month, .day, .hour, .minute, .second), from: tomorrow!)
         
         var tempTime:Int = Int(self.time) ?? -1
         if (self.apm == "PM" && tempTime != -1){
@@ -86,7 +85,7 @@ class ScheduleController: WKInterfaceController {
                     let request = UNNotificationRequest(identifier: uuidString,content: content, trigger: trigger)
                     notificationCenter.add(request) { (error) in
                         if error != nil {
-                            print(error)
+                            print(error!)
                         }
                     }
                 print("notification will be triggered at \(dateComponents.month!)/\(dateComponents.day!) at \(dateComponents.hour!):\(dateComponents.minute!)")
