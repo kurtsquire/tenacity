@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import UserNotifications
 
 class InterfaceController: WKInterfaceController {
     
@@ -59,6 +59,21 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        let center = UNUserNotificationCenter.current()
+        // Request permission to display alerts and play sounds.
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
+            if error == nil {
+                if success == true {
+                    print("Permission granted")
+                }
+                else {
+                    print("Permission denied")
+                }
+            }
+            else {
+                print(error)
+            }
+        }
         setTitle("")
         if let timeApm = context as? [String: String]{
             if timeApm["game"] == breatheGame {

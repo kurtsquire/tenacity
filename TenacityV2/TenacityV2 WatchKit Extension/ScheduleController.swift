@@ -30,8 +30,8 @@ class ScheduleController: WKInterfaceController {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-    self.game = context as! String
-    GameName.setText(self.game)
+        self.game = context as! String
+        GameName.setText(self.game)
     }
 
     override func willActivate() {
@@ -65,32 +65,34 @@ class ScheduleController: WKInterfaceController {
         }
         
         if (tempTime != -1){
-            dateComponents.hour = tempTime
-            dateComponents.minute = 55
-
-            let trigger = UNCalendarNotificationTrigger(
-            dateMatching: dateComponents, repeats: false)
-        
-        
-            let content = UNMutableNotificationContent()
-            content.title = "Time to Play Game!"
-            content.body = "It is time to play \(gameName)!"
-            content.categoryIdentifier = "myCategory"
-            
-            let uuidString = UUID().uuidString
-            let request = UNNotificationRequest(identifier: uuidString,content: content, trigger: trigger)
-            
             // Schedule the request with the system.
             let notificationCenter = UNUserNotificationCenter.current()
-            notificationCenter.add(request) { (error) in
-                if error != nil {
-                    print(error)
-                }
-            }
-            
-            print("notification has been set at \(tempTime)")
-        }
-    }
+            notificationCenter.getNotificationSettings { (settings) in
+                // Do not schedule notifications if not authorized.
+                guard settings.authorizationStatus == .authorized else {return}
+                    dateComponents.hour = tempTime
+                    dateComponents.minute = 0
+                    
+                    let trigger = UNCalendarNotificationTrigger(
+                        dateMatching: dateComponents, repeats: false)
+                
+                    let content = UNMutableNotificationContent()
+                    content.title = "Time to Play Game!"
+                    content.body = "It is time to play \(gameName)!"
+                    content.categoryIdentifier = "myCategory"
+                    content.sound = UNNotificationSound.default()
+                    
+                    let uuidString = UUID().uuidString
+                    let request = UNNotificationRequest(identifier: uuidString,content: content, trigger: trigger)
+                    notificationCenter.add(request) { (error) in
+                        if error != nil {
+                            print(error)
+                        }
+                    }
+                print("notification will be triggered at \(dateComponents.month!)/\(dateComponents.day!) at \(dateComponents.hour!):\(dateComponents.minute!)")
+            }// getNotificationSetting
+        }// tempTime
+    }// func
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
@@ -107,9 +109,8 @@ class ScheduleController: WKInterfaceController {
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         if segueIdentifier == "schedule_to_main" {
-            if (self.time != nil){
-                self.notificationTrigger(time: self.time, apm: self.apm, gameName: self.game)
-            }
+            self.notificationTrigger(time: self.time, apm: self.apm, gameName: self.game)
+            
             return ["content": self.time + " " + self.apm, "game": self.game]
         }
 
