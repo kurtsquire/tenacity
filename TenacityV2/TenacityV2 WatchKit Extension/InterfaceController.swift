@@ -4,7 +4,7 @@
 //
 //  Created by PLL on 10/8/18.
 //  Copyright © 2018 PLL. All rights reserved.
-//
+//this is a comment richard is here 
 
 import WatchKit
 import Foundation
@@ -131,7 +131,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     func changeBtnColor(){
-        var random = Int.random(in: 1 ... 3)
+        let random = Int(arc4random_uniform(3))+1
+        //var random = Int.random(in: 1 ... 3)
         if(random == 1){self.red = (self.red + 50) % 255}
         else if(random == 2){
             self.green = (self.green + 50) % 255
@@ -153,7 +154,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func scheduleAction() {
-        var defaultColor = UIColor.init(red: 32/255, green: 148/255, blue: 250/255, alpha: 1)
+        let defaultColor = UIColor.init(red: 32/255, green: 148/255, blue: 250/255, alpha: 1)
         if schedulePressed == false{
             schedulePressed = true
             scheduleButton.setTitle("Editing")
@@ -175,10 +176,10 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func breatheBtnPressed() {
         if schedulePressed == false{
-            presentController(withName: "Breathe Main", context: "Breathe Game")
+            pushController(withName: "Breathe Main", context: "Breathe Game")
         }
         else{
-            presentController(withName: "Schedule", context: breatheGame)
+            pushController(withName: "Schedule", context: breatheGame)
         }
     }
     

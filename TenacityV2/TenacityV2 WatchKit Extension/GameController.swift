@@ -10,29 +10,32 @@ import WatchKit
 import Foundation
 
 //ALL DATA THAT MUST BE USED OUTSIDE OF THE CURRENT SCENE MUST BE PUT HERE
-var seconds = 60
+var seconds = 5
 var seshGroups = [Int:[String:Any]] ()
 var cycleCount: Int = 0
 var device = WKInterfaceDevice.current()
+var tapCount = 0
+var wrong = 0
+
 
 class GameController: WKInterfaceController {
     
     var seshbegin = true
     var seshend = false
     var hapticCount: Int = 5
-    var tapCount = 0
+    
     var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
     
     var current_cycle: [String] = []
     var current_ts: [Date] = []
     var timer = Timer()
     
+    
+    
     @IBOutlet var animebutton: WKInterfaceGroup!
     @IBOutlet var myLabel: WKInterfaceLabel!
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
-    @IBOutlet var EndSessionButton: WKInterfaceButton!
     @IBOutlet var timerLabel: WKInterfaceLabel!
-    @IBOutlet var ReHome: WKInterfaceButton!
     @IBOutlet var timerSlider: WKInterfaceSlider!
     @IBOutlet var swipe: WKSwipeGestureRecognizer!
     @IBOutlet var BlackSpot: WKInterfaceGroup!
@@ -41,36 +44,57 @@ class GameController: WKInterfaceController {
     @IBOutlet var Ring3: WKInterfaceButton!
     @IBOutlet var Ring4: WKInterfaceButton!
     @IBOutlet var Ring5: WKInterfaceButton!
-    @IBOutlet var BreatheButton: WKInterfaceButton!
     @IBOutlet var Button: WKInterfaceButton!
     
-    @IBAction func EndSession() {
-        seshend = true
-        EndSessionButton.setEnabled(false)
-        EndSessionButton.setHidden(true)
-        ReHome.setEnabled(true)
-        ReHome.setHidden(false)
-        myLabel.setHidden(false)
-        animebutton.setHidden(true)
-        myLabel.setText("Cycles: \(cycleCount) \n Session Accuracy: \(getSeshAccuracy(dictionary: seshGroups))")
+    //final screen labels
+    @IBOutlet var TapAccuracy: WKInterfaceLabel!
+    @IBOutlet var GroupAccuracy: WKInterfaceLabel!
+    @IBOutlet var BreatheRate: WKInterfaceLabel!
+    
+    func EndSesh() {
+        if (tapCount != 0){
+            self.presentController(withName: "Breathe Final", context: "finalscene")
+        }
+    }
+    func DisplayInfo() {
+        print("Taps: " + String(tapCount))
+        print("Wrong: " + String(wrong))
+        print("Right " + String(tapCount-wrong))
+        GroupAccuracy.setText(getSeshAccuracy(dictionary: seshGroups))
+        let right = Double(tapCount)-Double(wrong)
+        let tapacc = Int((right/Double(tapCount))*Double(100))
+        TapAccuracy.setText(String(tapacc)+"%")
+        
+        let intervalAvg = calcIntervalAvg(intervals: findTimeDeltas(dictionary: seshGroups))    // calculating seconds per breath
+        let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
+        BreatheRate.setText(String(format:"%.2f", breathsPerSec))
     }
     
-
-    @IBAction func ReturnHome() {
-        self.popToRootController()
+    @IBAction func StartGame() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Breathe"], contexts: ["Breathe"])
     }
-
+    
     @IBAction func timerSlider(_ value: Float) {
         seconds = Int(value)
         timerLabel.setText(String(seconds))
         print(seconds)
     }
     
+    @IBAction func Finish() {
+        seconds = 5
+        seshGroups = [Int:[String:Any]] ()
+        cycleCount = 0
+        device = WKInterfaceDevice.current()
+        tapCount = 0
+        wrong = 0
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
+    }
     
     @objc func counter(){
         seconds -= 1
         print(seconds)
-        if (seconds == 0){
+        if (seconds <= 0){
+            EndSesh()
             timer.invalidate()
         }
     }
@@ -96,7 +120,7 @@ class GameController: WKInterfaceController {
         }
         print(total)
         print(true_total)
-        return String(Double(true_total/total*100)) + "%"
+        return String(Int(true_total/total*100)) + "%"
     }
     
     // This function is used to compare Any variable types as swift will not let you use the == comparison if a var is declared as Any
@@ -116,6 +140,7 @@ class GameController: WKInterfaceController {
             self.Ring1.setAlpha(1)
             self.Ring2.setAlpha(0.5)
             self.BlackSpot.setAlpha(0.5)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0.5)
@@ -123,6 +148,7 @@ class GameController: WKInterfaceController {
             self.Ring3.setAlpha(0.5)
             self.BlackSpot.setAlpha(1)
             self.Button.setAlpha(0)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // change 2 to desired number of seconds
             self.Ring1.setAlpha(0)
@@ -130,6 +156,7 @@ class GameController: WKInterfaceController {
             self.Ring3.setAlpha(1)
             self.Ring4.setAlpha(0.5)
             self.set_black(set: 45)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // change 2 to desired number of seconds
             self.Ring2.setAlpha(0)
@@ -137,21 +164,25 @@ class GameController: WKInterfaceController {
             self.Ring4.setAlpha(1)
             self.Ring5.setAlpha(0.5)
             self.set_black(set: 60)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
             self.Ring3.setAlpha(0)
             self.Ring4.setAlpha(0.5)
             self.Ring5.setAlpha(1)
             self.set_black(set: 75)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { // change 2 to desired number of seconds
             self.Ring4.setAlpha(0)
             self.Ring5.setAlpha(0.5)
             self.set_black(set: 90)
+            WKInterfaceDevice.current().play(.click)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { // change 2 to desired number of seconds
             self.Ring5.setAlpha(1)
             self.reset_black()
+            WKInterfaceDevice.current().play(.click)
         }
     }
     
@@ -244,6 +275,7 @@ class GameController: WKInterfaceController {
     
     func fail(){
         cycleCount+=1
+        wrong+=1
         WKInterfaceDevice.current().play(.failure)
         seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
         current_cycle.removeAll()
@@ -268,11 +300,77 @@ class GameController: WKInterfaceController {
         }
     }
     
-    //    override func awake(withContext context: Any?) {
-    //        super.awake(withContext: context)
-    //        // Configure interface objects here.
-    //    }
-    //
+    func findTimeDeltas(dictionary:[Int:[String:Any]]) -> [TimeInterval] {  // call this function in calculateBreathRate to gather time deltas
+        
+        var timeDeltas : [TimeInterval] = []    // creating empty array
+        
+        if dictionary.isEmpty == true {         // checking to see if there were any inputs/tap groups
+            return timeDeltas                   // return empty array if dictionary is empty
+        }
+        
+        for (groupNum, dict) in dictionary {
+            
+            let stampList = dict["timeStamps"] as! [Date]
+            var i = 0                                   // counter for (n-1)th date object in array
+            
+            if groupNum == 1 {
+                if dict.count > 1 {                     // if first group contains more than one date object
+                    for stamp in stampList[1...]{       // skip first date, iterate over other dates in the array
+                        
+                        timeDeltas.append(stamp.timeIntervalSince(stampList[i]))    // append time difference of (n)th date - (n-1)th date
+                        i += 1                          // increment counter
+                    }
+                }
+            } else {
+                let lastStamp = (dictionary[groupNum - 1]!["timeStamps"] as! [Date]).last   // find the last date in the previous group
+                let currStamp = (dict["timeStamps"] as! [Date]).first                       // find the first date in the current group
+                
+                timeDeltas.append((currStamp!.timeIntervalSince(lastStamp!)))       // appending timeInterval between first date of current group and last date of previous group
+                
+                if dict.count > 1 {
+                    for stamp in stampList[1...]{       // skip first date, iterate over other dates in the list
+                        
+                        timeDeltas.append(stamp.timeIntervalSince(stampList[i]))    // append time difference of (n)th date - (n-1)th date
+                        i += 1                          // increment counter
+                    }
+                }
+            }
+        }
+        return timeDeltas
+    }
+    
+    func calcIntervalAvg(intervals: [TimeInterval]) -> Double {     // calculates the average of a list of intervals
+        var intervalAvg = Double()
+        var intervalSum = Double()
+        let intervalCount = Double(intervals.count)
+        
+        for time in intervals {
+            intervalSum += time
+        }
+        
+        intervalAvg = (intervalSum / intervalCount)
+        
+        return intervalAvg
+    }
+    
+        override func awake(withContext context: Any?) {
+            super.awake(withContext: context)
+            if(context == nil){
+                print("nope")
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "finalscene"))!{
+                WKInterfaceController.reloadRootControllers(withNames: ["Breathe Final"], contexts: ["final"])
+                DisplayInfo()
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "final"))!{
+                DisplayInfo()
+            }
+            else if (isEqual(type: String.self, a: context as Any, b: "game"))!{
+                WKInterfaceController.reloadRootControllers(withNames: ["Breathe"], contexts: ["Breathe"])
+            }
+            // Configure interface objects here.
+        }
+    
     //    override func willActivate() {
     //        // This method is called when watch view controller is about to be visible to user
     //        super.willActivate()

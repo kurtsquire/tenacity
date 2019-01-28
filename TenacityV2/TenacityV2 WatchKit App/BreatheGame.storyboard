@@ -14,23 +14,21 @@
             <objects>
                 <controller identifier="Breathe Main" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label width="61" height="51" alignment="center" text="60" textAlignment="center" id="K3z-cc-2DT">
+                        <label width="61" height="51" alignment="center" text="5" textAlignment="center" id="K3z-cc-2DT">
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </label>
-                        <slider width="1" alignment="center" verticalAlignment="bottom" value="60" minimum="30" maximum="120" steps="3" id="aYJ-LM-sHM">
+                        <slider width="1" alignment="center" verticalAlignment="bottom" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
                             <connections>
                                 <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
                             </connections>
                         </slider>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
                             <connections>
-                                <action selector="StartSeshButton" destination="2Te-ZM-Pri" id="vd3-PH-tWB"/>
-                                <segue destination="KPJ-Gv-cVQ" kind="modal" id="4OL-6h-Mml"/>
+                                <action selector="StartGame" destination="2Te-ZM-Pri" id="3WK-fL-4ta"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
-                        <outlet property="StartSeshButton" destination="08R-uK-JaF" id="O2L-pI-AaQ"/>
                         <outlet property="timerLabel" destination="K3z-cc-2DT" id="kBS-T8-GrR"/>
                         <outlet property="timerSlider" destination="aYJ-LM-sHM" id="86u-TQ-RL8"/>
                     </connections>
@@ -43,7 +41,7 @@
             <objects>
                 <controller identifier="Breathe" id="KPJ-Gv-cVQ" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <label width="100" height="107" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu">
+                        <label width="1" height="1" alignment="center" text="Tap once and breathe in slowly" textAlignment="center" numberOfLines="0" id="1hR-hm-Icu" userLabel="Tap Label">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="0fP-tN-T8g">
                                     <connections>
@@ -57,7 +55,7 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </label>
-                        <group width="136" height="108" alignment="center" verticalAlignment="center" hidden="YES" layout="overlap" radius="39" id="KQy-Mj-k0N">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" layout="overlap" radius="39" id="KQy-Mj-k0N">
                             <items>
                                 <button alignment="center" verticalAlignment="center" id="t78-me-hdE" userLabel="Ring-5">
                                     <group key="contentGroup" width="105" height="105" alignment="left" radius="52.5" id="iGD-XM-ISD">
@@ -108,22 +106,10 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </group>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="End Session" id="neS-OY-XE9">
-                            <connections>
-                                <action selector="EndSession" destination="KPJ-Gv-cVQ" id="X7n-ll-Ng4"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" hidden="YES" title="Return Home" enabled="NO" id="kEr-PB-94e">
-                            <connections>
-                                <action selector="ReturnHome" destination="KPJ-Gv-cVQ" id="93W-Z3-3B8"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="BlackSpot" destination="zqQ-xK-51q" id="Nh1-NT-CCZ"/>
                         <outlet property="Button" destination="wbv-dx-jyR" id="Jr0-4v-vB4"/>
-                        <outlet property="EndSessionButton" destination="neS-OY-XE9" id="GOe-Rx-TcR"/>
-                        <outlet property="ReHome" destination="kEr-PB-94e" id="xJd-wD-X98"/>
                         <outlet property="Ring1" destination="t9A-zJ-rAy" id="eER-DU-iBb"/>
                         <outlet property="Ring2" destination="gvk-ou-fO6" id="qd0-50-iuW"/>
                         <outlet property="Ring3" destination="hrY-OB-ErC" id="JEU-Vd-sla"/>
@@ -137,6 +123,94 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="300" y="51"/>
+        </scene>
+        <!--Breathe Final-->
+        <scene sceneID="P9f-nV-lub">
+            <objects>
+                <controller identifier="Breathe Final" id="HrM-3P-rCB" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.0" alignment="left" layout="vertical" id="ddD-M0-los">
+                            <items>
+                                <group alignment="left" verticalAlignment="center" spacing="3" id="ECV-vY-qF5">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="singleAcc" id="kpW-Ah-4P4">
+                                            <color key="tintColor" red="0.1022895798" green="0.7839253545" blue="0.1161842272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <group alignment="left" layout="vertical" spacing="0.0" id="m6P-e9-Vk4">
+                                            <items>
+                                                <label alignment="left" text="Tap Accuracy" id="4ag-Tf-mkf">
+                                                    <color key="textColor" red="0.1013676899" green="0.78549333759999995" blue="0.1148788825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="10"/>
+                                                </label>
+                                                <label alignment="left" verticalAlignment="center" text="85%" id="UNL-l4-r7E" userLabel="TapAccuracy">
+                                                    <fontDescription key="font" type="italicSystem" pointSize="22"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group alignment="left" verticalAlignment="center" spacing="3" id="ban-rH-QAg">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="groupAcc" id="bhf-ik-Wei">
+                                            <color key="tintColor" red="0.1270429492" green="0.57895898820000002" blue="0.98171418909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <group alignment="left" layout="vertical" spacing="0.0" id="XqN-oR-DEX">
+                                            <items>
+                                                <label alignment="left" text="Group Accuracy" id="IB4-4K-8Gl">
+                                                    <color key="textColor" red="0.1270429492" green="0.57895898820000002" blue="0.98171418909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="10"/>
+                                                </label>
+                                                <label alignment="left" verticalAlignment="center" text="70%" id="Tey-KL-5KL" userLabel="GroupAccuracy">
+                                                    <accessibilityTraits key="accessibilityTraits" none="YES"/>
+                                                    <fontDescription key="font" type="italicSystem" pointSize="22"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <group alignment="left" verticalAlignment="center" spacing="3" id="gcA-uE-4GQ">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="lungs" id="NKE-7g-4Cw">
+                                            <color key="tintColor" red="0.91108668059999998" green="0.59664271300000005" blue="0.72763684630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <group alignment="left" layout="vertical" spacing="0.0" id="stK-R8-QsL">
+                                            <items>
+                                                <label alignment="left" text="Breath Rate" id="EI5-tJ-FlI">
+                                                    <color key="textColor" red="0.91108668059999998" green="0.59664271300000005" blue="0.72763684630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="10"/>
+                                                </label>
+                                                <group alignment="left" spacing="1" id="LLw-6W-J3e">
+                                                    <items>
+                                                        <label alignment="left" verticalAlignment="bottom" text="12" numberOfLines="0" id="ev5-To-cZI" userLabel="BreathRate">
+                                                            <fontDescription key="font" type="italicSystem" pointSize="22"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="per second" textAlignment="center" numberOfLines="0" id="CrK-FA-7lZ" userLabel="per second">
+                                                            <fontDescription key="font" type="italicSystem" pointSize="9"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq">
+                                    <connections>
+                                        <action selector="Finish" destination="HrM-3P-rCB" id="DeI-F4-slQ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <edgeInsets key="margins" left="5" right="0.0" top="3" bottom="5"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="BreatheRate" destination="ev5-To-cZI" id="npb-0m-6Fs"/>
+                        <outlet property="GroupAccuracy" destination="Tey-KL-5KL" id="sMX-wh-hb6"/>
+                        <outlet property="TapAccuracy" destination="UNL-l4-r7E" id="Tgk-ux-sQt"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="614" y="52"/>
         </scene>
     </scenes>
 </document>
