@@ -17,12 +17,17 @@
                         <label width="61" height="51" alignment="center" text="5" textAlignment="center" id="K3z-cc-2DT">
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </label>
-                        <slider width="1" alignment="center" verticalAlignment="bottom" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
+                        <slider width="1" alignment="center" verticalAlignment="center" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
                             <connections>
                                 <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
                             </connections>
                         </slider>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="PrintGames" id="HPA-ly-hJu">
+                            <connections>
+                                <action selector="PrintGames" destination="2Te-ZM-Pri" id="HIp-W1-l8R"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Start" id="08R-uK-JaF">
                             <connections>
                                 <action selector="StartGame" destination="2Te-ZM-Pri" id="3WK-fL-4ta"/>
                             </connections>

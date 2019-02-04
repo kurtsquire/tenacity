@@ -51,8 +51,43 @@ class GameController: WKInterfaceController {
     @IBOutlet var GroupAccuracy: WKInterfaceLabel!
     @IBOutlet var BreatheRate: WKInterfaceLabel!
     
+    @IBAction func PrintGames() {
+        //print("ATTEMPTING TO PRINT GAMES")
+        if UserDefaults.standard.object(forKey: "seshnum") != nil{
+            let numberValue = UserDefaults.standard.integer(forKey: "seshnum")
+            print("Games Played: \(numberValue)")
+            for i in 1...numberValue{
+                //print("ATTEMPTING TO PRINT GAME \(i)")
+                let string_value = "Sesh: " + String(i)
+                if UserDefaults.standard.object(forKey: string_value) != nil{
+                    let decoded  = UserDefaults.standard.object(forKey: string_value) as! Data
+                    let decodedDict = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Int:[String:Any]]
+                    print(decodedDict)
+                }
+                else{
+                    print("ERROR FINDING GAMES")
+                }
+            }
+        }
+        else{
+            print("No games played")
+        }
+    }
+    
     func EndSesh() {
         if (tapCount != 0){
+            if UserDefaults.standard.object(forKey: "seshnum") != nil{
+                let numberValue = UserDefaults.standard.integer(forKey: "seshnum")
+                UserDefaults.standard.set(numberValue+1, forKey: "seshnum")
+            }
+            else {
+                UserDefaults.standard.set(1, forKey: "seshnum")
+            }
+            let numberValue = "Sesh: " + String(UserDefaults.standard.integer(forKey: "seshnum"))
+            let encodedData = NSKeyedArchiver.archivedData(withRootObject: seshGroups)
+            UserDefaults.standard.set(encodedData, forKey: numberValue)
+            
+
             self.presentController(withName: "Breathe Final", context: "finalscene")
         }
     }
