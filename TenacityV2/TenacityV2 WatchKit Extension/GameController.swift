@@ -96,11 +96,13 @@ class GameController: WKInterfaceController {
         print("Wrong: " + String(wrong))
         print("Right " + String(tapCount-wrong))
         GroupAccuracy.setText(getSeshAccuracy(dictionary: seshGroups))
+        
         let right = Double(tapCount)-Double(wrong)
         let tapacc = Int((right/Double(tapCount))*Double(100))
         TapAccuracy.setText(String(tapacc)+"%")
         
         let intervalAvg = calcIntervalAvg(intervals: findTimeDeltas(dictionary: seshGroups))    // calculating seconds per breath
+        // breaths screen print change to N/a because only one breath
         let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
         BreatheRate.setText(String(format:"%.2f", breathsPerSec))
     }
@@ -143,8 +145,13 @@ class GameController: WKInterfaceController {
     
     //Gets session accuracy and returns it as a string. Needs to be improved so that it shows a percent and not a decimal
     func getSeshAccuracy(dictionary:[Int:[String:Any]]) -> String {
-        var total: Float = 0
-        var true_total: Float = 0
+        var total: Int = 0
+        var true_total: Int = 0
+        
+        if dictionary.count == 0 {      // added to fix division by zero bug in return statement
+            return "100%"
+        }
+        
         for (_,dict) in dictionary {
             for (dataType, data) in dict{
                 if dataType == "ToF" && isEqual(type: Bool.self, a: data, b: true) == true{
@@ -153,8 +160,7 @@ class GameController: WKInterfaceController {
             }
             total+=1
         }
-        print(total)
-        print(true_total)
+        
         return String(Int(true_total/total*100)) + "%"
     }
     
