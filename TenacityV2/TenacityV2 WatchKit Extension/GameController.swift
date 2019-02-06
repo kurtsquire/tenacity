@@ -145,8 +145,8 @@ class GameController: WKInterfaceController {
     
     //Gets session accuracy and returns it as a string. Needs to be improved so that it shows a percent and not a decimal
     func getSeshAccuracy(dictionary:[Int:[String:Any]]) -> String {
-        var total: Int = 0
-        var true_total: Int = 0
+        var total: Float = 0
+        var true_total: Float = 0
         
         if dictionary.count == 0 {      // added to fix division by zero bug in return statement
             return "100%"
