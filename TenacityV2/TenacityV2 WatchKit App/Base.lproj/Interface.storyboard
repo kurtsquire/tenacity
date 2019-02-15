@@ -30,9 +30,11 @@
             <objects>
                 <controller identifier="Main Menu" id="NTV-tI-VkP" customClass="InterfaceController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <group width="1" height="40" alignment="left" id="TSy-uy-hyW">
+                        <group width="1" height="40" alignment="left" hidden="YES" id="TSy-uy-hyW">
                             <items>
-                                <button width="1" height="40" alignment="left" title="Schedule" backgroundImage="Button" id="CeU-Md-8hp">
+                                <button width="134" height="40" alignment="left" title="Alerts" backgroundImage="Button" id="CeU-Md-8hp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" weight="black" pointSize="14"/>
                                     <connections>
                                         <action selector="scheduleAction" destination="NTV-tI-VkP" id="HAA-H6-jRR"/>
                                     </connections>
@@ -40,9 +42,9 @@
                             </items>
                         </group>
                         <button alignment="center" accessibilityIdentifier="breathe_btn" id="F8f-BH-JLT">
-                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
+                            <group key="contentGroup" width="1" height="60" alignment="left" layout="vertical" id="Fkz-lZ-JKG">
                                 <items>
-                                    <group width="1" alignment="left" id="c9f-qc-JFV">
+                                    <group width="1" alignment="left" hidden="YES" id="c9f-qc-JFV">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="aJg-HW-Scb"/>
                                             <group width="89" height="27" alignment="right" id="bdA-YG-IQq" userLabel="Frequency Tags">
@@ -59,35 +61,46 @@
                                             </group>
                                         </items>
                                     </group>
-                                    <label alignment="left" verticalAlignment="bottom" text="Breathe" id="3O7-6s-vds">
-                                        <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
-                                    </label>
+                                    <group width="1" alignment="left" verticalAlignment="bottom" spacing="0.0" id="0n6-mD-hTe">
+                                        <items>
+                                            <separator height="100" alignment="left" verticalAlignment="bottom" alpha="0.0" id="k2B-qa-1Qq"/>
+                                            <label alignment="left" verticalAlignment="bottom" alpha="0.0" text="," id="bVO-qZ-eFK"/>
+                                            <label alignment="left" verticalAlignment="bottom" text="Breathe" textAlignment="left" id="3O7-6s-vds">
+                                                <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                            </label>
+                                        </items>
+                                    </group>
                                 </items>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.092199541628360748" green="0.74041128158569336" blue="0.62692445516586304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
                                 <action selector="breatheBtnPressed" destination="NTV-tI-VkP" id="zb9-7J-jpO"/>
                             </connections>
                         </button>
                         <button alignment="left" accessibilityIdentifier="breathe_btn" id="rE2-Fy-kIk">
-                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="AeW-8I-AqL">
+                            <group key="contentGroup" width="1" height="60" alignment="left" layout="vertical" id="AeW-8I-AqL">
                                 <items>
-                                    <group width="1" height="25" alignment="left" id="5Vd-A4-bB1">
+                                    <group width="1" height="25" alignment="left" hidden="YES" id="5Vd-A4-bB1">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="00g-Lj-PJc"/>
                                         </items>
                                     </group>
-                                    <label alignment="left" verticalAlignment="bottom" text="Line Attack" id="mwC-zP-fS7">
-                                        <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                                    </label>
+                                    <group width="1" alignment="left" verticalAlignment="bottom" id="saz-rP-ghR">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="bottom" alpha="0.0" text="," id="e2W-FU-FG6"/>
+                                            <label alignment="left" verticalAlignment="bottom" text="Lotus Swipe" id="mwC-zP-fS7">
+                                                <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                            </label>
+                                        </items>
+                                    </group>
                                 </items>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91913175582885742" green="0.26112943887710571" blue="0.59328526258468628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
                                 <action selector="lineAtkBtnPressed" destination="NTV-tI-VkP" id="xEh-3V-w5F"/>
                             </connections>
                         </button>
-                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="U7s-di-oV3">
+                        <button alignment="left" hidden="YES" accessibilityIdentifier="breathe_btn" id="U7s-di-oV3">
                             <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="lhL-d8-PzN">
                                 <items>
                                     <group width="1" height="25" alignment="left" id="peS-1g-KpZ">
@@ -126,7 +139,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="397" y="87.5"/>
+            <point key="canvasLocation" x="397" y="87"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="4Ms-oN-DDZ">

@@ -103,8 +103,8 @@ class GameController: WKInterfaceController {
         
         let intervalAvg = calcIntervalAvg(intervals: findTimeDeltas(dictionary: seshGroups))    // calculating seconds per breath
         // breaths screen print change to N/a because only one breath
-        let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
-        BreatheRate.setText(String(format:"%.2f", breathsPerSec))
+        // let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
+        BreatheRate.setText(String(format:"%.2f", intervalAvg) + " s")
     }
     
     @IBAction func StartGame() {
@@ -317,7 +317,7 @@ class GameController: WKInterfaceController {
     func fail(){
         cycleCount+=1
         wrong+=1
-        WKInterfaceDevice.current().play(.failure)
+        WKInterfaceDevice.current().play(.stop)
         seshGroups[cycleCount] = ["cycleInputs":current_cycle,"timeStamps":current_ts,"ToF":false]
         current_cycle.removeAll()
         current_ts.removeAll()
