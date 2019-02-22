@@ -20,10 +20,13 @@ class InterfaceController: WKInterfaceController {
     let lineAtkGame = "Line Attack Game"
     let gpsDrawGame = "GPS Draw Game"
     let semaphore = DispatchSemaphore(value: 1)
+    
     @IBOutlet var scheduleButton: WKInterfaceButton!
     @IBOutlet var breatheBtnGrp: WKInterfaceGroup!
     @IBOutlet var breatheTimeLabel: WKInterfaceLabel!
-    @IBOutlet var lineAtkBtnGrp: WKInterfaceGroup!
+    @IBOutlet var lotusBtnGrp: WKInterfaceButton!
+    
+    
     @IBOutlet var lineAtkTimeLabel: WKInterfaceLabel!
     @IBOutlet var gpsDrawBtnGrp: WKInterfaceGroup!
     @IBOutlet var gpmDrawTimeLabel: WKInterfaceLabel!
@@ -141,7 +144,7 @@ class InterfaceController: WKInterfaceController {
         self.editColor = UIColor.init(red: CGFloat(self.red)/255, green: CGFloat(self.green)/255, blue: CGFloat(self.blue)/255, alpha: 1)
         animate(withDuration: 0.8) {
             self.breatheBtnGrp.setBackgroundColor(self.editColor)
-            self.lineAtkBtnGrp.setBackgroundColor(self.editColor)
+            self.lotusBtnGrp.setBackgroundColor(self.editColor)
             self.gpsDrawBtnGrp.setBackgroundColor(self.editColor)
         }
     }
@@ -169,7 +172,7 @@ class InterfaceController: WKInterfaceController {
             }
             scheduleButton.setTitle("Schedule")
             breatheBtnGrp.setBackgroundColor(defaultColor)
-            lineAtkBtnGrp.setBackgroundColor(defaultColor)
+            lotusBtnGrp.setBackgroundColor(defaultColor)
             gpsDrawBtnGrp.setBackgroundColor(defaultColor)
         }
     }
@@ -183,14 +186,10 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    @IBAction func lineAtkBtnPressed() {
-        if schedulePressed == false{
-            print("line atk btn clicked")
-        }
-        else{
-            presentController(withName: "Schedule", context: lineAtkGame)
-        }
+    @IBAction func lotusBtnPressed() {
+        pushController(withName: "Lotus Main", context: "Lotus Game")
     }
+    
     
     @IBAction func gpsDrawBtnPressed() {
         if schedulePressed == false{

@@ -97,7 +97,7 @@
                                 <color key="backgroundColor" red="0.91913175582885742" green="0.26112943887710571" blue="0.59328526258468628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
-                                <action selector="lineAtkBtnPressed" destination="NTV-tI-VkP" id="xEh-3V-w5F"/>
+                                <action selector="lotusBtnPressed" destination="NTV-tI-VkP" id="T0N-Ei-nRm"/>
                             </connections>
                         </button>
                         <button alignment="left" hidden="YES" accessibilityIdentifier="breathe_btn" id="U7s-di-oV3">
@@ -133,8 +133,8 @@
                         <outlet property="filled4" destination="eoH-g7-sNo" id="m97-Oh-WsU"/>
                         <outlet property="gpmDrawTimeLabel" destination="Fme-6C-9FC" id="JkC-qe-RxT"/>
                         <outlet property="gpsDrawBtnGrp" destination="lhL-d8-PzN" id="dTs-dA-HtZ"/>
-                        <outlet property="lineAtkBtnGrp" destination="AeW-8I-AqL" id="gH4-E2-Wi8"/>
                         <outlet property="lineAtkTimeLabel" destination="00g-Lj-PJc" id="Dhu-cE-9cl"/>
+                        <outlet property="lotusBtnGrp" destination="rE2-Fy-kIk" id="LHw-6U-f1p"/>
                         <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
                     </connections>
                 </controller>

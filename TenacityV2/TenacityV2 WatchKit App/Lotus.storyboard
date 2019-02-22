@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--Lotus Main-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="Lotus Main" fullBounds="YES" id="AgC-eL-Hgc" customClass="LotusController" customModule="TenacityV2_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="0.25" alignment="center" text="Lotus" textAlignment="center" numberOfLines="2" id="e27-O6-quq">
+                            <color key="textColor" red="0.97559099740932642" green="0.38786385979153398" blue="0.85125982655558419" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </label>
+                        <label width="1" height="0.75" alignment="center" verticalAlignment="center" text="Tap and hold the white bud to bloom a vibrant flower (tap to continue)" textAlignment="center" numberOfLines="6" id="ghZ-v2-h8A">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="70Y-Hd-Gwm">
+                                    <connections>
+                                        <action selector="InitialTap:" destination="AgC-eL-Hgc" id="N73-n3-ASJ"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                            <color key="textColor" red="0.91975688248890075" green="1" blue="0.74466118136179404" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" text="Swipe each flower in the correct direction.  Memorize the following screen (tap to continue)" textAlignment="center" numberOfLines="7" id="ViR-Yz-Fct" userLabel="Instructions">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="dfW-Yq-lIH">
+                                    <connections>
+                                        <action selector="InstructionsTap:" destination="AgC-eL-Hgc" id="QHo-Nc-fAt"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                            <color key="textColor" red="0.91975688249999998" green="1" blue="0.74466118140000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <imageView width="1" height="1" alignment="left" hidden="YES" image="flower_guide" id="Wuj-lr-4Am">
+                            <gestureRecognizers>
+                                <longPressGestureRecognizer enabled="NO" minimumPressDuration="0.29999999999999999" id="TiY-1S-aVP">
+                                    <connections>
+                                        <action selector="longPressAction:" destination="AgC-eL-Hgc" id="xF7-CH-MfW"/>
+                                    </connections>
+                                </longPressGestureRecognizer>
+                                <swipeGestureRecognizer enabled="NO" direction="4" id="Klv-Wh-sm9">
+                                    <connections>
+                                        <action selector="SwipeUpAction:" destination="AgC-eL-Hgc" id="wNs-NA-HdI"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer enabled="NO" direction="8" id="879-JE-xFq">
+                                    <connections>
+                                        <action selector="SwipeDownAction:" destination="AgC-eL-Hgc" id="4il-i8-sKK"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer enabled="NO" id="DKV-kb-XjG">
+                                    <connections>
+                                        <action selector="SwipeRightAction:" destination="AgC-eL-Hgc" id="VhG-oC-CCc"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer enabled="NO" direction="2" id="BZD-nW-E7g">
+                                    <connections>
+                                        <action selector="SwipeLeftAction:" destination="AgC-eL-Hgc" id="NC4-an-KwZ"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <tapGestureRecognizer id="pP1-t7-oJA">
+                                    <connections>
+                                        <action selector="TapAction:" destination="AgC-eL-Hgc" id="FsD-6y-kuF"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </imageView>
+                        <label alignment="center" hidden="YES" text="Results" textAlignment="center" numberOfLines="2" id="OrH-qX-fuo">
+                            <color key="textColor" red="0.97559099740932642" green="0.4437583073508517" blue="0.073710363101845866" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        </label>
+                        <label alignment="left" hidden="YES" text="Accuracy_label" numberOfLines="2" id="3nD-GK-Ghc"/>
+                        <label alignment="left" hidden="YES" text="Press_label" numberOfLines="2" id="Rfb-X4-LUk"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" hidden="YES" title="Restart" id="kec-26-0ak">
+                            <connections>
+                                <action selector="Restart_button_Action" destination="AgC-eL-Hgc" id="s1j-uT-sgn"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="Accuracy_label" destination="3nD-GK-Ghc" id="AWH-er-EU2"/>
+                        <outlet property="Initial" destination="ghZ-v2-h8A" id="G0R-mx-La5"/>
+                        <outlet property="Instructions" destination="ViR-Yz-Fct" id="ceo-XL-oYA"/>
+                        <outlet property="Press_label" destination="Rfb-X4-LUk" id="y27-IS-fDr"/>
+                        <outlet property="Restart_button" destination="kec-26-0ak" id="Qcx-Ly-tQh"/>
+                        <outlet property="Results_label" destination="OrH-qX-fuo" id="e3A-1B-Lg1"/>
+                        <outlet property="SwipeDown" destination="879-JE-xFq" id="inF-Rh-CLh"/>
+                        <outlet property="SwipeLeft" destination="BZD-nW-E7g" id="MxF-d0-GNj"/>
+                        <outlet property="SwipeRight" destination="DKV-kb-XjG" id="uVr-Ur-m7z"/>
+                        <outlet property="SwipeUp" destination="Klv-Wh-sm9" id="QGH-tn-z8m"/>
+                        <outlet property="Tap" destination="pP1-t7-oJA" id="XSx-qc-HQ8"/>
+                        <outlet property="Welcome" destination="e27-O6-quq" id="0sa-wX-ISF"/>
+                        <outlet property="closed" destination="Wuj-lr-4Am" id="vBB-Cu-ihe"/>
+                        <outlet property="longPress" destination="TiY-1S-aVP" id="sXw-CP-Zpb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="350" y="-209"/>
+        </scene>
+    </scenes>
+</document>
