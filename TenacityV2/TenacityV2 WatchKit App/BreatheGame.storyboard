@@ -9,15 +9,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Breathe Main-->
+        <!--Breathe-->
         <scene sceneID="7rC-xk-Hf4">
             <objects>
-                <controller identifier="Breathe Main" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
+                <controller identifier="Breathe Main" title="Breathe" fullBounds="YES" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" id="ELs-Da-x6W">
+                        <group width="1" height="0.33000000000000002" alignment="left" layout="vertical" id="ELs-Da-x6W">
                             <items>
                                 <separator height="100" alignment="left" alpha="0.0" id="pwQ-Cr-cwg"/>
-                                <slider width="1" alignment="center" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
+                                <slider width="1" height="1" alignment="center" value="5" minimum="5" maximum="120" steps="23" id="aYJ-LM-sHM">
                                     <color key="color" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
@@ -25,25 +25,23 @@
                                 </slider>
                             </items>
                         </group>
-                        <group width="1" alignment="left" layout="vertical" id="hpI-eL-9WH">
+                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" layout="vertical" id="hpI-eL-9WH">
                             <items>
                                 <separator height="100" alignment="left" alpha="0.0" id="mOq-MY-Lw0"/>
-                                <separator height="100" alignment="left" alpha="0.0" id="3Nb-lh-VTq"/>
-                                <group width="1" alignment="left" id="mRP-LH-fZa">
+                                <group width="1" alignment="center" verticalAlignment="center" id="mRP-LH-fZa">
                                     <items>
-                                        <label width="34" height="33" alignment="center" text="5" textAlignment="right" id="K3z-cc-2DT">
-                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="24"/>
+                                        <label width="52" height="30" alignment="center" verticalAlignment="center" text="5" textAlignment="right" id="K3z-cc-2DT">
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="28"/>
                                         </label>
-                                        <label width="25" height="30" alignment="center" verticalAlignment="center" text="MIN" textAlignment="center" id="Ptc-OS-eZV">
-                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="12"/>
+                                        <label width="42" height="30" alignment="center" verticalAlignment="bottom" text="Secs" textAlignment="center" id="Ptc-OS-eZV">
+                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
                                         </label>
                                     </items>
                                 </group>
                                 <separator height="100" alignment="left" verticalAlignment="center" alpha="0.0" id="hyO-Tw-LC4"/>
-                                <separator height="100" alignment="left" verticalAlignment="center" alpha="0.0" id="ltl-Ii-tOv"/>
                             </items>
                         </group>
-                        <button width="1" height="60" alignment="left" verticalAlignment="center" title="Start" id="08R-uK-JaF">
+                        <button width="1" height="0.33000000000000002" alignment="left" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
                             <color key="backgroundColor" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
@@ -153,6 +151,9 @@
             <objects>
                 <controller identifier="Breathe Final" id="HrM-3P-rCB" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
+                        <separator alignment="left" id="niL-jd-aQK">
+                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
                         <group width="1" height="0.0" alignment="left" layout="vertical" id="ddD-M0-los">
                             <items>
                                 <group alignment="left" verticalAlignment="center" spacing="3" id="ECV-vY-qF5">
@@ -231,10 +232,7 @@
                                 <separator alignment="left" verticalAlignment="center" id="3CX-dp-EGD">
                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </separator>
-                                <separator alignment="left" verticalAlignment="center" id="niL-jd-aQK">
-                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </separator>
-                                <button width="1" height="60" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq">
+                                <button width="1" height="55" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq">
                                     <color key="backgroundColor" red="0.080603174865245819" green="0.7606845498085022" blue="0.60162723064422607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     <connections>

@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Lotus Main-->
+        <!--Lotus Game-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="Lotus Main" fullBounds="YES" id="AgC-eL-Hgc" customClass="LotusController" customModule="TenacityV2_WatchKit_Extension">
+                <controller identifier="Lotus Game" fullBounds="YES" id="AgC-eL-Hgc" customClass="LotusController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <label width="1" height="0.25" alignment="center" text="Lotus" textAlignment="center" numberOfLines="2" id="e27-O6-quq">
                             <color key="textColor" red="0.97559099740932642" green="0.38786385979153398" blue="0.85125982655558419" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,6 +104,54 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="350" y="-209"/>
+        </scene>
+        <!--Lotus-->
+        <scene sceneID="6XZ-5E-fyM">
+            <objects>
+                <controller identifier="Lotus Main" title="Lotus" fullBounds="YES" id="10O-DK-oew" customClass="LotusController" customModule="TenacityV2_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.33000000000000002" alignment="left" layout="vertical" id="1sl-Fc-7ce">
+                            <items>
+                                <separator height="100" alignment="left" alpha="0.0" id="DuK-dz-ETZ"/>
+                                <slider width="1" height="1" alignment="center" value="5" minimum="3" maximum="20" steps="18" id="MNh-QF-6RK">
+                                    <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="round_slider_action:" destination="10O-DK-oew" id="Pkm-3K-SoL"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" layout="vertical" id="N8r-o9-qeU">
+                            <items>
+                                <separator height="100" alignment="left" alpha="0.0" id="ZNS-JN-0ik"/>
+                                <group width="1" alignment="center" verticalAlignment="center" id="ug4-U9-B9Y">
+                                    <items>
+                                        <label width="52" height="30" alignment="center" verticalAlignment="center" text="5" textAlignment="right" id="L1c-Ub-sC7">
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="28"/>
+                                        </label>
+                                        <label width="58" height="30" alignment="center" verticalAlignment="bottom" text="rounds" textAlignment="center" id="x40-z2-UW4">
+                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <separator height="100" alignment="left" verticalAlignment="center" alpha="0.0" id="7BZ-sK-QFf"/>
+                            </items>
+                        </group>
+                        <button width="1" height="0.33000000000000002" alignment="left" verticalAlignment="bottom" title="Start" id="Us7-yZ-Xrd">
+                            <color key="backgroundColor" red="0.91913175579999995" green="0.26112943890000001" blue="0.59328526260000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                            <connections>
+                                <action selector="start_game_action" destination="10O-DK-oew" id="xcB-x5-c5E"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="round_slider" destination="MNh-QF-6RK" id="6DC-5Q-hQb"/>
+                        <outlet property="total_round_label" destination="L1c-Ub-sC7" id="RcP-TX-Yb6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="89" y="-210"/>
         </scene>
     </scenes>
 </document>

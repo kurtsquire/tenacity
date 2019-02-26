@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 
+var total_rounds = 5.0
 
 class LotusController: WKInterfaceController {
 
@@ -28,8 +29,19 @@ class LotusController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    var total_rounds = 5.0
+    
     var current_round = 0.0
+    
+    @IBOutlet var total_round_label: WKInterfaceLabel!
+    @IBOutlet var round_slider: WKInterfaceSlider!
+    @IBAction func round_slider_action(_ value: Float) {
+        total_rounds = Double(value)
+        total_round_label.setText(String(Int(total_rounds)))
+    }
+    
+    @IBAction func start_game_action() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
+    }
     
     var up = "red"
     var down = "blue"
@@ -84,7 +96,7 @@ class LotusController: WKInterfaceController {
         successful_swipes = 0.0
         total_swipes = 0.0
         seconds = 30.0
-        
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
     }
     
     @objc func counter(){
