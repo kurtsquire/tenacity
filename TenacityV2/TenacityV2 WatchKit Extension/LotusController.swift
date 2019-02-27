@@ -9,7 +9,7 @@
 import WatchKit
 import Foundation
 
-var total_rounds = 5.0
+var total_rounds = 10.0
 
 class LotusController: WKInterfaceController {
 

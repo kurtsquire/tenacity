@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 //ALL DATA THAT MUST BE USED OUTSIDE OF THE CURRENT SCENE MUST BE PUT HERE
-var seconds = 5
+var seconds = 60
 var seshGroups = [Int:[String:Any]] ()
 var cycleCount: Int = 0
 var device = WKInterfaceDevice.current()
@@ -118,7 +118,7 @@ class GameController: WKInterfaceController {
     }
     
     @IBAction func Finish() {
-        seconds = 5
+        seconds = 60
         seshGroups = [Int:[String:Any]] ()
         cycleCount = 0
         device = WKInterfaceDevice.current()

@@ -113,7 +113,7 @@
                         <group width="1" height="0.33000000000000002" alignment="left" layout="vertical" id="1sl-Fc-7ce">
                             <items>
                                 <separator height="100" alignment="left" alpha="0.0" id="DuK-dz-ETZ"/>
-                                <slider width="1" height="1" alignment="center" value="5" minimum="3" maximum="20" steps="18" id="MNh-QF-6RK">
+                                <slider width="1" height="1" alignment="center" value="10" minimum="5" maximum="40" steps="7" id="MNh-QF-6RK">
                                     <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="round_slider_action:" destination="10O-DK-oew" id="Pkm-3K-SoL"/>
@@ -126,7 +126,7 @@
                                 <separator height="100" alignment="left" alpha="0.0" id="ZNS-JN-0ik"/>
                                 <group width="1" alignment="center" verticalAlignment="center" id="ug4-U9-B9Y">
                                     <items>
-                                        <label width="52" height="30" alignment="center" verticalAlignment="center" text="5" textAlignment="right" id="L1c-Ub-sC7">
+                                        <label width="52" height="30" alignment="center" verticalAlignment="center" text="10" textAlignment="right" id="L1c-Ub-sC7">
                                             <fontDescription key="font" type="system" weight="thin" pointSize="28"/>
                                         </label>
                                         <label width="58" height="30" alignment="center" verticalAlignment="bottom" text="rounds" textAlignment="center" id="x40-z2-UW4">
