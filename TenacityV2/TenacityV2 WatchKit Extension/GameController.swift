@@ -389,6 +389,7 @@ class GameController: WKInterfaceController {
             intervalSum += time
         }
         
+        
         intervalAvg = (intervalSum / intervalCount)
         
         return intervalAvg

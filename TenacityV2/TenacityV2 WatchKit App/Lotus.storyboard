@@ -142,6 +142,7 @@
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
                                 <action selector="start_game_action" destination="10O-DK-oew" id="xcB-x5-c5E"/>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="axS-GY-06C"/>
                             </connections>
                         </button>
                     </items>

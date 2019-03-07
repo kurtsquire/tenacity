@@ -17,7 +17,7 @@
                         <group width="1" height="0.33000000000000002" alignment="left" layout="vertical" id="ELs-Da-x6W">
                             <items>
                                 <separator height="100" alignment="left" alpha="0.0" id="pwQ-Cr-cwg"/>
-                                <slider width="1" height="1" alignment="center" value="60" minimum="15" maximum="120" steps="7" id="aYJ-LM-sHM">
+                                <slider width="1" height="1" alignment="center" value="60" minimum="30" maximum="300" steps="9" id="aYJ-LM-sHM">
                                     <color key="color" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>

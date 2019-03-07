@@ -96,7 +96,7 @@ class LotusController: WKInterfaceController {
         successful_swipes = 0.0
         total_swipes = 0.0
         seconds = 30.0
-        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
+        //WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
     }
     
     @objc func counter(){
