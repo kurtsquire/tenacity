@@ -9,13 +9,13 @@
 import WatchKit
 import Foundation
 
+// should always be the same as default rounds shown on start slider
 var total_rounds = 10.0
 
 class LotusController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-    
         // Configure interface objects here.
     }
     
@@ -28,7 +28,6 @@ class LotusController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
     
     var current_round = 0.0
     
@@ -43,13 +42,16 @@ class LotusController: WKInterfaceController {
         WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
     }
     
+    //change these based on start 
     var up = "red"
     var down = "blue"
     var right = "green"
     var left = "yellow"
     var current_image = "green"
     
+    //how long they hold an individual bloom
     var press_time = 0.0
+    //total time they held all blooms
     var total_press_time = 0.0
     var successful_swipes = 0.0
     var total_swipes = 0.0
@@ -61,28 +63,33 @@ class LotusController: WKInterfaceController {
     
     var seconds = 30.0
     
-    @IBOutlet var Welcome: WKInterfaceLabel!
-    @IBOutlet var Initial: WKInterfaceLabel!
+    @IBOutlet var Welcome: WKInterfaceLabel! //Title "Lotus"
+    @IBOutlet var Initial: WKInterfaceLabel! //Paragraph below "Lotus"
+    
+    //takes away 1st instruction screen after 1st tap
     @IBAction func InitialTap(_ sender: Any) {
         Welcome.setHidden(true)
         Initial.setHidden(true)
         Instructions.setHidden(false)
     }
-    @IBOutlet var Instructions: WKInterfaceLabel!
+    
+    @IBOutlet var Instructions: WKInterfaceLabel! //2nd Page Paragraph
+    
+    //Takes away 2nd paragrpah and shows flower guide
     @IBAction func InstructionsTap(_ sender: Any) {
         Instructions.setHidden(true)
-        closed.setHidden(false)
+        Main_Pic.setHidden(false)
         Tap.isEnabled = true
-        closed.setImageNamed("flower_guide")
+        Main_Pic.setImageNamed("flower_guide")
     }
     
-    
-    @IBOutlet var closed: WKInterfaceImage!
-    @IBOutlet var Results_label: WKInterfaceLabel!
-    @IBOutlet var Accuracy_label: WKInterfaceLabel!
-    @IBOutlet var Press_label: WKInterfaceLabel!
+    @IBOutlet var Main_Pic: WKInterfaceImage!  //main picture used for all flowers and flower guide
+    @IBOutlet var Results_label: WKInterfaceLabel!  //results title
+    @IBOutlet var Accuracy_label: WKInterfaceLabel! //Accuracy result
+    @IBOutlet var Press_label: WKInterfaceLabel! //Press times result
     
     @IBOutlet var Restart_button: WKInterfaceButton!
+    //resets all values and returns to main menu
     @IBAction func Restart_button_Action() {
         Results_label.setHidden(true)
         Accuracy_label.setHidden(true)
@@ -96,19 +103,19 @@ class LotusController: WKInterfaceController {
         successful_swipes = 0.0
         total_swipes = 0.0
         seconds = 30.0
-        //WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
     }
     
     @objc func counter(){
         print(seconds)
-        closed.setAlpha(CGFloat(seconds/30.0))
+        Main_Pic.setAlpha(CGFloat(seconds/30.0))
         seconds -= 1
         if (seconds < 0)
             {timer.invalidate()}
     }
     
     @objc func counter_open(){
-        closed.setAlpha(CGFloat(seconds/20.0))
+        Main_Pic.setAlpha(CGFloat(seconds/20.0))
         seconds += 1
         if (seconds > 20)
             {timer_open.invalidate()
@@ -122,7 +129,7 @@ class LotusController: WKInterfaceController {
     
     @objc func counter_reset(){
         print(seconds)
-        closed.setAlpha(CGFloat(seconds/10.0))
+        Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
         if (seconds >= 10){
             print("reset")
@@ -149,7 +156,7 @@ class LotusController: WKInterfaceController {
         }
         if gestureRecognizer.state == .ended{
             seconds = 0
-            closed.setAlpha(0.0)
+            Main_Pic.setAlpha(0.0)
             randomize_color()
             timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
             timer_press.invalidate()
@@ -167,7 +174,7 @@ class LotusController: WKInterfaceController {
             SwipeDown.isEnabled = false
             SwipeRight.isEnabled = false
             SwipeLeft.isEnabled = false
-            closed.setHidden(true)
+            Main_Pic.setHidden(true)
             Results_label.setHidden(false)
             Accuracy_label.setText("Correct Swipes: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%")
             Accuracy_label.setHidden(false)
@@ -177,8 +184,8 @@ class LotusController: WKInterfaceController {
             print("end")
         }
         else{
-            closed.setImageNamed("lotus_closed")
-            closed.setAlpha(0.0)
+            Main_Pic.setImageNamed("lotus_closed")
+            Main_Pic.setAlpha(0.0)
             seconds = 0
             timer_reset = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_reset), userInfo: nil, repeats: true)
         }
@@ -189,19 +196,19 @@ class LotusController: WKInterfaceController {
         print(number)
         if (number == 1){
             current_image = "red"
-            closed.setImageNamed("lotus_red")
+            Main_Pic.setImageNamed("lotus_red")
         }
         else if (number == 2){
             current_image = "green"
-            closed.setImageNamed("lotus_green")
+            Main_Pic.setImageNamed("lotus_green")
         }
         else if (number == 3){
             current_image = "blue"
-            closed.setImageNamed("lotus_blue")
+            Main_Pic.setImageNamed("lotus_blue")
         }
         else {
             current_image = "yellow"
-            closed.setImageNamed("lotus_yellow")
+            Main_Pic.setImageNamed("lotus_yellow")
         }
         print(current_image)
     }
