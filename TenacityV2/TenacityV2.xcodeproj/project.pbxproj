@@ -643,7 +643,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityMax.watchkitapp.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV2.watchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -665,7 +665,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityMax.watchkitapp.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV2.watchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -681,10 +681,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DQQPFP998A;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
 				IBSC_MODULE = TenacityV2_WatchKit_Extension;
 				INFOPLIST_FILE = "TenacityV2 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityMax.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV2.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -700,10 +700,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DQQPFP998A;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
 				IBSC_MODULE = TenacityV2_WatchKit_Extension;
 				INFOPLIST_FILE = "TenacityV2 WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityMax.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV2.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
