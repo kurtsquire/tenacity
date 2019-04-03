@@ -80,7 +80,40 @@ class LotusController: WKInterfaceController {
         Instructions.setHidden(true)
         Main_Pic.setHidden(false)
         Tap.isEnabled = true
-        Main_Pic.setImageNamed("flower_guide")
+        choose_guide()
+    }
+    
+    @objc func choose_guide(){
+        let number = Int.random(in: 1 ..< 5)
+        print(number)
+        if (number == 1){
+            Main_Pic.setImageNamed("flower_guide")
+            up = "red"
+            right = "green"
+            down = "blue"
+            left = "yellow"
+        }
+        else if (number == 2){
+            Main_Pic.setImageNamed("flower_guide_2")
+            up = "yellow"
+            right = "red"
+            down = "green"
+            left = "blue"
+        }
+        else if (number == 3){
+            Main_Pic.setImageNamed("flower_guide_3")
+            up = "blue"
+            right = "yellow"
+            down = "red"
+            left = "green"
+        }
+        else {
+            Main_Pic.setImageNamed("flower_guide_4")
+            up = "green"
+            right = "blue"
+            down = "yellow"
+            left = "red"
+        }
     }
     
     @IBOutlet var Main_Pic: WKInterfaceImage!  //main picture used for all flowers and flower guide
@@ -131,8 +164,8 @@ class LotusController: WKInterfaceController {
         //print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
-        if (seconds >= 10){
-            print("reset")
+        if (seconds >= 10){ 
+            //print("reset")
             timer_reset.invalidate()
             longPress.isEnabled = true
             SwipeUp.isEnabled = false
@@ -181,7 +214,7 @@ class LotusController: WKInterfaceController {
             Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
             Press_label.setHidden(false)
             Restart_button.setHidden(false)
-            print("end")
+            //print("end")
         }
         else{
             Main_Pic.setImageNamed("lotus_closed")
@@ -192,8 +225,8 @@ class LotusController: WKInterfaceController {
     }
     
     @objc func randomize_color(){
-        let number = Int.random(in: 0 ..< 5)
-        //print(number)
+        let number = Int.random(in: 1 ..< 5)
+        print(number)
         if (number == 1){
             current_image = "red"
             Main_Pic.setImageNamed("lotus_red")
