@@ -31,7 +31,8 @@ class GameController: WKInterfaceController {
     var timer = Timer()
     
     
-    
+    @IBOutlet var Arrow: WKInterfaceGroup!
+    @IBOutlet var ArrowMove: WKInterfaceGroup!
     @IBOutlet var animebutton: WKInterfaceGroup!
     @IBOutlet var myLabel: WKInterfaceLabel!
     @IBOutlet var screenTapp: WKTapGestureRecognizer!
@@ -225,6 +226,31 @@ class GameController: WKInterfaceController {
             self.reset_black()
             WKInterfaceDevice.current().play(.click)
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+            if(self.cycleTapCount == (self.hapticCount-1)){
+                self.animebutton.setHidden(true)
+                self.Arrow.setHidden(false)
+            }
+        }
+    }
+    
+    func animateArrow(success: Bool) -> Void {
+        if (success){
+            animate(withDuration: 1) {
+                self.ArrowMove.setWidth(200)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+                self.ArrowMove.setWidth(0)
+                self.Arrow.setHidden(true)
+                self.animebutton.setHidden(false)
+            }
+        }
+        
+        else{
+            Arrow.setHidden(true)
+            animebutton.setHidden(false)
+        }
     }
     
     func reset_black() -> Void {
@@ -289,14 +315,18 @@ class GameController: WKInterfaceController {
         swipes()
     }
     
-
+    @IBAction func arrowTap(_ sender: Any) {
+        tap()
+    }
+    
+    @IBAction func arrowSwipe(_ sender: Any) {
+        swipes()
+    }
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
         tap()
         
     }
-    
-
     
     @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
         swipes()
@@ -309,7 +339,7 @@ class GameController: WKInterfaceController {
         current_cycle.removeAll()
         current_ts.removeAll()
         cycleTapCount = 0
-        animatebutton()
+        animateArrow(success:true)
         print(seshGroups)
         print(getSeshAccuracy(dictionary: seshGroups))
     }
@@ -322,7 +352,7 @@ class GameController: WKInterfaceController {
         current_cycle.removeAll()
         current_ts.removeAll()
         cycleTapCount = 0
-        animatebutton()
+        animateArrow(success: false)
         print(seshGroups)
         print(getSeshAccuracy(dictionary: seshGroups))
     }
@@ -331,7 +361,7 @@ class GameController: WKInterfaceController {
         if (cycleTapCount % hapticCount == 0){
             fail()
         }
-        if (cycleTapCount % hapticCount == 4){
+        if (cycleTapCount == (hapticCount - 1)){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 WKInterfaceDevice.current().play(.directionDown)
             }
