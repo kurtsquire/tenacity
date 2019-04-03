@@ -331,6 +331,11 @@ class GameController: WKInterfaceController {
         if (cycleTapCount % hapticCount == 0){
             fail()
         }
+        if (cycleTapCount % hapticCount == 4){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                WKInterfaceDevice.current().play(.directionDown)
+            }
+        }
     }
     func hapticCallerSwipe() {
         if (cycleTapCount % hapticCount == 0){

@@ -107,7 +107,7 @@ class LotusController: WKInterfaceController {
     }
     
     @objc func counter(){
-        print(seconds)
+        //print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/30.0))
         seconds -= 1
         if (seconds < 0)
@@ -128,7 +128,7 @@ class LotusController: WKInterfaceController {
     }
     
     @objc func counter_reset(){
-        print(seconds)
+        //print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
         if (seconds >= 10){
@@ -167,7 +167,7 @@ class LotusController: WKInterfaceController {
     
     @objc func reset(){
         current_round += 1
-        print(current_round)
+        //print(current_round)
         if (current_round > total_rounds){
             longPress.isEnabled = false
             SwipeUp.isEnabled = false
@@ -193,7 +193,7 @@ class LotusController: WKInterfaceController {
     
     @objc func randomize_color(){
         let number = Int.random(in: 0 ..< 5)
-        print(number)
+        //print(number)
         if (number == 1){
             current_image = "red"
             Main_Pic.setImageNamed("lotus_red")
@@ -210,7 +210,7 @@ class LotusController: WKInterfaceController {
             current_image = "yellow"
             Main_Pic.setImageNamed("lotus_yellow")
         }
-        print(current_image)
+        //print(current_image)
     }
     
     

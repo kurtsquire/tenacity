@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--Lotus Game-->
@@ -79,7 +79,7 @@
                         </label>
                         <label alignment="left" hidden="YES" text="Accuracy_label" numberOfLines="2" id="3nD-GK-Ghc"/>
                         <label alignment="left" hidden="YES" text="Press_label" numberOfLines="2" id="Rfb-X4-LUk"/>
-                        <button width="1" alignment="center" verticalAlignment="bottom" hidden="YES" title="Restart" id="kec-26-0ak">
+                        <button width="1" alignment="center" verticalAlignment="bottom" hidden="YES" title="Main Menu" id="kec-26-0ak">
                             <connections>
                                 <action selector="Restart_button_Action" destination="AgC-eL-Hgc" id="s1j-uT-sgn"/>
                             </connections>
@@ -89,6 +89,7 @@
                         <outlet property="Accuracy_label" destination="3nD-GK-Ghc" id="AWH-er-EU2"/>
                         <outlet property="Initial" destination="ghZ-v2-h8A" id="G0R-mx-La5"/>
                         <outlet property="Instructions" destination="ViR-Yz-Fct" id="ceo-XL-oYA"/>
+                        <outlet property="Main_Pic" destination="Wuj-lr-4Am" id="sSG-ZM-N49"/>
                         <outlet property="Press_label" destination="Rfb-X4-LUk" id="y27-IS-fDr"/>
                         <outlet property="Restart_button" destination="kec-26-0ak" id="Qcx-Ly-tQh"/>
                         <outlet property="Results_label" destination="OrH-qX-fuo" id="e3A-1B-Lg1"/>
@@ -98,7 +99,6 @@
                         <outlet property="SwipeUp" destination="Klv-Wh-sm9" id="QGH-tn-z8m"/>
                         <outlet property="Tap" destination="pP1-t7-oJA" id="XSx-qc-HQ8"/>
                         <outlet property="Welcome" destination="e27-O6-quq" id="0sa-wX-ISF"/>
-                        <outlet property="closed" destination="Wuj-lr-4Am" id="vBB-Cu-ihe"/>
                         <outlet property="longPress" destination="TiY-1S-aVP" id="sXw-CP-Zpb"/>
                     </connections>
                 </controller>
