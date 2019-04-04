@@ -128,25 +128,25 @@
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </group>
-                        <group alignment="center" verticalAlignment="center" hidden="YES" id="H65-RC-YdX" userLabel="ArrowGroup">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" id="H65-RC-YdX" userLabel="ArrowGroup">
                             <items>
                                 <group width="2" height="2" alignment="left" verticalAlignment="center" id="5OD-Mb-m6s" userLabel="MoveGroup"/>
                                 <imageView width="75" height="67" alignment="center" verticalAlignment="center" image="arrow" id="2s3-Hb-qBL" userLabel="Arrow">
-                                    <gestureRecognizers>
-                                        <tapGestureRecognizer id="Oaf-SG-PsF">
-                                            <connections>
-                                                <action selector="arrowTap:" destination="KPJ-Gv-cVQ" id="Oce-xK-gfz"/>
-                                            </connections>
-                                        </tapGestureRecognizer>
-                                        <swipeGestureRecognizer id="Iww-aE-DDx">
-                                            <connections>
-                                                <action selector="arrowSwipe:" destination="KPJ-Gv-cVQ" id="jpW-5F-XuX"/>
-                                            </connections>
-                                        </swipeGestureRecognizer>
-                                    </gestureRecognizers>
                                     <color key="tintColor" red="0.35349778850000002" green="0.97559099739999999" blue="0.64753438050000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 </imageView>
                             </items>
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer id="Iww-aE-DDx">
+                                    <connections>
+                                        <action selector="arrowSwipe:" destination="KPJ-Gv-cVQ" id="jpW-5F-XuX"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <tapGestureRecognizer id="Oaf-SG-PsF">
+                                    <connections>
+                                        <action selector="arrowTap:" destination="KPJ-Gv-cVQ" id="Oce-xK-gfz"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                     </items>
                     <connections>
