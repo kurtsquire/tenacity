@@ -83,6 +83,7 @@ class LotusController: WKInterfaceController {
         choose_guide()
     }
     
+    //randomly chooses memorization set
     @objc func choose_guide(){
         let number = Int.random(in: 1 ..< 5)
         print(number)
