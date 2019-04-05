@@ -25,6 +25,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var breatheBtnGrp: WKInterfaceGroup!
     @IBOutlet var breatheTimeLabel: WKInterfaceLabel!
     @IBOutlet var lotusBtnGrp: WKInterfaceButton!
+    @IBOutlet var rhythmTapBtn: WKInterfaceButton!
+    
     
     
     @IBOutlet var lineAtkTimeLabel: WKInterfaceLabel!
@@ -190,6 +192,13 @@ class InterfaceController: WKInterfaceController {
         pushController(withName: "Lotus Main", context: "Lotus Game")
     }
     
+    @IBAction func rhythmTapBtnPressed() {
+        pushController(withName: "RhythmTap Main", context: "RhythmTap Game")
+    }
+
+    @IBAction func remindersBtnPressed() {
+        pushController(withName: "Reminders Main", context: "RhythmTap Game")
+    }
     
     @IBAction func gpsDrawBtnPressed() {
         if schedulePressed == false{

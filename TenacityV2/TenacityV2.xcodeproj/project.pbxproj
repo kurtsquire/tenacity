@@ -25,6 +25,9 @@
 		425CE7CC216C101500EE3A44 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE7CB216C101500EE3A44 /* NotificationController.swift */; };
 		425CE7CE216C101500EE3A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425CE7CD216C101500EE3A44 /* Assets.xcassets */; };
 		425CE7E721710BB400EE3A44 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425CE7E621710BB400EE3A44 /* GameController.swift */; };
+		425F21AE2256C2A800D207C2 /* Rhythm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425F21AD2256C2A800D207C2 /* Rhythm.storyboard */; };
+		425F21B02256C42C00D207C2 /* RhythmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425F21AF2256C42C00D207C2 /* RhythmController.swift */; };
+		425F21B62256DCE500D207C2 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425F21B52256DCE500D207C2 /* Reminders.storyboard */; };
 		42C3B05B221F8ECC0059069C /* Lotus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C3B05A221F8ECC0059069C /* Lotus.storyboard */; };
 		42C3B05D221F8F910059069C /* LotusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3B05C221F8F910059069C /* LotusController.swift */; };
 		C7638BA2219BDA900092FA66 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7638BA1219BDA900092FA66 /* ScheduleController.swift */; };
@@ -114,6 +117,9 @@
 		425CE7CF216C101500EE3A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425CE7D0216C101500EE3A44 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		425CE7E621710BB400EE3A44 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		425F21AD2256C2A800D207C2 /* Rhythm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Rhythm.storyboard; path = ../Rhythm.storyboard; sourceTree = "<group>"; };
+		425F21AF2256C42C00D207C2 /* RhythmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythmController.swift; sourceTree = "<group>"; };
+		425F21B52256DCE500D207C2 /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
 		42C3B05A221F8ECC0059069C /* Lotus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lotus.storyboard; sourceTree = "<group>"; };
 		42C3B05C221F8F910059069C /* LotusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotusController.swift; sourceTree = "<group>"; };
 		C7638BA1219BDA900092FA66 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 				4244A63F216C2C9200C7A59E /* BreatheGame.storyboard */,
 				4244A63B216C22E900C7A59E /* Schedule.storyboard */,
 				42C3B05A221F8ECC0059069C /* Lotus.storyboard */,
+				425F21AD2256C2A800D207C2 /* Rhythm.storyboard */,
+				425F21B52256DCE500D207C2 /* Reminders.storyboard */,
 				425CE7BB216C101500EE3A44 /* Assets.xcassets */,
 				425CE7BD216C101500EE3A44 /* Info.plist */,
 			);
@@ -231,6 +239,7 @@
 				425CE7D0216C101500EE3A44 /* PushNotificationPayload.apns */,
 				425CE7E621710BB400EE3A44 /* GameController.swift */,
 				42C3B05C221F8F910059069C /* LotusController.swift */,
+				425F21AF2256C42C00D207C2 /* RhythmController.swift */,
 			);
 			path = "TenacityV2 WatchKit Extension";
 			sourceTree = "<group>";
@@ -409,6 +418,8 @@
 			files = (
 				425CE7BC216C101500EE3A44 /* Assets.xcassets in Resources */,
 				4244A640216C2C9200C7A59E /* BreatheGame.storyboard in Resources */,
+				425F21AE2256C2A800D207C2 /* Rhythm.storyboard in Resources */,
+				425F21B62256DCE500D207C2 /* Reminders.storyboard in Resources */,
 				425CE7BA216C101400EE3A44 /* Interface.storyboard in Resources */,
 				42C3B05B221F8ECC0059069C /* Lotus.storyboard in Resources */,
 				4244A63C216C22E900C7A59E /* Schedule.storyboard in Resources */,
@@ -455,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425F21B02256C42C00D207C2 /* RhythmController.swift in Sources */,
 				425CE7CC216C101500EE3A44 /* NotificationController.swift in Sources */,
 				425CE7E721710BB400EE3A44 /* GameController.swift in Sources */,
 				C7638BA2219BDA900092FA66 /* ScheduleController.swift in Sources */,
