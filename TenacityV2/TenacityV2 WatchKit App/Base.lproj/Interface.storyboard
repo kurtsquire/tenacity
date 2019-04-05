@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NTV-tI-VkP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -77,7 +77,7 @@
                                 <action selector="breatheBtnPressed" destination="NTV-tI-VkP" id="zb9-7J-jpO"/>
                             </connections>
                         </button>
-                        <button alignment="left" accessibilityIdentifier="breathe_btn" id="rE2-Fy-kIk">
+                        <button alignment="left" verticalAlignment="center" accessibilityIdentifier="breathe_btn" id="rE2-Fy-kIk">
                             <group key="contentGroup" width="1" height="60" alignment="left" layout="vertical" id="AeW-8I-AqL">
                                 <items>
                                     <group width="1" height="25" alignment="left" hidden="YES" id="5Vd-A4-bB1">
@@ -100,22 +100,76 @@
                                 <action selector="lotusBtnPressed" destination="NTV-tI-VkP" id="T0N-Ei-nRm"/>
                             </connections>
                         </button>
-                        <button alignment="left" hidden="YES" accessibilityIdentifier="breathe_btn" id="U7s-di-oV3">
-                            <group key="contentGroup" width="1" height="70" alignment="left" layout="vertical" id="lhL-d8-PzN">
+                        <button alignment="center" verticalAlignment="center" accessibilityIdentifier="breathe_btn" id="h8x-te-cGF" userLabel="Rhythm Btn Grp">
+                            <group key="contentGroup" width="1" height="60" alignment="left" layout="vertical" id="jZJ-OJ-foq">
                                 <items>
-                                    <group width="1" height="25" alignment="left" id="peS-1g-KpZ">
+                                    <group width="1" alignment="left" hidden="YES" id="rqY-iK-To9">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="Fme-6C-9FC"/>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="qsJ-9o-ic0"/>
+                                            <group width="89" height="27" alignment="right" id="fYe-xK-1Rs" userLabel="Frequency Tags">
+                                                <items>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="1Vo-ph-yaa"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="kdt-6c-aiw"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="VnH-fA-nzw"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="BQA-iJ-XOP"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="XSc-YU-8C3"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="mQe-34-f6m"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="zyu-I7-JEo"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="y8W-9V-Jbc"/>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
-                                    <label alignment="left" verticalAlignment="bottom" text="GPS Draw" id="hLx-ey-Rz1">
-                                        <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                                    </label>
+                                    <group width="1" alignment="left" verticalAlignment="bottom" spacing="0.0" id="fUP-cf-yzp">
+                                        <items>
+                                            <separator height="100" alignment="left" verticalAlignment="bottom" alpha="0.0" id="jXt-Ug-efD"/>
+                                            <label alignment="left" verticalAlignment="bottom" alpha="0.0" text="," id="TFn-uV-Kfu"/>
+                                            <label alignment="left" verticalAlignment="bottom" text="Rhythm Tap" textAlignment="left" id="2kC-GF-F7J">
+                                                <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                            </label>
+                                        </items>
+                                    </group>
                                 </items>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.67764341831207275" green="0.23267769813537598" blue="0.92284494638442993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
-                                <action selector="gpsDrawBtnPressed" destination="NTV-tI-VkP" id="BiX-UT-BSh"/>
+                                <action selector="rhythmTapBtnPressed" destination="NTV-tI-VkP" id="yY8-qn-Tgl"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="bottom" accessibilityIdentifier="breathe_btn" id="3Ib-e4-t5i" userLabel="Reminders Btn Grp">
+                            <group key="contentGroup" width="1" height="60" alignment="left" layout="vertical" id="dbi-nz-dCM">
+                                <items>
+                                    <group width="1" alignment="left" hidden="YES" id="xab-VO-foa">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" hidden="YES" text="Time" id="cGq-R2-1Tw"/>
+                                            <group width="89" height="27" alignment="right" id="dgv-KO-X8t" userLabel="Frequency Tags">
+                                                <items>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="lMq-0b-wm6"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="gr2-8L-pKI"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="cAX-3i-Zd9"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_empty" id="KBX-kM-AQg"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="8vt-lp-wW1"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="EgD-Na-u9Z"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="odt-mE-l8S"/>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="bottom" hidden="YES" image="circle_filled" contentMode="redraw" id="aeD-Tz-EIg"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <group width="1" alignment="left" verticalAlignment="bottom" spacing="0.0" id="j4x-Dc-FJI">
+                                        <items>
+                                            <separator height="100" alignment="left" verticalAlignment="bottom" alpha="0.0" id="65R-dy-FsX"/>
+                                            <label alignment="left" verticalAlignment="bottom" alpha="0.0" text="," id="zsc-ia-HI6"/>
+                                            <label alignment="left" verticalAlignment="bottom" text="Reminders" textAlignment="left" id="ETB-Ed-HFd">
+                                                <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </items>
+                                <color key="backgroundColor" red="0.021458160132169724" green="0.93926185369491577" blue="0.97805708646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <action selector="remindersBtnPressed" destination="NTV-tI-VkP" id="Uo7-k0-u9c"/>
                             </connections>
                         </button>
                     </items>
@@ -131,10 +185,10 @@
                         <outlet property="filled2" destination="EaA-7U-Q51" id="eZA-l9-yZM"/>
                         <outlet property="filled3" destination="wGO-1m-acN" id="nZb-xk-Spv"/>
                         <outlet property="filled4" destination="eoH-g7-sNo" id="m97-Oh-WsU"/>
-                        <outlet property="gpmDrawTimeLabel" destination="Fme-6C-9FC" id="JkC-qe-RxT"/>
-                        <outlet property="gpsDrawBtnGrp" destination="lhL-d8-PzN" id="dTs-dA-HtZ"/>
                         <outlet property="lineAtkTimeLabel" destination="00g-Lj-PJc" id="Dhu-cE-9cl"/>
                         <outlet property="lotusBtnGrp" destination="rE2-Fy-kIk" id="LHw-6U-f1p"/>
+                        <outlet property="rhythmTapBtn" destination="h8x-te-cGF" id="fnK-Q1-Rnc"/>
+                        <outlet property="rhythmTapBtnGrp" destination="jZJ-OJ-foq" id="cYi-8R-g1o"/>
                         <outlet property="scheduleButton" destination="CeU-Md-8hp" id="ozs-6e-iRp"/>
                     </connections>
                 </controller>

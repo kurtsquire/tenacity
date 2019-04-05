@@ -38,9 +38,9 @@ class LotusController: WKInterfaceController {
         total_round_label.setText(String(Int(total_rounds)))
     }
     
-    @IBAction func start_game_action() {
-        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
-    }
+    //@IBAction func start_game_action() {
+    //    WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
+    //}
     
     //change these based on start 
     var up = "red"
@@ -65,27 +65,41 @@ class LotusController: WKInterfaceController {
     
     @IBOutlet var Welcome: WKInterfaceLabel! //Title "Lotus"
     @IBOutlet var Initial: WKInterfaceLabel! //Paragraph below "Lotus"
+    @IBOutlet var Instructions: WKInterfaceLabel! //2nd Page Paragraph
+    @IBOutlet var Main_Pic: WKInterfaceImage!  //main picture used for all flowers and flower guide
+
     
-    //takes away 1st instruction screen after 1st tap
+    @IBOutlet var longPress: WKLongPressGestureRecognizer!
+    @IBOutlet var Tap: WKTapGestureRecognizer! //tap on lotus
+    @IBOutlet var SwipeUp: WKSwipeGestureRecognizer!
+    @IBOutlet var SwipeDown: WKSwipeGestureRecognizer!
+    @IBOutlet var SwipeRight: WKSwipeGestureRecognizer!
+    @IBOutlet var SwipeLeft: WKSwipeGestureRecognizer!
+    
+    @IBOutlet var Results_label: WKInterfaceLabel!  //results title
+    @IBOutlet var Accuracy_label: WKInterfaceLabel! //Accuracy result
+    @IBOutlet var Press_label: WKInterfaceLabel! //Press times result
+    @IBOutlet var Restart_button: WKInterfaceButton! //Back to main menu button
+    
+    //takes away 1st instruction screen after 1st tap and shows the 2nd paragraph
     @IBAction func InitialTap(_ sender: Any) {
         Welcome.setHidden(true)
         Initial.setHidden(true)
         Instructions.setHidden(false)
     }
     
-    @IBOutlet var Instructions: WKInterfaceLabel! //2nd Page Paragraph
+    
     
     //Takes away 2nd paragrpah and shows flower guide
     @IBAction func InstructionsTap(_ sender: Any) {
         Instructions.setHidden(true)
-        Main_Pic.setHidden(false)
-        Tap.isEnabled = true
         choose_guide()
+        Tap.isEnabled = true
     }
     
+    //randomly chooses memorization set
     @objc func choose_guide(){
         let number = Int.random(in: 1 ..< 5)
-        print(number)
         if (number == 1){
             Main_Pic.setImageNamed("flower_guide")
             up = "red"
@@ -114,14 +128,11 @@ class LotusController: WKInterfaceController {
             down = "yellow"
             left = "red"
         }
+        Main_Pic.setHidden(false)
     }
     
-    @IBOutlet var Main_Pic: WKInterfaceImage!  //main picture used for all flowers and flower guide
-    @IBOutlet var Results_label: WKInterfaceLabel!  //results title
-    @IBOutlet var Accuracy_label: WKInterfaceLabel! //Accuracy result
-    @IBOutlet var Press_label: WKInterfaceLabel! //Press times result
     
-    @IBOutlet var Restart_button: WKInterfaceButton!
+    
     //resets all values and returns to main menu
     @IBAction func Restart_button_Action() {
         Results_label.setHidden(true)
@@ -140,7 +151,6 @@ class LotusController: WKInterfaceController {
     }
     
     @objc func counter(){
-        //print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/30.0))
         seconds -= 1
         if (seconds < 0)
@@ -161,11 +171,9 @@ class LotusController: WKInterfaceController {
     }
     
     @objc func counter_reset(){
-        //print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
-        if (seconds >= 10){ 
-            //print("reset")
+        if (seconds >= 10){
             timer_reset.invalidate()
             longPress.isEnabled = true
             SwipeUp.isEnabled = false
@@ -180,7 +188,7 @@ class LotusController: WKInterfaceController {
         press_time += 0.1
     }
     
-    @IBOutlet var longPress: WKLongPressGestureRecognizer!
+    
     @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
         if gestureRecognizer.state == .began{
             timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
@@ -200,7 +208,6 @@ class LotusController: WKInterfaceController {
     
     @objc func reset(){
         current_round += 1
-        //print(current_round)
         if (current_round > total_rounds){
             longPress.isEnabled = false
             SwipeUp.isEnabled = false
@@ -214,7 +221,6 @@ class LotusController: WKInterfaceController {
             Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
             Press_label.setHidden(false)
             Restart_button.setHidden(false)
-            //print("end")
         }
         else{
             Main_Pic.setImageNamed("lotus_closed")
@@ -224,9 +230,9 @@ class LotusController: WKInterfaceController {
         }
     }
     
+    //chooses a random color to show
     @objc func randomize_color(){
         let number = Int.random(in: 1 ..< 5)
-        print(number)
         if (number == 1){
             current_image = "red"
             Main_Pic.setImageNamed("lotus_red")
@@ -243,20 +249,17 @@ class LotusController: WKInterfaceController {
             current_image = "yellow"
             Main_Pic.setImageNamed("lotus_yellow")
         }
-        //print(current_image)
     }
     
+
     
-    @IBOutlet var Tap: WKTapGestureRecognizer!
+    // After tapping on lotus reset and disable tap
     @IBAction func TapAction(_ sender: Any) {
         reset()
         Tap.isEnabled = false
     }
     
-    @IBOutlet var SwipeUp: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeDown: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeRight: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeLeft: WKSwipeGestureRecognizer!
+   
     
     
     @IBAction func SwipeRightAction(_ sender: Any) {
@@ -270,8 +273,6 @@ class LotusController: WKInterfaceController {
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
         }
-        
-        
     }
     @IBAction func SwipeUpAction(_ sender: Any) {
         if (current_image == up){

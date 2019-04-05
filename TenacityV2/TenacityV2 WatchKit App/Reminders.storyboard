@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Reminders Main-->
+        <scene sceneID="NyD-Xp-xwx">
+            <objects>
+                <controller identifier="Reminders Main" id="rBg-sf-8ZZ" customClass="InterfaceController" customModule="TenacityV2_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" textAlignment="center" numberOfLines="35" id="fcw-ve-yE8">
+                            <string key="text">Welcome to Tenacity Flow! To practice good self regulation techniques, we encourage you to use the app throughout each day, and set reminders for yourself to do so. To set a reminder, open the Reminders app on the paired iPhone. Tap the "+" icon and give your reminder a title. Tap the "i" icon to edit frequency and alerts. Set as many reminders as you see fit, and remember that the frequency with which you play the games is up to you!</string>
+                            <color key="textColor" red="0.72297018766403198" green="0.93008947372436523" blue="0.93539953231811523" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="138" y="-6"/>
+        </scene>
+    </scenes>
+</document>
