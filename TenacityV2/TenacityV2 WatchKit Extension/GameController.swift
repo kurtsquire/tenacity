@@ -105,7 +105,7 @@ class GameController: WKInterfaceController {
         let intervalAvg = calcIntervalAvg(intervals: findTimeDeltas(dictionary: seshGroups))    // calculating seconds per breath
         // breaths screen print change to N/a because only one breath
         // let breathsPerSec = Double(1) / intervalAvg                 // changing seconds per breath to breaths ber second
-        BreatheRate.setText(String(format:"%.2f", intervalAvg) + " s")
+        BreatheRate.setText(String(format:"%.1f", intervalAvg))
     }
     
     @IBAction func StartGame() {

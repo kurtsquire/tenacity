@@ -242,7 +242,7 @@
                                                         <label height="1" alignment="left" verticalAlignment="bottom" text="12" numberOfLines="0" id="ev5-To-cZI" userLabel="BreathRate">
                                                             <fontDescription key="font" type="italicSystem" weight="ultraLight" pointSize="22"/>
                                                         </label>
-                                                        <label height="0.59999999999999998" alignment="right" verticalAlignment="bottom" text="seconds" numberOfLines="0" id="CrK-FA-7lZ" userLabel="per second">
+                                                        <label height="0.59999999999999998" alignment="left" verticalAlignment="bottom" text="sec." numberOfLines="0" id="CrK-FA-7lZ" userLabel="per second">
                                                             <fontDescription key="font" type="italicSystem" weight="medium" pointSize="11"/>
                                                         </label>
                                                     </items>
