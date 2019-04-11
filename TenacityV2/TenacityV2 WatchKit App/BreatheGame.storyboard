@@ -69,11 +69,6 @@
                                         <action selector="screenTap:" destination="KPJ-Gv-cVQ" id="RPe-Ep-0cR"/>
                                     </connections>
                                 </tapGestureRecognizer>
-                                <swipeGestureRecognizer id="d9O-rS-f6T">
-                                    <connections>
-                                        <action selector="swipe:" destination="KPJ-Gv-cVQ" id="Pmn-Qx-3bx"/>
-                                    </connections>
-                                </swipeGestureRecognizer>
                             </gestureRecognizers>
                             <fontDescription key="font" type="system" weight="heavy" pointSize="17"/>
                         </label>
@@ -104,13 +99,13 @@
                                         <color key="backgroundColor" red="0.27713519334793091" green="0.82717162370681763" blue="0.91622060537338257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
                                 </button>
-                                <button alignment="center" verticalAlignment="center" id="wbv-dx-jyR">
+                                <button alignment="center" verticalAlignment="center" alpha="0.0" id="wbv-dx-jyR">
                                     <group key="contentGroup" width="30" height="30" alignment="left" alpha="0.34999999999999998" radius="15" id="axf-EO-l0N">
                                         <color key="backgroundColor" red="0.27713519334793091" green="0.82717162370681763" blue="0.91622060537338257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
                                 </button>
                                 <button alignment="center" verticalAlignment="center" id="d0G-wP-jyr" userLabel="BlackSpot">
-                                    <group key="contentGroup" width="100" height="100" alignment="left" alpha="0.0" radius="50" id="zqQ-xK-51q">
+                                    <group key="contentGroup" width="100" height="100" alignment="left" radius="50" id="zqQ-xK-51q">
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </group>
                                 </button>
@@ -162,7 +157,6 @@
                         <outlet property="animebutton" destination="KQy-Mj-k0N" id="qHG-FX-Iex"/>
                         <outlet property="myLabel" destination="1hR-hm-Icu" id="wOp-GJ-HEL"/>
                         <outlet property="screenTapp" destination="0fP-tN-T8g" id="mdA-KB-fb2"/>
-                        <outlet property="swipe" destination="d9O-rS-f6T" id="XkN-IH-5lL"/>
                     </connections>
                 </controller>
             </objects>

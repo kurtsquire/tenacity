@@ -324,13 +324,11 @@ class GameController: WKInterfaceController {
     }
     
     @IBAction func screenTap(_ sender: WKTapGestureRecognizer) {
-        tap()
-        
+        seshbegin = false
+        myLabel.setHidden(true)
+        animebutton.setHidden(false)
     }
     
-    @IBAction func swipe(_ sender2: WKSwipeGestureRecognizer) {
-        swipes()
-    }
     
     func success() {
         cycleCount+=1
