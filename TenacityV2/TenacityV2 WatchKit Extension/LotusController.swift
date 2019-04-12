@@ -8,15 +8,21 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 // should always be the same as default rounds shown on start slider
 var total_rounds = 10.0
 
-class LotusController: WKInterfaceController {
+class LotusController: WKInterfaceController, WCSessionDelegate {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
+        if WCSession.isSupported(){
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
     }
     
     override func willActivate() {
@@ -60,6 +66,8 @@ class LotusController: WKInterfaceController {
     var timer_open = Timer()
     var timer_reset = Timer()
     var timer_press = Timer()
+    
+    //data
     
     var seconds = 30.0
     
@@ -135,6 +143,7 @@ class LotusController: WKInterfaceController {
     
     //resets all values and returns to main menu
     @IBAction func Restart_button_Action() {
+        
         Results_label.setHidden(true)
         Accuracy_label.setHidden(true)
         Press_label.setHidden(true)
@@ -221,6 +230,18 @@ class LotusController: WKInterfaceController {
             Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
             Press_label.setHidden(false)
             Restart_button.setHidden(false)
+            
+            //send data
+            let session = WCSession.default
+            
+            if session.activationState == .activated{
+                
+                let data = ["game": "lotus",
+                            "swipes": ("Correct Swipes: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%"),
+                            "press": ("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")]
+                session.transferUserInfo(data)
+                print("data sent")
+            }
         }
         else{
             Main_Pic.setImageNamed("lotus_closed")
@@ -252,14 +273,11 @@ class LotusController: WKInterfaceController {
     }
     
 
-    
     // After tapping on lotus reset and disable tap
     @IBAction func TapAction(_ sender: Any) {
         reset()
         Tap.isEnabled = false
     }
-    
-   
     
     
     @IBAction func SwipeRightAction(_ sender: Any) {
@@ -309,5 +327,8 @@ class LotusController: WKInterfaceController {
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
         }
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
 }
