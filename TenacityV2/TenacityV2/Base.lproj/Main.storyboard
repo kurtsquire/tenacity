@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OfN-N1-mcm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OfN-N1-mcm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="421"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -26,10 +26,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y5-bB-KNR">
-                                <rect key="frame" x="99" y="473" width="217" height="86"/>
+                                <rect key="frame" x="99" y="548" width="217" height="86"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="3Oo-eV-7OM"/>
+                                    <constraint firstAttribute="height" constant="86" id="StN-9n-0IA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Clear Data">
@@ -42,14 +42,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7y5-bB-KNR" firstAttribute="top" secondItem="OfN-N1-mcm" secondAttribute="bottom" constant="8" symbolic="YES" id="3dR-RH-znR"/>
-                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="7y5-bB-KNR" secondAttribute="bottom" constant="266" id="Ah1-WT-5zd"/>
-                            <constraint firstItem="7y5-bB-KNR" firstAttribute="centerX" secondItem="OfN-N1-mcm" secondAttribute="centerX" id="D0A-qz-Unr"/>
-                            <constraint firstItem="7y5-bB-KNR" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="99" id="DJo-QP-K56"/>
-                            <constraint firstItem="OfN-N1-mcm" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="Kk7-7j-wuo"/>
-                            <constraint firstItem="OfN-N1-mcm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Po4-QL-Pat"/>
-                            <constraint firstAttribute="trailing" secondItem="OfN-N1-mcm" secondAttribute="trailing" id="QSV-tI-n1R"/>
-                            <constraint firstItem="OfN-N1-mcm" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="dPi-c5-6Gy"/>
+                            <constraint firstItem="7y5-bB-KNR" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="99" id="Fh4-Vl-a1X"/>
+                            <constraint firstItem="OfN-N1-mcm" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="HYw-5t-JkO"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="7y5-bB-KNR" secondAttribute="bottom" constant="303" id="M2K-Is-0KF"/>
+                            <constraint firstItem="OfN-N1-mcm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yjx-Hy-a6o"/>
+                            <constraint firstItem="7y5-bB-KNR" firstAttribute="top" secondItem="OfN-N1-mcm" secondAttribute="bottom" constant="8" symbolic="YES" id="dSJ-EL-6bU"/>
+                            <constraint firstAttribute="trailing" secondItem="OfN-N1-mcm" secondAttribute="trailing" id="e06-Rc-pbq"/>
+                            <constraint firstItem="OfN-N1-mcm" firstAttribute="centerX" secondItem="7y5-bB-KNR" secondAttribute="centerX" id="vb3-kE-Bpq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>

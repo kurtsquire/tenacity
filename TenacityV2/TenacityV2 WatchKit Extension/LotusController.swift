@@ -233,7 +233,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             
             //send data
             let session = WCSession.default
-            
             if session.activationState == .activated{
                 
                 let data = ["game": "lotus",
@@ -286,10 +285,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
+            sendData(game: "lotus", what: "swipe", correct: "true")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
+            sendData(game: "lotus", what: "swipe", correct: "false")
         }
     }
     @IBAction func SwipeUpAction(_ sender: Any) {
@@ -298,10 +299,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
+            sendData(game: "lotus", what: "swipe", correct: "true")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
+            sendData(game: "lotus", what: "swipe", correct: "false")
         }
     }
     @IBAction func SwipeDownAction(_ sender: Any) {
@@ -310,10 +313,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
+            sendData(game: "lotus", what: "swipe", correct: "true")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
+            sendData(game: "lotus", what: "swipe", correct: "false")
         }
     }
     @IBAction func SwipeLeftAction(_ sender: Any) {
@@ -322,13 +327,29 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
+            sendData(game: "lotus", what: "swipe", correct: "true")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
+            sendData(game: "lotus", what: "swipe", correct: "false")
         }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+    
+    func sendData(game : String, what : String, correct : String){
+        let session = WCSession.default
+        if session.activationState == .activated{
+            let timestamp = NSDate().timeIntervalSince1970
+            
+            let data = ["game": game,
+                        "what": what,
+                        "correct": correct,
+                        "time": String(timestamp)]
+            session.transferUserInfo(data)
+            
+        }
     }
 }
