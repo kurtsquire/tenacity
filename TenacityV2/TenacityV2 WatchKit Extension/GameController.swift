@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 //ALL DATA THAT MUST BE USED OUTSIDE OF THE CURRENT SCENE MUST BE PUT HERE
 var seconds = 60
@@ -18,7 +19,7 @@ var tapCount = 0
 var wrong = 0
 
 
-class GameController: WKInterfaceController {
+class GameController: WKInterfaceController, WCSessionDelegate {
     
     var seshbegin = true
     var seshend = false
@@ -269,6 +270,7 @@ class GameController: WKInterfaceController {
     }
     
     func tap() -> Void {
+        var correct = ""
         if(seshend){
             return
         }
@@ -285,10 +287,24 @@ class GameController: WKInterfaceController {
         animatebutton()
         myLabel.setText(String(tapCount))
         current_cycle.append("T")
-        hapticCallerTap()
+        correct = hapticCallerTap()
+        
+        //DATA STUFF -------------------
+        let session = WCSession.default
+        if session.activationState == .activated{
+            let timestamp = NSDate().timeIntervalSince1970
+            
+            let data = ["game": "breathe",
+                        "what": "tap",
+                        "correct": String(correct),
+                        "time": String(timestamp)]
+            session.transferUserInfo(data)
+        }
+        ////////////////////
     }
     
     func swipes() -> Void{
+        var correct = ""
         if(seshend){
             return
         }
@@ -304,7 +320,20 @@ class GameController: WKInterfaceController {
         animatebutton()
         myLabel.setText(String(tapCount))
         current_cycle.append("S")
-        hapticCallerSwipe()
+        correct = hapticCallerSwipe()
+        
+        //DATA STUFF -------------------
+        let session = WCSession.default
+        if session.activationState == .activated{
+            let timestamp = NSDate().timeIntervalSince1970
+            
+            let data = ["game": "breathe",
+                        "what": "swipe",
+                        "correct": String(correct),
+                        "time": String(timestamp)]
+            session.transferUserInfo(data)
+        }
+        ////////////////////
     }
     
     @IBAction func buttontap(_ sender: WKTapGestureRecognizer) {
@@ -355,23 +384,53 @@ class GameController: WKInterfaceController {
         print(getSeshAccuracy(dictionary: seshGroups))
     }
     
-    func hapticCallerTap() {
+    func hapticCallerTap() -> String{
+        var correct = ""
         if (cycleTapCount % hapticCount == 0){
             fail()
+            correct = "false"
+            return correct
         }
         if (cycleTapCount == (hapticCount - 1)){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 WKInterfaceDevice.current().play(.directionDown)
             }
+            correct = "true"
         }
+        /// Richie Added
+        else {
+            correct = "true"
+        }
+        ///
+        return correct
     }
-    func hapticCallerSwipe() {
+    func hapticCallerSwipe() -> String{
+        var correct = ""
         if (cycleTapCount % hapticCount == 0){
             success()
+            correct = "true"
         }
         else{
             fail()
+            correct = "false"
         }
+        return correct
+        
+        // data sending
+//        let session = WCSession.default
+//        if session.activationState == .activated{
+//            let timestamp = NSDate().timeIntervalSince1970
+//
+//            let currInfo = seshGroups[cycleCount]
+//
+//            let data = ["game": "breathe",
+//                        "what": currInfo["cycleInputs"]!,
+//                        "correct": correct,
+//                        "time": String(timestamp)]
+//            session.transferUserInfo(data)
+//        //
+        
+        
     }
     
     func findTimeDeltas(dictionary:[Int:[String:Any]]) -> [TimeInterval] {  // call this function in calculateBreathRate to gather time deltas
@@ -430,6 +489,13 @@ class GameController: WKInterfaceController {
     
         override func awake(withContext context: Any?) {
             super.awake(withContext: context)
+            
+            if WCSession.isSupported(){
+                let session = WCSession.default
+                session.delegate = self
+                session.activate()
+            }
+                
             if(context == nil){
                 print("nope")
             }
@@ -445,6 +511,9 @@ class GameController: WKInterfaceController {
             }
             // Configure interface objects here.
         }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
     
     //    override func willActivate() {
     //        // This method is called when watch view controller is about to be visible to user

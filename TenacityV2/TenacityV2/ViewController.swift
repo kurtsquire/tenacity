@@ -15,13 +15,13 @@ class ViewController: UIViewController, WCSessionDelegate {
     var notes = [String]()
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("notes").path
     
-    @IBAction func clearDataButtonPress(_ sender: Any) {
-        notes = [String]()
-        self.receivedDataTextView.text = "notes emptied"
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let delete = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteData))
+        let send = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendData))
+        
+        navigationItem.leftBarButtonItems = [send, delete]
         
         //connecting to wc
         if WCSession.isSupported(){
@@ -33,15 +33,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         // loading from save
         notes = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? [String] ?? [String]()
         
-        
         //changing the text view to match save
         self.receivedDataTextView.text = ""
         for element in self.notes{
             self.receivedDataTextView.text += element
         }
-        
-        let timestamp = NSDate().timeIntervalSince1970
-        self.receivedDataTextView.text += String(timestamp)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -50,10 +46,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
         DispatchQueue.main.async{
             if activationState == .activated {
                 
@@ -65,11 +58,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
-        print("Phone session did become inactive")
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        print("Phone session did deactivate")
         //WCSession.default().activate()   for multiple watches
     }
     
@@ -79,53 +70,32 @@ class ViewController: UIViewController, WCSessionDelegate {
             
             var displayText = ""
             var time = ""
-            //asks what value is in game
+            var what = ""
+            var correct = ""
+            //asks what value is in data
             if let game = userInfo["game"] as? String {
-                
-                //if it is lotus
-                if game == "lotus" {
-                    if let text = userInfo["swipes"] as? String {
-                        if let text2 = userInfo["press"] as? String {
-                            
-                            displayText = ("lotus\n" + text + "\n" + text2 + "\n")
-                            self.notes.append(displayText)
-                            
-                            self.receivedDataTextView.text = ""
-                            for element in self.notes{
-                                self.receivedDataTextView.text += element
-                            }
-                            
-                            NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath)
-                        }
-                        
+                    if let text1 = userInfo["what"] as? String {
+                        what = text1
                     }
-                    if let text = userInfo["what"] as? String {
-                        if let text2 = userInfo["correct"] as? String {
-                            
-                            if let text3 = userInfo["time"] as? String {
-                                time = text3
-                            }
-                            
-                            displayText = ("lotus\n" + text + "\n" + text2 + "\n")
-                            displayText += (time + "\n")
-                            self.notes.append(displayText)
-                            
-                            self.receivedDataTextView.text = ""
-                            for element in self.notes{
-                                self.receivedDataTextView.text += element
-                            }
-                            
-                            NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath)
-                        }
-                        
+                    if let text2 = userInfo["correct"] as? String {
+                        correct = text2
+                    }
+                    if let text3 = userInfo["time"] as? String {
+                        time = text3
+                    }
+                    displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n")
+                    self.notes.append(displayText)
+                    
+                    self.receivedDataTextView.text = ""
+                    for element in self.notes{
+                        self.receivedDataTextView.text += element
                     }
                     
+                    NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath)
                 }
-                else if game == "breathe" {}
                 
-            }
             else{
-                self.receivedDataTextView.text = "got something but cant read it"
+                self.receivedDataTextView.text += "got something but cant read it"
             }
             
         }
@@ -137,6 +107,17 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         return paths[0]
     }
+    
+    @objc func sendData(){
+    }
+    
+    @objc func deleteData(){
+        notes = [String]()
+        self.receivedDataTextView.text = "cleared"
+        NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath)
+    }
+    
+    
     
 
 }

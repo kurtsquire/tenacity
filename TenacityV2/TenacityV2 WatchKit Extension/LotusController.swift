@@ -230,17 +230,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
             Press_label.setHidden(false)
             Restart_button.setHidden(false)
-            
-            //send data
-            let session = WCSession.default
-            if session.activationState == .activated{
-                
-                let data = ["game": "lotus",
-                            "swipes": ("Correct Swipes: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%"),
-                            "press": ("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")]
-                session.transferUserInfo(data)
-                print("data sent")
-            }
         }
         else{
             Main_Pic.setImageNamed("lotus_closed")
