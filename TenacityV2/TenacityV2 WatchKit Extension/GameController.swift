@@ -17,13 +17,13 @@ var cycleCount: Int = 0
 var device = WKInterfaceDevice.current()
 var tapCount = 0
 var wrong = 0
-
+var hapticCount: Int = 5
 
 class GameController: WKInterfaceController, WCSessionDelegate {
     
     var seshbegin = true
     var seshend = false
-    var hapticCount: Int = 5
+    
     
     var cycleTapCount = 0 //Logic breaks if a early swipe is performed, to fix this I made a cycle tap count that is compared against haptic count and resets each cycle
     
@@ -117,6 +117,12 @@ class GameController: WKInterfaceController, WCSessionDelegate {
         seconds = Int(value)
         timerLabel.setText(String(seconds))
         print(seconds)
+    }
+    
+    @IBOutlet var SetLabel: WKInterfaceLabel!
+    @IBAction func setSlider(_ value: Float) {
+        hapticCount = Int(value)
+        SetLabel.setText(String(hapticCount))
     }
     
     @IBAction func Finish() {
@@ -229,7 +235,7 @@ class GameController: WKInterfaceController, WCSessionDelegate {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-            if(self.cycleTapCount == (self.hapticCount-1)){
+            if(self.cycleTapCount == (hapticCount-1)){
                 self.animebutton.setHidden(true)
                 self.Arrow.setHidden(false)
             }

@@ -14,34 +14,39 @@
             <objects>
                 <controller identifier="Breathe Main" title="Breathe" fullBounds="YES" id="2Te-ZM-Pri" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <group width="1" height="0.33000000000000002" alignment="left" layout="vertical" id="ELs-Da-x6W">
+                        <slider height="26" alignment="center" value="60" minimum="30" maximum="300" steps="9" id="aYJ-LM-sHM">
+                            <color key="color" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="center" id="mRP-LH-fZa">
                             <items>
-                                <separator height="100" alignment="left" alpha="0.0" id="pwQ-Cr-cwg"/>
-                                <slider width="1" height="1" alignment="center" value="60" minimum="30" maximum="300" steps="9" id="aYJ-LM-sHM">
-                                    <color key="color" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <connections>
-                                        <action selector="timerSlider:" destination="2Te-ZM-Pri" id="HWE-BH-5cg"/>
-                                    </connections>
-                                </slider>
+                                <label height="25" alignment="center" verticalAlignment="center" text="60" textAlignment="right" id="K3z-cc-2DT">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                </label>
+                                <label height="30" alignment="center" verticalAlignment="center" text="Secs" textAlignment="center" id="Ptc-OS-eZV">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                </label>
                             </items>
                         </group>
-                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" layout="vertical" id="hpI-eL-9WH">
+                        <slider height="22" alignment="center" verticalAlignment="center" value="4" maximum="5" steps="5" id="NV0-qa-N3u" userLabel="Set Slider">
+                            <color key="color" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="setSlider:" destination="2Te-ZM-Pri" id="ohe-SR-eWb"/>
+                            </connections>
+                        </slider>
+                        <group width="56" alignment="center" verticalAlignment="bottom" id="DTb-a9-YUH">
                             <items>
-                                <separator height="100" alignment="left" alpha="0.0" id="mOq-MY-Lw0"/>
-                                <group width="1" alignment="center" verticalAlignment="center" id="mRP-LH-fZa">
-                                    <items>
-                                        <label width="52" height="30" alignment="center" verticalAlignment="center" text="60" textAlignment="right" id="K3z-cc-2DT">
-                                            <fontDescription key="font" type="system" weight="thin" pointSize="28"/>
-                                        </label>
-                                        <label width="42" height="30" alignment="center" verticalAlignment="bottom" text="Secs" textAlignment="center" id="Ptc-OS-eZV">
-                                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
-                                        </label>
-                                    </items>
-                                </group>
-                                <separator height="100" alignment="left" verticalAlignment="center" alpha="0.0" id="hyO-Tw-LC4"/>
+                                <label alignment="center" text="5" id="f7u-Ww-fmc">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                </label>
+                                <label alignment="center" text="Set(s)" id="0VJ-wY-rXz">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                </label>
                             </items>
                         </group>
-                        <button width="1" height="0.33000000000000002" alignment="left" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
+                        <button alignment="center" verticalAlignment="bottom" title="Start" id="08R-uK-JaF">
                             <color key="backgroundColor" red="0.088270194828510284" green="0.70493108034133911" blue="0.5996168851852417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
@@ -50,12 +55,13 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="SetLabel" destination="f7u-Ww-fmc" id="Jj5-hh-T0W"/>
                         <outlet property="timerLabel" destination="K3z-cc-2DT" id="kBS-T8-GrR"/>
                         <outlet property="timerSlider" destination="aYJ-LM-sHM" id="86u-TQ-RL8"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-55" y="56"/>
+            <point key="canvasLocation" x="-55" y="55"/>
         </scene>
         <!--Breathe-->
         <scene sceneID="FLq-KG-iBL">
