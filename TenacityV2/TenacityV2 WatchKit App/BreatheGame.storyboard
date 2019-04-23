@@ -178,7 +178,7 @@
                         </separator>
                         <group width="1" height="0.0" alignment="left" layout="vertical" id="ddD-M0-los">
                             <items>
-                                <group alignment="left" verticalAlignment="center" spacing="3" id="ECV-vY-qF5">
+                                <group alignment="left" verticalAlignment="center" hidden="YES" spacing="3" id="ECV-vY-qF5">
                                     <items>
                                         <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="singleAcc" id="kpW-Ah-4P4">
                                             <color key="tintColor" red="0.1022895798" green="0.7839253545" blue="0.1161842272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -197,23 +197,24 @@
                                         </group>
                                     </items>
                                 </group>
-                                <separator alignment="left" verticalAlignment="center" id="2yB-2I-WPJ">
+                                <separator alignment="left" verticalAlignment="center" hidden="YES" id="2yB-2I-WPJ">
                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </separator>
-                                <group alignment="left" verticalAlignment="center" hidden="YES" spacing="3" id="ban-rH-QAg">
+                                <group alignment="left" verticalAlignment="center" spacing="3" id="ban-rH-QAg">
                                     <items>
                                         <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="groupAcc" id="bhf-ik-Wei">
                                             <color key="tintColor" red="0.1270429492" green="0.57895898820000002" blue="0.98171418909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
+                                        <separator alignment="left" alpha="0.0" id="KZ4-wd-chC"/>
                                         <group alignment="left" layout="vertical" spacing="0.0" id="XqN-oR-DEX">
                                             <items>
                                                 <label alignment="left" text="Group Accuracy" id="IB4-4K-8Gl">
                                                     <color key="textColor" red="0.1270429492" green="0.57895898820000002" blue="0.98171418909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="font" type="system" weight="semibold" pointSize="10"/>
+                                                    <fontDescription key="font" type="system" weight="heavy" pointSize="10"/>
                                                 </label>
                                                 <label alignment="left" verticalAlignment="center" text="70%" id="Tey-KL-5KL" userLabel="GroupAccuracy">
                                                     <accessibilityTraits key="accessibilityTraits" none="YES"/>
-                                                    <fontDescription key="font" type="italicSystem" pointSize="22"/>
+                                                    <fontDescription key="font" type="italicSystem" weight="ultraLight" pointSize="22"/>
                                                 </label>
                                             </items>
                                         </group>
