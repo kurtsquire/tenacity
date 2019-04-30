@@ -30,6 +30,7 @@ class GameController: WKInterfaceController, WCSessionDelegate {
     var current_cycle: [String] = []
     var current_ts: [Date] = []
     var timer = Timer()
+    var pressed = false
     
     
     @IBOutlet var Arrow: WKInterfaceGroup!
@@ -234,12 +235,12 @@ class GameController: WKInterfaceController, WCSessionDelegate {
             WKInterfaceDevice.current().play(.click)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-            if(self.cycleTapCount == (hapticCount-1)){
-                self.animebutton.setHidden(true)
-                self.Arrow.setHidden(false)
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+//            if(self.cycleTapCount == (hapticCount-1)){
+//                self.animebutton.setHidden(true)
+//                self.Arrow.setHidden(false)
+//            }
+//        }
     }
     
     func animateArrow(success: Bool) -> Void {
