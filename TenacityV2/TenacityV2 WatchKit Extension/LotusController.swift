@@ -159,18 +159,28 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
     }
     
+    // holding down on white
     @objc func counter(){
+        print("counter")
+        print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/30.0))
         seconds -= 1
-        if (seconds < 0)
-            {timer.invalidate()}
+        if (seconds <= 0){
+            print("invalidating")
+            timer.invalidate()
+                
+        }
     }
     
+    // colored flower fading in
     @objc func counter_open(){
-        Main_Pic.setAlpha(CGFloat(seconds/20.0))
+        print("counter_open")
+        print(seconds)
+        Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
-        if (seconds > 20)
-            {timer_open.invalidate()
+        if (seconds >= 10)
+            {print("counter open done")
+                timer_open.invalidate()
                 longPress.isEnabled = false
                 SwipeUp.isEnabled = true
                 SwipeDown.isEnabled = true
@@ -179,7 +189,9 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    //white flower fading in
     @objc func counter_reset(){
+        print("counter_reset")
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
         if (seconds >= 10){
@@ -200,11 +212,13 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
         if gestureRecognizer.state == .began{
+            print("began")
             timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter), userInfo: nil, repeats: true)
             //DispatchQueue.main.asyncAfter(1.0)
         }
         if gestureRecognizer.state == .ended{
+            print("ended")
             seconds = 0
             Main_Pic.setAlpha(0.0)
             randomize_color()
@@ -212,6 +226,9 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             timer_press.invalidate()
             total_press_time += press_time
             press_time = 0
+        }
+        else{
+            print("else")
         }
     }
     

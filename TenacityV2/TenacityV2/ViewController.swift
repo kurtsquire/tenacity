@@ -11,8 +11,12 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
 
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var barButtonSave: UIBarButtonItem!
+    @IBOutlet weak var nameTextView: UITextField!
     @IBOutlet weak var receivedDataTextView: UITextView!
     var notes = [String]()
+    var name = "N/A"
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("notes").path
     
     override func viewDidLoad() {
@@ -20,8 +24,9 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         let delete = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteData))
         let send = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendData))
+        let namelabel = UIBarButtonItem(title: "Name", style: .plain, target: self, action: #selector(sendData))
         
-        navigationItem.leftBarButtonItems = [send, delete]
+        navigationItem.leftBarButtonItems = [send, delete, namelabel]
         
         //connecting to wc
         if WCSession.isSupported(){
@@ -30,6 +35,8 @@ class ViewController: UIViewController, WCSessionDelegate {
             session.activate()
         }
         
+        testUserDefaults()
+        namelabel.title = name
         // loading from save
         notes = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? [String] ?? [String]()
         
@@ -38,7 +45,45 @@ class ViewController: UIViewController, WCSessionDelegate {
         for element in self.notes{
             self.receivedDataTextView.text += element
         }
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func clearButtonAction(_ sender: Any) {
+        name = "N/A"
+        UserDefaults.standard.set(name, forKey: "shared_default")
+    }
+    @IBAction func saveButtonAction(_ sender: Any) {
+        self.name = self.nameTextView.text ?? "N/A"
+        UserDefaults.standard.set(name, forKey: "shared_default")
+        self.receivedDataTextView.isHidden = false
+        self.receivedDataTextView.text = name
+        self.nameTextView.isHidden = true
+        self.barButtonSave.title = name
+        //self.barButtonSave.isEnabled = false
+    }
+    
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        
+        if let contents = defaults.string(forKey: "shared_default"){
+            if contents != "N/A"{
+                name = contents
+                self.barButtonSave.title = name
+            }
+            else{
+                self.receivedDataTextView.isHidden = true
+                self.nameTextView.isHidden = false
+                self.barButtonSave.isEnabled = true
+            }
+        }
+        else{
+            self.receivedDataTextView.isHidden = true
+            self.nameTextView.isHidden = false
+            self.barButtonSave.isEnabled = true
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
