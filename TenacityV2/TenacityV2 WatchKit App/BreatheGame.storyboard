@@ -173,7 +173,7 @@
             <objects>
                 <controller identifier="Breathe Final" id="HrM-3P-rCB" customClass="GameController" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <separator alignment="left" id="niL-jd-aQK">
+                        <separator alignment="left" hidden="YES" id="niL-jd-aQK">
                             <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
                         <group width="1" height="0.0" alignment="left" layout="vertical" id="ddD-M0-los">
@@ -252,7 +252,7 @@
                                         </group>
                                     </items>
                                 </group>
-                                <separator alignment="left" verticalAlignment="center" id="3CX-dp-EGD">
+                                <separator alignment="left" verticalAlignment="center" hidden="YES" id="3CX-dp-EGD">
                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </separator>
                                 <button width="1" height="55" alignment="center" verticalAlignment="bottom" title="Finish" id="ySJ-qd-Upq">
