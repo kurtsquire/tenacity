@@ -44,6 +44,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         total_round_label.setText(String(Int(total_rounds)))
     }
     
+    // to take out back carrot
     //@IBAction func start_game_action() {
     //    WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
     //}
@@ -53,7 +54,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     var down = "blue"
     var right = "green"
     var left = "yellow"
-    var current_image = "green"
+    var current_image = "guide"
+    var white = false
     
     //how long they hold an individual bloom
     var press_time = 0.0
@@ -95,8 +97,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         Initial.setHidden(true)
         Instructions.setHidden(false)
     }
-    
-    
     
     //Takes away 2nd paragrpah and shows flower guide
     @IBAction func InstructionsTap(_ sender: Any) {
@@ -143,7 +143,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     //resets all values and returns to main menu
     @IBAction func Restart_button_Action() {
-        
         Results_label.setHidden(true)
         Accuracy_label.setHidden(true)
         Press_label.setHidden(true)
@@ -161,27 +160,20 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     // holding down on white
     @objc func counter(){
-        print("counter")
-        print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/30.0))
         seconds -= 1
         if (seconds <= 0){
-            print("invalidating")
             timer.invalidate()
-                
         }
     }
     
     // colored flower fading in
     @objc func counter_open(){
-        print("counter_open")
-        print(seconds)
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
-        if (seconds >= 10)
-            {print("counter open done")
+        if (seconds >= 10){
                 timer_open.invalidate()
-                longPress.isEnabled = false
+                //longPress.isEnabled = false
                 SwipeUp.isEnabled = true
                 SwipeDown.isEnabled = true
                 SwipeRight.isEnabled = true
@@ -191,17 +183,18 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     //white flower fading in
     @objc func counter_reset(){
-        print("counter_reset")
         Main_Pic.setAlpha(CGFloat(seconds/10.0))
         seconds += 1
         if (seconds >= 10){
             timer_reset.invalidate()
-            longPress.isEnabled = true
+            //longPress.isEnabled = true
             SwipeUp.isEnabled = false
             SwipeDown.isEnabled = false
             SwipeRight.isEnabled = false
             SwipeLeft.isEnabled = false
-            seconds = 30
+            seconds = 0
+            white = true
+            
         }
     }
     
@@ -212,13 +205,11 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
         if gestureRecognizer.state == .began{
-            print("began")
             timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter), userInfo: nil, repeats: true)
             //DispatchQueue.main.asyncAfter(1.0)
         }
         if gestureRecognizer.state == .ended{
-            print("ended")
             seconds = 0
             Main_Pic.setAlpha(0.0)
             randomize_color()
@@ -227,15 +218,13 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             total_press_time += press_time
             press_time = 0
         }
-        else{
-            print("else")
-        }
     }
     
     @objc func reset(){
         current_round += 1
         if (current_round > total_rounds){
-            longPress.isEnabled = false
+            Tap.isEnabled = false
+            //longPress.isEnabled = false
             SwipeUp.isEnabled = false
             SwipeDown.isEnabled = false
             SwipeRight.isEnabled = false
@@ -280,8 +269,20 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
 
     // After tapping on lotus reset and disable tap
     @IBAction func TapAction(_ sender: Any) {
-        reset()
-        Tap.isEnabled = false
+        if (current_image == "guide"){
+            reset()
+            current_image = "N/A"
+            white = true
+        }
+        else if white{
+            white = false
+            seconds = 0
+            Main_Pic.setAlpha(0.0)
+            randomize_color()
+            timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
+            
+        }
+        
     }
     
     

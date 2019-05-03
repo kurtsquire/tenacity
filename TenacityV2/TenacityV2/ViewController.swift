@@ -11,9 +11,11 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
 
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var barButtonClear: UIBarButtonItem!
     @IBOutlet weak var barButtonSave: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextView: UITextField!
+    
     @IBOutlet weak var receivedDataTextView: UITextView!
     var notes = [String]()
     var name = "N/A"
@@ -24,7 +26,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         let delete = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteData))
         let send = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendData))
-        let namelabel = UIBarButtonItem(title: "Name", style: .plain, target: self, action: #selector(sendData))
+        let namelabel = UIBarButtonItem(title: "Name", style: .plain, target: self, action: #selector(changeName))
         
         navigationItem.leftBarButtonItems = [send, delete, namelabel]
         
@@ -53,14 +55,16 @@ class ViewController: UIViewController, WCSessionDelegate {
         name = "N/A"
         UserDefaults.standard.set(name, forKey: "shared_default")
     }
+    
     @IBAction func saveButtonAction(_ sender: Any) {
         self.name = self.nameTextView.text ?? "N/A"
         UserDefaults.standard.set(name, forKey: "shared_default")
         self.receivedDataTextView.isHidden = false
         self.receivedDataTextView.text = name
         self.nameTextView.isHidden = true
-        self.barButtonSave.title = name
-        //self.barButtonSave.isEnabled = false
+        self.saveButton.setTitle(self.name, for: UIControlState.normal)
+        self.barButtonSave.isEnabled = false
+        self.barButtonClear.isEnabled = false
     }
     
     func testUserDefaults(){
@@ -69,21 +73,13 @@ class ViewController: UIViewController, WCSessionDelegate {
         if let contents = defaults.string(forKey: "shared_default"){
             if contents != "N/A"{
                 name = contents
-                self.barButtonSave.title = name
-            }
-            else{
-                self.receivedDataTextView.isHidden = true
-                self.nameTextView.isHidden = false
-                self.barButtonSave.isEnabled = true
+                return
             }
         }
-        else{
-            self.receivedDataTextView.isHidden = true
-            self.nameTextView.isHidden = false
-            self.barButtonSave.isEnabled = true
-            
-        }
-        
+        self.receivedDataTextView.isHidden = true
+        self.nameTextView.isHidden = false
+        self.barButtonSave.isEnabled = true
+        self.barButtonClear.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,13 +143,18 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     static func getDocumentsDirectory() -> URL {
-        
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        
         return paths[0]
     }
     
     @objc func sendData(){
+    }
+    
+    @objc func changeName(){
+        self.receivedDataTextView.isHidden = true
+        self.nameTextView.isHidden = false
+        self.barButtonSave.isEnabled = true
+        self.barButtonClear.isEnabled = true
     }
     
     @objc func deleteData(){

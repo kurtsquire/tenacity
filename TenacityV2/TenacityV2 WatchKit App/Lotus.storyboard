@@ -18,7 +18,7 @@
                             <color key="textColor" red="0.97559099740932642" green="0.38786385979153398" blue="0.85125982655558419" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
                         </label>
-                        <label width="1" height="0.75" alignment="center" verticalAlignment="center" text="Tap and hold the white bud to bloom a vibrant flower (tap to continue)" textAlignment="center" numberOfLines="6" id="ghZ-v2-h8A">
+                        <label width="1" height="0.75" alignment="center" verticalAlignment="center" text="Tap the white bud to bloom a vibrant flower (tap to continue)" textAlignment="center" numberOfLines="6" id="ghZ-v2-h8A">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="70Y-Hd-Gwm">
                                     <connections>

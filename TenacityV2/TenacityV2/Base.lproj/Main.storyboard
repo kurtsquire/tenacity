@@ -44,7 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jv5-5Q-HQD">
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="g38-SJ-2AL">
+                            <barButtonItem enabled="NO" style="plain" id="g38-SJ-2AL">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c7K-aw-O7N">
                                     <rect key="frame" x="302" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,11 +54,11 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="68t-ZY-f0i">
+                            <barButtonItem enabled="NO" style="plain" id="68t-ZY-f0i">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3N5-Dd-FGA">
                                     <rect key="frame" x="202" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
+                                    <state key="normal" title="ClearName"/>
                                     <connections>
                                         <action selector="clearButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktg-wj-ypE"/>
                                     </connections>
@@ -67,7 +67,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="barButtonSave" destination="g38-SJ-2AL" id="qEA-my-I0R"/>
+                        <outlet property="barButtonClear" destination="68t-ZY-f0i" id="dph-SK-cSk"/>
+                        <outlet property="barButtonSave" destination="g38-SJ-2AL" id="Chm-sZ-imo"/>
                         <outlet property="nameTextView" destination="6AV-Bv-4lX" id="lQ9-wa-OTH"/>
                         <outlet property="receivedDataTextView" destination="OfN-N1-mcm" id="11R-fM-FYB"/>
                         <outlet property="saveButton" destination="c7K-aw-O7N" id="V64-Ir-zrj"/>
