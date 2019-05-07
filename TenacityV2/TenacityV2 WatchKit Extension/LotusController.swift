@@ -107,33 +107,173 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     //randomly chooses memorization set
     @objc func choose_guide(){
-        let number = Int.random(in: 1 ..< 5)
+        let number = Int.random(in: 1 ..< 25)
         if (number == 1){
             Main_Pic.setImageNamed("flower_guide")
+            up = "red"
+            right = "green"
+            down = "yellow"
+            left = "blue"
+        }
+        else if (number == 2){
+            Main_Pic.setImageNamed("flower_guide2")
             up = "red"
             right = "green"
             down = "blue"
             left = "yellow"
         }
-        else if (number == 2){
-            Main_Pic.setImageNamed("flower_guide_2")
-            up = "yellow"
-            right = "red"
+        else if (number == 3){
+            Main_Pic.setImageNamed("flower_guide3")
+            up = "red"
+            right = "yellow"
             down = "green"
             left = "blue"
         }
-        else if (number == 3){
-            Main_Pic.setImageNamed("flower_guide_3")
+        else if (number == 4){
+            Main_Pic.setImageNamed("flower_guide4")
+            up = "red"
+            right = "blue"
+            down = "green"
+            left = "yellow"
+        }
+        else if (number == 5){
+            Main_Pic.setImageNamed("flower_guide5")
+            up = "red"
+            right = "yellow"
+            down = "blue"
+            left = "green"
+        }
+        else if (number == 6){
+            Main_Pic.setImageNamed("flower_guide6")
+            up = "red"
+            right = "blue"
+            down = "yellow"
+            left = "green"
+        }
+        else if (number == 7){
+            Main_Pic.setImageNamed("flower_guide7")
+            up = "blue"
+            right = "green"
+            down = "yellow"
+            left = "red"
+        }
+        else if (number == 8){
+            Main_Pic.setImageNamed("flower_guide8")
+            up = "blue"
+            right = "yellow"
+            down = "green"
+            left = "red"
+        }
+        else if (number == 9){
+            Main_Pic.setImageNamed("flower_guide9")
             up = "blue"
             right = "yellow"
             down = "red"
             left = "green"
         }
-        else {
-            Main_Pic.setImageNamed("flower_guide_4")
+        else if (number == 10){
+            Main_Pic.setImageNamed("flower_guide10")
+            up = "blue"
+            right = "green"
+            down = "red"
+            left = "yellow"
+        }
+        else if (number == 11){
+            Main_Pic.setImageNamed("flower_guide11")
+            up = "blue"
+            right = "red"
+            down = "yellow"
+            left = "green"
+        }
+        else if (number == 12){
+            Main_Pic.setImageNamed("flower_guide12")
+            up = "blue"
+            right = "red"
+            down = "green"
+            left = "yellow"
+        }
+        else if (number == 13){
+            Main_Pic.setImageNamed("flower_guide13")
             up = "green"
             right = "blue"
             down = "yellow"
+            left = "red"
+        }
+        else if (number == 14){
+            Main_Pic.setImageNamed("flower_guide14")
+            up = "green"
+            right = "yellow"
+            down = "blue"
+            left = "red"
+        }
+        else if (number == 15){
+            Main_Pic.setImageNamed("flower_guide15")
+            up = "green"
+            right = "yellow"
+            down = "red"
+            left = "blue"
+        }
+        else if (number == 16){
+            Main_Pic.setImageNamed("flower_guide16")
+            up = "green"
+            right = "blue"
+            down = "red"
+            left = "yellow"
+        }
+        else if (number == 17){
+            Main_Pic.setImageNamed("flower_guide17")
+            up = "green"
+            right = "red"
+            down = "yellow"
+            left = "blue"
+        }
+        else if (number == 18){
+            Main_Pic.setImageNamed("flower_guide18")
+            up = "green"
+            right = "red"
+            down = "blue"
+            left = "yellow"
+        }
+        else if (number == 19){
+            Main_Pic.setImageNamed("flower_guide19")
+            up = "yellow"
+            right = "blue"
+            down = "red"
+            left = "green"
+        }
+        else if (number == 20){
+            Main_Pic.setImageNamed("flower_guide20")
+            up = "yellow"
+            right = "green"
+            down = "red"
+            left = "blue"
+        }
+        else if (number == 21){
+            Main_Pic.setImageNamed("flower_guide21")
+            up = "yellow"
+            right = "red"
+            down = "blue"
+            left = "green"
+        }
+        else if (number == 22){
+            Main_Pic.setImageNamed("flower_guide22")
+            up = "yellow"
+            right = "red"
+            down = "green"
+            left = "blue"
+        }
+        else if (number == 23){
+            Main_Pic.setImageNamed("flower_guide23")
+            up = "yellow"
+            right = "blue"
+            down = "green"
+            left = "red"
+        }
+        else if (number == 24){
+            Main_Pic.setImageNamed("flower_guide24")
+            up = "yellow"
+            right = "green"
+            down = "blue"
             left = "red"
         }
         Main_Pic.setHidden(false)
