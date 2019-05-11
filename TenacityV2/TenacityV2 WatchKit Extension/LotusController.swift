@@ -374,7 +374,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             Accuracy_label.setText("Correct Swipes: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%")
             Accuracy_label.setHidden(false)
             Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
-            Press_label.setHidden(false)
+            //Press_label.setHidden(false)
             Restart_button.setHidden(false)
         }
         else{

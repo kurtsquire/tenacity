@@ -59,13 +59,13 @@
                                     <color key="textColor" red="0.0057474765926599503" green="0.60298079252243042" blue="0.99746531248092651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Total Cycles: " id="nde-oP-dzi">
+                                <label alignment="right" verticalAlignment="bottom" text="Total_Cycles" id="nde-oP-dzi">
                                     <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Correct Cycles: " id="2c5-cX-Bto">
+                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" id="2c5-cX-Bto">
                                     <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="TIme Played: " id="prh-wp-NFW">
+                                <label alignment="right" verticalAlignment="bottom" text="TIme_Played" id="prh-wp-NFW">
                                     <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
                             </items>
@@ -140,7 +140,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-241" y="129"/>
+            <point key="canvasLocation" x="-251" y="291"/>
         </scene>
     </scenes>
 </document>

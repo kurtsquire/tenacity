@@ -54,11 +54,11 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" style="plain" id="68t-ZY-f0i">
+                            <barButtonItem style="plain" id="68t-ZY-f0i">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3N5-Dd-FGA">
                                     <rect key="frame" x="202" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="ClearName"/>
+                                    <state key="normal" title="Name"/>
                                     <connections>
                                         <action selector="clearButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktg-wj-ypE"/>
                                     </connections>

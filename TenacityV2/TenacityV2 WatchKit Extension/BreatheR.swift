@@ -13,6 +13,10 @@ import WatchConnectivity
 
 var FullCycle = 5
 var sessionTime = 60
+var time = 0.0
+var correctCyclesTotal = 0
+var cycleTotal = 0
+var inGame = true
 
 
 class BreatheR: WKInterfaceController, WCSessionDelegate  {
@@ -21,7 +25,7 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     let startRelativeWidth = 0.5
     
     var counter = 0.0
-    var time = 0.0
+    
     
     var averageFullBreatheTime = 3.5
     var totalBreaths = 0
@@ -31,10 +35,8 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     var gameLengthTimer = Timer()
     
     //var FullCycle = 5
-    var correctCyclesTotal = 0.0
-    var cycleTotal = 0.0
-    var cycleStep = 0
     
+    var cycleStep = 0
     
     //Initial Settings Page
     @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
@@ -54,6 +56,10 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     
     @IBAction func startButtonTapped() {
         WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Main"], contexts: ["start game"])
+        inGame = true
+        time = 0
+        var correctCyclesTotal = 0
+        var cycleTotal = 0
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheR.sessionCounter), userInfo: nil, repeats: true)
     }
     ////////////////////////////////////////
@@ -72,9 +78,13 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+
         
-        //image.setTintColor(UIColor.yellow)
-        //image.setImageNamed("breathey")
+        if((context as! String) == "Breathe Done"){
+            correctCyclesLabel.setText("Correct Cycles: " + String(correctCyclesTotal))
+            totalCyclesLabel.setText("Total Cycles: " + String(cycleTotal))
+            timePlayedLabel.setText("Time Played: " + String(Int(time)))
+        }
         
         if WCSession.isSupported(){
             let session = WCSession.default
@@ -94,16 +104,15 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        print(correctCyclesTotal)
-        print(cycleTotal)
-        print(time)
-        //correctCyclesLabel.setText("Correct Cycles: " + String(format: "%.0f", Double(correctCyclesTotal)))
-        //totalCyclesLabel.setText("Total Cycles: " + String(format: "%.0f", Double(cycleTotal)))
+        if (inGame == true){
+            inGame = false
+            WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Results"], contexts: ["Breathe Done"])
+        }
         
-        WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Results"], contexts: ["Breathe Done"])
     }
     
     @IBAction func forceQuit() {
+        gameLengthTimer.invalidate()
         endGame()
     }
     

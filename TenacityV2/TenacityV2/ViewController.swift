@@ -24,11 +24,12 @@ class ViewController: UIViewController, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let delete = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteData))
-        let send = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendData))
+        //let delete = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteData))
+        //let send = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendData))
         let namelabel = UIBarButtonItem(title: "Name", style: .plain, target: self, action: #selector(changeName))
         
-        navigationItem.leftBarButtonItems = [send, delete, namelabel]
+        //navigationItem.leftBarButtonItems = [send, delete, namelabel]
+        navigationItem.leftBarButtonItems = [namelabel]
         
         //connecting to wc
         if WCSession.isSupported(){
@@ -39,6 +40,10 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         testUserDefaults()
         namelabel.title = name
+        
+        if (name != "N/A"){
+            barButtonClear.isEnabled = false
+        }
         // loading from save
         notes = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? [String] ?? [String]()
         
@@ -52,8 +57,12 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     @IBAction func clearButtonAction(_ sender: Any) {
-        name = "N/A"
-        UserDefaults.standard.set(name, forKey: "shared_default")
+        self.receivedDataTextView.isHidden = true
+        self.nameTextView.isHidden = false
+        self.barButtonSave.isEnabled = true
+        self.barButtonClear.isEnabled = true
+        //name = "N/A"
+        //UserDefaults.standard.set(name, forKey: "shared_default")
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
@@ -65,6 +74,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.saveButton.setTitle(self.name, for: UIControlState.normal)
         self.barButtonSave.isEnabled = false
         self.barButtonClear.isEnabled = false
+        
+        
+        //
+        self.notes.append((self.name + ":::\n"))
+        NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath)
     }
     
     func testUserDefaults(){
@@ -151,10 +165,11 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     @objc func changeName(){
+        if (name == "N/A"){
         self.receivedDataTextView.isHidden = true
         self.nameTextView.isHidden = false
         self.barButtonSave.isEnabled = true
-        self.barButtonClear.isEnabled = true
+            self.barButtonClear.isEnabled = true}
     }
     
     @objc func deleteData(){
