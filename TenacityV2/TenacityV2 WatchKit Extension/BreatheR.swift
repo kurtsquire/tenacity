@@ -17,6 +17,7 @@ var time = 0.0
 var correctCyclesTotal = 0
 var cycleTotal = 0
 var inGame = true
+var resetInterval = 2.5
 
 
 class BreatheR: WKInterfaceController, WCSessionDelegate  {
@@ -54,7 +55,7 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         cycleNumLabel.setText(String(Int(FullCycle)))
     }
     
-    @IBAction func startButtonTapped() {
+    @IBAction func startButtonTapped() {    // change to TutorialEnd()
         WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Main"], contexts: ["start game"])
         inGame = true
         time = 0
@@ -190,7 +191,8 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
             totalBreaths += 1
             print("total breaths: " + String(totalBreaths))
             
-            animate(withDuration: (breatheInTime - 0.5)){
+            //Can use "(breatheInTime - offset)" or global var "resetInterval" for "withDuration"
+            animate(withDuration: resetInterval){
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
                 self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
             }
