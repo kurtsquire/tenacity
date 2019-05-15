@@ -55,7 +55,7 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         cycleNumLabel.setText(String(Int(FullCycle)))
     }
     
-    @IBAction func startButtonTapped() {
+    @IBAction func startButtonTapped() {    // change to TutorialEnd()
         WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Main"], contexts: ["start game"])
         inGame = true
         time = 0

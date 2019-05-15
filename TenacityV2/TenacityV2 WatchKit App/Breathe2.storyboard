@@ -9,6 +9,54 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
+        <!--Tutorial1-->
+        <scene sceneID="FlF-8J-bkP">
+            <objects>
+                <controller identifier="BreatheR Tutorial1" title="Tutorial1" id="mOL-TA-PrS">
+                    <items>
+                        <group width="1" height="1" alignment="center" contentMode="top" layout="vertical" id="oEy-gq-W2e">
+                            <items>
+                                <label alignment="center" text="Press and hold the image when you breathe in." textAlignment="center" numberOfLines="3" id="fy8-bL-igG">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                                <imageView width="67" height="63" alignment="center" verticalAlignment="center" image="breathey" contentMode="scaleAspectFit" id="ul6-HW-cBV"/>
+                                <label alignment="center" verticalAlignment="bottom" text="Let go when you breathe out." textAlignment="center" numberOfLines="2" id="C9Q-k3-tae">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                            </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="8G3-9N-RfM"/>
+                            </gestureRecognizers>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-6" y="291"/>
+        </scene>
+        <!--Tutorial2-->
+        <scene sceneID="aXw-ce-PTi">
+            <objects>
+                <controller identifier="BreatheR Tutorial2" title="Tutorial2" id="7Mi-Yp-r0a">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="4a8-zC-66t">
+                            <items>
+                                <label alignment="center" text="After your Xth breath, swipe to complete your breath cycle." textAlignment="center" numberOfLines="3" id="CBw-zr-cO7">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                                <imageView width="67" height="63" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="jxk-Oq-kb6"/>
+                                <label alignment="center" verticalAlignment="bottom" hidden="YES" text="Try swiping now." textAlignment="center" id="dGV-nk-3tN">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </label>
+                            </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="1Rl-TK-dUU"/>
+                            </gestureRecognizers>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="238" y="291"/>
+        </scene>
         <!--Breathe-->
         <scene sceneID="oVX-MU-czS">
             <objects>
@@ -16,7 +64,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="xQa-aE-Hm9">
                             <items>
-                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathey" id="fc8-10-EgK"/>
+                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathey" contentMode="scaleAspectFit" id="fc8-10-EgK"/>
                             </items>
                             <gestureRecognizers>
                                 <longPressGestureRecognizer minimumPressDuration="0.20000000000000001" id="aKi-Sg-OHP">
@@ -47,6 +95,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="531" y="291"/>
         </scene>
         <!--Results-->
         <scene sceneID="XUg-dL-UFG">
@@ -85,7 +134,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="370" y="129"/>
+            <point key="canvasLocation" x="777" y="291"/>
         </scene>
         <!--Breathe Start-->
         <scene sceneID="Chy-bZ-aZV">
