@@ -85,14 +85,24 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="8ma-CO-wkb">
+                        <items>
+                            <menuItem title="Resume" icon="resume" id="Abc-ZY-1eC"/>
+                            <menuItem title="Quit" icon="block" id="rnH-hS-LYH">
+                                <connections>
+                                    <action selector="forceQuit" destination="AgC-eL-Hgc" id="XR1-Lw-ETU"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="Accuracy_label" destination="3nD-GK-Ghc" id="AWH-er-EU2"/>
                         <outlet property="Initial" destination="ghZ-v2-h8A" id="G0R-mx-La5"/>
                         <outlet property="Instructions" destination="ViR-Yz-Fct" id="ceo-XL-oYA"/>
                         <outlet property="Main_Pic" destination="Wuj-lr-4Am" id="sSG-ZM-N49"/>
-                        <outlet property="Press_label" destination="Rfb-X4-LUk" id="y27-IS-fDr"/>
                         <outlet property="Restart_button" destination="kec-26-0ak" id="Qcx-Ly-tQh"/>
                         <outlet property="Results_label" destination="OrH-qX-fuo" id="e3A-1B-Lg1"/>
+                        <outlet property="Round_label" destination="Rfb-X4-LUk" id="HOh-rG-7H5"/>
                         <outlet property="SwipeDown" destination="879-JE-xFq" id="inF-Rh-CLh"/>
                         <outlet property="SwipeLeft" destination="BZD-nW-E7g" id="MxF-d0-GNj"/>
                         <outlet property="SwipeRight" destination="DKV-kb-XjG" id="uVr-Ur-m7z"/>
@@ -142,7 +152,6 @@
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
                                 <action selector="start_game_action" destination="10O-DK-oew" id="xcB-x5-c5E"/>
-                                <segue destination="AgC-eL-Hgc" kind="push" id="axS-GY-06C"/>
                             </connections>
                         </button>
                     </items>

@@ -11,7 +11,7 @@ import Foundation
 import WatchConnectivity
 
 // should always be the same as default rounds shown on start slider
-var total_rounds = 10.0
+var total_rounds = 10
 
 class LotusController: WKInterfaceController, WCSessionDelegate {
 
@@ -35,19 +35,27 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    var current_round = 0.0
+    var current_round = 0
     
     @IBOutlet var total_round_label: WKInterfaceLabel!
     @IBOutlet var round_slider: WKInterfaceSlider!
     @IBAction func round_slider_action(_ value: Float) {
-        total_rounds = Double(value)
+        total_rounds = Int(value)
         total_round_label.setText(String(Int(total_rounds)))
     }
     
     // to take out back carrot
-    //@IBAction func start_game_action() {
-    //    WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
-    //}
+    @IBAction func start_game_action() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
+    }
+    
+    
+    // menu buttons //////////////
+    @IBAction func forceQuit() {
+        toResults()
+    }
+    //////////////////////////////
+    
     
     //change these based on start 
     var up = "red"
@@ -56,11 +64,17 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     var left = "yellow"
     var current_image = "guide"
     var white = false
+    ////////////////////////////
     
+    
+    ////////////////////////////////////////// Obsolete
     //how long they hold an individual bloom
     var press_time = 0.0
     //total time they held all blooms
     var total_press_time = 0.0
+    //////////////////////////////////////////
+    
+    
     var successful_swipes = 0.0
     var total_swipes = 0.0
     
@@ -88,7 +102,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet var Results_label: WKInterfaceLabel!  //results title
     @IBOutlet var Accuracy_label: WKInterfaceLabel! //Accuracy result
-    @IBOutlet var Press_label: WKInterfaceLabel! //Press times result
+    @IBOutlet var Round_label: WKInterfaceLabel!  //Rounds played result
+    
     @IBOutlet var Restart_button: WKInterfaceButton! //Back to main menu button
     
     //takes away 1st instruction screen after 1st tap and shows the 2nd paragraph
@@ -285,16 +300,17 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     @IBAction func Restart_button_Action() {
         Results_label.setHidden(true)
         Accuracy_label.setHidden(true)
-        Press_label.setHidden(true)
+        Round_label.setHidden(true)
         Restart_button.setHidden(true)
         Welcome.setHidden(false)
         Initial.setHidden(false)
-        current_round = 0.0
+        current_round = 0
         press_time = 0.0
         total_press_time = 0.0
         successful_swipes = 0.0
         total_swipes = 0.0
         seconds = 30.0
+        total_rounds = 10
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
     }
     
@@ -360,22 +376,26 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    func toResults(){
+        Tap.isEnabled = false
+        
+        SwipeUp.isEnabled = false
+        SwipeDown.isEnabled = false
+        SwipeRight.isEnabled = false
+        SwipeLeft.isEnabled = false
+        Main_Pic.setHidden(true)
+        Results_label.setHidden(false)
+        Accuracy_label.setText("Accuracy: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%")
+        Accuracy_label.setHidden(false)
+        Round_label.setText("Rounds Played: " + String(current_round))
+        Round_label.setHidden(false)
+        Restart_button.setHidden(false)
+    }
+    
     @objc func reset(){
         current_round += 1
         if (current_round > total_rounds){
-            Tap.isEnabled = false
-            //longPress.isEnabled = false
-            SwipeUp.isEnabled = false
-            SwipeDown.isEnabled = false
-            SwipeRight.isEnabled = false
-            SwipeLeft.isEnabled = false
-            Main_Pic.setHidden(true)
-            Results_label.setHidden(false)
-            Accuracy_label.setText("Correct Swipes: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%")
-            Accuracy_label.setHidden(false)
-            Press_label.setText("Average Press Time: " + String(format: "%.2f", (total_press_time/total_rounds)) + "s")
-            //Press_label.setHidden(false)
-            Restart_button.setHidden(false)
+            toResults()
         }
         else{
             Main_Pic.setImageNamed("lotus_closed")
@@ -409,20 +429,20 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
 
     // After tapping on lotus reset and disable tap
     @IBAction func TapAction(_ sender: Any) {
-        if (current_image == "guide"){
-            reset()
-            current_image = "N/A"
-            white = true
-        }
-        else if white{
+        if white{
+            print(white)
             white = false
             seconds = 0
             Main_Pic.setAlpha(0.0)
             randomize_color()
             timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
-            
         }
-        
+        else if (current_image == "guide"){
+            print("else")
+            current_image = "N/A"
+            reset()
+            current_round = 0
+        }
     }
     
     
