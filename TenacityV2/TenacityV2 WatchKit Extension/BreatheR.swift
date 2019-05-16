@@ -12,12 +12,11 @@ import Foundation
 import WatchConnectivity
 
 var FullCycle = 5
-var sessionTime = 60
+var sessionTime = 2
 var time = 0.0
 var correctCyclesTotal = 0
 var cycleTotal = 0
 var inGame = true
-var resetInterval = 2.5
 
 
 class BreatheR: WKInterfaceController, WCSessionDelegate  {
@@ -27,8 +26,8 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     
     var counter = 0.0
     
-    
     var averageFullBreatheTime = 3.5
+    var resetInterval = 2.5
     var totalBreaths = 0
     
     var breatheInTimer = Timer()
@@ -56,23 +55,44 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     }
     
     @IBAction func startButtonTapped() {    // change to TutorialEnd()
-        WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Main"], contexts: ["start game"])
+        WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Tutorial1"], contexts: [""])
+        
+        // resets global variables
         inGame = true
         time = 0
-        var correctCyclesTotal = 0
-        var cycleTotal = 0
+        correctCyclesTotal = 0
+        cycleTotal = 0
+        
+    }
+    
+    /////////////////////////// Tutorial
+    
+   
+    @IBOutlet var tutorial2Label: WKInterfaceLabel!
+    
+    @IBAction func tutorial1Tapped(_ sender: Any) {
+        WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Tutorial2"], contexts: ["t2"])
+        
+        
+    }
+    
+    @IBAction func tutorial2Tapped(_ sender: Any) {
+        WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Main"], contexts: [""])
+        
+        //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheR.sessionCounter), userInfo: nil, repeats: true)
     }
-    ////////////////////////////////////////
     
-    //Results Screen Page
+    ////////////////////  Results Screen Page
+    
     @IBOutlet var timePlayedLabel: WKInterfaceLabel!
     @IBOutlet var correctCyclesLabel: WKInterfaceLabel!
     @IBOutlet var totalCyclesLabel: WKInterfaceLabel!
     @IBAction func resultScreenTapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Finish Breathe"])
     }
-    /////////////////////////////
+    
+    ////////////////////////////////////////
     
     
     @IBOutlet weak var image: WKInterfaceImage!
@@ -85,6 +105,10 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
             correctCyclesLabel.setText("Correct Cycles: " + String(correctCyclesTotal))
             totalCyclesLabel.setText("Total Cycles: " + String(cycleTotal))
             timePlayedLabel.setText("Time Played: " + String(Int(time)))
+        }
+        
+        if((context as! String) == "t2"){
+            tutorial2Label.setText("After Your \(String(FullCycle))th breath, swipe to complete your breath cycle")
         }
         
         if WCSession.isSupported(){
@@ -108,6 +132,11 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         if (inGame == true){
             inGame = false
             WKInterfaceController.reloadRootControllers(withNames: ["BreatheR Results"], contexts: ["Breathe Done"])
+            
+            
+            // resets global slider variables
+            FullCycle = 5
+            sessionTime = 2
         }
         
     }
@@ -118,7 +147,7 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     }
     
     @objc func sessionCounter(){
-        if (time < Double(sessionTime)){
+        if (time < Double(sessionTime*60)){
             time += 0.1
         }
         else{
@@ -160,12 +189,14 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
             }
             presentAlert(withTitle: "Oops", message: "You Swiped When You Should Have Held", preferredStyle: .alert, actions: [continueAlert])
             sendData(game: "breathe", what: "swipe", correct: "false")
+            WKInterfaceDevice.current().play(.notification)
         }
         else{
             correctCyclesTotal += 1
             sendData(game: "breathe", what: "swipe", correct: "true")
+            WKInterfaceDevice.current().play(.success)
         }
-        WKInterfaceDevice.current().play(.directionDown)
+        
         cycleReset()
     }
     

@@ -12,20 +12,25 @@
         <!--Tutorial1-->
         <scene sceneID="FlF-8J-bkP">
             <objects>
-                <controller identifier="BreatheR Tutorial1" title="Tutorial1" id="mOL-TA-PrS">
+                <controller identifier="BreatheR Tutorial1" title="Tutorial1" id="mOL-TA-PrS" customClass="BreatheR" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="center" contentMode="top" layout="vertical" id="oEy-gq-W2e">
                             <items>
-                                <label alignment="center" text="Press and hold the image when you breathe in." textAlignment="center" numberOfLines="3" id="fy8-bL-igG">
-                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Press and hold when you breathe in. Let go when you breathe out." textAlignment="center" numberOfLines="4" id="fy8-bL-igG">
+                                    <color key="textColor" red="0.34068438410758972" green="0.80017179250717163" blue="0.90862423181533813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
                                 </label>
-                                <imageView width="67" height="63" alignment="center" verticalAlignment="center" image="breathey" contentMode="scaleAspectFit" id="ul6-HW-cBV"/>
-                                <label alignment="center" verticalAlignment="bottom" text="Let go when you breathe out." textAlignment="center" numberOfLines="2" id="C9Q-k3-tae">
-                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="C9Q-k3-tae">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                             </items>
                             <gestureRecognizers>
-                                <tapGestureRecognizer id="8G3-9N-RfM"/>
+                                <tapGestureRecognizer id="8G3-9N-RfM">
+                                    <connections>
+                                        <action selector="tutorial1Tapped:" destination="mOL-TA-PrS" id="xDC-QJ-5NU"/>
+                                    </connections>
+                                </tapGestureRecognizer>
                             </gestureRecognizers>
                         </group>
                     </items>
@@ -36,23 +41,31 @@
         <!--Tutorial2-->
         <scene sceneID="aXw-ce-PTi">
             <objects>
-                <controller identifier="BreatheR Tutorial2" title="Tutorial2" id="7Mi-Yp-r0a">
+                <controller identifier="BreatheR Tutorial2" title="Tutorial2" id="7Mi-Yp-r0a" customClass="BreatheR" customModule="TenacityV2_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="4a8-zC-66t">
                             <items>
-                                <label alignment="center" text="After your Xth breath, swipe to complete your breath cycle." textAlignment="center" numberOfLines="3" id="CBw-zr-cO7">
-                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="After your Xth breath, swipe to complete your breath cycle." textAlignment="center" numberOfLines="6" id="CBw-zr-cO7">
+                                    <color key="textColor" red="0.34068438410758972" green="0.80017179250717163" blue="0.90862423181533813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
                                 </label>
-                                <imageView width="67" height="63" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="jxk-Oq-kb6"/>
-                                <label alignment="center" verticalAlignment="bottom" hidden="YES" text="Try swiping now." textAlignment="center" id="dGV-nk-3tN">
-                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="lQW-bG-e5v">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                             </items>
                             <gestureRecognizers>
-                                <tapGestureRecognizer id="1Rl-TK-dUU"/>
+                                <tapGestureRecognizer id="1Rl-TK-dUU">
+                                    <connections>
+                                        <action selector="tutorial2Tapped:" destination="7Mi-Yp-r0a" id="524-2V-IeP"/>
+                                    </connections>
+                                </tapGestureRecognizer>
                             </gestureRecognizers>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="tutorial2Label" destination="CBw-zr-cO7" id="9Yx-lS-UAh"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="238" y="291"/>
@@ -141,29 +154,29 @@
             <objects>
                 <controller identifier="BreatheR Start" title="Breathe Start" fullBounds="YES" id="ake-xB-7oB" customClass="BreatheR" customModule="TenacityV2_WatchKit_Extension">
                     <items>
-                        <slider height="26" alignment="center" value="60" minimum="30" maximum="300" steps="9" id="kwf-IN-SGX">
+                        <slider height="0.20000000000000001" alignment="center" verticalAlignment="center" value="2" minimum="1" maximum="5" steps="4" id="kwf-IN-SGX">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="sessionLengthSliderAction:" destination="ake-xB-7oB" id="9Ec-md-WH5"/>
                             </connections>
                         </slider>
-                        <group width="1" alignment="center" id="wBT-4U-VIc">
+                        <group width="1" height="0.14999999999999999" alignment="center" verticalAlignment="center" id="wBT-4U-VIc">
                             <items>
-                                <label height="25" alignment="center" verticalAlignment="center" text="60" textAlignment="right" id="9Ic-hH-HAN">
+                                <label height="25" alignment="center" verticalAlignment="center" text="2" textAlignment="right" id="9Ic-hH-HAN">
                                     <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
                                 </label>
-                                <label height="30" alignment="center" verticalAlignment="center" text="Secs" textAlignment="center" id="VIC-go-Ehz">
+                                <label height="30" alignment="center" verticalAlignment="center" text="Min(s)" textAlignment="center" id="VIC-go-Ehz">
                                     <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
                                 </label>
                             </items>
                         </group>
-                        <slider height="22" alignment="center" verticalAlignment="center" value="5" maximum="5" steps="5" id="KEf-ls-aDb" userLabel="Set Slider">
+                        <slider height="0.20000000000000001" alignment="center" verticalAlignment="center" value="5" minimum="1" maximum="10" steps="9" id="KEf-ls-aDb" userLabel="Set Slider">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cycleSliderAction:" destination="ake-xB-7oB" id="eUz-hU-BUx"/>
                             </connections>
                         </slider>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="hr1-l5-t5R">
+                        <group width="1" height="0.14999999999999999" alignment="center" verticalAlignment="center" id="hr1-l5-t5R">
                             <items>
                                 <label alignment="center" text="5" id="7O5-Ts-APK">
                                     <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
@@ -173,7 +186,7 @@
                                 </label>
                             </items>
                         </group>
-                        <button width="1" height="36" alignment="center" verticalAlignment="bottom" title="Start" id="lwx-xK-7lc">
+                        <button width="1" height="0.29999999999999999" alignment="center" verticalAlignment="center" title="Start" id="lwx-xK-7lc">
                             <color key="backgroundColor" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
