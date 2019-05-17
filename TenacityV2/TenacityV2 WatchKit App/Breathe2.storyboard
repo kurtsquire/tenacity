@@ -121,15 +121,10 @@
                                     <color key="textColor" red="0.0057474765926599503" green="0.60298079252243042" blue="0.99746531248092651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Total_Cycles" id="nde-oP-dzi">
-                                    <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" id="2c5-cX-Bto">
-                                    <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </label>
-                                <label alignment="right" verticalAlignment="bottom" text="TIme_Played" id="prh-wp-NFW">
-                                    <color key="textColor" red="0.6729809045791626" green="0.90238916873931885" blue="0.9248967170715332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </label>
+                                <label alignment="right" verticalAlignment="bottom" text="Avg_Breath" id="zFz-T1-TEI"/>
+                                <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" id="nde-oP-dzi"/>
+                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" id="2c5-cX-Bto"/>
+                                <label alignment="right" verticalAlignment="bottom" text="TIme_Played" id="prh-wp-NFW"/>
                             </items>
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="e05-Ms-rQ9">
@@ -141,9 +136,10 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="averageBreathLabel" destination="zFz-T1-TEI" id="Xdl-0f-usI"/>
                         <outlet property="correctCyclesLabel" destination="2c5-cX-Bto" id="mju-nW-yDA"/>
                         <outlet property="timePlayedLabel" destination="prh-wp-NFW" id="Oct-UX-6GA"/>
-                        <outlet property="totalCyclesLabel" destination="nde-oP-dzi" id="bYV-zL-tIK"/>
+                        <outlet property="totalBreathsLabel" destination="nde-oP-dzi" id="Xpz-Lh-lrU"/>
                     </connections>
                 </controller>
             </objects>

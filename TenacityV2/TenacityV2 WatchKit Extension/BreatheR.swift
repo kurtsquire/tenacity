@@ -17,24 +17,24 @@ var time = 0.0
 var correctCyclesTotal = 0
 var cycleTotal = 0
 var inGame = true
+var totalBreaths = 0
+var averageFullBreatheTime = 3.5
 
 
 class BreatheR: WKInterfaceController, WCSessionDelegate  {
     
-    let startRelativeHeight = 0.45
+    let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
     
     var counter = 0.0
     
-    var averageFullBreatheTime = 3.5
-    var resetInterval = 2.5
-    var totalBreaths = 0
+    var totalBreatheTimes = 3.5
+    //var resetInterval = 2.5   unused right now
+    
     
     var breatheInTimer = Timer()
     var breatheInTime = 0.0
     var gameLengthTimer = Timer()
-    
-    //var FullCycle = 5
     
     var cycleStep = 0
     
@@ -62,6 +62,8 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         time = 0
         correctCyclesTotal = 0
         cycleTotal = 0
+        totalBreaths = 0
+        averageFullBreatheTime = 3.5
         
     }
     
@@ -85,9 +87,10 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     
     ////////////////////  Results Screen Page
     
+    @IBOutlet var averageBreathLabel: WKInterfaceLabel!
     @IBOutlet var timePlayedLabel: WKInterfaceLabel!
     @IBOutlet var correctCyclesLabel: WKInterfaceLabel!
-    @IBOutlet var totalCyclesLabel: WKInterfaceLabel!
+    @IBOutlet var totalBreathsLabel: WKInterfaceLabel!
     @IBAction func resultScreenTapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Finish Breathe"])
     }
@@ -102,9 +105,16 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
 
         
         if((context as! String) == "Breathe Done"){
-            correctCyclesLabel.setText("Correct Cycles: " + String(correctCyclesTotal))
-            totalCyclesLabel.setText("Total Cycles: " + String(cycleTotal))
-            timePlayedLabel.setText("Time Played: " + String(Int(time)))
+            if (cycleTotal == 0){
+                correctCyclesLabel.setText("Correct Cycles: 0%")
+            }
+            else{
+                correctCyclesLabel.setText("Correct Cycles: " + String(format: "%.0f", (Double(correctCyclesTotal)/Double(cycleTotal))*100) + "%")
+            }
+            
+            totalBreathsLabel.setText("Total Breaths: " + String(totalBreaths))
+            timePlayedLabel.setText("Time Played: " + String(Int(time)) + "s")
+            averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTime) + "s")
         }
         
         if((context as! String) == "t2"){
@@ -161,10 +171,10 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
             animate(withDuration: 0.1){
                 //self.alpha = (self.counter/self.averageFullBreatheTime)
                 //self.image.setAlpha(CGFloat(self.alpha))
-                let addHeight = (1 - self.startRelativeWidth)*(self.counter/self.averageFullBreatheTime)
-                let addWidth = (1 - self.startRelativeHeight)*(self.counter/self.averageFullBreatheTime)
+                let addHeight = (1 - self.startRelativeWidth)*(self.counter/averageFullBreatheTime)
+                let addWidth = (1 - self.startRelativeHeight)*(self.counter/averageFullBreatheTime)
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth + addWidth), withAdjustment: 0)
-                self.image.setRelativeHeight(CGFloat(self.startRelativeWidth + addHeight), withAdjustment: 0)
+                self.image.setRelativeHeight(CGFloat(self.startRelativeHeight + addHeight), withAdjustment: 0)
                 self.counter += 0.1
             }
         }
@@ -184,6 +194,16 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
     }
     
     @IBAction func swipeAction(_ sender: Any) {
+        
+        animate(withDuration: 0.1){
+            self.image.setRelativeWidth(CGFloat(1), withAdjustment: 0)
+            self.image.setRelativeHeight(CGFloat(1), withAdjustment: 0)
+        }
+        animate(withDuration: 0.25){
+            self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
+            self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
+        }
+        
         if (cycleStep != FullCycle){
             let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
             }
@@ -222,8 +242,17 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
             totalBreaths += 1
             print("total breaths: " + String(totalBreaths))
             
+            addToAverageBreatheTime(time: breatheInTime)
+            print("new avg: " + String(format: "%.3f", averageFullBreatheTime))
+            
             //Can use "(breatheInTime - offset)" or global var "resetInterval" for "withDuration"
-            animate(withDuration: resetInterval){
+            var shrinkInterval = (0.8)*(breatheInTime)
+            
+            if (shrinkInterval > 2.5){
+                shrinkInterval = 2.5
+            }
+            
+            animate(withDuration: shrinkInterval){
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
                 self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
             }
@@ -243,6 +272,11 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         
     }
     
+    func addToAverageBreatheTime(time : Double){
+        totalBreatheTimes = totalBreatheTimes + time
+        averageFullBreatheTime = totalBreatheTimes/Double((totalBreaths + 1))
+    }
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
@@ -256,7 +290,6 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
                         "correct": correct,
                         "time": String(timestamp)]
             session.transferUserInfo(data)
-            
         }
     }
 }
