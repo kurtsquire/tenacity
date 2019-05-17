@@ -121,10 +121,18 @@
                                     <color key="textColor" red="0.0057474765926599503" green="0.60298079252243042" blue="0.99746531248092651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                 </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Avg_Breath" id="zFz-T1-TEI"/>
-                                <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" id="nde-oP-dzi"/>
-                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" id="2c5-cX-Bto"/>
-                                <label alignment="right" verticalAlignment="bottom" text="TIme_Played" id="prh-wp-NFW"/>
+                                <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" textAlignment="center" numberOfLines="2" id="nde-oP-dzi">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="bottom" text="Avg_Breath" numberOfLines="2" id="zFz-T1-TEI">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" numberOfLines="2" id="2c5-cX-Bto">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="bottom" text="TIme_Played" numberOfLines="2" id="prh-wp-NFW">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
                             </items>
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="e05-Ms-rQ9">

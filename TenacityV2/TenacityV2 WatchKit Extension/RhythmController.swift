@@ -40,7 +40,7 @@ class RhythmController: WKInterfaceController {
     }
     
     @IBAction func TopBtnAction() {
-        WKInterfaceDevice.current().play(.directionUp)
+        WKInterfaceDevice.current().play(.failure)
     }
     @IBAction func BotBtnAction() {
         WKInterfaceDevice.current().play(.directionDown)

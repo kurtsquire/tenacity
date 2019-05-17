@@ -118,7 +118,18 @@ class BreatheR: WKInterfaceController, WCSessionDelegate  {
         }
         
         if((context as! String) == "t2"){
-            tutorial2Label.setText("After Your \(String(FullCycle))th breath, swipe to complete your breath cycle")
+            if (FullCycle == 1){
+                tutorial2Label.setText("After Your \(String(FullCycle))st breath, swipe to complete your breath cycle")
+            }
+            else if (FullCycle == 2){
+                tutorial2Label.setText("After Your \(String(FullCycle))nd breath, swipe to complete your breath cycle")
+            }
+            else if (FullCycle == 3){
+                tutorial2Label.setText("After Your \(String(FullCycle))rd breath, swipe to complete your breath cycle")
+            }
+            else {
+                tutorial2Label.setText("After Your \(String(FullCycle))th breath, swipe to complete your breath cycle")
+            }
         }
         
         if WCSession.isSupported(){
