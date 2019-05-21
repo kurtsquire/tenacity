@@ -1,9 +1,0 @@
-{
-    "aps": {
-        "alert": {
-            "body": "Time to Play Game!",
-        },
-        "category": "myCategory",
-        "thread-id":"5280"
-    },
-}

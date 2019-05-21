@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42398AB422938159009CA96E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB322938159009CA96E /* AppDelegate.swift */; };
+		42398AB622938159009CA96E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB522938159009CA96E /* ViewController.swift */; };
+		42398AB922938159009CA96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AB722938159009CA96E /* Main.storyboard */; };
+		42398ABB2293815A009CA96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42398ABA2293815A009CA96E /* Assets.xcassets */; };
+		42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398ABC2293815A009CA96E /* LaunchScreen.storyboard */; };
+		42398AC32293815A009CA96E /* TenacityV3 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */; };
+		42398AC92293815A009CA96E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AC72293815A009CA96E /* Interface.storyboard */; };
+		42398ACB2293815B009CA96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42398ACA2293815B009CA96E /* Assets.xcassets */; };
+		42398AD22293815B009CA96E /* TenacityV3 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42398AD12293815B009CA96E /* TenacityV3 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42398AD72293815B009CA96E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AD62293815B009CA96E /* InterfaceController.swift */; };
+		42398AD92293815B009CA96E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AD82293815B009CA96E /* ExtensionDelegate.swift */; };
+		42398ADB2293815B009CA96E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398ADA2293815B009CA96E /* NotificationController.swift */; };
+		42398ADD2293815B009CA96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42398ADC2293815B009CA96E /* Assets.xcassets */; };
+		42398AF2229382D3009CA96E /* Rhythm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AF1229382D3009CA96E /* Rhythm.storyboard */; };
+		42398AF4229382E7009CA96E /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AF3229382E7009CA96E /* Reminders.storyboard */; };
+		42398AF622938304009CA96E /* BreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AF522938304009CA96E /* BreatheController.swift */; };
+		42398AFA2293872F009CA96E /* LotusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AF72293832C009CA96E /* LotusController.swift */; };
+		42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AFF22938EEA009CA96E /* Breathe.storyboard */; };
+		42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398B0122938F55009CA96E /* Lotus.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42398AC42293815A009CA96E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42398AA822938159009CA96E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42398AC12293815A009CA96E;
+			remoteInfo = "TenacityV3 WatchKit App";
+		};
+		42398AD32293815B009CA96E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42398AA822938159009CA96E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42398AD02293815B009CA96E;
+			remoteInfo = "TenacityV3 WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42398AE52293815B009CA96E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42398AD22293815B009CA96E /* TenacityV3 WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42398AE92293815B009CA96E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				42398AC32293815A009CA96E /* TenacityV3 WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		42398AB022938159009CA96E /* TenacityV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenacityV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42398AB322938159009CA96E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42398AB522938159009CA96E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42398AB822938159009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42398ABA2293815A009CA96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42398ABD2293815A009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42398ABF2293815A009CA96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TenacityV3 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42398AC82293815A009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		42398ACA2293815B009CA96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42398ACC2293815B009CA96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42398AD12293815B009CA96E /* TenacityV3 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TenacityV3 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42398AD62293815B009CA96E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		42398AD82293815B009CA96E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		42398ADA2293815B009CA96E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		42398ADC2293815B009CA96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42398ADE2293815B009CA96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42398ADF2293815B009CA96E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		42398AF1229382D3009CA96E /* Rhythm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rhythm.storyboard; sourceTree = "<group>"; };
+		42398AF3229382E7009CA96E /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
+		42398AF522938304009CA96E /* BreatheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheController.swift; sourceTree = "<group>"; };
+		42398AF72293832C009CA96E /* LotusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotusController.swift; sourceTree = "<group>"; };
+		42398AFF22938EEA009CA96E /* Breathe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Breathe.storyboard; sourceTree = "<group>"; };
+		42398B0122938F55009CA96E /* Lotus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lotus.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42398AAD22938159009CA96E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42398ACE2293815B009CA96E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42398AA722938159009CA96E = {
+			isa = PBXGroup;
+			children = (
+				42398AB222938159009CA96E /* TenacityV3 */,
+				42398AC62293815A009CA96E /* TenacityV3 WatchKit App */,
+				42398AD52293815B009CA96E /* TenacityV3 WatchKit Extension */,
+				42398AB122938159009CA96E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42398AB122938159009CA96E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42398AB022938159009CA96E /* TenacityV3.app */,
+				42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */,
+				42398AD12293815B009CA96E /* TenacityV3 WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42398AB222938159009CA96E /* TenacityV3 */ = {
+			isa = PBXGroup;
+			children = (
+				42398AB322938159009CA96E /* AppDelegate.swift */,
+				42398AB522938159009CA96E /* ViewController.swift */,
+				42398AB722938159009CA96E /* Main.storyboard */,
+				42398ABA2293815A009CA96E /* Assets.xcassets */,
+				42398ABC2293815A009CA96E /* LaunchScreen.storyboard */,
+				42398ABF2293815A009CA96E /* Info.plist */,
+			);
+			path = TenacityV3;
+			sourceTree = "<group>";
+		};
+		42398AC62293815A009CA96E /* TenacityV3 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				42398AC72293815A009CA96E /* Interface.storyboard */,
+				42398AF1229382D3009CA96E /* Rhythm.storyboard */,
+				42398AF3229382E7009CA96E /* Reminders.storyboard */,
+				42398AFF22938EEA009CA96E /* Breathe.storyboard */,
+				42398B0122938F55009CA96E /* Lotus.storyboard */,
+				42398ACA2293815B009CA96E /* Assets.xcassets */,
+				42398ACC2293815B009CA96E /* Info.plist */,
+			);
+			path = "TenacityV3 WatchKit App";
+			sourceTree = "<group>";
+		};
+		42398AD52293815B009CA96E /* TenacityV3 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42398AD62293815B009CA96E /* InterfaceController.swift */,
+				42398AD82293815B009CA96E /* ExtensionDelegate.swift */,
+				42398ADA2293815B009CA96E /* NotificationController.swift */,
+				42398AF522938304009CA96E /* BreatheController.swift */,
+				42398AF72293832C009CA96E /* LotusController.swift */,
+				42398ADC2293815B009CA96E /* Assets.xcassets */,
+				42398ADE2293815B009CA96E /* Info.plist */,
+				42398ADF2293815B009CA96E /* PushNotificationPayload.apns */,
+			);
+			path = "TenacityV3 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42398AAF22938159009CA96E /* TenacityV3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42398AEA2293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3" */;
+			buildPhases = (
+				42398AAC22938159009CA96E /* Sources */,
+				42398AAD22938159009CA96E /* Frameworks */,
+				42398AAE22938159009CA96E /* Resources */,
+				42398AE92293815B009CA96E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42398AC52293815A009CA96E /* PBXTargetDependency */,
+			);
+			name = TenacityV3;
+			productName = TenacityV3;
+			productReference = 42398AB022938159009CA96E /* TenacityV3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42398AC12293815A009CA96E /* TenacityV3 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42398AE62293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit App" */;
+			buildPhases = (
+				42398AC02293815A009CA96E /* Resources */,
+				42398AE52293815B009CA96E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42398AD42293815B009CA96E /* PBXTargetDependency */,
+			);
+			name = "TenacityV3 WatchKit App";
+			productName = "TenacityV3 WatchKit App";
+			productReference = 42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		42398AD02293815B009CA96E /* TenacityV3 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42398AE22293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit Extension" */;
+			buildPhases = (
+				42398ACD2293815B009CA96E /* Sources */,
+				42398ACE2293815B009CA96E /* Frameworks */,
+				42398ACF2293815B009CA96E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TenacityV3 WatchKit Extension";
+			productName = "TenacityV3 WatchKit Extension";
+			productReference = 42398AD12293815B009CA96E /* TenacityV3 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42398AA822938159009CA96E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = PLL;
+				TargetAttributes = {
+					42398AAF22938159009CA96E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					42398AC12293815A009CA96E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					42398AD02293815B009CA96E = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 42398AAB22938159009CA96E /* Build configuration list for PBXProject "TenacityV3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42398AA722938159009CA96E;
+			productRefGroup = 42398AB122938159009CA96E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42398AAF22938159009CA96E /* TenacityV3 */,
+				42398AC12293815A009CA96E /* TenacityV3 WatchKit App */,
+				42398AD02293815B009CA96E /* TenacityV3 WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42398AAE22938159009CA96E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */,
+				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
+				42398AB922938159009CA96E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42398AC02293815A009CA96E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */,
+				42398ACB2293815B009CA96E /* Assets.xcassets in Resources */,
+				42398AC92293815A009CA96E /* Interface.storyboard in Resources */,
+				42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */,
+				42398AF4229382E7009CA96E /* Reminders.storyboard in Resources */,
+				42398AF2229382D3009CA96E /* Rhythm.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42398ACF2293815B009CA96E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42398ADD2293815B009CA96E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42398AAC22938159009CA96E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42398AB622938159009CA96E /* ViewController.swift in Sources */,
+				42398AB422938159009CA96E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42398ACD2293815B009CA96E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42398AFA2293872F009CA96E /* LotusController.swift in Sources */,
+				42398ADB2293815B009CA96E /* NotificationController.swift in Sources */,
+				42398AF622938304009CA96E /* BreatheController.swift in Sources */,
+				42398AD92293815B009CA96E /* ExtensionDelegate.swift in Sources */,
+				42398AD72293815B009CA96E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42398AC52293815A009CA96E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42398AC12293815A009CA96E /* TenacityV3 WatchKit App */;
+			targetProxy = 42398AC42293815A009CA96E /* PBXContainerItemProxy */;
+		};
+		42398AD42293815B009CA96E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42398AD02293815B009CA96E /* TenacityV3 WatchKit Extension */;
+			targetProxy = 42398AD32293815B009CA96E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42398AB722938159009CA96E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42398AB822938159009CA96E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42398ABC2293815A009CA96E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42398ABD2293815A009CA96E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		42398AC72293815A009CA96E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42398AC82293815A009CA96E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42398AE02293815B009CA96E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42398AE12293815B009CA96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42398AE32293815B009CA96E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				INFOPLIST_FILE = "TenacityV3 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		42398AE42293815B009CA96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				INFOPLIST_FILE = "TenacityV3 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		42398AE72293815B009CA96E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				IBSC_MODULE = TenacityV3_WatchKit_Extension;
+				INFOPLIST_FILE = "TenacityV3 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		42398AE82293815B009CA96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				IBSC_MODULE = TenacityV3_WatchKit_Extension;
+				INFOPLIST_FILE = "TenacityV3 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		42398AEB2293815B009CA96E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				INFOPLIST_FILE = TenacityV3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42398AEC2293815B009CA96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2VV3665LJ;
+				INFOPLIST_FILE = TenacityV3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PLL.TenacityV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42398AAB22938159009CA96E /* Build configuration list for PBXProject "TenacityV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42398AE02293815B009CA96E /* Debug */,
+				42398AE12293815B009CA96E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42398AE22293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42398AE32293815B009CA96E /* Debug */,
+				42398AE42293815B009CA96E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42398AE62293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42398AE72293815B009CA96E /* Debug */,
+				42398AE82293815B009CA96E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42398AEA2293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42398AEB2293815B009CA96E /* Debug */,
+				42398AEC2293815B009CA96E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42398AA822938159009CA96E /* Project object */;
+}
