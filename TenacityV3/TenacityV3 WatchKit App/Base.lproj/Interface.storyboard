@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
@@ -59,6 +58,9 @@
                                 </items>
                                 <color key="backgroundColor" red="0.92364782089999997" green="0.2096793652" blue="0.36866086720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <segue destination="4Tg-YH-RAE" kind="push" id="rWP-KH-59m"/>
+                            </connections>
                         </button>
                         <button alignment="center" verticalAlignment="center" id="wYC-bp-ffy" userLabel="Help Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="lo2-Tm-kmI">
@@ -85,6 +87,13 @@
             </objects>
             <point key="canvasLocation" x="290" y="-4"/>
         </scene>
+        <!--RhythmTap Main-->
+        <scene sceneID="gOD-WM-Iiu">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="RhythmTap Main" id="4Tg-YH-RAE"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="53"/>
+        </scene>
         <!--Breathe Start-->
         <scene sceneID="4Xz-C4-ud1">
             <objects>
@@ -106,6 +115,22 @@
                                 </items>
                                 <color key="backgroundColor" red="0.73031908270000001" green="0.089183114470000005" blue="0.52817606930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <segue destination="Fxo-2N-qwH" kind="push" id="vZn-ue-vh7"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="GcW-W1-Tab" userLabel="Reminders Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="fmF-mu-Jgq">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text="Reminders Help" id="FML-y4-emI" userLabel="Reminders Help">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.73031908270000001" green="0.089183114470000005" blue="0.52817606930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="r1x-GY-jdv" kind="push" id="tsH-cg-Lce"/>
+                            </connections>
                         </button>
                         <button alignment="center" verticalAlignment="center" id="vca-oy-VKK" userLabel="Breathe Help Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="NSR-Bz-1Og">
@@ -151,6 +176,36 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="551" y="81"/>
+        </scene>
+        <!--General Help-->
+        <scene sceneID="D1S-cl-jQx">
+            <objects>
+                <controller identifier="General Help" id="Fxo-2N-qwH"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="-167"/>
+        </scene>
+        <!--Reminders Main-->
+        <scene sceneID="TSn-Yt-pDE">
+            <objects>
+                <controller identifier="Reminders Main" id="r1x-GY-jdv" customClass="InterfaceController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="1dG-nJ-WXB">
+                            <items>
+                                <label width="1" alignment="left" text="Welcome to Tenacity Flow!" textAlignment="center" numberOfLines="35" id="bXM-Gd-Rez">
+                                    <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                </label>
+                                <label width="1" alignment="left" textAlignment="center" numberOfLines="35" id="BLW-95-ATu">
+                                    <string key="text">To practice good self regulation techniques, we encourage you to use the app throughout each day, and set reminders for yourself to do so. To set a reminder, open the Reminders app on the paired iPhone. Tap the "+" icon and give your reminder a title. Tap the "i" icon to edit frequency and alerts. Set as many reminders as you see fit, and remember that the frequency with which you play the games is up to you!</string>
+                                    <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="887" y="272"/>
         </scene>
     </scenes>
 </document>
