@@ -8,30 +8,45 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
+        <!--FreeBreathe-->
+        <scene sceneID="kVK-jb-d9y">
+            <objects>
+                <controller identifier="FreeBreathe Start" title="FreeBreathe" id="YYs-CD-A1E" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="bxS-fX-Fet">
+                            <connections>
+                                <action selector="startButtonTapped" destination="YYs-CD-A1E" id="Z9D-1z-xcH"/>
+                                <segue destination="56M-Js-fPv" kind="push" id="QE1-Sn-Aff"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Free Breathe" id="GqQ-SL-SKB"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-249" y="291"/>
+        </scene>
         <!--Tutorial1-->
         <scene sceneID="VyV-g9-OSd">
             <objects>
-                <controller identifier="FreeBreathe Tutorial1" title="Tutorial1" id="56M-Js-fPv" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                <controller identifier="FreeBreathe Tutorial1" title="Tutorial1" id="56M-Js-fPv" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="center" contentMode="top" layout="vertical" id="FnW-56-sIp">
-                            <items>
-                                <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Press and hold when you breathe in. Let go when you breathe out." textAlignment="center" numberOfLines="4" id="pAB-C9-2Sh">
-                                    <color key="textColor" red="0.34068438410000002" green="0.80017179250000003" blue="0.90862423179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                </label>
-                                <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="XQe-0u-OW0">
-                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                </label>
-                            </items>
-                            <gestureRecognizers>
-                                <tapGestureRecognizer id="JOU-0t-G3g">
-                                    <connections>
-                                        <action selector="tutorial1Tapped:" destination="56M-Js-fPv" id="Ak6-fv-zDl"/>
-                                    </connections>
-                                </tapGestureRecognizer>
-                            </gestureRecognizers>
-                        </group>
+                        <button alignment="left" id="ORi-Ri-z7y">
+                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" id="sE5-Fe-kdb">
+                                <items>
+                                    <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Press and hold when you breathe in. Let go when you breathe out." textAlignment="center" numberOfLines="4" id="E29-Fv-ZMT">
+                                        <color key="textColor" red="0.34068438410000002" green="0.80017179250000003" blue="0.90862423179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                    </label>
+                                    <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="ZQO-ST-R6r">
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="font" type="system" pointSize="15"/>
+                                    </label>
+                                </items>
+                            </group>
+                            <connections>
+                                <segue destination="W2j-hm-AbU" kind="push" id="emk-HZ-gC4"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -40,31 +55,26 @@
         <!--Tutorial2-->
         <scene sceneID="Ol8-Sd-2tq">
             <objects>
-                <controller identifier="FreeBreathe Tutorial2" title="Tutorial2" id="W2j-hm-AbU" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                <controller identifier="FreeBreathe Tutorial2" title="Tutorial2" id="W2j-hm-AbU" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="9I9-ad-HbC">
-                            <items>
-                                <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Swipe to complete your breath cycle and try to stay consistent." textAlignment="center" numberOfLines="6" id="fvh-ss-KdK">
-                                    <color key="textColor" red="0.34068438410000002" green="0.80017179250000003" blue="0.90862423179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="16"/>
-                                </label>
-                                <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="RSB-Dv-O7B">
-                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                </label>
-                            </items>
-                            <gestureRecognizers>
-                                <tapGestureRecognizer id="XDy-C6-OwQ">
-                                    <connections>
-                                        <action selector="tutorial2Tapped:" destination="W2j-hm-AbU" id="2v0-JS-7i1"/>
-                                    </connections>
-                                </tapGestureRecognizer>
-                            </gestureRecognizers>
-                        </group>
+                        <button alignment="left" id="KXx-sz-Ibi">
+                            <group key="contentGroup" width="1" height="1" alignment="left" layout="vertical" id="wv4-SU-e5F">
+                                <items>
+                                    <label width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Swipe to complete your breath cycle and try to stay consistent." textAlignment="center" numberOfLines="6" id="4hb-ob-hqA">
+                                        <color key="textColor" red="0.34068438410000002" green="0.80017179250000003" blue="0.90862423179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                    </label>
+                                    <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="(Tap to continue)" textAlignment="center" numberOfLines="6" id="awo-we-WjG">
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="font" type="system" pointSize="15"/>
+                                    </label>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="tutorial2Tapped:" destination="W2j-hm-AbU" id="R53-Pn-9Jp"/>
+                            </connections>
+                        </button>
                     </items>
-                    <connections>
-                        <outlet property="tutorial2Label" destination="fvh-ss-KdK" id="BEq-ck-5zv"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="238" y="291"/>
@@ -72,7 +82,7 @@
         <!--Free Breathe-->
         <scene sceneID="n8D-Nl-ZfF">
             <objects>
-                <controller identifier="FreeBreathe Main" title="Free Breathe" id="BlQ-TS-kr4" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                <controller identifier="FreeBreathe Main" title="Free Breathe" id="BlQ-TS-kr4" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="dPi-sN-awk">
                             <items>
@@ -112,7 +122,7 @@
         <!--Results-->
         <scene sceneID="tzX-AN-05K">
             <objects>
-                <controller identifier="FreeBreathe Results" title="Results" id="dP0-Q1-eN7" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                <controller identifier="FreeBreathe Results" title="Results" id="dP0-Q1-eN7" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="Wth-WB-PVh">
                             <items>

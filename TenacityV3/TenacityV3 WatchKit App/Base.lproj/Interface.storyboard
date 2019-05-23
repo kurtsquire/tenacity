@@ -37,6 +37,9 @@
                                 </items>
                                 <color key="backgroundColor" red="0.91204780340000002" green="0.55539494749999996" blue="0.37507879729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
+                            <connections>
+                                <segue destination="tMF-v2-yz8" kind="push" id="CdI-PP-pg9"/>
+                            </connections>
                         </button>
                         <button alignment="center" verticalAlignment="center" id="AmO-2H-hPA" userLabel="Lotus Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="KoG-IG-E6f">
@@ -98,6 +101,13 @@
                 <controllerPlaceholder referencedIdentifier="RhythmTap Main" id="4Tg-YH-RAE"/>
             </objects>
             <point key="canvasLocation" x="307" y="53"/>
+        </scene>
+        <!--FreeBreathe Start-->
+        <scene sceneID="DHG-to-s6t">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="FreeBreathe Start" id="tMF-v2-yz8"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="104"/>
         </scene>
         <!--Breathe Start-->
         <scene sceneID="4Xz-C4-ud1">

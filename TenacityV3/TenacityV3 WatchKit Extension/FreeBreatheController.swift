@@ -43,9 +43,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     //Initial Settings Page
     
     
-    @IBAction func startButtonTapped() {    // change to TutorialEnd()
-        WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial1"], contexts: [""])
-        
+    @IBAction func startButtonTapped() {    // change to Tutorial Screen
         // resets global variables
         inGameFree = true
         timeFree = 0
@@ -57,17 +55,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     /////////////////////////// Tutorial
     
-    
-    @IBOutlet var tutorial2Label: WKInterfaceLabel!
-    
-    @IBAction func tutorial1Tapped(_ sender: Any) {
-        WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial2"], contexts: ["t2"])
-        
-        
-    }
-    
     @IBAction func tutorial2Tapped(_ sender: Any) {
-        WKInterfaceController.reloadRootControllers(withNames: ["Breathe Main"], contexts: ["start"])
+        WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Main"], contexts: ["start"])
         
         //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
@@ -80,7 +69,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     @IBOutlet var correctCyclesLabel: WKInterfaceLabel!
     @IBOutlet var totalBreathsLabel: WKInterfaceLabel!
     @IBAction func resultScreenTapped(_ sender: Any) {
-        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Finish Breathe"])
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: [""])
     }
     
     ////////////////////////////////////////
@@ -123,7 +112,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func endGame(){
         if (inGameFree == true){
             inGameFree = false
-            WKInterfaceController.reloadRootControllers(withNames: ["Breathe Results"], contexts: ["Breathe Done"])
+            WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
         }
         
     }
@@ -178,18 +167,9 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
         }
         
-        if (cycleStep != FullCycle){
-            let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
-            }
-            presentAlert(withTitle: "Oops", message: "You Swiped When You Should Have Held", preferredStyle: .alert, actions: [continueAlert])
-            sendData(game: "breathe", what: "swipe", correct: "false")
-            WKInterfaceDevice.current().play(.notification)
-        }
-        else{
-            correctCyclesTotal += 1
-            sendData(game: "breathe", what: "swipe", correct: "true")
-            WKInterfaceDevice.current().play(.success)
-        }
+        sendData(game: "breathe", what: "swipe", correct: "N/A")
+        WKInterfaceDevice.current().play(.success)
+        
         
         cycleReset()
     }
@@ -200,12 +180,9 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             resetImage()
             counter = 0
             breatheInTime = 0
-            if (cycleStep == FullCycle){
-                sendData(game: "breathe", what: "start hold", correct: "false")
-            }
-            else{
-                sendData(game: "breathe", what: "start hold", correct: "true")
-            }
+
+            sendData(game: "breathe", what: "start hold", correct: "N/A")
+            
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
             
             cycleStep += 1
@@ -230,21 +207,13 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
                 self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
             }
-            if (cycleStep == (FullCycle + 1)){
-                cycleReset()
-                sendData(game: "breathe", what: "stop hold", correct: "false")
-                let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
-                }
-                presentAlert(withTitle: "Oops", message: "You Held When You Should Have Swiped", preferredStyle: .alert, actions: [continueAlert])
+
+            animate(withDuration: 1){
+                self.image.setTintColor(self.customBlue)
             }
-            else{
-                //self.image.setImageNamed("breathe")
-                animate(withDuration: 1){
-                    self.image.setTintColor(self.customBlue)
-                }
-                
-                sendData(game: "breathe", what: "stop hold", correct: "true")
-            }
+            sendData(game: "breathe", what: "stop hold", correct: "N/A")
+            
+            
         }
     }
     
