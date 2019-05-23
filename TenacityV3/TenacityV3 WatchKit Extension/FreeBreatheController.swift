@@ -1,8 +1,8 @@
 //
-//  BreatheController.swift
+//  FreeBreatheController.swift
 //  TenacityV3 WatchKit Extension
 //
-//  Created by PLL on 5/20/19.
+//  Created by PLL on 5/22/19.
 //  Copyright © 2019 PLL. All rights reserved.
 //
 
@@ -10,17 +10,17 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-var FullCycle = 5
-var sessionTime = 2
-var time = 0.0
-var correctCyclesTotal = 0
-var cycleTotal = 0
-var inGame = true
-var totalBreaths = 0
-var averageFullBreatheTime = 3.5
+//var FullCycle = 5
+//var sessionTime = 2
+var timeFree = 0.0
+//var correctCyclesTotal = 0
+var cycleTotalFree = 0
+var inGameFree = true
+var totalBreathsFree = 0
+var averageFullBreatheTimeFree = 3.5
 
 
-class BreatheController: WKInterfaceController, WCSessionDelegate  {
+class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
@@ -41,32 +41,18 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
     
     //Initial Settings Page
-    @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
-    @IBAction func sessionLengthSliderAction(_ value: Float) {
-        sessionTime = Int(value)
-        sessionLengthLabel.setText(String(Int(sessionTime)))
-    }
     
-    @IBOutlet var sessionLengthLabel: WKInterfaceLabel!
-    
-    @IBOutlet var cycleSlider: WKInterfaceSlider!
-    @IBOutlet var cycleNumLabel: WKInterfaceLabel!
-    @IBAction func cycleSliderAction(_ value: Float) {
-        FullCycle = Int(value)
-        cycleNumLabel.setText(String(Int(FullCycle)))
-    }
     
     @IBAction func startButtonTapped() {    // change to TutorialEnd()
         WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial1"], contexts: [""])
         
         // resets global variables
-        inGame = true
-        time = 0
+        inGameFree = true
+        timeFree = 0
         correctCyclesTotal = 0
-        cycleTotal = 0
-        totalBreaths = 0
-        averageFullBreatheTime = 3.5
-        
+        cycleTotalFree = 0
+        totalBreathsFree = 0
+        averageFullBreatheTimeFree = 3.5
     }
     
     /////////////////////////// Tutorial
@@ -107,33 +93,12 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         
         
         if ((context as? String) == "Breathe Done"){
-            if (cycleTotal == 0){
-                correctCyclesLabel.setText("Correct Cycles: 0%")
-            }
-            else{
-                correctCyclesLabel.setText("Correct Cycles: " + String(format: "%.0f", (Double(correctCyclesTotal)/Double(cycleTotal))*100) + "%")
-            }
+            correctCyclesLabel.setText("Total Cycles: " + String(cycleTotalFree))
+            totalBreathsLabel.setText("Total Breaths: " + String(totalBreathsFree))
+            timePlayedLabel.setText("Time Played: " + String(Int(timeFree)) + "s")
+            averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTimeFree) + "s")
+        }
             
-            totalBreathsLabel.setText("Total Breaths: " + String(totalBreaths))
-            timePlayedLabel.setText("Time Played: " + String(Int(time)) + "s")
-            averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTime) + "s")
-        }
-        
-        else if ((context as? String) == "t2"){
-            if (FullCycle == 1){
-                tutorial2Label.setText("After Your \(String(FullCycle))st breath, swipe to complete your breath cycle")
-            }
-            else if (FullCycle == 2){
-                tutorial2Label.setText("After Your \(String(FullCycle))nd breath, swipe to complete your breath cycle")
-            }
-            else if (FullCycle == 3){
-                tutorial2Label.setText("After Your \(String(FullCycle))rd breath, swipe to complete your breath cycle")
-            }
-            else {
-                tutorial2Label.setText("After Your \(String(FullCycle))th breath, swipe to complete your breath cycle")
-            }
-        }
-        
         else if ((context as? String) == "start"){
             self.image.setTintColor(self.customYellow)
         }
@@ -156,40 +121,29 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        if (inGame == true){
-            inGame = false
+        if (inGameFree == true){
+            inGameFree = false
             WKInterfaceController.reloadRootControllers(withNames: ["Breathe Results"], contexts: ["Breathe Done"])
-            
-            
-            // resets global slider variables
-            FullCycle = 5
-            sessionTime = 2
         }
         
     }
     
-    @IBAction func forceQuit() {
+    @IBAction func forceQuit() { //Stops TImer and goes to results screen
         gameLengthTimer.invalidate()
         endGame()
     }
     
     @objc func sessionCounter(){
-        if (time < Double(sessionTime*60)){
-            time += 0.1
-        }
-        else{
-            endGame()
-            gameLengthTimer.invalidate()
-        }
+        timeFree += 0.1
     }
     
     @objc func breatheInCounter(){
-        if (counter < averageFullBreatheTime){
+        if (counter < averageFullBreatheTimeFree){
             animate(withDuration: 0.1){
-                //self.alpha = (self.counter/self.averageFullBreatheTime)
+                //self.alpha = (self.counter/self.averageFullBreatheTimeFree)
                 //self.image.setAlpha(CGFloat(self.alpha))
-                let addHeight = (1 - self.startRelativeWidth)*(self.counter/averageFullBreatheTime)
-                let addWidth = (1 - self.startRelativeHeight)*(self.counter/averageFullBreatheTime)
+                let addHeight = (1 - self.startRelativeWidth)*(self.counter/averageFullBreatheTimeFree)
+                let addWidth = (1 - self.startRelativeHeight)*(self.counter/averageFullBreatheTimeFree)
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth + addWidth), withAdjustment: 0)
                 self.image.setRelativeHeight(CGFloat(self.startRelativeHeight + addHeight), withAdjustment: 0)
                 self.counter += 0.1
@@ -205,7 +159,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func cycleReset(){ //goes back to step one
-        cycleTotal += 1
+        cycleTotalFree += 1
         cycleStep = 0
         //self.image.setImageNamed("breathey")
         animate(withDuration: 1){
@@ -259,11 +213,11 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled{
             breatheInTimer.invalidate()
             print("breathe in time: " + String(format: "%.3f", breatheInTime))
-            totalBreaths += 1
-            print("total breaths: " + String(totalBreaths))
+            totalBreathsFree += 1
+            print("total breaths: " + String(totalBreathsFree))
             
             addToAverageBreatheTime(time: breatheInTime)
-            print("new avg: " + String(format: "%.3f", averageFullBreatheTime))
+            print("new avg: " + String(format: "%.3f", averageFullBreatheTimeFree))
             
             //Can use "(breatheInTime - offset)" or global var "resetInterval" for "withDuration"
             var shrinkInterval = (0.8)*(breatheInTime)
@@ -291,14 +245,12 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
                 
                 sendData(game: "breathe", what: "stop hold", correct: "true")
             }
-            
         }
-        
     }
     
     func addToAverageBreatheTime(time : Double){
         totalBreatheTimes = totalBreatheTimes + time
-        averageFullBreatheTime = totalBreatheTimes/Double((totalBreaths + 1))
+        averageFullBreatheTimeFree = totalBreatheTimes/Double((totalBreathsFree + 1))
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -317,3 +269,4 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         }
     }
 }
+

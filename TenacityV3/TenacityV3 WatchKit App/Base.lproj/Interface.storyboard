@@ -16,9 +16,10 @@
                         <button alignment="center" verticalAlignment="center" id="ggv-I4-0S8" userLabel="Breathe Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="VK2-lK-VeR">
                                 <items>
-                                    <label alignment="left" verticalAlignment="bottom" text=" Breathe" id="rvW-z6-qKs">
+                                    <label width="67" alignment="left" verticalAlignment="bottom" text="Breathe Focus" numberOfLines="2" id="rvW-z6-qKs">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
+                                    <group width="45" height="45" alignment="right" verticalAlignment="center" backgroundImage="breathemenu" contentMode="scaleAspectFit" layout="overlap" id="q2L-n4-oTe"/>
                                 </items>
                                 <color key="backgroundColor" red="0.91204780340000002" green="0.55539494749999996" blue="0.37507879729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
@@ -29,7 +30,8 @@
                         <button alignment="center" verticalAlignment="center" id="idR-L0-Ecv" userLabel="Free Breathe Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="mTd-BP-oRE">
                                 <items>
-                                    <label alignment="left" verticalAlignment="bottom" text=" Free Breathe" id="VG7-zf-CDE">
+                                    <group width="45" height="45" alignment="right" verticalAlignment="center" backgroundImage="infinity_symblo_PNG40" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="vGk-cO-Zjf"/>
+                                    <label width="75" alignment="left" verticalAlignment="bottom" text="Breathe Infinite" numberOfLines="2" id="VG7-zf-CDE">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                 </items>
@@ -39,9 +41,10 @@
                         <button alignment="center" verticalAlignment="center" id="AmO-2H-hPA" userLabel="Lotus Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="KoG-IG-E6f">
                                 <items>
-                                    <label alignment="left" verticalAlignment="bottom" text=" Lotus" id="ERe-cv-9Zk">
+                                    <label width="73" alignment="left" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
+                                    <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus_closed" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
                                 </items>
                                 <color key="backgroundColor" red="0.9233394265" green="0.30014729499999998" blue="0.23460644480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
@@ -52,9 +55,10 @@
                         <button alignment="center" verticalAlignment="center" id="hew-EV-P15" userLabel="Rhythm Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="x8t-r6-drU">
                                 <items>
-                                    <label alignment="left" verticalAlignment="bottom" text=" Rhythm Tap" id="Z2t-EI-4vM">
+                                    <label width="78" alignment="left" verticalAlignment="bottom" text=" Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
+                                    <group width="45" height="45" alignment="right" verticalAlignment="center" backgroundImage="drum" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="HI3-kd-uci"/>
                                 </items>
                                 <color key="backgroundColor" red="0.92364782089999997" green="0.2096793652" blue="0.36866086720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
@@ -68,6 +72,7 @@
                                     <label alignment="left" verticalAlignment="bottom" text=" Help" id="83x-UK-VpB" userLabel="Help">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
+                                    <group width="45" height="45" alignment="right" verticalAlignment="center" backgroundImage="question" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="nsr-d5-SAd"/>
                                 </items>
                                 <color key="backgroundColor" red="0.73031908270000001" green="0.089183114470000005" blue="0.52817606930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
@@ -78,7 +83,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="30" y="81"/>
+            <point key="canvasLocation" x="30" y="80.5"/>
         </scene>
         <!--Lotus Main-->
         <scene sceneID="ovh-Lg-E53">

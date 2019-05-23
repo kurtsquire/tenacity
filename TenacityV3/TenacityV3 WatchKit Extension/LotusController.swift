@@ -376,6 +376,10 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     }
     
     func toResults(){
+        Welcome.setHidden(true)
+        Initial.setHidden(true)
+        Instructions.setHidden(true)
+        
         Tap.isEnabled = false
         
         SwipeUp.isEnabled = false
@@ -393,7 +397,9 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     @objc func reset(){
         current_round += 1
-        if (current_round > total_rounds){
+        print(current_round)
+        print(total_rounds)
+        if (current_round >= total_rounds){
             toResults()
         }
         else{
@@ -429,7 +435,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     // After tapping on lotus reset and disable tap
     @IBAction func TapAction(_ sender: Any) {
         if white{
-            print(white)
+            
             white = false
             seconds = 0
             Main_Pic.setAlpha(0.0)
@@ -437,7 +443,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
         }
         else if (current_image == "guide"){
-            print("else")
+            
             current_image = "N/A"
             reset()
             current_round = 0

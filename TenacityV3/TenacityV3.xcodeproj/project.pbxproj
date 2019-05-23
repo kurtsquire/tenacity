@@ -26,6 +26,8 @@
 		42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AFF22938EEA009CA96E /* Breathe.storyboard */; };
 		42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398B0122938F55009CA96E /* Lotus.storyboard */; };
 		42398B0522939824009CA96E /* RhythmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398B0422939824009CA96E /* RhythmController.swift */; };
+		42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */; };
+		42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		42398AFF22938EEA009CA96E /* Breathe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Breathe.storyboard; sourceTree = "<group>"; };
 		42398B0122938F55009CA96E /* Lotus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lotus.storyboard; sourceTree = "<group>"; };
 		42398B0422939824009CA96E /* RhythmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RhythmController.swift; path = "TenacityV3 WatchKit Extension/RhythmController.swift"; sourceTree = SOURCE_ROOT; };
+		42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FreeBreathe.storyboard; sourceTree = "<group>"; };
+		42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeBreatheController.swift; path = "TenacityV3 WatchKit Extension/FreeBreatheController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				42398AC72293815A009CA96E /* Interface.storyboard */,
 				42398AF1229382D3009CA96E /* Rhythm.storyboard */,
 				42398AFF22938EEA009CA96E /* Breathe.storyboard */,
+				42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */,
 				42398B0122938F55009CA96E /* Lotus.storyboard */,
 				42398ACA2293815B009CA96E /* Assets.xcassets */,
 				42398ACC2293815B009CA96E /* Info.plist */,
@@ -170,6 +175,7 @@
 				42398AF522938304009CA96E /* BreatheController.swift */,
 				42398AF72293832C009CA96E /* LotusController.swift */,
 				42398B0422939824009CA96E /* RhythmController.swift */,
+				42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */,
 				42398ADC2293815B009CA96E /* Assets.xcassets */,
 				42398ADE2293815B009CA96E /* Info.plist */,
 				42398ADF2293815B009CA96E /* PushNotificationPayload.apns */,
@@ -289,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */,
 				42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */,
 				42398ACB2293815B009CA96E /* Assets.xcassets in Resources */,
 				42398AC92293815A009CA96E /* Interface.storyboard in Resources */,
@@ -325,6 +332,7 @@
 				42398B0522939824009CA96E /* RhythmController.swift in Sources */,
 				42398ADB2293815B009CA96E /* NotificationController.swift in Sources */,
 				42398AF622938304009CA96E /* BreatheController.swift in Sources */,
+				42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */,
 				42398AD92293815B009CA96E /* ExtensionDelegate.swift in Sources */,
 				42398AD72293815B009CA96E /* InterfaceController.swift in Sources */,
 			);
