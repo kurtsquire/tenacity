@@ -15,9 +15,10 @@ import WatchConnectivity
 var timeFree = 0.0
 //var correctCyclesTotal = 0
 var cycleTotalFree = 0
-var inGameFree = true
+
 var totalBreathsFree = 0
 var averageFullBreatheTimeFree = 3.5
+var cycleDict = [Int : Int]()
 
 
 class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
@@ -36,37 +37,41 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     var gameLengthTimer = Timer()
     
     var cycleStep = 0
+    @IBOutlet weak var holdNumberLabel: WKInterfaceLabel!
     
     let customYellow = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
     
-    //Initial Settings Page
-    
-    
-    @IBAction func startButtonTapped() {    // change to Tutorial Screen
-        // resets global variables
-        inGameFree = true
-        timeFree = 0
-        correctCyclesTotal = 0
-        cycleTotalFree = 0
-        totalBreathsFree = 0
-        averageFullBreatheTimeFree = 3.5
-    }
     
     /////////////////////////// Tutorial
     
     @IBAction func tutorial2Tapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Main"], contexts: ["start"])
         
+        //resets global variables
+        timeFree = 0.0
+        cycleTotalFree = 0
+        totalBreathsFree = 0
+        averageFullBreatheTimeFree = 3.5
+        cycleDict = [Int : Int]()
+        
         //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
     }
+    
+    
+    ///// start screen
+    
+    
+    @IBOutlet weak var prevSessionLabel: WKInterfaceLabel!
+    
+    
     
     ////////////////////  Results Screen Page
     
     @IBOutlet var averageBreathLabel: WKInterfaceLabel!
     @IBOutlet var timePlayedLabel: WKInterfaceLabel!
-    @IBOutlet var correctCyclesLabel: WKInterfaceLabel!
+    @IBOutlet var totalCyclesLabel: WKInterfaceLabel!
     @IBOutlet var totalBreathsLabel: WKInterfaceLabel!
     @IBAction func resultScreenTapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: [""])
@@ -80,9 +85,19 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        
         if ((context as? String) == "Breathe Done"){
-            correctCyclesLabel.setText("Total Cycles: " + String(cycleTotalFree))
+            if (cycleDict.count > 0){
+                var result = ""
+                for (key, value) in cycleDict{
+                    result += "\n"
+                    result += "\(String(key)) breaths : \(String(value))x"
+                }
+                totalCyclesLabel.setText(result)
+            }
+            else{
+                totalCyclesLabel.setText("Total Cycles: " + String(cycleTotalFree))
+            }
+            
             totalBreathsLabel.setText("Total Breaths: " + String(totalBreathsFree))
             timePlayedLabel.setText("Time Played: " + String(Int(timeFree)) + "s")
             averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTimeFree) + "s")
@@ -90,6 +105,21 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             
         else if ((context as? String) == "start"){
             self.image.setTintColor(self.customYellow)
+        }
+        
+        else if ((context as? String) == "from Menu"){
+            if (cycleDict.count > 0){
+                var result = ""
+                for (key, value) in cycleDict{
+                    result += "\(String(key)) breaths : \(String(value))x\n"
+                }
+                prevSessionLabel.setText(result)
+            }
+            else{
+                prevSessionLabel.setText("No Previous Session")
+            }
+            
+            
         }
         
         if WCSession.isSupported(){
@@ -110,15 +140,12 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        if (inGameFree == true){
-            inGameFree = false
-            WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
-        }
-        
+        WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
     @IBAction func forceQuit() { //Stops TImer and goes to results screen
         gameLengthTimer.invalidate()
+        breatheInTimer.invalidate()
         endGame()
     }
     
@@ -166,10 +193,15 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
             self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
         }
+        holdNumberLabel.setText(String(cycleStep))
+        holdNumberLabel.setHidden(false)
         
         sendData(game: "breathe", what: "swipe", correct: "N/A")
         WKInterfaceDevice.current().play(.success)
         
+        
+        ///// insert into dict
+        cycleDict[cycleStep] = (cycleDict[cycleStep] ?? 0) + 1
         
         cycleReset()
     }
@@ -178,6 +210,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         
         if gestureRecognizer.state == .began{
             resetImage()
+            holdNumberLabel.setHidden(true)
+            
             counter = 0
             breatheInTime = 0
 

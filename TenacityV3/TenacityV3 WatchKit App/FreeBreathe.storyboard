@@ -15,12 +15,14 @@
                     <items>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="bxS-fX-Fet">
                             <connections>
-                                <action selector="startButtonTapped" destination="YYs-CD-A1E" id="Z9D-1z-xcH"/>
                                 <segue destination="56M-Js-fPv" kind="push" id="QE1-Sn-Aff"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Free Breathe" id="GqQ-SL-SKB"/>
+                        <label alignment="left" text="Previous Session:" numberOfLines="30" id="GqQ-SL-SKB"/>
                     </items>
+                    <connections>
+                        <outlet property="prevSessionLabel" destination="GqQ-SL-SKB" id="Pwa-3t-0hM"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-249" y="291"/>
@@ -86,6 +88,9 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="dPi-sN-awk">
                             <items>
+                                <label alignment="center" hidden="YES" text="5" id="oHD-uP-aYB">
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </label>
                                 <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="BLl-42-gc2"/>
                             </items>
                             <gestureRecognizers>
@@ -113,6 +118,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="holdNumberLabel" destination="oHD-uP-aYB" id="JY1-a4-lcP"/>
                         <outlet property="image" destination="BLl-42-gc2" id="W3O-lZ-vuX"/>
                     </connections>
                 </controller>
@@ -124,19 +130,19 @@
             <objects>
                 <controller identifier="FreeBreathe Results" title="Results" id="dP0-Q1-eN7" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="Wth-WB-PVh">
+                        <group width="1" alignment="left" layout="vertical" id="Wth-WB-PVh">
                             <items>
                                 <label alignment="center" text="Results" textAlignment="center" id="7qQ-6r-9GA">
                                     <color key="textColor" red="0.0057474765930000003" green="0.60298079250000003" blue="0.99746531250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                 </label>
+                                <label alignment="right" verticalAlignment="bottom" text="Total_Cycles" numberOfLines="15" id="esP-3u-q0A">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
                                 <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" textAlignment="center" numberOfLines="2" id="uzE-A0-V2z">
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                                 <label alignment="right" verticalAlignment="bottom" text="Avg_Breath" numberOfLines="2" id="79p-KA-ueq">
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Correct_Cycles" numberOfLines="2" id="esP-3u-q0A">
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                                 <label alignment="right" verticalAlignment="bottom" text="TIme_Played" numberOfLines="2" id="hWf-aF-qRO">
@@ -154,9 +160,9 @@
                     </items>
                     <connections>
                         <outlet property="averageBreathLabel" destination="79p-KA-ueq" id="JmP-Vh-hHo"/>
-                        <outlet property="correctCyclesLabel" destination="esP-3u-q0A" id="Id6-UJ-5WN"/>
                         <outlet property="timePlayedLabel" destination="hWf-aF-qRO" id="vlg-Sq-koh"/>
                         <outlet property="totalBreathsLabel" destination="uzE-A0-V2z" id="Z5s-cx-S51"/>
+                        <outlet property="totalCyclesLabel" destination="esP-3u-q0A" id="5oV-dk-4Qc"/>
                     </connections>
                 </controller>
             </objects>

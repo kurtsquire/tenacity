@@ -27,5 +27,9 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        return "from Menu"
+    }
 
 }
