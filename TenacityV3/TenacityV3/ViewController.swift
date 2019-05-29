@@ -112,6 +112,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             var time = ""
             var what = ""
             var correct = ""
+            var settings = ""
             //asks what value is in data
             if let game = userInfo["game"] as? String {
                 if let text1 = userInfo["what"] as? String {
@@ -123,7 +124,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 if let text3 = userInfo["time"] as? String {
                     time = text3
                 }
-                displayText = (game + "\n" + what + "\n" + correct + "\n" + time + ";;;\n")
+                if let text4 = userInfo["settings"] as? String {
+                    settings = text4
+                }
+                displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
+                
                 self.data.append(displayText)
                 
                 NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)

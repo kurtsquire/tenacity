@@ -117,6 +117,9 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         Instructions.setHidden(true)
         choose_guide()
         Tap.isEnabled = true
+        
+        // send data (right before they look at screen to memorize)
+        sendData(game: "lotus", what: "start game", correct: "N/A", settings: "rounds: " + String(total_rounds))
     }
     
     //randomly chooses memorization set
@@ -393,6 +396,9 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         Round_label.setText("Rounds Played: " + String(current_round))
         Round_label.setHidden(false)
         Restart_button.setHidden(false)
+        
+        // send data
+        sendData(game: "lotus", what: "end game", correct: "N/A", settings: "rounds: " + String(total_rounds))
     }
     
     @objc func reset(){
@@ -457,12 +463,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
-            sendData(game: "lotus", what: "swipe", correct: "true")
+            sendData(game: "lotus", what: "swipe", correct: "true", settings: "N/A")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
-            sendData(game: "lotus", what: "swipe", correct: "false")
+            sendData(game: "lotus", what: "swipe", correct: "false", settings: "N/A")
         }
     }
     @IBAction func SwipeUpAction(_ sender: Any) {
@@ -471,12 +477,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
-            sendData(game: "lotus", what: "swipe", correct: "true")
+            sendData(game: "lotus", what: "swipe", correct: "true", settings: "N/A")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
-            sendData(game: "lotus", what: "swipe", correct: "false")
+            sendData(game: "lotus", what: "swipe", correct: "false", settings: "N/A")
         }
     }
     @IBAction func SwipeDownAction(_ sender: Any) {
@@ -485,12 +491,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
-            sendData(game: "lotus", what: "swipe", correct: "true")
+            sendData(game: "lotus", what: "swipe", correct: "true", settings: "N/A")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
-            sendData(game: "lotus", what: "swipe", correct: "false")
+            sendData(game: "lotus", what: "swipe", correct: "false", settings: "N/A")
         }
     }
     @IBAction func SwipeLeftAction(_ sender: Any) {
@@ -499,19 +505,19 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             successful_swipes += 1
             total_swipes += 1
             reset()
-            sendData(game: "lotus", what: "swipe", correct: "true")
+            sendData(game: "lotus", what: "swipe", correct: "true", settings: "N/A")
         }
         else{
             WKInterfaceDevice.current().play(.failure)
             total_swipes += 1
-            sendData(game: "lotus", what: "swipe", correct: "false")
+            sendData(game: "lotus", what: "swipe", correct: "false", settings: "N/A")
         }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String){
+    func sendData(game : String, what : String, correct : String, settings : String){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -519,7 +525,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             let data = ["game": game,
                         "what": what,
                         "correct": correct,
-                        "time": String(timestamp)]
+                        "time": String(timestamp),
+                        "settings": settings]
             session.transferUserInfo(data)
             
         }

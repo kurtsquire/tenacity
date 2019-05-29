@@ -55,6 +55,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         averageFullBreatheTimeFree = 3.5
         cycleDict = [Int : Int]()
         
+        sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
+        
         //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
     }
@@ -88,7 +90,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         if ((context as? String) == "Breathe Done"){
             if (cycleDict.count > 0){
                 var result = ""
-                for (key, value) in cycleDict{
+                for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
                     result += "\n"
                     result += "\(String(key)) breaths : \(String(value))x"
                 }
@@ -110,7 +112,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         else if ((context as? String) == "from Menu"){
             if (cycleDict.count > 0){
                 var result = ""
-                for (key, value) in cycleDict{
+                for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
                     result += "\(String(key)) breaths : \(String(value))x\n"
                 }
                 prevSessionLabel.setText(result)
@@ -140,6 +142,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
+        
+        sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A")
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
@@ -196,7 +200,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         holdNumberLabel.setText(String(cycleStep))
         holdNumberLabel.setHidden(false)
         
-        sendData(game: "breathe", what: "swipe", correct: "N/A")
+        sendData(game: "Free Breathe", what: "swipe", correct: "N/A", settings: "N/A")
         WKInterfaceDevice.current().play(.success)
         
         
@@ -215,7 +219,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             counter = 0
             breatheInTime = 0
 
-            sendData(game: "breathe", what: "start hold", correct: "N/A")
+            sendData(game: "Free Breathe", what: "start hold", correct: "N/A", settings: "N/A")
             
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
             
@@ -245,7 +249,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             animate(withDuration: 1){
                 self.image.setTintColor(self.customBlue)
             }
-            sendData(game: "breathe", what: "stop hold", correct: "N/A")
+            sendData(game: "Free Breathe", what: "stop hold", correct: "N/A", settings: "N/A")
             
             
         }
@@ -259,7 +263,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String){
+    func sendData(game : String, what : String, correct : String, settings : String){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -267,7 +271,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             let data = ["game": game,
                         "what": what,
                         "correct": correct,
-                        "time": String(timestamp)]
+                        "time": String(timestamp),
+                        "settings": settings]
             session.transferUserInfo(data)
         }
     }

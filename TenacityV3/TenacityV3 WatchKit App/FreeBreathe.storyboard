@@ -13,12 +13,12 @@
             <objects>
                 <controller identifier="FreeBreathe Start" title="FreeBreathe" id="YYs-CD-A1E" customClass="FreeBreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="bxS-fX-Fet">
+                        <button width="1" alignment="left" title="Start" id="bxS-fX-Fet">
                             <connections>
                                 <segue destination="56M-Js-fPv" kind="push" id="QE1-Sn-Aff"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Previous Session:" numberOfLines="30" id="GqQ-SL-SKB"/>
+                        <label alignment="right" text="Previous Session:" textAlignment="right" numberOfLines="10" id="GqQ-SL-SKB"/>
                     </items>
                     <connections>
                         <outlet property="prevSessionLabel" destination="GqQ-SL-SKB" id="Pwa-3t-0hM"/>
@@ -88,7 +88,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="dPi-sN-awk">
                             <items>
-                                <label alignment="center" hidden="YES" text="5" id="oHD-uP-aYB">
+                                <label height="30" alignment="center" text="5" id="oHD-uP-aYB">
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                                 <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="BLl-42-gc2"/>
