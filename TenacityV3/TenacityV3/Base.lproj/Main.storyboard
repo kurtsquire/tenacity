@@ -87,7 +87,7 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="trash" id="qEe-bS-ZLU">
+                            <barButtonItem enabled="NO" systemItem="trash" id="qEe-bS-ZLU">
                                 <connections>
                                     <action selector="trashPressed:" destination="BYZ-38-t0r" id="Thv-mE-jLg"/>
                                 </connections>
