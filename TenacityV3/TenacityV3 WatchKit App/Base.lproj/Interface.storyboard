@@ -16,10 +16,10 @@
                         <button alignment="center" verticalAlignment="center" id="ggv-I4-0S8" userLabel="Breathe Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="VK2-lK-VeR">
                                 <items>
-                                    <label width="67" alignment="left" verticalAlignment="bottom" text="Breathe Focus" numberOfLines="2" id="rvW-z6-qKs">
+                                    <label width="76" alignment="center" verticalAlignment="bottom" text="Breathe Focus" textAlignment="left" numberOfLines="2" id="rvW-z6-qKs">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
-                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="breathemenu" contentMode="scaleAspectFit" layout="overlap" id="q2L-n4-oTe"/>
+                                    <group width="52" height="45" alignment="right" verticalAlignment="center" backgroundImage="breathemenu" contentMode="scaleAspectFit" layout="overlap" id="q2L-n4-oTe"/>
                                 </items>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
@@ -30,8 +30,8 @@
                         <button alignment="center" verticalAlignment="center" id="idR-L0-Ecv" userLabel="Free Breathe Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="mTd-BP-oRE">
                                 <items>
-                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="infinity_symblo_PNG40" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="vGk-cO-Zjf"/>
-                                    <label width="75" alignment="left" verticalAlignment="bottom" text="Breathe Infinite" numberOfLines="2" id="VG7-zf-CDE">
+                                    <group width="49" height="45" alignment="right" verticalAlignment="center" backgroundImage="infinity_symblo_PNG40" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="vGk-cO-Zjf"/>
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Breathe Infinite" numberOfLines="2" id="VG7-zf-CDE">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                 </items>
@@ -44,7 +44,7 @@
                         <button alignment="center" verticalAlignment="center" id="AmO-2H-hPA" userLabel="Lotus Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="KoG-IG-E6f">
                                 <items>
-                                    <label width="73" alignment="left" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                     <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus_closed" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
@@ -58,7 +58,7 @@
                         <button alignment="center" verticalAlignment="center" id="hew-EV-P15" userLabel="Rhythm Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="x8t-r6-drU">
                                 <items>
-                                    <label width="78" alignment="left" verticalAlignment="bottom" text=" Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                     <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="drum" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="HI3-kd-uci"/>

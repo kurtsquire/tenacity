@@ -169,13 +169,13 @@
             <objects>
                 <controller identifier="Breathe Results" title="Results" id="kla-z2-xK4" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="SEa-p9-L82">
+                        <label alignment="center" text="Results" textAlignment="center" id="hFL-q3-NaV">
+                            <color key="textColor" red="0.0057474765930000003" green="0.60298079250000003" blue="0.99746531250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        </label>
+                        <group width="1" alignment="left" verticalAlignment="bottom" layout="vertical" id="SEa-p9-L82">
                             <items>
-                                <label alignment="center" text="Results" textAlignment="center" id="hFL-q3-NaV">
-                                    <color key="textColor" red="0.0057474765930000003" green="0.60298079250000003" blue="0.99746531250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
-                                </label>
-                                <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" textAlignment="center" numberOfLines="2" id="1zQ-r0-vBF">
+                                <label alignment="right" verticalAlignment="bottom" text="Total_Breaths" numberOfLines="2" id="1zQ-r0-vBF">
                                     <fontDescription key="font" type="system" pointSize="15"/>
                                 </label>
                                 <label alignment="right" verticalAlignment="bottom" text="Avg_Breath" numberOfLines="2" id="Psg-rG-fpO">
