@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Scheduler-->
+        <scene sceneID="r7l-AB-q9E">
+            <objects>
+                <controller identifier="Scheduler" id="Sfw-td-75P" customClass="SchedulerController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Current Alarm:" numberOfLines="2" id="VIh-eL-5rk"/>
+                        <group width="1" alignment="left" id="i3h-5v-cyd">
+                            <items>
+                                <picker width="0.27500000000000002" height="1" alignment="left" focusStyle="stack" id="LfV-li-qAP">
+                                    <connections>
+                                        <action selector="hourPicked:" destination="Sfw-td-75P" id="Nrj-JB-R4K"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.39000000000000001" height="1" alignment="left" focusStyle="stack" id="B81-FN-2qp">
+                                    <connections>
+                                        <action selector="minutePicked:" destination="Sfw-td-75P" id="eMQ-fH-Dfm"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.33500000000000002" height="1" alignment="left" focusStyle="stack" id="5Kg-PT-iNz">
+                                    <connections>
+                                        <action selector="meridiemPicked:" destination="Sfw-td-75P" id="1rB-kg-BnR"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Set Alarm" enabled="NO" id="jhm-YS-XB1">
+                            <connections>
+                                <action selector="saveButtonPressed" destination="Sfw-td-75P" id="Q8A-u6-iyh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="hourPicker" destination="LfV-li-qAP" id="4p4-wN-RgP"/>
+                        <outlet property="meridiemPicker" destination="5Kg-PT-iNz" id="8VA-VD-vxX"/>
+                        <outlet property="minutePicker" destination="B81-FN-2qp" id="MGG-CT-V73"/>
+                        <outlet property="saveButton" destination="jhm-YS-XB1" id="duj-Ef-GoA"/>
+                        <outlet property="timeLabel" destination="VIh-eL-5rk" id="gYk-35-tOO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="36" y="97"/>
+        </scene>
+    </scenes>
+</document>

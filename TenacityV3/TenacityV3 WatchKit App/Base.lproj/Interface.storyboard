@@ -83,6 +83,11 @@
                                 <segue destination="VQi-bs-Jqa" kind="push" id="ZbQ-YP-mfb"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="scheduler" id="w96-eM-tup">
+                            <connections>
+                                <segue destination="kpQ-ED-DUj" kind="push" id="3rG-jz-pT9"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -107,7 +112,14 @@
             <objects>
                 <controllerPlaceholder referencedIdentifier="FreeBreathe Start" id="tMF-v2-yz8"/>
             </objects>
-            <point key="canvasLocation" x="303" y="104"/>
+            <point key="canvasLocation" x="311" y="115"/>
+        </scene>
+        <!--Scheduler-->
+        <scene sceneID="pa7-Fw-MQs">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Scheduler" id="kpQ-ED-DUj"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="192"/>
         </scene>
         <!--Breathe Start-->
         <scene sceneID="4Xz-C4-ud1">

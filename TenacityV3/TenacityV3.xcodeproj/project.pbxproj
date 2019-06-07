@@ -26,6 +26,8 @@
 		42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AFF22938EEA009CA96E /* Breathe.storyboard */; };
 		42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398B0122938F55009CA96E /* Lotus.storyboard */; };
 		42398B0522939824009CA96E /* RhythmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398B0422939824009CA96E /* RhythmController.swift */; };
+		42711E9722A74CBE00AAABDB /* Scheduler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42711E9622A74CBE00AAABDB /* Scheduler.storyboard */; };
+		42711E9922A7517A00AAABDB /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42711E9822A7517A00AAABDB /* SchedulerController.swift */; };
 		42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */; };
 		42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,8 @@
 		42398AFF22938EEA009CA96E /* Breathe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Breathe.storyboard; sourceTree = "<group>"; };
 		42398B0122938F55009CA96E /* Lotus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lotus.storyboard; sourceTree = "<group>"; };
 		42398B0422939824009CA96E /* RhythmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RhythmController.swift; path = "TenacityV3 WatchKit Extension/RhythmController.swift"; sourceTree = SOURCE_ROOT; };
+		42711E9622A74CBE00AAABDB /* Scheduler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scheduler.storyboard; sourceTree = "<group>"; };
+		42711E9822A7517A00AAABDB /* SchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchedulerController.swift; path = "../TenacityV3 WatchKit App/SchedulerController.swift"; sourceTree = "<group>"; };
 		42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FreeBreathe.storyboard; sourceTree = "<group>"; };
 		42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeBreatheController.swift; path = "TenacityV3 WatchKit Extension/FreeBreatheController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				42398AC72293815A009CA96E /* Interface.storyboard */,
+				42711E9622A74CBE00AAABDB /* Scheduler.storyboard */,
 				42398AF1229382D3009CA96E /* Rhythm.storyboard */,
 				42398AFF22938EEA009CA96E /* Breathe.storyboard */,
 				42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */,
@@ -176,6 +181,7 @@
 				42398AF72293832C009CA96E /* LotusController.swift */,
 				42398B0422939824009CA96E /* RhythmController.swift */,
 				42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */,
+				42711E9822A7517A00AAABDB /* SchedulerController.swift */,
 				42398ADC2293815B009CA96E /* Assets.xcassets */,
 				42398ADE2293815B009CA96E /* Info.plist */,
 				42398ADF2293815B009CA96E /* PushNotificationPayload.apns */,
@@ -300,6 +306,7 @@
 				42398ACB2293815B009CA96E /* Assets.xcassets in Resources */,
 				42398AC92293815A009CA96E /* Interface.storyboard in Resources */,
 				42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */,
+				42711E9722A74CBE00AAABDB /* Scheduler.storyboard in Resources */,
 				42398AF2229382D3009CA96E /* Rhythm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +342,7 @@
 				42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */,
 				42398AD92293815B009CA96E /* ExtensionDelegate.swift in Sources */,
 				42398AD72293815B009CA96E /* InterfaceController.swift in Sources */,
+				42711E9922A7517A00AAABDB /* SchedulerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
