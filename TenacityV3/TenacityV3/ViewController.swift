@@ -22,6 +22,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var saveItem: UIBarButtonItem!
     
+    
     var data = [String]()
     var name = "N/A"
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
@@ -52,6 +53,11 @@ class ViewController: UIViewController, WCSessionDelegate {
             addNameItem.isEnabled = true
         }
         showRecent()
+        
+        // updates date picker
+        
+        
+        
     }
     
     func showRecent(){
@@ -89,6 +95,10 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     @IBAction func savePressed(_ sender: Any) {
+        if self.addNameTextField.text == ""{
+            return
+        }
+        
         self.name = self.addNameTextField.text ?? "N/A"
         UserDefaults.standard.set(name, forKey: "shared_default")
         
@@ -96,7 +106,9 @@ class ViewController: UIViewController, WCSessionDelegate {
         textFieldLabel.isHidden = true
         saveItem.isEnabled = false
         
-        nameLabel.text = "Name: " + name
+        //nameLabel.text = "Name: " + name
+        updateName()
+        
         
         self.view.endEditing(true)
         // saves name to data
@@ -163,6 +175,20 @@ class ViewController: UIViewController, WCSessionDelegate {
         updateName()
         showRecent()
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /// Save to File //////////////
     
     static func getDocumentsDirectory() -> URL {

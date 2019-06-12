@@ -81,11 +81,18 @@
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="V2k-Bj-Td6">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="9Hv-AO-yb1">
-                            <connections>
-                                <action selector="refreshButton:" destination="BYZ-38-t0r" id="9xV-XG-9xV"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem style="plain" systemItem="refresh" id="9Hv-AO-yb1">
+                                <connections>
+                                    <action selector="refreshButton:" destination="BYZ-38-t0r" id="9xV-XG-9xV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="biS-Kn-QGT">
+                                <connections>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="etZ-lR-8gv"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem enabled="NO" systemItem="trash" id="qEe-bS-ZLU">
                                 <connections>
@@ -122,7 +129,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1032" y="119"/>
+        </scene>
+        <!--Phone Scheduler-->
+        <scene sceneID="bFT-Gx-hP2">
+            <objects>
+                <viewController id="8vJ-3k-jMH" customClass="PhoneScheduler" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SuF-ey-jdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
+                                <rect key="frame" x="0.0" y="144" width="414" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="581900430.17323899">
+                                    <!--2019-06-10 23:00:30 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
+                                    <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
+                                <rect key="frame" x="36" y="115" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
+                                <rect key="frame" x="340" y="115" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Hs-y8-qak" firstAttribute="leading" secondItem="cCk-Xd-NXT" secondAttribute="leading" constant="36" id="9pa-3I-dfc"/>
+                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="leading" secondItem="SuF-ey-jdp" secondAttribute="leading" id="G4h-dc-RPf"/>
+                            <constraint firstItem="cCk-Xd-NXT" firstAttribute="trailing" secondItem="NZt-db-Zsr" secondAttribute="trailing" constant="28" id="N4d-xB-dap"/>
+                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="top" secondItem="6Hs-y8-qak" secondAttribute="bottom" constant="8" symbolic="YES" id="VaG-Il-6fo"/>
+                            <constraint firstItem="6Hs-y8-qak" firstAttribute="top" secondItem="cCk-Xd-NXT" secondAttribute="top" constant="27" id="eOS-Bq-gBe"/>
+                            <constraint firstAttribute="trailing" secondItem="Zhs-RP-H4P" secondAttribute="trailing" id="jvS-Jy-0Gi"/>
+                            <constraint firstItem="6Hs-y8-qak" firstAttribute="top" secondItem="NZt-db-Zsr" secondAttribute="top" id="wIM-Sm-3TJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cCk-Xd-NXT"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="6Hs-y8-qak" id="i2m-Ow-qfh"/>
+                        <outlet property="datePicker" destination="Zhs-RP-H4P" id="ccx-ZJ-D0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyE-gz-MnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T6Q-Oq-eJ4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y5K-ey-lab">
