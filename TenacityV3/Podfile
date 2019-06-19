@@ -1,0 +1,31 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TenacityV3' do
+
+  use_frameworks!
+
+  # Pods for TenacityV3
+pod 'RealmSwift'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase'
+pod 'Firebase/Auth'
+
+end
+
+target 'TenacityV3 WatchKit App' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for TenacityV3 WatchKit App
+
+end
+
+target 'TenacityV3 WatchKit Extension' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TenacityV3 WatchKit Extension
+
+end
