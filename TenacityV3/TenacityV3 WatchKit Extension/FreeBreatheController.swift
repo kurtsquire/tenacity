@@ -90,7 +90,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         if ((context as? String) == "Breathe Done"){
             if (cycleDict.count > 0){
                 var result = ""
-                for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
+                for (key, value) in cycleDict.sorted(by: { $0.key < $1.key }){
                     result += "\n"
                     result += "\(String(key)) breaths : \(String(value))x"
                 }
@@ -112,7 +112,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         else if ((context as? String) == "from Menu"){
             if (cycleDict.count > 0){
                 var result = ""
-                for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
+                for (key, value) in cycleDict.sorted(by: { $0.key < $1.key }){
                     result += "\(String(key)) breaths : \(String(value))x\n"
                 }
                 prevSessionLabel.setText(result)

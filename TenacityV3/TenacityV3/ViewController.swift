@@ -22,10 +22,14 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var saveItem: UIBarButtonItem!
     
+    typealias mytuple = (game: String, what: String, correct: String, time: String, setting: String)
     
     var data = [String]()
+    var dataT = [mytuple]()
     var name = "N/A"
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
+    
+    var todaysDate = Date()
     
     
     override func viewDidLoad() {
@@ -57,9 +61,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         // updates date picker
         
         
+        //
+        
         
     }
-    
+     
     func showRecent(){
         self.textView.text = ""
         
@@ -120,9 +126,12 @@ class ViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         DispatchQueue.main.async{
             
+            
+            
             var displayText = ""
-            var time = ""
+            
             var what = ""
+            var time = ""
             var correct = ""
             var settings = ""
             //asks what value is in data
@@ -141,8 +150,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 }
                 displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
                 
-                self.data.append(displayText)
+                let testTuple = (game, what, correct, time, settings)
                 
+                //self.data.append(displayText)
+                self.dataT.append(testTuple)
+                print(self.dataT)
                 NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
             }
                 
@@ -177,15 +189,21 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     
+    ///////////////////////////////
     
     
-    
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var testTextView: UITextView!
+    @IBAction func testButtonPressed(_ sender: Any) {
+        self.testTextView.text = ""
+        for i in dataT{
+            if i.0 == "lotus"{
+                let result = ((i.time as NSString).integerValue)
+                print(result)
+                let dataDate = Date(timeIntervalSince1970: TimeInterval(result))
+                self.testTextView.text += String(dataDate.timeIntervalSince1970) + "\n"
+            }
+        }
+    }
     
     
     
