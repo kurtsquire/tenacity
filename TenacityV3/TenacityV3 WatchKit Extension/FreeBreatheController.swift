@@ -30,8 +30,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     var counter = 0.0
     
     var totalBreatheTimes = 3.5
-    //var resetInterval = 2.5   unused right now
-    
     
     var breatheInTimer = Timer()
     var breatheInTime = 0.0
@@ -59,7 +57,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         inGame = true
         sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
         
-        //  Game Length Timer
         startTimer()
     }
     
@@ -90,7 +87,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         super.awake(withContext: context)
         
         if ((context as? String) == "Breathe Done"){
-            //gameLengthTimer.invalidate()
+            
             if (cycleDict.count > 0){
                 var result = ""
                 for (key, value) in cycleDict.sorted(by: { $0.key < $1.key }){
@@ -154,7 +151,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        ///stopTimer()
         inGame = false
         breatheInTimer.invalidate()
         sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A")
@@ -162,9 +158,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     @IBAction func forceQuit() { //Stops TImer and goes to results screen
-        
         endGame()
-        
     }
     
     @objc func sessionCounter(){
@@ -179,10 +173,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func startTimer(){
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (sessionCounter), userInfo: nil, repeats: true)
     }
-    
-    //func stopTimer(){
-    //    gameLengthTimer.invalidate()
-    //}
     
     @objc func breatheInCounter(){
         if (counter < averageFullBreatheTimeFree){
