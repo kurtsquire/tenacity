@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let db = Database.database().reference()
         db.setValue("we got data")
+        
+        //displays file location path - to view file use realm browser on app store
+        if let fileUrl = Realm.Configuration.defaultConfiguration.fileURL{
+            print("REALM FILE URL IS:  ",fileUrl)
+        }
+        
         return true
     }
 

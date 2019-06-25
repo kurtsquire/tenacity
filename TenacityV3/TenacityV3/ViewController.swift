@@ -8,6 +8,8 @@
 
 import UIKit
 import WatchConnectivity
+import RealmSwift
+import Firebase
 
 class ViewController: UIViewController, WCSessionDelegate {
     
@@ -116,43 +118,111 @@ class ViewController: UIViewController, WCSessionDelegate {
         NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
     }
     
-    //handles data we get from watch
+    //    //handles data we get from watch
+    //    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+    //        DispatchQueue.main.async{
+    //
+    //            var displayText = ""
+    //            var time = ""
+    //            var what = ""
+    //            var correct = ""
+    //            var settings = ""
+    //            //asks what value is in data
+    //            if let game = userInfo["game"] as? String {
+    //                if let text1 = userInfo["what"] as? String {
+    //                    what = text1
+    //                }
+    //                if let text2 = userInfo["correct"] as? String {
+    //                    correct = text2
+    //                }
+    //                if let text3 = userInfo["time"] as? String {
+    //                    time = text3
+    //                }
+    //                if let text4 = userInfo["settings"] as? String {
+    //                    settings = text4
+    //                }
+    //                displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
+    //
+    //                self.data.append(displayText)
+    //
+    //                NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
+    //            }
+    //
+    //            else{
+    //                self.textView.text += "got something but cant read it"
+    //            }
+    //
+    //        }
+    //    }
+    
+    
+    //function to recieve user info --> also used to store received data into realm
+    //NOTE TO SELF: edit code--> function has to many things going on here edit code to make it simple and modular
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        DispatchQueue.main.async{
-            
-            var displayText = ""
-            var time = ""
-            var what = ""
-            var correct = ""
-            var settings = ""
-            //asks what value is in data
-            if let game = userInfo["game"] as? String {
-                if let text1 = userInfo["what"] as? String {
-                    what = text1
-                }
-                if let text2 = userInfo["correct"] as? String {
-                    correct = text2
-                }
-                if let text3 = userInfo["time"] as? String {
-                    time = text3
-                }
-                if let text4 = userInfo["settings"] as? String {
-                    settings = text4
-                }
-                displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
-                
-                self.data.append(displayText)
-                
-                NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
+        
+        //Initialize Realm instance
+        let realm = try! Realm()
+        
+        //recieve user info
+        //Unpack dictionary data into temp variables
+        var time = ""
+        var what = ""
+        var correct = ""
+        var settings = ""
+        
+        //Asks what value is in data
+        if let game = userInfo["game"] as? String {
+            if let tempVar01 = userInfo["what"] as? String {
+                what = tempVar01
             }
-                
-            else{
-                self.textView.text += "got something but cant read it"
+            if let tempVar02 = userInfo["correct"] as? String {
+                correct = tempVar02
+            }
+            if let tempVar03 = userInfo["time"] as? String {
+                time = tempVar03
+                //self.recievedData.text = "tempVar03"
+            }
+            if let tempVar04 = userInfo["settings"] as? String {
+                settings = tempVar04
+                //self.recievedData.text = "tempVar03"
+            }
+            
+            //GameDataModel Realm Objects --> initialize new instances --> store data to save
+            let gameDataModel = GameDataModel()
+            gameDataModel.gameTitle = game
+            gameDataModel.gameDataType = what
+            gameDataModel.gameDataAccuracy = correct
+            gameDataModel.sessionTimeStamp = time
+            gameDataModel.gameSettings = settings
+            
+            //Write to Realm
+            
+            //RealmManager.writeObject(gameDataModel)
+            
+            do{
+                try realm.write {
+                    realm.add(gameDataModel)
+                }
+            }catch{
+                print("Error saving data to Realm \(error)")
             }
             
         }
+        
+//        // firebase connection
+//        let db = Database.database().reference()
+//
+//        db.setValue(what)
+        
+        
+        DispatchQueue.main.async {
+            self.textView.text = "Data has been stored in Realm"
+        }
+        
     }
     
+    
+ //////////////////////////////////////////////////////////
     
     func testUserDefaults(){
         let defaults = UserDefaults.standard
@@ -217,7 +287,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         //WCSession.default().activate()   for multiple watches
     }
     
-    //////////////////////////////////////////////////////////
-
+   
+    
 }
 
