@@ -23,3 +23,4 @@ class GameDataModel: Object{
     //    override static func primaryKey() -> String? {
     //        return "sessionTimestamp"
 }
+
