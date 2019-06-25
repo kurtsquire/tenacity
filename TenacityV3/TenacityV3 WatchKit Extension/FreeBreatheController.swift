@@ -16,6 +16,7 @@ var timeFree = 0.0
 //var correctCyclesTotal = 0
 var cycleTotalFree = 0
 
+
 var totalBreathsFree = 0
 var averageFullBreatheTimeFree = 3.5
 var cycleDict = [Int : Int]()
@@ -55,10 +56,11 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         averageFullBreatheTimeFree = 3.5
         cycleDict = [Int : Int]()
         
+        inGame = true
         sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
         
         //  Game Length Timer
-        gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
+        startTimer()
     }
     
     
@@ -88,6 +90,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         super.awake(withContext: context)
         
         if ((context as? String) == "Breathe Done"){
+            //gameLengthTimer.invalidate()
             if (cycleDict.count > 0){
                 var result = ""
                 for (key, value) in cycleDict.sorted(by: { $0.key < $1.key }){
@@ -101,7 +104,16 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             }
             
             totalBreathsLabel.setText("Total Breaths: " + String(totalBreathsFree))
-            timePlayedLabel.setText("Time Played: " + String(Int(timeFree)) + "s")
+            let minutesPlayed = Int(timeFree/60)
+            if minutesPlayed > 0 {
+                print(timeFree)
+                let seconds = Int(timeFree) - (minutesPlayed*60)
+                timePlayedLabel.setText("Time Played: " + String(minutesPlayed) + "min" + String(seconds) + "s")
+            }
+            else{
+                timePlayedLabel.setText("Time Played: " + String(Int(timeFree)) + "s")
+            }
+            
             averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTimeFree) + "s")
         }
             
@@ -142,20 +154,35 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        
+        ///stopTimer()
+        inGame = false
+        breatheInTimer.invalidate()
         sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A")
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
     @IBAction func forceQuit() { //Stops TImer and goes to results screen
-        gameLengthTimer.invalidate()
-        breatheInTimer.invalidate()
+        
         endGame()
+        
     }
     
     @objc func sessionCounter(){
         timeFree += 0.1
+        print(timeFree)
+        if inGame == false{
+            gameLengthTimer.invalidate()
+        }
+        
     }
+    
+    func startTimer(){
+        gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (sessionCounter), userInfo: nil, repeats: true)
+    }
+    
+    //func stopTimer(){
+    //    gameLengthTimer.invalidate()
+    //}
     
     @objc func breatheInCounter(){
         if (counter < averageFullBreatheTimeFree){
@@ -227,12 +254,12 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         }
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled{
             breatheInTimer.invalidate()
-            print("breathe in time: " + String(format: "%.3f", breatheInTime))
+            //print("breathe in time: " + String(format: "%.3f", breatheInTime))
             totalBreathsFree += 1
-            print("total breaths: " + String(totalBreathsFree))
+            //print("total breaths: " + String(totalBreathsFree))
             
             addToAverageBreatheTime(time: breatheInTime)
-            print("new avg: " + String(format: "%.3f", averageFullBreatheTimeFree))
+            //print("new avg: " + String(format: "%.3f", averageFullBreatheTimeFree))
             
             //Can use "(breatheInTime - offset)" or global var "resetInterval" for "withDuration"
             var shrinkInterval = (0.8)*(breatheInTime)

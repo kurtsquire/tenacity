@@ -126,28 +126,14 @@ class ViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         DispatchQueue.main.async{
             
-            
-            
             var displayText = ""
             
-            var what = ""
-            var time = ""
-            var correct = ""
-            var settings = ""
             //asks what value is in data
             if let game = userInfo["game"] as? String {
-                if let text1 = userInfo["what"] as? String {
-                    what = text1
-                }
-                if let text2 = userInfo["correct"] as? String {
-                    correct = text2
-                }
-                if let text3 = userInfo["time"] as? String {
-                    time = text3
-                }
-                if let text4 = userInfo["settings"] as? String {
-                    settings = text4
-                }
+                let what = userInfo["what"] as! String
+                let correct = userInfo["correct"] as! String
+                let time = userInfo["time"] as! String
+                let settings = userInfo["settings"] as! String
                 displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
                 
                 let testTuple = (game, what, correct, time, settings)

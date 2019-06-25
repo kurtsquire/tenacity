@@ -403,8 +403,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     
     @objc func reset(){
         current_round += 1
-        print(current_round)
-        print(total_rounds)
         if (current_round >= total_rounds){
             toResults()
         }
