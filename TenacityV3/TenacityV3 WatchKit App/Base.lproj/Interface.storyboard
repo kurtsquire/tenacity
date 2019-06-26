@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EeY-fh-j6m">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu-->
+        <scene sceneID="IsM-lp-iBz">
+            <objects>
+                <controller identifier="Main Menu" id="EeY-fh-j6m" customClass="InterfaceController" customModule="TenacityV3_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button alignment="center" verticalAlignment="center" id="ggv-I4-0S8" userLabel="Breathe Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="VK2-lK-VeR">
+                                <items>
+                                    <label width="76" alignment="center" verticalAlignment="bottom" text="Breathe Focus" textAlignment="left" numberOfLines="2" id="rvW-z6-qKs">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                    <group width="52" height="45" alignment="right" verticalAlignment="center" backgroundImage="breathemenu" contentMode="scaleAspectFit" layout="overlap" id="q2L-n4-oTe"/>
+                                </items>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="8WV-Tj-wOd" kind="push" id="fKr-57-pSU"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="idR-L0-Ecv" userLabel="Free Breathe Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="mTd-BP-oRE">
+                                <items>
+                                    <group width="49" height="45" alignment="right" verticalAlignment="center" backgroundImage="infinity_symblo_PNG40" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="vGk-cO-Zjf"/>
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Breathe Infinite" numberOfLines="2" id="VG7-zf-CDE">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="tMF-v2-yz8" kind="push" id="CdI-PP-pg9"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="AmO-2H-hPA" userLabel="Lotus Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="KoG-IG-E6f">
+                                <items>
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                    <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus_closed" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
+                                </items>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="q1w-iP-abZ" kind="push" id="kf4-2e-70f"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="hew-EV-P15" userLabel="Rhythm Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="x8t-r6-drU">
+                                <items>
+                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="drum" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="HI3-kd-uci"/>
+                                </items>
+                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="4Tg-YH-RAE" kind="push" id="rWP-KH-59m"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="wYC-bp-ffy" userLabel="Help Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="lo2-Tm-kmI">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" Help" id="83x-UK-VpB" userLabel="Help">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="question" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="nsr-d5-SAd"/>
+                                </items>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="VQi-bs-Jqa" kind="push" id="ZbQ-YP-mfb"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="scheduler" id="w96-eM-tup">
+                            <connections>
+                                <segue destination="kpQ-ED-DUj" kind="push" id="3rG-jz-pT9"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="30" y="80.5"/>
+        </scene>
+        <!--Lotus Main-->
+        <scene sceneID="ovh-Lg-E53">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Lotus Main" id="q1w-iP-abZ"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-4"/>
+        </scene>
+        <!--RhythmTap Main-->
+        <scene sceneID="gOD-WM-Iiu">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="RhythmTap Main" id="4Tg-YH-RAE"/>
+            </objects>
+            <point key="canvasLocation" x="307" y="53"/>
+        </scene>
+        <!--FreeBreathe Start-->
+        <scene sceneID="DHG-to-s6t">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="FreeBreathe Start" id="tMF-v2-yz8"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="115"/>
+        </scene>
+        <!--Scheduler-->
+        <scene sceneID="pa7-Fw-MQs">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Scheduler" id="kpQ-ED-DUj"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="192"/>
+        </scene>
+        <!--Breathe Start-->
+        <scene sceneID="4Xz-C4-ud1">
+            <objects>
+                <controllerPlaceholder referencedIdentifier="Breathe Start" id="8WV-Tj-wOd"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-57"/>
+        </scene>
+        <!--Help Menu-->
+        <scene sceneID="n1W-cD-xn2">
+            <objects>
+                <controller identifier="Help Menu" id="VQi-bs-Jqa">
+                    <items>
+                        <button alignment="center" verticalAlignment="center" id="Lc7-lH-Qv0" userLabel="General Help Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="cgC-fA-waT">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" General" id="BzM-ds-Fap" userLabel="General Help">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="Fxo-2N-qwH" kind="push" id="vZn-ue-vh7"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="GcW-W1-Tab" userLabel="Reminders Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="fmF-mu-Jgq">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" Reminders" id="FML-y4-emI" userLabel="Reminders Help">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="r1x-GY-jdv" kind="push" id="tsH-cg-Lce"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="vca-oy-VKK" userLabel="Breathe Help Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="NSR-Bz-1Og">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" Breathe Help" id="ATw-MZ-uWk">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="DIV-Lv-Tbz" kind="push" id="eh8-Sk-W0J"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="MDO-EZ-SZL" userLabel="Lotus Help Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="9db-ZC-lqD">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" Lotus Help" id="CWv-Gf-5KH">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="LgP-M4-sE6" kind="push" id="PPk-HV-G3Z"/>
+                            </connections>
+                        </button>
+                        <button alignment="center" verticalAlignment="center" id="tek-ml-8cj" userLabel="Rhythm Help Button">
+                            <group key="contentGroup" width="1" height="60" alignment="left" id="wec-SH-o4I">
+                                <items>
+                                    <label alignment="left" verticalAlignment="bottom" text=" Rhythm Help" id="XS1-Kg-F4F">
+                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <segue destination="gUA-XG-l7N" kind="push" id="x1E-SU-07M"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="551" y="81"/>
+        </scene>
+        <!--General Help-->
+        <scene sceneID="D1S-cl-jQx">
+            <objects>
+                <controller identifier="General Help" id="Fxo-2N-qwH">
+                    <items>
+                        <label alignment="left" text="General Help" id="ZMr-L7-MGH"/>
+                        <separator alignment="left" id="KFT-mp-I3p"/>
+                        <group width="1" alignment="left" layout="vertical" id="Ii6-A0-tKE">
+                            <items>
+                                <label alignment="left" text="Start by selecting a game from the menu. Follow the instructions providsed for each game.  " numberOfLines="9" id="Bg4-D8-egh"/>
+                                <label alignment="left" text="If you want to quit out of the game force touch the screen to bring up the force touch menu. " numberOfLines="6" id="gDD-C8-Bba"/>
+                                <label alignment="left" text="After the game is complete, tap the result screen to return to the main menu." numberOfLines="6" id="lKA-eV-PuM"/>
+                                <label alignment="left" text="We recommend that you use the app in silent mode. To do this in your watch go to: " numberOfLines="10" id="CYD-wB-XHE"/>
+                                <label alignment="left" text="Settings &gt; Sound &amp; Haptics &gt; and turn on Silent Mode" numberOfLines="4" id="W9g-hA-Zfs"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="776" y="204"/>
+        </scene>
+        <!--Breathe Help-->
+        <scene sceneID="XZm-RP-N4D">
+            <objects>
+                <controller identifier="Breathe Help" id="DIV-Lv-Tbz">
+                    <items>
+                        <label alignment="left" text="Breathe Help" id="CdM-oT-tuD"/>
+                        <separator alignment="left" id="ADd-I3-W2w"/>
+                        <group width="1" alignment="left" layout="vertical" id="xDx-u1-31K">
+                            <items>
+                                <label alignment="left" numberOfLines="9" id="cye-cG-xir">
+                                    <string key="text">Tap and hold the symbol as you breathe in. Release as you breathe out. The yellow symbols signify the start of a breath cycle. Swiping will end your current breath cycle.</string>
+                                </label>
+                                <separator alignment="left" id="oLJ-em-5G1"/>
+                                <label alignment="left" text="In Breathe Focus" numberOfLines="6" id="ZH1-RN-13q"/>
+                                <label alignment="left" text="your goal is to match a predetermined breath cycle pattern" numberOfLines="5" id="7fI-8L-b7V"/>
+                                <label alignment="left" numberOfLines="26" id="WeI-Iu-I11">
+                                    <string key="text">Set a time for how long you want to practice focused breathing. Set the target breath cycle length that you want to match. Start breathing and after you hit your target number, swipe to complete the cycle. If you make a mistake, the app will let you know. After the time elapse, you will be sent to the result screen. Remember that you can always exit early through the force menu.</string>
+                                </label>
+                                <separator alignment="left" id="TpR-RQ-Irf"/>
+                                <label alignment="left" text="In Breathe Infinite" numberOfLines="10" id="Kul-V7-BBI"/>
+                                <label alignment="left" text="your goal is to be as consistent as possible in meeting goals you set for yourself." numberOfLines="6" id="IRc-xl-BqS"/>
+                                <label alignment="left" numberOfLines="34" id="PsF-by-zvJ">
+                                    <string key="text">Before you start you will be shown the results of you last game. Use this to set a personal goal for yourself. We strongly encourage you to set more and more challenging goals as you get more comfortable at this experience. Play the game as you would Breathe Focus whike trying to consistently meet your goal. After each swipe, a number will pop up showing the number of breaths you took during that cycle. When you are finished, use the Force Touch menu to quit and see your results.</string>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1230" y="700"/>
+        </scene>
+        <!--Lotus Help-->
+        <scene sceneID="uLl-cX-KjB">
+            <objects>
+                <controller identifier="Lotus Help" id="LgP-M4-sE6">
+                    <items>
+                        <label alignment="left" text="Lotus Help" id="XZc-dG-0mf"/>
+                        <group width="1" alignment="left" layout="vertical" id="bml-J4-ApV">
+                            <items>
+                                <separator alignment="left" id="WMb-Xv-tyt"/>
+                                <label alignment="left" numberOfLines="20" id="e3C-dl-sFr">
+                                    <string key="text">In Lotus, you will use your concentration and memory in order to respond to different flowers with unique colors. The experience is not a race, so take your time and start by getting into a relaxing position. Once you're comfy, decide how many rounds you would like to complete.</string>
+                                </label>
+                                <label alignment="left" numberOfLines="42" id="zjl-j3-dzg">
+                                    <mutableString key="text">Before starting, a screen will be displayed that shows four colored flowers and their corresponding directions. The flowers will be randomized every time you play. You will need to swipe in the correct direction when each flower is displayed on the screen. Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. Once the new flower is visible, you may swipe up, right, down, or left based on its color. If you swipe the incorrect direction, keep trying until you swipe in the correct direction. Your overall accuracy will be displayed once you complete all of the rounds.</mutableString>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1453" y="493"/>
+        </scene>
+        <!--Rhythm Help-->
+        <scene sceneID="E9P-yt-Eaw">
+            <objects>
+                <controller identifier="Rhythm Help" id="gUA-XG-l7N">
+                    <items>
+                        <label alignment="left" text="Rhythm Help" id="ccz-BK-D3B"/>
+                        <separator alignment="left" id="3ZW-QT-Fjb"/>
+                        <label alignment="left" numberOfLines="12" id="BvG-rL-SeH">
+                            <string key="text">Think of this app like a drum set. While listening to whatever you want, tap to the rhythm you like. Just press the back button to exit the app.
+</string>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1676" y="37"/>
+        </scene>
+        <!--Reminders Main-->
+        <scene sceneID="TSn-Yt-pDE">
+            <objects>
+                <controller identifier="Reminders Main" id="r1x-GY-jdv" customClass="InterfaceController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="1dG-nJ-WXB">
+                            <items>
+                                <label width="1" alignment="left" text="Welcome to Tenacity Flow!" textAlignment="center" numberOfLines="35" id="bXM-Gd-Rez">
+                                    <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                </label>
+                                <label width="1" alignment="left" textAlignment="center" numberOfLines="35" id="BLW-95-ATu">
+                                    <string key="text">To practice good self regulation techniques, we encourage you to use the app throughout each day, and set reminders for yourself to do so. To set a reminder, open the Reminders app on the paired iPhone. Tap the "+" icon and give your reminder a title. Tap the "i" icon to edit frequency and alerts. Set as many reminders as you see fit, and remember that the frequency with which you play the games is up to you!</string>
+                                    <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1003" y="115"/>
+        </scene>
+    </scenes>
+</document>
