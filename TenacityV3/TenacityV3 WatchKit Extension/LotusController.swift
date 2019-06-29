@@ -521,12 +521,14 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
+            let date = Date()
             
             let data = ["game": game,
                         "what": what,
                         "correct": correct,
-                        "time": String(timestamp),
-                        "settings": settings]
+                        "date": date,
+                        "time": timestamp,
+                        "settings": settings] as [String : Any]
             session.transferUserInfo(data)
             
         }

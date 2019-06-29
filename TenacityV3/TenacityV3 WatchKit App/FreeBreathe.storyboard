@@ -88,7 +88,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="dPi-sN-awk">
                             <items>
-                                <label height="30" alignment="center" text="5" id="oHD-uP-aYB">
+                                <label height="30" alignment="center" hidden="YES" text="5" id="oHD-uP-aYB">
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                                 <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="BLl-42-gc2"/>

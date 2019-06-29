@@ -30,6 +30,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,8 +61,24 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         // updates date picker
         
-        
-        
+        // testing stuff delete this crap after
+        let calendar = Calendar.autoupdatingCurrent
+        let today = Date()
+
+        let c = Date(timeIntervalSince1970: 30.0)
+        let nextMonth = calendar.date(byAdding: .month, value: 1, to: today)
+        let tomorrow = calendar.date(byAdding: .day, value: -5, to: today)
+        print("++++++    TESTING DATES    +++++++++++++++++++++")
+        print(calendar.isDateInToday(c))
+        print(calendar.isDateInToday(today))
+        print(calendar.isDateInToday(tomorrow!))
+        print(calendar.isDateInToday(nextMonth!))
+        print(calendar.isDateInTomorrow(tomorrow!))
+        print(calendar.isDate(today, inSameDayAs: tomorrow!))
+        print(calendar.isDate(today, equalTo: tomorrow!, toGranularity: .weekOfYear))
+        print(calendar.isDate(today, equalTo: c, toGranularity: .weekOfYear))
+
+
     }
     
     func showRecent(){
@@ -165,26 +184,22 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         //recieve user info
         //Unpack dictionary data into temp variables
-        var time = ""
-        var what = ""
-        var correct = ""
-        var settings = ""
+        //var time: Double
+        //var date: Date
+        //var what = ""
+        //var correct = ""
+        //var settings = ""
         
         //Asks what value is in data
         if let game = userInfo["game"] as? String {
-            if let tempVar01 = userInfo["what"] as? String {
-                what = tempVar01
-            }
-            if let tempVar02 = userInfo["correct"] as? String {
-                correct = tempVar02
-            }
-            if let tempVar03 = userInfo["time"] as? String {
-                time = tempVar03
-                //self.recievedData.text = "tempVar03"
-            }
-            if let tempVar04 = userInfo["settings"] as? String {
-                settings = tempVar04
-                //self.recievedData.text = "tempVar03"
+            let what = userInfo["what"] as! String
+            let correct = userInfo["correct"] as! String
+            let date = userInfo["date"] as! Date
+            let time = userInfo["time"] as! Double
+            let settings = userInfo["settings"] as! String
+            
+            if (game == "lotus"){
+                print("lotus")
             }
             
             //GameDataModel Realm Objects --> initialize new instances --> store data to save
@@ -192,7 +207,8 @@ class ViewController: UIViewController, WCSessionDelegate {
             gameDataModel.gameTitle = game
             gameDataModel.gameDataType = what
             gameDataModel.gameDataAccuracy = correct
-            gameDataModel.sessionTimeStamp = time
+            gameDataModel.sessionDate = date
+            gameDataModel.sessionEpoch = time
             gameDataModel.gameSettings = settings
             
             //Write to Realm
@@ -215,8 +231,17 @@ class ViewController: UIViewController, WCSessionDelegate {
 //        db.setValue(what)
         
         
+        
+        //let x = realm.objects(GameDataModel.self)
+        let x = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe'")
+        var y = String(x.count) + "\n"
+        for i in x{
+            y += i.gameTitle + ", " + i.gameDataType + ", " + i.gameDataAccuracy + ", "
+            y += String(i.sessionEpoch) + ", " + i.gameSettings + "\n"
+        }
+        
         DispatchQueue.main.async {
-            self.textView.text = "Data has been stored in Realm"
+            self.textView.text = y
         }
         
     }
@@ -244,10 +269,21 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         updateName()
         showRecent()
+        
+        // deletes realm
+        deleteRealm()
     }
     
     
-    
+    func deleteRealm(){
+        let realm = try! Realm()
+        //RealmManager.deleteDatabase()
+        let x = realm.objects(GameDataModel.self)
+        try! realm.write {
+            realm.delete(x)
+        }
+        
+    }
     
     
     
