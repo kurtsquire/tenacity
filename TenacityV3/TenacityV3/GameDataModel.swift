@@ -15,7 +15,8 @@ class GameDataModel: Object{
     //labled as "what"
     @objc dynamic var gameDataType: String = ""
     @objc dynamic var gameDataAccuracy: String = ""
-    @objc dynamic var sessionTimeStamp: String = ""
+    @objc dynamic var sessionDate: Date = Date()
+    @objc dynamic var sessionEpoch: Double = 0.0
     @objc dynamic var gameSettings: String = ""
     
     //@objc dynamic var id: Int = 0
