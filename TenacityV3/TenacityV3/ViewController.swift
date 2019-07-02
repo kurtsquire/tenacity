@@ -29,7 +29,11 @@ class ViewController: UIViewController, WCSessionDelegate {
     var name = "N/A"
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
     
+    var calendar = Calendar.autoupdatingCurrent
     
+    var today = Date()
+    var startTime = Date()
+    var weekStartTime = Date()
     
     
     
@@ -59,25 +63,37 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
         showRecent()
         
-        // updates date picker
+        // updates date for today
+        today = Date()
+        print(today.timeIntervalSince1970)
+        startTime = calendar.startOfDay(for: today)
+        
+        //creates a date at the beginning of the week to compare
+        let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
+        weekStartTime = calendar.date(from: weekComponents)!
+
+        
         
         // testing stuff delete this crap after
-        let calendar = Calendar.autoupdatingCurrent
-        let today = Date()
+        
+        //let calendar = Calendar.autoupdatingCurrent
+        //let today = Date()
 
-        let c = Date(timeIntervalSince1970: 30.0)
-        let nextMonth = calendar.date(byAdding: .month, value: 1, to: today)
-        let tomorrow = calendar.date(byAdding: .day, value: -5, to: today)
-        print("++++++    TESTING DATES    +++++++++++++++++++++")
-        print(calendar.isDateInToday(c))
-        print(calendar.isDateInToday(today))
-        print(calendar.isDateInToday(tomorrow!))
-        print(calendar.isDateInToday(nextMonth!))
-        print(calendar.isDateInTomorrow(tomorrow!))
-        print(calendar.isDate(today, inSameDayAs: tomorrow!))
-        print(calendar.isDate(today, equalTo: tomorrow!, toGranularity: .weekOfYear))
-        print(calendar.isDate(today, equalTo: c, toGranularity: .weekOfYear))
+        //let c = Date(timeIntervalSince1970: 30.0)
+        //let nextMonth = calendar.date(byAdding: .month, value: 1, to: today)
+        //let tomorrow = calendar.date(byAdding: .day, value: -5, to: today)
+        //print("++++++    TESTING DATES    +++++++++++++++++++++")
+        //print(calendar.isDateInToday(c))
+        //print(calendar.isDateInToday(today))
+        //print(calendar.isDateInToday(tomorrow!))
+        //print(calendar.isDateInToday(nextMonth!))
+        //print(calendar.isDateInTomorrow(tomorrow!))
+        //print(calendar.isDate(today, inSameDayAs: tomorrow!))
+        //print(calendar.isDate(today, equalTo: tomorrow!, toGranularity: .weekOfYear))
+        //print(calendar.isDate(today, equalTo: c, toGranularity: .weekOfYear))
 
+        
+        
 
     }
     
@@ -233,8 +249,12 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         
         //let x = realm.objects(GameDataModel.self)
-        let x = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe'")
-        var y = String(x.count) + "\n"
+        
+        let all = realm.objects(GameDataModel.self)
+        let a = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe'")
+        let w = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe' And sessionDate >= %@", weekStartTime)
+        let x = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe' AND sessionDate >= %@", startTime)
+        var y = String(all.count) + "\nbreathe:" + String(a.count) + "\nweek: " + String(w.count) + "\nday: " + String(x.count) + "\n"
         for i in x{
             y += i.gameTitle + ", " + i.gameDataType + ", " + i.gameDataAccuracy + ", "
             y += String(i.sessionEpoch) + ", " + i.gameSettings + "\n"
