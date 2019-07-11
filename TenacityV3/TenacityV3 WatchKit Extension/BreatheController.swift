@@ -12,7 +12,7 @@ import WatchConnectivity
 
 var FullCycle = 5
 var sessionTime = 2
-var time = 0.0
+var time = 0.0 //used for timer, keeps track of how long in game
 var correctCyclesTotal = 0
 var cycleTotal = 0
 var inGame = true
@@ -178,6 +178,9 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     @objc func sessionCounter(){
+        if (inGame == false){
+            gameLengthTimer.invalidate()
+        }
         if (time < Double(sessionTime*60)){
             time += 0.1
         }
@@ -185,6 +188,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             endGame()
             gameLengthTimer.invalidate()
         }
+        print(time)
     }
     
     @objc func breatheInCounter(){

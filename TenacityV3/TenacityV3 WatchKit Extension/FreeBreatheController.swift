@@ -20,7 +20,6 @@ var totalBreathsFree = 0
 var averageFullBreatheTimeFree = 3.5
 var cycleDict = [Int : Int]()
 
-
 class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     let startRelativeHeight = 0.5
@@ -28,7 +27,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     var counter = 0.0
     
-    var totalBreatheTimes = 3.5
+    var totalBreatheTimes = 35.0
     //var resetInterval = 2.5   unused right now
     
     
@@ -54,6 +53,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         totalBreathsFree = 0
         averageFullBreatheTimeFree = 3.5
         cycleDict = [Int : Int]()
+        inGame = true
         
         sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
         
@@ -142,19 +142,22 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func endGame(){
-        
+        inGame = false
         sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A", timePlayed : timeFree, avgBreathLength : averageFullBreatheTimeFree, totalSets : cycleTotalFree)
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
-    @IBAction func forceQuit() { //Stops TImer and goes to results screen
-        gameLengthTimer.invalidate()
+    @IBAction func forceQuit() { //stops game and goes to results screen
         breatheInTimer.invalidate()
         endGame()
     }
     
     @objc func sessionCounter(){
         timeFree += 0.1
+        if (inGame == false){
+            gameLengthTimer.invalidate()
+        }
+        print(timeFree)
     }
     
     @objc func breatheInCounter(){
@@ -257,7 +260,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     func addToAverageBreatheTime(time : Double){
         totalBreatheTimes = totalBreatheTimes + time
-        averageFullBreatheTimeFree = totalBreatheTimes/Double((totalBreathsFree + 1))
+        averageFullBreatheTimeFree = totalBreatheTimes/Double((totalBreathsFree + 10))
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
