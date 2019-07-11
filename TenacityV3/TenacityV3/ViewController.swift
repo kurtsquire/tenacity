@@ -34,9 +34,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     var today = Date()
     var startTime = Date()
     var weekStartTime = Date()
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,7 +118,8 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     // refresh button action
     @IBAction func refreshButton(_ sender: Any) {
-        showRecent()
+        //showRecent()
+        refreshRealmData()
     }
     
     @IBAction func addNameButtonPressed(_ sender: Any) {
@@ -214,10 +213,6 @@ class ViewController: UIViewController, WCSessionDelegate {
             let time = userInfo["time"] as! Double
             let settings = userInfo["settings"] as! String
             
-            if (game == "lotus"){
-                print("lotus")
-            }
-            
             //GameDataModel Realm Objects --> initialize new instances --> store data to save
             let gameDataModel = GameDataModel()
             gameDataModel.gameTitle = game
@@ -226,6 +221,35 @@ class ViewController: UIViewController, WCSessionDelegate {
             gameDataModel.sessionDate = date
             gameDataModel.sessionEpoch = time
             gameDataModel.gameSettings = settings
+            
+            
+            if (game == "lotus"){
+                let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
+                
+                gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
+            }
+            else if (game == "breathe"){
+                let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
+                let breatheFBreathLength = userInfo["breatheFBreathLength"] as? Double ?? 0.0
+                let breatheFCorrectSets = userInfo["breatheFCorrectSets"] as? Int ?? 0
+                let breatheFTotalSets = userInfo["breatheFTotalSets"] as? Int ?? 0
+                
+                gameDataModel.breatheFTimePlayed = breatheFTimePlayed
+                gameDataModel.breatheFBreathLength = breatheFBreathLength
+                gameDataModel.breatheFCorrectSets = breatheFCorrectSets
+                gameDataModel.breatheFTotalSets = breatheFTotalSets
+            }
+            else if (game == "Free Breathe"){
+                let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
+                let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
+                let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
+                
+                gameDataModel.breatheITimePlayed = breatheITimePlayed
+                gameDataModel.breatheIBreathLength = breatheIBreathLength
+                gameDataModel.breatheITotalSets = breatheITotalSets
+            }
+            
+            
             
             //Write to Realm
             
@@ -247,23 +271,162 @@ class ViewController: UIViewController, WCSessionDelegate {
 //        db.setValue(what)
         
         
+    }
+    
+    //shows UI inforation we want to show (daily & weekly stats)
+    func refreshRealmData(){
+        let realm = try! Realm()
         
-        //let x = realm.objects(GameDataModel.self)
+        let gamename1 = "breathe"
+        let gamename2 = "Free Breathe"
+        let gamename3 = "lotus"
+        
         
         let all = realm.objects(GameDataModel.self)
-        let a = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe'")
-        let w = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe' And sessionDate >= %@", weekStartTime)
-        let x = realm.objects(GameDataModel.self).filter("gameTitle = 'breathe' AND sessionDate >= %@", startTime)
-        var y = String(all.count) + "\nbreathe:" + String(a.count) + "\nweek: " + String(w.count) + "\nday: " + String(x.count) + "\n"
-        for i in x{
-            y += i.gameTitle + ", " + i.gameDataType + ", " + i.gameDataAccuracy + ", "
-            y += String(i.sessionEpoch) + ", " + i.gameSettings + "\n"
+        
+        //breathe
+        let ba = realm.objects(GameDataModel.self).filter("gameTitle = %@", gamename1)
+        //let bw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND gameDataType == %@", gamename1, weekStartTime, "end game")
+        let bw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename1, weekStartTime)
+        let bx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename1, startTime)
+        
+        //free breathe
+        let fba = realm.objects(GameDataModel.self).filter("gameTitle = %@", gamename2)
+        let fbw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename2, weekStartTime)
+        let fbx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename2, startTime)
+        
+        //lotus
+        let la = realm.objects(GameDataModel.self).filter("gameTitle = %@", gamename3)
+        let lw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename3, weekStartTime)
+        let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename3, startTime)
+        
+        
+        var lotusRoundsToday = 0
+        var lotusRoundsWeek = 0
+        
+        //calculating lotus rounds today
+        for item in lx{
+            lotusRoundsToday += item.lotusRoundsPlayed
         }
+        //calculating lotus rounds this week
+        for item in lw{
+            lotusRoundsWeek += item.lotusRoundsPlayed
+        }
+        
+        
+        //breathe stats today
+        var breatheFBreathsToday = 0
+        var breatheFTimeToday = 0.0
+        var breatheFCorrectToday = 0
+        var breatheFTotalToday = 0
+        
+        var flengthtotalt = 0.0
+        var fsessionst = 0
+        for item in bx{
+            breatheFTimeToday += item.breatheFTimePlayed
+            
+            flengthtotalt += item.breatheFBreathLength
+            if item.breatheFBreathLength > 0{
+                fsessionst += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheFBreathsToday += 1
+            }
+            breatheFCorrectToday += item.breatheFCorrectSets
+            breatheFTotalToday += item.breatheFTotalSets
+        }
+        let breatheFAvgToday = flengthtotalt/Double(fsessionst)
+        
+        
+        //breathe stats week
+        var breatheFBreathsWeek = 0
+        var breatheFTimeWeek = 0.0
+        var breatheFCorrectWeek = 0
+        var breatheFTotalWeek = 0
+        
+        var flengthtotalw = 0.0
+        var fsessionsw = 0
+        
+        for item in bw{
+            breatheFTimeWeek += item.breatheFTimePlayed
+            flengthtotalw += item.breatheFBreathLength
+            if item.breatheFBreathLength > 0{
+                fsessionsw += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheFBreathsWeek += 1
+            }
+            breatheFCorrectWeek += item.breatheFCorrectSets
+            breatheFTotalWeek += item.breatheFTotalSets
+        }
+        let breatheFAvgWeek = flengthtotalw/Double(fsessionsw)
+        
+        
+        
+        //breathe Infinite stats today
+        var breatheIBreathsToday = 0
+        var breatheITimeToday = 0.0
+        var breatheITotalToday = 0
+        
+        var ilengthtotalt = 0.0
+        var isessionst = 0
+        
+        for item in fbx{
+            breatheITimeToday += item.breatheITimePlayed
+            ilengthtotalt += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                isessionst += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsToday += 1
+            }
+            breatheITotalToday += item.breatheITotalSets
+        }
+        let breatheIAvgToday = ilengthtotalt/Double(isessionst)
+        
+        
+        //breathe Infinite stats week
+        var breatheIBreathsWeek = 0
+        var breatheITimeWeek = 0.0
+        var breatheITotalWeek = 0
+        
+        var ilengthtotalw = 0.0
+        var isessionsw = 0
+        for item in fbw{
+            breatheITimeWeek += item.breatheITimePlayed
+            
+            ilengthtotalw += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                isessionsw += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsWeek += 1
+            }
+            breatheITotalWeek += item.breatheITotalSets
+        }
+        let breatheIAvgWeek = ilengthtotalw/Double(isessionsw)
+        
+        
+        // Temporarily display everything in 1 big textview
+        var y = "everything: " + String(all.count) + "\n"
+        let lstring = "\nLotus: " + String(la.count) + "\nWeek:\nRounds: " + String(lotusRoundsWeek) + "\nToday: \nRounds: " + String(lotusRoundsToday)
+        let bfstring = "\nBreathe Focus: " + String(ba.count) + "\nWeek:\nTime Played: " + String(breatheFTimeWeek) + "\nTotal Breaths Taken: " + String(breatheFBreathsWeek) + "\nAvg Breath Length: " + String(breatheFAvgWeek) + "\nCorrect Sets: " + String(breatheFCorrectWeek) + "\nTotal Sets: " + String(breatheFTotalWeek) + "\nToday: \nTime Played: " + String(breatheFTimeToday) + "\nTotal Breaths Taken: " + String(breatheFBreathsToday) +  "\nAvg Breath Length: " + String(breatheFAvgToday) + "\nCorrect Sets: " + String(breatheFCorrectToday) + "\nTotal Sets: " + String(breatheFTotalToday)
+        let bistring = "\nBreathe Infinite: " + String(fba.count) + "\nWeek:\nTime Played: " + String(breatheITimeWeek) + "\nTotal Breaths Taken: " + String(breatheIBreathsWeek) +  "\nAvg Breath Length: " + String(breatheIAvgWeek) + "\nTotal Sets: " + String(breatheITotalWeek) + "\nToday: \nTime Played: " + String(breatheITimeToday) + "\nTotal Breaths Taken: " + String(breatheIBreathsToday) +  "\nAvg Breath Length: " + String(breatheIAvgToday) + "\nTotal Sets: " + String(breatheITotalToday)
+        y += lstring + "\n" + bfstring + "\n" + bistring
+        
+        
+        
+        
+//        for i in lx{
+//            y += i.gameTitle + ", " + i.gameDataType + ", " + i.gameDataAccuracy + ", "
+//            y += String(i.sessionEpoch) + ", " + i.gameSettings + ", " + String(i.lotusRoundsPlayed) + "\n"
+//        }
+        
+        
         
         DispatchQueue.main.async {
             self.textView.text = y
         }
-        
     }
     
     

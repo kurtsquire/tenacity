@@ -361,22 +361,22 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     }
     
     
-    @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
-        if gestureRecognizer.state == .began{
-            timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter), userInfo: nil, repeats: true)
-            //DispatchQueue.main.asyncAfter(1.0)
-        }
-        if gestureRecognizer.state == .ended{
-            seconds = 0
-            Main_Pic.setAlpha(0.0)
-            randomize_color()
-            timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
-            timer_press.invalidate()
-            total_press_time += press_time
-            press_time = 0
-        }
-    }
+//    @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
+//        if gestureRecognizer.state == .began{
+//            timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
+//            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter), userInfo: nil, repeats: true)
+//            //DispatchQueue.main.asyncAfter(1.0)
+//        }
+//        if gestureRecognizer.state == .ended{
+//            seconds = 0
+//            Main_Pic.setAlpha(0.0)
+//            randomize_color()
+//            timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
+//            timer_press.invalidate()
+//            total_press_time += press_time
+//            press_time = 0
+//        }
+//    }
     
     func toResults(){
         Welcome.setHidden(true)
@@ -398,7 +398,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         Restart_button.setHidden(false)
         
         // send data
-        sendData(game: "lotus", what: "end game", correct: "N/A", settings: "rounds: " + String(total_rounds))
+        sendData(game: "lotus", what: "end game", correct: "N/A", settings: "rounds: " + String(total_rounds), lotusRoundsPlayed: current_round)
     }
     
     @objc func reset(){
@@ -517,7 +517,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String, settings : String){
+    func sendData(game : String, what : String, correct : String, settings : String, lotusRoundsPlayed : Int = 0){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -528,7 +528,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                         "correct": correct,
                         "date": date,
                         "time": timestamp,
-                        "settings": settings] as [String : Any]
+                        "settings": settings,
+                        "lotusRoundsPlayed": lotusRoundsPlayed] as [String : Any]
             session.transferUserInfo(data)
             
         }

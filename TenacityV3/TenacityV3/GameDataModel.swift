@@ -19,6 +19,21 @@ class GameDataModel: Object{
     @objc dynamic var sessionEpoch: Double = 0.0
     @objc dynamic var gameSettings: String = ""
     
+    //lotus
+    @objc dynamic var lotusRoundsPlayed: Int = 0
+    
+    //breathe focus
+    @objc dynamic var breatheFTimePlayed: Double = 0.0
+    @objc dynamic var breatheFBreathLength: Double = 0.0
+    @objc dynamic var breatheFCorrectSets: Int = 0
+    @objc dynamic var breatheFTotalSets: Int = 0
+    
+    //breathe infinite
+    @objc dynamic var breatheITimePlayed: Double = 0.0
+    @objc dynamic var breatheIBreathLength: Double = 0.0
+    @objc dynamic var breatheITotalSets: Int = 0
+    
+     
     //@objc dynamic var id: Int = 0
     
     //    override static func primaryKey() -> String? {

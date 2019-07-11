@@ -143,7 +143,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     func endGame(){
         
-        sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A")
+        sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A", timePlayed : timeFree, avgBreathLength : averageFullBreatheTimeFree, totalSets : cycleTotalFree)
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
@@ -263,7 +263,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String, settings : String){
+    func sendData(game : String, what : String, correct : String, settings : String, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -274,7 +274,10 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
                         "correct": correct,
                         "date": date,
                         "time": timestamp,
-                        "settings": settings] as [String : Any]
+                        "settings": settings,
+                "breatheITimePlayed": timePlayed,
+                "breatheIBreathLength": avgBreathLength,
+                "breatheITotalSets": totalSets] as [String : Any]
             session.transferUserInfo(data)
         }
     }
