@@ -188,7 +188,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             endGame()
             gameLengthTimer.invalidate()
         }
-        print(time)
     }
     
     @objc func breatheInCounter(){
@@ -220,6 +219,8 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             self.image.setTintColor(self.customYellow)
         }
     }
+    
+    
     
     @IBAction func swipeAction(_ sender: Any) {
         

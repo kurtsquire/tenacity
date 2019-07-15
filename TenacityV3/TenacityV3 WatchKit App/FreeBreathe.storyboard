@@ -104,6 +104,21 @@
                                         <action selector="swipeAction:" destination="BlQ-TS-kr4" id="Zkf-18-DjF"/>
                                     </connections>
                                 </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="2" id="qbW-xC-fX5">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="BlQ-TS-kr4" id="9Lq-FW-6sQ"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="4" id="8pB-Fc-BDI">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="BlQ-TS-kr4" id="A5E-xs-Iiq"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="8" id="dpx-pw-1kp">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="BlQ-TS-kr4" id="zeo-bQ-y7O"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
                             </gestureRecognizers>
                         </group>
                     </items>

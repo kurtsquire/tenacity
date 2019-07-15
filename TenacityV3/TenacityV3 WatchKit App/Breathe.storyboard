@@ -141,7 +141,22 @@
                                 </longPressGestureRecognizer>
                                 <swipeGestureRecognizer id="E5U-kz-QQy">
                                     <connections>
-                                        <action selector="swipeAction:" destination="v6R-3x-tji" id="6zX-84-Od4"/>
+                                        <action selector="swipeAction:" destination="v6R-3x-tji" id="rOf-6O-iKc"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="2" id="Bx9-TP-rMl">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="v6R-3x-tji" id="gyY-rY-8g6"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="4" id="nHX-fr-dcv">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="v6R-3x-tji" id="hPg-bU-bMr"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer direction="8" id="we8-1H-q2r">
+                                    <connections>
+                                        <action selector="swipeAction:" destination="v6R-3x-tji" id="C3b-iV-3FM"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>

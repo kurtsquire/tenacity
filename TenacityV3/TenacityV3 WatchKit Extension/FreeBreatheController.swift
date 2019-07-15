@@ -157,7 +157,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         if (inGame == false){
             gameLengthTimer.invalidate()
         }
-        print(timeFree)
     }
     
     @objc func breatheInCounter(){
