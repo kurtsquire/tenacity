@@ -27,6 +27,8 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     var data = [String]()
     var name = "N/A"
+    
+    var exp = 0
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
     
     var calendar = Calendar.autoupdatingCurrent
@@ -50,6 +52,8 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         // loads "Name" from UserDefaults
         testUserDefaults()
+        
+        
         // sets label for name
         updateName()
         // changes Add Name Item to unpressable
@@ -152,6 +156,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
     }
     
+    func saveEXP(addEXP : Int){
+        exp += addEXP
+        UserDefaults.standard.set(exp, forKey: "exp")
+    }
+    
     //    //handles data we get from watch
     //    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
     //        DispatchQueue.main.async{
@@ -227,6 +236,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
                 
                 gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
+                
+                saveEXP(addEXP: Int(5*lotusRoundsPlayed))
             }
             else if (game == "breathe"){
                 let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
@@ -238,6 +249,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 gameDataModel.breatheFBreathLength = breatheFBreathLength
                 gameDataModel.breatheFCorrectSets = breatheFCorrectSets
                 gameDataModel.breatheFTotalSets = breatheFTotalSets
+                
+                saveEXP(addEXP: Int(breatheFTimePlayed))
             }
             else if (game == "Free Breathe"){
                 let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
@@ -247,9 +260,10 @@ class ViewController: UIViewController, WCSessionDelegate {
                 gameDataModel.breatheITimePlayed = breatheITimePlayed
                 gameDataModel.breatheIBreathLength = breatheIBreathLength
                 gameDataModel.breatheITotalSets = breatheITotalSets
+                
+                saveEXP(addEXP: Int(breatheITimePlayed))
+                
             }
-            
-            
             
             //Write to Realm
             
@@ -438,15 +452,17 @@ class ViewController: UIViewController, WCSessionDelegate {
         if let contents = defaults.string(forKey: "shared_default"){
             if contents != "N/A"{
                 name = contents
-                return
             }
         }
+        exp = defaults.integer(forKey: "exp")
+        print(exp)
     }
     
     @IBAction func trashPressed(_ sender: Any) {
         data = [String]()
         name = "N/A"
-        
+        exp = 0
+        UserDefaults.standard.set(exp, forKey: "exp")
         UserDefaults.standard.set(name, forKey: "shared_default")
         NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
         

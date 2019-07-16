@@ -27,7 +27,6 @@ class PhoneScheduler: UIViewController {
         let somedateString = dateFormatter.string(from: sender.date)
         
         
-        
         dateLabel.text = somedateString
     }
     
@@ -36,7 +35,7 @@ class PhoneScheduler: UIViewController {
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "It's Time!"
-        content.body = "Your scheudled play time is now"
+        content.body = "Your scheduled play time is now"
         
         content.categoryIdentifier = "play_reminder"
         
