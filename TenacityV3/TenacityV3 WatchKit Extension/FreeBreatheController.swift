@@ -18,7 +18,7 @@ var cycleTotalFree = 0
 
 var totalBreathsFree = 0
 var averageFullBreatheTimeFree = 3.5
-var cycleDict = [Int : Int]()
+var cycleDict = [String : Int]()
 
 class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
@@ -52,7 +52,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         cycleTotalFree = 0
         totalBreathsFree = 0
         averageFullBreatheTimeFree = 3.5
-        cycleDict = [Int : Int]()
+        cycleDict = [String : Int]()
         inGame = true
         
         sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
@@ -86,8 +86,12 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        //let sample = ["1":2]
+        //UserDefaults.standard.set
         
         if ((context as? String) == "Breathe Done"){
+            UserDefaults.standard.set(cycleDict, forKey: "cycleDict")
+            
             if (cycleDict.count > 0){
                 var result = ""
                 for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
@@ -110,6 +114,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         }
         
         else if ((context as? String) == "from Menu"){
+            testUserDefaults()
             if (cycleDict.count > 0){
                 var result = ""
                 for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
@@ -120,8 +125,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             else{
                 prevSessionLabel.setText("No Previous Session")
             }
-            
-            
         }
         
         if WCSession.isSupported(){
@@ -207,7 +210,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         
         
         ///// insert into dict
-        cycleDict[cycleStep] = (cycleDict[cycleStep] ?? 0) + 1
+        cycleDict[String(cycleStep)] = (cycleDict[String(cycleStep)] ?? 0) + 1
+        
         
         cycleReset()
     }
@@ -252,9 +256,12 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
                 self.image.setTintColor(self.customBlue)
             }
             sendData(game: "Free Breathe", what: "stop hold", correct: "N/A", settings: "N/A")
-            
-            
         }
+    }
+    
+    func testUserDefaults(){
+        let defaults =  UserDefaults.standard
+        cycleDict = defaults.dictionary(forKey: "cycleDict") as! [String : Int]
     }
     
     func addToAverageBreatheTime(time : Double){
