@@ -13,7 +13,6 @@ import Firebase
 
 class ViewController: UIViewController, WCSessionDelegate {
     
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
@@ -74,7 +73,8 @@ class ViewController: UIViewController, WCSessionDelegate {
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
 
-        
+        //var quests = BreatheFocusQuest(qs: "im quest", ts: Date(), te: Date(), exp: 5, r: "reward", obj: 5, gn: 1, gt: 2)
+        //print(quests.check())
         
         // testing stuff delete this crap after
         
@@ -238,6 +238,12 @@ class ViewController: UIViewController, WCSessionDelegate {
                 gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
                 
                 saveEXP(addEXP: Int(5*lotusRoundsPlayed))
+                
+                // check that game played matches quest type (if lotus elif playall else)
+                // if dailyDone (new var not made yet) != true then checkquest
+                // if check quest returns true
+                // give rewards, set dailyDone true, etc
+
             }
             else if (game == "breathe"){
                 let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
@@ -251,6 +257,12 @@ class ViewController: UIViewController, WCSessionDelegate {
                 gameDataModel.breatheFTotalSets = breatheFTotalSets
                 
                 saveEXP(addEXP: Int(breatheFTimePlayed))
+                
+                // check that game played matches quest type (if breathe elif playall else)
+                // if dailyDone (new var not made yet) != true then checkquest
+                // if check quest returns true
+                // give rewards, set dailyDone true, etc
+                
             }
             else if (game == "Free Breathe"){
                 let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
@@ -262,6 +274,11 @@ class ViewController: UIViewController, WCSessionDelegate {
                 gameDataModel.breatheITotalSets = breatheITotalSets
                 
                 saveEXP(addEXP: Int(breatheITimePlayed))
+                
+                // check that game played matches quest type (if free breathe elif playall else)
+                // if dailyDone (new var not made yet) != true then checkquest
+                // if check quest returns true
+                // give rewards, set dailyDone true, etc
                 
             }
             
