@@ -27,7 +27,7 @@ class BreatheFocusQuest : Quest{
     // 0 = spend x(goalTime) minutes at rate y(goalNum)
     // 1 = spend x time
     // 2 = play x(goalNum) games that last at least (goalTime)y+ mins
-    // 3 = no wrong cycles with time set to x(goalTime)
+    // 3 = no wrong cycles with time set to x(goalTime) /// change to a certain amount of correct // take out or x cycles correc tin a row
     var goalNum : Int = 0
     var goalTime : Int = 0
     var count : Int = 0

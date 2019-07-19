@@ -11,7 +11,7 @@ import Foundation
 import WatchConnectivity
 
 var FullCycle = 5
-var sessionTime = 2
+var sessionTime = 15
 var time = 0.0 //used for timer, keeps track of how long in game
 var correctCyclesTotal = 0
 var cycleTotal = 0
@@ -77,7 +77,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     @IBAction func tutorial1Tapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial2"], contexts: ["t2"])
         
-        
     }
     
     @IBAction func tutorial2Tapped(_ sender: Any) {
@@ -107,6 +106,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        //sessionLengthSlider.setValue(15)
         
         if ((context as? String) == "Breathe Done"){
             if (cycleTotal == 0){
@@ -139,6 +139,9 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         else if ((context as? String) == "start"){
             self.image.setTintColor(self.customYellow)
         }
+        else if ((context as? String) == "from Menu"){
+            sessionLengthSlider.setValue(15)
+        }
         
         if WCSession.isSupported(){
             let session = WCSession.default
@@ -167,7 +170,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             
             // resets global slider variables
             FullCycle = 5
-            sessionTime = 2
+            sessionTime = 15
         }
         
     }

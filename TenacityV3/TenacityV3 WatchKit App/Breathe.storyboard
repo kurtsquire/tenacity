@@ -13,7 +13,7 @@
             <objects>
                 <controller identifier="Breathe Start" title="Breathe Start" fullBounds="YES" id="iLS-oQ-14N" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <slider height="0.20000000000000001" alignment="center" verticalAlignment="center" value="2" minimum="1" maximum="5" steps="4" id="8jO-Nt-lH9">
+                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="15" minimum="5" maximum="40" steps="35" id="8jO-Nt-lH9">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="sessionLengthSliderAction:" destination="iLS-oQ-14N" id="4DW-8r-j4u"/>
@@ -21,7 +21,7 @@
                         </slider>
                         <group width="1" height="0.14999999999999999" alignment="center" verticalAlignment="center" id="xya-p4-h8y" userLabel="Time Label Group">
                             <items>
-                                <label height="25" alignment="center" verticalAlignment="center" text="2" textAlignment="right" id="Kpa-KH-rvC">
+                                <label height="25" alignment="center" verticalAlignment="center" text="15" textAlignment="right" id="Kpa-KH-rvC">
                                     <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
                                 </label>
                                 <label height="30" alignment="center" verticalAlignment="center" text="Min(s)" textAlignment="center" id="Yat-fY-DYT">
@@ -29,7 +29,7 @@
                                 </label>
                             </items>
                         </group>
-                        <slider height="0.20000000000000001" alignment="center" verticalAlignment="center" value="5" minimum="1" maximum="10" steps="9" id="wKN-uh-tLX" userLabel="Set Slider">
+                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="5" minimum="1" maximum="10" steps="9" id="wKN-uh-tLX" userLabel="Set Slider">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cycleSliderAction:" destination="iLS-oQ-14N" id="NHy-Yu-vRo"/>
@@ -45,7 +45,7 @@
                                 </label>
                             </items>
                         </group>
-                        <button width="1" height="0.29999999999999999" alignment="center" verticalAlignment="center" title="Start" id="xE2-Fq-mvF" userLabel="Start Button">
+                        <button width="1" height="0.25" alignment="center" verticalAlignment="bottom" title="Start" id="xE2-Fq-mvF" userLabel="Start Button">
                             <color key="backgroundColor" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
