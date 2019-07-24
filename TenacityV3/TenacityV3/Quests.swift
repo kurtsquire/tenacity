@@ -16,7 +16,12 @@ class Quest{
     var reward : String = ""
     var complete = false
     
-    func checkQuest() -> Bool{
+    func checkQuest() -> Bool{  //OLD
+        print("SHOULD NOT SEE THIS")
+        return complete
+    }
+    
+    func checkQuest(data : Dictionary<String, Any>) -> Bool{
         print("SHOULD NOT SEE THIS")
         return complete
     }
@@ -45,7 +50,7 @@ class BreatheFocusQuest : Quest{
     }
     
     // need: time ended (Date), time played (int), correct cycles and total cycles (ints), cycle setting (Int)
-    func checkQuest(timeFin: Date, timePlayed : Int, correct: Int, total: Int, cycle: Int) -> Bool{
+    func checkQuest(timeFin: Date, timePlayed : Int, correct: Int, total: Int, cycle: Int) -> Bool{  //OLD
         print("BREATHE FOCUS SHOULD SEE THIS")
         if (self.timeStart <= timeFin && timeFin <= self.timeEnd){
             if (self.objective == 0){
@@ -80,11 +85,47 @@ class BreatheFocusQuest : Quest{
         }
         return complete
     }
+    
+    override func checkQuest(data: Dictionary<String, Any>) -> Bool{
+        if ((data["game"] as! String) == "breathe focus"){
+            if (self.timeStart <= (data["timeEnd"] as! Date) && (data["timeEnd"] as! Date) <= self.timeEnd){
+                if (self.objective == 0){
+                    if ((data["cycle"] as! Int) == goalNum){
+                        self.count += (data["timePlayed"] as! Int)
+                        if (count >= goalTime){
+                            complete = true
+                        }
+                    }
+                }
+                else if (self.objective == 1){
+                    self.count += (data["timePlayed"] as! Int)
+                    if (count >= goalTime){
+                        complete = true
+                    }
+                }
+                else if (self.objective == 2){
+                    if ((data["timePlayed"] as! Int) >= goalTime){
+                        count += 1
+                        if (count >= goalNum){
+                            complete = true
+                        }
+                    }
+                }
+                else if (self.objective == 3){
+                    if ((data["timePlayed"] as! Int) >= goalTime){
+                        if ((data["correct"] as! Int) == (data["total"] as! Int)){
+                            complete = true
+                        }
+                    }
+                }
+            }
+        }
+        return complete
+    }
 }
 
-class BreatheInfiniteQuest : Quest{ //If combine time and cycles then we will need a 2nd count 3rd goal
+class BreatheInfiniteQuest : Quest{
     
- 
     // : play for x(goalTime) minutes for y(goalNum) cycles of z(goalCycle)
     var goalCycle : Int = 0
     var goalNum : Int = 0
@@ -104,7 +145,7 @@ class BreatheInfiniteQuest : Quest{ //If combine time and cycles then we will ne
         self.goalTime = gt
     }
     
-    func checkQuest(timeFin: Date, timePlayed : Int, cycle: [String : Int]) -> Bool{
+    func checkQuest(timeFin: Date, timePlayed : Int, cycle: [String : Int]) -> Bool{  //OLD
         print("BREATHE Infinite SHOULD SEE THIS")
         if (self.timeStart <= timeFin && timeFin <= self.timeEnd){
             if (timePlayed >= goalTime){
@@ -113,6 +154,20 @@ class BreatheInfiniteQuest : Quest{ //If combine time and cycles then we will ne
                 }
             }
             
+        }
+        return complete
+    }
+    
+    override func checkQuest(data: Dictionary<String, Any>) -> Bool{
+        if ((data["game"] as! String) == "breathe infinite"){
+            if (self.timeStart <= (data["timeEnd"] as! Date) && (data["timeEnd"] as! Date) <= self.timeEnd){
+                if ((data["timePlayed"] as! Int) >= goalTime){
+                    if ((data["cycle"] as! Dictionary<String, Int>)[String(goalCycle)] ?? 0 >= goalNum){
+                        complete = true
+                    }
+                }
+                
+            }
         }
         return complete
     }
@@ -138,7 +193,7 @@ class LotusQuest : Quest{
         self.goalNum = gn
     }
     
-    func checkQuest(timeFin : Date, roundsPlayed : Int, accuracy : Double) -> Bool{
+    func checkQuest(timeFin : Date, roundsPlayed : Int, accuracy : Double) -> Bool{  //OLD
         print("LOTUS SHOULD SEE THIS")
         if (self.timeStart <= timeFin && timeFin <= self.timeEnd){
             if (self.objective == 0){
@@ -155,6 +210,30 @@ class LotusQuest : Quest{
                 count += 1
                 if (count >= goalNum){
                     complete = true
+                }
+            }
+        }
+        return complete
+    }
+    
+    override func checkQuest(data: Dictionary<String, Any>) -> Bool{
+        if ((data["game"] as! String) == "lotus"){
+            if (self.timeStart <= (data["timeEnd"] as! Date) && (data["timeEnd"] as! Date) <= self.timeEnd){
+                if (self.objective == 0){
+                    if ((data["rounds"] as! Int) >= goalNum){
+                        complete = true
+                    }
+                }
+                else if (self.objective == 1){
+                    if ((data["rounds"] as! Int) >= goalNum && (data["accuracy"] as! Double) == 1){
+                        complete = true
+                    }
+                }
+                else if (self.objective == 2){
+                    count += 1
+                    if (count >= goalNum){
+                        complete = true
+                    }
                 }
             }
         }
@@ -179,7 +258,7 @@ class PlayAllQuest : Quest{
     }
     
     // game , time end, time played
-    func checkQuest(game : String, timeFin : Date, timePlayed : Int) -> Bool{
+    func checkQuest(game : String, timeFin : Date, timePlayed : Int) -> Bool{  //OLD
         print("ALL SHOULD SEE THIS")
         if (self.timeStart <= timeFin && timeFin <= self.timeEnd){
             if (game == "breathe"){
@@ -196,6 +275,24 @@ class PlayAllQuest : Quest{
             }
         }
             
+        return complete
+    }
+    
+    override func checkQuest(data: Dictionary<String, Any>) -> Bool{
+        if (self.timeStart <= (data["timeEnd"] as! Date) && (data["timeEnd"] as! Date) <= self.timeEnd){
+            if ((data["game"] as! String) == "breathe focus"){
+                bfPlayed += (data["timePlayed"] as! Int)
+            }
+            else if ((data["game"] as! String) == "breathe infinite"){
+                biPlayed += (data["timePlayed"] as! Int)
+            }
+            else if ((data["game"] as! String) == "lotus"){
+                lPlayed += (data["timePlayed"] as! Int)
+            }
+            if (bfPlayed >= goal && biPlayed >= goal && lPlayed >= goal){
+                complete = true
+            }
+        }
         return complete
     }
 }

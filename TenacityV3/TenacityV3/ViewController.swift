@@ -241,7 +241,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 saveEXP(addEXP: Int(5*lotusRoundsPlayed))
                 
-                // check that game played matches quest type (if lotus elif playall else)
+                // dictionary needs: game(String), timeEnd(Date), rounds(Int), accuracy(Double)
                 // if dailyDone (new var not made yet) != true then checkquest
                 // if check quest returns true
                 // give rewards, set dailyDone true, etc
@@ -266,10 +266,14 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 saveEXP(addEXP: Int(breatheFTimePlayed))
                 
-                // check that game played matches quest type (if breathe elif playall else)
+                // dictionary needs: game(String), timeEnd(Date), cycle(Int), timePlayed(Int), correct(Int), total(Int)
                 // if dailyDone (new var not made yet) != true then checkquest
                 // if check quest returns true
                 // give rewards, set dailyDone true, etc
+                
+//EXAMPLE         var qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
+
+//                dailyQuest.checkQuest(data: qdata)
                 
             }
             else if (game == "breathe infinite"){
@@ -283,7 +287,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 
                 saveEXP(addEXP: Int(breatheITimePlayed))
                 
-                // check that game played matches quest type (if free breathe elif playall else)
+                // dictionary needs: game(String), timeEnd(Date), timePlayed(Int), cycle(Dictionary<String,Int>)
                 // if dailyDone (new var not made yet) != true then checkquest
                 // if check quest returns true
                 // give rewards, set dailyDone true, etc
