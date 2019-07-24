@@ -30,7 +30,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     var totalBreatheTimes = 35.0
     //var resetInterval = 2.5   unused right now
     
-    
     var breatheInTimer = Timer()
     var breatheInTime = 0.0
     var gameLengthTimer = Timer()
@@ -40,7 +39,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     let customYellow = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
-    
     
     /////////////////////////// Tutorial
     
@@ -57,17 +55,13 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         
         sendData(what: "start game")
         
-        //  Game Length Timer
+    //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
     }
     
-    
     ///// start screen
     
-    
     @IBOutlet weak var prevSessionLabel: WKInterfaceLabel!
-    
-    
     
     ////////////////////  Results Screen Page
     
@@ -81,14 +75,12 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     ////////////////////////////////////////
     
-    
     @IBOutlet weak var image: WKInterfaceImage!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         //let sample = ["1":2]
         //UserDefaults.standard.set
-        
         
         // awake transition from game -> results screen
         if ((context as? String) == "Breathe Done"){
