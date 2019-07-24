@@ -83,7 +83,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         WKInterfaceController.reloadRootControllers(withNames: ["Breathe Main"], contexts: ["start"])
         
         // send data
-        sendData(game: "breathe", what: "start game", correct: "N/A", settings: "cycle: " + String(FullCycle) + ", time(min): " + String(sessionTime))
+        sendData(what: "start game", correct: "N/A", cycleSettings: FullCycle, timeSettings: sessionTime)
         //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
     }
@@ -166,7 +166,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             WKInterfaceController.reloadRootControllers(withNames: ["Breathe Results"], contexts: ["Breathe Done"])
             
             //sends data
-            sendData(game: "breathe", what: "end game", correct: "N/A", settings: "cycle: " + String(FullCycle) + ", time(min): " + String(sessionTime), timePlayed : time, avgBreathLength : averageFullBreatheTime, totalSets : cycleTotal, correctSets : correctCyclesTotal)
+            sendData(what: "end game", correct: "N/A", cycleSettings: FullCycle, timeSettings: sessionTime, timePlayed : time, avgBreathLength : averageFullBreatheTime, totalSets : cycleTotal, correctSets : correctCyclesTotal)
             
             // resets global slider variables
             FullCycle = 5
@@ -240,12 +240,12 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
             }
             presentAlert(withTitle: "Oops", message: "You Swiped When You Should Have Held", preferredStyle: .alert, actions: [continueAlert])
-            sendData(game: "breathe", what: "swipe", correct: "false", settings: "N/A")
+            sendData(what: "swipe", correct: "false")
             WKInterfaceDevice.current().play(.notification)
         }
         else{
             correctCyclesTotal += 1
-            sendData(game: "breathe", what: "swipe", correct: "true", settings: "N/A")
+            sendData(what: "swipe", correct: "true")
             WKInterfaceDevice.current().play(.success)
         }
         
@@ -259,10 +259,10 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             counter = 0
             breatheInTime = 0
             if (cycleStep == FullCycle){
-                sendData(game: "breathe", what: "start hold", correct: "false", settings: "N/A")
+                sendData(what: "start hold", correct: "false")
             }
             else{
-                sendData(game: "breathe", what: "start hold", correct: "true", settings: "N/A")
+                sendData(what: "start hold", correct: "true")
             }
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
             
@@ -290,7 +290,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             }
             if (cycleStep == (FullCycle + 1)){
                 cycleReset()
-                sendData(game: "breathe", what: "stop hold", correct: "false", settings: "N/A")
+                sendData(what: "stop hold", correct: "false")
                 let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
                 }
                 presentAlert(withTitle: "Oops", message: "You Held When You Should Have Swiped", preferredStyle: .alert, actions: [continueAlert])
@@ -301,7 +301,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
                     self.image.setTintColor(self.customBlue)
                 }
                 
-                sendData(game: "breathe", what: "stop hold", correct: "true", settings: "N/A")
+                sendData(what: "stop hold", correct: "true")
             }
             
         }
@@ -316,7 +316,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String, settings : String, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, correctSets : Int = 0){
+    func sendData(game : String = "breathe focus", what : String, correct : String, cycleSettings : Int = FullCycle, timeSettings : Int = sessionTime, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, correctSets : Int = 0){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -327,7 +327,8 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
                         "correct": correct,
                         "date": date,
                         "time": timestamp,
-                        "settings": settings,
+            "cycleSettings": cycleSettings,
+            "timeSettings": timeSettings,
             "breatheFTimePlayed": timePlayed,
             "breatheFBreathLength": avgBreathLength,
             "breatheFTotalSets": totalSets,

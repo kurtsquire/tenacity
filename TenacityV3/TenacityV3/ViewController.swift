@@ -220,7 +220,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             let correct = userInfo["correct"] as! String
             let date = userInfo["date"] as! Date
             let time = userInfo["time"] as! Double
-            let settings = userInfo["settings"] as! String
+            //let settings = userInfo["settings"] as! String
             
             //GameDataModel Realm Objects --> initialize new instances --> store data to save
             let gameDataModel = GameDataModel()
@@ -229,13 +229,15 @@ class ViewController: UIViewController, WCSessionDelegate {
             gameDataModel.gameDataAccuracy = correct
             gameDataModel.sessionDate = date
             gameDataModel.sessionEpoch = time
-            gameDataModel.gameSettings = settings
+            //gameDataModel.gameSettings = settings
             
             
             if (game == "lotus"){
                 let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
+                let lotusSettings = userInfo["roundSettings"] as? Int ?? 0 //new
                 
                 gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
+                gameDataModel.lotusRoundsSetting = lotusSettings //new
                 
                 saveEXP(addEXP: Int(5*lotusRoundsPlayed))
                 
@@ -245,16 +247,22 @@ class ViewController: UIViewController, WCSessionDelegate {
                 // give rewards, set dailyDone true, etc
 
             }
-            else if (game == "breathe"){
+            else if (game == "breathe focus"){
                 let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
                 let breatheFBreathLength = userInfo["breatheFBreathLength"] as? Double ?? 0.0
                 let breatheFCorrectSets = userInfo["breatheFCorrectSets"] as? Int ?? 0
                 let breatheFTotalSets = userInfo["breatheFTotalSets"] as? Int ?? 0
                 
+                let breatheFCycleSettings = userInfo["breatheFCycleSettings"] as? Int ?? 0 //new
+                let breatheFTimeSettings = userInfo["breatheFTimeSettings"] as? Int ?? 0 //new
+                
                 gameDataModel.breatheFTimePlayed = breatheFTimePlayed
                 gameDataModel.breatheFBreathLength = breatheFBreathLength
                 gameDataModel.breatheFCorrectSets = breatheFCorrectSets
                 gameDataModel.breatheFTotalSets = breatheFTotalSets
+                
+                gameDataModel.breatheFCycleSettings = breatheFCycleSettings //new
+                gameDataModel.breatheFTimeSettings = breatheFTimeSettings //new
                 
                 saveEXP(addEXP: Int(breatheFTimePlayed))
                 
@@ -264,7 +272,7 @@ class ViewController: UIViewController, WCSessionDelegate {
                 // give rewards, set dailyDone true, etc
                 
             }
-            else if (game == "Free Breathe"){
+            else if (game == "breathe infinite"){
                 let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
                 let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
                 let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
@@ -308,8 +316,8 @@ class ViewController: UIViewController, WCSessionDelegate {
     func refreshRealmData(){
         let realm = try! Realm()
         
-        let gamename1 = "breathe"
-        let gamename2 = "Free Breathe"
+        let gamename1 = "breathe focus"
+        let gamename2 = "breathe infinite"
         let gamename3 = "lotus"
         
         

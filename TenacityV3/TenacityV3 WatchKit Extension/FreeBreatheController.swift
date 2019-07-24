@@ -55,7 +55,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         cycleDict = [String : Int]()
         inGame = true
         
-        sendData(game: "Free Breathe", what: "start game", correct: "N/A", settings: "N/A")
+        sendData(what: "start game")
         
         //  Game Length Timer
         gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.sessionCounter), userInfo: nil, repeats: true)
@@ -89,6 +89,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         //let sample = ["1":2]
         //UserDefaults.standard.set
         
+        
+        // awake transition from game -> results screen
         if ((context as? String) == "Breathe Done"){
             UserDefaults.standard.set(cycleDict, forKey: "cycleDict")
             
@@ -108,20 +110,26 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             timePlayedLabel.setText("Time Played: " + String(Int(timeFree)) + "s")
             averageBreathLabel.setText("Avg Breath Time: " + String(format: "%.1f", averageFullBreatheTimeFree) + "s")
         }
-            
+        
+        // On awake transition from tutorial 2
         else if ((context as? String) == "start"){
             self.image.setTintColor(self.customYellow)
         }
         
+        // On awake transition from main menu
         else if ((context as? String) == "from Menu"){
             testUserDefaults()
-            if (cycleDict.count > 0){
+            if (cycleDict.count == 1 && cycleDict["0"] == 0){
+                prevSessionLabel.setText("No Previous Session")
+            }
+            else if (cycleDict.count > 0){
                 var result = ""
                 for (key, value) in cycleDict.sorted(by: { $0.value > $1.value }){
                     result += "\(String(key)) breaths : \(String(value))x\n"
                 }
                 prevSessionLabel.setText(result)
             }
+            
             else{
                 prevSessionLabel.setText("No Previous Session")
             }
@@ -146,7 +154,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     func endGame(){
         inGame = false
-        sendData(game: "Free Breathe", what: "End Game", correct: "N/A", settings: "N/A", timePlayed : timeFree, avgBreathLength : averageFullBreatheTimeFree, totalSets : cycleTotalFree)
+        sendData(what: "end game", timePlayed : timeFree, avgBreathLength : averageFullBreatheTimeFree, totalSets : cycleTotalFree, breatheCycleDict: cycleDict)
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
     
@@ -205,7 +213,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         holdNumberLabel.setText(String(cycleStep))
         holdNumberLabel.setHidden(false)
         
-        sendData(game: "Free Breathe", what: "swipe", correct: "N/A", settings: "N/A")
+        sendData(what: "swipe")
         WKInterfaceDevice.current().play(.success)
         
         
@@ -225,7 +233,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             counter = 0
             breatheInTime = 0
 
-            sendData(game: "Free Breathe", what: "start hold", correct: "N/A", settings: "N/A")
+            sendData(what: "start hold")
             
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
             
@@ -255,13 +263,13 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             animate(withDuration: 1){
                 self.image.setTintColor(self.customBlue)
             }
-            sendData(game: "Free Breathe", what: "stop hold", correct: "N/A", settings: "N/A")
+            sendData(what: "stop hold")
         }
     }
     
     func testUserDefaults(){
         let defaults =  UserDefaults.standard
-        cycleDict = defaults.dictionary(forKey: "cycleDict") as! [String : Int]
+        cycleDict = defaults.dictionary(forKey: "cycleDict") as? [String : Int] ?? ["0": 0]
     }
     
     func addToAverageBreatheTime(time : Double){
@@ -272,7 +280,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func sendData(game : String, what : String, correct : String, settings : String, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0){
+    func sendData(game : String = "breathe infinite", what : String, correct : String = "N/A", timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, breatheCycleDict : [String : Int] = [:]){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
@@ -283,10 +291,11 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
                         "correct": correct,
                         "date": date,
                         "time": timestamp,
-                        "settings": settings,
+                        //"settings": settings,
                 "breatheITimePlayed": timePlayed,
                 "breatheIBreathLength": avgBreathLength,
-                "breatheITotalSets": totalSets] as [String : Any]
+                "breatheITotalSets": totalSets,
+                "breatheICycleDict": breatheCycleDict] as [String : Any]
             session.transferUserInfo(data)
         }
     }
