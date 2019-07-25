@@ -16,7 +16,6 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var addNameButton: UIButton!
     @IBOutlet weak var addNameItem: UIBarButtonItem!
     
     @IBOutlet weak var addNameTextField: UITextField!
