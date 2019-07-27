@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
@@ -151,6 +150,24 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="365" y="-210"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="KEF-Bj-fap">
+            <objects>
+                <controller id="qH1-mh-Ltu">
+                    <items>
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" id="fzC-Cs-dEM">
+                            <items>
+                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="center" image="lotus_red" id="IVL-gd-z2i"/>
+                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" image="lotus_green" id="R5m-71-KOV"/>
+                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="right" verticalAlignment="center" image="lotus_yellow" id="X5A-Jk-5kK"/>
+                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="left" verticalAlignment="center" image="lotus_blue" id="BWr-h9-H57"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="619" y="-210"/>
         </scene>
     </scenes>
 </document>

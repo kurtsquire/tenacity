@@ -12,6 +12,7 @@
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
 		24021DB5A455328AB9081C4E /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3DBDD0E0773250BDAB5FB9 /* Pods_TenacityV3_WatchKit_Extension.framework */; };
 		421307A922DFCBB90007C445 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421307A822DFCBB90007C445 /* Quests.swift */; };
+		4220938622EBC5B20082834C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220938522EBC5B20082834C /* HomeViewController.swift */; };
 		42398AB422938159009CA96E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB322938159009CA96E /* AppDelegate.swift */; };
 		42398AB622938159009CA96E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB522938159009CA96E /* ViewController.swift */; };
 		42398AB922938159009CA96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AB722938159009CA96E /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		42711E9722A74CBE00AAABDB /* Scheduler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42711E9622A74CBE00AAABDB /* Scheduler.storyboard */; };
 		42711E9922A7517A00AAABDB /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42711E9822A7517A00AAABDB /* SchedulerController.swift */; };
 		42711E9B22AF33F400AAABDB /* PhoneScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */; };
+		42B7585E22EA92570023B7A7 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7585D22EA92570023B7A7 /* PageController.swift */; };
 		42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */; };
 		42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */; };
 		AF553C030AE1502E1FAA61CC /* Pods_TenacityV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74399B0D912F4ACE2E1A9679 /* Pods_TenacityV3.framework */; };
@@ -90,6 +92,7 @@
 		1C3DBDD0E0773250BDAB5FB9 /* Pods_TenacityV3_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B49C66A19CB3415CB6E5F12 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		421307A822DFCBB90007C445 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		4220938522EBC5B20082834C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42398AB022938159009CA96E /* TenacityV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenacityV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42398AB322938159009CA96E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42398AB522938159009CA96E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		42711E9622A74CBE00AAABDB /* Scheduler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scheduler.storyboard; sourceTree = "<group>"; };
 		42711E9822A7517A00AAABDB /* SchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchedulerController.swift; path = "../TenacityV3 WatchKit App/SchedulerController.swift"; sourceTree = "<group>"; };
 		42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneScheduler.swift; sourceTree = "<group>"; };
+		42B7585D22EA92570023B7A7 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FreeBreathe.storyboard; sourceTree = "<group>"; };
 		42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeBreatheController.swift; path = "TenacityV3 WatchKit Extension/FreeBreatheController.swift"; sourceTree = SOURCE_ROOT; };
 		47F54F9695AC20CC74AF118D /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				42398AB522938159009CA96E /* ViewController.swift */,
 				421307A822DFCBB90007C445 /* Quests.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
+				4220938522EBC5B20082834C /* HomeViewController.swift */,
+				42B7585D22EA92570023B7A7 /* PageController.swift */,
 				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
 				42398ABA2293815A009CA96E /* Assets.xcassets */,
 				42398ABC2293815A009CA96E /* LaunchScreen.storyboard */,
@@ -498,6 +504,8 @@
 				421307A922DFCBB90007C445 /* Quests.swift in Sources */,
 				42398AB622938159009CA96E /* ViewController.swift in Sources */,
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
+				4220938622EBC5B20082834C /* HomeViewController.swift in Sources */,
+				42B7585E22EA92570023B7A7 /* PageController.swift in Sources */,
 				1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */,
 				42398AB422938159009CA96E /* AppDelegate.swift in Sources */,
 				42711E9B22AF33F400AAABDB /* PhoneScheduler.swift in Sources */,

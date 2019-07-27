@@ -83,7 +83,7 @@
                                 <segue destination="VQi-bs-Jqa" kind="push" id="ZbQ-YP-mfb"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="scheduler" id="w96-eM-tup">
+                        <button width="1" alignment="left" verticalAlignment="bottom" hidden="YES" title="scheduler" id="w96-eM-tup">
                             <connections>
                                 <segue destination="kpQ-ED-DUj" kind="push" id="3rG-jz-pT9"/>
                             </connections>

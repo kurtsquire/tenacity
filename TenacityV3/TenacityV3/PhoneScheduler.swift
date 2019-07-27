@@ -16,18 +16,28 @@ class PhoneScheduler: UIViewController {
     var day: Int? = nil
     var hour: Int? = nil
     var min: Int? = nil
-    
+    var dateString = ""
+   
+    @IBOutlet weak var pickedTimeLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
-   
+    @IBOutlet weak var saveButton: UIButton!
+    
+    override func viewDidLoad() {
+        testUserDefaults()
+        
+        dateLabel.text = dateString
+       
+    }
+    
     @IBAction func datePickerPicked(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a, MMM dd"
+        dateFormatter.dateFormat = "h:mm a"
         let somedateString = dateFormatter.string(from: sender.date)
         
-        
-        dateLabel.text = somedateString
+        pickedTimeLabel.text = somedateString
+        dateString = somedateString
     }
     
     func createNotification(){
@@ -43,9 +53,9 @@ class PhoneScheduler: UIViewController {
         
         
         //takes the values from datepicker
-        let components = datePicker.calendar.dateComponents([.day, .month, .hour, .minute], from: datePicker.date)
-        day = components.day
-        month = components.month
+        let components = datePicker.calendar.dateComponents([.hour, .minute], from: datePicker.date)
+        //day = components.day
+        //month = components.month
         hour = components.hour
         min = components.minute
         
@@ -90,6 +100,15 @@ class PhoneScheduler: UIViewController {
     }
     @IBAction func saveButtonpressed(_ sender: Any) {
         setPlayReminder()
+        dateLabel.text = "Current Nudge: " + dateString
+        UserDefaults.standard.set(dateString, forKey: "dateString")
     }
+    
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        
+        dateString = defaults.string(forKey: "dateString") ?? "Current Nudge: "
+    }
+    
 }
 
