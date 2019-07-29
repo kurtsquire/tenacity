@@ -186,84 +186,155 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     func generateQuest(){
-        let num = Int.random(in: 1 ... 9)
-        if (num == 1){//BF: Spend x minutes at rate y
+        let num = Int.random(in: 1 ... 100)
+        if (num <= 60){//Breathe Focus Quests
+            let num2 = Int.random(in: 1 ... 4)
+            if (num2 == 1){//BF: Spend x minutes at rate y
+                let x = Int.random(in: 5 ... 15)
+                let y = Int.random(in: 3 ... 8)
+                dailyQuestData["questType"] = "breathe focus"
+                dailyQuestData["questString"] = "Play for " + String(x) + " minutes with rate set to " + String(y) + "."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 10*x*y
+                dailyQuestData["obj"] = 0
+                dailyQuestData["goalNum"] = y
+                dailyQuestData["goalTime"] = x*60
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
+            else if (num2 == 2){//BF: Spend x time playing
+                let x = Int.random(in: 10 ... 30)
+                dailyQuestData["questType"] = "breathe focus"
+                dailyQuestData["questString"] = "Play for " + String(x) + " minutes."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 10*x
+                dailyQuestData["obj"] = 1
+                dailyQuestData["goalTime"] = x*60
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
+            else if (num2 == 3){//BF: Play x games that last at least y minutes
+                let x = Int.random(in: 2 ... 5)
+                let y = Int.random(in: 3 ... 6)
+                dailyQuestData["questType"] = "breathe focus"
+                dailyQuestData["questString"] = "Play " + String(x) + " games that last at least " + String(y) + " minutes."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 10*x*y
+                dailyQuestData["obj"] = 2
+                dailyQuestData["goalNum"] = x
+                dailyQuestData["goalTime"] = y*60
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
+            else if (num2 == 4){//BF: Play a game that lasts x minutes without failing a cycle
+                let x = Int.random(in: 3 ... 8)
+                dailyQuestData["questType"] = "breathe focus"
+                dailyQuestData["questString"] = "Play a game that lasts " + String(x) + " minutes without failing a cycle."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 20*x
+                dailyQuestData["obj"] = 3
+                dailyQuestData["goalTime"] = x*60
+                saveQuest()
+                buildQuest()
+            }
+        }
+        else if (num <= 75){//BI: Play for x minutes and complete y cycles of rate z
             let x = Int.random(in: 5 ... 15)
-            let y = Int.random(in: 3 ... 8)
-            dailyQuestData["questType"] = "breathe focus"
-            dailyQuestData["questString"] = "Play for " + String(x) + " minutes with rate set to " + String(y) + "."
+            let y = Int.random(in: 3 ... 10)
+            let z = Int.random(in: 3 ... 8)
+            dailyQuestData["questType"] = "breathe infinite"
+            dailyQuestData["questString"] = "Play a " + String(x) + "-minute session and complete " + String(y) + " cycles at rate " + String(z) + "."
             dailyQuestData["timeStart"] = today
             dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
             dailyQuestData["reward"] = "Progress!"
             dailyQuestData["complete"] = false
-            dailyQuestData["exp"] = 10*x*y
-            dailyQuestData["obj"] = 0
+            dailyQuestData["exp"] = 10*x*y*z
+            dailyQuestData["goalTime"] = x*60
             dailyQuestData["goalNum"] = y
-            dailyQuestData["goalTime"] = x*60
-            dailyQuestData["count"] = 0
+            dailyQuestData["goalCycle"] = z
             saveQuest()
             buildQuest()
         }
-        else if (num == 2){//BF: Spend x time playing
-            let x = Int.random(in: 10 ... 30)
-            dailyQuestData["questType"] = "breathe focus"
-            dailyQuestData["questString"] = "Play for " + String(x) + " minutes."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-            dailyQuestData["reward"] = "Progress!"
-            dailyQuestData["complete"] = false
-            dailyQuestData["exp"] = 10*x
-            dailyQuestData["obj"] = 1
-            dailyQuestData["goalTime"] = x*60
-            dailyQuestData["count"] = 0
-            saveQuest()
-            buildQuest()
+        else if (num <= 90){
+            let num2 = Int.random(in: 1 ... 3)
+            if (num2 == 1){//L: Play x rounds
+                var x = Int.random(in: 4 ... 8)
+                x *= 5
+                dailyQuestData["questType"] = "lotus"
+                dailyQuestData["questString"] = "Play " + String(x) + " rounds."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 10*x
+                dailyQuestData["obj"] = 0
+                dailyQuestData["goalNum"] = x
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
+            else if (num2 == 2){//L: Play a game of x rounds without missing
+                var x = Int.random(in: 2 ... 6)
+                x *= 5
+                dailyQuestData["questType"] = "lotus"
+                dailyQuestData["questString"] = "Play a game with " + String(x) + " rounds without missing."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 15*x
+                dailyQuestData["obj"] = 1
+                dailyQuestData["goalNum"] = x
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
+            else if (num2 == 3){//L: Play x games
+                let x = Int.random(in: 2 ... 5)
+                dailyQuestData["questType"] = "lotus"
+                dailyQuestData["questString"] = "Play " + String(x) + " games."
+                dailyQuestData["timeStart"] = today
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["complete"] = false
+                dailyQuestData["exp"] = 20*x
+                dailyQuestData["obj"] = 0
+                dailyQuestData["goalNum"] = x
+                dailyQuestData["count"] = 0
+                saveQuest()
+                buildQuest()
+            }
         }
-        else if (num == 3){//BF: Play x games that last at least y minutes
+        else{//PA: Play each game for x minutes
             let x = Int.random(in: 2 ... 5)
-            let y = Int.random(in: 3 ... 6)
-            dailyQuestData["questType"] = "breathe focus"
-            dailyQuestData["questString"] = "Play " + String(x) + " games that last at least " + String(y) + " minutes."
+            dailyQuestData["questType"] = "play all"
+            dailyQuestData["questString"] = "Play each game for " + String(x) + " minutes."
             dailyQuestData["timeStart"] = today
             dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
             dailyQuestData["reward"] = "Progress!"
             dailyQuestData["complete"] = false
-            dailyQuestData["exp"] = 10*x*y
-            dailyQuestData["obj"] = 2
-            dailyQuestData["goalNum"] = x
-            dailyQuestData["goalTime"] = y*60
-            dailyQuestData["count"] = 0
+            dailyQuestData["exp"] = 40*x
+            dailyQuestData["goal"] = x
+            dailyQuestData["bfPlayed"] = 0
+            dailyQuestData["biPlayed"] = 0
+            dailyQuestData["lPlayed"] = 0
             saveQuest()
             buildQuest()
-        }
-        else if (num == 4){//BF: Play a game that lasts x minutes without failing a cycle
-            let x = Int.random(in: 3 ... 8)
-            dailyQuestData["questType"] = "breathe focus"
-            dailyQuestData["questString"] = "Play a game that lasts " + String(x) + " minutes without failing a cycle."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-            dailyQuestData["reward"] = "Progress!"
-            dailyQuestData["complete"] = false
-            dailyQuestData["exp"] = 20*x
-            dailyQuestData["obj"] = 3
-            dailyQuestData["goalTime"] = x*60
-            saveQuest()
-            buildQuest()
-        }
-        else if (num == 5){//BI: Play for x minutes and complete y cycles of rate z
-            
-        }
-        else if (num == 6){//L: Play x rounds
-            
-        }
-        else if (num == 7){//L: Play a game of x rounds without missing
-            
-        }
-        else if (num == 8){//L: Play x games
-            
-        }
-        else if (num == 9){//PA: Play each game for x minutes
-            
         }
     }
     
