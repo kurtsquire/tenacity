@@ -680,10 +680,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     
-    @IBAction func GenQuest(_ sender: Any) {
-        generateQuest()
-    }
-    
     @IBAction func trashPressed(_ sender: Any) {
         data = [String]()
         name = "N/A"
