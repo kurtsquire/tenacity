@@ -12,6 +12,7 @@
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
 		24021DB5A455328AB9081C4E /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3DBDD0E0773250BDAB5FB9 /* Pods_TenacityV3_WatchKit_Extension.framework */; };
 		421307A922DFCBB90007C445 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421307A822DFCBB90007C445 /* Quests.swift */; };
+		421B843D22EFB01E008839C5 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421B843C22EFB01E008839C5 /* Pet.swift */; };
 		4220938622EBC5B20082834C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220938522EBC5B20082834C /* HomeViewController.swift */; };
 		42398AB422938159009CA96E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB322938159009CA96E /* AppDelegate.swift */; };
 		42398AB622938159009CA96E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB522938159009CA96E /* ViewController.swift */; };
@@ -92,6 +93,7 @@
 		1C3DBDD0E0773250BDAB5FB9 /* Pods_TenacityV3_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B49C66A19CB3415CB6E5F12 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		421307A822DFCBB90007C445 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		421B843C22EFB01E008839C5 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		4220938522EBC5B20082834C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42398AB022938159009CA96E /* TenacityV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenacityV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42398AB322938159009CA96E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				42398AB322938159009CA96E /* AppDelegate.swift */,
 				42398AB522938159009CA96E /* ViewController.swift */,
 				421307A822DFCBB90007C445 /* Quests.swift */,
+				421B843C22EFB01E008839C5 /* Pet.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
 				42B7585D22EA92570023B7A7 /* PageController.swift */,
@@ -504,6 +507,7 @@
 				421307A922DFCBB90007C445 /* Quests.swift in Sources */,
 				42398AB622938159009CA96E /* ViewController.swift in Sources */,
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
+				421B843D22EFB01E008839C5 /* Pet.swift in Sources */,
 				4220938622EBC5B20082834C /* HomeViewController.swift in Sources */,
 				42B7585E22EA92570023B7A7 /* PageController.swift in Sources */,
 				1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */,
