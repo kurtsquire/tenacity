@@ -33,6 +33,7 @@
 		42398B0022938EEA009CA96E /* Breathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AFF22938EEA009CA96E /* Breathe.storyboard */; };
 		42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398B0122938F55009CA96E /* Lotus.storyboard */; };
 		42398B0522939824009CA96E /* RhythmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398B0422939824009CA96E /* RhythmController.swift */; };
+		4251742022F0D68600A11551 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4251741F22F0D68600A11551 /* Help.storyboard */; };
 		42711E9722A74CBE00AAABDB /* Scheduler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42711E9622A74CBE00AAABDB /* Scheduler.storyboard */; };
 		42711E9922A7517A00AAABDB /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42711E9822A7517A00AAABDB /* SchedulerController.swift */; };
 		42711E9B22AF33F400AAABDB /* PhoneScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */; };
@@ -119,6 +120,7 @@
 		42398AFF22938EEA009CA96E /* Breathe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Breathe.storyboard; sourceTree = "<group>"; };
 		42398B0122938F55009CA96E /* Lotus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lotus.storyboard; sourceTree = "<group>"; };
 		42398B0422939824009CA96E /* RhythmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RhythmController.swift; path = "TenacityV3 WatchKit Extension/RhythmController.swift"; sourceTree = SOURCE_ROOT; };
+		4251741F22F0D68600A11551 /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		42711E9622A74CBE00AAABDB /* Scheduler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scheduler.storyboard; sourceTree = "<group>"; };
 		42711E9822A7517A00AAABDB /* SchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SchedulerController.swift; path = "../TenacityV3 WatchKit App/SchedulerController.swift"; sourceTree = "<group>"; };
 		42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneScheduler.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				421307A822DFCBB90007C445 /* Quests.swift */,
 				421B843C22EFB01E008839C5 /* Pet.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
+				4251741F22F0D68600A11551 /* Help.storyboard */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
 				42B7585D22EA92570023B7A7 /* PageController.swift */,
 				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
@@ -369,6 +372,7 @@
 			files = (
 				42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */,
 				1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */,
+				4251742022F0D68600A11551 /* Help.storyboard in Resources */,
 				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
 				42398AB922938159009CA96E /* Main.storyboard in Resources */,
 			);
