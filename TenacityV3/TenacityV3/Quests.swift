@@ -37,7 +37,7 @@ class BreatheFocusQuest : Quest{
     var goalTime : Int = 0
     var count : Int = 0
     
-    init(qs: String, ts: Date, te: Date, exp: Int, r: String, obj: Int, gn: Int, gt: Int, ct: Int = 0) {
+    init(qs: String, ts: Date, te: Date, exp: Int, r: String, obj: Int, gn: Int, gt: Int, ct: Int = 0, c: Bool = false) {
         super.init()
         self.questString = qs
         self.timeStart = ts
@@ -48,6 +48,7 @@ class BreatheFocusQuest : Quest{
         self.goalNum = gn
         self.goalTime = gt
         self.count = ct
+        self.complete = c
     }
     
     // need: time ended (Date), time played (int), correct cycles and total cycles (ints), cycle setting (Int)
@@ -139,7 +140,7 @@ class BreatheInfiniteQuest : Quest{
     //var timeCount : Int = 0
     //var cycleCount : Int = 0
     
-    init(qs: String, ts: Date, te: Date, exp: Int, r: String, gc: Int, gn: Int, gt: Int) {
+    init(qs: String, ts: Date, te: Date, exp: Int, r: String, gc: Int, gn: Int, gt: Int, c: Bool = false) {
         super.init()
         self.questString = qs
         self.timeStart = ts
@@ -149,6 +150,7 @@ class BreatheInfiniteQuest : Quest{
         self.goalCycle = gc
         self.goalNum = gn
         self.goalTime = gt
+        self.complete = c
     }
     
 //    func checkQuest(timeFin: Date, timePlayed : Int, cycle: [String : Int]) -> Bool{  //OLD
@@ -192,7 +194,7 @@ class LotusQuest : Quest{
     var goalNum : Int = 0
     var count : Int = 0
     
-    init(qs: String, ts: Date, te: Date, exp: Int, r: String, obj: Int, gn: Int, ct: Int = 0) {
+    init(qs: String, ts: Date, te: Date, exp: Int, r: String, obj: Int, gn: Int, ct: Int = 0, c: Bool = false) {
         super.init()
         self.questString = qs
         self.timeStart = ts
@@ -202,6 +204,7 @@ class LotusQuest : Quest{
         self.objective = obj
         self.goalNum = gn
         self.count = ct
+        self.complete = c
     }
     
 //    func checkQuest(timeFin : Date, roundsPlayed : Int, accuracy : Double) -> Bool{  //OLD
@@ -262,7 +265,7 @@ class PlayAllQuest : Quest{
     var lPlayed : Int = 0
     var goal : Int = 0
     
-    init(qs: String, ts: Date, te: Date, exp: Int, r: String, g: Int, bfp: Int = 0, bip: Int = 0, lp: Int = 0) {
+    init(qs: String, ts: Date, te: Date, exp: Int, r: String, g: Int, bfp: Int = 0, bip: Int = 0, lp: Int = 0, c: Bool = false) {
         super.init()
         self.questString = qs
         self.timeStart = ts
@@ -273,6 +276,7 @@ class PlayAllQuest : Quest{
         self.bfPlayed = bfp
         self.biPlayed = bip
         self.lPlayed = lp
+        self.complete = c
     }
     
     // game , time end, time played

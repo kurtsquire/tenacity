@@ -13,6 +13,8 @@ import Firebase
 
 class ViewController: UIViewController, WCSessionDelegate {
     
+    
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
@@ -36,6 +38,17 @@ class ViewController: UIViewController, WCSessionDelegate {
     var today = Date()
     var startTime = Date()
     var weekStartTime = Date()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // takes out top bar
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +60,13 @@ class ViewController: UIViewController, WCSessionDelegate {
             session.activate()
         }
         
+        
+        
         // loads data from file
         data = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? [String] ?? [String]()
         
         // loads "Name" from UserDefaults
         testUserDefaults()
-        
         
         // sets label for name
         updateName()
@@ -67,7 +81,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         // updates date for today
         today = Date()
-        print(today.timeIntervalSince1970)
         startTime = calendar.startOfDay(for: today)
         
         //creates a date at the beginning of the week to compare
@@ -94,10 +107,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         //print(calendar.isDate(today, inSameDayAs: tomorrow!))
         //print(calendar.isDate(today, equalTo: tomorrow!, toGranularity: .weekOfYear))
         //print(calendar.isDate(today, equalTo: c, toGranularity: .weekOfYear))
-
-        
-        
-
     }
     
     func showRecent(){

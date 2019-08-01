@@ -23,6 +23,26 @@ class PhoneScheduler: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        dateString = "No Current Nudge"
+        dateLabel.text = "No Current Nudge"
+        
+        UserDefaults.standard.set(dateString, forKey: "dateString")
+        
+        let center = UNUserNotificationCenter.current()
+        
+        //requests permissions for notifications
+        center.requestAuthorization(options: [.alert, .sound])
+        { success, error in
+            //if they allow notifications
+            if success {
+                // removes current notification
+                center.removeAllPendingNotificationRequests()
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         testUserDefaults()
         
@@ -53,6 +73,7 @@ class PhoneScheduler: UIViewController {
         
         
         //takes the values from datepicker
+        
         let components = datePicker.calendar.dateComponents([.hour, .minute], from: datePicker.date)
         //day = components.day
         //month = components.month
@@ -107,7 +128,7 @@ class PhoneScheduler: UIViewController {
     func testUserDefaults(){
         let defaults = UserDefaults.standard
         
-        dateString = defaults.string(forKey: "dateString") ?? "Current Nudge: "
+        dateString = defaults.string(forKey: "dateString") ?? "No Current Nudge"
     }
     
 }
