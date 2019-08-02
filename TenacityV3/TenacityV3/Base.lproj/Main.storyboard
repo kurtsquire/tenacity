@@ -13,7 +13,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Viv-Qd-Thv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zig-lo-Mcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="kWz-DJ-dGq" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ydO-WI-CJ1">
@@ -24,6 +23,7 @@
                         <segue destination="ESo-Es-Xgt" kind="relationship" relationship="rootViewController" id="o14-qa-fuT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zig-lo-Mcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-767" y="116"/>
         </scene>
@@ -666,48 +666,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
-                                <rect key="frame" x="55" y="114" width="265" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KuI-Nw-bTR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
-                                <rect key="frame" x="28" y="108" width="320" height="133"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <date key="date" timeIntervalSinceReferenceDate="581900430.17323899">
-                                    <!--2019-06-10 23:00:30 +0000-->
-                                </date>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightsToday" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
-                                    <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
-                                </connections>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
-                                <rect key="frame" x="55" y="249" width="79" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="obC-Ka-bxS"/>
-                                </constraints>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-tw-1m2">
-                                <rect key="frame" x="142" y="253" width="217" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Only 1 nudge at a time atm, saving overides old" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-TZ-wmO">
                                 <rect key="frame" x="55" y="323" width="265" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -723,23 +681,48 @@
                                     <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
+                                <rect key="frame" x="55" y="88" width="265" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
+                                <rect key="frame" x="27" y="126" width="320" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <date key="date" timeIntervalSinceReferenceDate="581900430.17323899">
+                                    <!--2019-06-10 23:00:30 +0000-->
+                                </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightsToday" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
+                                    <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
+                                <rect key="frame" x="55" y="273" width="79" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-tw-1m2">
+                                <rect key="frame" x="142" y="277" width="217" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="trailing" secondItem="SuF-ey-jdp" secondAttribute="trailingMargin" id="4T9-Oq-cyA"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="centerX" secondItem="Zhs-RP-H4P" secondAttribute="centerX" id="5yL-IH-CxI"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="centerX" secondItem="Edv-t9-l5y" secondAttribute="centerX" id="CUc-dd-KT1"/>
-                            <constraint firstItem="NZt-db-Zsr" firstAttribute="top" secondItem="Zhs-RP-H4P" secondAttribute="bottom" constant="8" symbolic="YES" id="Jhv-NA-HKl"/>
-                            <constraint firstItem="NZt-db-Zsr" firstAttribute="baseline" secondItem="o8q-tw-1m2" secondAttribute="firstBaseline" id="RGv-w9-5p2"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="top" secondItem="Edv-t9-l5y" secondAttribute="top" constant="50" id="SDH-w8-WgL"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="leading" secondItem="Edv-t9-l5y" secondAttribute="leading" constant="55" id="XpO-Ty-LsE"/>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="top" secondItem="Zhs-RP-H4P" secondAttribute="bottom" constant="12" id="dHU-im-G43"/>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="leading" secondItem="NZt-db-Zsr" secondAttribute="trailing" constant="8" symbolic="YES" id="mdj-BM-3yl"/>
-                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="leading" secondItem="Edv-t9-l5y" secondAttribute="leading" constant="28" id="naA-ZA-bKG"/>
-                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="top" secondItem="6Hs-y8-qak" secondAttribute="bottom" constant="8" symbolic="YES" id="oHd-l4-xrd"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="leading" secondItem="NZt-db-Zsr" secondAttribute="leading" id="rcE-fH-xJK"/>
-                            <constraint firstItem="Edv-t9-l5y" firstAttribute="bottom" secondItem="NZt-db-Zsr" secondAttribute="bottom" constant="340" id="v92-bD-9qP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nudges" image="tabMain-1" id="UHN-10-F3r" userLabel="Reminder"/>

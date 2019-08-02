@@ -35,7 +35,8 @@ class GameDataModel: Object{
     @objc dynamic var breatheITimePlayed: Double = 0.0
     @objc dynamic var breatheIBreathLength: Double = 0.0
     @objc dynamic var breatheITotalSets: Int = 0
-    //@objc dynamic var breatheICycleDict: [String: Int] = [:]
+    //@objc dynamic var breatheICycleDict: [Int] = []
+    let breatheICycleList = List<Int>()
     
      
     //@objc dynamic var id: Int = 0

@@ -478,10 +478,29 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
                 let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
                 let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
+                let breatheICycleDict = userInfo["breatheICycleDict"] as? [String : Any] ?? [:]
+                
+                var templist = [0,0,0,0,0,0,0,0,0,0,0]
+                if (breatheICycleDict.count == 0){
+                    //gameDataModel.breatheICycleList.append(objectsIn: templist)
+                }
+                else{
+                    for (key,value) in breatheICycleDict{
+                        if (Int(key)! >= 10){
+                            templist[10] += value as! Int
+                        }
+                        else{
+                            templist[Int(key)!] = value as! Int
+                        }
+                    }
+                }
+                print(templist)
                 
                 gameDataModel.breatheITimePlayed = breatheITimePlayed
                 gameDataModel.breatheIBreathLength = breatheIBreathLength
                 gameDataModel.breatheITotalSets = breatheITotalSets
+                gameDataModel.breatheICycleList.append(objectsIn: templist)
+                //print(gameDataModel.breatheICycleList)
                 
                 saveEXP(addEXP: Int(breatheITimePlayed))
                 
