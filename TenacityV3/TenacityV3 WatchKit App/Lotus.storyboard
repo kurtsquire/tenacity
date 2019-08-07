@@ -16,7 +16,7 @@
                         <slider width="1" height="0.33000000000000002" alignment="center" value="10" minimum="5" maximum="40" steps="7" id="MFh-wv-Upb">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="round_slider_action:" destination="0Kp-X5-R0R" id="rZ7-aX-gpV"/>
+                                <action selector="lotusRoundSliderAction:" destination="0Kp-X5-R0R" id="7If-QS-VIW"/>
                             </connections>
                         </slider>
                         <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="yeb-1Z-SLc" userLabel="Label Group">
@@ -33,141 +33,186 @@
                             <color key="backgroundColor" red="0.91913175579999995" green="0.26112943890000001" blue="0.59328526260000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
-                                <action selector="start_game_action" destination="0Kp-X5-R0R" id="6xi-hz-jLL"/>
+                                <segue destination="r4P-ou-ogD" kind="push" id="3Tc-NG-wPu"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
-                        <outlet property="round_slider" destination="MFh-wv-Upb" id="gwO-IB-lMv"/>
-                        <outlet property="total_round_label" destination="8wM-E5-f6y" id="X8i-LF-A6M"/>
+                        <outlet property="lotusRoundSlider" destination="MFh-wv-Upb" id="66b-tP-KGX"/>
+                        <outlet property="roundSliderLabel" destination="8wM-E5-f6y" id="iTu-dO-qJH"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="89" y="-210"/>
+            <point key="canvasLocation" x="-110" y="-211"/>
+        </scene>
+        <!--Lotus Tutorial 1-->
+        <scene sceneID="dfH-S7-GDp">
+            <objects>
+                <controller identifier="Lotus Tutorial 1" id="r4P-ou-ogD" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <button alignment="left" id="xaD-pQ-Df5">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="PG6-2e-uDn">
+                                <items>
+                                    <label width="1" height="0.25" alignment="center" verticalAlignment="center" text="Lotus" textAlignment="center" numberOfLines="2" id="mOD-Fk-OT1">
+                                        <color key="textColor" red="0.97559099739999999" green="0.38786385979999999" blue="0.85125982659999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                    </label>
+                                    <label width="1" height="0.75" alignment="center" verticalAlignment="center" text="Tap the white bud to bloom a vibrant flower (tap to continue)" textAlignment="center" numberOfLines="6" id="f1R-Oh-h2d">
+                                        <color key="textColor" red="0.91975688249999998" green="1" blue="0.74466118140000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                    </label>
+                                </items>
+                            </group>
+                            <connections>
+                                <segue destination="TtL-C3-euM" kind="push" id="aZN-mz-V8u"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="153" y="-214"/>
         </scene>
         <!--Lotus Game-->
         <scene sceneID="8Tx-KR-KcP">
             <objects>
                 <controller identifier="Lotus Game" fullBounds="YES" id="FfN-gJ-J0k" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <label width="1" height="0.25" alignment="center" text="Lotus" textAlignment="center" numberOfLines="2" id="mOD-Fk-OT1">
-                            <color key="textColor" red="0.97559099739999999" green="0.38786385979999999" blue="0.85125982659999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                        </label>
-                        <label width="1" height="0.75" alignment="center" verticalAlignment="center" text="Tap the white bud to bloom a vibrant flower (tap to continue)" textAlignment="center" numberOfLines="6" id="f1R-Oh-h2d">
+                        <imageView width="1" height="1" alignment="left" image="lotus_0" id="n6l-lV-vN4">
                             <gestureRecognizers>
-                                <tapGestureRecognizer id="rFb-ZX-AG5">
+                                <swipeGestureRecognizer direction="4" id="s0P-Il-4II">
                                     <connections>
-                                        <action selector="InitialTap:" destination="FfN-gJ-J0k" id="ACI-eA-vIu"/>
-                                    </connections>
-                                </tapGestureRecognizer>
-                            </gestureRecognizers>
-                            <color key="textColor" red="0.91975688249999998" green="1" blue="0.74466118140000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                        </label>
-                        <label width="1" height="1" alignment="center" verticalAlignment="center" hidden="YES" text="Swipe each flower in the correct direction.  Memorize the following screen (tap to continue)" textAlignment="center" numberOfLines="7" id="CK7-Qr-1iQ" userLabel="Instructions">
-                            <gestureRecognizers>
-                                <tapGestureRecognizer id="KsF-oz-Bml">
-                                    <connections>
-                                        <action selector="InstructionsTap:" destination="FfN-gJ-J0k" id="x36-lg-7eJ"/>
-                                    </connections>
-                                </tapGestureRecognizer>
-                            </gestureRecognizers>
-                            <color key="textColor" red="0.91975688249999998" green="1" blue="0.74466118140000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                        </label>
-                        <imageView width="1" height="1" alignment="left" hidden="YES" image="flower_guide" id="n6l-lV-vN4">
-                            <gestureRecognizers>
-                                <longPressGestureRecognizer enabled="NO" minimumPressDuration="0.29999999999999999" id="QZm-mT-8F6">
-                                    <connections>
-                                        <action selector="longPressAction:" destination="FfN-gJ-J0k" id="uqh-Lj-69z"/>
-                                    </connections>
-                                </longPressGestureRecognizer>
-                                <swipeGestureRecognizer enabled="NO" direction="4" id="s0P-Il-4II">
-                                    <connections>
-                                        <action selector="SwipeUpAction:" destination="FfN-gJ-J0k" id="hS4-di-Rgs"/>
+                                        <action selector="swipeUpAction:" destination="FfN-gJ-J0k" id="UWH-LF-eaP"/>
                                     </connections>
                                 </swipeGestureRecognizer>
-                                <swipeGestureRecognizer enabled="NO" direction="8" id="cF8-3j-19s">
+                                <swipeGestureRecognizer id="cF8-3j-19s">
                                     <connections>
-                                        <action selector="SwipeDownAction:" destination="FfN-gJ-J0k" id="OJT-62-hUQ"/>
+                                        <action selector="swipeRightAction:" destination="FfN-gJ-J0k" id="LBL-DO-p5o"/>
                                     </connections>
                                 </swipeGestureRecognizer>
-                                <swipeGestureRecognizer enabled="NO" id="yIl-5y-R9h">
+                                <swipeGestureRecognizer direction="2" id="yIl-5y-R9h">
                                     <connections>
-                                        <action selector="SwipeRightAction:" destination="FfN-gJ-J0k" id="bid-8L-vvU"/>
+                                        <action selector="swipeLeftAction:" destination="FfN-gJ-J0k" id="F1x-9t-FFG"/>
                                     </connections>
                                 </swipeGestureRecognizer>
-                                <swipeGestureRecognizer enabled="NO" direction="2" id="Zjo-Ff-HZx">
+                                <swipeGestureRecognizer direction="8" id="Zjo-Ff-HZx">
                                     <connections>
-                                        <action selector="SwipeLeftAction:" destination="FfN-gJ-J0k" id="2mf-Aj-aHh"/>
+                                        <action selector="swipeDownAction:" destination="FfN-gJ-J0k" id="NfL-0d-Y8C"/>
                                     </connections>
                                 </swipeGestureRecognizer>
                                 <tapGestureRecognizer id="MOZ-va-z1V">
                                     <connections>
-                                        <action selector="TapAction:" destination="FfN-gJ-J0k" id="H2G-yb-OB9"/>
+                                        <action selector="tapAction:" destination="FfN-gJ-J0k" id="Otz-aj-VzX"/>
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
                         </imageView>
-                        <label alignment="center" hidden="YES" text="Results" textAlignment="center" numberOfLines="2" id="WNH-0a-AXH">
-                            <color key="textColor" red="0.97559099739999999" green="0.4437583074" blue="0.073710363099999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
-                        </label>
-                        <label alignment="left" hidden="YES" text="Accuracy_label" numberOfLines="2" id="0eN-sE-YOf"/>
-                        <label alignment="left" hidden="YES" text="Press_label" numberOfLines="2" id="5eU-wa-Mr2"/>
-                        <button width="1" alignment="center" verticalAlignment="bottom" hidden="YES" title="Main Menu" id="9GC-yi-WMo">
-                            <connections>
-                                <action selector="Restart_button_Action" destination="FfN-gJ-J0k" id="9Rc-IR-xSp"/>
-                            </connections>
-                        </button>
                     </items>
                     <menu key="menu" id="2e5-oe-JHj">
                         <items>
                             <menuItem title="Resume" icon="resume" id="p1w-kw-0ZD"/>
                             <menuItem title="Quit" icon="block" id="eBr-wt-HUI">
                                 <connections>
-                                    <action selector="forceQuit" destination="FfN-gJ-J0k" id="jkz-UF-28z"/>
+                                    <action selector="forceTouchQuit" destination="FfN-gJ-J0k" id="5uj-yL-Vvc"/>
                                 </connections>
                             </menuItem>
                         </items>
                     </menu>
                     <connections>
-                        <outlet property="Accuracy_label" destination="0eN-sE-YOf" id="fDh-tT-bqK"/>
-                        <outlet property="Initial" destination="f1R-Oh-h2d" id="lxU-WC-7vw"/>
-                        <outlet property="Instructions" destination="CK7-Qr-1iQ" id="jkI-aO-jcd"/>
-                        <outlet property="Main_Pic" destination="n6l-lV-vN4" id="1fH-TD-fxU"/>
-                        <outlet property="Restart_button" destination="9GC-yi-WMo" id="38R-lI-GMa"/>
-                        <outlet property="Results_label" destination="WNH-0a-AXH" id="UtK-Mp-igk"/>
-                        <outlet property="Round_label" destination="5eU-wa-Mr2" id="hmQ-1U-3ry"/>
-                        <outlet property="SwipeDown" destination="cF8-3j-19s" id="zUU-Jr-A6z"/>
-                        <outlet property="SwipeLeft" destination="Zjo-Ff-HZx" id="IJU-O7-viP"/>
-                        <outlet property="SwipeRight" destination="yIl-5y-R9h" id="TO0-TX-JKd"/>
-                        <outlet property="SwipeUp" destination="s0P-Il-4II" id="i9W-tN-QOT"/>
-                        <outlet property="Tap" destination="MOZ-va-z1V" id="7x4-HX-97i"/>
-                        <outlet property="Welcome" destination="mOD-Fk-OT1" id="fa1-3z-cTC"/>
-                        <outlet property="longPress" destination="QZm-mT-8F6" id="Ukt-hL-Kg5"/>
+                        <outlet property="lotusGameImage" destination="n6l-lV-vN4" id="GdX-RP-9Cm"/>
+                        <outlet property="swipeDown" destination="Zjo-Ff-HZx" id="JGP-6w-4Ve"/>
+                        <outlet property="swipeLeft" destination="yIl-5y-R9h" id="wgG-RD-DHt"/>
+                        <outlet property="swipeRight" destination="cF8-3j-19s" id="B0F-YJ-aoI"/>
+                        <outlet property="swipeUp" destination="s0P-Il-4II" id="1Zq-Yd-t5v"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="365" y="-210"/>
+            <point key="canvasLocation" x="863" y="-211"/>
         </scene>
-        <!--Interface Controller-->
-        <scene sceneID="KEF-Bj-fap">
+        <!--Lotus Results-->
+        <scene sceneID="nZy-V2-ZzN">
             <objects>
-                <controller id="qH1-mh-Ltu">
+                <controller identifier="Lotus Results" id="HtD-xd-mZN" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" id="fzC-Cs-dEM">
-                            <items>
-                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="center" image="lotus_red" id="IVL-gd-z2i"/>
-                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" image="lotus_green" id="R5m-71-KOV"/>
-                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="right" verticalAlignment="center" image="lotus_yellow" id="X5A-Jk-5kK"/>
-                                <imageView width="0.40000000000000002" height="0.40000000000000002" alignment="left" verticalAlignment="center" image="lotus_blue" id="BWr-h9-H57"/>
-                            </items>
-                        </group>
+                        <button alignment="left" id="9wj-p7-q4a">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="8UR-tN-6SU">
+                                <items>
+                                    <label alignment="center" text="Results" textAlignment="center" numberOfLines="2" id="WNH-0a-AXH">
+                                        <color key="textColor" red="0.97559099739999999" green="0.4437583074" blue="0.073710363099999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                    </label>
+                                    <label alignment="left" text="rounds_played" numberOfLines="2" id="0eN-sE-YOf"/>
+                                    <label alignment="left" text="time_played" numberOfLines="2" id="5eU-wa-Mr2"/>
+                                    <label alignment="left" text="Swipe Misses" textAlignment="right" numberOfLines="4" id="xfF-r5-pWu"/>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="lotusResultsTapped" destination="HtD-xd-mZN" id="cai-xN-jUK"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="swipeMissesLabel" destination="xfF-r5-pWu" id="7HG-MN-BUw"/>
+                        <outlet property="timePlayedLabel" destination="5eU-wa-Mr2" id="a0H-b7-VFg"/>
+                        <outlet property="totalRoundsLabel" destination="0eN-sE-YOf" id="1HH-xd-D16"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1119" y="-211"/>
+        </scene>
+        <!--Lotus Tutorial 2-->
+        <scene sceneID="Ead-n1-ZWs">
+            <objects>
+                <controller identifier="Lotus Tutorial 2" id="TtL-C3-euM" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <button alignment="left" id="5IV-lz-gj7">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="3DD-A3-8th">
+                                <items>
+                                    <label width="1" height="1" alignment="center" verticalAlignment="center" text="Swipe each flower in the correct direction.  Memorize the following screen (tap to continue)" textAlignment="center" numberOfLines="7" id="CK7-Qr-1iQ" userLabel="Instructions">
+                                        <color key="textColor" red="0.91975688249999998" green="1" blue="0.74466118140000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="lotusTutorial2Tapped" destination="TtL-C3-euM" id="hK1-28-OHQ"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="619" y="-210"/>
+            <point key="canvasLocation" x="392" y="-211"/>
+        </scene>
+        <!--Lotus Tutorial 3-->
+        <scene sceneID="KEF-Bj-fap">
+            <objects>
+                <controller identifier="Lotus Tutorial 3" id="qH1-mh-Ltu" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <button alignment="left" id="qd5-Z5-PJE">
+                            <group key="contentGroup" width="1" height="1" alignment="left" backgroundImage="flower_X" layout="overlap" id="7sp-MH-3K3">
+                                <items>
+                                    <imageView width="0.41999999999999998" height="0.41999999999999998" alignment="center" image="lotus_red" id="IVL-gd-z2i">
+                                        <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView width="0.41999999999999998" height="0.41999999999999998" alignment="center" verticalAlignment="bottom" image="lotus_green" id="R5m-71-KOV"/>
+                                    <imageView width="0.41999999999999998" height="0.41999999999999998" alignment="right" verticalAlignment="center" image="lotus_yellow" id="X5A-Jk-5kK">
+                                        <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView width="0.41999999999999998" height="0.41999999999999998" alignment="left" verticalAlignment="center" image="lotus_blue" id="BWr-h9-H57"/>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="lotusTutorial3Tapped" destination="qH1-mh-Ltu" id="Rmo-wh-NUm"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="bottomImage" destination="R5m-71-KOV" id="XNh-8H-JCO"/>
+                        <outlet property="leftImage" destination="BWr-h9-H57" id="7Vc-ub-EVi"/>
+                        <outlet property="rightImage" destination="X5A-Jk-5kK" id="xqb-Rs-kgN"/>
+                        <outlet property="topImage" destination="IVL-gd-z2i" id="IPG-oz-C5Z"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="622" y="-211"/>
         </scene>
     </scenes>
 </document>

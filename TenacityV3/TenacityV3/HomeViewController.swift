@@ -11,7 +11,32 @@ import UIKit
 import RealmSwift
 import WatchConnectivity
 
+var screenWidth = CGFloat(300.0)
+
+var circleGraphRadius = CGFloat(75)
+var circleGraphWidth = CGFloat(14)
+
+var breatheFGraphEndAngle = CGFloat(0)
+let breatheFGraphOutColor = UIColor(red: 0.21, green: 0.84, blue: 0.44, alpha: 0.1).cgColor
+let breatheFGraphProgColor = UIColor(red: 0.21, green: 0.84, blue: 0.44, alpha: 1.0).cgColor
+
+var breatheIGraphEndAngle = CGFloat(0)
+let breatheIGraphOutColor = UIColor(red: 0.96, green: 0.95, blue: 0.35, alpha: 0.1).cgColor
+let breatheIGraphProgColor = UIColor(red: 0.96, green: 0.95, blue: 0.35, alpha: 1.0).cgColor
+
+var lotusGraphEndAngle = CGFloat(0)
+let lotusGraphOutColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 0.1).cgColor
+let lotusGraphProgColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 1.0).cgColor
+
+var breatheFGoalTime = 30.0
+var breatheIGoalTime = 30.0
+var lotusGoalTime = 30.0
+
 class HomeViewController: UIViewController, WCSessionDelegate {
+    
+    
+    @IBOutlet weak var mainView: UIView!
+    
     
     // --------------------------- EXPERIENCE -----------------------------
     @IBOutlet weak var expBar1: UIImageView!
@@ -41,12 +66,18 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var breatheFMinuteGoalLabel: UILabel!
     @IBOutlet weak var breatheIMinuteGoalLabel: UILabel!
     @IBOutlet weak var lotusMinuteGoalLabel: UILabel!
-
+    @IBOutlet weak var breatheFocusLabel: UILabel!
+    @IBOutlet weak var breatheInfiniteLabel: UILabel!
+    @IBOutlet weak var lotusSwipeLabel: UILabel!
+    
     @IBOutlet weak var badge1: UIButton!
     @IBOutlet weak var badge2: UIButton!
     @IBOutlet weak var badge3: UIButton!
     @IBAction func achievementButton(_ sender: Any) {
     }
+    
+    //-------------------------- CIRCLE GRAPHS ----------------------------
+    
     
     // --------------------------- QUESTS -----------------------------
     @IBAction func questRerollButton(_ sender: Any) {
@@ -87,6 +118,12 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     // -----------------------------------------------------------------
     
+    lazy var breatheFGraphCenter = breatheFocusLabel.center
+    lazy var breatheIGraphCenter = breatheInfiniteLabel.center
+    lazy var lotusGraphCenter = lotusSwipeLabel.center
+    
+    
+    // -----------------------------------------------------------------
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -121,6 +158,11 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
+        
+        screenWidth = mainView.frame.size.width
+        
+        
+       
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -136,6 +178,9 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         lvlLabel.text = "Lvl " + String(lvl + 1) // +1 so that you start lvl 1 not 0
         expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
         nudge1.text = dateString
+        
+        
+        
         
         
         if (baseEXP >= 900){
@@ -196,6 +241,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
         var breatheFTimeToday = 0.0
         var breatheITimeToday = 0.0
+        var lotusTimeToday = 0.0
         
         for item in bfx{
             breatheFTimeToday += item.breatheFTimePlayed
@@ -205,8 +251,37 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         }
         
         DispatchQueue.main.async {
-            self.breatheFMinuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + " mins"
-            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
+            self.breatheFMinuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins"
+            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
+            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
+            
+            breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
+            if (breatheFGraphEndAngle == 0){
+                breatheFGraphEndAngle = 0.01
+            }
+            
+            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
+            if (breatheIGraphEndAngle == 0){
+                breatheIGraphEndAngle = 0.01
+            }
+            
+            lotusGraphEndAngle = CGFloat((lotusTimeToday/60)/lotusGoalTime)
+            if (lotusGraphEndAngle == 0){
+                lotusGraphEndAngle = 0.01
+            }
+            
+            let breatheFCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: breatheFGraphEndAngle, center: self.breatheFGraphCenter, lineWidth: circleGraphWidth, outlineColor: breatheFGraphOutColor, progressColor: breatheFGraphProgColor)
+            self.mainView.layer.addSublayer(breatheFCircleGraph.outlineLayer)
+            self.mainView.layer.addSublayer(breatheFCircleGraph.progressLayer)
+            
+            let breatheICircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: breatheIGraphEndAngle, center: self.breatheIGraphCenter, lineWidth: circleGraphWidth, outlineColor: breatheIGraphOutColor, progressColor: breatheIGraphProgColor)
+            self.mainView.layer.addSublayer(breatheICircleGraph.outlineLayer)
+            self.mainView.layer.addSublayer(breatheICircleGraph.progressLayer)
+            
+            let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
+            self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)
+            self.mainView.layer.addSublayer(lotusCircleGraph.progressLayer)
+            
         }
     }
     

@@ -5,22 +5,151 @@
 //  Created by PLL on 5/20/19.
 //  Copyright © 2019 PLL. All rights reserved.
 //
+
 import WatchKit
 import Foundation
 import WatchConnectivity
 
-// should always be the same as default rounds shown on start slider
-var total_rounds = 10
+var randomizeColorsBool = false
+
+var lotusTotalRounds: Int = 10 // should always be the same as default rounds shown on start slider
+var lotusCurrentRound = 0
+var lotusTimePlayed = 0.0
+var lotusTotalSwipes = 0
+
+var theme = "lotus"
+
+var topTile = ""
+var leftTile = ""
+var rightTile = ""
+var bottomTile = ""
+var topColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+var leftColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+var rightColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+var bottomColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+
+var lotusArray = [0,0,0,0]
 
 class LotusController: WKInterfaceController, WCSessionDelegate {
     
+    
+    var counter = 0.0
+    var gameLengthTimer = Timer()
+
+    // ------------------------ Settings -------------------------
+    @IBOutlet weak var roundSliderLabel: WKInterfaceLabel!
+    @IBOutlet weak var lotusRoundSlider: WKInterfaceSlider!
+    @IBAction func lotusRoundSliderAction(_ value: Float) {
+        lotusTotalRounds = Int(value)
+        roundSliderLabel.setText(String(lotusTotalRounds))
+    }
+    
+    // ------------------------ Tutorials -------------------------
+    @IBAction func lotusTutorial2Tapped() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Tutorial 3"], contexts: ["t2"])
+        lotusCurrentRound = 1
+        lotusTimePlayed = 0.0
+        lotusTotalSwipes = 0
+        lotusArray = [0,0,0,0]
+        inGame = true
+        sendData(what: "start game")
+    }
+    @IBAction func lotusTutorial3Tapped() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["t3"])
+        
+    }
+    @IBAction func lotusResultsTapped() {
+        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: [""])
+    }
+    
+    // ------------------------ Force Touch ---------------------------
+    
+    @IBAction func forceTouchQuit() {
+        endGame()
+    }
+    
+    // ------------------------ Game ---------------------------
+    
+    @IBOutlet weak var lotusGameImage: WKInterfaceImage!
+    
+
+    @IBOutlet weak var swipeUp: WKSwipeGestureRecognizer!
+    @IBOutlet weak var swipeRight: WKSwipeGestureRecognizer!
+    @IBOutlet weak var swipeLeft: WKSwipeGestureRecognizer!
+    @IBOutlet weak var swipeDown: WKSwipeGestureRecognizer!
+    
+
+    @IBAction func swipeUpAction(_ sender: Any) {
+        checkDirection(direction: "up")
+    }
+    @IBAction func swipeRightAction(_ sender: Any) {
+        checkDirection(direction: "right")
+    }
+    @IBAction func swipeLeftAction(_ sender: Any) {
+        checkDirection(direction: "left")
+    }
+    @IBAction func swipeDownAction(_ sender: Any) {
+        checkDirection(direction: "down")
+    }
+    @IBAction func tapAction(_ sender: Any) {
+        let basic = theme + "_0"
+        if (current == basic){
+            wrongCount = 0
+            randomizeGame()
+        }
+    }
+    
+    // ------------------------ Results ---------------------------
+    
+    @IBOutlet weak var totalRoundsLabel: WKInterfaceLabel!
+    @IBOutlet weak var timePlayedLabel: WKInterfaceLabel!
+    @IBOutlet weak var swipeMissesLabel: WKInterfaceLabel!
+    
+    
+    // ------------------------ Palettes --------------------------
+    
+    @IBOutlet weak var topImage: WKInterfaceImage!
+    @IBOutlet weak var rightImage: WKInterfaceImage!
+    @IBOutlet weak var bottomImage: WKInterfaceImage!
+    @IBOutlet weak var leftImage: WKInterfaceImage!
+
+
+    var current = ""
+    var wrongCount = 0
+    
+    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
+    let customBlue =  UIColor(red:0.19, green: 0.45, blue: 0.77, alpha: 1.0)
+    let customYellow = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
+    let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
+    
+    lazy var customColors = [customRed, customBlue, customYellow, customGreen]
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        // Configure interface objects here.
+        
+        // wc session connect
         if WCSession.isSupported(){
             let session = WCSession.default
             session.delegate = self
             session.activate()
+        }
+        
+        if ((context as? String) == "t2"){
+            randomizeImages(palette: customColors, randomColors: randomizeColorsBool)
+            setTiles()
+            gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.sessionCounter), userInfo: nil, repeats: true)
+        }
+        
+        if ((context as? String) == "t3"){
+            current = theme + "_0"
+        }
+        
+        if ((context as? String) == "lotus game end"){
+            let min = Int(lotusTimePlayed/60)
+            let sec = (Int(lotusTimePlayed)%60)
+            totalRoundsLabel.setText(String(lotusCurrentRound))
+            timePlayedLabel.setText(String(min) + " mins " + String(sec) + " s")
+            swipeMissesLabel.setText("0 misses: " + String(lotusArray[0]) + "\n1 miss: " + String(lotusArray[1]) + "\n2 misses: " + String(lotusArray[2]) + "\n3+ misses: " + String(lotusArray[3]))
         }
     }
     
@@ -34,503 +163,214 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    var current_round = 0
-    
-    @IBOutlet var total_round_label: WKInterfaceLabel!
-    @IBOutlet var round_slider: WKInterfaceSlider!
-    @IBAction func round_slider_action(_ value: Float) {
-        total_rounds = Int(value)
-        total_round_label.setText(String(Int(total_rounds)))
-    }
-    
-    // to take out back carrot
-    @IBAction func start_game_action() {
-        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Game"], contexts: ["Lotus Game"])
-    }
-    
-    
-    // menu buttons //////////////
-    @IBAction func forceQuit() {
-        toResults()
-    }
-    //////////////////////////////
-    
-    
-    //change these based on start
-    var up = "red"
-    var down = "blue"
-    var right = "green"
-    var left = "yellow"
-    var current_image = "guide"
-    var white = false
-    ////////////////////////////
-    
-    
-    ////////////////////////////////////////// Obsolete
-    //how long they hold an individual bloom
-    var press_time = 0.0
-    //total time they held all blooms
-    var total_press_time = 0.0
-    //////////////////////////////////////////
-    
-    
-    var successful_swipes = 0.0
-    var total_swipes = 0.0
-    
-    var timer = Timer()
-    var timer_open = Timer()
-    var timer_reset = Timer()
-    var timer_press = Timer()
-    
-    //data
-    
-    var seconds = 30.0
-    
-    @IBOutlet var Welcome: WKInterfaceLabel! //Title "Lotus"
-    @IBOutlet var Initial: WKInterfaceLabel! //Paragraph below "Lotus"
-    @IBOutlet var Instructions: WKInterfaceLabel! //2nd Page Paragraph
-    @IBOutlet var Main_Pic: WKInterfaceImage!  //main picture used for all flowers and flower guide
-    
-    @IBOutlet var longPress: WKLongPressGestureRecognizer!
-    @IBOutlet var Tap: WKTapGestureRecognizer! //tap on lotus
-    @IBOutlet var SwipeUp: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeDown: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeRight: WKSwipeGestureRecognizer!
-    @IBOutlet var SwipeLeft: WKSwipeGestureRecognizer!
-    
-    @IBOutlet var Results_label: WKInterfaceLabel!  //results title
-    @IBOutlet var Accuracy_label: WKInterfaceLabel! //Accuracy result
-    @IBOutlet var Round_label: WKInterfaceLabel!  //Rounds played result
-    
-    @IBOutlet var Restart_button: WKInterfaceButton! //Back to main menu button
-    
-    //takes away 1st instruction screen after 1st tap and shows the 2nd paragraph
-    @IBAction func InitialTap(_ sender: Any) {
-        Welcome.setHidden(true)
-        Initial.setHidden(true)
-        Instructions.setHidden(false)
-    }
-    
-    //Takes away 2nd paragrpah and shows flower guide
-    @IBAction func InstructionsTap(_ sender: Any) {
-        Instructions.setHidden(true)
-        choose_guide()
-        Tap.isEnabled = true
+    // --------------------- TIMER ----------------------------
+    @objc func sessionCounter(){
+        if (inGame == false){
+            gameLengthTimer.invalidate()
+        }
+        lotusTimePlayed += 0.1
         
-        // send data (right before they look at screen to memorize)
-        sendData(what: "start game", correct: "N/A", settings: total_rounds)
     }
     
-    //randomly chooses memorization set
-    @objc func choose_guide(){
-        let number = Int.random(in: 1 ..< 25)
-        if (number == 1){
-            Main_Pic.setImageNamed("flower_guide")
-            up = "red"
-            right = "green"
-            down = "yellow"
-            left = "blue"
-        }
-        else if (number == 2){
-            Main_Pic.setImageNamed("flower_guide2")
-            up = "red"
-            right = "green"
-            down = "blue"
-            left = "yellow"
-        }
-        else if (number == 3){
-            Main_Pic.setImageNamed("flower_guide3")
-            up = "red"
-            right = "yellow"
-            down = "green"
-            left = "blue"
-        }
-        else if (number == 4){
-            Main_Pic.setImageNamed("flower_guide4")
-            up = "red"
-            right = "blue"
-            down = "green"
-            left = "yellow"
-        }
-        else if (number == 5){
-            Main_Pic.setImageNamed("flower_guide5")
-            up = "red"
-            right = "yellow"
-            down = "blue"
-            left = "green"
-        }
-        else if (number == 6){
-            Main_Pic.setImageNamed("flower_guide6")
-            up = "red"
-            right = "blue"
-            down = "yellow"
-            left = "green"
-        }
-        else if (number == 7){
-            Main_Pic.setImageNamed("flower_guide7")
-            up = "blue"
-            right = "green"
-            down = "yellow"
-            left = "red"
-        }
-        else if (number == 8){
-            Main_Pic.setImageNamed("flower_guide8")
-            up = "blue"
-            right = "yellow"
-            down = "green"
-            left = "red"
-        }
-        else if (number == 9){
-            Main_Pic.setImageNamed("flower_guide9")
-            up = "blue"
-            right = "yellow"
-            down = "red"
-            left = "green"
-        }
-        else if (number == 10){
-            Main_Pic.setImageNamed("flower_guide10")
-            up = "blue"
-            right = "green"
-            down = "red"
-            left = "yellow"
-        }
-        else if (number == 11){
-            Main_Pic.setImageNamed("flower_guide11")
-            up = "blue"
-            right = "red"
-            down = "yellow"
-            left = "green"
-        }
-        else if (number == 12){
-            Main_Pic.setImageNamed("flower_guide12")
-            up = "blue"
-            right = "red"
-            down = "green"
-            left = "yellow"
-        }
-        else if (number == 13){
-            Main_Pic.setImageNamed("flower_guide13")
-            up = "green"
-            right = "blue"
-            down = "yellow"
-            left = "red"
-        }
-        else if (number == 14){
-            Main_Pic.setImageNamed("flower_guide14")
-            up = "green"
-            right = "yellow"
-            down = "blue"
-            left = "red"
-        }
-        else if (number == 15){
-            Main_Pic.setImageNamed("flower_guide15")
-            up = "green"
-            right = "yellow"
-            down = "red"
-            left = "blue"
-        }
-        else if (number == 16){
-            Main_Pic.setImageNamed("flower_guide16")
-            up = "green"
-            right = "blue"
-            down = "red"
-            left = "yellow"
-        }
-        else if (number == 17){
-            Main_Pic.setImageNamed("flower_guide17")
-            up = "green"
-            right = "red"
-            down = "yellow"
-            left = "blue"
-        }
-        else if (number == 18){
-            Main_Pic.setImageNamed("flower_guide18")
-            up = "green"
-            right = "red"
-            down = "blue"
-            left = "yellow"
-        }
-        else if (number == 19){
-            Main_Pic.setImageNamed("flower_guide19")
-            up = "yellow"
-            right = "blue"
-            down = "red"
-            left = "green"
-        }
-        else if (number == 20){
-            Main_Pic.setImageNamed("flower_guide20")
-            up = "yellow"
-            right = "green"
-            down = "red"
-            left = "blue"
-        }
-        else if (number == 21){
-            Main_Pic.setImageNamed("flower_guide21")
-            up = "yellow"
-            right = "red"
-            down = "blue"
-            left = "green"
-        }
-        else if (number == 22){
-            Main_Pic.setImageNamed("flower_guide22")
-            up = "yellow"
-            right = "red"
-            down = "green"
-            left = "blue"
-        }
-        else if (number == 23){
-            Main_Pic.setImageNamed("flower_guide23")
-            up = "yellow"
-            right = "blue"
-            down = "green"
-            left = "red"
-        }
-        else if (number == 24){
-            Main_Pic.setImageNamed("flower_guide24")
-            up = "yellow"
-            right = "green"
-            down = "blue"
-            left = "red"
-        }
-        Main_Pic.setHidden(false)
-    }
-    
-    
-    
-    //resets all values and returns to main menu
-    @IBAction func Restart_button_Action() {
-        Results_label.setHidden(true)
-        Accuracy_label.setHidden(true)
-        Round_label.setHidden(true)
-        Restart_button.setHidden(true)
-        Welcome.setHidden(false)
-        Initial.setHidden(false)
-        current_round = 0
-        press_time = 0.0
-        total_press_time = 0.0
-        successful_swipes = 0.0
-        total_swipes = 0.0
-        seconds = 30.0
-        total_rounds = 10
-        WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Main Menu"])
-    }
-    
-    // holding down on white
-    @objc func counter(){
-        Main_Pic.setAlpha(CGFloat(seconds/30.0))
-        seconds -= 1
-        if (seconds <= 0){
-            timer.invalidate()
-        }
-    }
-    
-    // colored flower fading in
-    @objc func counter_open(){
-        Main_Pic.setAlpha(CGFloat(seconds/10.0))
-        seconds += 1
-        if (seconds >= 10){
-            timer_open.invalidate()
-            //longPress.isEnabled = false
-            SwipeUp.isEnabled = true
-            SwipeDown.isEnabled = true
-            SwipeRight.isEnabled = true
-            SwipeLeft.isEnabled = true
-        }
-    }
-    
-    //white flower fading in
-    @objc func counter_reset(){
-        Main_Pic.setAlpha(CGFloat(seconds/10.0))
-        seconds += 1
-        if (seconds >= 10){
-            timer_reset.invalidate()
-            //longPress.isEnabled = true
-            SwipeUp.isEnabled = false
-            SwipeDown.isEnabled = false
-            SwipeRight.isEnabled = false
-            SwipeLeft.isEnabled = false
-            seconds = 0
-            white = true
-            
-        }
-    }
-    
-    @objc func counter_press(){
-        press_time += 0.1
-    }
-    
-    
-//    @IBAction func longPressAction(_ gestureRecognizer: WKLongPressGestureRecognizer) {
-//        if gestureRecognizer.state == .began{
-//            timer_press = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_press), userInfo: nil, repeats: true)
-//            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter), userInfo: nil, repeats: true)
-//            //DispatchQueue.main.asyncAfter(1.0)
-//        }
-//        if gestureRecognizer.state == .ended{
-//            seconds = 0
-//            Main_Pic.setAlpha(0.0)
-//            randomize_color()
-//            timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
-//            timer_press.invalidate()
-//            total_press_time += press_time
-//            press_time = 0
-//        }
-//    }
-    
-    func toResults(){
-        Welcome.setHidden(true)
-        Initial.setHidden(true)
-        Instructions.setHidden(true)
-        
-        Tap.isEnabled = false
-        
-        SwipeUp.isEnabled = false
-        SwipeDown.isEnabled = false
-        SwipeRight.isEnabled = false
-        SwipeLeft.isEnabled = false
-        Main_Pic.setHidden(true)
-        Results_label.setHidden(false)
-        Accuracy_label.setText("Accuracy: " + String(format: "%.2f", (successful_swipes/total_swipes)*100) + "%")
-        Accuracy_label.setHidden(false)
-        Round_label.setText("Rounds Played: " + String(current_round))
-        Round_label.setHidden(false)
-        Restart_button.setHidden(false)
-        
-        // send data
-        sendData(what: "end game", correct: "N/A", settings: total_rounds, lotusRoundsPlayed: current_round)
-    }
-    
-    @objc func reset(){
-        current_round += 1
-        print(current_round)
-        print(total_rounds)
-        if (current_round >= total_rounds){
-            toResults()
-        }
-        else{
-            Main_Pic.setImageNamed("lotus_closed")
-            Main_Pic.setAlpha(0.0)
-            seconds = 0
-            timer_reset = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_reset), userInfo: nil, repeats: true)
-        }
-    }
-    
-    //chooses a random color to show
-    @objc func randomize_color(){
-        let number = Int.random(in: 1 ..< 5)
-        if (number == 1){
-            current_image = "red"
-            Main_Pic.setImageNamed("lotus_red")
-        }
-        else if (number == 2){
-            current_image = "green"
-            Main_Pic.setImageNamed("lotus_green")
-        }
-        else if (number == 3){
-            current_image = "blue"
-            Main_Pic.setImageNamed("lotus_blue")
-        }
-        else {
-            current_image = "yellow"
-            Main_Pic.setImageNamed("lotus_yellow")
-        }
-    }
-    
-    
-    // After tapping on lotus reset and disable tap
-    @IBAction func TapAction(_ sender: Any) {
-        if white{
-            
-            white = false
-            seconds = 0
-            Main_Pic.setAlpha(0.0)
-            randomize_color()
-            timer_open = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.counter_open), userInfo: nil, repeats: true)
-        }
-        else if (current_image == "guide"){
-            
-            current_image = "N/A"
-            reset()
-            current_round = 0
-        }
-    }
-    
-    
-    @IBAction func SwipeRightAction(_ sender: Any) {
-        if (current_image == right){
-            WKInterfaceDevice.current().play(.success)
-            successful_swipes += 1
-            total_swipes += 1
-            reset()
-            sendData(what: "swipe", correct: "true")
-        }
-        else{
-            WKInterfaceDevice.current().play(.failure)
-            total_swipes += 1
-            sendData(what: "swipe", correct: "false")
-        }
-    }
-    @IBAction func SwipeUpAction(_ sender: Any) {
-        if (current_image == up){
-            WKInterfaceDevice.current().play(.success)
-            successful_swipes += 1
-            total_swipes += 1
-            reset()
-            sendData(what: "swipe", correct: "true")
-        }
-        else{
-            WKInterfaceDevice.current().play(.failure)
-            total_swipes += 1
-            sendData(what: "swipe", correct: "false")
-        }
-    }
-    @IBAction func SwipeDownAction(_ sender: Any) {
-        if (current_image == down){
-            WKInterfaceDevice.current().play(.success)
-            successful_swipes += 1
-            total_swipes += 1
-            reset()
-            sendData(what: "swipe", correct: "true")
-        }
-        else{
-            WKInterfaceDevice.current().play(.failure)
-            total_swipes += 1
-            sendData(what: "swipe", correct: "false")
-        }
-    }
-    @IBAction func SwipeLeftAction(_ sender: Any) {
-        if (current_image == left){
-            WKInterfaceDevice.current().play(.success)
-            successful_swipes += 1
-            total_swipes += 1
-            reset()
-            sendData(what: "swipe", correct: "true")
-        }
-        else{
-            WKInterfaceDevice.current().play(.failure)
-            total_swipes += 1
-            sendData(what: "swipe", correct: "false")
-        }
-    }
-    
+    // --------------------- WC SESSION ------------------------
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
+    // --------------------- GAMEPLAY --------------------------
+    func randomizeImages(palette: Array<Any>, randomColors: Bool){
+        var shape : Set<Int> = [1,2,3,4]
+        var color : Set<Int> = [0,1,2,3]
+        
+        topTile = (theme + "_")
+        rightTile = (theme + "_")
+        leftTile = (theme + "_")
+        bottomTile = (theme + "_")
+        
+        var chosen = shape.randomElement()!
+        topTile += String(chosen)
+        if (randomColors == false){
+            topColor = palette[(chosen - 1)] as! UIColor
+        }
+        else{
+            let chosenColor = color.randomElement()!
+            topColor = palette[chosenColor] as! UIColor
+            color.remove(chosenColor)
+        }
+        self.topImage.setTintColor(topColor)
+        shape.remove(chosen)
+        
+        chosen = shape.randomElement()!
+        leftTile += String(chosen)
+        if (randomColors == false){
+            leftColor = palette[(chosen - 1)] as! UIColor
+        }
+        else{
+            let chosenColor = color.randomElement()!
+            leftColor = palette[chosenColor] as! UIColor
+            color.remove(chosenColor)
+        }
+        self.leftImage.setTintColor(leftColor)
+        shape.remove(chosen)
+        
+        chosen = shape.randomElement()!
+        rightTile += String(chosen)
+        if (randomColors == false){
+            rightColor = palette[(chosen - 1)] as! UIColor
+        }
+        else{
+            let chosenColor = color.randomElement()!
+            rightColor = palette[chosenColor] as! UIColor
+            color.remove(chosenColor)
+        }
+        self.rightImage.setTintColor(rightColor)
+        shape.remove(chosen)
     
-    func sendData(game : String = "lotus", what : String, correct : String, settings: Int = total_rounds, lotusRoundsPlayed : Int = 0){
+        chosen = shape.randomElement()!
+        bottomTile += String(chosen)
+        if (randomColors == false){
+            bottomColor = palette[(chosen - 1)] as! UIColor
+        }
+        else{
+            let chosenColor = color.randomElement()!
+            bottomColor = palette[chosenColor] as! UIColor
+            color.remove(chosenColor)
+        }
+        self.bottomImage.setTintColor(bottomColor)
+        shape.remove(chosen)
+    }
+    
+    func setTiles(){
+        topImage.setImageNamed(topTile)
+        leftImage.setImageNamed(leftTile)
+        rightImage.setImageNamed(rightTile)
+        bottomImage.setImageNamed(bottomTile)
+    }
+
+    
+    func randomizeGame(){
+        let number = Int.random(in: 1 ..< 5)
+        if (number == 1){
+            current = topTile
+            lotusGameImage.setImageNamed(topTile)
+            lotusGameImage.setTintColor(topColor)
+        }
+        else if (number == 2){
+            current = rightTile
+            lotusGameImage.setImageNamed(rightTile)
+            lotusGameImage.setTintColor(rightColor)
+        }
+        else if (number == 3){
+            current = leftTile
+            lotusGameImage.setImageNamed(leftTile)
+            lotusGameImage.setTintColor(leftColor)
+        }
+        else {
+            current = bottomTile
+            lotusGameImage.setImageNamed(bottomTile)
+            lotusGameImage.setTintColor(bottomColor)
+        }
+    }
+    
+    func checkDirection(direction: String){
+        if (direction == "up"){
+            if (current == topTile){
+                resetRound()
+                // haptic feedback, reset to current, send data
+                sendData(what: "swipe", correct: "true")
+            }
+            else{
+                if (current != (theme + "_0")){
+                    wrongCount += 1
+                    sendData(what: "swipe", correct: "false")
+                }
+                
+                // send data, haptic feedback
+            }
+        }
+        else if (direction == "right"){
+            if (current == rightTile){
+                resetRound()
+                // do something
+                sendData(what: "swipe", correct: "true")
+            }
+            else{
+                if (current != (theme + "_0")){
+                   wrongCount += 1
+                    sendData(what: "swipe", correct: "false")
+                }
+                
+                
+            }
+        }
+        else if (direction == "left"){
+            if (current == leftTile){
+                resetRound()
+                // do something
+                sendData(what: "swipe", correct: "true")
+            }
+            else{
+                if (current != (theme + "_0")){
+                    wrongCount += 1
+                    sendData(what: "swipe", correct: "false")
+                }
+            }
+        }
+        else if (direction == "down"){
+            if (current == bottomTile){
+                resetRound()
+                // do something
+                sendData(what: "swipe", correct: "true")
+            }
+            else{
+                if (current != (theme + "_0")){
+                    wrongCount += 1
+                    sendData(what: "swipe", correct: "false")
+                }
+            }
+        }
+    }
+    
+    func resetRound(){
+        if (wrongCount > 3){
+            lotusArray[3] += 1
+        }
+        else{
+            lotusArray[wrongCount] += 1
+        }
+        wrongCount = 0
+        if (lotusCurrentRound >= lotusTotalRounds){
+            endGame()
+        }
+        else{
+            lotusCurrentRound += 1
+            current = theme + "_0"
+            lotusGameImage.setImageNamed(current)
+        }
+    }
+    
+    func endGame(){
+        inGame = false
+        sendData(what: "end game", lotusRoundsPlayed: lotusCurrentRound, timePlayed: lotusTimePlayed, missArray: lotusArray)
+        WKInterfaceController.reloadRootControllers(withNames: ["Lotus Results"], contexts: ["lotus game end"])
+        lotusTotalRounds = 10
+    }
+    
+    func sendData(game : String = "lotus", what : String, correct : String = "N/A", settings : Int = lotusTotalRounds, lotusRoundsPlayed : Int = 0, timePlayed : Double = 0.0, missArray : [Int] = [0,0,0,0]){
         let session = WCSession.default
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
             let date = Date()
-            
             let data = ["game": game,
                         "what": what,
                         "correct": correct,
                         "date": date,
                         "time": timestamp,
                         "roundSettings": settings,
-                        "lotusRoundsPlayed": lotusRoundsPlayed] as [String : Any]
+                        "lotusRoundsPlayed": lotusRoundsPlayed,
+                        "timePlayed": timePlayed,
+                        "missArray": missArray
+                        ] as [String : Any]
             session.transferUserInfo(data)
-            
         }
     }
+    
 }

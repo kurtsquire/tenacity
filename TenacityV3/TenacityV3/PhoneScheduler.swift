@@ -12,6 +12,10 @@ import UserNotifications
 
 class PhoneScheduler: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var month: Int? = nil
     var day: Int? = nil
     var hour: Int? = nil
@@ -44,6 +48,8 @@ class PhoneScheduler: UIViewController {
     
     
     override func viewDidLoad() {
+        //datePicker.backgroundColor = UIColor.white
+        datePicker.setValue(UIColor.white, forKey: "textColor")
         testUserDefaults()
         
         dateLabel.text = dateString

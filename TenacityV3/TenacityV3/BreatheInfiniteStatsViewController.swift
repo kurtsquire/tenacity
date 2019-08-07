@@ -11,13 +11,16 @@ import RealmSwift
 
 class BreatheInfiniteStatsViewController: UIViewController{
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var minuteGoalLabel: UILabel!
     @IBOutlet weak var timePlayedLabel: UILabel!
     @IBOutlet weak var totalBreathsTakenLabel: UILabel!
     @IBOutlet weak var averageBreathLengthLabel: UILabel!
     @IBOutlet weak var setsPlayedLabel: UILabel!
     @IBOutlet weak var cyclesLabel: UILabel!
+    @IBOutlet weak var breatheInfiniteLabel: UILabel!
     
+    lazy var breatheIGraphCenter = breatheInfiniteLabel.center
     
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
@@ -54,12 +57,14 @@ class BreatheInfiniteStatsViewController: UIViewController{
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
+        
+        refreshRealmData()
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         
-        refreshRealmData()
+        //refreshRealmData()
     }
     
     
@@ -112,11 +117,19 @@ class BreatheInfiniteStatsViewController: UIViewController{
         let breatheIAvgWeek = ilengthtotalw/Double(isessionsw)
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "min"
+            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
             self.timePlayedLabel.text = "Week: " + String(Int(breatheITimeWeek/60)) + " min" + "\nToday: " + String(Int(breatheITimeToday)) + " secs"
             self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
             self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)
             self.setsPlayedLabel.text = "Today:" + String(breatheITotalToday) + "\nThis Week: " + String(breatheITotalWeek)
+            
+            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
+            if (breatheIGraphEndAngle == 0){
+                breatheIGraphEndAngle = 0.01
+            }
+            let breatheICircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: breatheIGraphEndAngle, center: self.breatheIGraphCenter, lineWidth: circleGraphWidth, outlineColor: breatheIGraphOutColor, progressColor: breatheIGraphProgColor)
+            self.mainView.layer.addSublayer(breatheICircleGraph.outlineLayer)
+            self.mainView.layer.addSublayer(breatheICircleGraph.progressLayer)
         }
     }
 }

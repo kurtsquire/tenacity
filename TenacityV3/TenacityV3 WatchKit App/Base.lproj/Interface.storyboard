@@ -47,7 +47,7 @@
                                     <label width="79" alignment="center" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
-                                    <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus_closed" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
+                                    <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus_0" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
                                 </items>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>

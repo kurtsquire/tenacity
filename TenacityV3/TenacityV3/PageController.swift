@@ -11,6 +11,9 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     lazy var orderedViewControllers: [UIViewController] = {
         

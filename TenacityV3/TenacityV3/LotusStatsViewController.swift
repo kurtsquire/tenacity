@@ -11,11 +11,14 @@ import RealmSwift
 
 class LotusStatsViewController: UIViewController{
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var minuteGoalLabel: UILabel!
     @IBOutlet weak var timePlayedLabel: UILabel!
     @IBOutlet weak var roundsPlayedLabel: UILabel!
     @IBOutlet weak var swipesLabel: UILabel!
+    @IBOutlet weak var lotusSwipeLabel: UILabel!
     
+    lazy var lotusGraphCenter = lotusSwipeLabel.center
     
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
@@ -45,12 +48,14 @@ class LotusStatsViewController: UIViewController{
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
+        
+        refreshRealmData()
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         
-        refreshRealmData()
+        //refreshRealmData()
     }
     
     
@@ -63,6 +68,7 @@ class LotusStatsViewController: UIViewController{
         
         var lotusRoundsToday = 0
         var lotusRoundsWeek = 0
+        var lotusTimeToday = 0.0
         
         //calculating lotus rounds today
         for item in lx{
@@ -74,9 +80,13 @@ class LotusStatsViewController: UIViewController{
         }
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = "not yet"
+            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
             //self.timePlayedLabel.text = "Week: " + String(breatheFTimeWeek) + "\nToday: " + String(breatheFTimeToday)
             self.roundsPlayedLabel.text = "Week:\n" + String(lotusRoundsWeek) + "\nToday:\n" + String(lotusRoundsToday)
+            
+            let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
+            self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)
+            self.mainView.layer.addSublayer(lotusCircleGraph.progressLayer)
         }
         
     }
