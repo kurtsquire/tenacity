@@ -22,6 +22,8 @@ class GameDataModel: Object{
     //lotus
     @objc dynamic var lotusRoundsPlayed: Int = 0
     @objc dynamic var lotusRoundsSetting: Int = 0
+    @objc dynamic var lotusTimePlayed: Double = 0.0
+    let lotusCorrectList = List<Int>()
     
     //breathe focus
     @objc dynamic var breatheFTimePlayed: Double = 0.0

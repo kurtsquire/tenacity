@@ -348,188 +348,156 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     //    //handles data we get from watch
-    //    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-    //        DispatchQueue.main.async{
-    //
-    //            var displayText = ""
-    //            var time = ""
-    //            var what = ""
-    //            var correct = ""
-    //            var settings = ""
-    //            //asks what value is in data
-    //            if let game = userInfo["game"] as? String {
-    //                if let text1 = userInfo["what"] as? String {
-    //                    what = text1
-    //                }
-    //                if let text2 = userInfo["correct"] as? String {
-    //                    correct = text2
-    //                }
-    //                if let text3 = userInfo["time"] as? String {
-    //                    time = text3
-    //                }
-    //                if let text4 = userInfo["settings"] as? String {
-    //                    settings = text4
-    //                }
-    //                displayText = (game + "\n" + what + "\n" + correct + "\n" + time + "\n" + settings + ";;;\n")
-    //
-    //                self.data.append(displayText)
-    //
-    //                NSKeyedArchiver.archiveRootObject(self.data, toFile: self.savePath)
-    //            }
-    //
-    //            else{
-    //                self.textView.text += "got something but cant read it"
-    //            }
-    //
-    //        }
-    //    }
-    
-    
+
     //function to recieve user info --> also used to store received data into realm
     //NOTE TO SELF: edit code--> function has to many things going on here edit code to make it simple and modular
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        
-        //Initialize Realm instance
-        let realm = try! Realm()
-        
-        //recieve user info
-        //Unpack dictionary data into temp variables
-        //var time: Double
-        //var date: Date
-        //var what = ""
-        //var correct = ""
-        //var settings = ""
-        
-        //Asks what value is in data
-        if let game = userInfo["game"] as? String {
-            let what = userInfo["what"] as! String
-            let correct = userInfo["correct"] as! String
-            let date = userInfo["date"] as! Date
-            let time = userInfo["time"] as! Double
-            //let settings = userInfo["settings"] as! String
-            
-            //GameDataModel Realm Objects --> initialize new instances --> store data to save
-            let gameDataModel = GameDataModel()
-            gameDataModel.gameTitle = game
-            gameDataModel.gameDataType = what
-            gameDataModel.gameDataAccuracy = correct
-            gameDataModel.sessionDate = date
-            gameDataModel.sessionEpoch = time
-            //gameDataModel.gameSettings = settings
-            
-            
-            if (game == "lotus"){
-                let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
-                let lotusSettings = userInfo["roundSettings"] as? Int ?? 0 //new
-                
-                gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
-                gameDataModel.lotusRoundsSetting = lotusSettings //new
-                
-                saveEXP(addEXP: Int(5*lotusRoundsPlayed))
-                
-                // dictionary needs: game(String), timeEnd(Date), rounds(Int), accuracy(Double)
-                // if dailyDone (new var not made yet) != true then checkquest
-                // if check quest returns true
-                // give rewards, set dailyDone true, etc
-                
-                //if !(dailyQuestData["complete"] as! Bool){
-                //    dailyQuestData["complete"] = dailyQuest.checkQuest(data: qdata)
-                //}
-                saveQuest()
-
-            }
-            else if (game == "breathe focus"){
-                let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
-                let breatheFBreathLength = userInfo["breatheFBreathLength"] as? Double ?? 0.0
-                let breatheFCorrectSets = userInfo["breatheFCorrectSets"] as? Int ?? 0
-                let breatheFTotalSets = userInfo["breatheFTotalSets"] as? Int ?? 0
-                
-                let breatheFCycleSettings = userInfo["breatheFCycleSettings"] as? Int ?? 0 //new
-                let breatheFTimeSettings = userInfo["breatheFTimeSettings"] as? Int ?? 0 //new
-                
-                gameDataModel.breatheFTimePlayed = breatheFTimePlayed
-                gameDataModel.breatheFBreathLength = breatheFBreathLength
-                gameDataModel.breatheFCorrectSets = breatheFCorrectSets
-                gameDataModel.breatheFTotalSets = breatheFTotalSets
-                
-                gameDataModel.breatheFCycleSettings = breatheFCycleSettings //new
-                gameDataModel.breatheFTimeSettings = breatheFTimeSettings //new
-                
-                saveEXP(addEXP: Int(breatheFTimePlayed))
-                
-                // dictionary needs: game(String), timeEnd(Date), cycle(Int), timePlayed(Int), correct(Int), total(Int)
-                // if dailyDone (new var not made yet) != true then checkquest
-                // if check quest returns true
-                // give rewards, set dailyDone true, etc
-                
-                let qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
-                
-                if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
-                    if dailyQuest.checkQuest(data: qdata){
-                        dailyQuestData["complete"] = true
-                        saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        //give reward
-                    }
-                }
-                saveQuest()
-                
-            }
-            else if (game == "breathe infinite"){
-                let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
-                let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
-                let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
-                let breatheICycleDict = userInfo["breatheICycleDict"] as? [String : Any] ?? [:]
-                
-                var templist = [0,0,0,0,0,0,0,0,0,0,0]
-                if !(breatheICycleDict.count == 0){
-                    for (key,value) in breatheICycleDict{
-                        if (Int(key)! >= 10){
-                            templist[10] += value as! Int
-                        }
-                        else{
-                            templist[Int(key)!] = value as! Int
-                        }
-                    }
-                }
-                print(templist)
-                
-                gameDataModel.breatheITimePlayed = breatheITimePlayed
-                gameDataModel.breatheIBreathLength = breatheIBreathLength
-                gameDataModel.breatheITotalSets = breatheITotalSets
-                gameDataModel.breatheICycleList.append(objectsIn: templist)
-                //print(gameDataModel.breatheICycleList)
-                
-                saveEXP(addEXP: Int(breatheITimePlayed))
-                
-                // dictionary needs: game(String), timeEnd(Date), timePlayed(Int), cycle(Dictionary<String,Int>)
-                // if dailyDone (new var not made yet) != true then checkquest
-                // if check quest returns true
-                // give rewards, set dailyDone true, etc
-                saveQuest()
-                
-            }
-            
-            //Write to Realm
-            
-            //RealmManager.writeObject(gameDataModel)
-            
-            do{
-                try realm.write {
-                    realm.add(gameDataModel)
-                }
-            }catch{
-                print("Error saving data to Realm \(error)")
-            }
-            
-        }
-        
-//        // firebase connection
-//        let db = Database.database().reference()
+//    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
 //
-//        db.setValue(what)
-        
-        
-    }
+//        //Initialize Realm instance
+//        let realm = try! Realm()
+//
+//        //Asks what value is in data
+//        if let game = userInfo["game"] as? String {
+//            let what = userInfo["what"] as! String
+//            let correct = userInfo["correct"] as! String
+//            let date = userInfo["date"] as! Date
+//            let time = userInfo["time"] as! Double
+//            //let settings = userInfo["settings"] as! String
+//
+//            //GameDataModel Realm Objects --> initialize new instances --> store data to save
+//            let gameDataModel = GameDataModel()
+//            gameDataModel.gameTitle = game
+//            gameDataModel.gameDataType = what
+//            gameDataModel.gameDataAccuracy = correct
+//            gameDataModel.sessionDate = date
+//            gameDataModel.sessionEpoch = time
+//
+//            if (game == "lotus"){
+//                let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
+//                let lotusSettings = userInfo["roundSettings"] as? Int ?? 0 //new
+//                let lotusTimePlayed = userInfo["timePlayed"] as? Double ?? 0
+//                let lotusMissArray = userInfo["missArray"] as? [Int] ?? []
+//
+//                print(lotusRoundsPlayed)
+//                print(lotusSettings)
+//                print(lotusTimePlayed)
+//                print(lotusMissArray[0])
+//
+//                gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
+//                gameDataModel.lotusRoundsSetting = lotusSettings //new
+//                gameDataModel.lotusTimePlayed = lotusTimePlayed
+//
+//                gameDataModel.lotusCorrectList.append(objectsIn: lotusMissArray)
+//                print(gameDataModel.lotusRoundsPlayed)
+//                print(gameDataModel.lotusRoundsSetting)
+//                print(gameDataModel.lotusTimePlayed)
+//                print(gameDataModel.lotusCorrectList)
+//
+//                saveEXP(addEXP: Int(5*lotusRoundsPlayed))
+//
+//                // dictionary needs: game(String), timeEnd(Date), rounds(Int), accuracy(Double)
+//                // if dailyDone (new var not made yet) != true then checkquest
+//                // if check quest returns true
+//                // give rewards, set dailyDone true, etc
+//
+//                //if !(dailyQuestData["complete"] as! Bool){
+//                //    dailyQuestData["complete"] = dailyQuest.checkQuest(data: qdata)
+//                //}
+//                saveQuest()
+//
+//            }
+//            else if (game == "breathe focus"){
+//                let breatheFTimePlayed = userInfo["breatheFTimePlayed"] as? Double ?? 0.0
+//                let breatheFBreathLength = userInfo["breatheFBreathLength"] as? Double ?? 0.0
+//                let breatheFCorrectSets = userInfo["breatheFCorrectSets"] as? Int ?? 0
+//                let breatheFTotalSets = userInfo["breatheFTotalSets"] as? Int ?? 0
+//
+//                let breatheFCycleSettings = userInfo["breatheFCycleSettings"] as? Int ?? 0 //new
+//                let breatheFTimeSettings = userInfo["breatheFTimeSettings"] as? Int ?? 0 //new
+//
+//                gameDataModel.breatheFTimePlayed = breatheFTimePlayed
+//                gameDataModel.breatheFBreathLength = breatheFBreathLength
+//                gameDataModel.breatheFCorrectSets = breatheFCorrectSets
+//                gameDataModel.breatheFTotalSets = breatheFTotalSets
+//
+//                gameDataModel.breatheFCycleSettings = breatheFCycleSettings //new
+//                gameDataModel.breatheFTimeSettings = breatheFTimeSettings //new
+//
+//                saveEXP(addEXP: Int(breatheFTimePlayed))
+//
+//                // dictionary needs: game(String), timeEnd(Date), cycle(Int), timePlayed(Int), correct(Int), total(Int)
+//                // if dailyDone (new var not made yet) != true then checkquest
+//                // if check quest returns true
+//                // give rewards, set dailyDone true, etc
+//
+//                let qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
+//
+//                if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
+//                    if dailyQuest.checkQuest(data: qdata){
+//                        dailyQuestData["complete"] = true
+//                        saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
+//                        //give reward
+//                    }
+//                }
+//                saveQuest()
+//
+//            }
+//            else if (game == "breathe infinite"){
+//                let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
+//                let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
+//                let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
+//                let breatheICycleDict = userInfo["breatheICycleDict"] as? [String : Any] ?? [:]
+//
+//                var templist = [0,0,0,0,0,0,0,0,0,0,0]
+//                if !(breatheICycleDict.count == 0){
+//                    for (key,value) in breatheICycleDict{
+//                        if (Int(key)! >= 10){
+//                            templist[10] += value as! Int
+//                        }
+//                        else{
+//                            templist[Int(key)!] = value as! Int
+//                        }
+//                    }
+//                }
+//                print(templist)
+//
+//                gameDataModel.breatheITimePlayed = breatheITimePlayed
+//                gameDataModel.breatheIBreathLength = breatheIBreathLength
+//                gameDataModel.breatheITotalSets = breatheITotalSets
+//                gameDataModel.breatheICycleList.append(objectsIn: templist)
+//                //print(gameDataModel.breatheICycleList)
+//
+//                saveEXP(addEXP: Int(breatheITimePlayed))
+//
+//                // dictionary needs: game(String), timeEnd(Date), timePlayed(Int), cycle(Dictionary<String,Int>)
+//                // if dailyDone (new var not made yet) != true then checkquest
+//                // if check quest returns true
+//                // give rewards, set dailyDone true, etc
+//                saveQuest()
+//
+//            }
+//
+//            //Write to Realm
+//
+//            //RealmManager.writeObject(gameDataModel)
+//
+//            do{
+//                try realm.write {
+//                    realm.add(gameDataModel)
+//                }
+//            }catch{
+//                print("Error saving data to Realm \(error)")
+//            }
+//
+//        }
+//
+////        // firebase connection
+////        let db = Database.database().reference()
+////
+////        db.setValue(what)
+//
+//
+//    }
     
     //shows UI inforation we want to show (daily & weekly stats)
     func refreshRealmData(){
@@ -560,15 +528,27 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         
         var lotusRoundsToday = 0
+        var lotusTimePlayedToday = 0.0
+        var lotusCorrectToday = [0,0,0,0]
         var lotusRoundsWeek = 0
+        var lotusTimePlayedWeek = 0.0
+        var lotusCorrectWeek = [0,0,0,0]
         
         //calculating lotus rounds today
         for item in lx{
             lotusRoundsToday += item.lotusRoundsPlayed
+            lotusTimePlayedToday += item.lotusTimePlayed
+            for i in 0..<item.lotusCorrectList.count{
+                lotusCorrectToday[i] += item.lotusCorrectList[i]
+            }
         }
         //calculating lotus rounds this week
         for item in lw{
             lotusRoundsWeek += item.lotusRoundsPlayed
+            lotusTimePlayedWeek += item.lotusTimePlayed
+            for i in 0..<item.lotusCorrectList.count{
+                lotusCorrectWeek[i] += item.lotusCorrectList[i]
+            }
         }
         
         
@@ -667,7 +647,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         // Temporarily display everything in 1 big textview
         var y = "everything: " + String(all.count) + "\n"
-        let lstring = "\nLotus: " + String(la.count) + "\nWeek:\nRounds: " + String(lotusRoundsWeek) + "\nToday: \nRounds: " + String(lotusRoundsToday)
+        let lstring = "\nLotus: " + String(la.count) + "\nWeek:\nRounds: " + String(lotusRoundsWeek) + "\nToday: \nRounds: " + String(lotusRoundsToday) + "\nTime PlayedToday: " + String(lotusTimePlayedToday) + "\nWeek: " + String(lotusTimePlayedWeek) + "\nMiss Today: " + String(lotusCorrectToday[0]) + String(lotusCorrectToday[1]) + String(lotusCorrectToday[2]) + String(lotusCorrectToday[3])
         let bfstring = "\nBreathe Focus: " + String(ba.count) + "\nWeek:\nTime Played: " + String(breatheFTimeWeek) + "\nTotal Breaths Taken: " + String(breatheFBreathsWeek) + "\nAvg Breath Length: " + String(breatheFAvgWeek) + "\nCorrect Sets: " + String(breatheFCorrectWeek) + "\nTotal Sets: " + String(breatheFTotalWeek) + "\nToday: \nTime Played: " + String(breatheFTimeToday) + "\nTotal Breaths Taken: " + String(breatheFBreathsToday) +  "\nAvg Breath Length: " + String(breatheFAvgToday) + "\nCorrect Sets: " + String(breatheFCorrectToday) + "\nTotal Sets: " + String(breatheFTotalToday)
         let bistring = "\nBreathe Infinite: " + String(fba.count) + "\nWeek:\nTime Played: " + String(breatheITimeWeek) + "\nTotal Breaths Taken: " + String(breatheIBreathsWeek) +  "\nAvg Breath Length: " + String(breatheIAvgWeek) + "\nTotal Sets: " + String(breatheITotalWeek) + "\nToday: \nTime Played: " + String(breatheITimeToday) + "\nTotal Breaths Taken: " + String(breatheIBreathsToday) +  "\nAvg Breath Length: " + String(breatheIAvgToday) + "\nTotal Sets: " + String(breatheITotalToday)
         y += lstring + "\n" + bfstring + "\n" + bistring

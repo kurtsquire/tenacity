@@ -237,7 +237,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
         let bfx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe focus", startTime)
         let bix = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe infinite", startTime)
-        //let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", gamename3, startTime)
+        let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", startTime)
     
         var breatheFTimeToday = 0.0
         var breatheITimeToday = 0.0
@@ -248,6 +248,9 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         }
         for item in bix{
             breatheITimeToday += item.breatheITimePlayed
+        }
+        for item in lx{
+            lotusTimeToday += item.lotusTimePlayed
         }
         
         DispatchQueue.main.async {
@@ -503,13 +506,26 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             gameDataModel.sessionDate = date
             gameDataModel.sessionEpoch = time
             
-            
             if (game == "lotus"){
                 let lotusRoundsPlayed = userInfo["lotusRoundsPlayed"] as? Int ?? 0
                 let lotusSettings = userInfo["roundSettings"] as? Int ?? 0 //new
+                let lotusTimePlayed = userInfo["timePlayed"] as? Double ?? 0
+                let lotusMissArray = userInfo["missArray"] as? [Int] ?? []
+                
+                print(lotusRoundsPlayed)
+                print(lotusSettings)
+                print(lotusTimePlayed)
+                print(lotusMissArray[0])
                 
                 gameDataModel.lotusRoundsPlayed = lotusRoundsPlayed
                 gameDataModel.lotusRoundsSetting = lotusSettings //new
+                gameDataModel.lotusTimePlayed = lotusTimePlayed
+                
+                gameDataModel.lotusCorrectList.append(objectsIn: lotusMissArray)
+                print(gameDataModel.lotusRoundsPlayed)
+                print(gameDataModel.lotusRoundsSetting)
+                print(gameDataModel.lotusTimePlayed)
+                print(gameDataModel.lotusCorrectList)
                 
                 saveEXP(addEXP: Int(5*lotusRoundsPlayed))
                 
@@ -550,7 +566,6 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 
                 let qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
                 
-
                 if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
                     if dailyQuest.checkQuest(data: qdata){
                         dailyQuestData["complete"] = true
@@ -559,15 +574,32 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     }
                 }
                 saveQuest()
+                
             }
             else if (game == "breathe infinite"){
                 let breatheITimePlayed = userInfo["breatheITimePlayed"] as? Double ?? 0.0
                 let breatheIBreathLength = userInfo["breatheIBreathLength"] as? Double ?? 0.0
                 let breatheITotalSets = userInfo["breatheITotalSets"] as? Int ?? 0
+                let breatheICycleDict = userInfo["breatheICycleDict"] as? [String : Any] ?? [:]
+                
+                var templist = [0,0,0,0,0,0,0,0,0,0,0]
+                if !(breatheICycleDict.count == 0){
+                    for (key,value) in breatheICycleDict{
+                        if (Int(key)! >= 10){
+                            templist[10] += value as! Int
+                        }
+                        else{
+                            templist[Int(key)!] = value as! Int
+                        }
+                    }
+                }
+                print(templist)
                 
                 gameDataModel.breatheITimePlayed = breatheITimePlayed
                 gameDataModel.breatheIBreathLength = breatheIBreathLength
                 gameDataModel.breatheITotalSets = breatheITotalSets
+                gameDataModel.breatheICycleList.append(objectsIn: templist)
+                //print(gameDataModel.breatheICycleList)
                 
                 saveEXP(addEXP: Int(breatheITimePlayed))
                 
@@ -578,6 +610,10 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 saveQuest()
                 
             }
+            
+            //Write to Realm
+            
+            //RealmManager.writeObject(gameDataModel)
             
             do{
                 try realm.write {
@@ -590,13 +626,10 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         }
     }
     
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         DispatchQueue.main.async{
             if activationState == .activated {
-                
                 if session.isWatchAppInstalled{
-                    //self.receivedDataTextView.text = "watch app is installed and is connected!"
                 }
             }
         }
@@ -608,5 +641,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         //WCSession.default().activate()   for multiple watches
     }
+    
+    
     
 }

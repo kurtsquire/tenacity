@@ -282,7 +282,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
-                
                 // send data, haptic feedback
             }
         }
