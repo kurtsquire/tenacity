@@ -25,7 +25,5 @@ class CompanionsViewController: UIViewController{
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // adds top bar back before we leave
-        //navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }

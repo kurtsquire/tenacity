@@ -17,18 +17,17 @@ class HelpViewController: UIViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // takes out top bar
+        // puts in top bar
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // adds top bar back before we leave
-        //navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        // takes out top bar again
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

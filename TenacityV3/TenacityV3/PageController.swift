@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+// for the "carousel style page"
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -51,7 +51,6 @@ class BreatheInfiniteStatsViewController: UIViewController{
         
         // updates date for today
         today = Date()
-        print(today.timeIntervalSince1970)
         startTime = calendar.startOfDay(for: today)
         
         //creates a date at the beginning of the week to compare

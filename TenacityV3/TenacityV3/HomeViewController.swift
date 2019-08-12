@@ -138,8 +138,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // adds top bar back before we leave
-        //navigationController?.setNavigationBarHidden(false, animated: false)
+        // take out the graph
     }
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
@@ -150,6 +149,8 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             session.delegate = self
             session.activate()
         }
+        // finds screen width for graph adaptation
+        screenWidth = mainView.frame.size.width
         
         // updates date for today
         today = Date()
@@ -159,10 +160,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
         
-        screenWidth = mainView.frame.size.width
         
-        
-       
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -178,9 +176,6 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         lvlLabel.text = "Lvl " + String(lvl + 1) // +1 so that you start lvl 1 not 0
         expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
         nudge1.text = dateString
-        
-        
-        
         
         
         if (baseEXP >= 900){
@@ -208,7 +203,6 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             expBar4.image = UIImage(named: "expUnfill")
         }
         else{}
-        
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
@@ -333,7 +327,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     func generateQuest(){
         let num = Int.random(in: 1 ... 60) // --------------------------------------------------- SET THIS TO 100 LATER ---------  TEMP 60 FOR NOW  --------------------------------------------------------------------------------------------------------------------------------------
         if (num <= 60){//Breathe Focus Quests
-            let num2 = Int.random(in: 1 ... 3)
+            let num2 = Int.random(in: 1 ... 3) // no longer want quest 4
             if (num2 == 1){//BF: Spend x minutes at rate y
                 let x = Int.random(in: 5 ... 15) // 5-15
                 let y = Int.random(in: 3 ... 8) // 3-8
