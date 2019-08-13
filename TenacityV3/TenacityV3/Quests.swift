@@ -239,7 +239,7 @@ class LotusQuest : Quest{
                     }
                 }
                 else if (self.objective == 1){
-                    if ((data["rounds"] as! Int) >= goalNum && (data["accuracy"] as! Double) == 1){
+                    if ((data["rounds"] as! Int) >= goalNum && (data["correct"] as! Int) == (data["rounds"] as! Int)){
                         complete = true
                     }
                 }

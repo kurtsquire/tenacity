@@ -81,6 +81,8 @@ class BreatheInfiniteStatsViewController: UIViewController{
         var ilengthtotalt = 0.0
         var isessionst = 0
         
+        var cyclesTodayArray = [0,0,0,0,0,0,0,0,0,0,0]
+        
         for item in bix{
             breatheITimeToday += item.breatheITimePlayed
             ilengthtotalt += item.breatheIBreathLength
@@ -91,7 +93,12 @@ class BreatheInfiniteStatsViewController: UIViewController{
                 breatheIBreathsToday += 1
             }
             breatheITotalToday += item.breatheITotalSets
+            
+            for i in 0..<item.breatheICycleList.count{
+                cyclesTodayArray[i] += item.breatheICycleList[i]
+            }
         }
+        
         let breatheIAvgToday = ilengthtotalt/Double(isessionst)
         
         //breathe Infinite stats week
@@ -121,6 +128,11 @@ class BreatheInfiniteStatsViewController: UIViewController{
             self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
             self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)
             self.setsPlayedLabel.text = "Today:" + String(breatheITotalToday) + "\nThis Week: " + String(breatheITotalWeek)
+            var a = "Breath Cycles  (Length: how many you have done)\n"
+            for i in 0..<cyclesTodayArray.count{
+                a += String(i) + ": " + String(cyclesTodayArray[i]) + ", "
+            }
+            self.cyclesLabel.text = a
             
             breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){
