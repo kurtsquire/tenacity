@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+workspace 'TenacityV3'
+
 target 'TenacityV3' do
 
   use_frameworks!
@@ -11,6 +13,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase'
 pod 'Firebase/Auth'
+pod 'Charts'
 
 end
 
