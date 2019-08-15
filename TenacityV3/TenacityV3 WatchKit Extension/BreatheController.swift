@@ -19,6 +19,11 @@ var inGame = true
 var totalBreaths = 0
 var averageFullBreatheTime = 3.5
 
+var breatheTheme = "classic"
+
+var breatheColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+var resetColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+
 
 class BreatheController: WKInterfaceController, WCSessionDelegate  {
     

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class LotusStatsViewController: UIViewController{
+class LotusStatsViewController: PhoneViewController{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var minuteGoalLabel: UILabel!

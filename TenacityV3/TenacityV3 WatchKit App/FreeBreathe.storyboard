@@ -91,7 +91,7 @@
                                 <label height="30" alignment="center" hidden="YES" text="5" id="oHD-uP-aYB">
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
-                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="BLl-42-gc2"/>
+                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="classic" contentMode="scaleAspectFit" id="BLl-42-gc2"/>
                             </items>
                             <gestureRecognizers>
                                 <longPressGestureRecognizer minimumPressDuration="0.20000000000000001" id="yrX-h3-Vpw">

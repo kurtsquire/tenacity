@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class GameSettingsViewController: UIViewController{
+class GameSettingsViewController: PhoneViewController{
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -23,5 +24,20 @@ class GameSettingsViewController: UIViewController{
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+    }
+    
+    @IBAction func lotus(_ sender: Any) {
+        sendData(theme: "heart")
+    }
+    @IBAction func squares(_ sender: Any) {
+        sendData(theme: "test")
+    }
+    
+    func sendData(theme : String){
+        let session = WCSession.default
+        if session.activationState == .activated{
+            let data = ["theme": theme] as [String : Any]
+            session.transferUserInfo(data)
+        }
     }
 }

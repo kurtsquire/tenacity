@@ -131,7 +131,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="fkg-uR-knb">
                             <items>
-                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathe" contentMode="scaleAspectFit" id="3F8-Ll-kkf"/>
+                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="classic" contentMode="scaleAspectFit" id="3F8-Ll-kkf"/>
                             </items>
                             <gestureRecognizers>
                                 <longPressGestureRecognizer minimumPressDuration="0.20000000000000001" id="p0v-PB-rjT">

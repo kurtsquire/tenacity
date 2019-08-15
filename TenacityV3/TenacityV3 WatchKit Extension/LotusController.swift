@@ -17,7 +17,8 @@ var lotusCurrentRound = 0
 var lotusTimePlayed = 0.0
 var lotusTotalSwipes = 0
 
-var theme = "lotus"
+var lotusTheme = "lotus"
+var lotusPalette = 0
 
 var topTile = ""
 var leftTile = ""
@@ -92,7 +93,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         checkDirection(direction: "down")
     }
     @IBAction func tapAction(_ sender: Any) {
-        let basic = theme + "_0"
+        let basic = lotusTheme + "_0"
         if (current == basic){
             wrongCount = 0
             randomizeGame()
@@ -122,7 +123,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     let customYellow = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
     let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
     
-    lazy var customColors = [customRed, customBlue, customYellow, customGreen]
+    lazy var customColors = [[customRed, customBlue, customYellow, customGreen]]
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -135,13 +137,14 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         }
         
         if ((context as? String) == "t2"){
-            randomizeImages(palette: customColors, randomColors: randomizeColorsBool)
+            testUserDefaults()
+            randomizeImages(palette: customColors[lotusPalette], randomColors: randomizeColorsBool)
             setTiles()
             gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.sessionCounter), userInfo: nil, repeats: true)
         }
         
         if ((context as? String) == "t3"){
-            current = theme + "_0"
+            current = lotusTheme + "_0"
         }
         
         if ((context as? String) == "lotus game end"){
@@ -175,15 +178,24 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     // --------------------- WC SESSION ------------------------
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
+    
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        print(lotusTheme)
+        lotusTheme = (userInfo["theme"] as? String)!
+        print(lotusTheme)
+        UserDefaults.standard.set(lotusTheme, forKey: "lotusTheme")
+    }
+
+    
     // --------------------- GAMEPLAY --------------------------
     func randomizeImages(palette: Array<Any>, randomColors: Bool){
         var shape : Set<Int> = [1,2,3,4]
         var color : Set<Int> = [0,1,2,3]
         
-        topTile = (theme + "_")
-        rightTile = (theme + "_")
-        leftTile = (theme + "_")
-        bottomTile = (theme + "_")
+        topTile = (lotusTheme + "_")
+        rightTile = (lotusTheme + "_")
+        leftTile = (lotusTheme + "_")
+        bottomTile = (lotusTheme + "_")
         
         var chosen = shape.randomElement()!
         topTile += String(chosen)
@@ -278,7 +290,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 sendData(what: "swipe", correct: "true")
             }
             else{
-                if (current != (theme + "_0")){
+                if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
@@ -292,7 +304,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 sendData(what: "swipe", correct: "true")
             }
             else{
-                if (current != (theme + "_0")){
+                if (current != (lotusTheme + "_0")){
                    wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
@@ -307,7 +319,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 sendData(what: "swipe", correct: "true")
             }
             else{
-                if (current != (theme + "_0")){
+                if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
@@ -320,7 +332,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 sendData(what: "swipe", correct: "true")
             }
             else{
-                if (current != (theme + "_0")){
+                if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
@@ -341,7 +353,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         }
         else{
             lotusCurrentRound += 1
-            current = theme + "_0"
+            current = lotusTheme + "_0"
             lotusGameImage.setImageNamed(current)
         }
     }
@@ -370,6 +382,12 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                         ] as [String : Any]
             session.transferUserInfo(data)
         }
+    }
+    
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        
+        lotusTheme = defaults.string(forKey: "lotusTheme") ?? "lotus"
     }
     
 }

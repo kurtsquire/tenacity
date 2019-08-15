@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		133DA76522F8E9F6000614A8 /* CopyOldLotus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76422F8E9F6000614A8 /* CopyOldLotus.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
+		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
@@ -96,8 +96,8 @@
 
 /* Begin PBXFileReference section */
 		05BF21B7786CDE1DA3CDF8CA /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
-		133DA76422F8E9F6000614A8 /* CopyOldLotus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyOldLotus.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleChart.swift; path = ../../../../../Desktop/CircleChart.swift; sourceTree = "<group>"; };
+		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoneViewController.swift; path = /Users/richie/Documents/GitHub/tenacity/TenacityV3/TenacityV3/PhoneViewController.swift; sourceTree = "<absolute>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		1BE544A022C2995500620EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		42398AB222938159009CA96E /* TenacityV3 */ = {
 			isa = PBXGroup;
 			children = (
+				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
 				42398AB322938159009CA96E /* AppDelegate.swift */,
 				42398AB522938159009CA96E /* ViewController.swift */,
 				421307A822DFCBB90007C445 /* Quests.swift */,
@@ -253,7 +254,6 @@
 				42398ADA2293815B009CA96E /* NotificationController.swift */,
 				42398AF522938304009CA96E /* BreatheController.swift */,
 				42398AF72293832C009CA96E /* LotusController.swift */,
-				133DA76422F8E9F6000614A8 /* CopyOldLotus.swift */,
 				42398B0422939824009CA96E /* RhythmController.swift */,
 				42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */,
 				42711E9822A7517A00AAABDB /* SchedulerController.swift */,
@@ -543,6 +543,7 @@
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
 				421B843D22EFB01E008839C5 /* Pet.swift in Sources */,
 				4220938622EBC5B20082834C /* HomeViewController.swift in Sources */,
+				133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */,
 				42EEE00A22F1056300BE02DC /* CompanionsViewController.swift in Sources */,
 				42B7585E22EA92570023B7A7 /* PageController.swift in Sources */,
 				1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */,
@@ -563,7 +564,6 @@
 				42398AF622938304009CA96E /* BreatheController.swift in Sources */,
 				42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */,
 				42398AD92293815B009CA96E /* ExtensionDelegate.swift in Sources */,
-				133DA76522F8E9F6000614A8 /* CopyOldLotus.swift in Sources */,
 				42398AD72293815B009CA96E /* InterfaceController.swift in Sources */,
 				42711E9922A7517A00AAABDB /* SchedulerController.swift in Sources */,
 			);

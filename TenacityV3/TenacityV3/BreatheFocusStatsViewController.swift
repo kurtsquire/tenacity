@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class BreatheFocusStatsViewController: UIViewController{
+class BreatheFocusStatsViewController: PhoneViewController{
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var minuteGoalLabel: UILabel!
