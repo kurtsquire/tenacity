@@ -105,6 +105,7 @@
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                     </items>
                     <menu key="menu" id="2e5-oe-JHj">
@@ -189,14 +190,14 @@
                         <button alignment="left" id="qd5-Z5-PJE">
                             <group key="contentGroup" width="1" height="1" alignment="left" backgroundImage="flower_X" layout="overlap" id="7sp-MH-3K3">
                                 <items>
-                                    <imageView width="0.41999999999999998" height="0.37" alignment="center" image="lotus_red" id="IVL-gd-z2i">
+                                    <imageView width="0.45000000000000001" height="0.40000000000000002" alignment="center" image="lotus_red" id="IVL-gd-z2i">
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <imageView width="0.41999999999999998" height="0.37" alignment="center" verticalAlignment="bottom" image="lotus_green" id="R5m-71-KOV"/>
-                                    <imageView width="0.41999999999999998" height="0.37" alignment="right" verticalAlignment="center" image="lotus_yellow" id="X5A-Jk-5kK">
+                                    <imageView width="0.45000000000000001" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" image="lotus_green" id="R5m-71-KOV"/>
+                                    <imageView width="0.45000000000000001" height="0.40000000000000002" alignment="right" verticalAlignment="center" image="lotus_yellow" id="X5A-Jk-5kK">
                                         <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <imageView width="0.41999999999999998" height="0.37" alignment="left" verticalAlignment="center" image="lotus_blue" id="BWr-h9-H57"/>
+                                    <imageView width="0.45000000000000001" height="0.40000000000000002" alignment="left" verticalAlignment="center" image="lotus_blue" id="BWr-h9-H57"/>
                                 </items>
                             </group>
                             <connections>

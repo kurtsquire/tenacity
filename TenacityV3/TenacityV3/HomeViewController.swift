@@ -277,10 +277,8 @@ class HomeViewController: PhoneViewController {
         
         // get exp
         exp = defaults.integer(forKey: "exp")
-        
         // get nudge
         dateString = defaults.string(forKey: "dateString") ?? "No Nudge Set"
-        
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
         if !dailyQuestData.isEmpty{
@@ -339,6 +337,7 @@ class HomeViewController: PhoneViewController {
                 dailyQuestData["exp"] = 10*x
                 dailyQuestData["obj"] = 1
                 dailyQuestData["goalTime"] = x*60
+                dailyQuestData["goalNum"] = 0
                 dailyQuestData["count"] = 0
                 saveQuest(progress: false)
                 buildQuest()

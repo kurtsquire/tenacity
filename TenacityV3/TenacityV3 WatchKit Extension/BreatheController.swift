@@ -20,15 +20,24 @@ var totalBreaths = 0
 var averageFullBreatheTime = 3.5
 
 var breatheTheme = "classic"
+var breatheColor = 0
 
-var breatheColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
-var resetColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+
+var resetColor: UIColor = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
 
 
 class BreatheController: WKInterfaceController, WCSessionDelegate  {
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
+    
+    //INCORRECT COLORS
+    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
+    let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
+    let customPink = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
+    let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
+    
+    lazy var customColors = [customBlue, customRed, customPink, customGreen]
     
     var counter = 0.0
     
@@ -42,8 +51,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     
     var cycleStep = 0
     
-    let customYellow = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
-    let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
+
     
     //Initial Settings Page
     @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
@@ -81,7 +89,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     
     @IBAction func tutorial1Tapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial2"], contexts: ["t2"])
-        
     }
     
     @IBAction func tutorial2Tapped(_ sender: Any) {
@@ -142,7 +149,8 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         }
         
         else if ((context as? String) == "start"){
-            self.image.setTintColor(self.customYellow)
+            updateTheme()
+            self.image.setTintColor(resetColor)
         }
         else if ((context as? String) == "from Menu"){
             sessionLengthSlider.setValue(15)
@@ -222,13 +230,10 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     func cycleReset(){ //goes back to step one
         cycleTotal += 1
         cycleStep = 0
-        //self.image.setImageNamed("breathey")
         animate(withDuration: 1){
-            self.image.setTintColor(self.customYellow)
+            self.image.setTintColor(resetColor)
         }
     }
-    
-    
     
     @IBAction func swipeAction(_ sender: Any) {
         
@@ -253,7 +258,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             sendData(what: "swipe", correct: "true")
             WKInterfaceDevice.current().play(.success)
         }
-        
         cycleReset()
     }
     
@@ -270,7 +274,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
                 sendData(what: "start hold", correct: "true")
             }
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
-            
             cycleStep += 1
         }
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled{
@@ -303,7 +306,7 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
             else{
                 //self.image.setImageNamed("breathe")
                 animate(withDuration: 1){
-                    self.image.setTintColor(self.customBlue)
+                    self.image.setTintColor(self.customColors[breatheColor])
                 }
                 
                 sendData(what: "stop hold", correct: "true")
@@ -319,6 +322,19 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+    
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        
+        breatheTheme = defaults.string(forKey: "breatheTheme") ?? "classic"
+        breatheColor = defaults.integer(forKey: "breatheColor")
+    }
+    
+    func updateTheme(){
+        testUserDefaults()
+        image.setImageNamed(breatheTheme)
+        image.setTintColor(customColors[breatheColor])
     }
     
     func sendData(game : String = "breathe focus", what : String, correct : String, cycleSettings : Int = FullCycle, timeSettings : Int = sessionTime, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, correctSets : Int = 0){

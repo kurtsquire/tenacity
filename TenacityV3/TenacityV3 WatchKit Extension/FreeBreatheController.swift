@@ -37,8 +37,14 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     var cycleStep = 0
     @IBOutlet weak var holdNumberLabel: WKInterfaceLabel!
     
-    let customYellow = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
+    
+    //INCORRECT COLORS
+    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
+    let customPink = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
+    let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
+    
+    lazy var customColors = [customBlue, customRed, customPink, customGreen]
     
     /////////////////////////// Tutorial
     
@@ -105,7 +111,8 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         
         // On awake transition from tutorial 2
         else if ((context as? String) == "start"){
-            self.image.setTintColor(self.customYellow)
+            updateTheme()
+            self.image.setTintColor(resetColor)
         }
         
         // On awake transition from main menu
@@ -188,7 +195,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
         cycleStep = 0
         //self.image.setImageNamed("breathey")
         animate(withDuration: 1){
-            self.image.setTintColor(self.customYellow)
+            self.image.setTintColor(resetColor)
         }
     }
     
@@ -253,15 +260,10 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             }
 
             animate(withDuration: 1){
-                self.image.setTintColor(self.customBlue)
+                self.image.setTintColor(self.customColors[breatheColor])
             }
             sendData(what: "stop hold")
         }
-    }
-    
-    func testUserDefaults(){
-        let defaults =  UserDefaults.standard
-        cycleDict = defaults.dictionary(forKey: "cycleDict") as? [String : Int] ?? ["0": 0]
     }
     
     func addToAverageBreatheTime(time : Double){
@@ -270,6 +272,19 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+    
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        cycleDict = defaults.dictionary(forKey: "cycleDict") as? [String : Int] ?? ["0": 0]
+        breatheTheme = defaults.string(forKey: "breatheTheme") ?? "classic"
+        breatheColor = defaults.integer(forKey: "breatheColor")
+    }
+    
+    func updateTheme(){
+        testUserDefaults()
+        image.setImageNamed(breatheTheme)
+        image.setTintColor(customColors[breatheColor])
     }
     
     func sendData(game : String = "breathe infinite", what : String, correct : String = "N/A", timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, breatheCycleDict : [String : Int] = [:]){

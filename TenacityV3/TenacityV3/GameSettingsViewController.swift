@@ -27,16 +27,28 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func lotus(_ sender: Any) {
-        sendData(theme: "heart")
+        sendData(theme: "heart", game: "breathe")
     }
     @IBAction func squares(_ sender: Any) {
-        sendData(theme: "test")
+        sendData(theme: "square", game: "lotus")
+    }
+    @IBAction func diamond(_ sender: Any) {
+        sendData(theme: "diamond", game: "breathe")
+    }
+    @IBAction func fire(_ sender: Any) {
+        sendData(theme: "fire", game: "breathe")
+    }
+    @IBAction func cloud(_ sender: Any) {
+        sendData(theme: "cloud", game: "breathe")
+    }
+    @IBAction func redB(_ sender: Any) {
+        sendData(theme: "", game: "breathe", color: 1)
     }
     
-    func sendData(theme : String){
+    func sendData(theme : String, game : String, color : Int = -1){
         let session = WCSession.default
         if session.activationState == .activated{
-            let data = ["theme": theme] as [String : Any]
+            let data = ["theme": theme, "game": game, "color" : color] as [String : Any]
             session.transferUserInfo(data)
         }
     }

@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "square0.png",
+      "filename" : "Square_Base.png",
       "scale" : "1x"
     },
     {
@@ -19,6 +19,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "auto-scaling" : "auto"
+    "template-rendering-intent" : "template"
   }
 }

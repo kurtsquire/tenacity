@@ -38,6 +38,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     var gameLengthTimer = Timer()
 
     // ------------------------ Settings -------------------------
+    
     @IBOutlet weak var roundSliderLabel: WKInterfaceLabel!
     @IBOutlet weak var lotusRoundSlider: WKInterfaceSlider!
     @IBAction func lotusRoundSliderAction(_ value: Float) {
@@ -126,6 +127,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     lazy var customColors = [[customRed, customBlue, customYellow, customGreen]]
     
     
+    // -------------------------  AWAKE  ------------------------------
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -145,6 +148,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         
         if ((context as? String) == "t3"){
             current = lotusTheme + "_0"
+            lotusGameImage.setImageNamed(lotusTheme + "_0")
+            lotusGameImage.setTintColor(UIColor.white)
         }
         
         if ((context as? String) == "lotus game end"){
@@ -155,6 +160,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             swipeMissesLabel.setText("0 misses: " + String(lotusArray[0]) + "\n1 miss: " + String(lotusArray[1]) + "\n2 misses: " + String(lotusArray[2]) + "\n3+ misses: " + String(lotusArray[3]))
         }
     }
+
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -167,22 +173,21 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     }
     
     // --------------------- TIMER ----------------------------
+    
     @objc func sessionCounter(){
         if (inGame == false){
             gameLengthTimer.invalidate()
         }
         lotusTimePlayed += 0.1
-        
     }
     
     // --------------------- WC SESSION ------------------------
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        print(lotusTheme)
         lotusTheme = (userInfo["theme"] as? String)!
-        print(lotusTheme)
         UserDefaults.standard.set(lotusTheme, forKey: "lotusTheme")
     }
 
@@ -262,23 +267,32 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         let number = Int.random(in: 1 ..< 5)
         if (number == 1){
             current = topTile
-            lotusGameImage.setImageNamed(topTile)
-            lotusGameImage.setTintColor(topColor)
+            animate(withDuration: 0.5){
+                self.lotusGameImage.setImageNamed(topTile)
+                self.lotusGameImage.setTintColor(topColor)
+            }
+            
         }
         else if (number == 2){
             current = rightTile
-            lotusGameImage.setImageNamed(rightTile)
-            lotusGameImage.setTintColor(rightColor)
+            animate(withDuration: 0.5){
+                self.lotusGameImage.setImageNamed(rightTile)
+                self.lotusGameImage.setTintColor(rightColor)
+            }
         }
         else if (number == 3){
             current = leftTile
-            lotusGameImage.setImageNamed(leftTile)
-            lotusGameImage.setTintColor(leftColor)
+            animate(withDuration: 0.5){
+                self.lotusGameImage.setImageNamed(leftTile)
+                self.lotusGameImage.setTintColor(leftColor)
+            }
         }
         else {
             current = bottomTile
-            lotusGameImage.setImageNamed(bottomTile)
-            lotusGameImage.setTintColor(bottomColor)
+            animate(withDuration: 0.5){
+                self.lotusGameImage.setImageNamed(bottomTile)
+                self.lotusGameImage.setTintColor(bottomColor)
+            }
         }
     }
     
@@ -288,13 +302,13 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 resetRound()
                 // haptic feedback, reset to current, send data
                 sendData(what: "swipe", correct: "true")
+                WKInterfaceDevice.current().play(.success)
             }
             else{
                 if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
                 }
-                // send data, haptic feedback
             }
         }
         else if (direction == "right"){
@@ -302,14 +316,14 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 resetRound()
                 // do something
                 sendData(what: "swipe", correct: "true")
+                WKInterfaceDevice.current().play(.success)
             }
             else{
                 if (current != (lotusTheme + "_0")){
                    wrongCount += 1
                     sendData(what: "swipe", correct: "false")
+                    WKInterfaceDevice.current().play(.failure)
                 }
-                
-                
             }
         }
         else if (direction == "left"){
@@ -317,11 +331,13 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 resetRound()
                 // do something
                 sendData(what: "swipe", correct: "true")
+                WKInterfaceDevice.current().play(.success)
             }
             else{
                 if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
+                    WKInterfaceDevice.current().play(.failure)
                 }
             }
         }
@@ -330,11 +346,13 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
                 resetRound()
                 // do something
                 sendData(what: "swipe", correct: "true")
+                WKInterfaceDevice.current().play(.success)
             }
             else{
                 if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
+                    WKInterfaceDevice.current().play(.failure)
                 }
             }
         }
@@ -354,7 +372,11 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         else{
             lotusCurrentRound += 1
             current = lotusTheme + "_0"
-            lotusGameImage.setImageNamed(current)
+            animate(withDuration: 1){
+                self.lotusGameImage.setTintColor(UIColor.white)
+                self.lotusGameImage.setImageNamed(self.current)
+            }
+            
         }
     }
     
@@ -388,6 +410,7 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         let defaults = UserDefaults.standard
         
         lotusTheme = defaults.string(forKey: "lotusTheme") ?? "lotus"
+        lotusPalette = defaults.integer(forKey: "lotusColor")
     }
     
 }

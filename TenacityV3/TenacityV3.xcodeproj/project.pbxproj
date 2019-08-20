@@ -96,7 +96,7 @@
 
 /* Begin PBXFileReference section */
 		05BF21B7786CDE1DA3CDF8CA /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
-		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleChart.swift; path = ../../../../../Desktop/CircleChart.swift; sourceTree = "<group>"; };
+		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhoneViewController.swift; path = /Users/richie/Documents/GitHub/tenacity/TenacityV3/TenacityV3/PhoneViewController.swift; sourceTree = "<absolute>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
