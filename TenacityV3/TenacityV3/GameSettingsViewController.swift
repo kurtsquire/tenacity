@@ -27,11 +27,19 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func lotus(_ sender: Any) {
-        sendData(theme: "heart", game: "breathe")
+        sendData(theme: "lotus", game: "lotus")
     }
     @IBAction func squares(_ sender: Any) {
         sendData(theme: "square", game: "lotus")
     }
+    @IBAction func heart(_ sender: Any) {
+        sendData(theme: "heart", game: "lotus")
+    }
+    @IBAction func circle(_ sender: Any) {
+        sendData(theme: "circle", game: "lotus")
+    }
+    
+    
     @IBAction func diamond(_ sender: Any) {
         sendData(theme: "diamond", game: "breathe")
     }
@@ -41,8 +49,20 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func cloud(_ sender: Any) {
         sendData(theme: "cloud", game: "breathe")
     }
+    @IBAction func classic(_ sender: Any) {
+        sendData(theme: "classic", game: "breathe")
+    }
     @IBAction func redB(_ sender: Any) {
         sendData(theme: "", game: "breathe", color: 1)
+    }
+    @IBAction func blueB(_ sender: Any) {
+        sendData(theme: "", game: "breathe", color: 0)
+    }
+    @IBAction func pinkB(_ sender: Any) {
+        sendData(theme: "", game: "breathe", color: 2)
+    }
+    @IBAction func greenB(_ sender: Any) {
+        sendData(theme: "", game: "breathe", color: 3)
     }
     
     func sendData(theme : String, game : String, color : Int = -1){

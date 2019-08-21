@@ -155,8 +155,8 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
         if ((context as? String) == "lotus game end"){
             let min = Int(lotusTimePlayed/60)
             let sec = (Int(lotusTimePlayed)%60)
-            totalRoundsLabel.setText(String(lotusCurrentRound))
-            timePlayedLabel.setText(String(min) + " mins " + String(sec) + " s")
+            totalRoundsLabel.setText("Rounds: " + String(lotusCurrentRound))
+            timePlayedLabel.setText("Time: " + String(min) + " mins " + String(sec) + " s")
             swipeMissesLabel.setText("0 misses: " + String(lotusArray[0]) + "\n1 miss: " + String(lotusArray[1]) + "\n2 misses: " + String(lotusArray[2]) + "\n3+ misses: " + String(lotusArray[3]))
         }
     }

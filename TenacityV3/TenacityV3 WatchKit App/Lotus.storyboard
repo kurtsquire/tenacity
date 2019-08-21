@@ -77,7 +77,7 @@
             <objects>
                 <controller identifier="Lotus Game" fullBounds="YES" id="FfN-gJ-J0k" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <imageView width="1" height="1" alignment="left" image="lotus_0" id="n6l-lV-vN4">
+                        <imageView width="1" height="0.90000000000000002" alignment="left" verticalAlignment="center" image="lotus_0" id="n6l-lV-vN4">
                             <gestureRecognizers>
                                 <swipeGestureRecognizer direction="4" id="s0P-Il-4II">
                                     <connections>
@@ -141,9 +141,11 @@
                                         <color key="textColor" red="0.97559099739999999" green="0.4437583074" blue="0.073710363099999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                     </label>
-                                    <label alignment="left" text="rounds_played" numberOfLines="2" id="0eN-sE-YOf"/>
-                                    <label alignment="left" text="time_played" numberOfLines="2" id="5eU-wa-Mr2"/>
-                                    <label alignment="left" text="Swipe Misses" textAlignment="right" numberOfLines="4" id="xfF-r5-pWu"/>
+                                    <label width="1" alignment="left" text="rounds_played" textAlignment="right" numberOfLines="2" id="0eN-sE-YOf">
+                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                    </label>
+                                    <label width="1" alignment="left" text="time_played" textAlignment="right" numberOfLines="2" id="5eU-wa-Mr2"/>
+                                    <label width="1" alignment="left" text="Swipe Misses" textAlignment="right" numberOfLines="4" id="xfF-r5-pWu"/>
                                 </items>
                             </group>
                             <connections>
@@ -158,7 +160,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1119" y="-211"/>
+            <point key="canvasLocation" x="1118.5128205128206" y="-211.41025641025644"/>
         </scene>
         <!--Lotus Tutorial 2-->
         <scene sceneID="Ead-n1-ZWs">

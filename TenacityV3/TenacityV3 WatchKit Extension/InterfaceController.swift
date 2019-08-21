@@ -47,6 +47,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let game = (userInfo["game"] as? String)!
         let color = (userInfo["color"] as? Int)!
         
+        print(theme)
+        print(color)
         if (color == -1){
             if (game == "breathe"){
                 UserDefaults.standard.set(theme, forKey: "breatheTheme")

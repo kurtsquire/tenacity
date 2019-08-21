@@ -32,12 +32,12 @@
             <objects>
                 <tabBarController id="ESo-Es-Xgt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="O10-wZ-HFH"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="centered" id="mDM-I2-Dgv">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="mDM-I2-Dgv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="MB6-BM-Ikv" kind="relationship" relationship="viewControllers" id="aiC-Tu-oZc"/>
@@ -357,7 +357,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uFX-1A-EaO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="tabHome" id="tUl-uW-ze5"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Tab_Home" selectedImage="Tab_Home" id="tUl-uW-ze5"/>
                     <size key="freeformSize" width="375" height="1600"/>
                     <connections>
                         <outlet property="badge1" destination="ybT-qB-RNu" id="kWv-kE-Z8B"/>
@@ -412,7 +412,7 @@
                 <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Game Settings Help" id="e0r-Hu-NOW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4Y-H2-ihw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460" y="-270"/>
+            <point key="canvasLocation" x="3704" y="-285"/>
         </scene>
         <!--Debug-->
         <scene sceneID="fp8-MJ-cuY">
@@ -686,7 +686,7 @@
         <scene sceneID="u27-V8-v9A">
             <objects>
                 <pageViewController storyboardIdentifier="Main" autoresizesArchivedViewToFullSize="NO" title="Game Screens" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="W29-Ig-vSs" customClass="PageViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="tabGame-1" id="tHF-vD-tSM"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="Tab_GameStats" selectedImage="Tab_GameStats" id="tHF-vD-tSM"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owa-Rr-pJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -779,7 +779,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nudges" image="tabMain-1" id="UHN-10-F3r" userLabel="Reminder"/>
+                    <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="UHN-10-F3r" userLabel="Reminder"/>
                     <connections>
                         <outlet property="dateLabel" destination="6Hs-y8-qak" id="i2m-Ow-qfh"/>
                         <outlet property="datePicker" destination="Zhs-RP-H4P" id="ccx-ZJ-D0o"/>
@@ -1243,7 +1243,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EXS-ZP-oBI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pets" image="tabPet-1" id="OLj-io-hLf"/>
+                    <tabBarItem key="tabBarItem" title="Pets" image="Tab_Pet" selectedImage="Tab_Pet" id="OLj-io-hLf"/>
                     <size key="freeformSize" width="375" height="4855"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaQ-Ka-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1263,19 +1263,33 @@
             <objects>
                 <viewController storyboardIdentifier="Game Upgrades" title="Game Upgrades" id="hQ8-N8-d6G" customClass="GameSettingsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjR-yN-K8y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-0b-oFe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeV-RZ-Dos">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-Fq-vFG" userLabel="Game Settings Title">
                                                 <rect key="frame" x="96" y="8" width="183" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breathe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrx-jQ-GTq" userLabel="Game Settings Title">
+                                                <rect key="frame" x="28" y="52" width="183" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lotus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qg-45-pfB" userLabel="Game Settings Title">
+                                                <rect key="frame" x="26" y="391" width="183" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1287,32 +1301,40 @@
                                                     <segue destination="e0r-Hu-NOW" kind="show" id="lZc-cv-qPY"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lotus_red" translatesAutoresizingMaskIntoConstraints="NO" id="OTZ-46-phQ">
-                                                <rect key="frame" x="47" y="63" width="192" height="104"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BDiamond" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-UO-3Wj">
+                                                <rect key="frame" x="87" y="100" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lotus_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="ICT-h2-tZD">
-                                                <rect key="frame" x="47" y="175" width="192" height="104"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lotus_red" translatesAutoresizingMaskIntoConstraints="NO" id="add-cZ-kYk">
+                                                <rect key="frame" x="85" y="460" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lotus_blue" translatesAutoresizingMaskIntoConstraints="NO" id="omx-2n-4i8">
-                                                <rect key="frame" x="47" y="287" width="192" height="104"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Square_1" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-2N-y88">
+                                                <rect key="frame" x="85" y="518" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-UO-3Wj">
-                                                <rect key="frame" x="289" y="92" width="46" height="46"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart_1" translatesAutoresizingMaskIntoConstraints="NO" id="8WQ-Sz-deU">
+                                                <rect key="frame" x="85" y="572" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-fM-yaS">
-                                                <rect key="frame" x="289" y="204" width="46" height="46"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="All_Same" translatesAutoresizingMaskIntoConstraints="NO" id="sm3-Nc-pGE">
+                                                <rect key="frame" x="85" y="626" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="93M-nf-ete">
-                                                <rect key="frame" x="289" y="316" width="46" height="46"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BFire1" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-fM-yaS">
+                                                <rect key="frame" x="87" y="168" width="46" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BCloud1" translatesAutoresizingMaskIntoConstraints="NO" id="93M-nf-ete">
+                                                <rect key="frame" x="87" y="238" width="46" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="breatheAsset" translatesAutoresizingMaskIntoConstraints="NO" id="1R1-ah-I8P">
+                                                <rect key="frame" x="87" y="292" width="46" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-Gd-hXS">
-                                                <rect key="frame" x="100" y="421" width="38" height="30"/>
+                                                <rect key="frame" x="281" y="468" width="38" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Lotus"/>
                                                 <connections>
@@ -1320,23 +1342,40 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omr-pu-Jyy">
-                                                <rect key="frame" x="96" y="469" width="47" height="30"/>
+                                                <rect key="frame" x="273" y="518" width="47" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="square"/>
                                                 <connections>
                                                     <action selector="squares:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="mgj-jZ-QjV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-7G-UFZ">
-                                                <rect key="frame" x="282" y="391" width="60" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-tA-qAI">
+                                                <rect key="frame" x="278" y="580" width="37" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="heart"/>
+                                                <connections>
+                                                    <action selector="heart:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fKv-VT-oik"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfy-Jy-BUn">
+                                                <rect key="frame" x="278" y="634" width="37" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="same"/>
+                                                <connections>
+                                                    <action selector="circle:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="liP-NW-s43"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-7G-UFZ">
+                                                <rect key="frame" x="272" y="108" width="60" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="diamond"/>
                                                 <connections>
                                                     <action selector="diamond:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="OoH-iR-k3W"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-QL-Q4v">
-                                                <rect key="frame" x="290" y="421" width="30" height="30"/>
+                                                <rect key="frame" x="283" y="176" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="fire"/>
                                                 <connections>
@@ -1344,7 +1383,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-dZ-kEf">
-                                                <rect key="frame" x="286" y="459" width="38" height="30"/>
+                                                <rect key="frame" x="279" y="246" width="38" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="cloud"/>
                                                 <connections>
@@ -1352,16 +1391,48 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMh-gX-Teh">
-                                                <rect key="frame" x="283" y="490" width="45" height="30"/>
+                                                <rect key="frame" x="137" y="353" width="45" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="red (1)"/>
                                                 <connections>
                                                     <action selector="redB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="yXa-KE-DOo"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqY-ot-jgs">
+                                                <rect key="frame" x="210" y="353" width="53" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="pink (2)"/>
+                                                <connections>
+                                                    <action selector="pinkB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="H99-5p-4ah"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-A2-Act">
+                                                <rect key="frame" x="284" y="353" width="64" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="green (3)"/>
+                                                <connections>
+                                                    <action selector="greenB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="ifv-VG-D3B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8d-03-Utz">
+                                                <rect key="frame" x="48" y="353" width="50" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="blue(0)"/>
+                                                <connections>
+                                                    <action selector="blueB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="5vq-Ro-tGH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-1p-Z7q">
+                                                <rect key="frame" x="274" y="300" width="47" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="classic"/>
+                                                <connections>
+                                                    <action selector="classic:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fan-VO-cy6"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="647" id="a8A-ud-luX"/>
+                                            <constraint firstAttribute="height" constant="900" id="a8A-ud-luX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1384,11 +1455,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVG-6I-a2k"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="edI-a4-kf1"/>
+                    <tabBarItem key="tabBarItem" title="Watch" image="Tab_WatchSettings" selectedImage="Tab_WatchSettings" id="edI-a4-kf1"/>
+                    <size key="freeformSize" width="375" height="900"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmT-f7-Jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="115.59220389805098"/>
+            <point key="canvasLocation" x="3140" y="11"/>
         </scene>
         <!--Quests Help-->
         <scene sceneID="qtg-gp-1dq">
@@ -1519,12 +1591,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="All_Same" width="320" height="320"/>
+        <image name="BCloud1" width="320" height="320"/>
+        <image name="BDiamond" width="320" height="320"/>
+        <image name="BFire1" width="320" height="320"/>
+        <image name="Heart_1" width="320" height="320"/>
+        <image name="Square_1" width="320" height="320"/>
         <image name="Tab_BreatheFocus" width="1158" height="1170"/>
         <image name="Tab_BreatheInfinite" width="1714" height="860"/>
+        <image name="Tab_GameStats" width="27" height="18"/>
+        <image name="Tab_Home" width="25" height="24"/>
         <image name="Tab_Lotus" width="1442" height="1360"/>
+        <image name="Tab_Pet" width="26" height="22"/>
+        <image name="Tab_Reminders" width="28" height="28"/>
+        <image name="Tab_WatchSettings" width="22" height="30"/>
         <image name="badge 2" width="98" height="98"/>
         <image name="badge1" width="98" height="98"/>
         <image name="badge3" width="98" height="98"/>
+        <image name="breatheAsset" width="96" height="90"/>
         <image name="common" width="74" height="24"/>
         <image name="expUnfill" width="74" height="15"/>
         <image name="graph" width="271" height="148"/>
@@ -1534,9 +1618,7 @@
         <image name="help" width="24" height="24"/>
         <image name="legendary" width="74" height="24"/>
         <image name="lock" width="36" height="47"/>
-        <image name="lotus_blue" width="320" height="320"/>
         <image name="lotus_red" width="320" height="320"/>
-        <image name="lotus_yellow" width="320" height="320"/>
         <image name="pet" width="107" height="105"/>
         <image name="pet2" width="90" height="88"/>
         <image name="pet3" width="91" height="89"/>
@@ -1546,14 +1628,10 @@
         <image name="petexp3" width="62" height="62"/>
         <image name="rare" width="74" height="24"/>
         <image name="streaks" width="272" height="140"/>
-        <image name="tabGame-1" width="36" height="16"/>
-        <image name="tabHome" width="22" height="18"/>
-        <image name="tabMain-1" width="22" height="22"/>
-        <image name="tabPet-1" width="22" height="18"/>
         <image name="tabSettings-1" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X6C-6G-0a0"/>
-        <segue reference="rcm-i6-GJw"/>
+        <segue reference="WIg-jw-Mkb"/>
     </inferredMetricsTieBreakers>
 </document>

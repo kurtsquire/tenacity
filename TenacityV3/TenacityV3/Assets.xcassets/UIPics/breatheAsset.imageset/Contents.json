@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Webp.net-resizeimage.png",
+      "filename" : "breatheAsset.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Webp.net-resizeimage-1.png",
       "scale" : "2x"
     },
     {
