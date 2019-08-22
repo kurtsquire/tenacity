@@ -120,7 +120,7 @@ class HomeViewController: PhoneViewController {
     lazy var lotusGraphCenter = lotusSwipeLabel.center
     
     
-    // -----------------------------------------------------------------
+    // -------------------------- ViewDidAppear ----------------------------
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -131,6 +131,10 @@ class HomeViewController: PhoneViewController {
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        // quotes
+        let quotes = Quotes()
+        petQuoteLabel.text = quotes.randomQuote()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -168,6 +172,7 @@ class HomeViewController: PhoneViewController {
         lvlLabel.text = "Lvl " + String(lvl + 1) // +1 so that you start lvl 1 not 0
         expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
         nudge1.text = dateString
+        
         
         
         if (baseEXP >= 900){
@@ -209,7 +214,6 @@ class HomeViewController: PhoneViewController {
         }
         
     }
-    
     // ----------------------- UTILITY -------------------------------
     
     

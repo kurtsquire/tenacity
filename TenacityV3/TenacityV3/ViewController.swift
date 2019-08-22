@@ -11,6 +11,7 @@ import WatchConnectivity
 import RealmSwift
 import Firebase
 
+// not used anymore just debug screen
 class ViewController: UIViewController, WCSessionDelegate {
     
     
