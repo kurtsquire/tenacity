@@ -7,7 +7,6 @@
 //
 
 import WatchKit
-import Foundation
 import WatchConnectivity
 
 var randomizeColorsBool = false
@@ -31,7 +30,7 @@ var bottomColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
 
 var lotusArray = [0,0,0,0]
 
-class LotusController: WKInterfaceController, WCSessionDelegate {
+class LotusController: WatchViewController{
     
     
     var counter = 0.0
@@ -132,13 +131,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // wc session connect
-        if WCSession.isSupported(){
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-        
         if ((context as? String) == "t2"){
             testUserDefaults()
             randomizeImages(palette: customColors[lotusPalette], randomColors: randomizeColorsBool)
@@ -179,16 +171,6 @@ class LotusController: WKInterfaceController, WCSessionDelegate {
             gameLengthTimer.invalidate()
         }
         lotusTimePlayed += 0.1
-    }
-    
-    // --------------------- WC SESSION ------------------------
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    }
-    
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        lotusTheme = (userInfo["theme"] as? String)!
-        UserDefaults.standard.set(lotusTheme, forKey: "lotusTheme")
     }
 
     

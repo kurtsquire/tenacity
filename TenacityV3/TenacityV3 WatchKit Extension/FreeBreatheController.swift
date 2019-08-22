@@ -7,7 +7,6 @@
 //
 
 import WatchKit
-import Foundation
 import WatchConnectivity
 
 //var FullCycle = 5
@@ -20,7 +19,7 @@ var totalBreathsFree = 0
 var averageFullBreatheTimeFree = 3.5
 var cycleDict = [String : Int]()
 
-class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
+class FreeBreatheController: WatchViewController{
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
@@ -46,7 +45,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     lazy var customColors = [customBlue, customRed, customPink, customGreen]
     
-    /////////////////////////// Tutorial
+    /////////////////////////// Tutorial ---------------------------------------
     
     @IBAction func tutorial2Tapped(_ sender: Any) {
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Main"], contexts: ["start"])
@@ -69,7 +68,7 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     
     @IBOutlet weak var prevSessionLabel: WKInterfaceLabel!
     
-    ////////////////////  Results Screen Page
+    ////////////////////  Results Screen Page ----------------------------------
     
     @IBOutlet var averageBreathLabel: WKInterfaceLabel!
     @IBOutlet var timePlayedLabel: WKInterfaceLabel!
@@ -132,12 +131,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
             else{
                 prevSessionLabel.setText("No Previous Session")
             }
-        }
-        
-        if WCSession.isSupported(){
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
         }
     }
     
@@ -269,9 +262,6 @@ class FreeBreatheController: WKInterfaceController, WCSessionDelegate  {
     func addToAverageBreatheTime(time : Double){
         totalBreatheTimes = totalBreatheTimes + time
         averageFullBreatheTimeFree = totalBreatheTimes/Double((totalBreathsFree + 10))
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
     func testUserDefaults(){

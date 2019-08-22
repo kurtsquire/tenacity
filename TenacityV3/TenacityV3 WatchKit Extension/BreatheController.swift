@@ -7,7 +7,6 @@
 //
 
 import WatchKit
-import Foundation
 import WatchConnectivity
 
 var FullCycle = 5
@@ -22,11 +21,9 @@ var averageFullBreatheTime = 3.5
 var breatheTheme = "classic"
 var breatheColor = 0
 
-
 var resetColor: UIColor = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
 
-
-class BreatheController: WKInterfaceController, WCSessionDelegate  {
+class BreatheController: WatchViewController{
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
@@ -44,14 +41,12 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
     var totalBreatheTimes = 3.5
     //var resetInterval = 2.5   unused right now
     
-    
     var breatheInTimer = Timer()
     var breatheInTime = 0.0
     var gameLengthTimer = Timer()
     
     var cycleStep = 0
     
-
     
     //Initial Settings Page
     @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
@@ -154,12 +149,6 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
         }
         else if ((context as? String) == "from Menu"){
             sessionLengthSlider.setValue(15)
-        }
-        
-        if WCSession.isSupported(){
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
         }
     }
     
@@ -304,24 +293,18 @@ class BreatheController: WKInterfaceController, WCSessionDelegate  {
                 presentAlert(withTitle: "Oops", message: "You Held When You Should Have Swiped", preferredStyle: .alert, actions: [continueAlert])
             }
             else{
-                //self.image.setImageNamed("breathe")
                 animate(withDuration: 1){
                     self.image.setTintColor(self.customColors[breatheColor])
                 }
                 
                 sendData(what: "stop hold", correct: "true")
             }
-            
         }
-        
     }
     
     func addToAverageBreatheTime(time : Double){
         totalBreatheTimes = totalBreatheTimes + time
         averageFullBreatheTime = totalBreatheTimes/Double((totalBreaths + 1))
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
     func testUserDefaults(){
