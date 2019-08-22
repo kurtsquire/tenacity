@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "breatheAsset.png",
+      "filename" : "fox.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fox2x.png",
       "scale" : "2x"
     },
     {
@@ -17,8 +18,5 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "auto-scaling" : "auto"
   }
 }
