@@ -172,8 +172,7 @@ class HomeViewController: PhoneViewController {
         lvlLabel.text = "Lvl " + String(lvl + 1) // +1 so that you start lvl 1 not 0
         expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
         nudge1.text = dateString
-        
-        
+
         
         if (baseEXP >= 900){
             expBar1.image = UIImage(named: "expFill")
@@ -288,6 +287,7 @@ class HomeViewController: PhoneViewController {
         if !dailyQuestData.isEmpty{
             buildQuest()
         }
+        //equippedPet
         
     }
     
@@ -463,6 +463,9 @@ class HomeViewController: PhoneViewController {
         }
     }
     
+    func questRewardGenerator() -> String{
+        
+    }
     
     
     
