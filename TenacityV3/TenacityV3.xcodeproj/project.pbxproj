@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
+		13A3918D231499C000809895 /* Pods_TenacityV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74399B0D912F4ACE2E1A9679 /* Pods_TenacityV3.framework */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
@@ -50,7 +51,6 @@
 		42EEE01422F109DD00BE02DC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEE01322F109DD00BE02DC /* HelpViewController.swift */; };
 		42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */; };
 		42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */; };
-		AF553C030AE1502E1FAA61CC /* Pods_TenacityV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74399B0D912F4ACE2E1A9679 /* Pods_TenacityV3.framework */; };
 		CF91FFD9AC884C7ACE46DDBC /* libPods-TenacityV3 WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE22B795EB47F1C0B810AC2C /* libPods-TenacityV3 WatchKit App.a */; };
 /* End PBXBuildFile section */
 
@@ -160,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF553C030AE1502E1FAA61CC /* Pods_TenacityV3.framework in Frameworks */,
+				13A3918D231499C000809895 /* Pods_TenacityV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,28 +505,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TenacityV3/Pods-TenacityV3-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TenacityV3/Pods-TenacityV3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TenacityV3/Pods-TenacityV3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

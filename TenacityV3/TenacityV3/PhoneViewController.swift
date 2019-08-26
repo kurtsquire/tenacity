@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import WatchConnectivity
 
-var petArray : Pet = []
+//var petArray : Pet = []
 var petEquipped : Int = 0
 
 class PhoneViewController: UIViewController, WCSessionDelegate {
@@ -28,13 +28,13 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
             session.activate()
         }
         
-        testUserDefaults()
+        //testUserDefaults()
     }
     
     func saveEXP(addEXP : Int){
         exp += addEXP
         UserDefaults.standard.set(exp, forKey: "exp")
-        petArray[petEquipped].addExp(addExp)
+        //petArray[petEquipped].addExp(addExp)
     }
     
     func saveQuest(progress: Bool){
@@ -47,21 +47,21 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         UserDefaults.standard.set(dailyQuestData, forKey: "dailyQuestData")
     }
     
-    func testUserDefaults(){
-        let defaults = UserDefaults.standard
-        
-        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
-        if !temp.isEmpty{
-            petArray.append(Pet(n: "Morgan", r: "common", ul: temp["Morgan"][2], xp: temp["Morgan"][1]))
-            petArray[0].changeForm(temp["Morgan"][0])
-            petArray.append(Pet(n: "Jade", r: "common", ul: temp["Jade"][2], xp: temp["Jade"][1]))
-            petArray[1].changeForm(temp["Jade"][0])
-        }
-        else{
-            petArray.append(Pet(n: "Morgan", r: "common", ul: true))
-            petArray.append(Pet(n: "Jade", r: "common", ul: true))
-        }
-    }
+//    func testUserDefaults(){
+//        let defaults = UserDefaults.standard
+//
+//        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
+//        if !temp.isEmpty{
+//            petArray.append(Pet(n: "Morgan", r: "common", ul: temp["Morgan"][2], xp: temp["Morgan"][1]))
+//            petArray[0].changeForm(temp["Morgan"][0])
+//            petArray.append(Pet(n: "Jade", r: "common", ul: temp["Jade"][2], xp: temp["Jade"][1]))
+//            petArray[1].changeForm(temp["Jade"][0])
+//        }
+//        else{
+//            petArray.append(Pet(n: "Morgan", r: "common", ul: true))
+//            petArray.append(Pet(n: "Jade", r: "common", ul: true))
+//        }
+//    }
     
     
     // ----------------------------------- WATCH CONNECTIVITY -------------------------------

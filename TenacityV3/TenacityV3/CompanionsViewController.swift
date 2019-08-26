@@ -14,8 +14,6 @@ import UIKit
 class CompanionsViewController: PhoneViewController {
     
     @IBAction func jadeLeft(_ sender: Any) {
-        changeForm(pet: 0, petArray[0].getForm(), true)
-        jadePic.image = UIImage(named: "jade_" + String())
     }
     @IBAction func jadeRight(_ sender: Any) {
     }
@@ -25,7 +23,7 @@ class CompanionsViewController: PhoneViewController {
     @IBOutlet weak var morgExp: UILabel!
     
     // petname: [form 1->3, exp, unlocked]
-    var allPets = ["Morgan": [petArray[0].getForm(), petArray[0].getExp(), petArray[0].isUnlocked()], "Jade": [petArray[1].getForm(), petArray[1].getExp(), petArray[1].isUnlocked()]]
+    //var allPets = ["Morgan": [petArray[0].getForm(), petArray[0].getExp(), petArray[0].isUnlocked()], "Jade": [petArray[1].getForm(), petArray[1].getExp(), petArray[1].isUnlocked()]]
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -49,18 +47,13 @@ class CompanionsViewController: PhoneViewController {
     }
     
     func updatePetData(){
-        morgExp.text = String(petArray[0].getExp())
-        jadeExp.text = String(petArray[1].getExp())
+        //morgExp.text = String(petArray[0].getExp())
+        //jadeExp.text = String(petArray[1].getExp())
         
         //set all pets to correct form
     }
     
     func changeForm(pet : Int, form : Int, left : Bool){
-        if (form == 1 && left == true){
-            if (petArray[pet].getLevel >= 3){
-                "Jade"
-            }
-        }
     }
     
     func equipPet(pet : Int){
@@ -69,15 +62,15 @@ class CompanionsViewController: PhoneViewController {
     }
     
     func testUserDefaults(){
-        let defaults = UserDefaults.standard
-        
-        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
-        if !temp.isEmpty{
-            allPets = temp
-        }
-        else{
-            UserDefaults.standard.set(allPets, forKey: "allPetsData")
-        }
+//        let defaults = UserDefaults.standard
+//
+//        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
+//        if !temp.isEmpty{
+//            allPets = temp
+//        }
+//        else{
+//            UserDefaults.standard.set(allPets, forKey: "allPetsData")
+//        }
     }
     
     

@@ -17,8 +17,8 @@ class Pet{
     //var equipped : Bool = false  //Whether the pet is equipped
     var rarity : String  //How rare the pet is (Common, Uncommmon, Rare, Exotic, Mythical? Names and count may change)
     var ownerNick : String  //What the pet calls you (optional)
-    var lv2Threshold : Int  //How much experience required to reach Lv 2
-    var lv3Threshold : Int  //How much experience required to reach Lv 3
+    var lv2Threshold : Int = 1 //How much experience required to reach Lv 2
+    var lv3Threshold : Int = 1 //How much experience required to reach Lv 3
     var unlocked : Bool // pet locked or unlocked yet
     
     init(n: String, o: String = "", r: String, ul: Bool, xp: Int = 0){
@@ -47,7 +47,7 @@ class Pet{
         }
         self.unlocked = ul
         
-        addExp(xp: xp)
+        //addExp(xp: xp)
     }
     
     func getName() -> String{
