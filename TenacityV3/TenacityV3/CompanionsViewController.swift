@@ -14,6 +14,8 @@ import UIKit
 class CompanionsViewController: PhoneViewController {
     
     @IBAction func jadeLeft(_ sender: Any) {
+        changeForm(pet: 0, petArray[0].getForm(), true)
+        jadePic.image = UIImage(named: "jade_" + String())
     }
     @IBAction func jadeRight(_ sender: Any) {
     }
@@ -21,7 +23,6 @@ class CompanionsViewController: PhoneViewController {
     @IBOutlet weak var jadePic: UIImageView!
     @IBOutlet weak var morgPic: UIImageView!
     @IBOutlet weak var morgExp: UILabel!
-    
     
     // petname: [form 1->3, exp, unlocked]
     var allPets = ["Morgan": [petArray[0].getForm(), petArray[0].getExp(), petArray[0].isUnlocked()], "Jade": [petArray[1].getForm(), petArray[1].getExp(), petArray[1].isUnlocked()]]
@@ -50,6 +51,21 @@ class CompanionsViewController: PhoneViewController {
     func updatePetData(){
         morgExp.text = String(petArray[0].getExp())
         jadeExp.text = String(petArray[1].getExp())
+        
+        //set all pets to correct form
+    }
+    
+    func changeForm(pet : Int, form : Int, left : Bool){
+        if (form == 1 && left == true){
+            if (petArray[pet].getLevel >= 3){
+                "Jade"
+            }
+        }
+    }
+    
+    func equipPet(pet : Int){
+        petEquipped = pet
+        UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
     }
     
     func testUserDefaults(){

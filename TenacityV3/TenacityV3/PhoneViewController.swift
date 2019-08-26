@@ -11,6 +11,7 @@ import RealmSwift
 import WatchConnectivity
 
 var petArray : Pet = []
+var petEquipped : Int = 0
 
 class PhoneViewController: UIViewController, WCSessionDelegate {
     
@@ -33,6 +34,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
     func saveEXP(addEXP : Int){
         exp += addEXP
         UserDefaults.standard.set(exp, forKey: "exp")
+        petArray[petEquipped].addExp(addExp)
     }
     
     func saveQuest(progress: Bool){

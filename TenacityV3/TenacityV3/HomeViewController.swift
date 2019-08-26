@@ -287,7 +287,7 @@ class HomeViewController: PhoneViewController {
         if !dailyQuestData.isEmpty{
             buildQuest()
         }
-        //equippedPet
+        petEquipped = defaults.integer(forKey: "petEquipped")
         
     }
     
