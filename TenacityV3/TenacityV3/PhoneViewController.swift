@@ -47,6 +47,29 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         UserDefaults.standard.set(dailyQuestData, forKey: "dailyQuestData")
     }
     
+    
+    func saveToRealm(game : String = "phone", what : String, correct : String = "N/A"){
+        let realm = try! Realm()
+        let timestamp = NSDate().timeIntervalSince1970
+        let date = Date()
+        
+        let gameDataModel = GameDataModel()
+        gameDataModel.gameTitle = game
+        gameDataModel.gameDataType = what
+        gameDataModel.gameDataAccuracy = correct
+        gameDataModel.sessionDate = date
+        gameDataModel.sessionEpoch = timestamp
+        
+        do{
+            try realm.write {
+                realm.add(gameDataModel)
+            }
+        }catch{
+            print("Error saving data to Realm \(error)")
+        }
+    }
+        
+    
 //    func testUserDefaults(){
 //        let defaults = UserDefaults.standard
 //

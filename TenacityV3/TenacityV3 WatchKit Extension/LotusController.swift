@@ -123,7 +123,23 @@ class LotusController: WatchViewController{
     let customYellow = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
     let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
     
-    lazy var customColors = [[customRed, customBlue, customYellow, customGreen]]
+    let customForest1 = UIColor(red: 0.20, green: 0.52, blue: 0.43, alpha: 1.0)
+    let customForest2 = UIColor(red: 0.47, green: 0.28, blue: 0.20, alpha: 1.0)
+    let customForest3 = UIColor(red: 0.72, green: 0.78, blue: 0.55, alpha: 1.0)
+    let customForest4 = UIColor(red: 0.97, green: 0.97, blue: 0.41, alpha: 1.0)
+    
+    let customOutrun1 = UIColor(red: 1.00, green: 0.26, blue: 0.40, alpha: 1.0)
+    let customOutrun2 = UIColor(red: 0.47, green: 0.12, blue: 0.58, alpha: 1.0)
+    let customOutrun3 = UIColor(red: 0.18, green: 0.89, blue: 0.90, alpha: 1.0)
+    let customOutrun4 = UIColor(red: 1.00, green: 0.42, blue: 0.07, alpha: 1.0)
+    
+    let customPool1 = UIColor(red: 0.23, green: 0.68, blue: 0.83, alpha: 1.0)
+    let customPool2 = UIColor(red: 0.98, green: 0.40, blue: 0.66, alpha: 1.0)
+    let customPool3 = UIColor(red: 0.95, green: 0.84, blue: 0.37, alpha: 1.0)
+    let customPool4 = UIColor(red: 1.00, green: 0.05, blue: 0.31, alpha: 1.0)
+    
+    
+    lazy var customColors = [[customRed, customBlue, customYellow, customGreen], [customForest1, customForest2, customForest3, customForest4], [customOutrun1, customOutrun2, customOutrun3, customOutrun4], [customPool1, customPool2, customPool3, customPool4]]
     
     
     // -------------------------  AWAKE  ------------------------------

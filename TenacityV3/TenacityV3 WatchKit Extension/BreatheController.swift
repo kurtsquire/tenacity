@@ -21,18 +21,17 @@ var averageFullBreatheTime = 3.5
 var breatheTheme = "classic"
 var breatheColor = 0
 
-var resetColor: UIColor = UIColor(red: 0.929, green: 0.929, blue: 0.475, alpha: 1.0)
+var resetColor: UIColor = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
 
 class BreatheController: WatchViewController{
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
     
-    //INCORRECT COLORS
-    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
-    let customPink = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
-    let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
+    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
+    let customPink = UIColor(red: 0.94, green: 0.53, blue: 0.79, alpha: 1.0)
+    let customGreen = UIColor(red: 0.18, green: 0.843, blue: 0.45, alpha: 1.0)
     
     lazy var customColors = [customBlue, customRed, customPink, customGreen]
     
@@ -74,7 +73,6 @@ class BreatheController: WatchViewController{
         cycleTotal = 0
         totalBreaths = 0
         averageFullBreatheTime = 3.5
-        
     }
     
     /////////////////////////// Tutorial

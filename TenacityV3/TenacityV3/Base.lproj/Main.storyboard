@@ -142,7 +142,7 @@
                                                 <rect key="frame" x="5" y="290" width="365" height="6"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fox" translatesAutoresizingMaskIntoConstraints="NO" id="qb9-pY-AbC">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="morgan_1" translatesAutoresizingMaskIntoConstraints="NO" id="qb9-pY-AbC">
                                                 <rect key="frame" x="22" y="300" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -1115,7 +1115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBI-71-fGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="982"/>
+            <point key="canvasLocation" x="3191" y="981"/>
         </scene>
         <!--Pets-->
         <scene sceneID="tfJ-2j-7wm">
@@ -1322,14 +1322,14 @@
             <objects>
                 <viewController storyboardIdentifier="Game Upgrades" title="Game Upgrades" id="hQ8-N8-d6G" customClass="GameSettingsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjR-yN-K8y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-0b-oFe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeV-RZ-Dos">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Upgrades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-Fq-vFG" userLabel="Game Settings Title">
                                                 <rect key="frame" x="96" y="8" width="183" height="36"/>
@@ -1346,7 +1346,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lotus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qg-45-pfB" userLabel="Game Settings Title">
-                                                <rect key="frame" x="26" y="391" width="183" height="36"/>
+                                                <rect key="frame" x="29" y="596" width="183" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1361,137 +1361,169 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BDiamond" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-UO-3Wj">
-                                                <rect key="frame" x="87" y="100" width="46" height="46"/>
+                                                <rect key="frame" x="73" y="100" width="75" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equip_lotus" translatesAutoresizingMaskIntoConstraints="NO" id="add-cZ-kYk">
-                                                <rect key="frame" x="25" y="460" width="200" height="46"/>
+                                                <rect key="frame" x="20" y="663" width="225" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equip_square" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-2N-y88">
-                                                <rect key="frame" x="25" y="518" width="200" height="46"/>
+                                                <rect key="frame" x="20" y="723" width="225" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equip_heart" translatesAutoresizingMaskIntoConstraints="NO" id="8WQ-Sz-deU">
-                                                <rect key="frame" x="25" y="572" width="200" height="46"/>
+                                                <rect key="frame" x="20" y="785" width="225" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equip_circle" translatesAutoresizingMaskIntoConstraints="NO" id="sm3-Nc-pGE">
-                                                <rect key="frame" x="25" y="626" width="200" height="46"/>
+                                                <rect key="frame" x="20" y="843" width="225" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BFire1" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-fM-yaS">
-                                                <rect key="frame" x="87" y="168" width="46" height="46"/>
+                                                <rect key="frame" x="252" y="100" width="75" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BCloud1" translatesAutoresizingMaskIntoConstraints="NO" id="93M-nf-ete">
-                                                <rect key="frame" x="87" y="238" width="46" height="46"/>
+                                                <rect key="frame" x="73" y="238" width="75" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="breatheAsset" translatesAutoresizingMaskIntoConstraints="NO" id="1R1-ah-I8P">
-                                                <rect key="frame" x="87" y="292" width="46" height="46"/>
+                                                <rect key="frame" x="252" y="238" width="75" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-Gd-hXS">
-                                                <rect key="frame" x="281" y="468" width="38" height="30"/>
+                                                <rect key="frame" x="263" y="673" width="81" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Lotus"/>
+                                                <state key="normal" title="Equip Lotus"/>
                                                 <connections>
                                                     <action selector="lotus:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="1ss-Og-EQX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omr-pu-Jyy">
-                                                <rect key="frame" x="273" y="518" width="47" height="30"/>
+                                                <rect key="frame" x="264" y="733" width="91" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="square"/>
+                                                <state key="normal" title="Equip Square"/>
                                                 <connections>
                                                     <action selector="squares:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="mgj-jZ-QjV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-tA-qAI">
-                                                <rect key="frame" x="278" y="580" width="37" height="30"/>
+                                                <rect key="frame" x="264" y="795" width="81" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="heart"/>
+                                                <state key="normal" title="Equip Heart"/>
                                                 <connections>
                                                     <action selector="heart:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fKv-VT-oik"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfy-Jy-BUn">
-                                                <rect key="frame" x="278" y="634" width="37" height="30"/>
+                                                <rect key="frame" x="263" y="853" width="82" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="same"/>
+                                                <state key="normal" title="Equip Circle"/>
                                                 <connections>
                                                     <action selector="circle:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="liP-NW-s43"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-7G-UFZ">
-                                                <rect key="frame" x="272" y="108" width="60" height="30"/>
+                                                <rect key="frame" x="58" y="183" width="104" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="diamond"/>
+                                                <state key="normal" title="Equip Diamond"/>
                                                 <connections>
                                                     <action selector="diamond:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="OoH-iR-k3W"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-QL-Q4v">
-                                                <rect key="frame" x="283" y="176" width="30" height="30"/>
+                                                <rect key="frame" x="255" y="183" width="68" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="fire"/>
+                                                <state key="normal" title="Equip Fire"/>
                                                 <connections>
                                                     <action selector="fire:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="Dih-fx-nLF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-dZ-kEf">
-                                                <rect key="frame" x="279" y="246" width="38" height="30"/>
+                                                <rect key="frame" x="69" y="321" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="cloud"/>
+                                                <state key="normal" title="Equip Cloud"/>
                                                 <connections>
                                                     <action selector="cloud:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="upv-wz-HdY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMh-gX-Teh">
-                                                <rect key="frame" x="137" y="353" width="45" height="30"/>
+                                                <rect key="frame" x="244" y="443" width="91" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="red (1)"/>
+                                                <state key="normal" title="Equip Red (1)"/>
                                                 <connections>
                                                     <action selector="redB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="yXa-KE-DOo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqY-ot-jgs">
-                                                <rect key="frame" x="210" y="353" width="53" height="30"/>
+                                                <rect key="frame" x="239" y="495" width="96" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="pink (2)"/>
+                                                <state key="normal" title="Equip Pink (2)"/>
                                                 <connections>
                                                     <action selector="pinkB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="H99-5p-4ah"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-A2-Act">
-                                                <rect key="frame" x="284" y="353" width="64" height="30"/>
+                                                <rect key="frame" x="226" y="548" width="109" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="green (3)"/>
+                                                <state key="normal" title="Equip Green (3)"/>
                                                 <connections>
                                                     <action selector="greenB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="ifv-VG-D3B"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8d-03-Utz">
-                                                <rect key="frame" x="48" y="353" width="50" height="30"/>
+                                                <rect key="frame" x="242" y="391" width="93" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="blue(0)"/>
+                                                <state key="normal" title="Equip Blue(0)"/>
                                                 <connections>
                                                     <action selector="blueB:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="5vq-Ro-tGH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-1p-Z7q">
-                                                <rect key="frame" x="274" y="300" width="47" height="30"/>
+                                                <rect key="frame" x="243" y="321" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="classic"/>
+                                                <state key="normal" title="Equip Classic"/>
                                                 <connections>
                                                     <action selector="classic:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fan-VO-cy6"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egQ-yV-ArE">
+                                                <rect key="frame" x="241" y="907" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Equip Classic"/>
+                                                <connections>
+                                                    <action selector="lotusOG:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fTR-7t-OFU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhL-mm-sAO">
+                                                <rect key="frame" x="246" y="945" width="86" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Equip Forest"/>
+                                                <connections>
+                                                    <action selector="lotusForest:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="mu2-i0-Evi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxY-td-vQ0">
+                                                <rect key="frame" x="244" y="983" width="91" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Equip Outrun"/>
+                                                <connections>
+                                                    <action selector="lotusOutrun:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="lcd-Yu-0Wa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-et-t2z">
+                                                <rect key="frame" x="233" y="1021" width="113" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Equip Pool Party"/>
+                                                <connections>
+                                                    <action selector="lotusPool:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="0gX-qq-zwO"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" id="a8A-ud-luX"/>
+                                            <constraint firstAttribute="height" constant="1200" id="a8A-ud-luX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1515,11 +1547,11 @@
                         <viewLayoutGuide key="safeArea" id="UVG-6I-a2k"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Watch" image="Tab_WatchSettings" selectedImage="Tab_WatchSettings" id="edI-a4-kf1"/>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmT-f7-Jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="11"/>
+            <point key="canvasLocation" x="3190" y="-124"/>
         </scene>
         <!--Quests Help-->
         <scene sceneID="qtg-gp-1dq">
@@ -1694,6 +1726,7 @@
         <image name="line" width="10000" height="60"/>
         <image name="lock" width="36" height="47"/>
         <image name="morgan_0" width="438" height="462"/>
+        <image name="morgan_1" width="501" height="501"/>
         <image name="pet4" width="91" height="89"/>
         <image name="petexp1" width="62" height="62"/>
         <image name="petexp2" width="62" height="62"/>

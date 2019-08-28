@@ -55,7 +55,7 @@ class FreeBreatheController: WatchViewController{
         cycleTotalFree = 0
         totalBreathsFree = 0
         averageFullBreatheTimeFree = 3.5
-        cycleDict = [String : Int]()
+        cycleDict.removeAll()
         inGame = true
         
         sendData(what: "start game")
@@ -146,6 +146,8 @@ class FreeBreatheController: WatchViewController{
     
     func endGame(){
         inGame = false
+        
+        UserDefaults.standard.set(cycleDict, forKey: "cycleDict")
         sendData(what: "end game", timePlayed : timeFree, avgBreathLength : averageFullBreatheTimeFree, totalSets : cycleTotalFree, breatheCycleDict: cycleDict)
         WKInterfaceController.reloadRootControllers(withNames: ["FreeBreathe Results"], contexts: ["Breathe Done"])
     }
@@ -211,8 +213,6 @@ class FreeBreatheController: WatchViewController{
         
         ///// insert into dict
         cycleDict[String(cycleStep)] = (cycleDict[String(cycleStep)] ?? 0) + 1
-        
-        
         cycleReset()
     }
     
@@ -272,7 +272,7 @@ class FreeBreatheController: WatchViewController{
     }
     
     func updateTheme(){
-        testUserDefaults()
+        //testUserDefaults()
         image.setImageNamed(breatheTheme)
         image.setTintColor(customColors[breatheColor])
     }

@@ -9,7 +9,6 @@
 
 
 import RealmSwift
-//import Charts
 
 var screenWidth = CGFloat(300.0)
 
