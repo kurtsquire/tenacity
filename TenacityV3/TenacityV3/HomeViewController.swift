@@ -55,7 +55,8 @@ class HomeViewController: PhoneViewController {
     
     // --------------------------- PETS -----------------------------
    
-    @IBOutlet weak var homePet: UIButton!
+ 
+    @IBOutlet weak var homePet: UIImageView!
     @IBOutlet weak var petQuoteLabel: UILabel!
     
     
@@ -82,6 +83,16 @@ class HomeViewController: PhoneViewController {
     @IBAction func questRerollButton(_ sender: Any) {
         generateQuest()
         questDetailsLabel.text = dailyQuest.questString
+        
+        
+        //
+        //petOwned.append(2)
+        //UserDefaults.standard.set(petOwned, forKey: "petOwned")
+        let new = questRewardGenerator()
+        if new != 0{
+            petOwned.append(new)
+            UserDefaults.standard.set(petOwned, forKey: "petOwned")
+        }
     }
     @IBAction func questHelpButton(_ sender: Any) {
     }
@@ -167,38 +178,10 @@ class HomeViewController: PhoneViewController {
         
         
         // update labels -------------
-        let lvl = (exp/1000)
-        let baseEXP = (exp - (lvl*1000))
-        lvlLabel.text = "Lvl " + String(lvl + 1) // +1 so that you start lvl 1 not 0
-        expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
-        nudge1.text = dateString
-
+        updateExp()
+        updatePet()
         
-        if (baseEXP >= 900){
-            expBar1.image = UIImage(named: "expFill")
-            expBar2.image = UIImage(named: "expFill")
-            expBar3.image = UIImage(named: "expFill")
-            expBar4.image = UIImage(named: "expFill")
-        }
-        else if (baseEXP >= 750){
-            expBar1.image = UIImage(named: "expFill")
-            expBar2.image = UIImage(named: "expFill")
-            expBar3.image = UIImage(named: "expFill")
-            expBar4.image = UIImage(named: "expUnfill")
-        }
-        else if (baseEXP >= 500){
-            expBar1.image = UIImage(named: "expFill")
-            expBar2.image = UIImage(named: "expFill")
-            expBar3.image = UIImage(named: "expUnfill")
-            expBar4.image = UIImage(named: "expUnfill")
-        }
-        else if (baseEXP >= 250){
-            expBar1.image = UIImage(named: "expFill")
-            expBar2.image = UIImage(named: "expUnfill")
-            expBar3.image = UIImage(named: "expUnfill")
-            expBar4.image = UIImage(named: "expUnfill")
-        }
-        else{}
+        nudge1.text = dateString
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
@@ -215,6 +198,42 @@ class HomeViewController: PhoneViewController {
     }
     // ----------------------- UTILITY -------------------------------
     
+    func updateExp(){
+        let lvl = (exp/1000)
+        let baseEXP = (exp - (lvl*1000))
+        lvlLabel.text = "Rank " + String(lvl + 1) // +1 so that you start lvl 1 not 0
+        expLabel.text = String(baseEXP) + "/1000" //this allows an exp value of 7856 -> lvl 7 with 856 exp
+    
+        if (baseEXP >= 900){
+        expBar1.image = UIImage(named: "expFill")
+        expBar2.image = UIImage(named: "expFill")
+        expBar3.image = UIImage(named: "expFill")
+        expBar4.image = UIImage(named: "expFill")
+        }
+        else if (baseEXP >= 750){
+        expBar1.image = UIImage(named: "expFill")
+        expBar2.image = UIImage(named: "expFill")
+        expBar3.image = UIImage(named: "expFill")
+        expBar4.image = UIImage(named: "expUnfill")
+        }
+        else if (baseEXP >= 500){
+        expBar1.image = UIImage(named: "expFill")
+        expBar2.image = UIImage(named: "expFill")
+        expBar3.image = UIImage(named: "expUnfill")
+        expBar4.image = UIImage(named: "expUnfill")
+        }
+        else if (baseEXP >= 250){
+        expBar1.image = UIImage(named: "expFill")
+        expBar2.image = UIImage(named: "expUnfill")
+        expBar3.image = UIImage(named: "expUnfill")
+        expBar4.image = UIImage(named: "expUnfill")
+        }
+        else{}
+    }
+    
+    func updatePet(){
+        homePet.image = UIImage.init(named: petArray[petEquipped])
+    }
     
     
     // ---------------------- REALM -----------------------------------
@@ -287,6 +306,7 @@ class HomeViewController: PhoneViewController {
         if !dailyQuestData.isEmpty{
             buildQuest()
         }
+        //get pet
         petEquipped = defaults.integer(forKey: "petEquipped")
         
     }
@@ -463,8 +483,16 @@ class HomeViewController: PhoneViewController {
         }
     }
     
-    func questRewardGenerator() -> String{
-        return ""
+    func questRewardGenerator() -> Int{
+        let companions = Companions()
+        let random = companions.generateRandomPet()
+        if (random == 0){
+            // give exp
+        }
+        else{ // change mystery pet
+            rewardImage.image = UIImage.init(named: petArray[random - 1] + " shadow")
+        }
+        return random
     }
     
     

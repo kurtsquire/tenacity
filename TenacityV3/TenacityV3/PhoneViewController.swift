@@ -10,8 +10,7 @@ import Foundation
 import RealmSwift
 import WatchConnectivity
 
-//var petArray : Pet = []
-var petEquipped : Int = 0
+
 
 class PhoneViewController: UIViewController, WCSessionDelegate {
     

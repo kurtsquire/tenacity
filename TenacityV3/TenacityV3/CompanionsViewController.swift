@@ -9,23 +9,32 @@
 
 import UIKit
 
-
+let petArray = ["bay", "fjol", "cleo", "eldur", "halo", "sage", "raz", "koko", "rio", "aqua", "royal", "indigo", "mar", "phoenix", "bly", "dioon", "toor", "reese", "navy", "iris", "loch", "river", "bahn", "zbut", "sierra", "echo", "nova", "jade", "koda", "bayou"]
+var petOwned = [1]
+var petEquipped = 0
 
 class CompanionsViewController: PhoneViewController {
     
-    @IBAction func jadeLeft(_ sender: Any) {
-    }
-    @IBAction func jadeRight(_ sender: Any) {
-    }
-    @IBOutlet weak var jadeExp: UILabel!
-    @IBOutlet weak var jadePic: UIImageView!
-    @IBOutlet weak var morgPic: UIImageView!
-    @IBOutlet weak var morgExp: UILabel!
+    @IBOutlet var equipLabels: [UILabel]!
+    @IBOutlet var companionsButtons: [UIButton]!
     
-    // petname: [form 1->3, exp, unlocked]
-    //var allPets = ["Morgan": [petArray[0].getForm(), petArray[0].getExp(), petArray[0].isUnlocked()], "Jade": [petArray[1].getForm(), petArray[1].getExp(), petArray[1].isUnlocked()]]
-    
-    // changes the top font to white (time and battery life wifi etc)
+    @IBAction func companionsButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+        if (petOwned.contains(sender.tag)){
+            
+            equipPet(pet: sender.tag - 1)
+            
+            for equip in equipLabels {
+                if equip.tag != sender.tag {
+                    equip.isHidden = true
+                }
+                else {
+                    equip.isHidden = false
+                }
+            }
+        }
+        
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -47,13 +56,23 @@ class CompanionsViewController: PhoneViewController {
     }
     
     func updatePetData(){
-        //morgExp.text = String(petArray[0].getExp())
-        //jadeExp.text = String(petArray[1].getExp())
+        testUserDefaults()
         
-        //set all pets to correct form
-    }
-    
-    func changeForm(pet : Int, form : Int, left : Bool){
+        for equip in equipLabels {
+            if (equip.tag == petEquipped + 1) {
+                equip.isHidden = false
+            }
+        }
+        
+        for button in companionsButtons{
+            if (petOwned.contains(button.tag)){
+                button.setImage(UIImage.init(named: petArray[button.tag - 1]), for: .normal)
+            }
+            else{
+                button.setImage(UIImage.init(named: petArray[button.tag - 1] + " shadow"), for: .normal)
+            }
+        }
+
     }
     
     func equipPet(pet : Int){
@@ -62,15 +81,11 @@ class CompanionsViewController: PhoneViewController {
     }
     
     func testUserDefaults(){
-//        let defaults = UserDefaults.standard
-//
-//        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
-//        if !temp.isEmpty{
-//            allPets = temp
-//        }
-//        else{
-//            UserDefaults.standard.set(allPets, forKey: "allPetsData")
-//        }
+        let defaults = UserDefaults.standard
+
+
+        petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
+        petEquipped = defaults.integer(forKey: "petEquipped")
     }
     
     
