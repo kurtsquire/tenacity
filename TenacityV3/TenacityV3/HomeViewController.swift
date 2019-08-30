@@ -7,8 +7,14 @@
 //
 
 
-
+import Charts
 import RealmSwift
+
+let expFocus = [25.80, 23.00, 30.70, 20.00, 20.45, 30.00]
+let expFlow = [22.80, 8.30, 12.68, 11.45, 30.00, 19.70]
+let expLotus = [27.80, 17.30, 20.68, 17.45, 23.00, 30.70]
+let weekDays = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."]
+
 
 var screenWidth = CGFloat(300.0)
 
@@ -16,15 +22,15 @@ var circleGraphRadius = CGFloat(75)
 var circleGraphWidth = CGFloat(14)
 
 var breatheFGraphEndAngle = CGFloat(0)
-let breatheFGraphOutColor = UIColor(red: 0.21, green: 0.84, blue: 0.44, alpha: 0.1).cgColor
+let breatheFGraphOutColor = UIColor(red: 0.15, green: 0.21, blue: 0.17, alpha: 1.0).cgColor
 let breatheFGraphProgColor = UIColor(red: 0.21, green: 0.84, blue: 0.44, alpha: 1.0).cgColor
 
 var breatheIGraphEndAngle = CGFloat(0)
-let breatheIGraphOutColor = UIColor(red: 0.96, green: 0.95, blue: 0.35, alpha: 0.1).cgColor
+let breatheIGraphOutColor = UIColor(red: 0.21, green: 0.20, blue: 0.16, alpha: 1.0).cgColor
 let breatheIGraphProgColor = UIColor(red: 0.96, green: 0.95, blue: 0.35, alpha: 1.0).cgColor
 
 var lotusGraphEndAngle = CGFloat(0)
-let lotusGraphOutColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 0.1).cgColor
+let lotusGraphOutColor = UIColor(red: 0.21, green: 0.15, blue: 0.18, alpha: 1.0).cgColor
 let lotusGraphProgColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 1.0).cgColor
 
 var breatheFGoalTime = 30.0
@@ -35,6 +41,15 @@ class HomeViewController: PhoneViewController {
     
     
     @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var homeLineGraph: LineChartView!
+    
+    var gamesInfo = [
+        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor.blue, gameGoal: 20.00 ),
+        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor.green, gameGoal: 22.50 ),
+        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor.orange, gameGoal: 30.00 )
+    ]
+    
     
     
     // --------------------------- EXPERIENCE -----------------------------
@@ -169,6 +184,21 @@ class HomeViewController: PhoneViewController {
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
         
+        self.homeLineGraph.gridBackgroundColor = UIColor.white
+        
+        self.homeLineGraph.noDataText = "No data provided"
+        
+        self.homeLineGraph.doubleTapToZoomEnabled = false
+        
+        self.homeLineGraph.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        self.homeLineGraph.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
+        
+        self.homeLineGraph.xAxis.granularity = 1
+        
+        let lineChartTest : LineChart = LineChart(lineChartView: homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
+        
+        lineChartTest.drawWeekGraph()
         
     }
     

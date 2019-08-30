@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
@@ -99,6 +100,7 @@
 
 /* Begin PBXFileReference section */
 		05BF21B7786CDE1DA3CDF8CA /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
+		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				13A3918E23175B4C00809895 /* Companions.swift */,
 				421B843C22EFB01E008839C5 /* Pet.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
+				13201FF52319AECA00BF3A01 /* LineChart.swift */,
 				4251741F22F0D68600A11551 /* Help.storyboard */,
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
@@ -530,6 +533,7 @@
 				42EEE01222F105DB00BE02DC /* LotusStatsViewController.swift in Sources */,
 				421307A922DFCBB90007C445 /* Quests.swift in Sources */,
 				42EEE00E22F105AB00BE02DC /* BreatheFocusStatsViewController.swift in Sources */,
+				13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */,
 				42398AB622938159009CA96E /* ViewController.swift in Sources */,
 				42EEE01422F109DD00BE02DC /* HelpViewController.swift in Sources */,
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
