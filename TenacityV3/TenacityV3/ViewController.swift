@@ -31,6 +31,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     var exp = 0
     var dailyQuest = Quest()
+    var rerolls = 0
     var dailyQuestData : Dictionary<String, Any> = [:]
     var savePath = ViewController.getDocumentsDirectory().appendingPathComponent("data").path
     
@@ -182,16 +183,16 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     func buildQuest(){
         if ((dailyQuestData["questType"] as! String) == "breathe focus"){
-            dailyQuest = BreatheFocusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), ct: (dailyQuestData["count"] as! Int))
+            dailyQuest = BreatheFocusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), ct: (dailyQuestData["count"] as! Int))
         }
         else if ((dailyQuestData["questType"] as! String) == "breathe infinite"){
-            dailyQuest = BreatheInfiniteQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), gc: (dailyQuestData["goalCount"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int))
+            dailyQuest = BreatheInfiniteQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), gc: (dailyQuestData["goalCount"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int))
         }
         else if ((dailyQuestData["questType"] as! String) == "lotus"){
-            dailyQuest = LotusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), ct: (dailyQuestData["count"] as! Int))
+            dailyQuest = LotusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), ct: (dailyQuestData["count"] as! Int))
         }
         else if ((dailyQuestData["questType"] as! String) == "play all"){
-            dailyQuest = PlayAllQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), g: (dailyQuestData["goalNum"] as! Int), bfp: (dailyQuestData["bfPlayed"] as! Int), bip: (dailyQuestData["biPlayed"] as! Int), lp: (dailyQuestData["lPlayed"] as! Int))
+            dailyQuest = PlayAllQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), g: (dailyQuestData["goalNum"] as! Int), bfp: (dailyQuestData["bfPlayed"] as! Int), bip: (dailyQuestData["biPlayed"] as! Int), lp: (dailyQuestData["lPlayed"] as! Int))
         }
     }
     
@@ -204,8 +205,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let y = Int.random(in: 3 ... 8)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Play for " + String(x) + " minutes with rate set to " + String(y) + "."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x*y
@@ -220,8 +221,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let x = Int.random(in: 10 ... 30)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Play for " + String(x) + " minutes."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x
@@ -236,8 +237,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let y = Int.random(in: 3 ... 6)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Play " + String(x) + " games that last at least " + String(y) + " minutes."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x*y
@@ -252,8 +253,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let x = Int.random(in: 3 ... 8)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Play a game that lasts " + String(x) + " minutes without failing a cycle."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 20*x
@@ -269,8 +270,8 @@ class ViewController: UIViewController, WCSessionDelegate {
             let z = Int.random(in: 3 ... 8)
             dailyQuestData["questType"] = "breathe infinite"
             dailyQuestData["questString"] = "Play a " + String(x) + "-minute session and complete " + String(y) + " cycles at rate " + String(z) + "."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+            dailyQuestData["timeStart"] = startTime
+            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
             dailyQuestData["reward"] = "Progress!"
             dailyQuestData["complete"] = false
             dailyQuestData["exp"] = 10*x*y*z
@@ -287,8 +288,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 x *= 5
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Play " + String(x) + " rounds."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x
@@ -303,8 +304,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 x *= 5
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Play a game with " + String(x) + " rounds without missing."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 15*x
@@ -318,8 +319,8 @@ class ViewController: UIViewController, WCSessionDelegate {
                 let x = Int.random(in: 2 ... 5)
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Play " + String(x) + " games."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = "Progress!"
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 20*x
@@ -334,8 +335,8 @@ class ViewController: UIViewController, WCSessionDelegate {
             let x = Int.random(in: 2 ... 5)
             dailyQuestData["questType"] = "play all"
             dailyQuestData["questString"] = "Play each game for " + String(x) + " minutes."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
+            dailyQuestData["timeStart"] = startTime
+            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
             dailyQuestData["reward"] = "Progress!"
             dailyQuestData["complete"] = false
             dailyQuestData["exp"] = 40*x
@@ -680,9 +681,15 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
         }
         exp = defaults.integer(forKey: "exp")
+        rerolls = defaults.integer(forKey: "rerolls")
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
-        if !dailyQuestData.isEmpty{
-            buildQuest()
+        if dailyQuestData.isEmpty{
+
+        }
+        else if (dailyQuestData["timeEnd"] as! Date) < today{
+
+        }
+        else {
         }
     }
     

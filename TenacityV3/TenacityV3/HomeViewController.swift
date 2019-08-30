@@ -80,19 +80,21 @@ class HomeViewController: PhoneViewController {
     
     
     // --------------------------- QUESTS -----------------------------
+    @IBOutlet weak var rerollButton: UIButton!
     @IBAction func questRerollButton(_ sender: Any) {
-        generateQuest()
-        questDetailsLabel.text = dailyQuest.questString
-        
-        
-        //
-        //petOwned.append(2)
-        //UserDefaults.standard.set(petOwned, forKey: "petOwned")
-        let new = questRewardGenerator()
-        if new != 0{
-            petOwned.append(new)
-            UserDefaults.standard.set(petOwned, forKey: "petOwned")
+        if (rerolls > 0 && !(dailyQuestData["complete"] as! Bool)){
+            generateQuest()
+            questDetailsLabel.text = dailyQuest.questString
+            rerolls -= 1
+            UserDefaults.standard.set(rerolls, forKey: "rerolls")
+            rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
+        
+        //let new = questRewardGenerator()
+        //if new != 0{
+            //petOwned.append(new)
+            //UserDefaults.standard.set(petOwned, forKey: "petOwned")
+        //}
     }
     @IBAction func questHelpButton(_ sender: Any) {
     }
@@ -185,7 +187,12 @@ class HomeViewController: PhoneViewController {
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
-                questDetailsLabel.text = "Quest Complete!!!! Good Job"
+                if ((dailyQuestData["reward"] as! Int) != 0){
+                    questDetailsLabel.text = "Great job! You've earned " + petArray[(dailyQuestData["reward"] as! Int) - 1] + "!"
+                }
+                else{
+                    questDetailsLabel.text = "Great job! You've earned bonus EXP!"
+                }
             }
             else {
                 questDetailsLabel.text = dailyQuest.questString
@@ -289,45 +296,59 @@ class HomeViewController: PhoneViewController {
             let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
             self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(lotusCircleGraph.progressLayer)
-            
         }
     }
     
     // ------------------------ USER DEFAULTS ---------------------------
-    func testUserDefaults(){
+    override func testUserDefaults(){
         let defaults = UserDefaults.standard
         
         // get exp
         exp = defaults.integer(forKey: "exp")
+        //get rerolls
+        rerolls = defaults.integer(forKey: "rerolls")
         // get nudge
         dateString = defaults.string(forKey: "dateString") ?? "No Nudge Set"
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
-        if !dailyQuestData.isEmpty{
-            buildQuest()
+        
+        print("test user defaults")
+        
+        if dailyQuestData.isEmpty{
+            print("quest empty")
+            generateQuest()
+            rerolls = 3
+            defaults.set(rerolls, forKey: "rerolls")
+            rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
+        }
+        else if (dailyQuestData["timeEnd"] as! Date) < today{
+            print("timeend < today")
+            generateQuest()
+            rerolls = 3
+            defaults.set(rerolls, forKey: "rerolls")
+            rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
+        }
+        else {
+            print("build quest")
+            self.buildQuest()
+            rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
         //get pet
         petEquipped = defaults.integer(forKey: "petEquipped")
+        
+        if (dailyQuestData["complete"] as! Bool){
+            rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1])
+        }
+        else{
+            rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1] + " shadow")
+        }
         
     }
     
     // -------------------------- QUESTS -------------------------------------
 
     
-    func buildQuest(){
-        if ((dailyQuestData["questType"] as! String) == "breathe focus"){
-            dailyQuest = BreatheFocusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), ct: (dailyQuestData["count"] as! Int), c: (dailyQuestData["complete"] as! Bool))
-        }
-        else if ((dailyQuestData["questType"] as! String) == "breathe infinite"){
-            dailyQuest = BreatheInfiniteQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), gc: (dailyQuestData["goalCycle"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), c: (dailyQuestData["complete"] as! Bool))
-        }
-        else if ((dailyQuestData["questType"] as! String) == "lotus"){
-            dailyQuest = LotusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), ct: (dailyQuestData["count"] as! Int), c: (dailyQuestData["complete"] as! Bool))
-        }
-        else if ((dailyQuestData["questType"] as! String) == "play all"){
-            dailyQuest = PlayAllQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! String), g: (dailyQuestData["goal"] as! Int), bfp: (dailyQuestData["bfPlayed"] as! Int), bip: (dailyQuestData["biPlayed"] as! Int), lp: (dailyQuestData["lPlayed"] as! Int), c: (dailyQuestData["complete"] as! Bool))
-        }
-    }
+    
     
     func generateQuest(){
         let num = Int.random(in: 1 ... 100)//RNG for which quest type appears
@@ -338,9 +359,9 @@ class HomeViewController: PhoneViewController {
                 let y = Int.random(in: 3 ... 8) // 3-8
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes with rate set to " + String(y) + "."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+                dailyQuestData["reward"] = questRewardGenerator()
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x*y
                 dailyQuestData["obj"] = 0
@@ -354,9 +375,9 @@ class HomeViewController: PhoneViewController {
                 let x = Int.random(in: 10 ... 30)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+                dailyQuestData["reward"] = questRewardGenerator()
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x
                 dailyQuestData["obj"] = 1
@@ -371,9 +392,9 @@ class HomeViewController: PhoneViewController {
                 let y = Int.random(in: 3 ... 6)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Breathe Focus\nPlay " + String(x) + " games that last at least " + String(y) + " minutes."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+                dailyQuestData["reward"] = questRewardGenerator()
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x*y
                 dailyQuestData["obj"] = 2
@@ -387,9 +408,9 @@ class HomeViewController: PhoneViewController {
 //                let x = Int.random(in: 3 ... 8)
 //                dailyQuestData["questType"] = "breathe focus"
 //                dailyQuestData["questString"] = "Breathe Focus\nPlay a game that lasts " + String(x) + " minutes without failing a cycle."
-//                dailyQuestData["timeStart"] = today
-//                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-//                dailyQuestData["reward"] = "Progress!"
+//                dailyQuestData["timeStart"] = startTime
+//                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+//                dailyQuestData["reward"] = questRewardGenerator()
 //                dailyQuestData["complete"] = false
 //                dailyQuestData["exp"] = 20*x
 //                dailyQuestData["obj"] = 3
@@ -404,9 +425,9 @@ class HomeViewController: PhoneViewController {
             let z = Int.random(in: 3 ... 8)
             dailyQuestData["questType"] = "breathe infinite"
             dailyQuestData["questString"] = "Breathe Infinite\nPlay a " + String(x) + "-minute session and complete " + String(y) + " cycles at rate " + String(z) + "."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-            dailyQuestData["reward"] = "Progress!"
+            dailyQuestData["timeStart"] = startTime
+            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+            dailyQuestData["reward"] = questRewardGenerator()
             dailyQuestData["complete"] = false
             dailyQuestData["exp"] = 10*x*y*z
             dailyQuestData["goalTime"] = x*60
@@ -422,9 +443,9 @@ class HomeViewController: PhoneViewController {
                 x *= 5
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " rounds."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+                dailyQuestData["reward"] = questRewardGenerator()
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 10*x
                 dailyQuestData["obj"] = 0
@@ -438,9 +459,9 @@ class HomeViewController: PhoneViewController {
 //                x *= 5
 //                dailyQuestData["questType"] = "lotus"
 //                dailyQuestData["questString"] = "Lotus\nPlay a game with " + String(x) + " rounds without missing."
-//                dailyQuestData["timeStart"] = today
-//                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-//                dailyQuestData["reward"] = "Progress!"
+//                dailyQuestData["timeStart"] = startTime
+//                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+//                dailyQuestData["reward"] = questRewardGenerator()
 //                dailyQuestData["complete"] = false
 //                dailyQuestData["exp"] = 15*x
 //                dailyQuestData["obj"] = 1
@@ -453,9 +474,9 @@ class HomeViewController: PhoneViewController {
                 let x = Int.random(in: 2 ... 5)
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " games."
-                dailyQuestData["timeStart"] = today
-                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-                dailyQuestData["reward"] = "Progress!"
+                dailyQuestData["timeStart"] = startTime
+                dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+                dailyQuestData["reward"] = questRewardGenerator()
                 dailyQuestData["complete"] = false
                 dailyQuestData["exp"] = 20*x
                 dailyQuestData["obj"] = 0
@@ -469,9 +490,9 @@ class HomeViewController: PhoneViewController {
             let x = Int.random(in: 2 ... 5)
             dailyQuestData["questType"] = "play all"
             dailyQuestData["questString"] = "Play All\nPlay each game for " + String(x) + " minutes."
-            dailyQuestData["timeStart"] = today
-            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: today)
-            dailyQuestData["reward"] = "Progress!"
+            dailyQuestData["timeStart"] = startTime
+            dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
+            dailyQuestData["reward"] = questRewardGenerator()
             dailyQuestData["complete"] = false
             dailyQuestData["exp"] = 40*x
             dailyQuestData["goal"] = x*60
@@ -494,7 +515,5 @@ class HomeViewController: PhoneViewController {
         }
         return random
     }
-    
-    
-    
+
 }

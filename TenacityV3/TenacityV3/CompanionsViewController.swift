@@ -80,7 +80,7 @@ class CompanionsViewController: PhoneViewController {
         UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
     }
     
-    func testUserDefaults(){
+    override func testUserDefaults(){
         let defaults = UserDefaults.standard
 
 
