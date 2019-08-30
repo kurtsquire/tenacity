@@ -17,6 +17,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
     var dailyQuest = Quest()
     var dailyQuestData : Dictionary<String, Any> = [:]
     var exp = 0
+    var rerolls = 0
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
         super.viewDidLoad()
@@ -36,6 +37,21 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         //petArray[petEquipped].addExp(addExp)
     }
     
+    func buildQuest(){
+        if ((dailyQuestData["questType"] as! String) == "breathe focus"){
+            dailyQuest = BreatheFocusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), ct: (dailyQuestData["count"] as! Int), c: (dailyQuestData["complete"] as! Bool))
+        }
+        else if ((dailyQuestData["questType"] as! String) == "breathe infinite"){
+            dailyQuest = BreatheInfiniteQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), gc: (dailyQuestData["goalCycle"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), gt: (dailyQuestData["goalTime"] as! Int), c: (dailyQuestData["complete"] as! Bool))
+        }
+        else if ((dailyQuestData["questType"] as! String) == "lotus"){
+            dailyQuest = LotusQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), obj: (dailyQuestData["obj"] as! Int), gn: (dailyQuestData["goalNum"] as! Int), ct: (dailyQuestData["count"] as! Int), c: (dailyQuestData["complete"] as! Bool))
+        }
+        else if ((dailyQuestData["questType"] as! String) == "play all"){
+            dailyQuest = PlayAllQuest(qs: (dailyQuestData["questString"] as! String), ts: (dailyQuestData["timeStart"] as! Date), te: (dailyQuestData["timeEnd"] as! Date), exp: (dailyQuestData["exp"] as! Int), r: (dailyQuestData["reward"] as! Int), g: (dailyQuestData["goal"] as! Int), bfp: (dailyQuestData["bfPlayed"] as! Int), bip: (dailyQuestData["biPlayed"] as! Int), lp: (dailyQuestData["lPlayed"] as! Int), c: (dailyQuestData["complete"] as! Bool))
+        }
+    }
+    
     func saveQuest(progress: Bool){
         if (progress){
             let report = dailyQuest.getProgress()
@@ -44,6 +60,16 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
             }
         }
         UserDefaults.standard.set(dailyQuestData, forKey: "dailyQuestData")
+    }
+    
+    func giveReward(new: Int){
+        if new != 0{
+            petOwned.append(new)
+            UserDefaults.standard.set(petOwned, forKey: "petOwned")
+        }
+        else{
+            saveEXP(addEXP: 100)
+        }
     }
     
     
@@ -69,9 +95,17 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
     }
         
     
-//    func testUserDefaults(){
-//        let defaults = UserDefaults.standard
-//
+    func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
+        
+        if dailyQuestData.isEmpty{
+        }
+        else {
+            print("build quest")
+            buildQuest()
+            //rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
+        }
 //        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
 //        if !temp.isEmpty{
 //            petArray.append(Pet(n: "Morgan", r: "common", ul: temp["Morgan"][2], xp: temp["Morgan"][1]))
@@ -83,12 +117,23 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
 //            petArray.append(Pet(n: "Morgan", r: "common", ul: true))
 //            petArray.append(Pet(n: "Jade", r: "common", ul: true))
 //        }
-//    }
+    }
     
     
     // ----------------------------------- WATCH CONNECTIVITY -------------------------------
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        
+        let defaults = UserDefaults.standard
+        dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
+        
+        if dailyQuestData.isEmpty{
+        }
+        else {
+            print("build quest")
+            buildQuest()
+            //rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
+        }
         
         //Initialize Realm instance
         let realm = try! Realm()
@@ -129,7 +174,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                     if dailyQuest.checkQuest(data: qdata){
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        //give reward
+                        giveReward(new: (dailyQuestData["reward"] as! Int))
                         
                     }
                 }
@@ -159,9 +204,10 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                 
                 if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
                     if dailyQuest.checkQuest(data: qdata){
+                        print("quest complete")
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        //give reward
+                        giveReward(new: (dailyQuestData["reward"] as! Int))
 
                     }
                 }
@@ -200,7 +246,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                     if dailyQuest.checkQuest(data: qdata){
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        //give reward
+                        giveReward(new: (dailyQuestData["reward"] as! Int))
                     }
                 }
                 saveQuest(progress: true)
