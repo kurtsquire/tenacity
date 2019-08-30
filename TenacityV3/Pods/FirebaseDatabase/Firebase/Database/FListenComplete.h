@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-#import "FOperation.h"
 #import <Foundation/Foundation.h>
+#import "FOperation.h"
+
 
 @interface FListenComplete : NSObject <FOperation>
 
-- (id)initWithSource:(FOperationSource *)aSource path:(FPath *)aPath;
+- (id) initWithSource:(FOperationSource *)aSource path:(FPath *)aPath;
 
-@property(nonatomic, strong, readonly) FOperationSource *source;
-@property(nonatomic, strong, readonly) FPath *path;
-@property(nonatomic, readonly) FOperationType type;
+@property (nonatomic, strong, readonly) FOperationSource *source;
+@property (nonatomic, strong, readonly) FPath *path;
+@property (nonatomic, readonly) FOperationType type;
 
 @end

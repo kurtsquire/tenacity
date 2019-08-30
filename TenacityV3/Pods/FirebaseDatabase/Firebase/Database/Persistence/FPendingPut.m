@@ -21,7 +21,7 @@
 @synthesize path;
 @synthesize data;
 
-- (id)initWithPath:(FPath *)aPath andData:(id)aData andPriority:(id)aPriority {
+- (id) initWithPath:(FPath *)aPath andData:(id)aData andPriority:(id)aPriority {
     self = [super init];
     if (self) {
         self.path = aPath;
@@ -39,9 +39,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
-    if (self) {
-        self.path =
-            [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
+    if(self) {
+        self.path = [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
         self.data = [aDecoder decodeObjectForKey:@"data"];
         self.priority = [aDecoder decodeObjectForKey:@"priority"];
     }
@@ -50,12 +49,13 @@
 
 @end
 
+
 @implementation FPendingPutPriority
 
 @synthesize path;
 @synthesize priority;
 
-- (id)initWithPath:(FPath *)aPath andPriority:(id)aPriority {
+- (id) initWithPath:(FPath *)aPath andPriority:(id)aPriority {
     self = [super init];
     if (self) {
         self.path = aPath;
@@ -71,9 +71,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
-    if (self) {
-        self.path =
-            [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
+    if(self) {
+        self.path = [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
         self.priority = [aDecoder decodeObjectForKey:@"priority"];
     }
     return self;
@@ -81,12 +80,13 @@
 
 @end
 
+
 @implementation FPendingUpdate
 
 @synthesize path;
 @synthesize data;
 
-- (id)initWithPath:(FPath *)aPath andData:(id)aData {
+- (id) initWithPath:(FPath *)aPath andData:(id)aData {
     self = [super init];
     if (self) {
         self.path = aPath;
@@ -102,9 +102,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
-    if (self) {
-        self.path =
-            [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
+    if(self) {
+        self.path = [[FPath alloc] initWith:[aDecoder decodeObjectForKey:@"path"]];
         self.data = [aDecoder decodeObjectForKey:@"data"];
     }
     return self;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#import "FAuthTokenProvider.h"
 #import <Foundation/Foundation.h>
+#import "FAuthTokenProvider.h"
 
 @interface FIRNoopAuthTokenProvider : NSObject <FAuthTokenProvider>
 

@@ -18,10 +18,11 @@
 
 @class FChange;
 
+
 @interface FChildChangeAccumulator : NSObject
 
-- (id)init;
-- (void)trackChildChange:(FChange *)change;
-- (NSArray *)changes;
+- (id) init;
+- (void) trackChildChange:(FChange *)change;
+- (NSArray *) changes;
 
 @end

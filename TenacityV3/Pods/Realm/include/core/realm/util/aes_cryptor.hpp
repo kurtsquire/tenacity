@@ -90,7 +90,7 @@ private:
 };
 
 struct ReaderInfo {
-    const void* reader_ID;
+    void* reader_ID;
     uint64_t version;
 };
 

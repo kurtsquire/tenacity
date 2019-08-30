@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#import "FNode.h"
 #import <Foundation/Foundation.h>
+#import "FNode.h"
 
 @interface FTupleObjectNode : NSObject
 
 - (id)initWithObject:(id)aObj andNode:(id<FNode>)aNode;
 
-@property(nonatomic, strong) id<FNode> node;
-@property(nonatomic, strong) id obj;
+@property (nonatomic, strong) id<FNode> node;
+@property (nonatomic, strong) id obj;
 
 @end

@@ -16,11 +16,11 @@
 
 #import "FAtomicNumber.h"
 
-@interface FAtomicNumber () {
+@interface FAtomicNumber() {
     unsigned long number;
 }
 
-@property(nonatomic, strong) NSLock *lock;
+@property (nonatomic, strong) NSLock* lock;
 
 @end
 
@@ -28,7 +28,8 @@
 
 @synthesize lock;
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         number = 1;
@@ -37,12 +38,10 @@
     return self;
 }
 
-- (NSNumber *)getAndIncrement {
-    NSNumber *result;
+- (NSNumber *) getAndIncrement {
+    NSNumber* result;
 
-    // See:
-    // http://developer.apple.com/library/ios/#DOCUMENTATION/Cocoa/Conceptual/Multithreading/ThreadSafety/ThreadSafety.html#//apple_ref/doc/uid/10000057i-CH8-SW14
-    // to improve, etc.
+    // See: http://developer.apple.com/library/ios/#DOCUMENTATION/Cocoa/Conceptual/Multithreading/ThreadSafety/ThreadSafety.html#//apple_ref/doc/uid/10000057i-CH8-SW14 to improve, etc.
 
     [self.lock lock];
     result = [NSNumber numberWithUnsignedLong:number];

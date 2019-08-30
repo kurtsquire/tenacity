@@ -1169,7 +1169,10 @@ static id<FIRAuthBackendImplementation> gBackendImplementation;
   }
 
   if ([shortErrorMessage isEqualToString:kMissingClientIdentifier]) {
-    return [FIRAuthErrorUtils missingClientIdentifierErrorWithMessage:serverErrorMessage];
+    return [FIRAuthErrorUtils appNotVerifiedErrorWithMessage:@"Missing app verification via"
+        " reCAPTCHA or APNS token. Please verify that appVerificationDisabledForTesting is not"
+        " enabled when testing with a phone number that is not marked as a test Phone number in the"
+        " app console."];
   }
 
   if ([shortErrorMessage isEqualToString:kCaptchaCheckFailedErrorMessage]) {

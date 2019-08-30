@@ -17,7 +17,8 @@
 #import "FSnapshotHolder.h"
 #import "FEmptyNode.h"
 
-@interface FSnapshotHolder ()
+@interface FSnapshotHolder()
+
 
 @end
 
@@ -25,7 +26,8 @@
 
 @synthesize rootNode;
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         self.rootNode = [FEmptyNode emptyNode];
@@ -33,14 +35,12 @@
     return self;
 }
 
-- (id<FNode>)getNode:(FPath *)path {
+- (id<FNode>) getNode:(FPath *)path {
     return [self.rootNode getChild:path];
 }
 
-- (void)updateSnapshot:(FPath *)path
-       withNewSnapshot:(id<FNode>)newSnapshotNode {
-    self.rootNode = [self.rootNode updateChild:path
-                                  withNewChild:newSnapshotNode];
+- (void) updateSnapshot:(FPath *)path withNewSnapshot:(id<FNode>)newSnapshotNode {
+    self.rootNode = [self.rootNode updateChild:path withNewChild:newSnapshotNode];
 }
 
 @end

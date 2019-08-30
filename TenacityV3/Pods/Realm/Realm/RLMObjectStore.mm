@@ -36,8 +36,6 @@
 #import "results.hpp"
 #import "shared_realm.hpp"
 
-#import <realm/group.hpp>
-
 #import <objc/message.h>
 
 using namespace realm;

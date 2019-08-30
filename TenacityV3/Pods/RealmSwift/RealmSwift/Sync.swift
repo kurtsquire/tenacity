@@ -730,7 +730,7 @@ public extension SyncSession {
             return transferredBytes >= transferrableBytes
         }
 
-        internal init(transferred: UInt, transferrable: UInt) {
+        fileprivate init(transferred: UInt, transferrable: UInt) {
             transferredBytes = Int(transferred)
             transferrableBytes = Int(transferrable)
         }
@@ -904,7 +904,7 @@ public enum SyncSubscriptionState: Equatable {
 /// Changes to the state of the subscription can be observed using `SyncSubscription.observe(_:options:_:)`.
 ///
 /// Subscriptions are created using `Results.subscribe()` or `Results.subscribe(named:)`.
-public final class SyncSubscription<T: RealmCollectionValue>: RealmCollectionValue {
+public class SyncSubscription<T: RealmCollectionValue>: RealmCollectionValue {
     private let rlmSubscription: RLMSyncSubscription
 
     /// The name of the subscription.
@@ -1015,16 +1015,6 @@ public final class SyncSubscription<T: RealmCollectionValue>: RealmCollectionVal
     /// device is currently offline, the removal will not be processed until the device returns online.
     public func unsubscribe() {
         rlmSubscription.unsubscribe()
-    }
-}
-
-// :nodoc:
-extension SyncSubscription: CustomObjectiveCBridgeable {
-    static func bridging(objCValue: Any) -> SyncSubscription {
-        return ObjectiveCSupport.convert(object: RLMCastToSyncSubscription(objCValue)) as! SyncSubscription<T>
-    }
-    var objCValue: Any {
-        return 0
     }
 }
 

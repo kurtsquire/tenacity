@@ -20,7 +20,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FIRAuthWebViewController () <WKNavigationDelegate>
+@interface FIRAuthWebViewController () <UIWebViewDelegate>
 @end
 
 @implementation FIRAuthWebViewController {
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadView {
   FIRAuthWebView *webView = [[FIRAuthWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  webView.webView.navigationDelegate = self;
+  webView.webView.delegate = self;
   self.view = webView;
   _webView = webView;
   self.navigationItem.leftBarButtonItem =
@@ -76,36 +76,33 @@ NS_ASSUME_NONNULL_BEGIN
   [_delegate webViewControllerDidCancel:self];
 }
 
-#pragma mark - WKNavigationDelegate
+#pragma mark - UIWebViewDelegate
 
-- (void)webView:(WKWebView *)webView
-    decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
-    decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-  [_delegate webViewController:self canHandleURL:navigationAction.request.URL];
-  decisionHandler(WKNavigationActionPolicyAllow);
+- (BOOL)webView:(UIWebView *)webView
+    shouldStartLoadWithRequest:(NSURLRequest *)request
+                navigationType:(UIWebViewNavigationType)navigationType {
+  return ![_delegate webViewController:self canHandleURL:request.URL];
 }
 
-- (void)webView:(WKWebView *)webView
-didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+  // Show & animate the activity indicator.
   _webView.spinner.hidden = NO;
   [_webView.spinner startAnimating];
 }
 
-- (void)webView:(WKWebView *)webView
-didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  // Hide & stop the activity indicator.
   _webView.spinner.hidden = YES;
   [_webView.spinner stopAnimating];
 }
 
-- (void)webView:(WKWebView *)webView
-didFailNavigation:(null_unspecified WKNavigation *)navigation
-      withError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
   if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorCancelled) {
     // It's okay for the page to be redirected before it is completely loaded.  See b/32028062 .
     return;
   }
   // Forward notification to our delegate.
-  [self webView:webView didFinishNavigation:navigation];
+  [self webViewDidFinishLoad:webView];
   [_delegate webViewController:self didFailWithError:error];
 }
 

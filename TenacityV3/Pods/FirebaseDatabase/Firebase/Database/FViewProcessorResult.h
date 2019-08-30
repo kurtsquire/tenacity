@@ -18,12 +18,13 @@
 
 @class FViewCache;
 
-@interface FViewProcessorResult : NSObject
-@property(nonatomic, strong, readonly) FViewCache *viewCache;
-/**
- * List of FChanges.
- */
-@property(nonatomic, strong, readonly) NSArray *changes;
 
-- (id)initWithViewCache:(FViewCache *)viewCache changes:(NSArray *)changes;
+@interface FViewProcessorResult : NSObject
+@property (nonatomic, strong, readonly) FViewCache *viewCache;
+/**
+* List of FChanges.
+*/
+@property (nonatomic, strong, readonly) NSArray *changes;
+
+- (id) initWithViewCache:(FViewCache *)viewCache changes:(NSArray *)changes;
 @end

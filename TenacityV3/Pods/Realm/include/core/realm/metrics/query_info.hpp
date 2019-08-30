@@ -27,6 +27,8 @@
 #include <realm/util/features.h>
 #include <realm/metrics/metric_timer.hpp>
 
+#if REALM_METRICS
+
 namespace realm {
 
 class Query; // forward declare in namespace realm
@@ -68,4 +70,5 @@ private:
 } // namespace metrics
 } // namespace realm
 
+#endif // REALM_METRICS
 #endif // REALM_QUERY_INFO_HPP

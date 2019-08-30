@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-#import "FEvent.h"
+#import <Foundation/Foundation.h>
 #import "FIRDataSnapshot.h"
 #import "FIRDatabaseReference.h"
 #import "FTupleUserCallback.h"
-#import <Foundation/Foundation.h>
+#import "FEvent.h"
 
 @protocol FEventRegistration;
 @protocol FIndex;
 
-@interface FDataEvent : NSObject <FEvent>
+@interface FDataEvent : NSObject<FEvent>
 
-- initWithEventType:(FIRDataEventType)type
-    eventRegistration:(id<FEventRegistration>)eventRegistration
-         dataSnapshot:(FIRDataSnapshot *)dataSnapshot;
-- initWithEventType:(FIRDataEventType)type
-    eventRegistration:(id<FEventRegistration>)eventRegistration
-         dataSnapshot:(FIRDataSnapshot *)snapshot
-             prevName:(NSString *)prevName;
+- initWithEventType:(FIRDataEventType)type eventRegistration:(id<FEventRegistration>)eventRegistration
+       dataSnapshot:(FIRDataSnapshot *)dataSnapshot;
+- initWithEventType:(FIRDataEventType)type eventRegistration:(id<FEventRegistration>)eventRegistration
+       dataSnapshot:(FIRDataSnapshot *)snapshot prevName:(NSString *)prevName;
 
-@property(nonatomic, strong, readonly) id<FEventRegistration> eventRegistration;
-@property(nonatomic, strong, readonly) FIRDataSnapshot *snapshot;
-@property(nonatomic, strong, readonly) NSString *prevName;
-@property(nonatomic, readonly) FIRDataEventType eventType;
+
+@property (nonatomic, strong, readonly) id<FEventRegistration> eventRegistration;
+@property (nonatomic, strong, readonly) FIRDataSnapshot * snapshot;
+@property (nonatomic, strong, readonly) NSString* prevName;
+@property (nonatomic, readonly) FIRDataEventType eventType;
 
 @end

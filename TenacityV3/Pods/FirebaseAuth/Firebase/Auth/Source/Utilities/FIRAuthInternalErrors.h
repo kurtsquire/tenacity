@@ -92,12 +92,6 @@ typedef NS_ENUM(NSInteger, FIRAuthInternalErrorCode) {
   FIRAuthInternalErrorCodeKeychainError =
       FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeKeychainError,
 
-  /** @var FIRAuthInternalErrorCodeMissingClientIdentifier
-      @brief Indicates an error for when the client identifier is missing.
-   */
-  FIRAuthInternalErrorCodeMissingClientIdentifier =
-      FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeMissingClientIdentifier,
-
   /** @var FIRAuthInternalErrorCodeInternalError
       @brief An internal error occurred.
       @remarks This value is here for consistency. It's also used to make the implementation of
@@ -351,17 +345,17 @@ typedef NS_ENUM(NSInteger, FIRAuthInternalErrorCode) {
   FIRAuthInternalErrorCodeInvalidClientID =
       FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeInvalidClientID,
 
-  /** Indicates that a network request within a SFSafariViewController or WKWebView failed.
+  /** Indicates that a network request within a SFSafariViewController or UIWebview failed.
    */
   FIRAuthInternalErrorCodeWebNetworkRequestFailed =
       FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeWebNetworkRequestFailed,
 
-  /** Indicates that an internal error occurred within a SFSafariViewController or WKWebView.
+  /** Indicates that an internal error occurred within a SFSafariViewController or UIWebview.
    */
   FIRAuthInternalErrorCodeWebInternalError =
       FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeWebInternalError,
 
-  /** Indicates that an internal error occurred within a SFSafariViewController or WKWebView.
+  /** Indicates that an internal error occurred within a SFSafariViewController or UIWebview.
    */
   FIRAuthInternalErrorCodeWebSignInUserInteractionFailure =
       FIRAuthPublicErrorCodeFlag | FIRAuthErrorCodeWebSignInUserInteractionFailure,

@@ -18,7 +18,7 @@
 
 #import "FIRAuthAppCredential.h"
 #import "FIRAuthGlobalWorkQueue.h"
-#import "FIRAuthKeychainServices.h"
+#import "FIRAuthKeychain.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -43,10 +43,10 @@ static NSString *const kPendingReceiptsKey = @"pending_receipts";
 static const NSUInteger kMaximumNumberOfPendingReceipts = 32;
 
 @implementation FIRAuthAppCredentialManager {
-  /** @var _keychainServices
+  /** @var _keychain
       @brief The keychain for app credentials to load from and to save to.
    */
-  FIRAuthKeychainServices *_keychainServices;
+  FIRAuthKeychain *_keychain;
 
   /** @var _pendingReceipts
       @brief A list of pending receipts sorted in the order they were recorded.
@@ -59,13 +59,13 @@ static const NSUInteger kMaximumNumberOfPendingReceipts = 32;
   NSMutableDictionary<NSString *, FIRAuthAppCredentialCallback> *_callbacksByReceipt;
 }
 
-- (instancetype)initWithKeychain:(FIRAuthKeychainServices *)keychain {
+- (instancetype)initWithKeychain:(FIRAuthKeychain *)keychain {
   self = [super init];
   if (self) {
-    _keychainServices = keychain;
+    _keychain = keychain;
     // Load the credentials from keychain if possible.
     NSError *error;
-    NSData *encodedData = [_keychainServices dataForKey:kKeychainDataKey error:&error];
+    NSData *encodedData = [_keychain dataForKey:kKeychainDataKey error:&error];
     if (!error && encodedData) {
       NSKeyedUnarchiver *unarchiver =
           [[NSKeyedUnarchiver alloc] initForReadingWithData:encodedData];
@@ -139,7 +139,7 @@ static const NSUInteger kMaximumNumberOfPendingReceipts = 32;
   [archiver encodeObject:_credential forKey:kFullCredentialKey];
   [archiver encodeObject:_pendingReceipts forKey:kPendingReceiptsKey];
   [archiver finishEncoding];
-  [_keychainServices setData:archiveData forKey:kKeychainDataKey error:NULL];
+  [_keychain setData:archiveData forKey:kKeychainDataKey error:NULL];
 }
 
 /** @fn callBackWithReceipt:

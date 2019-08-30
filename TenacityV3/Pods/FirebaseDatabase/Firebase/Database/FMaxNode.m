@@ -15,28 +15,31 @@
  */
 
 #import "FMaxNode.h"
-#import "FEmptyNode.h"
 #import "FUtilities.h"
+#import "FEmptyNode.h"
+
 
 @implementation FMaxNode {
+
 }
-- (id)init {
+- (id) init {
     self = [super init];
     if (self) {
+
     }
     return self;
 }
 
-+ (id<FNode>)maxNode {
++ (id<FNode>) maxNode {
     static FMaxNode *maxNode = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-      maxNode = [[FMaxNode alloc] init];
+        maxNode = [[FMaxNode alloc] init];
     });
     return maxNode;
 }
 
-- (NSComparisonResult)compare:(id<FNode>)other {
+- (NSComparisonResult) compare:(id<FNode>)other {
     if (other == self) {
         return NSOrderedSame;
     } else {
@@ -48,11 +51,11 @@
     return other == self;
 }
 
-- (id<FNode>)getImmediateChild:(NSString *)childName {
+- (id<FNode>) getImmediateChild:(NSString *) childName {
     return [FEmptyNode emptyNode];
 }
 
-- (BOOL)isEmpty {
+- (BOOL) isEmpty {
     return NO;
 }
 @end

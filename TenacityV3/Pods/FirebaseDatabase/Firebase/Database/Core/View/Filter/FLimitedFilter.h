@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#import "FNodeFilter.h"
 #import <Foundation/Foundation.h>
+#import "FNodeFilter.h"
 
 @class FQueryParams;
 
-@interface FLimitedFilter : NSObject <FNodeFilter>
 
-- (id)initWithQueryParams:(FQueryParams *)params;
+@interface FLimitedFilter : NSObject<FNodeFilter>
+
+- (id) initWithQueryParams:(FQueryParams *)params;
 @end

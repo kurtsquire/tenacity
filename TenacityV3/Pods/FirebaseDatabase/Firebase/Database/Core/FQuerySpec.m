@@ -18,8 +18,9 @@
 
 @interface FQuerySpec ()
 
-@property(nonatomic, strong, readwrite) FPath *path;
-@property(nonatomic, strong, readwrite) FQueryParams *params;
+@property (nonatomic, strong, readwrite) FPath* path;
+@property (nonatomic, strong, readwrite) FQueryParams *params;
+
 
 @end
 
@@ -35,8 +36,7 @@
 }
 
 + (FQuerySpec *)defaultQueryAtPath:(FPath *)path {
-    return [[FQuerySpec alloc] initWithPath:path
-                                     params:[FQueryParams defaultInstance]];
+    return [[FQuerySpec alloc] initWithPath:path params:[FQueryParams defaultInstance]];
 }
 
 - (id)copyWithZone:(NSZone *)zone {
@@ -79,8 +79,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"FQuerySpec (path: %@, params: %@)",
-                                      self.path, self.params];
+    return [NSString stringWithFormat:@"FQuerySpec (path: %@, params: %@)", self.path, self.params];
 }
 
 @end

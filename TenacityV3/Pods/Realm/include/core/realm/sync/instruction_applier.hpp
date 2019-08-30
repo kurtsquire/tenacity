@@ -24,23 +24,22 @@
 #include <realm/sync/object.hpp>
 #include <realm/util/logger.hpp>
 
-
 namespace realm {
 namespace sync {
 
 struct Changeset;
 
 struct InstructionApplier {
-    explicit InstructionApplier(Group&, TableInfoCache&) noexcept;
+    explicit InstructionApplier(Group& group, TableInfoCache& table_info_cache) noexcept;
 
     /// Throws BadChangesetError if application fails due to a problem with the
     /// changeset.
     ///
     /// FIXME: Consider using std::error_code instead of throwing
     /// BadChangesetError.
-    void apply(const Changeset&, util::Logger*);
+    void apply(const Changeset& log, util::Logger* logger);
 
-    void begin_apply(const Changeset&, util::Logger*) noexcept;
+    void begin_apply(const Changeset& log, util::Logger* logger) noexcept;
     void end_apply() noexcept;
 
 protected:
@@ -51,10 +50,7 @@ protected:
 #undef REALM_DECLARE_INSTRUCTION_HANDLER
     friend struct Instruction; // to allow visitor
 
-    template<class A> static void apply(A& applier, const Changeset&, util::Logger*);
-
-    // Allows for in-place modification of changeset while applying it
-    template<class A> static void apply(A& applier, Changeset&, util::Logger*);
+    template<class A> static void apply(A& applier, const Changeset& log, util::Logger* logger);
 
     TableRef table_for_class_name(StringData) const; // Throws
     REALM_NORETURN void bad_transaction_log(const char*) const;
@@ -107,25 +103,10 @@ inline void InstructionApplier::end_apply() noexcept
 }
 
 template<class A>
-inline void InstructionApplier::apply(A& applier, const Changeset& changeset, util::Logger* logger)
+inline void InstructionApplier::apply(A& applier, const Changeset& log, util::Logger* logger)
 {
-    applier.begin_apply(changeset, logger);
-    for (auto instr : changeset) {
-        if (!instr)
-            continue;
-        instr->visit(applier); // Throws
-#if REALM_DEBUG
-        applier.m_table_info_cache.verify();
-#endif
-    }
-    applier.end_apply();
-}
-
-template<class A>
-inline void InstructionApplier::apply(A& applier, Changeset& changeset, util::Logger* logger)
-{
-    applier.begin_apply(changeset, logger);
-    for (auto instr : changeset) {
+    applier.begin_apply(log, logger);
+    for (auto instr: log) {
         if (!instr)
             continue;
         instr->visit(applier); // Throws

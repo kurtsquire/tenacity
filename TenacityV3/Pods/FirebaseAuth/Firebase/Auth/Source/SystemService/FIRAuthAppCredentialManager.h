@@ -16,8 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FIRAuthAppCredential.h"
-#import "FIRAuthKeychainServices.h"
+@class FIRAuthAppCredential;
+@class FIRAuthKeychain;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -53,7 +53,7 @@ typedef void (^FIRAuthAppCredentialCallback)(FIRAuthAppCredential *credential);
     @param keychain The iOS Keychain storage to back up the app credential with.
     @return The initialized instance.
  */
-- (instancetype)initWithKeychain:(FIRAuthKeychainServices *)keychain NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithKeychain:(FIRAuthKeychain *)keychain NS_DESIGNATED_INITIALIZER;
 
 /** @fn didStartVerificationWithReceipt:timeout:callback:
     @brief Notifies that the app verification process has started.

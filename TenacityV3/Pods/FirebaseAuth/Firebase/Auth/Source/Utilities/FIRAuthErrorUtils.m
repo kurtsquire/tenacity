@@ -52,13 +52,13 @@ static NSString *const kURLResponseErrorCodeInvalidClientID = @"auth/invalid-oau
 
 /** @var kURLResponseErrorCodeNetworkRequestFailed
     @brief Error code that indicates that a network request within the SFSafariViewController or
-        WKWebView failed.
+        UIWebView failed.
  */
 static NSString *const kURLResponseErrorCodeNetworkRequestFailed = @"auth/network-request-failed";
 
 /** @var kURLResponseErrorCodeInternalError
     @brief Error code that indicates that an internal error occurred within the
-        SFSafariViewController or WKWebView failed.
+        SFSafariViewController or UIWebView failed.
  */
 static NSString *const kURLResponseErrorCodeInternalError = @"auth/internal-error";
 
@@ -156,12 +156,6 @@ static NSString *const kFIRAuthErrorMessageNetworkError = @"Network error (such 
 static NSString *const kFIRAuthErrorMessageKeychainError = @"An error occurred when accessing the "
     "keychain. The @c NSLocalizedFailureReasonErrorKey field in the @c NSError.userInfo dictionary "
     "will contain more information about the error encountered";
-
-/** @var kFIRAuthErrorMessageMissingClientIdentifier
-    @brief Message for @c FIRAuthErrorCodeMissingClientIdentifier error code.
- */
-static NSString *const kFIRAuthErrorMessageMissingClientIdentifier = @"The request does not contain "
-    "any client identifier.";
 
 /** @var kFIRAuthErrorMessageUserTokenExpired
     @brief Message for @c FIRAuthErrorCodeTokenExpired error code.
@@ -412,7 +406,7 @@ static NSString *const kFIRAuthErrorMessageWebRequestFailed = @"A network error 
     @brief Message for @c FIRAuthErrorCodeWebInternalError error code.
  */
 static NSString *const kFIRAuthErrorMessageWebInternalError = @"An internal error has occurred "
-    "within the SFSafariViewController or WKWebView.";
+    "within the SFSafariViewController or UIWebView.";
 
 /** @var kFIRAuthErrorMessageAppVerificationUserInteractionFailure
     @brief Message for @c FIRAuthErrorCodeInvalidClientID error code.
@@ -487,8 +481,6 @@ static NSString *FIRAuthErrorDescription(FIRAuthErrorCode code) {
       return kFIRAuthErrorMessageNetworkError;
     case FIRAuthErrorCodeKeychainError:
       return kFIRAuthErrorMessageKeychainError;
-    case FIRAuthErrorCodeMissingClientIdentifier:
-      return kFIRAuthErrorMessageMissingClientIdentifier;
     case FIRAuthErrorCodeUserTokenExpired:
       return kFIRAuthErrorMessageUserTokenExpired;
     case FIRAuthErrorCodeUserNotFound:
@@ -622,8 +614,6 @@ static NSString *const FIRAuthErrorCodeString(FIRAuthErrorCode code) {
       return @"ERROR_NETWORK_REQUEST_FAILED";
     case FIRAuthErrorCodeKeychainError:
       return @"ERROR_KEYCHAIN_ERROR";
-    case FIRAuthErrorCodeMissingClientIdentifier:
-      return @"ERROR_MISSING_CLIENT_IDENTIFIER";
     case FIRAuthErrorCodeUserTokenExpired:
       return @"ERROR_USER_TOKEN_EXPIRED";
     case FIRAuthErrorCodeUserNotFound:
@@ -1094,10 +1084,6 @@ static NSString *const FIRAuthErrorCodeString(FIRAuthErrorCode code) {
 
 + (NSError *)appNotVerifiedErrorWithMessage:(nullable NSString *)message {
   return [self errorWithCode:FIRAuthInternalErrorCodeAppNotVerified message:message];
-}
-
-+ (NSError *)missingClientIdentifierErrorWithMessage:(nullable NSString *)message {
-  return [self errorWithCode:FIRAuthInternalErrorCodeMissingClientIdentifier message:message];
 }
 
 + (NSError *)captchaCheckFailedErrorWithMessage:(nullable NSString *)message {

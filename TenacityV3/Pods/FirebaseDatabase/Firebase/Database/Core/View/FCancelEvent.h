@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-#import "FEvent.h"
 #import <Foundation/Foundation.h>
+#import "FEvent.h"
 
 @protocol FEventRegistration;
 
-@interface FCancelEvent : NSObject <FEvent>
 
-- initWithEventRegistration:(id<FEventRegistration>)eventRegistration
-                      error:(NSError *)error
-                       path:(FPath *)path;
+@interface FCancelEvent : NSObject<FEvent>
 
-@property(nonatomic, strong, readonly) NSError *error;
-@property(nonatomic, strong, readonly) FPath *path;
+- initWithEventRegistration:(id<FEventRegistration>)eventRegistration error:(NSError *)error path:(FPath *)path;
+
+@property (nonatomic, strong, readonly) NSError *error;
+@property (nonatomic, strong, readonly) FPath *path;
 
 @end

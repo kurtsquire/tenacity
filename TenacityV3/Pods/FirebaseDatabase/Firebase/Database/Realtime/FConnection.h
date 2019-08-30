@@ -14,29 +14,25 @@
  * limitations under the License.
  */
 
-#import "FTypedefs.h"
-#import "FWebSocketConnection.h"
 #import <Foundation/Foundation.h>
+#import "FWebSocketConnection.h"
+#import "FTypedefs.h"
 
 @protocol FConnectionDelegate;
 
 @interface FConnection : NSObject <FWebSocketDelegate>
 
-@property(nonatomic, weak) id<FConnectionDelegate> delegate;
+@property (nonatomic, weak) id <FConnectionDelegate> delegate;
 
-- (id)initWith:(FRepoInfo *)aRepoInfo
-    andDispatchQueue:(dispatch_queue_t)queue
-       lastSessionID:(NSString *)lastSessionID;
+- (id)initWith:(FRepoInfo *)aRepoInfo andDispatchQueue:(dispatch_queue_t)queue lastSessionID:(NSString *)lastSessionID;
 
 - (void)open;
 - (void)close;
 - (void)sendRequest:(NSDictionary *)dataMsg sensitive:(BOOL)sensitive;
 
 // FWebSocketDelegate delegate methods
-- (void)onMessage:(FWebSocketConnection *)fwebSocket
-      withMessage:(NSDictionary *)message;
-- (void)onDisconnect:(FWebSocketConnection *)fwebSocket
-    wasEverConnected:(BOOL)everConnected;
+- (void)onMessage:(FWebSocketConnection *)fwebSocket withMessage:(NSDictionary *)message;
+- (void)onDisconnect:(FWebSocketConnection *)fwebSocket wasEverConnected:(BOOL)everConnected;
 
 @end
 
@@ -47,13 +43,10 @@ typedef enum {
 
 @protocol FConnectionDelegate <NSObject>
 
-- (void)onReady:(FConnection *)fconnection
-         atTime:(NSNumber *)timestamp
-      sessionID:(NSString *)sessionID;
-- (void)onDataMessage:(FConnection *)fconnection
-          withMessage:(NSDictionary *)message;
-- (void)onDisconnect:(FConnection *)fconnection
-          withReason:(FDisconnectReason)reason;
+- (void)onReady:(FConnection *)fconnection atTime:(NSNumber *)timestamp sessionID:(NSString *)sessionID;
+- (void)onDataMessage:(FConnection *)fconnection withMessage:(NSDictionary *)message;
+- (void)onDisconnect:(FConnection *)fconnection withReason:(FDisconnectReason)reason;
 - (void)onKill:(FConnection *)fconnection withReason:(NSString *)reason;
 
 @end
+

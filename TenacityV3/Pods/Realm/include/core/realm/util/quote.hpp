@@ -24,11 +24,14 @@
 
 namespace realm {
 namespace util {
+namespace _private {
 
-template<class C, class T> struct Quote {
+template<class C, class T> struct Quoted {
     bool smart;
     util::BasicStringView<C, T> view;
 };
+
+} // namespace _private
 
 
 /// Mark text for quotation during output to stream.
@@ -47,7 +50,7 @@ template<class C, class T> struct Quote {
 ///
 /// Quotation happens as the string is written to a stream, so there is no
 /// intermediate representation of the quoted string.
-template<class C, class T> Quote<C, T> quoted(util::BasicStringView<C, T>) noexcept;
+template<class C, class T> _private::Quoted<C, T> quoted(util::BasicStringView<C, T>) noexcept;
 
 
 /// Same as quoted(), except that in this case, quotation is elided when the
@@ -55,11 +58,12 @@ template<class C, class T> Quote<C, T> quoted(util::BasicStringView<C, T>) noexc
 /// precise, quotation is elided if the string is nonempty, consists entirely of
 /// printable charcters (std::isprint()), does not contain space (` `), and does
 /// not conatian quotation (`"`) or backslash (`\`).
-template<class C, class T> Quote<C, T> smart_quoted(util::BasicStringView<C, T>) noexcept;
+template<class C, class T>
+_private::Quoted<C, T> smart_quoted(util::BasicStringView<C, T>) noexcept;
 
 
 template<class C, class T>
-std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>&, Quote<C, T>);
+std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>&, _private::Quoted<C, T>);
 
 
 
@@ -67,21 +71,23 @@ std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>&, Quote<C, T>);
 
 // Implementation
 
-template<class C, class T> inline Quote<C, T> quoted(util::BasicStringView<C, T> view) noexcept
+template<class C, class T>
+inline _private::Quoted<C, T> quoted(util::BasicStringView<C, T> view) noexcept
 {
     bool smart = false;
     return {smart, view};
 }
 
 template<class C, class T>
-inline Quote<C, T> smart_quoted(util::BasicStringView<C, T> view) noexcept
+inline _private::Quoted<C, T> smart_quoted(util::BasicStringView<C, T> view) noexcept
 {
     bool smart = true;
     return {smart, view};
 }
 
 template<class C, class T>
-inline std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>& out, Quote<C, T> quoted)
+inline std::basic_ostream<C, T>& operator<<(std::basic_ostream<C, T>& out,
+                                            _private::Quoted<C, T> quoted)
 {
     std::locale loc = out.getloc();
     const std::ctype<C>& ctype = std::use_facet<std::ctype<C>>(loc);

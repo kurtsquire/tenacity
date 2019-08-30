@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#import "FChildrenNode.h"
 #import <Foundation/Foundation.h>
+#import "FChildrenNode.h"
+
 
 @interface FMaxNode : FChildrenNode
-+ (id<FNode>)maxNode;
+ + (id<FNode>) maxNode;
 @end

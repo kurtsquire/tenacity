@@ -420,10 +420,10 @@ DEPRECATED_MSG_ATTRIBUTE("Please use fetchSignInMethodsForEmail:completion: for 
         <li>@c FIRAuthErrorCodeUserDisabled - Indicates the user's account is disabled.
         </li>
         <li>@c FIRAuthErrorCodeWebNetworkRequestFailed - Indicates that a network request within a
-            SFSafariViewController or WKWebView failed.
+            SFSafariViewController or UIWebview failed.
         </li>
         <li>@c FIRAuthErrorCodeWebInternalError - Indicates that an internal error occurred within a
-            SFSafariViewController or WKWebView.
+            SFSafariViewController or UIWebview.
         </li>
         <li>@c FIRAuthErrorCodeWebSignInUserInteractionFailure - Indicates a general failure during
             a web sign-in flow.

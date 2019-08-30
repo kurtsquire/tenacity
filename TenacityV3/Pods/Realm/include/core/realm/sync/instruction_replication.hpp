@@ -46,7 +46,6 @@ public:
     virtual void reset();
 
     ChangesetEncoder& get_instruction_encoder() noexcept;
-    const ChangesetEncoder& get_instruction_encoder() const noexcept;
 
     //@{
     /// Generate instructions for Object Store tables. These must be called
@@ -180,11 +179,6 @@ inline bool InstructionReplication::is_short_circuited() const noexcept
 }
 
 inline ChangesetEncoder& InstructionReplication::get_instruction_encoder() noexcept
-{
-    return m_encoder;
-}
-
-inline const ChangesetEncoder& InstructionReplication::get_instruction_encoder() const noexcept
 {
     return m_encoder;
 }

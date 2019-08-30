@@ -22,7 +22,8 @@
 @synthesize childCount;
 @synthesize value;
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         self.children = [[NSMutableDictionary alloc] init];

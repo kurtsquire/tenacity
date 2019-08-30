@@ -332,7 +332,7 @@ static void callInMainThreadWithAuthDataResultAndError(
   FIRUserMetadata *metadata =
       [aDecoder decodeObjectOfClass:[FIRUserMetadata class] forKey:kMetadataCodingKey];
   NSString *APIKey =
-      [aDecoder decodeObjectOfClass:[NSString class] forKey:kAPIKeyCodingKey];
+      [aDecoder decodeObjectOfClass:[FIRUserMetadata class] forKey:kAPIKeyCodingKey];
   if (!userID || !tokenService) {
     return nil;
   }
@@ -938,7 +938,7 @@ static void callInMainThreadWithAuthDataResultAndError(
                                 expirationDate:expDate
                                       authDate:authDate
                                   issuedAtDate:issuedDate
-                                signInProvider:tokenPayloadDictionary[@"firebase"][@"sign_in_provider"]
+                                signInProvider:tokenPayloadDictionary[@"sign_in_provider"]
                                         claims:tokenPayloadDictionary];
   return result;
 }
@@ -1252,11 +1252,19 @@ static void callInMainThreadWithAuthDataResultAndError(
           [[FIRSetAccountInfoRequest alloc] initWithRequestConfiguration:requestConfiguration];
       setAccountInfoRequest.accessToken = accessToken;
 
-      if (!self->_providerData[provider]) {
-        completeAndCallbackWithError([FIRAuthErrorUtils noSuchProviderError]);
-        return;
+      if ([provider isEqualToString:FIREmailAuthProviderID]) {
+        if (!self->_hasEmailPasswordCredential) {
+          completeAndCallbackWithError([FIRAuthErrorUtils noSuchProviderError]);
+          return;
+        }
+        setAccountInfoRequest.deleteAttributes = @[ FIRSetAccountInfoUserAttributePassword ];
+      } else {
+        if (!self->_providerData[provider]) {
+          completeAndCallbackWithError([FIRAuthErrorUtils noSuchProviderError]);
+          return;
+        }
+        setAccountInfoRequest.deleteProviders = @[ provider ];
       }
-      setAccountInfoRequest.deleteProviders = @[ provider ];
 
       [FIRAuthBackend setAccountInfo:setAccountInfoRequest
                             callback:^(FIRSetAccountInfoResponse *_Nullable response,
