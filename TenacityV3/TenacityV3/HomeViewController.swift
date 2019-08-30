@@ -195,7 +195,10 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
         
         self.homeLineGraph.xAxis.granularity = 1
-        
+        self.homeLineGraph.legend.textColor = UIColor.white
+        self.homeLineGraph.xAxis.labelTextColor = UIColor.white
+        self.homeLineGraph.rightAxis.labelTextColor = UIColor.white
+        self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
         let lineChartTest : LineChart = LineChart(lineChartView: homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
         
         lineChartTest.drawWeekGraph()

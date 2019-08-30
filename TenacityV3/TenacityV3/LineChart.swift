@@ -40,9 +40,9 @@ class LineChart {
         gameSet.axisDependency = .left
         gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
         gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
-        gameSet.lineWidth = 4.0
-        gameSet.circleRadius = 6.0
-        gameSet.circleHoleRadius = 3.0
+        gameSet.lineWidth = 3.0
+        gameSet.circleRadius = 4.0
+        gameSet.circleHoleRadius = 2.0
         gameSet.fillAlpha = 255 / 255
         gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
         gameSet.highlightColor = UIColor.clear
@@ -90,9 +90,9 @@ class LineChart {
             gameSet.axisDependency = .left
             gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
             gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
-            gameSet.lineWidth = 4.0
-            gameSet.circleRadius = 6.0
-            gameSet.circleHoleRadius = 3.0
+            gameSet.lineWidth = 3.0
+            gameSet.circleRadius = 4.0
+            gameSet.circleHoleRadius = 2.0
             gameSet.fillAlpha = 255 / 255
             gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
             gameSet.highlightColor = UIColor.clear
