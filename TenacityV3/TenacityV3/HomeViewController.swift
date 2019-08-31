@@ -224,7 +224,7 @@ class HomeViewController: PhoneViewController {
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
                 if ((dailyQuestData["reward"] as! Int) != 0){
-                    questDetailsLabel.text = "Great job! You've earned " + petArray[(dailyQuestData["reward"] as! Int) - 1] + "!"
+                    questDetailsLabel.text = "Great job! You've earned " + petArray[(dailyQuestData["reward"] as! Int) - 1].capitalized + "!"
                 }
                 else{
                     questDetailsLabel.text = "Great job! You've earned bonus EXP!"
@@ -348,24 +348,19 @@ class HomeViewController: PhoneViewController {
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
         
-        print("test user defaults")
-        
         if dailyQuestData.isEmpty{
-            print("quest empty")
             generateQuest()
             rerolls = 3
             defaults.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
         else if (dailyQuestData["timeEnd"] as! Date) < today{
-            print("timeend < today")
             generateQuest()
             rerolls = 3
             defaults.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
         else {
-            print("build quest")
             self.buildQuest()
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
