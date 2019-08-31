@@ -124,6 +124,8 @@ class HomeViewController: PhoneViewController {
     @IBOutlet weak var nudge2: UILabel!
     @IBOutlet weak var nudge3: UILabel!
     @IBOutlet weak var nudge4: UILabel!
+    @IBOutlet weak var nudge5: UILabel!
+    @IBOutlet weak var nudge6: UILabel!
     
     
     // ------------------------- VARIABLES TIME ----------------------------------
@@ -138,7 +140,6 @@ class HomeViewController: PhoneViewController {
     
     
     // ------------------------- VARIABLES USER DEFAULTS ---------------
-    var dateString = ""
     
     
     // -----------------------------------------------------------------
@@ -219,7 +220,6 @@ class HomeViewController: PhoneViewController {
         updateExp()
         updatePet()
         
-        nudge1.text = dateString
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
@@ -277,6 +277,7 @@ class HomeViewController: PhoneViewController {
     func updatePet(){
         homePet.image = UIImage.init(named: petArray[petEquipped])
     }
+    
     
     
     // ---------------------- REALM -----------------------------------
@@ -344,7 +345,13 @@ class HomeViewController: PhoneViewController {
         //get rerolls
         rerolls = defaults.integer(forKey: "rerolls")
         // get nudge
-        dateString = defaults.string(forKey: "dateString") ?? "No Nudge Set"
+        nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Nudge Set"
+        nudge2.text = defaults.string(forKey: "dateString1") ?? "No Nudge Set"
+        nudge3.text = defaults.string(forKey: "dateString2") ?? "No Nudge Set"
+        nudge4.text = defaults.string(forKey: "dateString3") ?? "No Nudge Set"
+        nudge5.text = defaults.string(forKey: "dateString4") ?? "No Nudge Set"
+        nudge6.text = defaults.string(forKey: "dateString5") ?? "No Nudge Set"
+
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
         

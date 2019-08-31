@@ -27,6 +27,16 @@
             </objects>
             <point key="canvasLocation" x="-767" y="116"/>
         </scene>
+        <!--Nudges-->
+        <scene sceneID="gep-k8-iPI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Nudges" referencedIdentifier="Nudges" id="Gb7-fD-4av" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jnr-eB-Y0Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4U-3o-sQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="-289"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xdO-ah-3zY">
             <objects>
@@ -44,7 +54,7 @@
                         <segue destination="IQ8-EK-Djv" kind="relationship" relationship="viewControllers" id="IYL-uK-hbY"/>
                         <segue destination="W29-Ig-vSs" kind="relationship" relationship="viewControllers" id="CqM-fA-kAM"/>
                         <segue destination="hQ8-N8-d6G" kind="relationship" relationship="viewControllers" id="rkD-SC-Lih"/>
-                        <segue destination="8vJ-3k-jMH" kind="relationship" relationship="viewControllers" id="WU2-dx-2hA"/>
+                        <segue destination="Gb7-fD-4av" kind="relationship" relationship="viewControllers" id="0eR-rK-Mhx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBu-gh-bTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,14 +205,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x17-yf-VsI" userLabel="Quests Title">
-                                                <rect key="frame" x="96" y="1095" width="183" height="36"/>
+                                                <rect key="frame" x="95" y="927" width="183" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-9H-5QW" userLabel="Quest Help Button">
-                                                <rect key="frame" x="330" y="1098" width="30" height="30"/>
+                                                <rect key="frame" x="329" y="930" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="help"/>
                                                 <connections>
@@ -211,7 +221,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDI-c1-Ba8" userLabel="Reroll Button">
-                                                <rect key="frame" x="15" y="1095" width="103" height="36"/>
+                                                <rect key="frame" x="14" y="927" width="103" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Reroll"/>
@@ -220,32 +230,32 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reward" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf0-Bu-cjw">
-                                                <rect key="frame" x="262" y="1139" width="58" height="21"/>
+                                                <rect key="frame" x="261" y="971" width="58" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="raz shadow" translatesAutoresizingMaskIntoConstraints="NO" id="Ouf-m8-6QH">
-                                                <rect key="frame" x="235" y="1168" width="113" height="65"/>
+                                                <rect key="frame" x="234" y="1000" width="113" height="65"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwH-MU-cPn">
-                                                <rect key="frame" x="22" y="1139" width="205" height="94"/>
+                                                <rect key="frame" x="21" y="971" width="205" height="94"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp3-zt-5t7" userLabel="Nudges Title">
-                                                <rect key="frame" x="99" y="1243" width="183" height="36"/>
+                                                <rect key="frame" x="98" y="1075" width="183" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QS-F9-FFr" userLabel="Nudge Help Button">
-                                                <rect key="frame" x="330" y="1246" width="30" height="30"/>
+                                                <rect key="frame" x="329" y="1078" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="help"/>
                                                 <connections>
@@ -254,28 +264,35 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgT-sm-h1o">
-                                                <rect key="frame" x="22" y="1287" width="330" height="58"/>
+                                                <rect key="frame" x="21" y="1119" width="330" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge2 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t6-NG-P6E">
-                                                <rect key="frame" x="22" y="1353" width="330" height="58"/>
+                                                <rect key="frame" x="21" y="1185" width="330" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-UO-7WJ">
-                                                <rect key="frame" x="22" y="1419" width="330" height="58"/>
+                                                <rect key="frame" x="21" y="1251" width="330" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-wJ-NXQ">
-                                                <rect key="frame" x="22" y="1485" width="330" height="58"/>
+                                                <rect key="frame" x="21" y="1317" width="330" height="58"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-2E-SGl">
+                                                <rect key="frame" x="22" y="1383" width="330" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -315,6 +332,13 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.16430306434631348" green="0.17622414231300354" blue="0.19286689162254333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudge6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gA-0L-5Dq">
+                                                <rect key="frame" x="21" y="1449" width="330" height="58"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1531" id="NA8-Ki-sls"/>
@@ -325,33 +349,6 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybT-qB-RNu">
-                                        <rect key="frame" x="35" y="854" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Achievement" image="badge1"/>
-                                        <connections>
-                                            <action selector="achievementButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="0zN-by-2sZ"/>
-                                            <segue destination="Gr9-wU-kNR" kind="show" id="X6C-6G-0a0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxa-YV-XmC">
-                                        <rect key="frame" x="148" y="854" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Achievement" image="badge 2"/>
-                                        <connections>
-                                            <action selector="achievementButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="wSf-U2-eHI"/>
-                                            <segue destination="Gr9-wU-kNR" kind="show" id="d7g-gu-6bU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36D-3g-JbX">
-                                        <rect key="frame" x="259" y="854" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Achievement" image="badge3"/>
-                                        <connections>
-                                            <action selector="achievementButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="D8n-zh-zVV"/>
-                                            <segue destination="Gr9-wU-kNR" kind="show" id="36a-qn-RRg"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -375,9 +372,6 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Tab_Home" selectedImage="Tab_Home" id="tUl-uW-ze5"/>
                     <size key="freeformSize" width="375" height="1700"/>
                     <connections>
-                        <outlet property="badge1" destination="ybT-qB-RNu" id="kWv-kE-Z8B"/>
-                        <outlet property="badge2" destination="sxa-YV-XmC" id="v76-LE-pcM"/>
-                        <outlet property="badge3" destination="36D-3g-JbX" id="Ker-Q8-IyI"/>
                         <outlet property="breatheFMinuteGoalLabel" destination="zeK-Pf-sk7" id="0pa-BB-F2g"/>
                         <outlet property="breatheFocusLabel" destination="9GA-b9-RFb" id="2L1-yI-nlu"/>
                         <outlet property="breatheIMinuteGoalLabel" destination="aLR-VA-QpZ" id="6DM-8u-1BW"/>
@@ -397,6 +391,8 @@
                         <outlet property="nudge2" destination="8t6-NG-P6E" id="BR9-pz-mnl"/>
                         <outlet property="nudge3" destination="gZF-UO-7WJ" id="OWc-eL-ZUe"/>
                         <outlet property="nudge4" destination="0HJ-wJ-NXQ" id="29i-6t-v0o"/>
+                        <outlet property="nudge5" destination="m2L-2E-SGl" id="OGB-lW-1WI"/>
+                        <outlet property="nudge6" destination="2gA-0L-5Dq" id="i59-3E-XJQ"/>
                         <outlet property="petQuoteLabel" destination="otG-43-lIV" id="p59-sG-UXt"/>
                         <outlet property="questDetailsLabel" destination="zwH-MU-cPn" id="oQS-jF-KA9"/>
                         <outlet property="rerollButton" destination="bDI-c1-Ba8" id="4oC-Kt-kUI"/>
@@ -692,41 +688,21 @@
         <!--Reminder-->
         <scene sceneID="bFT-Gx-hP2">
             <objects>
-                <viewController title="Reminder" id="8vJ-3k-jMH" customClass="PhoneScheduler" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reminder" title="Reminder" id="8vJ-3k-jMH" customClass="PhoneScheduler" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SuF-ey-jdp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Only 1 nudge at a time atm, saving overides old" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VM-TZ-wmO">
-                                <rect key="frame" x="55" y="323" width="265" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="IYI-hK-iJF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-yg-Chw">
-                                <rect key="frame" x="134" y="394" width="106" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ez7-eC-l1I"/>
-                                </constraints>
-                                <state key="normal" title="Stop all nudges"/>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
                                 <rect key="frame" x="55" y="88" width="265" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qBP-6H-AMm"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
                                 <rect key="frame" x="27" y="126" width="320" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <date key="date" timeIntervalSinceReferenceDate="581900430.17323899">
                                     <!--2019-06-10 23:00:30 +0000-->
@@ -736,51 +712,32 @@
                                     <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
-                                <rect key="frame" x="55" y="273" width="79" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="iIi-0t-MHa"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
+                                <rect key="frame" x="55" y="300" width="265" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-tw-1m2">
-                                <rect key="frame" x="142" y="277" width="217" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-yg-Chw">
+                                <rect key="frame" x="72" y="400" width="230" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Delete This Nudge"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="V4x-yg-Chw" firstAttribute="top" secondItem="6VM-TZ-wmO" secondAttribute="bottom" constant="8" symbolic="YES" id="1RQ-zj-CsR"/>
-                            <constraint firstItem="V4x-yg-Chw" firstAttribute="leading" secondItem="Edv-t9-l5y" secondAttribute="leading" constant="134" id="3mj-ar-alF"/>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="leading" secondItem="NZt-db-Zsr" secondAttribute="trailing" constant="8" symbolic="YES" id="44R-QC-fpX"/>
-                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="centerX" secondItem="SuF-ey-jdp" secondAttribute="centerX" id="5pc-rr-6QR"/>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="trailing" secondItem="SuF-ey-jdp" secondAttribute="trailingMargin" id="7aP-yd-JIl"/>
-                            <constraint firstItem="NZt-db-Zsr" firstAttribute="top" secondItem="Zhs-RP-H4P" secondAttribute="bottom" constant="14" id="92W-Rh-cks"/>
-                            <constraint firstItem="o8q-tw-1m2" firstAttribute="top" secondItem="Zhs-RP-H4P" secondAttribute="bottom" constant="18" id="9K8-F0-UyK"/>
-                            <constraint firstItem="NZt-db-Zsr" firstAttribute="baseline" secondItem="o8q-tw-1m2" secondAttribute="firstBaseline" id="9XM-AH-PvN"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="top" secondItem="Edv-t9-l5y" secondAttribute="top" constant="24" id="PRb-T8-T7T"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="trailing" secondItem="6VM-TZ-wmO" secondAttribute="trailing" id="RtB-hM-JAP"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="leading" secondItem="NZt-db-Zsr" secondAttribute="leading" id="ein-g5-mEc"/>
-                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="top" secondItem="6Hs-y8-qak" secondAttribute="bottom" constant="8" symbolic="YES" id="onh-Go-wDa"/>
-                            <constraint firstItem="6VM-TZ-wmO" firstAttribute="top" secondItem="NZt-db-Zsr" secondAttribute="bottom" constant="21" id="tyQ-kd-rr9"/>
-                            <constraint firstItem="Zhs-RP-H4P" firstAttribute="leading" secondItem="Edv-t9-l5y" secondAttribute="leading" constant="27" id="uNO-y7-kDp"/>
-                            <constraint firstItem="6Hs-y8-qak" firstAttribute="centerX" secondItem="Zhs-RP-H4P" secondAttribute="centerX" id="wAo-cg-bGo"/>
-                            <constraint firstItem="Edv-t9-l5y" firstAttribute="bottom" secondItem="V4x-yg-Chw" secondAttribute="bottom" constant="194" id="wDh-ho-iud"/>
-                            <constraint firstItem="6VM-TZ-wmO" firstAttribute="centerX" secondItem="V4x-yg-Chw" secondAttribute="centerX" id="yis-nH-DQQ"/>
-                            <constraint firstItem="NZt-db-Zsr" firstAttribute="leading" secondItem="6VM-TZ-wmO" secondAttribute="leading" id="zeZ-33-V8y"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="UHN-10-F3r" userLabel="Reminder"/>
                     <connections>
                         <outlet property="dateLabel" destination="6Hs-y8-qak" id="i2m-Ow-qfh"/>
                         <outlet property="datePicker" destination="Zhs-RP-H4P" id="ccx-ZJ-D0o"/>
-                        <outlet property="pickedTimeLabel" destination="o8q-tw-1m2" id="Ir4-dj-M9O"/>
                         <outlet property="saveButton" destination="NZt-db-Zsr" id="m7n-OZ-WYR"/>
                     </connections>
                 </viewController>
@@ -1153,7 +1110,7 @@
                                                 <rect key="frame" x="5" y="320" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="eldur"/>
+                                                <state key="normal" image="eldur shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="aOs-Km-F9u"/>
                                                 </connections>
@@ -1775,7 +1732,7 @@
                                                 <rect key="frame" x="132" y="90" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="fjol"/>
+                                                <state key="normal" image="fjol shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="vqv-Vk-z18"/>
                                                 </connections>
@@ -1945,12 +1902,12 @@
                                                 <rect key="frame" x="132" y="2390" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="koda shadow"/>
+                                                <state key="normal" image="liyah shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="2ye-ig-qlo"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-aH-37v">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Liyah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-aH-37v">
                                                 <rect key="frame" x="147" y="2505" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1972,12 +1929,12 @@
                                                 <rect key="frame" x="257" y="2390" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="bayou shadow"/>
+                                                <state key="normal" image="rye shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="O7g-8R-GyE"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89u-UQ-Pwn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rye" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89u-UQ-Pwn">
                                                 <rect key="frame" x="272" y="2505" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1999,12 +1956,12 @@
                                                 <rect key="frame" x="8" y="2390" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="jade shadow"/>
+                                                <state key="normal" image="kolbi shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="sva-fn-D8F"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-eN-yd9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kolbi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-eN-yd9">
                                                 <rect key="frame" x="23" y="2505" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2030,12 +1987,12 @@
                                                 <rect key="frame" x="129" y="2620" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="koda shadow"/>
+                                                <state key="normal" image="yoko shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="3VR-Tb-HBN"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-0f-yyb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yoko" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-0f-yyb">
                                                 <rect key="frame" x="144" y="2735" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2057,12 +2014,12 @@
                                                 <rect key="frame" x="254" y="2620" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="bayou shadow"/>
+                                                <state key="normal" image="trii shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="KSk-2b-kHO"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTk-j7-jco">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trii" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTk-j7-jco">
                                                 <rect key="frame" x="269" y="2735" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2084,12 +2041,12 @@
                                                 <rect key="frame" x="5" y="2620" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="jade shadow"/>
+                                                <state key="normal" image="qut shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="Lsc-wG-Y2e"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w04-5H-cvn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qut" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w04-5H-cvn">
                                                 <rect key="frame" x="20" y="2735" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2115,12 +2072,12 @@
                                                 <rect key="frame" x="129" y="2850" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="koda shadow"/>
+                                                <state key="normal" image="kitchi shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="rKx-rZ-H6V"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-T6-OKw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kitchi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-T6-OKw">
                                                 <rect key="frame" x="144" y="2965" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2142,12 +2099,12 @@
                                                 <rect key="frame" x="254" y="2850" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="bayou shadow"/>
+                                                <state key="normal" image="opal shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="nYX-Ye-LpH"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAb-Ws-SBS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAb-Ws-SBS">
                                                 <rect key="frame" x="269" y="2965" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2169,12 +2126,12 @@
                                                 <rect key="frame" x="5" y="2850" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="jade shadow"/>
+                                                <state key="normal" image="tala shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="ZoS-hr-boL"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-3I-iOK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tala" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-3I-iOK">
                                                 <rect key="frame" x="20" y="2965" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2200,12 +2157,12 @@
                                                 <rect key="frame" x="129" y="3080" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="koda shadow"/>
+                                                <state key="normal" image="gou shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="4hE-O3-88I"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-WN-Jfw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-WN-Jfw">
                                                 <rect key="frame" x="144" y="3195" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2227,12 +2184,12 @@
                                                 <rect key="frame" x="254" y="3080" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="bayou shadow"/>
+                                                <state key="normal" image="axel shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="YeA-W9-J0s"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-ww-WOk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Axel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-ww-WOk">
                                                 <rect key="frame" x="269" y="3195" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2254,12 +2211,12 @@
                                                 <rect key="frame" x="5" y="3080" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="jade shadow"/>
+                                                <state key="normal" image="paytah shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="sXJ-Gm-21R"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE6-7w-GY2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paytah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE6-7w-GY2">
                                                 <rect key="frame" x="20" y="3195" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2285,12 +2242,12 @@
                                                 <rect key="frame" x="129" y="3310" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="koda shadow"/>
+                                                <state key="normal" image="sigma shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="UKp-8T-kKM"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-l2-NZz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sigma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-l2-NZz">
                                                 <rect key="frame" x="144" y="3425" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2312,12 +2269,12 @@
                                                 <rect key="frame" x="254" y="3310" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="bayou shadow"/>
+                                                <state key="normal" image="pi shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="fwX-qD-Q7V"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bayou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUW-X9-hNl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUW-X9-hNl">
                                                 <rect key="frame" x="269" y="3425" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2339,12 +2296,12 @@
                                                 <rect key="frame" x="5" y="3310" width="110" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
-                                                <state key="normal" image="jade shadow"/>
+                                                <state key="normal" image="wol shadow"/>
                                                 <connections>
                                                     <action selector="companionsButtonPressed:" destination="IQ8-EK-Djv" eventType="touchUpInside" id="Mjc-WX-0Ga"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXW-GM-HkA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXW-GM-HkA">
                                                 <rect key="frame" x="20" y="3425" width="80" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2758,13 +2715,13 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="vHX-qF-n8j">
-                                                <rect key="frame" x="47" y="63" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="63" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge 2" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-1F-td3">
-                                                <rect key="frame" x="47" y="175" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="175" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge3" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-Ef-7Gc">
-                                                <rect key="frame" x="47" y="287" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="287" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-Kb-H33">
                                                 <rect key="frame" x="289" y="92" width="46" height="46"/>
@@ -2852,6 +2809,7 @@
         <image name="Tab_Reminders" width="28" height="28"/>
         <image name="Tab_WatchSettings" width="21.5" height="30"/>
         <image name="aqua shadow" width="501" height="501"/>
+        <image name="axel shadow" width="501" height="501"/>
         <image name="badge 2" width="98" height="98"/>
         <image name="badge1" width="98" height="98"/>
         <image name="badge3" width="98" height="98"/>
@@ -2864,14 +2822,15 @@
         <image name="common" width="253" height="82"/>
         <image name="dioon shadow" width="501" height="501"/>
         <image name="echo shadow" width="501" height="501"/>
-        <image name="eldur" width="501" height="501"/>
+        <image name="eldur shadow" width="501" height="501"/>
         <image name="equip_circle" width="1072" height="219"/>
         <image name="equip_heart" width="1114" height="191"/>
         <image name="equip_lotus" width="1324" height="201"/>
         <image name="equip_square" width="1007" height="196"/>
         <image name="expUnfill" width="500" height="93"/>
-        <image name="fjol" width="501" height="501"/>
+        <image name="fjol shadow" width="501" height="501"/>
         <image name="fox" width="438" height="462"/>
+        <image name="gou shadow" width="501" height="501"/>
         <image name="graph4" width="362" height="201"/>
         <image name="halo shadow" width="501" height="501"/>
         <image name="help" width="150" height="150"/>
@@ -2880,29 +2839,41 @@
         <image name="jade shadow" width="501" height="501"/>
         <image name="karat" width="62" height="102"/>
         <image name="karat2" width="62" height="102"/>
+        <image name="kitchi shadow" width="501" height="501"/>
         <image name="koda shadow" width="501" height="501"/>
         <image name="koko shadow" width="501" height="501"/>
+        <image name="kolbi shadow" width="501" height="501"/>
         <image name="legendary" width="253" height="82"/>
         <image name="line" width="10000" height="60"/>
+        <image name="liyah shadow" width="501" height="501"/>
         <image name="loch shadow" width="501" height="501"/>
         <image name="lock" width="36" height="47"/>
         <image name="mar shadow" width="501" height="501"/>
         <image name="navy shadow" width="501" height="501"/>
         <image name="nova shadow" width="501" height="501"/>
+        <image name="opal shadow" width="501" height="501"/>
+        <image name="paytah shadow" width="501" height="501"/>
         <image name="phoenix shadow" width="501" height="501"/>
+        <image name="pi shadow" width="501" height="501"/>
+        <image name="qut shadow" width="501" height="501"/>
         <image name="rare" width="253" height="82"/>
         <image name="raz shadow" width="501" height="501"/>
         <image name="reese shadow" width="501" height="501"/>
         <image name="rio shadow" width="501" height="501"/>
         <image name="river shadow" width="501" height="501"/>
         <image name="royal shadow" width="501" height="501"/>
+        <image name="rye shadow" width="501" height="501"/>
         <image name="sage shadow" width="501" height="501"/>
         <image name="sierra shadow" width="501" height="501"/>
+        <image name="sigma shadow" width="501" height="501"/>
+        <image name="tala shadow" width="501" height="501"/>
         <image name="toor shadow" width="501" height="501"/>
+        <image name="trii shadow" width="501" height="501"/>
+        <image name="wol shadow" width="501" height="501"/>
+        <image name="yoko shadow" width="501" height="501"/>
         <image name="zbut shadow" width="501" height="501"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="36a-qn-RRg"/>
-        <segue reference="WIg-jw-Mkb"/>
+        <segue reference="jXg-hu-vxd"/>
     </inferredMetricsTieBreakers>
 </document>

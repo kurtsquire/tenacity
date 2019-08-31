@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
+		13544EAC231A061300B2D2AB /* Nudges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13544EAB231A061300B2D2AB /* Nudges.storyboard */; };
+		13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13544EAD231A076F00B2D2AB /* NudgesViewController.swift */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
 		13A3918F23175B4D00809895 /* Companions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3918E23175B4C00809895 /* Companions.swift */; };
@@ -102,6 +104,8 @@
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		13544EAB231A061300B2D2AB /* Nudges.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nudges.storyboard; sourceTree = "<group>"; };
+		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		1391C016230F365E00416516 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		13A3918E23175B4C00809895 /* Companions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companions.swift; sourceTree = "<group>"; };
@@ -229,6 +233,9 @@
 				13A3918E23175B4C00809895 /* Companions.swift */,
 				421B843C22EFB01E008839C5 /* Pet.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
+				13544EAB231A061300B2D2AB /* Nudges.storyboard */,
+				13544EAD231A076F00B2D2AB /* NudgesViewController.swift */,
+				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
 				13201FF52319AECA00BF3A01 /* LineChart.swift */,
 				4251741F22F0D68600A11551 /* Help.storyboard */,
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
@@ -239,7 +246,6 @@
 				42EEE00F22F105C300BE02DC /* BreatheInfiniteStatsViewController.swift */,
 				42EEE01122F105DB00BE02DC /* LotusStatsViewController.swift */,
 				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
-				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
 				42398ABA2293815A009CA96E /* Assets.xcassets */,
 				42398ABC2293815A009CA96E /* LaunchScreen.storyboard */,
 				42398ABF2293815A009CA96E /* Info.plist */,
@@ -406,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13544EAC231A061300B2D2AB /* Nudges.storyboard in Resources */,
 				42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */,
 				1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */,
 				4251742022F0D68600A11551 /* Help.storyboard in Resources */,
@@ -546,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */,
 				133DA76722FA101C000614A8 /* CircleChart.swift in Sources */,
 				42EEE01222F105DB00BE02DC /* LotusStatsViewController.swift in Sources */,
 				421307A922DFCBB90007C445 /* Quests.swift in Sources */,

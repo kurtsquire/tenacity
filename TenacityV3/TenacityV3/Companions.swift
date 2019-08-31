@@ -9,9 +9,9 @@
 import Foundation
 
 class Companions{
-    let commons = [1,4,7,10,13,16,19,22,25,28]
-    let rares = [2,5,8,11,14,17,20,23,26,29]
-    let legendaries = [3,6,9,12,15,18,21,24,27,30]
+    let commons = [1,4,7,10,13,16,19,22,25,28,31,34,37,40,43]
+    let rares = [2,5,8,11,14,17,20,23,26,29,32,35,38,41,44]
+    let legendaries = [3,6,9,12,15,18,21,24,27,30,33,36,39,42,45]
     
     //var obtainablePets : [Int] = []
     var commonObtainables : [Int] = []
