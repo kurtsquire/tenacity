@@ -41,15 +41,36 @@ class LineChart {
         gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
         gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
         gameSet.lineWidth = 3.0
-        gameSet.circleRadius = 4.0
-        gameSet.circleHoleRadius = 2.0
+        gameSet.circleRadius = 6.0
+        gameSet.circleHoleRadius = 3.0
         gameSet.fillAlpha = 255 / 255
         gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
         gameSet.highlightColor = UIColor.clear
         gameSet.drawCircleHoleEnabled = true
         gameSet.drawCirclesEnabled = true
+        gameSet.circleHoleColor = UIColor(red: 0.16, green: 0.18, blue: 0.19, alpha: 1.0)
         
         dataSets.append(gameSet)
+        
+        var invisibleLinePoints : [ChartDataEntry] = []
+        
+        for i in 0...6 {
+            invisibleLinePoints.append(ChartDataEntry(x: Double(i), y: 0.00))
+        }
+        
+        let invisibleSet : LineChartDataSet = LineChartDataSet(entries: invisibleLinePoints, label: "")
+        
+        
+        invisibleSet.axisDependency = .left
+        invisibleSet.setColor( UIColor.clear )
+        invisibleSet.lineWidth = 0.0
+        //        goalSet.lineDashLengths = [8, 6]
+        invisibleSet.fillAlpha = 0 / 255
+        invisibleSet.drawCircleHoleEnabled = false
+        invisibleSet.drawCirclesEnabled = false
+        //        goalSet.label
+        
+        dataSets.append(invisibleSet)
         
         var goalLinePoints : [ChartDataEntry] = []
         
@@ -91,10 +112,11 @@ class LineChart {
             gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
             gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
             gameSet.lineWidth = 3.0
-            gameSet.circleRadius = 4.0
-            gameSet.circleHoleRadius = 2.0
+            gameSet.circleRadius = 6.0
+            gameSet.circleHoleRadius = 3.0
             gameSet.fillAlpha = 255 / 255
             gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
+            gameSet.circleHoleColor = UIColor(red: 0.16, green: 0.18, blue: 0.19, alpha: 1.0)
             gameSet.highlightColor = UIColor.clear
             gameSet.drawCircleHoleEnabled = true
             gameSet.drawCirclesEnabled = true

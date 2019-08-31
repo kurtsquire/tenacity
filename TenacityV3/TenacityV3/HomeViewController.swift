@@ -45,9 +45,9 @@ class HomeViewController: PhoneViewController {
     @IBOutlet weak var homeLineGraph: LineChartView!
     
     var gamesInfo = [
-        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor.blue, gameGoal: 20.00 ),
-        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor.green, gameGoal: 22.50 ),
-        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor.orange, gameGoal: 30.00 )
+        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: 20.00 ),
+        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: 22.50 ),
+        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: 30.00 )
     ]
     
     
@@ -191,6 +191,9 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.doubleTapToZoomEnabled = false
         
         self.homeLineGraph.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        self.homeLineGraph.highlightPerTapEnabled = false
+        self.homeLineGraph.highlightPerDragEnabled = false
         
         self.homeLineGraph.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
         
