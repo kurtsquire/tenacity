@@ -78,6 +78,7 @@ class CompanionsViewController: PhoneViewController {
     func equipPet(pet : Int){
         petEquipped = pet
         UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
+        saveToRealm(what: "equip pet: " + petArray[petEquipped])
     }
     
     override func testUserDefaults(){

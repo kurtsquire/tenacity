@@ -73,6 +73,10 @@ class HomeViewController: PhoneViewController {
  
     @IBOutlet weak var homePet: UIImageView!
     @IBOutlet weak var petQuoteLabel: UILabel!
+    @IBAction func quoteButton(_ sender: Any) {
+        let quotes = Quotes()
+        petQuoteLabel.text = quotes.randomQuote()
+    }
     
     
     // --------------------------- GOALS -----------------------------
@@ -161,9 +165,7 @@ class HomeViewController: PhoneViewController {
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        // quotes
-        let quotes = Quotes()
-        petQuoteLabel.text = quotes.randomQuote()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -220,6 +222,25 @@ class HomeViewController: PhoneViewController {
         updateExp()
         updatePet()
         
+        
+        // quotes
+        let quotes = Quotes()
+        petQuoteLabel.text = quotes.randomQuote()
+        if (nudge1.text == "No Current Nudge" && nudge2.text == "No Current Nudge" && nudge3.text == "No Current Nudge" && nudge4.text == "No Current Nudge" && nudge5.text == "No Current Nudge" && nudge6.text == "No Current Nudge"){
+            let num = Int.random(in: 1 ... 8)
+            if (num == 1){
+                petQuoteLabel.text = "try setting a nudge today"
+            }
+            else if (num == 2){
+                petQuoteLabel.text = "use nudges to plan out your day"
+            }
+            else if (num == 3){
+                petQuoteLabel.text = "nudges can be used to send you reminders"
+            }
+            else if (num == 4){
+                petQuoteLabel.text = "(whispering: set a nudge)"
+            }
+        }
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
@@ -345,12 +366,12 @@ class HomeViewController: PhoneViewController {
         //get rerolls
         rerolls = defaults.integer(forKey: "rerolls")
         // get nudge
-        nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Nudge Set"
-        nudge2.text = defaults.string(forKey: "dateString1") ?? "No Nudge Set"
-        nudge3.text = defaults.string(forKey: "dateString2") ?? "No Nudge Set"
-        nudge4.text = defaults.string(forKey: "dateString3") ?? "No Nudge Set"
-        nudge5.text = defaults.string(forKey: "dateString4") ?? "No Nudge Set"
-        nudge6.text = defaults.string(forKey: "dateString5") ?? "No Nudge Set"
+        nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Current Nudge"
+        nudge2.text = defaults.string(forKey: "dateString1") ?? "No Current Nudge"
+        nudge3.text = defaults.string(forKey: "dateString2") ?? "No Current Nudge"
+        nudge4.text = defaults.string(forKey: "dateString3") ?? "No Current Nudge"
+        nudge5.text = defaults.string(forKey: "dateString4") ?? "No Current Nudge"
+        nudge6.text = defaults.string(forKey: "dateString5") ?? "No Current Nudge"
 
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
@@ -540,6 +561,7 @@ class HomeViewController: PhoneViewController {
             saveQuest(progress: false)
             buildQuest()
         }
+        saveToRealm(what: dailyQuestData["questString"] as! String)
     }
     
     func questRewardGenerator() -> Int{

@@ -55,20 +55,6 @@
                                 <segue destination="q1w-iP-abZ" kind="push" id="kf4-2e-70f"/>
                             </connections>
                         </button>
-                        <button alignment="center" verticalAlignment="center" id="hew-EV-P15" userLabel="Rhythm Button">
-                            <group key="contentGroup" width="1" height="60" alignment="left" id="x8t-r6-drU">
-                                <items>
-                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
-                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
-                                    </label>
-                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="drum" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="HI3-kd-uci"/>
-                                </items>
-                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </group>
-                            <connections>
-                                <segue destination="4Tg-YH-RAE" kind="push" id="rWP-KH-59m"/>
-                            </connections>
-                        </button>
                         <button alignment="center" verticalAlignment="center" id="wYC-bp-ffy" userLabel="Help Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="lo2-Tm-kmI">
                                 <items>

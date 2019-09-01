@@ -102,21 +102,10 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         if dailyQuestData.isEmpty{
         }
         else {
-            print("build quest")
             buildQuest()
             //rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
-//        let temp = defaults.dictionary(forKey: "allPetsData") ?? [:]
-//        if !temp.isEmpty{
-//            petArray.append(Pet(n: "Morgan", r: "common", ul: temp["Morgan"][2], xp: temp["Morgan"][1]))
-//            petArray[0].changeForm(temp["Morgan"][0])
-//            petArray.append(Pet(n: "Jade", r: "common", ul: temp["Jade"][2], xp: temp["Jade"][1]))
-//            petArray[1].changeForm(temp["Jade"][0])
-//        }
-//        else{
-//            petArray.append(Pet(n: "Morgan", r: "common", ul: true))
-//            petArray.append(Pet(n: "Jade", r: "common", ul: true))
-//        }
+
     }
     
     
@@ -175,6 +164,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
                         giveReward(new: (dailyQuestData["reward"] as! Int))
+                        saveToRealm(what: "quest complete")
                         
                     }
                 }
@@ -208,6 +198,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
                         giveReward(new: (dailyQuestData["reward"] as! Int))
+                        saveToRealm(what: "quest complete")
 
                     }
                 }
@@ -247,6 +238,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
                         giveReward(new: (dailyQuestData["reward"] as! Int))
+                        saveToRealm(what: "quest complete")
                     }
                 }
                 saveQuest(progress: true)
