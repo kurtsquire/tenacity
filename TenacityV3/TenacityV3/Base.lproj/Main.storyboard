@@ -169,7 +169,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lvl 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-wb-50J">
-                                                <rect key="frame" x="8" y="32" width="82" height="36"/>
+                                                <rect key="frame" x="8" y="32" width="104" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" red="0.89923733472824097" green="0.68976694345474243" blue="0.3083961009979248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,22 +183,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUR-4e-Gp4" userLabel="Progress Help Button">
-                                                <rect key="frame" x="295" y="36" width="30" height="30"/>
+                                                <rect key="frame" x="287" y="36" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <state key="normal" image="help"/>
                                                 <connections>
                                                     <action selector="progressHelpButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="ZzM-Hj-TaH"/>
                                                     <segue destination="AzQ-HC-Iy0" kind="show" id="OI1-xV-RU7"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyl-zR-LGh" userLabel="Settings Button">
-                                                <rect key="frame" x="330" y="36" width="29" height="29"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="gear"/>
-                                                <connections>
-                                                    <action selector="settingsButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="SbX-BS-1Jn"/>
-                                                    <segue destination="1EU-2l-KKi" kind="show" id="68L-jE-Bxs"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Gwi-Nk-xZP" userLabel="Goal_Line_bot">
@@ -252,6 +243,15 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyl-zR-LGh" userLabel="Settings Button">
+                                                <rect key="frame" x="338" y="36" width="29" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="gear"/>
+                                                <connections>
+                                                    <action selector="settingsButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="SbX-BS-1Jn"/>
+                                                    <segue destination="qD4-nd-Jn9" kind="show" id="xi7-je-58G"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1531" id="NA8-Ki-sls"/>
@@ -424,20 +424,13 @@
             </objects>
             <point key="canvasLocation" x="1476" y="-2023"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="TVO-wo-L37">
+        <!--Instructions-->
+        <scene sceneID="AWZ-r7-FHb">
             <objects>
-                <viewController id="n8Z-Bx-Tfq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kwl-Uf-V8h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3us-oT-8eh"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WCB-nj-rEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Instructions" id="qD4-nd-Jn9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iP3-Hk-4cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="-1302"/>
+            <point key="canvasLocation" x="2322" y="-1034"/>
         </scene>
         <!--Progress Help-->
         <scene sceneID="7wE-Wg-CDG">
@@ -464,13 +457,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khE-qJ-Dc8">
-                                <rect key="frame" x="59" y="162" width="257" height="30"/>
+                                <rect key="frame" x="59" y="118" width="257" height="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Desired Name Above and hit Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyh-4X-i1G">
-                                <rect key="frame" x="51" y="200" width="273" height="26"/>
+                                <rect key="frame" x="51" y="156" width="273" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="KbR-ct-A1p"/>
                                 </constraints>
@@ -479,14 +472,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPM-4K-x7t">
-                                <rect key="frame" x="16" y="295" width="343" height="372"/>
+                                <rect key="frame" x="16" y="251" width="343" height="416"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r7-ZT-2tf">
-                                <rect key="frame" x="16" y="108" width="343" height="46"/>
+                                <rect key="frame" x="16" y="64" width="343" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="2Jb-gY-vRO"/>
                                 </constraints>
@@ -504,7 +497,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-xW-cR9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="gGO-fL-lwk">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="refresh" id="9Hv-AO-yb1">
@@ -2441,6 +2434,36 @@
                         <outletCollection property="companionsButtons" destination="uCN-gh-jfb" collectionClass="NSMutableArray" id="3fT-5S-H17"/>
                         <outletCollection property="companionsButtons" destination="io9-wg-pz5" collectionClass="NSMutableArray" id="we5-Id-7a7"/>
                         <outletCollection property="companionsButtons" destination="YCH-6I-mtT" collectionClass="NSMutableArray" id="aQ8-hJ-zjm"/>
+                        <outletCollection property="equipLabels" destination="CiT-23-Xvj" collectionClass="NSMutableArray" id="cob-CV-PDn"/>
+                        <outletCollection property="equipLabels" destination="KS2-cH-j7g" collectionClass="NSMutableArray" id="EdH-58-StX"/>
+                        <outletCollection property="equipLabels" destination="sUD-Cp-Gnt" collectionClass="NSMutableArray" id="WXp-y7-Qzd"/>
+                        <outletCollection property="companionsButtons" destination="JRe-C8-sKB" collectionClass="NSMutableArray" id="dHp-7G-gNp"/>
+                        <outletCollection property="companionsButtons" destination="rao-ve-IA8" collectionClass="NSMutableArray" id="uqR-Tk-7SN"/>
+                        <outletCollection property="companionsButtons" destination="bwx-sP-7Wi" collectionClass="NSMutableArray" id="unY-MX-29A"/>
+                        <outletCollection property="companionsButtons" destination="yDO-9P-1UV" collectionClass="NSMutableArray" id="8Qa-hW-92c"/>
+                        <outletCollection property="equipLabels" destination="HZk-qf-Os6" collectionClass="NSMutableArray" id="ted-qJ-g99"/>
+                        <outletCollection property="companionsButtons" destination="Mbq-Mo-ESx" collectionClass="NSMutableArray" id="ckZ-fa-eXO"/>
+                        <outletCollection property="equipLabels" destination="cI8-ye-ylX" collectionClass="NSMutableArray" id="va9-C9-ffL"/>
+                        <outletCollection property="companionsButtons" destination="CJt-NM-UnI" collectionClass="NSMutableArray" id="qEw-mg-kGe"/>
+                        <outletCollection property="equipLabels" destination="L3Y-ra-gyj" collectionClass="NSMutableArray" id="Vty-5r-Udp"/>
+                        <outletCollection property="companionsButtons" destination="BEX-hW-zsr" collectionClass="NSMutableArray" id="jmE-Qa-uM7"/>
+                        <outletCollection property="equipLabels" destination="9as-Ue-yDV" collectionClass="NSMutableArray" id="c4h-XH-8Ip"/>
+                        <outletCollection property="companionsButtons" destination="Q5E-cy-Cgf" collectionClass="NSMutableArray" id="jyH-rC-psF"/>
+                        <outletCollection property="equipLabels" destination="o5d-fs-pVf" collectionClass="NSMutableArray" id="GVl-z9-XaD"/>
+                        <outletCollection property="companionsButtons" destination="17c-28-N9M" collectionClass="NSMutableArray" id="KWh-9O-QN1"/>
+                        <outletCollection property="equipLabels" destination="zTa-7t-Nie" collectionClass="NSMutableArray" id="pS1-bm-rSN"/>
+                        <outletCollection property="companionsButtons" destination="ceI-4G-RG2" collectionClass="NSMutableArray" id="sh9-0B-JEG"/>
+                        <outletCollection property="equipLabels" destination="gJ5-v5-m9R" collectionClass="NSMutableArray" id="Ssv-bs-RfC"/>
+                        <outletCollection property="companionsButtons" destination="nYI-Gq-81O" collectionClass="NSMutableArray" id="XSj-zA-DJL"/>
+                        <outletCollection property="equipLabels" destination="OZ3-tc-8ZF" collectionClass="NSMutableArray" id="7fo-Gg-6pc"/>
+                        <outletCollection property="companionsButtons" destination="dVN-nq-Rj4" collectionClass="NSMutableArray" id="kxF-1N-LNa"/>
+                        <outletCollection property="equipLabels" destination="6OT-H7-bTL" collectionClass="NSMutableArray" id="dI9-b9-tMl"/>
+                        <outletCollection property="companionsButtons" destination="7Cy-sz-ZR2" collectionClass="NSMutableArray" id="IKp-sa-Ryl"/>
+                        <outletCollection property="equipLabels" destination="gKX-UQ-kVt" collectionClass="NSMutableArray" id="fP4-4C-9h5"/>
+                        <outletCollection property="companionsButtons" destination="3ud-mG-4qZ" collectionClass="NSMutableArray" id="LO5-AW-H2T"/>
+                        <outletCollection property="equipLabels" destination="mfp-Xw-WOK" collectionClass="NSMutableArray" id="bAN-Zp-5wq"/>
+                        <outletCollection property="companionsButtons" destination="QGP-K5-kP1" collectionClass="NSMutableArray" id="2hd-Jb-Qd2"/>
+                        <outletCollection property="equipLabels" destination="Ye3-Hw-7X4" collectionClass="NSMutableArray" id="cr0-nH-C4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaQ-Ka-Bb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2467,7 +2490,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="1380"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeV-RZ-Dos">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-bg-hz5" userLabel="Game Settings Help Button">
                                                 <rect key="frame" x="330" y="11" width="30" height="30"/>
@@ -2633,7 +2656,7 @@
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="a8A-ud-luX"/>
+                                            <constraint firstAttribute="height" constant="1300" id="a8A-ud-luX"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equip_square" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-2N-y88">

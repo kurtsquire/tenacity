@@ -108,12 +108,6 @@ class HomeViewController: PhoneViewController {
             UserDefaults.standard.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
-        
-        //let new = questRewardGenerator()
-        //if new != 0{
-            //petOwned.append(new)
-            //UserDefaults.standard.set(petOwned, forKey: "petOwned")
-        //}
     }
     @IBAction func questHelpButton(_ sender: Any) {
     }
