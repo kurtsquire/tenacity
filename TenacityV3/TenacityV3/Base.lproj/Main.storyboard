@@ -587,13 +587,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average Breath Length" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTD-A2-5Qg">
-                                                <rect key="frame" x="57" y="738" width="260" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sets Played" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNr-H2-L1R">
                                                 <rect key="frame" x="57" y="984" width="260" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -627,11 +620,6 @@
                                                 <rect key="frame" x="22" y="96" width="12" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OX3-Sx-Jhf" customClass="LineChartView" customModule="Charts">
-                                                <rect key="frame" x="8" y="766" width="359" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.1643030643" green="0.1762241423" blue="0.19286689160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-XI-tzn" customClass="LineChartView" customModule="Charts">
                                                 <rect key="frame" x="8" y="1010" width="359" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -674,7 +662,6 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
-                        <outlet property="avgBreathsLineChart" destination="OX3-Sx-Jhf" id="jY8-8i-gpW"/>
                         <outlet property="breatheFocusLabel" destination="JHr-ZY-E9c" id="MAR-Et-B3Y"/>
                         <outlet property="mainView" destination="kdB-TE-2gP" id="wmy-4E-GUK"/>
                         <outlet property="minuteGoalLabel" destination="VRC-Ae-CE8" id="WQk-is-EQ1"/>
@@ -808,11 +795,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1643030643" green="0.1762241423" blue="0.19286689160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iqb-G0-1ss" customClass="LineChartView" customModule="Charts">
-                                                <rect key="frame" x="8" y="763" width="359" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.1643030643" green="0.1762241423" blue="0.19286689160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9L-S3-FOu" customClass="LineChartView" customModule="Charts">
                                                 <rect key="frame" x="8" y="1011" width="359" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -820,13 +802,6 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Breaths Taken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgv-GA-4GQ">
                                                 <rect key="frame" x="57" y="492" width="260" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average Breath Length" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdz-iS-RqV">
-                                                <rect key="frame" x="57" y="738" width="260" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -881,7 +856,6 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
-                        <outlet property="avgBreathsLineChart" destination="Iqb-G0-1ss" id="sGY-PM-DlC"/>
                         <outlet property="breatheInfiniteLabel" destination="siS-um-FWg" id="Fa7-Pp-rii"/>
                         <outlet property="mainView" destination="toG-nV-9s6" id="qpP-er-WoD"/>
                         <outlet property="minuteGoalLabel" destination="XNB-hD-7TJ" id="lhu-WR-SxU"/>
@@ -937,10 +911,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph4" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-BJ-503">
-                                                <rect key="frame" x="8" y="776" width="359" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="l swipes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-LQ-9uG">
                                                 <rect key="frame" x="57" y="805" width="260" height="143"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2759,13 +2729,13 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="vHX-qF-n8j">
-                                                <rect key="frame" x="46.999999999999986" y="63" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="63" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge 2" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-1F-td3">
-                                                <rect key="frame" x="46.999999999999986" y="175" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="175" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge3" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-Ef-7Gc">
-                                                <rect key="frame" x="46.999999999999986" y="287" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="287" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-Kb-H33">
                                                 <rect key="frame" x="289" y="92" width="46" height="46"/>
@@ -3032,7 +3002,6 @@
         <image name="fox" width="438" height="462"/>
         <image name="gear" width="330" height="341"/>
         <image name="gou shadow" width="501" height="501"/>
-        <image name="graph4" width="362" height="201"/>
         <image name="halo shadow" width="501" height="501"/>
         <image name="help" width="150" height="150"/>
         <image name="indigo shadow" width="501" height="501"/>
@@ -3075,7 +3044,7 @@
         <image name="zbut shadow" width="501" height="501"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jXg-hu-vxd"/>
+        <segue reference="WIg-jw-Mkb"/>
         <segue reference="qbQ-a6-Vfk"/>
     </inferredMetricsTieBreakers>
 </document>

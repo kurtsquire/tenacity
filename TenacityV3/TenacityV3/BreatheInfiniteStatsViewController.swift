@@ -27,12 +27,6 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     
     lazy var breatheIGraphCenter = breatheInfiniteLabel.center
     
-    var gamesInfo = [
-        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: 20.00 ),
-        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: 22.50 ),
-        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: 30.00 )
-    ]
-    
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
     var today = Date()
@@ -90,9 +84,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         self.timePlayedLineChart.xAxis.labelTextColor = UIColor.white
         self.timePlayedLineChart.rightAxis.labelTextColor = UIColor.white
         self.timePlayedLineChart.leftAxis.labelTextColor = UIColor.white
-        let timePlayedChart : LineChart = LineChart(lineChartView: timePlayedLineChart, goalColor: UIColor.red, gamesInfo: gamesInfo)
         
-        timePlayedChart.drawGoalGraph(gameNum: 0)
         
         self.totalBreathsLineChart.gridBackgroundColor = UIColor.white
         
@@ -112,31 +104,27 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         self.totalBreathsLineChart.xAxis.labelTextColor = UIColor.white
         self.totalBreathsLineChart.rightAxis.labelTextColor = UIColor.white
         self.totalBreathsLineChart.leftAxis.labelTextColor = UIColor.white
-        let totalBreathsChart : LineChart = LineChart(lineChartView: totalBreathsLineChart, goalColor: UIColor.red, gamesInfo: gamesInfo)
         
-        totalBreathsChart.drawGoalGraph(gameNum: 1)
         
-        self.avgBreathsLineChart.gridBackgroundColor = UIColor.white
+//        self.avgBreathsLineChart.gridBackgroundColor = UIColor.white
+//        
+//        self.avgBreathsLineChart.noDataText = "No data provided"
+//        
+//        self.avgBreathsLineChart.doubleTapToZoomEnabled = false
+//        
+//        self.avgBreathsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
+//        
+//        self.avgBreathsLineChart.highlightPerTapEnabled = false
+//        self.avgBreathsLineChart.highlightPerDragEnabled = false
+//        
+//        self.avgBreathsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
+//        
+//        self.avgBreathsLineChart.xAxis.granularity = 1
+//        self.avgBreathsLineChart.legend.textColor = UIColor.white
+//        self.avgBreathsLineChart.xAxis.labelTextColor = UIColor.white
+//        self.avgBreathsLineChart.rightAxis.labelTextColor = UIColor.white
+//        self.avgBreathsLineChart.leftAxis.labelTextColor = UIColor.white
         
-        self.avgBreathsLineChart.noDataText = "No data provided"
-        
-        self.avgBreathsLineChart.doubleTapToZoomEnabled = false
-        
-        self.avgBreathsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        
-        self.avgBreathsLineChart.highlightPerTapEnabled = false
-        self.avgBreathsLineChart.highlightPerDragEnabled = false
-        
-        self.avgBreathsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-        
-        self.avgBreathsLineChart.xAxis.granularity = 1
-        self.avgBreathsLineChart.legend.textColor = UIColor.white
-        self.avgBreathsLineChart.xAxis.labelTextColor = UIColor.white
-        self.avgBreathsLineChart.rightAxis.labelTextColor = UIColor.white
-        self.avgBreathsLineChart.leftAxis.labelTextColor = UIColor.white
-        let avgBreathsChart : LineChart = LineChart(lineChartView: avgBreathsLineChart, goalColor: UIColor.red, gamesInfo: gamesInfo)
-        
-        avgBreathsChart.drawGoalGraph(gameNum: 1)
         
         self.setsPlayedLineChart.gridBackgroundColor = UIColor.white
         
@@ -156,9 +144,6 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         self.setsPlayedLineChart.xAxis.labelTextColor = UIColor.white
         self.setsPlayedLineChart.rightAxis.labelTextColor = UIColor.white
         self.setsPlayedLineChart.leftAxis.labelTextColor = UIColor.white
-        let setsPlayedChart : LineChart = LineChart(lineChartView: setsPlayedLineChart, goalColor: UIColor.red, gamesInfo: gamesInfo)
-        
-        setsPlayedChart.drawGoalGraph(gameNum: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -170,7 +155,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     
     func refreshRealmData(){
         let realm = try! Realm()
-       
+        
         let biw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe infinite", weekStartTime)
         let bix = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe infinite", startTime)
         
@@ -223,17 +208,210 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         }
         let breatheIAvgWeek = ilengthtotalw/Double(isessionsw)
         
+        let bisun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
+        let bimon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
+        let bitues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
+        let biwed = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false))
+        let bithurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
+        let bifri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
+        let bisat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
+        
+        //breathe stats Sunday
+        var breatheIBreathsSunday = 0
+        var breatheITimeSunday = 0.0
+        var breatheITotalSunday = 0
+        
+        var flengthtotalsun = 0.0
+        var fsessionssun = 0
+        for item in bisun{
+            breatheITimeSunday += item.breatheITimePlayed
+            
+            flengthtotalsun += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionssun += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsSunday += 1
+            }
+            breatheITotalSunday += item.breatheITotalSets
+        }
+        let breatheIAvgSunday = flengthtotalsun/Double(fsessionssun)
+        
+        //breathe stats Monday
+        var breatheIBreathsMonday = 0
+        var breatheITimeMonday = 0.0
+        var breatheITotalMonday = 0
+        
+        var flengthtotalmon = 0.0
+        var fsessionsmon = 0
+        for item in bimon{
+            breatheITimeMonday += item.breatheITimePlayed
+            
+            flengthtotalmon += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionsmon += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsMonday += 1
+            }
+            breatheITotalMonday += item.breatheITotalSets
+        }
+        let breatheIAvgMonday = flengthtotalmon/Double(fsessionsmon)
+        
+        //breathe stats Tuesday
+        var breatheIBreathsTuesday = 0
+        var breatheITimeTuesday = 0.0
+        var breatheITotalTuesday = 0
+        
+        var flengthtotaltues = 0.0
+        var fsessionstues = 0
+        for item in bitues{
+            breatheITimeTuesday += item.breatheITimePlayed
+            
+            flengthtotaltues += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionstues += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsTuesday += 1
+            }
+            breatheITotalTuesday += item.breatheITotalSets
+        }
+        let breatheIAvgTuesday = flengthtotaltues/Double(fsessionstues)
+        
+        //breathe stats Wednesday
+        var breatheIBreathsWednesday = 0
+        var breatheITimeWednesday = 0.0
+        var breatheITotalWednesday = 0
+        
+        var flengthtotalwed = 0.0
+        var fsessionswed = 0
+        for item in biwed{
+            breatheITimeWednesday += item.breatheITimePlayed
+            
+            flengthtotalwed += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionswed += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsWednesday += 1
+            }
+            breatheITotalWednesday += item.breatheITotalSets
+        }
+        let breatheIAvgWednesday = flengthtotalwed/Double(fsessionswed)
+        
+        //breathe stats Thursday
+        var breatheIBreathsThursday = 0
+        var breatheITimeThursday = 0.0
+        var breatheITotalThursday = 0
+        
+        var flengthtotalthurs = 0.0
+        var fsessionsthurs = 0
+        for item in bithurs{
+            breatheITimeThursday += item.breatheITimePlayed
+            
+            flengthtotalthurs += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionsthurs += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsThursday += 1
+            }
+            breatheITotalThursday += item.breatheITotalSets
+        }
+        let breatheIAvgThursday = flengthtotalthurs/Double(fsessionsthurs)
+        
+        //breathe stats Friday
+        var breatheIBreathsFriday = 0
+        var breatheITimeFriday = 0.0
+        var breatheITotalFriday = 0
+        
+        var flengthtotalfri = 0.0
+        var fsessionsfri = 0
+        for item in bifri{
+            breatheITimeFriday += item.breatheITimePlayed
+            
+            flengthtotalfri += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionsfri += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsFriday += 1
+            }
+            breatheITotalFriday += item.breatheITotalSets
+        }
+        let breatheIAvgFriday = flengthtotalfri/Double(fsessionsfri)
+        
+        //breathe stats Saturday
+        var breatheIBreathsSaturday = 0
+        var breatheITimeSaturday = 0.0
+        var breatheITotalSaturday = 0
+        
+        var flengthtotalsat = 0.0
+        var fsessionssat = 0
+        for item in bisat{
+            breatheITimeSaturday += item.breatheITimePlayed
+            
+            flengthtotalsat += item.breatheIBreathLength
+            if item.breatheIBreathLength > 0{
+                fsessionssat += 1
+            }
+            if item.gameDataType == "stop hold"{
+                breatheIBreathsSaturday += 1
+            }
+            breatheITotalSaturday += item.breatheITotalSets
+        }
+        let breatheIAvgSaturday = flengthtotalsat/Double(fsessionssat)
+        
+        let breatheITimePlayed : [Double] = [breatheITimeSunday/60, breatheITimeMonday/60, breatheITimeTuesday/60, breatheITimeWednesday/60, breatheITimeThursday/60, breatheITimeFriday/60, breatheITimeSaturday/60]
+        let breatheITotalBreaths : [Double] = [Double(breatheIBreathsSunday), Double(breatheIBreathsMonday), Double(breatheIBreathsTuesday), Double(breatheIBreathsWednesday), Double(breatheIBreathsThursday), Double(breatheIBreathsFriday), Double(breatheIBreathsSaturday)]
+        let breatheIAvgBreaths : [Double] = [breatheIAvgSunday, breatheIAvgMonday, breatheIAvgTuesday, breatheIAvgWednesday, breatheIAvgThursday, breatheIAvgFriday, breatheIAvgSaturday]
+        let breatheISetsPlayed : [Double] = [Double(fsessionssun), Double(fsessionsmon), Double(fsessionstues), Double(fsessionswed), Double(fsessionsthurs), Double(fsessionsfri), Double(fsessionssat)]
+        
+        let timePlayed = [
+            0 : (gameName: "Time Played", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        let totalBreaths = [
+            0 : (gameName: "Total Breaths", gameData: breatheITotalBreaths, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        let avgBreaths = [
+            0 : (gameName: "Average Breaths", gameData: breatheIAvgBreaths, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        let setsPlayed = [
+            0 : (gameName: "Sets Played", gameData: breatheISetsPlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        
+        
+        let timePlayedChart : LineChart = LineChart(lineChartView: self.timePlayedLineChart, goalColor: UIColor.red, gamesInfo: timePlayed)
+        
+        timePlayedChart.drawGoalGraph(gameNum: 0)
+        
+        
+        let totalBreathsChart : LineChart = LineChart(lineChartView: self.totalBreathsLineChart, goalColor: UIColor.red, gamesInfo: totalBreaths)
+        
+        totalBreathsChart.drawWeekGraph()
+        
+        
+        //        let avgBreathsChart : LineChart = LineChart(lineChartView: self.avgBreathsLineChart, goalColor: UIColor.red, gamesInfo: avgBreaths)
+        //
+        //        avgBreathsChart.drawWeekGraph()
+        
+        
+        let setsPlayedChart : LineChart = LineChart(lineChartView: self.setsPlayedLineChart, goalColor: UIColor.red, gamesInfo: setsPlayed)
+        
+        setsPlayedChart.drawWeekGraph()
+        
         DispatchQueue.main.async {
             self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
-//            self.timePlayedLabel.text = "Week: " + String(Int(breatheITimeWeek/60)) + " min" + "\nToday: " + String(Int(breatheITimeToday)) + " secs"
-//            self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
-//            self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)
-//            self.setsPlayedLabel.text = "Today:" + String(breatheITotalToday) + "\nThis Week: " + String(breatheITotalWeek)
-//            var a = "Breath Cycles  (Length: how many you have done)\n"
-//            for i in 0..<cyclesTodayArray.count{
-//                a += String(i) + ": " + String(cyclesTodayArray[i]) + ", "
-//            }
-//            self.cyclesLabel.text = a
+            //            self.timePlayedLabel.text = "Week: " + String(Int(breatheITimeWeek/60)) + " min" + "\nToday: " + String(Int(breatheITimeToday)) + " secs"
+            //            self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
+            //            self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)
+            //            self.setsPlayedLabel.text = "Today:" + String(breatheITotalToday) + "\nThis Week: " + String(breatheITotalWeek)
+            //            var a = "Breath Cycles  (Length: how many you have done)\n"
+            //            for i in 0..<cyclesTodayArray.count{
+            //                a += String(i) + ": " + String(cyclesTodayArray[i]) + ", "
+            //            }
+            //            self.cyclesLabel.text = a
             
             breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){

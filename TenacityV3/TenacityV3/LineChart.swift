@@ -40,9 +40,9 @@ class LineChart {
         gameSet.axisDependency = .left
         gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
         gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
-        gameSet.lineWidth = 3.0
-        gameSet.circleRadius = 6.0
-        gameSet.circleHoleRadius = 3.0
+        gameSet.lineWidth = 2.75
+        gameSet.circleRadius = 4.50
+        gameSet.circleHoleRadius = 2.50
         gameSet.fillAlpha = 255 / 255
         gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
         gameSet.highlightColor = UIColor.clear
@@ -74,17 +74,16 @@ class LineChart {
         
         var goalLinePoints : [ChartDataEntry] = []
         
-        for i in 0...6 {
-            goalLinePoints.append(ChartDataEntry(x: Double(i), y: self.gamesInfo[gameNum]!.gameGoal))
-        }
+        goalLinePoints.append(ChartDataEntry(x: 0, y: self.gamesInfo[gameNum]!.gameGoal))
+        goalLinePoints.append(ChartDataEntry(x: 6, y: self.gamesInfo[gameNum]!.gameGoal))
         
-        let goalSet : LineChartDataSet = LineChartDataSet(entries: goalLinePoints, label: String(format: "%@ Goal", self.gamesInfo[gameNum]!.gameName))
+        let goalSet : LineChartDataSet = LineChartDataSet(entries: goalLinePoints, label: String("Goal"))
         
         
         goalSet.axisDependency = .left
         goalSet.setColor( self.goalColor )
-        goalSet.lineWidth = 2.0
-        goalSet.lineDashLengths = [8, 6]
+        goalSet.lineWidth = 1.75
+        goalSet.lineDashLengths = [8.5, 10]
         goalSet.fillAlpha = 255 / 255
         goalSet.drawCircleHoleEnabled = false
         goalSet.drawCirclesEnabled = false
@@ -100,7 +99,7 @@ class LineChart {
     public func drawWeekGraph( ){
         var dataSets : [LineChartDataSet] = [LineChartDataSet]()
         
-        for gameNum in 0...2{
+        for gameNum in 0...gamesInfo.count - 1{
             var gamePoints : [ChartDataEntry] = [ChartDataEntry]()
             for (index, exp) in self.gamesInfo[gameNum]!.gameData.enumerated() {
                 gamePoints.append(ChartDataEntry(x: Double(index), y: exp))
@@ -111,9 +110,9 @@ class LineChart {
             gameSet.axisDependency = .left
             gameSet.setColor( self.gamesInfo[gameNum]!.gameColor )
             gameSet.setCircleColor( self.gamesInfo[gameNum]!.gameColor )
-            gameSet.lineWidth = 3.0
-            gameSet.circleRadius = 6.0
-            gameSet.circleHoleRadius = 3.0
+            gameSet.lineWidth = 2.75
+            gameSet.circleRadius = 4.50
+            gameSet.circleHoleRadius = 2.50
             gameSet.fillAlpha = 255 / 255
             gameSet.fillColor = self.gamesInfo[gameNum]!.gameColor
             gameSet.circleHoleColor = UIColor(red: 0.16, green: 0.18, blue: 0.19, alpha: 1.0)
@@ -136,11 +135,11 @@ class LineChart {
         invisibleSet.axisDependency = .left
         invisibleSet.setColor( UIColor.clear )
         invisibleSet.lineWidth = 0.0
-//        goalSet.lineDashLengths = [8, 6]
+        //        goalSet.lineDashLengths = [8, 6]
         invisibleSet.fillAlpha = 0 / 255
         invisibleSet.drawCircleHoleEnabled = false
         invisibleSet.drawCirclesEnabled = false
-//        goalSet.label
+        //        goalSet.label
         
         dataSets.append(invisibleSet)
         
