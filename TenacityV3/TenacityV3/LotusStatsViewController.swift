@@ -241,14 +241,14 @@ class LotusStatsViewController: PhoneViewController{
         //        ]
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
+            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
             //            self.timePlayedLabel.text = "Week: " + String(lotusTimeWeek) + "\nToday: " + String(lotusTimeToday)
             //            self.roundsPlayedLabel.text = "Week:\n" + String(lotusRoundsWeek) + "\nToday:\n" + String(lotusRoundsToday)
-            //            var a = "Lotus Swipe Wrong Attempts  (Attempts: how many misses before correct)\n"
-            //            for i in 0..<lotusArrayToday.count{
-            //                a += String(i) + ": " + String(lotusArrayToday[i]) + ", "
-            //            }
-            //            self.swipesLabel.text = a
+            var a = ""
+                        for i in 0..<lotusArrayToday.count{
+                            a += String(i) + " wrong: " + String(lotusArrayToday[i]) + "\n"
+                        }
+                        self.swipesLabel.text = a
             
             let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
             self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)

@@ -402,7 +402,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
+            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
             //            self.timePlayedLabel.text = "Week: " + String(Int(breatheITimeWeek/60)) + " min" + "\nToday: " + String(Int(breatheITimeToday)) + " secs"
             //            self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
             //            self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)

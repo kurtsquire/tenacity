@@ -34,8 +34,8 @@ let lotusGraphOutColor = UIColor(red: 0.21, green: 0.15, blue: 0.18, alpha: 1.0)
 let lotusGraphProgColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 1.0).cgColor
 
 var breatheFGoalTime = 30.0
-var breatheIGoalTime = 30.0
-var lotusGoalTime = 30.0
+var breatheIGoalTime = 20.0
+var lotusGoalTime = 20.0
 
 class HomeViewController: PhoneViewController {
     
@@ -493,8 +493,8 @@ class HomeViewController: PhoneViewController {
         
         DispatchQueue.main.async {
             self.breatheFMinuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins"
-            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
-            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
+            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
+            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
             
             breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
