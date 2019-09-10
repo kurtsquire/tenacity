@@ -461,8 +461,8 @@ class HomeViewController: PhoneViewController {
         
         
         var gamesInfo = [
-            1 : ( gameName: "Breathe Flow", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: breatheFGoalTime ),
-            0 : ( gameName: "Breathe Focus", gameData: breatheFTimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheIGoalTime ),
+            1 : ( gameName: "Breathe Infinite", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheFGoalTime ),
+            0 : ( gameName: "Breathe Focus", gameData: breatheFTimePlayed, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: breatheIGoalTime ),
             2 : ( gameName: "Lotus", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime )
         ]
         
