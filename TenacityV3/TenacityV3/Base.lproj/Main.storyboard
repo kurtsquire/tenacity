@@ -558,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuK-51-kcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="115.59220389805098"/>
+            <point key="canvasLocation" x="4609" y="850"/>
         </scene>
         <!--Breathe Focus-->
         <scene sceneID="yEJ-83-gq6">
@@ -3027,7 +3027,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="UmJ-5a-l7O"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Tab_Reminders" selectedImage="Tab_Reminders" id="HGM-8l-0eY"/>
+                    <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="HGM-8l-0eY"/>
                     <connections>
                         <outletCollection property="nudgeButtons" destination="N67-nC-jan" collectionClass="NSMutableArray" id="b9T-Hw-7iT"/>
                         <outletCollection property="nudgeButtons" destination="UM6-jg-9Hf" collectionClass="NSMutableArray" id="7uc-WQ-DT8"/>
