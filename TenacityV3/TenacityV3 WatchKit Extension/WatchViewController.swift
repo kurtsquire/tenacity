@@ -36,30 +36,56 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+//    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+//
+//        let theme = (userInfo["theme"] as? String)!
+//        let game = (userInfo["game"] as? String)!
+//        let color = (userInfo["color"] as? Int)!
+//
+//        if (color == -1){
+//            if (game == "breathe"){
+//                UserDefaults.standard.set(theme, forKey: "breatheTheme")
+//            }
+//            else if (game == "lotus"){
+//                UserDefaults.standard.set(theme, forKey: "lotusTheme")
+//            }
+//        }
+//        else{
+//            if (game == "breathe"){
+//                UserDefaults.standard.set(color, forKey: "breatheColor")
+//            }
+//            else if (game == "lotus"){
+//                UserDefaults.standard.set(color, forKey: "lotusColor")
+//            }
+//        }
+//    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
-        let theme = (userInfo["theme"] as? String)!
-        let game = (userInfo["game"] as? String)!
-        let color = (userInfo["color"] as? Int)!
+        let game = (message["game"] as? String)!
+        let type = (message["type"] as? String)!
+        let num = (message["num"] as? Int)!
+        let breathePics = ["classic", "fire", "cloud", "diamond"]
+        let lotusPics = ["lotus", "square", "heart", "circle"]
         
-        print(theme)
-        print(color)
-        if (color == -1){
+        if (type == "pic"){
             if (game == "breathe"){
-                UserDefaults.standard.set(theme, forKey: "breatheTheme")
+                UserDefaults.standard.set(breathePics[num], forKey: "breatheTheme")
             }
             else if (game == "lotus"){
-                UserDefaults.standard.set(theme, forKey: "lotusTheme")
+                UserDefaults.standard.set(lotusPics[num], forKey: "lotusTheme")
             }
         }
-        else{
+        else if (type == "color"){
             if (game == "breathe"){
-                UserDefaults.standard.set(color, forKey: "breatheColor")
+                UserDefaults.standard.set(num, forKey: "breatheColor")
             }
             else if (game == "lotus"){
-                UserDefaults.standard.set(color, forKey: "lotusColor")
+                UserDefaults.standard.set(num, forKey: "lotusColor")
             }
         }
+        
+        replyHandler(["game": game, "type": type, "num": num])
     }
     
 }
