@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import UserNotifications
 
-class PhoneScheduler: UIViewController {
+class PhoneScheduler: PhoneViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -44,23 +44,31 @@ class PhoneScheduler: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        dateString = "No Current Nudge"
-        dateLabel.text = "No Current Nudge"
-        
-        UserDefaults.standard.set(dateString, forKey: "dateString" + String(editingNudge))
-        
-        let center = UNUserNotificationCenter.current()
-        
-        //requests permissions for notifications
-        center.requestAuthorization(options: [.alert, .sound])
-        { success, error in
-            //if they allow notifications
-            if success {
-                // removes current notification
-                //center.removeAllPendingNotificationRequests()
-                center.removePendingNotificationRequests(withIdentifiers: ["nudge" + String(editingNudge)])
+        if (dateString != "No Current Nudge"){
+            saveToRealm(what: "nudge deleted: " + dateString)
+            dateString = "No Current Nudge"
+            dateLabel.text = "No Current Nudge"
+            
+            UserDefaults.standard.set(dateString, forKey: "dateString" + String(editingNudge))
+            
+            let center = UNUserNotificationCenter.current()
+            
+            //requests permissions for notifications
+            center.requestAuthorization(options: [.alert, .sound])
+            { success, error in
+                //if they allow notifications
+                if success {
+                    // removes current notification
+                    //center.removeAllPendingNotificationRequests()
+                    center.removePendingNotificationRequests(withIdentifiers: ["nudge" + String(editingNudge)])
+                }
             }
         }
+        
+        
+        
+        
+        
     }
     
     
@@ -149,9 +157,10 @@ class PhoneScheduler: UIViewController {
         setPlayReminder()
         dateLabel.text = "Current Nudge: " + dateString
         UserDefaults.standard.set(dateString, forKey: "dateString" + String(editingNudge))
+        saveToRealm(what: "nudge set: " + dateString)
     }
     
-    func testUserDefaults(){
+    override func testUserDefaults(){
         let defaults = UserDefaults.standard
         
         dateString = defaults.string(forKey: "dateString" + String(editingNudge)) ?? "No Current Nudge"

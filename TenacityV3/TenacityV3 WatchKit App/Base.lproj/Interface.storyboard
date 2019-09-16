@@ -55,20 +55,6 @@
                                 <segue destination="q1w-iP-abZ" kind="push" id="kf4-2e-70f"/>
                             </connections>
                         </button>
-                        <button alignment="center" verticalAlignment="center" id="hew-EV-P15" userLabel="Rhythm Button">
-                            <group key="contentGroup" width="1" height="60" alignment="left" id="x8t-r6-drU">
-                                <items>
-                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Rhythm Tap" numberOfLines="2" id="Z2t-EI-4vM">
-                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
-                                    </label>
-                                    <group width="50" height="45" alignment="right" verticalAlignment="center" backgroundImage="drum" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="HI3-kd-uci"/>
-                                </items>
-                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </group>
-                            <connections>
-                                <segue destination="4Tg-YH-RAE" kind="push" id="rWP-KH-59m"/>
-                            </connections>
-                        </button>
                         <button alignment="center" verticalAlignment="center" id="wYC-bp-ffy" userLabel="Help Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="lo2-Tm-kmI">
                                 <items>
@@ -185,19 +171,6 @@
                                 <segue destination="LgP-M4-sE6" kind="push" id="PPk-HV-G3Z"/>
                             </connections>
                         </button>
-                        <button alignment="center" verticalAlignment="center" id="tek-ml-8cj" userLabel="Rhythm Help Button">
-                            <group key="contentGroup" width="1" height="60" alignment="left" id="wec-SH-o4I">
-                                <items>
-                                    <label alignment="left" verticalAlignment="bottom" text=" Rhythm Help" id="XS1-Kg-F4F">
-                                        <fontDescription key="font" type="system" weight="black" pointSize="17"/>
-                                    </label>
-                                </items>
-                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </group>
-                            <connections>
-                                <segue destination="gUA-XG-l7N" kind="push" id="x1E-SU-07M"/>
-                            </connections>
-                        </button>
                     </items>
                 </controller>
             </objects>
@@ -208,15 +181,17 @@
             <objects>
                 <controller identifier="General Help" id="Fxo-2N-qwH">
                     <items>
-                        <label alignment="left" text="General Help" id="ZMr-L7-MGH"/>
+                        <label alignment="left" text="General Help" id="ZMr-L7-MGH">
+                            <fontDescription key="font" type="system" pointSize="19"/>
+                        </label>
                         <separator alignment="left" id="KFT-mp-I3p"/>
                         <group width="1" alignment="left" layout="vertical" id="Ii6-A0-tKE">
                             <items>
-                                <label alignment="left" text="Start by selecting a game from the menu. Follow the instructions providsed for each game.  " numberOfLines="9" id="Bg4-D8-egh"/>
-                                <label alignment="left" text="If you want to quit out of the game force touch the screen to bring up the force touch menu. " numberOfLines="6" id="gDD-C8-Bba"/>
-                                <label alignment="left" text="After the game is complete, tap the result screen to return to the main menu." numberOfLines="6" id="lKA-eV-PuM"/>
-                                <label alignment="left" text="We recommend that you use the app in silent mode. To do this in your watch go to: " numberOfLines="10" id="CYD-wB-XHE"/>
-                                <label alignment="left" text="Settings &gt; Sound &amp; Haptics &gt; and turn on Silent Mode" numberOfLines="4" id="W9g-hA-Zfs"/>
+                                <label alignment="left" text="Stopping: If you want to stop an activity, force touch the screen to bring up the force touch menu. " numberOfLines="12" id="Bg4-D8-egh"/>
+                                <label alignment="left" text="Results: Data is displayed after you stop an activity. Tap the result screen to return to the main menu." numberOfLines="9" id="gDD-C8-Bba"/>
+                                <label alignment="left" numberOfLines="13" id="lKA-eV-PuM">
+                                    <string key="text">Silent Mode: We recommend that you use the app in silent mode. To do this in your watch go to: settings &gt; sound &amp; haptics &gt; and turn on silent mode.</string>
+                                </label>
                             </items>
                         </group>
                     </items>
@@ -233,20 +208,18 @@
                         <separator alignment="left" id="ADd-I3-W2w"/>
                         <group width="1" alignment="left" layout="vertical" id="xDx-u1-31K">
                             <items>
-                                <label alignment="left" numberOfLines="9" id="cye-cG-xir">
-                                    <string key="text">Tap and hold the symbol as you breathe in. Release as you breathe out. The yellow symbols signify the start of a breath cycle. Swiping will end your current breath cycle.</string>
+                                <label alignment="left" numberOfLines="12" id="cye-cG-xir">
+                                    <string key="text">Rest your finger on the symbol as you breathe in. Release as you breathe out. The yellow symbols signify the start of a breath cycle. Swiping will end the cycle</string>
                                 </label>
                                 <separator alignment="left" id="oLJ-em-5G1"/>
                                 <label alignment="left" text="In Breathe Focus" numberOfLines="6" id="ZH1-RN-13q"/>
-                                <label alignment="left" text="your goal is to match a predetermined breath cycle pattern" numberOfLines="5" id="7fI-8L-b7V"/>
-                                <label alignment="left" numberOfLines="26" id="WeI-Iu-I11">
-                                    <string key="text">Set a time for how long you want to practice focused breathing. Set the target breath cycle length that you want to match. Start breathing and after you hit your target number, swipe to complete the cycle. If you make a mistake, the app will let you know. After the time elapse, you will be sent to the result screen. Remember that you can always exit early through the force menu.</string>
+                                <label alignment="left" numberOfLines="18" id="7fI-8L-b7V">
+                                    <string key="text">Set the target breath cycle length that you want to match. After you reach the target number swipe to complete the cycle. You will receive feedback if you make a mistake. Force touch the screen to stop the activity and see your results. </string>
                                 </label>
                                 <separator alignment="left" id="TpR-RQ-Irf"/>
                                 <label alignment="left" text="In Breathe Infinite" numberOfLines="10" id="Kul-V7-BBI"/>
-                                <label alignment="left" text="your goal is to be as consistent as possible in meeting goals you set for yourself." numberOfLines="6" id="IRc-xl-BqS"/>
-                                <label alignment="left" numberOfLines="34" id="PsF-by-zvJ">
-                                    <string key="text">Before you start you will be shown the results of you last game. Use this to set a personal goal for yourself. We strongly encourage you to set more and more challenging goals as you get more comfortable at this experience. Play the game as you would Breathe Focus whike trying to consistently meet your goal. After each swipe, a number will pop up showing the number of breaths you took during that cycle. When you are finished, use the Force Touch menu to quit and see your results.</string>
+                                <label alignment="left" numberOfLines="26" id="IRc-xl-BqS">
+                                    <string key="text">You play Breathe Infinite just like Breathe Focus, but you will not receive feedback and will not set a target breathe cycle. Instead, decide what target number you want to reach and swipe when you think you have reached it. The number of breaths you completed in that cycle will be displayed after you swipe. Try and consistently reach the same target.</string>
                                 </label>
                             </items>
                         </group>
@@ -264,11 +237,8 @@
                         <group width="1" alignment="left" layout="vertical" id="bml-J4-ApV">
                             <items>
                                 <separator alignment="left" id="WMb-Xv-tyt"/>
-                                <label alignment="left" numberOfLines="20" id="e3C-dl-sFr">
-                                    <string key="text">In Lotus, you will use your concentration and memory in order to respond to different flowers with unique colors. The experience is not a race, so take your time and start by getting into a relaxing position. Once you're comfy, decide how many rounds you would like to complete.</string>
-                                </label>
-                                <label alignment="left" numberOfLines="42" id="zjl-j3-dzg">
-                                    <mutableString key="text">Before starting, a screen will be displayed that shows four colored flowers and their corresponding directions. The flowers will be randomized every time you play. You will need to swipe in the correct direction when each flower is displayed on the screen. Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. Once the new flower is visible, you may swipe up, right, down, or left based on its color. If you swipe the incorrect direction, keep trying until you swipe in the correct direction. Your overall accuracy will be displayed once you complete all of the rounds.</mutableString>
+                                <label alignment="left" numberOfLines="33" id="e3C-dl-sFr">
+                                    <string key="text">This activity uses your concentration and memory to respond to flowers with different colors. Before starting, a screen will be displayed that shows four colored flowers and their corresponding directions. You will need to swipe in the correct direction when each flower is displayed on the screen. The flower directions will be randomized every time you play. Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. </string>
                                 </label>
                             </items>
                         </group>
@@ -302,12 +272,11 @@
                             <items>
                                 <label width="1" alignment="left" text="Welcome to Tenacity Flow!" textAlignment="center" numberOfLines="35" id="bXM-Gd-Rez">
                                     <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="boldSystem" pointSize="14"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="18"/>
                                 </label>
-                                <label width="1" alignment="left" textAlignment="center" numberOfLines="35" id="BLW-95-ATu">
-                                    <string key="text">To practice good self regulation techniques, we encourage you to use the app throughout each day, and set reminders for yourself to do so. To set a reminder, open the Reminders app on the paired iPhone. Tap the "+" icon and give your reminder a title. Tap the "i" icon to edit frequency and alerts. Set as many reminders as you see fit, and remember that the frequency with which you play the games is up to you!</string>
-                                    <color key="textColor" red="0.72297018769999999" green="0.93008947369999995" blue="0.93539953229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                <label width="1" alignment="left" textAlignment="left" numberOfLines="35" id="BLW-95-ATu">
+                                    <string key="text">To practice good self regulation techniques, we encourage you to use the app throughout each day, and set reminders for yourself to do so. You can use the nudges on the phone application to be  reminded to use the application.</string>
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                 </label>
                             </items>
                         </group>

@@ -29,6 +29,7 @@ class NudgesViewController: PhoneViewController{
         testUserDefaults()
     }
     
+    // no switches
     @IBAction func switchAction(_ sender: UISwitch) {
         //print(sender.tag)
         //print(sender.isOn)

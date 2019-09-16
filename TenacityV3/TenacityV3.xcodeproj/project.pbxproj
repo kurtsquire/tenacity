@@ -227,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				42398AB322938159009CA96E /* AppDelegate.swift */,
-				42398AB522938159009CA96E /* ViewController.swift */,
 				1391C016230F365E00416516 /* Quotes.swift */,
 				421307A822DFCBB90007C445 /* Quests.swift */,
 				13A3918E23175B4C00809895 /* Companions.swift */,
@@ -254,6 +253,7 @@
 				1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */,
 				1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */,
 				1BE544A022C2995500620EC9 /* GoogleService-Info.plist */,
+				42398AB522938159009CA96E /* ViewController.swift */,
 			);
 			path = TenacityV3;
 			sourceTree = "<group>";

@@ -30,10 +30,10 @@ class BreatheController: WatchViewController{
     
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
     let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
-    let customPink = UIColor(red: 0.94, green: 0.53, blue: 0.79, alpha: 1.0)
-    let customGreen = UIColor(red: 0.18, green: 0.843, blue: 0.45, alpha: 1.0)
+    let customPink = UIColor(red: 0.96, green: 0.62, blue: 0.16, alpha: 1.0) // saffron
+    let customGreen = UIColor(red: 0.71, green: 0.49, blue: 0.86, alpha: 1.0) //lavender
     
-    lazy var customColors = [customBlue, customRed, customPink, customGreen]
+    lazy var customColors = [customBlue, customPink, customRed, customGreen]
     
     var counter = 0.0
     

@@ -10,9 +10,9 @@
 import Charts
 import RealmSwift
 
-let expFocus = [25.80, 23.00, 30.70, 20.00, 20.45, 30.00]
-let expFlow = [22.80, 8.30, 12.68, 11.45, 30.00, 19.70]
-let expLotus = [27.80, 17.30, 20.68, 17.45, 23.00, 30.70]
+//let expFocus = [25.80, 23.00, 30.70, 20.00, 20.45, 30.00]
+//let expFlow = [22.80, 8.30, 12.68, 11.45, 30.00, 19.70]
+//let expLotus = [27.80, 17.30, 20.68, 17.45, 23.00, 30.70]
 let weekDays = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."]
 
 
@@ -34,8 +34,8 @@ let lotusGraphOutColor = UIColor(red: 0.21, green: 0.15, blue: 0.18, alpha: 1.0)
 let lotusGraphProgColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 1.0).cgColor
 
 var breatheFGoalTime = 30.0
-var breatheIGoalTime = 30.0
-var lotusGoalTime = 30.0
+var breatheIGoalTime = 20.0
+var lotusGoalTime = 20.0
 
 class HomeViewController: PhoneViewController {
     
@@ -44,11 +44,11 @@ class HomeViewController: PhoneViewController {
     
     @IBOutlet weak var homeLineGraph: LineChartView!
     
-    var gamesInfo = [
-        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: 20.00 ),
-        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: 22.50 ),
-        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: 30.00 )
-    ]
+//    var gamesInfo = [
+//        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: 20.00 ),
+//        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: 22.50 ),
+//        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: 30.00 )
+//    ]
     
     
     
@@ -73,6 +73,10 @@ class HomeViewController: PhoneViewController {
  
     @IBOutlet weak var homePet: UIImageView!
     @IBOutlet weak var petQuoteLabel: UILabel!
+    @IBAction func quoteButton(_ sender: Any) {
+        let quotes = Quotes()
+        petQuoteLabel.text = quotes.randomQuote()
+    }
     
     
     // --------------------------- GOALS -----------------------------
@@ -104,12 +108,6 @@ class HomeViewController: PhoneViewController {
             UserDefaults.standard.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
-        
-        //let new = questRewardGenerator()
-        //if new != 0{
-            //petOwned.append(new)
-            //UserDefaults.standard.set(petOwned, forKey: "petOwned")
-        //}
     }
     @IBAction func questHelpButton(_ sender: Any) {
     }
@@ -161,9 +159,7 @@ class HomeViewController: PhoneViewController {
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        // quotes
-        let quotes = Quotes()
-        petQuoteLabel.text = quotes.randomQuote()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -203,9 +199,9 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.xAxis.labelTextColor = UIColor.white
         self.homeLineGraph.rightAxis.labelTextColor = UIColor.white
         self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
-        let lineChartTest : LineChart = LineChart(lineChartView: homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
+//        let lineChartTest : LineChart = LineChart(lineChartView: homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
         
-        lineChartTest.drawWeekGraph()
+//        lineChartTest.drawWeekGraph()
         
     }
     
@@ -220,6 +216,25 @@ class HomeViewController: PhoneViewController {
         updateExp()
         updatePet()
         
+        
+        // quotes
+        let quotes = Quotes()
+        petQuoteLabel.text = quotes.randomQuote()
+        if (nudge1.text == "No Current Nudge" && nudge2.text == "No Current Nudge" && nudge3.text == "No Current Nudge" && nudge4.text == "No Current Nudge" && nudge5.text == "No Current Nudge" && nudge6.text == "No Current Nudge"){
+            let num = Int.random(in: 1 ... 8)
+            if (num == 1){
+                petQuoteLabel.text = "try setting a nudge today"
+            }
+            else if (num == 2){
+                petQuoteLabel.text = "use nudges to plan out your day"
+            }
+            else if (num == 3){
+                petQuoteLabel.text = "nudges can be used to send you reminders"
+            }
+            else if (num == 4){
+                petQuoteLabel.text = "(whispering: set a nudge)"
+            }
+        }
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
@@ -288,6 +303,174 @@ class HomeViewController: PhoneViewController {
         let bix = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe infinite", startTime)
         let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", startTime)
     
+        //        BREATHE INFINITE
+        
+        let bisun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
+        let bimon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
+        let bitues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
+        let biwed = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false))
+        let bithurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
+        let bifri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
+        let bisat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
+        
+        
+        var breatheITimeSunday = 0.0
+        for item in bisun{
+            breatheITimeSunday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeMonday = 0.0
+        for item in bimon{
+            breatheITimeMonday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeTuesday = 0.0
+        for item in bitues{
+            breatheITimeTuesday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeWednesday = 0.0
+        for item in biwed{
+            breatheITimeWednesday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeThursday = 0.0
+        for item in bithurs{
+            breatheITimeThursday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeFriday = 0.0
+        for item in bifri{
+            breatheITimeFriday += item.breatheITimePlayed
+        }
+        
+        var breatheITimeSaturday = 0.0
+        for item in bisat{
+            breatheITimeSaturday += item.breatheITimePlayed
+        }
+        
+        let breatheITimePlayed : [Double] = [breatheITimeSunday/60, breatheITimeMonday/60, breatheITimeTuesday/60, breatheITimeWednesday/60, breatheITimeThursday/60, breatheITimeFriday/60, breatheITimeSaturday/60]
+        
+        //        BREATHE FOCUS
+        let bfsun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
+        let bfmon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
+        let bftues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
+        let bfwed = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false))
+        let bfthurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
+        let bffri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
+        let bfsat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
+        
+        var breatheFTimeSunday = 0.0
+        for item in bfsun{
+            breatheFTimeSunday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeMonday = 0.0
+        for item in bfmon{
+            breatheFTimeMonday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeTuesday = 0.0
+        for item in bftues{
+            breatheFTimeTuesday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeWednesday = 0.0
+        for item in bfwed{
+            breatheFTimeWednesday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeThursday = 0.0
+        for item in bfthurs{
+            breatheFTimeThursday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeFriday = 0.0
+        for item in bffri{
+            breatheFTimeFriday += item.breatheFTimePlayed
+        }
+        
+        var breatheFTimeSaturday = 0.0
+        for item in bfsat{
+            breatheFTimeSaturday += item.breatheFTimePlayed
+        }
+        
+        let breatheFTimePlayed : [Double] = [breatheFTimeSunday/60, breatheFTimeMonday/60, breatheFTimeTuesday/60, breatheFTimeWednesday/60, breatheFTimeThursday/60, breatheFTimeFriday/60, breatheFTimeSaturday/60]
+        
+        //        LOTUS
+        let lsun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
+        let lmon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
+        let ltues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
+        let lwed = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false))
+        let lthurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
+        let lfri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
+        let lsat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
+        
+        //calculating lotus sunday
+        var lotusTimeSun = 0.0
+        
+        for item in lsun{
+            lotusTimeSun += item.lotusTimePlayed
+        }
+        
+        //calculating lotus monday
+        var lotusTimeMon = 0.0
+        
+        for item in lmon{
+            lotusTimeMon += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds tuesday
+        var lotusTimeTues = 0.0
+        
+        for item in ltues{
+            lotusTimeTues += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds wednesday
+        var lotusTimeWed = 0.0
+        
+        for item in lwed{
+            lotusTimeWed += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds thursday
+        var lotusTimeThurs = 0.0
+        
+        for item in lthurs{
+            lotusTimeThurs += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds friday
+        var lotusTimeFri = 0.0
+        
+        for item in lfri{
+            lotusTimeFri += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds saturday
+        var lotusTimeSat = 0.0
+        
+        for item in lsat{
+            lotusTimeSat += item.lotusTimePlayed
+        }
+        
+        let lotusTimePlayed : [Double] = [
+            lotusTimeSun/60, lotusTimeMon/60, lotusTimeTues/60, lotusTimeWed/60, lotusTimeThurs/60, lotusTimeFri/60, lotusTimeSat/60
+        ]
+        
+        
+        var gamesInfo = [
+            1 : ( gameName: "Breathe Infinite", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheFGoalTime ),
+            0 : ( gameName: "Breathe Focus", gameData: breatheFTimePlayed, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: breatheIGoalTime ),
+            2 : ( gameName: "Lotus", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime )
+        ]
+        
+        let timePlayedChart : LineChart = LineChart(lineChartView: self.homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
+        
+        timePlayedChart.drawWeekGraph()
+        
+        
         var breatheFTimeToday = 0.0
         var breatheITimeToday = 0.0
         var lotusTimeToday = 0.0
@@ -304,8 +487,8 @@ class HomeViewController: PhoneViewController {
         
         DispatchQueue.main.async {
             self.breatheFMinuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins"
-            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins"
-            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
+            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
+            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
             
             breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
@@ -345,12 +528,12 @@ class HomeViewController: PhoneViewController {
         //get rerolls
         rerolls = defaults.integer(forKey: "rerolls")
         // get nudge
-        nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Nudge Set"
-        nudge2.text = defaults.string(forKey: "dateString1") ?? "No Nudge Set"
-        nudge3.text = defaults.string(forKey: "dateString2") ?? "No Nudge Set"
-        nudge4.text = defaults.string(forKey: "dateString3") ?? "No Nudge Set"
-        nudge5.text = defaults.string(forKey: "dateString4") ?? "No Nudge Set"
-        nudge6.text = defaults.string(forKey: "dateString5") ?? "No Nudge Set"
+        nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Current Nudge"
+        nudge2.text = defaults.string(forKey: "dateString1") ?? "No Current Nudge"
+        nudge3.text = defaults.string(forKey: "dateString2") ?? "No Current Nudge"
+        nudge4.text = defaults.string(forKey: "dateString3") ?? "No Current Nudge"
+        nudge5.text = defaults.string(forKey: "dateString4") ?? "No Current Nudge"
+        nudge6.text = defaults.string(forKey: "dateString5") ?? "No Current Nudge"
 
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
@@ -540,6 +723,7 @@ class HomeViewController: PhoneViewController {
             saveQuest(progress: false)
             buildQuest()
         }
+        saveToRealm(what: dailyQuestData["questString"] as! String)
     }
     
     func questRewardGenerator() -> Int{

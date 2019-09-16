@@ -28,7 +28,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Am-p1-mPd">
                                 <rect key="frame" x="16" y="93" width="343" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">This is an overview of your hard work! Goals for game modes are indicated by a dotted line. Your rank and experience will go up as you complete sessions.</string>
+                                <string key="text">This is an overview of your hard work! Goals for game modes are indicated by a dotted line. Your rank and experience will go up as you complete sessions and complete quests. Tap your pet to get new inspirational quotes.</string>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -60,8 +60,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6a-Uk-gIn">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Track progress by using the goal meter. You can adjust your goal by tapping the center of the goal meter. Add additional goal meters by using the "+" sign.   
-Click on the achievement medals below to learn more about them or equip different ones.
+                                <string key="text">Track progress by using the goal meter. These track how much time you have played today.
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +93,7 @@ Click on the achievement medals below to learn more about them or equip differen
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-bX-L4P">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Unlock companions by completing quests. You can use the red reroll button to randomize the reward and activity. You cannot return to a previous activity or reward, so be sure that you want to reroll.</string>
+                                <string key="text">Unlock companions and earn bonus experience points by completing quests. You can use the reroll button to randomize the reward and activity. A new quest is generated everyday. You can only complete one  quest per day. You cannot return to a previous activity or reward, so be sure that you want to reroll.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +125,7 @@ Click on the achievement medals below to learn more about them or equip differen
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-yU-fSc">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Set nudges to help you consistently use the app and meet your goals. Each nudge can be set for a different time and turned on or off. Enabled nudges will go off every day at the selected time.</string>
+                                <string key="text">Set nudges to help you consistently use the app and meet your goals. Each nudge can be set for a different time and edited or turned off. Enabled nudges will go off every day at the selected time.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -151,7 +150,7 @@ Click on the achievement medals below to learn more about them or equip differen
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-cL-DT4">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Experience points will level up and unlock new skins for your equipped companion. Only one companion can be leveled up at a time. In order to level up rare and above companions, you will need to meet their rank requirement. You can change what your companion calls you by tapping on the name. </string>
+                                <string key="text">Only one companion can be equipped at a time. Simply tap an unlocked pet to equip them. In order to unlock the next pet in the series you must first obtain the previous ones. Pets can only be obtained through quests which can only be completed once a day, so be sure to do your quests!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -247,7 +246,7 @@ Click on the achievement medals below to learn more about them or equip differen
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-3A-sge">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Customize the game modes as your rank increases. Some options for Lotus will change the difficulty (e.g., same color or same shape).</string>
+                                <string key="text">Customize the game modes as you please. You can equip a shape and a color for each game. Some options for Lotus will change the difficulty (e.g. same shape).</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -268,5 +267,408 @@ Click on the achievement medals below to learn more about them or equip differen
             </objects>
             <point key="canvasLocation" x="-159.19999999999999" y="846.9265367316342"/>
         </scene>
+        <!--Instructions-->
+        <scene sceneID="ShR-2g-p59">
+            <objects>
+                <viewController storyboardIdentifier="Instructions" title="Instructions" id="sZ1-hs-ZPQ" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2oh-Nv-sbN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-zS-xVv">
+                                <rect key="frame" x="67" y="26" width="240" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erV-JL-dQk">
+                                <rect key="frame" x="16" y="113" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="General">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8Hf-Aq-mgG" kind="show" id="jK5-5h-7D3"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Fzl-mq-hTd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="99" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-yA-feu">
+                                <rect key="frame" x="16" y="196" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Goals">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AtI-c2-zD7" kind="show" id="YXX-0P-JOX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="cd0-Lq-crd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="182" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A24-tE-4Gw">
+                                <rect key="frame" x="16" y="279" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Quests">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="njd-Ot-oBX" kind="show" id="Roa-xq-TOo"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-Iz-eBK" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="265" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-Cf-X8j">
+                                <rect key="frame" x="16" y="362" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Breathe Modes">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VbQ-JU-xi3" kind="show" id="zDn-GH-iSr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-ll-Oo8" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="348" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x4-zE-Yah">
+                                <rect key="frame" x="16" y="445" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Lotus Swipe">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S2M-vZ-hf3" kind="show" id="ydg-SE-U2s"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zVd-IP-1Jd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="431" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-1X-idS" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="514" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="auH-G7-S2J"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzq-XA-UU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688.8000000000002" y="846.9265367316342"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="th9-bE-au4">
+            <objects>
+                <viewController storyboardIdentifier="Instruction General" title="General" id="8Hf-Aq-mgG" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hdQ-9k-Fah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-AZ-b7G">
+                                <rect key="frame" x="16" y="58" width="343" height="590"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
+
+In the last four weeks, the minimum required daily play time will be 30 minutes.  
+
+You can increase your daily play time early by tapping on the goal meter.
+
+Mindful breathing takes practice and requires some effort. Over time, you will get better and stronger.
+
+Breathe Infinite and Lotus Swipe do not have daily required play times. However, you can still set a goal meter for each game to monitor your play time. 
+
+Silent Mode
+We recommend that you use the app in silent mode. To do this in your watch go to:
+
+Settings &gt; Sound &amp; Haptics &gt; Enable Silent Mode
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-be-0Vy">
+                                <rect key="frame" x="67" y="26" width="240" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="j9h-OY-eC9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRZ-bC-Bpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3357.5999999999999" y="846.9265367316342"/>
+        </scene>
+        <!--Goals-->
+        <scene sceneID="b4t-As-68c">
+            <objects>
+                <viewController storyboardIdentifier="Instruction Goals" title="Goals" id="AtI-c2-zD7" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0P-3K-BvS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQi-AI-ujP">
+                                <rect key="frame" x="16" y="88" width="343" height="559"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Playing Tenacity Flow games is going to be hard work! Start off with a small goal and build up over time. Set the amount of minutes you want to achieve daily. Track your progress as the meter fills up.  
+
+Only Breathe Focus has a required time goal.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inst Goals Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxt-25-FlX">
+                                <rect key="frame" x="67" y="26" width="240" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="3ZC-Rv-f4l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5D-5g-ZFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3358" y="175"/>
+        </scene>
+        <!--Quests-->
+        <scene sceneID="UkR-Dm-G0B">
+            <objects>
+                <viewController storyboardIdentifier="Instruction Quests" title="Quests" id="njd-Ot-oBX" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7MC-d2-rcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-7E-UIe">
+                                <rect key="frame" x="16" y="88" width="343" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">You can complete quests to collect special companions. You can complete one quest a day. New quests and rerolls become available at 12 am on the following day. You can reroll the quest and reward to get different ones. You are allowed 3 rerolls a day.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-iM-8Bh">
+                                <rect key="frame" x="67" y="26" width="240" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instruction pets" translatesAutoresizingMaskIntoConstraints="NO" id="Os8-Yc-fJc">
+                                <rect key="frame" x="25" y="424" width="325" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="H6T-ct-dwj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7W-vZ-AHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3357.5999999999999" y="1532.3838080959522"/>
+        </scene>
+        <!--Lotus Swipe-->
+        <scene sceneID="vjc-TC-0v8">
+            <objects>
+                <viewController storyboardIdentifier="Instructions Lotus" title="Lotus Swipe" id="S2M-vZ-hf3" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uuE-fj-8UY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-b3-l72">
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDM-SV-zFa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="996"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwA-BW-6Qk">
+                                                <rect key="frame" x="16" y="8" width="343" height="402"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <mutableString key="text">Lotus will challenge your attention and memory. You will start by memorizing a pattern of colorful flowers. Lotus will show you a randomly chosen flower and you need to swipe in the corresponding direction. 
+
+The flowers will be randomized every time you play. If you swipe in the wrong direction, try again to find the correct direction. 
+
+Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. Once the new flower is visible, you many swipe up, right, down, or left based on its color.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJX-PK-vd0">
+                                                <rect key="frame" x="16" y="580" width="343" height="255"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">1. Select the number of flower rounds.
+
+2. Tap the white lotus to signal you're ready.
+
+3. Swipe the flower in the correct direction (try until you succeed)
+
+Tip: Play fast-paced to train reaction and memory speed. Slow it down like in Breathe in order to focus and relax.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lotus instructions" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-W4-RXk">
+                                                <rect key="frame" x="16" y="418" width="343" height="148"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="900" id="wWs-6V-cBM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VDM-SV-zFa" secondAttribute="bottom" id="2Nw-1G-aOJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="VDM-SV-zFa" secondAttribute="trailing" id="HFl-Wv-3nX"/>
+                                    <constraint firstItem="VDM-SV-zFa" firstAttribute="centerX" secondItem="Kko-b3-l72" secondAttribute="centerX" id="exw-CX-f66"/>
+                                    <constraint firstItem="VDM-SV-zFa" firstAttribute="leading" secondItem="Kko-b3-l72" secondAttribute="leading" id="hx5-O6-tax"/>
+                                    <constraint firstItem="VDM-SV-zFa" firstAttribute="top" secondItem="Kko-b3-l72" secondAttribute="top" id="rSG-3n-hKl"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kko-b3-l72" firstAttribute="trailing" secondItem="EfP-Vk-ren" secondAttribute="trailing" id="1nU-tY-BTv"/>
+                            <constraint firstItem="Kko-b3-l72" firstAttribute="leading" secondItem="EfP-Vk-ren" secondAttribute="leading" id="B4t-nA-d5K"/>
+                            <constraint firstItem="Kko-b3-l72" firstAttribute="bottom" secondItem="EfP-Vk-ren" secondAttribute="bottom" id="HCA-nw-mLo"/>
+                            <constraint firstItem="Kko-b3-l72" firstAttribute="top" secondItem="uuE-fj-8UY" secondAttribute="top" constant="20" id="XvY-70-65b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EfP-Vk-ren"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmv-WS-tq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4054" y="997"/>
+        </scene>
+        <!--Breathe Modes-->
+        <scene sceneID="s1M-nf-hIg">
+            <objects>
+                <viewController storyboardIdentifier="Instructions Breathe Modes" title="Breathe Modes" id="VbQ-JU-xi3" customClass="HelpViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V9I-ZO-OGO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqe-9C-jCw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1780"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0i-tN-w90">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1850"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW6-f2-oHB">
+                                                <rect key="frame" x="16" y="8" width="343" height="272"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Lifting weights in the gym improves your muscles and fitness. Cognitive exercise can improve your brain, but training will be just as hard compared to the gym. Breathe is a game that requires you to focus on counting your breaths. 
+
+Tip: Try to breathe normally. Do not race to breath fast or take the deepest breaths. As you breathe, relax and build up your ability to take longer and slower breaths. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1850" id="LPE-Ic-7kz"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Zw-L5s">
+                                        <rect key="frame" x="16" y="996" width="343" height="776"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <mutableString key="text">Breathe Infinite
+
+1. You don’t need to select a target number of breaths before starting, but decide how many breaths you want to try and count to.
+
+2. Hold and release while inhaling and exhaling just like in Breathe Focus. When you reach the number of breaths you want to take, swipe from left to right. 
+
+3. The number of breaths you reached in that cycle will be displayed on the screen.
+
+4. The first breath will always have a yellow symbol.
+
+5. Repeat counting breaths and swiping for the desired time.
+
+You can use the force touch menu any time to stop and view your results.
+
+If you have a previous session, you will be shown the results of you last game before you start. Use this to set a personal goal for yourself. Have the courage to set challenging goals!
+
+Breathe Infinite shows your breath pattern as a distribution. As you get better, aim for a specific number of breaths and try to hit that number consistently. Five breaths is a good goal to work towards.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rD-JE-JfX">
+                                        <rect key="frame" x="16" y="296" width="343" height="692"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <mutableString key="text">Breathe Focus
+
+1. You can start with a lower goal, but counting 5  breaths is your goal. Effort and hard work will help you progress.
+
+2. Breath in while holding the symbol, then release and exhale. You can release the symbol at any time. Repeat for 5 breaths. 
+
+3. The first breath will always have a yellow symbol.
+
+4. On the 5th breath, swipe the screen from left to right.
+
+5. Repeat counting to 5 breaths and then swiping to complete the cycle.
+
+Repeat the cycle of counting the correct number of breaths and swiping until the timer ends. Results are shown at the end.
+
+You can use the force touch menu any time to stop and view your results.
+
+Attention: If you incorrectly swipe before the 5th breath, or tap instead of swiping, you will receive a feedback message. After the feedback is displayed, you will need to start counting over from 1.
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Z0i-tN-w90" firstAttribute="top" secondItem="Kqe-9C-jCw" secondAttribute="top" id="1E9-Dn-bkG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z0i-tN-w90" secondAttribute="bottom" id="2q7-Af-RuD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z0i-tN-w90" secondAttribute="trailing" id="TBX-PJ-t2q"/>
+                                    <constraint firstItem="Z0i-tN-w90" firstAttribute="leading" secondItem="Kqe-9C-jCw" secondAttribute="leading" id="hxG-eQ-Hoo"/>
+                                    <constraint firstItem="Z0i-tN-w90" firstAttribute="centerX" secondItem="Kqe-9C-jCw" secondAttribute="centerX" id="oKB-UX-oJH"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kqe-9C-jCw" firstAttribute="leading" secondItem="YGg-zM-bt6" secondAttribute="leading" id="Dqy-cJ-KK1"/>
+                            <constraint firstItem="Kqe-9C-jCw" firstAttribute="bottom" secondItem="YGg-zM-bt6" secondAttribute="bottom" id="Ftf-vp-dIX"/>
+                            <constraint firstItem="Kqe-9C-jCw" firstAttribute="top" secondItem="V9I-ZO-OGO" secondAttribute="top" constant="20" id="UPd-Eq-dNg"/>
+                            <constraint firstItem="Kqe-9C-jCw" firstAttribute="trailing" secondItem="YGg-zM-bt6" secondAttribute="trailing" id="sJz-0O-tBe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YGg-zM-bt6"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysY-Jd-QtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4757.6000000000004" y="996.7016491754124"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="instruction pets" width="700" height="293"/>
+        <image name="line" width="10000" height="60"/>
+        <image name="lotus instructions" width="949" height="339"/>
+    </resources>
 </document>

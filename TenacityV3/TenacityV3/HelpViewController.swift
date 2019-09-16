@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HelpViewController: UIViewController{
+class HelpViewController: PhoneViewController{
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

@@ -37,11 +37,10 @@ class FreeBreatheController: WatchViewController{
     @IBOutlet weak var holdNumberLabel: WKInterfaceLabel!
     
     
-    //INCORRECT COLORS
-    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
     let customBlue =  UIColor(red:0.102, green: 0.788, blue: 0.827, alpha: 1.0)
-    let customPink = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
-    let customGreen = UIColor(red: 0.215, green: 0.843, blue: 0.435, alpha: 1.0)
+    let customRed = UIColor(red: 0.77, green: 0.19, blue: 0.34, alpha: 1.0)
+    let customPink = UIColor(red: 0.96, green: 0.62, blue: 0.16, alpha: 1.0) // saffron
+    let customGreen = UIColor(red: 0.71, green: 0.49, blue: 0.86, alpha: 1.0) //lavender
     
     lazy var customColors = [customBlue, customRed, customPink, customGreen]
     
