@@ -381,7 +381,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-AZ-b7G">
                                 <rect key="frame" x="16" y="58" width="343" height="590"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
+                                <string key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
 
 In the last four weeks, the minimum required daily play time will be 30 minutes.  
 
@@ -395,7 +395,7 @@ Silent Mode
 We recommend that you use the app in silent mode. To do this in your watch go to:
 
 Settings &gt; Sound &amp; Haptics &gt; Enable Silent Mode
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -503,11 +503,11 @@ Only Breathe Focus has a required time goal.</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwA-BW-6Qk">
                                                 <rect key="frame" x="16" y="8" width="343" height="402"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <mutableString key="text">Lotus will challenge your attention and memory. You will start by memorizing a pattern of colorful flowers. Lotus will show you a randomly chosen flower and you need to swipe in the corresponding direction. 
+                                                <string key="text">Lotus will challenge your attention and memory. You will start by memorizing a pattern of colorful flowers. Lotus will show you a randomly chosen flower and you need to swipe in the corresponding direction. 
 
 The flowers will be randomized every time you play. If you swipe in the wrong direction, try again to find the correct direction. 
 
-Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. Once the new flower is visible, you many swipe up, right, down, or left based on its color.</mutableString>
+Before each colored flower is presented, a white flower must be cleared. Tap to dissolve the white flower. Once the new flower is visible, you many swipe up, right, down, or left based on its color.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -593,7 +593,7 @@ Tip: Try to breathe normally. Do not race to breath fast or take the deepest bre
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Zw-L5s">
                                         <rect key="frame" x="16" y="996" width="343" height="776"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">Breathe Infinite
+                                        <string key="text">Breathe Infinite
 
 1. You don’t need to select a target number of breaths before starting, but decide how many breaths you want to try and count to.
 
@@ -609,7 +609,7 @@ You can use the force touch menu any time to stop and view your results.
 
 If you have a previous session, you will be shown the results of you last game before you start. Use this to set a personal goal for yourself. Have the courage to set challenging goals!
 
-Breathe Infinite shows your breath pattern as a distribution. As you get better, aim for a specific number of breaths and try to hit that number consistently. Five breaths is a good goal to work towards.</mutableString>
+Breathe Infinite shows your breath pattern as a distribution. As you get better, aim for a specific number of breaths and try to hit that number consistently. Five breaths is a good goal to work towards.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -617,7 +617,7 @@ Breathe Infinite shows your breath pattern as a distribution. As you get better,
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rD-JE-JfX">
                                         <rect key="frame" x="16" y="296" width="343" height="692"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">Breathe Focus
+                                        <string key="text">Breathe Focus
 
 1. You can start with a lower goal, but counting 5  breaths is your goal. Effort and hard work will help you progress.
 
@@ -634,7 +634,7 @@ Repeat the cycle of counting the correct number of breaths and swiping until the
 You can use the force touch menu any time to stop and view your results.
 
 Attention: If you incorrectly swipe before the 5th breath, or tap instead of swiping, you will receive a feedback message. After the feedback is displayed, you will need to start counting over from 1.
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

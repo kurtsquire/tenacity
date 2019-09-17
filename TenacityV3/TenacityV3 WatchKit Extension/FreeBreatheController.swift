@@ -42,7 +42,7 @@ class FreeBreatheController: WatchViewController{
     let customPink = UIColor(red: 0.96, green: 0.62, blue: 0.16, alpha: 1.0) // saffron
     let customGreen = UIColor(red: 0.71, green: 0.49, blue: 0.86, alpha: 1.0) //lavender
     
-    lazy var customColors = [customBlue, customRed, customPink, customGreen]
+    lazy var customColors = [customBlue, customPink, customRed, customGreen]
     
     /////////////////////////// Tutorial ---------------------------------------
     
