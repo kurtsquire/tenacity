@@ -47,21 +47,37 @@ class BreatheController: WatchViewController{
     var cycleStep = 0
     
     
-    //Initial Settings Page
-    @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
-    @IBAction func sessionLengthSliderAction(_ value: Float) {
-        sessionTime = Int(value)
-        sessionLengthLabel.setText(String(Int(sessionTime)))
-    }
+    //----------------------  Initial Settings Page -----------------------
+//    @IBOutlet var sessionLengthSlider: WKInterfaceSlider!
+//    @IBAction func sessionLengthSliderAction(_ value: Float) {
+//        sessionTime = Int(value)
+//        sessionLengthLabel.setText(String(Int(sessionTime)))
+//    }
+//
+//    @IBOutlet var sessionLengthLabel: WKInterfaceLabel!
+//
+//    @IBOutlet var cycleSlider: WKInterfaceSlider!
+//    @IBOutlet var cycleNumLabel: WKInterfaceLabel!
+//    @IBAction func cycleSliderAction(_ value: Float) {
+//        FullCycle = Int(value)
+//        cycleNumLabel.setText(String(Int(FullCycle)))
+//    }
     
-    @IBOutlet var sessionLengthLabel: WKInterfaceLabel!
+    @IBOutlet weak var timePicker: WKInterfacePicker!
+    @IBOutlet weak var cyclePicker: WKInterfacePicker!
     
-    @IBOutlet var cycleSlider: WKInterfaceSlider!
-    @IBOutlet var cycleNumLabel: WKInterfaceLabel!
-    @IBAction func cycleSliderAction(_ value: Float) {
-        FullCycle = Int(value)
-        cycleNumLabel.setText(String(Int(FullCycle)))
+    var timePickerItems = [WKPickerItem]()
+    var cyclePickerItems = [WKPickerItem]()
+    
+    @IBAction func timePickerAction(_ value: Int) {
+        sessionTime = value + 3
+        print(sessionTime)
     }
+    @IBAction func cyclePickerAction(_ value: Int) {
+        FullCycle = value + 2
+        print(FullCycle)
+    }
+
     
     @IBAction func startButtonTapped() {    // change to TutorialEnd()
         WKInterfaceController.reloadRootControllers(withNames: ["Breathe Tutorial1"], contexts: [""])
@@ -146,7 +162,28 @@ class BreatheController: WatchViewController{
             self.image.setTintColor(resetColor)
         }
         else if ((context as? String) == "from Menu"){
-            sessionLengthSlider.setValue(15)
+            
+            // resets global slider variables
+            FullCycle = 5
+            sessionTime = 10
+            
+            // set picker values on awake
+            for i in 3..<31{
+                let min = WKPickerItem()
+                min.title = String(i)
+                timePickerItems.append(min)
+            }
+            
+            for i in 2..<11{
+                let cycle = WKPickerItem()
+                cycle.title = String(i)
+                cyclePickerItems.append(cycle)
+            }
+            
+            timePicker.setItems(timePickerItems)
+            cyclePicker.setItems(cyclePickerItems)
+            timePicker.setSelectedItemIndex(7)
+            cyclePicker.setSelectedItemIndex(3)
         }
     }
     
@@ -168,9 +205,7 @@ class BreatheController: WatchViewController{
             //sends data
             sendData(what: "end game", correct: "N/A", cycleSettings: FullCycle, timeSettings: sessionTime, timePlayed : time, avgBreathLength : averageFullBreatheTime, totalSets : cycleTotal, correctSets : correctCyclesTotal)
             
-            // resets global slider variables
-            FullCycle = 5
-            sessionTime = 15
+            
         }
         
     }
