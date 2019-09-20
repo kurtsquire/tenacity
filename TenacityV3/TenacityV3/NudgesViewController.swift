@@ -6,6 +6,9 @@
 //  Copyright © 2019 PLL. All rights reserved.
 //
 
+
+// Controls the Nudges tab
+
 import UIKit
 import UserNotifications
 
@@ -20,7 +23,6 @@ class NudgesViewController: PhoneViewController{
     
     @IBAction func nudgePressed(_ sender: UIButton) {
         editingNudge = sender.tag
-
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -31,8 +33,6 @@ class NudgesViewController: PhoneViewController{
     
     // no switches
     @IBAction func switchAction(_ sender: UISwitch) {
-        //print(sender.tag)
-        //print(sender.isOn)
         if (sender.isOn){
             //turn notification on
             // tell realm notification (time) is on

@@ -53,26 +53,16 @@ class BreatheFocusStatsViewController: PhoneViewController{
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
-        //        print("this is the weekStartTime: ")
-        //        print(weekStartTime)
-        //        print("this is today: ")
-        //        print(today)
         
         // ---------------------- LINES -----------------------------------
         
         self.timePlayedLineChart.gridBackgroundColor = UIColor.white
-        
         self.timePlayedLineChart.noDataText = "No data provided"
-        
         self.timePlayedLineChart.doubleTapToZoomEnabled = false
-        
         self.timePlayedLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        
         self.timePlayedLineChart.highlightPerTapEnabled = false
         self.timePlayedLineChart.highlightPerDragEnabled = false
-        
         self.timePlayedLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-        
         self.timePlayedLineChart.xAxis.granularity = 1
         self.timePlayedLineChart.legend.textColor = UIColor.white
         self.timePlayedLineChart.xAxis.labelTextColor = UIColor.white
@@ -81,18 +71,12 @@ class BreatheFocusStatsViewController: PhoneViewController{
         
         
         self.totalBreathsLineChart.gridBackgroundColor = UIColor.white
-        
         self.totalBreathsLineChart.noDataText = "No data provided"
-        
         self.totalBreathsLineChart.doubleTapToZoomEnabled = false
-        
         self.totalBreathsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        
         self.totalBreathsLineChart.highlightPerTapEnabled = false
         self.totalBreathsLineChart.highlightPerDragEnabled = false
-        
         self.totalBreathsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-        
         self.totalBreathsLineChart.xAxis.granularity = 1
         self.totalBreathsLineChart.legend.textColor = UIColor.white
         self.totalBreathsLineChart.xAxis.labelTextColor = UIColor.white
@@ -101,18 +85,12 @@ class BreatheFocusStatsViewController: PhoneViewController{
         
         
 //        self.avgBreathsLineChart.gridBackgroundColor = UIColor.white
-//
 //        self.avgBreathsLineChart.noDataText = "No data provided"
-//
 //        self.avgBreathsLineChart.doubleTapToZoomEnabled = false
-//
 //        self.avgBreathsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-//
 //        self.avgBreathsLineChart.highlightPerTapEnabled = false
 //        self.avgBreathsLineChart.highlightPerDragEnabled = false
-//
 //        self.avgBreathsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-//
 //        self.avgBreathsLineChart.xAxis.granularity = 1
 //        self.avgBreathsLineChart.legend.textColor = UIColor.white
 //        self.avgBreathsLineChart.xAxis.labelTextColor = UIColor.white
@@ -121,24 +99,17 @@ class BreatheFocusStatsViewController: PhoneViewController{
         
         
         self.setsPlayedLineChart.gridBackgroundColor = UIColor.white
-        
         self.setsPlayedLineChart.noDataText = "No data provided"
-        
         self.setsPlayedLineChart.doubleTapToZoomEnabled = false
-        
         self.setsPlayedLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        
         self.setsPlayedLineChart.highlightPerTapEnabled = false
         self.setsPlayedLineChart.highlightPerDragEnabled = false
-        
         self.setsPlayedLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-        
         self.setsPlayedLineChart.xAxis.granularity = 1
         self.setsPlayedLineChart.legend.textColor = UIColor.white
         self.setsPlayedLineChart.xAxis.labelTextColor = UIColor.white
         self.setsPlayedLineChart.rightAxis.labelTextColor = UIColor.white
         self.setsPlayedLineChart.leftAxis.labelTextColor = UIColor.white
-        
         
         refreshRealmData()
     }

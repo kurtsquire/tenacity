@@ -33,8 +33,8 @@ class CompanionsViewController: PhoneViewController {
                 }
             }
         }
-        
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -49,7 +49,7 @@ class CompanionsViewController: PhoneViewController {
         super.viewDidDisappear(animated)
     }
     
-    override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
+    override func viewDidAppear(_ animated: Bool) { //opening back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         
         updatePetData()

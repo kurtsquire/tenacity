@@ -41,18 +41,10 @@ class HomeViewController: PhoneViewController {
     
     
     @IBOutlet weak var mainView: UIView!
-    
     @IBOutlet weak var homeLineGraph: LineChartView!
     
-//    var gamesInfo = [
-//        1 : ( gameName: "Breathe Flow", gameData: expFlow, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: 20.00 ),
-//        0 : ( gameName: "Breathe Focus", gameData: expFocus, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: 22.50 ),
-//        2 : ( gameName: "Lotus", gameData: expLotus, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: 30.00 )
-//    ]
     
-    
-    
-    // --------------------------- EXPERIENCE -----------------------------
+    // --------------------------- EXPERIENCE OUTLETS -----------------------------
     @IBOutlet weak var expBar1: UIImageView!
     @IBOutlet weak var expBar2: UIImageView!
     @IBOutlet weak var expBar3: UIImageView!
@@ -62,14 +54,13 @@ class HomeViewController: PhoneViewController {
     @IBOutlet weak var lvlLabel: UILabel!
     
     
-    // --------------------------- PROGRESS -----------------------------
+    // --------------------------- PROGRESS OUTLETS -----------------------------
     @IBAction func progressHelpButton(_ sender: Any) {
     }
     @IBAction func settingsButton(_ sender: Any) {
     }
     
-    // --------------------------- PETS -----------------------------
-   
+    // --------------------------- PET OUTLETS -----------------------------
  
     @IBOutlet weak var homePet: UIImageView!
     @IBOutlet weak var petQuoteLabel: UILabel!
@@ -79,7 +70,7 @@ class HomeViewController: PhoneViewController {
     }
     
     
-    // --------------------------- GOALS -----------------------------
+    // --------------------------- GOALS OUTLETS -----------------------------
     @IBAction func goalsHelpButton(_ sender: Any) {
     }
     @IBOutlet weak var breatheFMinuteGoalLabel: UILabel!
@@ -89,16 +80,19 @@ class HomeViewController: PhoneViewController {
     @IBOutlet weak var breatheInfiniteLabel: UILabel!
     @IBOutlet weak var lotusSwipeLabel: UILabel!
     
-    @IBOutlet weak var badge1: UIButton!
-    @IBOutlet weak var badge2: UIButton!
-    @IBOutlet weak var badge3: UIButton!
-    @IBAction func achievementButton(_ sender: Any) {
-    }
+    // Achievements
+//    @IBOutlet weak var badge1: UIButton!
+//    @IBOutlet weak var badge2: UIButton!
+//    @IBOutlet weak var badge3: UIButton!
+//    @IBAction func achievementButton(_ sender: Any) {
+//    }
     
-    //-------------------------- CIRCLE GRAPHS ----------------------------
+    // Center of the Circle Goal Graphs
+    lazy var breatheFGraphCenter = breatheFocusLabel.center
+    lazy var breatheIGraphCenter = breatheInfiniteLabel.center
+    lazy var lotusGraphCenter = lotusSwipeLabel.center
     
-    
-    // --------------------------- QUESTS -----------------------------
+    // --------------------------- QUEST OUTLETS -----------------------------
     @IBOutlet weak var rerollButton: UIButton!
     @IBAction func questRerollButton(_ sender: Any) {
         if (rerolls > 0 && !(dailyQuestData["complete"] as! Bool)){
@@ -132,22 +126,7 @@ class HomeViewController: PhoneViewController {
     var startTime = Date()
     var weekStartTime = Date()
     
-    
-    // ------------------------- VARIABLES QUESTS ------------------------
-    
-    
-    
-    // ------------------------- VARIABLES USER DEFAULTS ---------------
-    
-    
-    // -----------------------------------------------------------------
-    
-    lazy var breatheFGraphCenter = breatheFocusLabel.center
-    lazy var breatheIGraphCenter = breatheInfiniteLabel.center
-    lazy var lotusGraphCenter = lotusSwipeLabel.center
-    
-    
-    // -------------------------- ViewDidAppear ----------------------------
+    // -------------------------- VIEW LOADS ----------------------------
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -158,8 +137,6 @@ class HomeViewController: PhoneViewController {
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -181,28 +158,21 @@ class HomeViewController: PhoneViewController {
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
         
+        
+        // sets graph components
         self.homeLineGraph.gridBackgroundColor = UIColor.white
-        
         self.homeLineGraph.noDataText = "No data provided"
-        
         self.homeLineGraph.doubleTapToZoomEnabled = false
-        
         self.homeLineGraph.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        
         self.homeLineGraph.highlightPerTapEnabled = false
         self.homeLineGraph.highlightPerDragEnabled = false
-        
         self.homeLineGraph.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-        
         self.homeLineGraph.xAxis.granularity = 1
         self.homeLineGraph.legend.textColor = UIColor.white
         self.homeLineGraph.xAxis.labelTextColor = UIColor.white
         self.homeLineGraph.rightAxis.labelTextColor = UIColor.white
         self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
-//        let lineChartTest : LineChart = LineChart(lineChartView: homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
-        
-//        lineChartTest.drawWeekGraph()
-        
+
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -211,11 +181,9 @@ class HomeViewController: PhoneViewController {
         testUserDefaults()
         refreshRealmData()
         
-        
         // update labels -------------
         updateExp()
         updatePet()
-        
         
         // quotes
         let quotes = Quotes()
@@ -303,7 +271,7 @@ class HomeViewController: PhoneViewController {
         let bix = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe infinite", startTime)
         let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", startTime)
     
-        //        BREATHE INFINITE
+        // ------------------------------------ BREATHE INFINITE --------------------------------------------------
         
         let bisun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
         let bimon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
@@ -312,7 +280,6 @@ class HomeViewController: PhoneViewController {
         let bithurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
         let bifri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
         let bisat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe infinite", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
-        
         
         var breatheITimeSunday = 0.0
         for item in bisun{
@@ -351,7 +318,7 @@ class HomeViewController: PhoneViewController {
         
         let breatheITimePlayed : [Double] = [breatheITimeSunday/60, breatheITimeMonday/60, breatheITimeTuesday/60, breatheITimeWednesday/60, breatheITimeThursday/60, breatheITimeFriday/60, breatheITimeSaturday/60]
         
-        //        BREATHE FOCUS
+        // ---------------------------------------- BREATHE FOCUS -------------------------------------------------------
         let bfsun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
         let bfmon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
         let bftues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "breathe focus", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
@@ -397,7 +364,7 @@ class HomeViewController: PhoneViewController {
         
         let breatheFTimePlayed : [Double] = [breatheFTimeSunday/60, breatheFTimeMonday/60, breatheFTimeTuesday/60, breatheFTimeWednesday/60, breatheFTimeThursday/60, breatheFTimeFriday/60, breatheFTimeSaturday/60]
         
-        //        LOTUS
+        // ---------------------------------------- LOTUS SWIPE --------------------------------------------------
         let lsun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
         let lmon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
         let ltues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
@@ -527,36 +494,44 @@ class HomeViewController: PhoneViewController {
         exp = defaults.integer(forKey: "exp")
         //get rerolls
         rerolls = defaults.integer(forKey: "rerolls")
-        // get nudge
+        // get nudges
         nudge1.text =  defaults.string(forKey: "dateString0") ?? "No Current Nudge"
         nudge2.text = defaults.string(forKey: "dateString1") ?? "No Current Nudge"
         nudge3.text = defaults.string(forKey: "dateString2") ?? "No Current Nudge"
         nudge4.text = defaults.string(forKey: "dateString3") ?? "No Current Nudge"
         nudge5.text = defaults.string(forKey: "dateString4") ?? "No Current Nudge"
         nudge6.text = defaults.string(forKey: "dateString5") ?? "No Current Nudge"
+        
+        // get owned pets
+        petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
 
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
         
+        // if no quest
         if dailyQuestData.isEmpty{
             generateQuest()
             rerolls = 3
             defaults.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
+        // if new day -> new quest
         else if (dailyQuestData["timeEnd"] as! Date) < today{
             generateQuest()
             rerolls = 3
             defaults.set(rerolls, forKey: "rerolls")
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
+        // else use current quest
         else {
             self.buildQuest()
             rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
-        //get pet
+        
+        //get equipped pet
         petEquipped = defaults.integer(forKey: "petEquipped")
         
+        // if current quest is/isn't complete show/dont show pet reward
         if (dailyQuestData["complete"] as! Bool){
             rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1])
         }
@@ -567,10 +542,6 @@ class HomeViewController: PhoneViewController {
     }
     
     // -------------------------- QUESTS -------------------------------------
-
-    
-    
-    
     func generateQuest(){
         let num = Int.random(in: 1 ... 100)//RNG for which quest type appears
         if (num <= 60){//Breathe Focus Quests

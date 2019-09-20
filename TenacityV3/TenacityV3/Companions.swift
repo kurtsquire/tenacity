@@ -6,19 +6,34 @@
 //  Copyright © 2019 PLL. All rights reserved.
 //
 
+// This class handles generating pets to function as quest rewards
+
 import Foundation
 
 class Companions{
+    
+    // index of all pets
     let commons = [1,4,7,10,13,16,19,22,25,28,31,34,37,40,43]
     let rares = [2,5,8,11,14,17,20,23,26,29,32,35,38,41,44]
     let legendaries = [3,6,9,12,15,18,21,24,27,30,33,36,39,42,45]
     
-    //var obtainablePets : [Int] = []
     var commonObtainables : [Int] = []
     var rareObtainables : [Int] = []
     var legendaryObtainables : [Int] = []
     
+    // -------------------------------------------------------------------------------
+    
+    //update owned pets
+    func updateOwnedPets(){
+        let defaults = UserDefaults.standard
+        petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
+    }
+    
+    
+    // creates a list of all pets that you can get from a quest
     func generateObtainablePets(){
+        updateOwnedPets()
+        
         for pet in petOwned{
             //if you own a common
             if commons.contains(pet){
@@ -42,15 +57,16 @@ class Companions{
         }
     }
     
+    
+    //choosees a random pet form the list of obtainable pets
     func generateRandomPet() -> Int{
         generateObtainablePets()
-        
         
         if (commonObtainables.isEmpty && rareObtainables.isEmpty && legendaryObtainables.isEmpty){
             return 0
         }
-        let num = Int.random(in: 1 ... 10)
-        if (num <= 6){ //give common
+        let num = Int.random(in: 1 ... 20)
+        if (num <= 16){ //give common
             if commonObtainables.isEmpty{
                 if rareObtainables.isEmpty{
                     return legendaryObtainables.randomElement()!
@@ -60,7 +76,7 @@ class Companions{
             return commonObtainables.randomElement()!
             
         }
-        else if (num <= 9){ //give rare
+        else if (num <= 19){ //give rare
             if rareObtainables.isEmpty{
                 if commonObtainables.isEmpty{
                     return legendaryObtainables.randomElement()!

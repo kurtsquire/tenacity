@@ -119,15 +119,14 @@ class BreatheController: WatchViewController{
         WKInterfaceController.reloadRootControllers(withNames: ["Main Menu"], contexts: ["Finish Breathe"])
     }
     
-    ////////////////////////////////////////
+    //--------------------- AWAKE ----------------------------------
     
     
     @IBOutlet weak var image: WKInterfaceImage!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        //sessionLengthSlider.setValue(15)
+
         
         if ((context as? String) == "Breathe Done"){
             if (cycleTotal == 0){

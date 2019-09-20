@@ -43,19 +43,54 @@ class GameSettingsViewController: PhoneViewController{
         
     }
     
-    func updateLabels(group : Array<UILabel>, num : Int){
-        DispatchQueue.main.async {
-            for i in group{
-                if i.tag != num{
-                    i.isHidden = true
-                }
-                else{
-                    i.text = "Equipped"
-                    i.isHidden = false
-                }
-            }
-        }
+    // --------------------------------------- BREATHE PICS -------------------------------------
+    
+    @IBAction func classic(_ sender: UIButton) {
+        //sendData(theme: "classic", game: "breathe")
+        saveToRealm(what: "breathe: equip classic theme")
+        sendMessage(type: "pic", game: "breathe", num: sender.tag)
     }
+    @IBAction func fire(_ sender: UIButton) {
+        //sendData(theme: "fire", game: "breathe")
+        saveToRealm(what: "breathe: equip fire theme")
+        sendMessage(type: "pic", game: "breathe", num: 1)
+    }
+    @IBAction func cloud(_ sender: UIButton) {
+        //sendData(theme: "cloud", game: "breathe")
+        saveToRealm(what: "breathe: equip cloud theme")
+        sendMessage(type: "pic", game: "breathe", num: 2)
+    }
+    @IBAction func diamond(_ sender: UIButton) {
+        //sendData(theme: "diamond", game: "breathe")
+        saveToRealm(what: "breathe: equip diamond theme")
+        sendMessage(type: "pic", game: "breathe", num: 3)
+    }
+    
+    // --------------------------------------- BREATHE COLORS -------------------------------------
+    
+    @IBAction func redB(_ sender: UIButton) {
+        //sendData(theme: "", game: "breathe", color: 1)
+        saveToRealm(what: "breathe: equip red color")
+        sendMessage(type: "color", game: "breathe", num: 2)
+    }
+    @IBAction func blueB(_ sender: UIButton) {
+        //sendData(theme: "", game: "breathe", color: 0)
+        saveToRealm(what: "breathe: equip blue color")
+        sendMessage(type: "color", game: "breathe", num: 0)
+    }
+    @IBAction func saffronB(_ sender: UIButton) {
+        //sendData(theme: "", game: "breathe", color: 2)
+        saveToRealm(what: "breathe: equip pink color")
+        sendMessage(type: "color", game: "breathe", num: 1)
+    }
+    @IBAction func lavenderB(_ sender: UIButton) {
+        //sendData(theme: "", game: "breathe", color: 3)
+        saveToRealm(what: "breathe: equip green color")
+        sendMessage(type: "color", game: "breathe", num: 3)
+    }
+    
+    
+    // --------------------------------------- LOTUS PICS -------------------------------------
     
     @IBAction func lotus(_ sender: UIButton) {
         //sendData(theme: "lotus", game: "lotus")
@@ -79,47 +114,7 @@ class GameSettingsViewController: PhoneViewController{
         sendMessage(type: "pic", game: "lotus", num: 3)
     }
     
-    @IBAction func classic(_ sender: UIButton) {
-        //sendData(theme: "classic", game: "breathe")
-        saveToRealm(what: "breathe: equip classic theme")
-        sendMessage(type: "pic", game: "breathe", num: sender.tag)
-    }
-    @IBAction func fire(_ sender: UIButton) {
-        //sendData(theme: "fire", game: "breathe")
-        saveToRealm(what: "breathe: equip fire theme")
-        sendMessage(type: "pic", game: "breathe", num: 1)
-    }
-    @IBAction func cloud(_ sender: UIButton) {
-        //sendData(theme: "cloud", game: "breathe")
-        saveToRealm(what: "breathe: equip cloud theme")
-        sendMessage(type: "pic", game: "breathe", num: 2)
-    }
-    @IBAction func diamond(_ sender: UIButton) {
-        //sendData(theme: "diamond", game: "breathe")
-        saveToRealm(what: "breathe: equip diamond theme")
-        sendMessage(type: "pic", game: "breathe", num: 3)
-    }
-    
-    @IBAction func redB(_ sender: UIButton) {
-        //sendData(theme: "", game: "breathe", color: 1)
-        saveToRealm(what: "breathe: equip red color")
-        sendMessage(type: "color", game: "breathe", num: 2)
-    }
-    @IBAction func blueB(_ sender: UIButton) {
-        //sendData(theme: "", game: "breathe", color: 0)
-        saveToRealm(what: "breathe: equip blue color")
-        sendMessage(type: "color", game: "breathe", num: 0)
-    }
-    @IBAction func saffronB(_ sender: UIButton) {
-        //sendData(theme: "", game: "breathe", color: 2)
-        saveToRealm(what: "breathe: equip pink color")
-        sendMessage(type: "color", game: "breathe", num: 1)
-    }
-    @IBAction func lavenderB(_ sender: UIButton) {
-        //sendData(theme: "", game: "breathe", color: 3)
-        saveToRealm(what: "breathe: equip green color")
-        sendMessage(type: "color", game: "breathe", num: 3)
-    }
+    // --------------------------------------- LOTUS COLORS -------------------------------------
     
     @IBAction func lotusOG(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 0)
@@ -142,7 +137,7 @@ class GameSettingsViewController: PhoneViewController{
         sendMessage(type: "color", game: "lotus", num: 3)
     }
     
-    
+    // -----------------------------------------------------------------------------------------
     
     func sendData(theme : String, game : String, color : Int = -1){
         let session = WCSession.default
@@ -183,13 +178,18 @@ class GameSettingsViewController: PhoneViewController{
         })
     }
     
-    override func testUserDefaults(){
-        let defaults = UserDefaults.standard
-        
-        breathePic = defaults.integer(forKey: "breathePic")
-        breatheColor = defaults.integer(forKey: "breatheColor")
-        lotusPic = defaults.integer(forKey: "lotusPic")
-        lotusColor = defaults.integer(forKey: "lotusColor")
+    func updateLabels(group : Array<UILabel>, num : Int){
+        DispatchQueue.main.async {
+            for i in group{
+                if i.tag != num{
+                    i.isHidden = true
+                }
+                else{
+                    i.text = "Equipped"
+                    i.isHidden = false
+                }
+            }
+        }
     }
     
     func updateLabelsOpen(){
@@ -218,4 +218,15 @@ class GameSettingsViewController: PhoneViewController{
             }
         }
     }
+    
+    override func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        
+        breathePic = defaults.integer(forKey: "breathePic")
+        breatheColor = defaults.integer(forKey: "breatheColor")
+        lotusPic = defaults.integer(forKey: "lotusPic")
+        lotusColor = defaults.integer(forKey: "lotusColor")
+    }
+    
+    
 }
