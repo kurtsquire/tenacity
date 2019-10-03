@@ -137,6 +137,18 @@ class HomeViewController: PhoneViewController {
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        // updates date for today
+        today = Date()
+        startTime = calendar.startOfDay(for: today)
+        
+        //creates a date at the beginning of the week to compare
+        let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
+        weekStartTime = calendar.date(from: weekComponents)!
+        
+        testUserDefaults()
+        
+        print("viewWillAppear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -172,13 +184,15 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.xAxis.labelTextColor = UIColor.white
         self.homeLineGraph.rightAxis.labelTextColor = UIColor.white
         self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
+        
+        print("viewdidload")
 
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         
-        testUserDefaults()
+        
         refreshRealmData()
         
         // update labels -------------
@@ -220,6 +234,8 @@ class HomeViewController: PhoneViewController {
         else{
             questDetailsLabel.text = "No Current Quest"
         }
+        
+        print("viewdidappear")
         
     }
     // ----------------------- UTILITY -------------------------------
@@ -427,7 +443,7 @@ class HomeViewController: PhoneViewController {
         ]
         
         
-        var gamesInfo = [
+        let gamesInfo = [
             1 : ( gameName: "Breathe Infinite", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheFGoalTime ),
             0 : ( gameName: "Breathe Focus", gameData: breatheFTimePlayed, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: breatheIGoalTime ),
             2 : ( gameName: "Lotus", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime )

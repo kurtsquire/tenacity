@@ -48,22 +48,35 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func classic(_ sender: UIButton) {
         //sendData(theme: "classic", game: "breathe")
         saveToRealm(what: "breathe: equip classic theme")
-        sendMessage(type: "pic", game: "breathe", num: sender.tag)
+        breathePic = sender.tag
+        //sendMessage(type: "pic", game: "breathe", num: sender.tag)
+        sendAppContext()
+        self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+        
     }
     @IBAction func fire(_ sender: UIButton) {
         //sendData(theme: "fire", game: "breathe")
         saveToRealm(what: "breathe: equip fire theme")
-        sendMessage(type: "pic", game: "breathe", num: 1)
+        breathePic = sender.tag
+        //sendMessage(type: "pic", game: "breathe", num: 1)
+        sendAppContext()
+        self.updateLabels(group: self.breathePicLabels, num: sender.tag)
     }
     @IBAction func cloud(_ sender: UIButton) {
         //sendData(theme: "cloud", game: "breathe")
         saveToRealm(what: "breathe: equip cloud theme")
-        sendMessage(type: "pic", game: "breathe", num: 2)
+        breathePic = sender.tag
+        //sendMessage(type: "pic", game: "breathe", num: 2)
+        sendAppContext()
+        self.updateLabels(group: self.breathePicLabels, num: sender.tag)
     }
     @IBAction func diamond(_ sender: UIButton) {
         //sendData(theme: "diamond", game: "breathe")
         saveToRealm(what: "breathe: equip diamond theme")
-        sendMessage(type: "pic", game: "breathe", num: 3)
+        breathePic = sender.tag
+        //sendMessage(type: "pic", game: "breathe", num: 3)
+        sendAppContext()
+        self.updateLabels(group: self.breathePicLabels, num: sender.tag)
     }
     
     // --------------------------------------- BREATHE COLORS -------------------------------------
@@ -71,22 +84,34 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func redB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 1)
         saveToRealm(what: "breathe: equip red color")
-        sendMessage(type: "color", game: "breathe", num: 2)
+        breatheColor = sender.tag
+        //sendMessage(type: "color", game: "breathe", num: 2)
+        sendAppContext()
+        self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
     }
     @IBAction func blueB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 0)
         saveToRealm(what: "breathe: equip blue color")
-        sendMessage(type: "color", game: "breathe", num: 0)
+        breatheColor = sender.tag
+        //sendMessage(type: "color", game: "breathe", num: 0)
+        sendAppContext()
+        self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
     }
     @IBAction func saffronB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 2)
         saveToRealm(what: "breathe: equip pink color")
-        sendMessage(type: "color", game: "breathe", num: 1)
+        breatheColor = sender.tag
+        //sendMessage(type: "color", game: "breathe", num: 1)
+        sendAppContext()
+        self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
     }
     @IBAction func lavenderB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 3)
         saveToRealm(what: "breathe: equip green color")
-        sendMessage(type: "color", game: "breathe", num: 3)
+        breatheColor = sender.tag
+        //sendMessage(type: "color", game: "breathe", num: 3)
+        sendAppContext()
+        self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
     }
     
     
@@ -95,23 +120,34 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func lotus(_ sender: UIButton) {
         //sendData(theme: "lotus", game: "lotus")
         saveToRealm(what: "lotus: equip lotus theme")
-        print(sender.tag)
-        sendMessage(type: "pic", game: "lotus", num: 0)
+        lotusPic = sender.tag
+        //sendMessage(type: "pic", game: "lotus", num: 0)
+        sendAppContext()
+        self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
     }
     @IBAction func squares(_ sender: UIButton) {
         //sendData(theme: "square", game: "lotus")
         saveToRealm(what: "lotus: equip square theme")
-        sendMessage(type: "pic", game: "lotus", num: 1)
+        lotusPic = sender.tag
+        //sendMessage(type: "pic", game: "lotus", num: 1)
+        sendAppContext()
+        self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
     }
     @IBAction func heart(_ sender: UIButton) {
         //sendData(theme: "heart", game: "lotus")
         saveToRealm(what: "lotus: equip heart theme")
-        sendMessage(type: "pic", game: "lotus", num: 2)
+        lotusPic = sender.tag
+        //sendMessage(type: "pic", game: "lotus", num: 2)
+        sendAppContext()
+        self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
     }
     @IBAction func circle(_ sender: UIButton) {
         //sendData(theme: "circle", game: "lotus")
         saveToRealm(what: "lotus: equip circle theme")
-        sendMessage(type: "pic", game: "lotus", num: 3)
+        lotusPic = sender.tag
+        //sendMessage(type: "pic", game: "lotus", num: 3)
+        sendAppContext()
+        self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
     }
     
     // --------------------------------------- LOTUS COLORS -------------------------------------
@@ -119,22 +155,34 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func lotusOG(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 0)
         saveToRealm(what: "lotus: equip lotus color")
-        sendMessage(type: "color", game: "lotus", num: 0)
+        lotusColor = sender.tag
+        //sendMessage(type: "color", game: "lotus", num: 0)
+        sendAppContext()
+        self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
     }
     @IBAction func lotusForest(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 1)
         saveToRealm(what: "lotus: equip forest color")
-        sendMessage(type: "color", game: "lotus", num: 1)
+        lotusColor = sender.tag
+        //sendMessage(type: "color", game: "lotus", num: 1)
+        sendAppContext()
+        self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
     }
     @IBAction func lotusOutrun(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 2)
         saveToRealm(what: "lotus: equip outrun color")
-        sendMessage(type: "color", game: "lotus", num: 2)
+        lotusColor = sender.tag
+        //sendMessage(type: "color", game: "lotus", num: 2)
+        sendAppContext()
+        self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
     }
     @IBAction func lotusPool(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 3)
         saveToRealm(what: "lotus: equip pool party color")
-        sendMessage(type: "color", game: "lotus", num: 3)
+        lotusColor = sender.tag
+        //sendMessage(type: "color", game: "lotus", num: 3)
+        sendAppContext()
+        self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
     }
     
     // -----------------------------------------------------------------------------------------
@@ -144,6 +192,23 @@ class GameSettingsViewController: PhoneViewController{
         if session.activationState == .activated{
             let data = ["theme": theme, "game": game, "color" : color] as [String : Any]
             session.transferUserInfo(data)
+            
+            print("sent")
+        }
+    }
+    
+    func sendAppContext(){
+        let session = WCSession.default
+        
+        if session.activationState == .activated {
+            
+            let data = ["lpic": lotusPic, "lcol": lotusColor, "bpic": breathePic, "bcol": breatheColor]
+            
+            do {
+                try session.updateApplicationContext(data)
+            } catch {
+                print("Alert! Updating app context failed")
+            }
         }
     }
     
@@ -154,6 +219,8 @@ class GameSettingsViewController: PhoneViewController{
             let game = response["game"] as! String
             let type = response["type"] as! String
             let x = response["num"] as! Int
+            
+            print("recieved " + game)
             
             if (game == "breathe"){
                 if (type == "color"){

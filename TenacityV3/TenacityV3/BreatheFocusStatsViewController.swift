@@ -41,11 +41,14 @@ class BreatheFocusStatsViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
+        print("viewwillappear")
+        refreshRealmData()
     }
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
         super.viewDidLoad()
         
+        print("viewdidload")
         // updates date for today
         today = Date()
         startTime = calendar.startOfDay(for: today)
@@ -111,14 +114,15 @@ class BreatheFocusStatsViewController: PhoneViewController{
         self.setsPlayedLineChart.rightAxis.labelTextColor = UIColor.white
         self.setsPlayedLineChart.leftAxis.labelTextColor = UIColor.white
         
-        refreshRealmData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
-        
+        print("viewdidappear")
         //refreshRealmData()
     }
+
     
     // ---------------------- REALM -----------------------------------
     func refreshRealmData(){

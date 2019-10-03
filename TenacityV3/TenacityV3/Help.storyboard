@@ -246,7 +246,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-3A-sge">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Customize the game modes as you please. You can equip a shape and a color for each game. Some options for Lotus will change the difficulty (e.g. same shape).</string>
+                                <string key="text">Customize the game modes as you please. You can equip a shape and a color for each game. Some options for Lotus will change the difficulty (e.g. same shape).
+
+
+It can take up to a few minutes for upgrades to be applied. If you are having trouble try re-equipping the upgrade and/or resetting the watch application.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
