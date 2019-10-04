@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Charts
 
 class LotusStatsViewController: PhoneViewController{
     
@@ -17,6 +18,8 @@ class LotusStatsViewController: PhoneViewController{
     @IBOutlet weak var roundsPlayedLabel: UILabel!
     @IBOutlet weak var swipesLabel: UILabel!
     @IBOutlet weak var lotusSwipeLabel: UILabel!
+    @IBOutlet weak var timePlayedLineChart: LineChartView!
+    @IBOutlet weak var totalRoundsLineChart: LineChartView!
     
     lazy var lotusGraphCenter = lotusSwipeLabel.center
     
@@ -36,7 +39,7 @@ class LotusStatsViewController: PhoneViewController{
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
         super.viewDidLoad()
         
@@ -49,6 +52,48 @@ class LotusStatsViewController: PhoneViewController{
         weekStartTime = calendar.date(from: weekComponents)!
         
         refreshRealmData()
+        
+        // ---------------------- LINES -----------------------------------
+        
+        self.timePlayedLineChart.gridBackgroundColor = UIColor.white
+        
+        self.timePlayedLineChart.noDataText = "No data provided"
+        
+        self.timePlayedLineChart.doubleTapToZoomEnabled = false
+        
+        self.timePlayedLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        self.timePlayedLineChart.highlightPerTapEnabled = false
+        self.timePlayedLineChart.highlightPerDragEnabled = false
+        
+        self.timePlayedLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
+        
+        self.timePlayedLineChart.xAxis.granularity = 1
+        self.timePlayedLineChart.legend.textColor = UIColor.white
+        self.timePlayedLineChart.xAxis.labelTextColor = UIColor.white
+        self.timePlayedLineChart.rightAxis.labelTextColor = UIColor.white
+        self.timePlayedLineChart.leftAxis.labelTextColor = UIColor.white
+        
+        
+        self.totalRoundsLineChart.gridBackgroundColor = UIColor.white
+        
+        self.totalRoundsLineChart.noDataText = "No data provided"
+        
+        self.totalRoundsLineChart.doubleTapToZoomEnabled = false
+        
+        self.totalRoundsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        self.totalRoundsLineChart.highlightPerTapEnabled = false
+        self.totalRoundsLineChart.highlightPerDragEnabled = false
+        
+        self.totalRoundsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
+        
+        self.totalRoundsLineChart.xAxis.granularity = 1
+        self.totalRoundsLineChart.legend.textColor = UIColor.white
+        self.totalRoundsLineChart.xAxis.labelTextColor = UIColor.white
+        self.totalRoundsLineChart.rightAxis.labelTextColor = UIColor.white
+        self.totalRoundsLineChart.leftAxis.labelTextColor = UIColor.white
+        
     }
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
@@ -64,7 +109,8 @@ class LotusStatsViewController: PhoneViewController{
         let lw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", weekStartTime)
         let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", startTime)
         
-        
+        print("something")
+        print(lw)
         var lotusRoundsToday = 0
         var lotusRoundsWeek = 0
         var lotusTimeToday = 0.0
@@ -85,15 +131,124 @@ class LotusStatsViewController: PhoneViewController{
             lotusTimeWeek += item.lotusTimePlayed
         }
         
+        let lsun = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", weekStartTime,calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false))
+        let lmon = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:1), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false))
+        let ltues = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:2), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false))
+        let lwed = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:3), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false))
+        let lthurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false))
+        let lfri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false))
+        let lsat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false),calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false))
+        
+        print("lololol")
+        print(lsun)
+        
+        print("lololol")
+        print(lsat)
+        
+        //calculating lotus rounds sunday
+        var lotusRoundsSun = 0
+        var lotusTimeSun = 0.0
+        
+        for item in lsun{
+            lotusRoundsSun += item.lotusRoundsPlayed
+            lotusTimeSun += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds monday
+        var lotusRoundsMon = 0
+        var lotusTimeMon = 0.0
+        
+        for item in lmon{
+            lotusRoundsMon += item.lotusRoundsPlayed
+            lotusTimeMon += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds tuesday
+        var lotusRoundsTues = 0
+        var lotusTimeTues = 0.0
+        
+        for item in ltues{
+            lotusRoundsTues += item.lotusRoundsPlayed
+            lotusTimeTues += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds wednesday
+        var lotusRoundsWed = 0
+        var lotusTimeWed = 0.0
+        
+        for item in lwed{
+            lotusRoundsWed += item.lotusRoundsPlayed
+            lotusTimeWed += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds thursday
+        var lotusRoundsThurs = 0
+        var lotusTimeThurs = 0.0
+        
+        for item in lthurs{
+            lotusRoundsThurs += item.lotusRoundsPlayed
+            lotusTimeThurs += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds friday
+        var lotusRoundsFri = 0
+        var lotusTimeFri = 0.0
+        
+        for item in lfri{
+            lotusRoundsFri += item.lotusRoundsPlayed
+            lotusTimeFri += item.lotusTimePlayed
+        }
+        
+        //calculating lotus rounds saturday
+        var lotusRoundsSat = 0
+        var lotusTimeSat = 0.0
+        
+        for item in lsat{
+            lotusRoundsSat += item.lotusRoundsPlayed
+            lotusTimeSat += item.lotusTimePlayed
+        }
+        
+        let lotusTimePlayed : [Double] = [
+            lotusTimeSun/60, lotusTimeMon/60, lotusTimeTues/60, lotusTimeWed/60, lotusTimeThurs/60, lotusTimeFri/60, lotusTimeSat/60
+        ]
+        let lotusRoundsPlayed : [Double] = [
+            Double(lotusRoundsSun), Double(lotusRoundsMon), Double(lotusRoundsTues), Double(lotusRoundsWed), Double(lotusRoundsThurs), Double(lotusRoundsFri), Double(lotusRoundsSat)
+        ]
+        
+        let timePlayed = [
+            0 : (gameName: "Time Played", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        let roundsPlayed = [
+            0 : (gameName: "Rounds Played", gameData: lotusRoundsPlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: breatheIGoalTime)
+        ]
+        
+        print("foo")
+        print(timePlayed)
+        print("bar")
+        print(roundsPlayed)
+        
+        let timePlayedChart : LineChart = LineChart(lineChartView: self.timePlayedLineChart, goalColor: UIColor.red, gamesInfo: timePlayed)
+        
+        timePlayedChart.drawGoalGraph(gameNum: 0)
+        
+        
+        let roundsPlayedChart : LineChart = LineChart(lineChartView: self.totalRoundsLineChart, goalColor: UIColor.red, gamesInfo: roundsPlayed)
+        
+        roundsPlayedChart.drawWeekGraph()
+        
+        //        let timePlayed = [
+        //            0 : (
+        //        ]
+        
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins"
-            self.timePlayedLabel.text = "Week: " + String(lotusTimeWeek) + "\nToday: " + String(lotusTimeToday)
-            self.roundsPlayedLabel.text = "Week:\n" + String(lotusRoundsWeek) + "\nToday:\n" + String(lotusRoundsToday)
-            var a = "Lotus Swipe Wrong Attempts  (Attempts: how many misses before correct)\n"
-            for i in 0..<lotusArrayToday.count{
-                a += String(i) + ": " + String(lotusArrayToday[i]) + ", "
-            }
-            self.swipesLabel.text = a
+            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
+            //            self.timePlayedLabel.text = "Week: " + String(lotusTimeWeek) + "\nToday: " + String(lotusTimeToday)
+            //            self.roundsPlayedLabel.text = "Week:\n" + String(lotusRoundsWeek) + "\nToday:\n" + String(lotusRoundsToday)
+            var a = ""
+                        for i in 0..<lotusArrayToday.count{
+                            a += String(i) + " wrong: " + String(lotusArrayToday[i]) + "\n"
+                        }
+                        self.swipesLabel.text = a
             
             let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
             self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)
@@ -101,5 +256,5 @@ class LotusStatsViewController: PhoneViewController{
         }
         
     }
-
+    
 }

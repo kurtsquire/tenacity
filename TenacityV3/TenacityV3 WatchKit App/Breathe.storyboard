@@ -11,14 +11,8 @@
         <!--Breathe Start-->
         <scene sceneID="vDf-rt-AoR">
             <objects>
-                <controller identifier="Breathe Start" title="Breathe Start" fullBounds="YES" id="iLS-oQ-14N" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                <controller identifier="Breathe Start2" title="Breathe Start" fullBounds="YES" id="iLS-oQ-14N" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="15" minimum="5" maximum="40" steps="35" id="8jO-Nt-lH9">
-                            <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="sessionLengthSliderAction:" destination="iLS-oQ-14N" id="4DW-8r-j4u"/>
-                            </connections>
-                        </slider>
                         <group width="1" height="0.14999999999999999" alignment="center" verticalAlignment="center" id="xya-p4-h8y" userLabel="Time Label Group">
                             <items>
                                 <label height="25" alignment="center" verticalAlignment="center" text="15" textAlignment="right" id="Kpa-KH-rvC">
@@ -29,10 +23,10 @@
                                 </label>
                             </items>
                         </group>
-                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="5" minimum="1" maximum="10" steps="9" id="wKN-uh-tLX" userLabel="Set Slider">
+                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="15" minimum="5" maximum="40" steps="35" id="8jO-Nt-lH9">
                             <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="cycleSliderAction:" destination="iLS-oQ-14N" id="NHy-Yu-vRo"/>
+                                <action selector="sessionLengthSliderAction:" destination="iLS-oQ-14N" id="4DW-8r-j4u"/>
                             </connections>
                         </slider>
                         <group width="1" height="0.14999999999999999" alignment="center" verticalAlignment="center" id="piz-fP-Nd6" userLabel="Breath Label Group">
@@ -45,7 +39,13 @@
                                 </label>
                             </items>
                         </group>
-                        <button width="1" height="0.25" alignment="center" verticalAlignment="bottom" title="Start" id="xE2-Fq-mvF" userLabel="Start Button">
+                        <slider height="0.22500000000000001" alignment="center" verticalAlignment="center" value="5" minimum="1" maximum="10" steps="9" id="wKN-uh-tLX" userLabel="Set Slider">
+                            <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cycleSliderAction:" destination="iLS-oQ-14N" id="NHy-Yu-vRo"/>
+                            </connections>
+                        </slider>
+                        <button width="1" height="0.25" alignment="center" title="Start" id="xE2-Fq-mvF" userLabel="Start Button">
                             <color key="backgroundColor" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                             <connections>
@@ -61,7 +61,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-251" y="291"/>
+            <point key="canvasLocation" x="-254" y="291"/>
         </scene>
         <!--Tutorial1-->
         <scene sceneID="br4-XE-NNF">
@@ -221,6 +221,49 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="777" y="291"/>
+        </scene>
+        <!--Breathe Start-->
+        <scene sceneID="a4E-R3-5H8">
+            <objects>
+                <controller identifier="Breathe Start" title="Breathe Start" fullBounds="YES" id="B45-Y1-KCd" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.34999999999999998" alignment="left" id="Yho-C8-UlT">
+                            <items>
+                                <picker width="0.5" height="1" alignment="left" focusStyle="stack" id="mfp-jF-ERO">
+                                    <connections>
+                                        <action selector="timePickerAction:" destination="B45-Y1-KCd" id="yi3-CH-Oxo"/>
+                                    </connections>
+                                </picker>
+                                <label alignment="left" verticalAlignment="center" text="Min(s)" id="egR-EP-wbv"/>
+                            </items>
+                        </group>
+                        <button width="1" height="0.29999999999999999" alignment="center" verticalAlignment="bottom" title="Start" id="OHt-cD-nnd" userLabel="Start Button">
+                            <color key="backgroundColor" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                            <connections>
+                                <action selector="startButtonTapped" destination="B45-Y1-KCd" id="gnb-bZ-Obi"/>
+                            </connections>
+                        </button>
+                        <group width="1" height="0.34999999999999998" alignment="left" id="XTm-gL-7bA">
+                            <items>
+                                <picker width="0.5" height="1" alignment="left" focusStyle="stack" id="tEb-rV-pgN">
+                                    <connections>
+                                        <action selector="cyclePickerAction:" destination="B45-Y1-KCd" id="Soy-6S-daa"/>
+                                    </connections>
+                                </picker>
+                                <label alignment="left" verticalAlignment="center" text="Breaths Per Cycle" numberOfLines="3" id="oXr-3B-DD0">
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="cyclePicker" destination="tEb-rV-pgN" id="KSK-yP-XU2"/>
+                        <outlet property="timePicker" destination="mfp-jF-ERO" id="wxk-iD-Pzm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-493" y="290"/>
         </scene>
     </scenes>
 </document>

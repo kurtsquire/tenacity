@@ -8,43 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--Lotus-->
-        <scene sceneID="0gm-lj-e7Q">
-            <objects>
-                <controller identifier="Lotus Main" title="Lotus" fullBounds="YES" id="0Kp-X5-R0R" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
-                    <items>
-                        <slider width="1" height="0.33000000000000002" alignment="center" value="10" minimum="5" maximum="40" steps="7" id="MFh-wv-Upb">
-                            <color key="color" red="0.088270194829999996" green="0.70493108029999996" blue="0.5996168852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="lotusRoundSliderAction:" destination="0Kp-X5-R0R" id="7If-QS-VIW"/>
-                            </connections>
-                        </slider>
-                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="yeb-1Z-SLc" userLabel="Label Group">
-                            <items>
-                                <label height="1" alignment="center" verticalAlignment="center" text="10" textAlignment="left" id="8wM-E5-f6y">
-                                    <fontDescription key="font" type="system" weight="thin" pointSize="28"/>
-                                </label>
-                                <label height="1" alignment="center" verticalAlignment="bottom" text=" rounds " textAlignment="left" id="Imr-AI-Xlf">
-                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
-                                </label>
-                            </items>
-                        </group>
-                        <button width="1" height="0.33000000000000002" alignment="left" verticalAlignment="bottom" title="Start" id="8ib-dG-RzQ">
-                            <color key="backgroundColor" red="0.91913175579999995" green="0.26112943890000001" blue="0.59328526260000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" type="system" weight="black" pointSize="17"/>
-                            <connections>
-                                <segue destination="r4P-ou-ogD" kind="push" id="3Tc-NG-wPu"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <connections>
-                        <outlet property="lotusRoundSlider" destination="MFh-wv-Upb" id="66b-tP-KGX"/>
-                        <outlet property="roundSliderLabel" destination="8wM-E5-f6y" id="iTu-dO-qJH"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-110" y="-211"/>
-        </scene>
         <!--Lotus Tutorial 1-->
         <scene sceneID="dfH-S7-GDp">
             <objects>
@@ -216,6 +179,38 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="622" y="-211"/>
+        </scene>
+        <!--Lotus-->
+        <scene sceneID="kag-Rd-Lx2">
+            <objects>
+                <controller identifier="Lotus Main" title="Lotus" fullBounds="YES" id="YpE-Q7-eVO" customClass="LotusController" customModule="TenacityV3_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.66000000000000003" alignment="left" verticalAlignment="center" id="3SG-g6-1du" userLabel="Label Group">
+                            <items>
+                                <picker width="0.5" height="1" alignment="left" focusStyle="stack" id="LQi-bt-g1a">
+                                    <connections>
+                                        <action selector="lotusRoundPickerAction:" destination="YpE-Q7-eVO" id="CK4-r0-koh"/>
+                                    </connections>
+                                </picker>
+                                <label width="0.5" height="1" alignment="center" verticalAlignment="center" text=" rounds " textAlignment="center" id="yb6-NS-YFm">
+                                    <fontDescription key="font" type="system" weight="ultraLight" pointSize="17"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" height="0.33000000000000002" alignment="left" verticalAlignment="bottom" title="Start" id="q94-D4-b76">
+                            <color key="backgroundColor" red="0.91913175579999995" green="0.26112943890000001" blue="0.59328526260000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" weight="black" pointSize="17"/>
+                            <connections>
+                                <segue destination="r4P-ou-ogD" kind="push" id="eVA-1v-vLU"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lotusRoundPicker" destination="LQi-bt-g1a" id="4uE-Q9-Hbd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-133" y="-303"/>
         </scene>
     </scenes>
 </document>

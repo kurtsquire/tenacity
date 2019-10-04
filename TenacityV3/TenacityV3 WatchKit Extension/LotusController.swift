@@ -37,12 +37,18 @@ class LotusController: WatchViewController{
     var gameLengthTimer = Timer()
 
     // ------------------------ Settings -------------------------
-    
-    @IBOutlet weak var roundSliderLabel: WKInterfaceLabel!
-    @IBOutlet weak var lotusRoundSlider: WKInterfaceSlider!
-    @IBAction func lotusRoundSliderAction(_ value: Float) {
-        lotusTotalRounds = Int(value)
-        roundSliderLabel.setText(String(lotusTotalRounds))
+
+//    @IBOutlet weak var roundSliderLabel: WKInterfaceLabel!
+//    @IBOutlet weak var lotusRoundSlider: WKInterfaceSlider!
+//    @IBAction func lotusRoundSliderAction(_ value: Float) {
+//        lotusTotalRounds = Int(value)
+//        roundSliderLabel.setText(String(lotusTotalRounds))
+//    }
+    @IBOutlet weak var lotusRoundPicker: WKInterfacePicker!
+    var roundPickerItems = [WKPickerItem]()
+    @IBAction func lotusRoundPickerAction(_ value: Int) {
+        lotusTotalRounds = ((value + 1) * 5) // 0 = 5, 1 = 10....
+        print(lotusTotalRounds)
     }
     
     // ------------------------ Tutorials -------------------------
@@ -147,25 +153,44 @@ class LotusController: WatchViewController{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        // after tutorial and into memorization screen
         if ((context as? String) == "t2"){
             testUserDefaults()
             randomizeImages(palette: customColors[lotusPalette], randomColors: randomizeColorsBool)
             setTiles()
             gameLengthTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (LotusController.sessionCounter), userInfo: nil, repeats: true)
         }
-        
-        if ((context as? String) == "t3"){
+        // after memorization screen
+        else if ((context as? String) == "t3"){
             current = lotusTheme + "_0"
             lotusGameImage.setImageNamed(lotusTheme + "_0")
             lotusGameImage.setTintColor(UIColor.white)
         }
-        
-        if ((context as? String) == "lotus game end"){
+        // when game ends to display result stats
+        else if ((context as? String) == "lotus game end"){
             let min = Int(lotusTimePlayed/60)
             let sec = (Int(lotusTimePlayed)%60)
             totalRoundsLabel.setText("Rounds: " + String(lotusCurrentRound))
             timePlayedLabel.setText("Time: " + String(min) + " mins " + String(sec) + " s")
             swipeMissesLabel.setText("0 misses: " + String(lotusArray[0]) + "\n1 miss: " + String(lotusArray[1]) + "\n2 misses: " + String(lotusArray[2]) + "\n3+ misses: " + String(lotusArray[3]))
+        }
+        // from main menu
+        else if ((context as? String) == "from Menu"){
+            print("main menu")
+            
+            // set initial rounds to default
+            lotusTotalRounds = 10
+            
+            // set up the picker items
+            for i in 1..<11{
+                let x = WKPickerItem()
+                x.title = String(i*5)
+                roundPickerItems.append(x)
+            }
+            // set picker default value to 20 (3rd index)
+            lotusRoundPicker.setItems(roundPickerItems)
+            lotusRoundPicker.setSelectedItemIndex(3)
+
         }
     }
 
@@ -382,7 +407,7 @@ class LotusController: WatchViewController{
         inGame = false
         sendData(what: "end game", lotusRoundsPlayed: lotusCurrentRound, timePlayed: lotusTimePlayed, missArray: lotusArray)
         WKInterfaceController.reloadRootControllers(withNames: ["Lotus Results"], contexts: ["lotus game end"])
-        lotusTotalRounds = 10
+        
     }
     
     func sendData(game : String = "lotus", what : String, correct : String = "N/A", settings : Int = lotusTotalRounds, lotusRoundsPlayed : Int = 0, timePlayed : Double = 0.0, missArray : [Int] = [0,0,0,0]){

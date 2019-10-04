@@ -9,7 +9,7 @@
 
 import UIKit
 
-let petArray = ["bay", "fjol", "cleo", "eldur", "halo", "sage", "raz", "koko", "rio", "aqua", "royal", "indigo", "mar", "phoenix", "bly", "dioon", "toor", "reese", "navy", "iris", "loch", "river", "bahn", "zbut", "sierra", "echo", "nova", "jade", "koda", "bayou"]
+let petArray = ["bay", "fjol", "cleo", "eldur", "halo", "sage", "raz", "koko", "rio", "aqua", "royal", "indigo", "mar", "phoenix", "bly", "dioon", "toor", "reese", "navy", "iris", "loch", "river", "bahn", "zbut", "sierra", "echo", "nova", "jade", "koda", "bayou", "kolbi", "liyah", "rye", "qut", "yoko", "trii", "tala", "kitchi", "opal", "paytah", "gou", "axel", "wol", "sigma", "pi"]
 var petOwned = [1]
 var petEquipped = 0
 
@@ -19,7 +19,7 @@ class CompanionsViewController: PhoneViewController {
     @IBOutlet var companionsButtons: [UIButton]!
     
     @IBAction func companionsButtonPressed(_ sender: UIButton) {
-        print(sender.tag)
+
         if (petOwned.contains(sender.tag)){
             
             equipPet(pet: sender.tag - 1)
@@ -33,8 +33,8 @@ class CompanionsViewController: PhoneViewController {
                 }
             }
         }
-        
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -49,7 +49,7 @@ class CompanionsViewController: PhoneViewController {
         super.viewDidDisappear(animated)
     }
     
-    override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
+    override func viewDidAppear(_ animated: Bool) { //opening back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         
         updatePetData()
@@ -78,6 +78,7 @@ class CompanionsViewController: PhoneViewController {
     func equipPet(pet : Int){
         petEquipped = pet
         UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
+        saveToRealm(what: "equip pet: " + petArray[petEquipped])
     }
     
     override func testUserDefaults(){
