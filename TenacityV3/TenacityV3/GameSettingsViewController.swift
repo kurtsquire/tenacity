@@ -52,6 +52,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "breathe", num: sender.tag)
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breathePic")
         
     }
     @IBAction func fire(_ sender: UIButton) {
@@ -61,6 +62,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "breathe", num: 1)
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breathePic")
     }
     @IBAction func cloud(_ sender: UIButton) {
         //sendData(theme: "cloud", game: "breathe")
@@ -69,6 +71,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "breathe", num: 2)
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breathePic")
     }
     @IBAction func diamond(_ sender: UIButton) {
         //sendData(theme: "diamond", game: "breathe")
@@ -77,6 +80,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "breathe", num: 3)
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breathePic")
     }
     
     // --------------------------------------- BREATHE COLORS -------------------------------------
@@ -88,6 +92,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "breathe", num: 2)
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
     }
     @IBAction func blueB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 0)
@@ -96,6 +101,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "breathe", num: 0)
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
     }
     @IBAction func saffronB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 2)
@@ -104,6 +110,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "breathe", num: 1)
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
     }
     @IBAction func lavenderB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 3)
@@ -112,6 +119,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "breathe", num: 3)
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
     }
     
     
@@ -124,6 +132,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "lotus", num: 0)
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
     }
     @IBAction func squares(_ sender: UIButton) {
         //sendData(theme: "square", game: "lotus")
@@ -132,6 +141,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "lotus", num: 1)
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
     }
     @IBAction func heart(_ sender: UIButton) {
         //sendData(theme: "heart", game: "lotus")
@@ -140,6 +150,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "lotus", num: 2)
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
     }
     @IBAction func circle(_ sender: UIButton) {
         //sendData(theme: "circle", game: "lotus")
@@ -148,6 +159,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "pic", game: "lotus", num: 3)
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
     }
     
     // --------------------------------------- LOTUS COLORS -------------------------------------
@@ -159,6 +171,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "lotus", num: 0)
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
     }
     @IBAction func lotusForest(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 1)
@@ -167,6 +180,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "lotus", num: 1)
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
     }
     @IBAction func lotusOutrun(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 2)
@@ -175,6 +189,7 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "lotus", num: 2)
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
     }
     @IBAction func lotusPool(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 3)
@@ -183,19 +198,18 @@ class GameSettingsViewController: PhoneViewController{
         //sendMessage(type: "color", game: "lotus", num: 3)
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
+        UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
     }
     
     // -----------------------------------------------------------------------------------------
     
-    func sendData(theme : String, game : String, color : Int = -1){
-        let session = WCSession.default
-        if session.activationState == .activated{
-            let data = ["theme": theme, "game": game, "color" : color] as [String : Any]
-            session.transferUserInfo(data)
-            
-            print("sent")
-        }
-    }
+//    func sendData(theme : String, game : String, color : Int = -1){
+//        let session = WCSession.default
+//        if session.activationState == .activated{
+//            let data = ["theme": theme, "game": game, "color" : color] as [String : Any]
+//            session.transferUserInfo(data)
+//        }
+//    }
     
     func sendAppContext(){
         let session = WCSession.default
@@ -212,38 +226,38 @@ class GameSettingsViewController: PhoneViewController{
         }
     }
     
-    func sendMessage(type : String, game : String, num : Int){
-        let session = WCSession.default
-        let data = ["type": type, "game": game, "num" : num] as [String : Any]
-        session.sendMessage(data, replyHandler: {response in
-            let game = response["game"] as! String
-            let type = response["type"] as! String
-            let x = response["num"] as! Int
-            
-            print("recieved " + game)
-            
-            if (game == "breathe"){
-                if (type == "color"){
-                    self.updateLabels(group: self.breatheColorLabels, num: x)
-                    UserDefaults.standard.set(x, forKey: "breatheColor")
-                }
-                else if (type == "pic"){
-                    self.updateLabels(group: self.breathePicLabels, num: x)
-                    UserDefaults.standard.set(x, forKey: "breathePic")
-                }
-            }
-            else if (game == "lotus"){
-                if (type == "color"){
-                    self.updateLabels(group: self.lotusColorLabels, num: x)
-                    UserDefaults.standard.set(x, forKey: "lotusColor")
-                }
-                else if (type == "pic"){
-                    self.updateLabels(group: self.lotusPicLabels, num: x)
-                    UserDefaults.standard.set(x, forKey: "lotusPic")
-                }
-            }
-        })
-    }
+//    func sendMessage(type : String, game : String, num : Int){
+//        let session = WCSession.default
+//        let data = ["type": type, "game": game, "num" : num] as [String : Any]
+//        session.sendMessage(data, replyHandler: {response in
+//            let game = response["game"] as! String
+//            let type = response["type"] as! String
+//            let x = response["num"] as! Int
+//
+//            print("recieved " + game)
+//
+//            if (game == "breathe"){
+//                if (type == "color"){
+//                    self.updateLabels(group: self.breatheColorLabels, num: x)
+//                    UserDefaults.standard.set(x, forKey: "breatheColor")
+//                }
+//                else if (type == "pic"){
+//                    self.updateLabels(group: self.breathePicLabels, num: x)
+//                    UserDefaults.standard.set(x, forKey: "breathePic")
+//                }
+//            }
+//            else if (game == "lotus"){
+//                if (type == "color"){
+//                    self.updateLabels(group: self.lotusColorLabels, num: x)
+//                    UserDefaults.standard.set(x, forKey: "lotusColor")
+//                }
+//                else if (type == "pic"){
+//                    self.updateLabels(group: self.lotusPicLabels, num: x)
+//                    UserDefaults.standard.set(x, forKey: "lotusPic")
+//                }
+//            }
+//        })
+//    }
     
     func updateLabels(group : Array<UILabel>, num : Int){
         DispatchQueue.main.async {
@@ -263,25 +277,25 @@ class GameSettingsViewController: PhoneViewController{
         for i in breathePicLabels{
             if (i.tag == breathePic){
                 i.isHidden = false
-                i.text = "equipped"
+                i.text = "Equipped"
             }
         }
         for i in breatheColorLabels{
             if (i.tag == breatheColor){
                 i.isHidden = false
-                i.text = "equipped"
+                i.text = "Equipped"
             }
         }
         for i in lotusPicLabels{
             if (i.tag == lotusPic){
                 i.isHidden = false
-                i.text = "equipped"
+                i.text = "Equipped"
             }
         }
         for i in lotusColorLabels{
             if (i.tag == lotusColor){
                 i.isHidden = false
-                i.text = "equipped"
+                i.text = "Equipped"
             }
         }
     }
