@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13544EAD231A076F00B2D2AB /* NudgesViewController.swift */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
+		1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFAB234C044300D5073F /* PetInteraction.storyboard */; };
 		13A3918F23175B4D00809895 /* Companions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3918E23175B4C00809895 /* Companions.swift */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
@@ -108,6 +109,7 @@
 		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		1391C016230F365E00416516 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		1397AFAB234C044300D5073F /* PetInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetInteraction.storyboard; sourceTree = "<group>"; };
 		13A3918E23175B4C00809895 /* Companions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companions.swift; sourceTree = "<group>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				42398AC72293815A009CA96E /* Interface.storyboard */,
+				1397AFAB234C044300D5073F /* PetInteraction.storyboard */,
 				42711E9622A74CBE00AAABDB /* Scheduler.storyboard */,
 				42398AF1229382D3009CA96E /* Rhythm.storyboard */,
 				42398AFF22938EEA009CA96E /* Breathe.storyboard */,
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */,
+				1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */,
 				42398B0222938FF5009CA96E /* Lotus.storyboard in Resources */,
 				42398ACB2293815B009CA96E /* Assets.xcassets in Resources */,
 				42398AC92293815A009CA96E /* Interface.storyboard in Resources */,
