@@ -12,26 +12,42 @@ import WatchConnectivity
 class PetInteractionController: WatchViewController{
     
     var calendar = Calendar.autoupdatingCurrent
-    @IBOutlet weak var numLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var heart1: WKInterfaceImage!
+    @IBOutlet weak var heart2: WKInterfaceImage!
+    @IBOutlet weak var heart3: WKInterfaceImage!
+    @IBOutlet weak var heart4: WKInterfaceImage!
+    @IBOutlet weak var heart5: WKInterfaceImage!
+    @IBOutlet weak var heart6: WKInterfaceImage!
+    @IBOutlet weak var heart7: WKInterfaceImage!
+    @IBOutlet weak var heart8: WKInterfaceImage!
+    @IBOutlet weak var heart9: WKInterfaceImage!
+    @IBOutlet weak var heart10: WKInterfaceImage!
+    
+    
     var happiness : Int = 0
     var lastPlayedTime : Date = Date()
-    @IBOutlet weak var barImage: WKInterfaceImage!
+    
     @IBOutlet weak var petImage: WKInterfaceImage!
     @IBAction func foodButtonAction() {
         if (happiness < 10){
             happiness += 1
         }
-        numLabel.setText(String(happiness))
+        //numLabel.setText(String(happiness))
+        // CHANGE BAR
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
         UserDefaults.standard.set(Date(), forKey: "lastPlayedTime")
+        updateHearts()
     }
     @IBAction func waterButtonAction() {
         if (happiness < 10){
             happiness += 1
         }
-        numLabel.setText(String(happiness))
+        //numLabel.setText(String(happiness))
+        //CHANGE BAR
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
         UserDefaults.standard.set(Date(), forKey: "lastPlayedTime")
+        updateHearts()
     }
     
     func testUserDefaults(){
@@ -54,6 +70,16 @@ class PetInteractionController: WatchViewController{
         
         testUserDefaults()
         decreaseHappiness()
+        updateHearts()
+//        if #available(watchOSApplicationExtension 6.0, *) {
+//            let heart = UIImage(systemName: "heart")
+//            heart1.setImage(heart)
+//        } else {
+//            // Fallback on earlier versions
+//            print("not 6.0")
+//        }
+        
+        
     }
 
     func decreaseHappiness(){
@@ -64,7 +90,19 @@ class PetInteractionController: WatchViewController{
             happiness = 0
         }
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
-        numLabel.setText(String(happiness))
+        //numLabel.setText(String(happiness))
+        // CHANGE BARS
+    }
+    
+    func updateHearts(){
+        let hlist = [heart1, heart2, heart3, heart4, heart5, heart6, heart7, heart8, heart9, heart10]
+        for h in hlist{
+            h?.setImageNamed("heart1")
+        }
+        for x in 0..<(happiness){
+            hlist[x]?.setImageNamed("heart")
+        }
         
     }
+    
 }

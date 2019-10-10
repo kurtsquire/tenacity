@@ -21,8 +21,8 @@ class InterfaceController: WatchViewController{
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        let pet = UserDefaults.standard.string(forKey: "equippedPet") ?? "bay"
-        petImage.setImageNamed(pet)
+        //let pet = UserDefaults.standard.string(forKey: "equippedPet") ?? "bay"
+        //petImage.setImageNamed(pet)
     }
     
     override func didDeactivate() {

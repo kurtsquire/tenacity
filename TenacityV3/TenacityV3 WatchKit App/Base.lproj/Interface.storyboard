@@ -59,14 +59,14 @@
                                 <items>
                                     <group width="49" height="45" alignment="right" verticalAlignment="center" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="ut9-wV-YRS">
                                         <items>
-                                            <imageView width="1" height="1" alignment="left" image="axel" id="gJz-kg-aVj"/>
+                                            <imageView width="1" height="1" alignment="left" image="peticon" id="gJz-kg-aVj"/>
                                         </items>
                                     </group>
                                     <label width="79" alignment="center" verticalAlignment="bottom" text="Pet" numberOfLines="2" id="ui5-Ow-nrU">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                 </items>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </group>
                             <connections>
                                 <segue destination="MV0-q4-7pf" kind="push" id="cI8-89-51I"/>
@@ -314,10 +314,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="axel" width="501" height="501"/>
         <image name="breathemenu" width="320" height="320"/>
         <image name="infinity_symblo_PNG40" width="1500" height="900"/>
         <image name="lotus" width="320" height="320"/>
+        <image name="peticon" width="320" height="320"/>
         <image name="question" width="980" height="980"/>
     </resources>
 </document>

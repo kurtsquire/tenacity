@@ -12,12 +12,40 @@
             <objects>
                 <controller identifier="Pet" id="Mcp-e9-GQN" customClass="PetInteractionController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="0.80000000000000004" alignment="left" layout="vertical" id="gnX-JZ-QTq">
+                        <group width="1" height="0.80000000000000004" alignment="left" layout="vertical" radius="4" id="gnX-JZ-QTq">
                             <items>
                                 <group width="1" height="0.10000000000000001" alignment="left" id="6tL-rk-FUm">
                                     <items>
-                                        <imageView width="0.59999999999999998" height="1" alignment="left" image="equip_heart" id="Ru4-YD-VZq"/>
-                                        <label width="0.29999999999999999" height="1" alignment="right" text="0/10" id="8Ih-eb-Hdm"/>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="0Dg-sQ-g38">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="OER-Ti-afR">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="YoT-ef-GeU">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="cnn-td-XXV">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="XWa-ID-iRZ">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="Pu4-0r-7gf">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="stg-PX-zd2">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="k2H-vh-SeQ">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="tAA-fP-2FT">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView width="0.10000000000000001" height="1" alignment="left" image="heart1" contentMode="scaleAspectFill" id="kQ1-ZE-4dH">
+                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
                                     </items>
                                 </group>
                                 <imageView width="100" height="100" alignment="center" verticalAlignment="bottom" image="halo" id="UTq-xZ-3VF"/>
@@ -41,8 +69,16 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="barImage" destination="Ru4-YD-VZq" id="x9P-7m-CL2"/>
-                        <outlet property="numLabel" destination="8Ih-eb-Hdm" id="CeV-Fl-CVm"/>
+                        <outlet property="heart1" destination="0Dg-sQ-g38" id="zEm-It-A2C"/>
+                        <outlet property="heart10" destination="kQ1-ZE-4dH" id="EGp-4G-0aQ"/>
+                        <outlet property="heart2" destination="OER-Ti-afR" id="fT9-Uo-XPB"/>
+                        <outlet property="heart3" destination="YoT-ef-GeU" id="5Am-cm-rVh"/>
+                        <outlet property="heart4" destination="cnn-td-XXV" id="MgG-TM-WVD"/>
+                        <outlet property="heart5" destination="XWa-ID-iRZ" id="tfM-M3-IXZ"/>
+                        <outlet property="heart6" destination="Pu4-0r-7gf" id="lLH-UA-j9F"/>
+                        <outlet property="heart7" destination="stg-PX-zd2" id="pwv-XI-s4i"/>
+                        <outlet property="heart8" destination="k2H-vh-SeQ" id="gAx-W3-VML"/>
+                        <outlet property="heart9" destination="tAA-fP-2FT" id="qEB-SA-SlJ"/>
                         <outlet property="petImage" destination="UTq-xZ-3VF" id="iYz-gN-9k3"/>
                     </connections>
                 </controller>
@@ -51,7 +87,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="equip_heart" width="1114" height="191"/>
         <image name="halo" width="501" height="501"/>
+        <image name="heart1" width="840" height="806"/>
     </resources>
 </document>
