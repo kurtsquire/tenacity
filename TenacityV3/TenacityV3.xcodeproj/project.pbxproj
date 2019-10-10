@@ -15,6 +15,7 @@
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
 		1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFAB234C044300D5073F /* PetInteraction.storyboard */; };
+		1397AFAE234C103000D5073F /* PetInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397AFAD234C103000D5073F /* PetInteractionController.swift */; };
 		13A3918F23175B4D00809895 /* Companions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3918E23175B4C00809895 /* Companions.swift */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
@@ -110,6 +111,7 @@
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		1391C016230F365E00416516 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		1397AFAB234C044300D5073F /* PetInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetInteraction.storyboard; sourceTree = "<group>"; };
+		1397AFAD234C103000D5073F /* PetInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInteractionController.swift; sourceTree = "<group>"; };
 		13A3918E23175B4C00809895 /* Companions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companions.swift; sourceTree = "<group>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
@@ -284,9 +286,10 @@
 				42398AD82293815B009CA96E /* ExtensionDelegate.swift */,
 				42398ADA2293815B009CA96E /* NotificationController.swift */,
 				42398AF522938304009CA96E /* BreatheController.swift */,
-				42398AF72293832C009CA96E /* LotusController.swift */,
-				42398B0422939824009CA96E /* RhythmController.swift */,
 				42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */,
+				42398AF72293832C009CA96E /* LotusController.swift */,
+				1397AFAD234C103000D5073F /* PetInteractionController.swift */,
+				42398B0422939824009CA96E /* RhythmController.swift */,
 				42711E9822A7517A00AAABDB /* SchedulerController.swift */,
 				42398ADC2293815B009CA96E /* Assets.xcassets */,
 				42398ADE2293815B009CA96E /* Info.plist */,
@@ -570,6 +573,7 @@
 			files = (
 				42398AFA2293872F009CA96E /* LotusController.swift in Sources */,
 				1391C015230E156900416516 /* WatchViewController.swift in Sources */,
+				1397AFAE234C103000D5073F /* PetInteractionController.swift in Sources */,
 				42398B0522939824009CA96E /* RhythmController.swift in Sources */,
 				42398ADB2293815B009CA96E /* NotificationController.swift in Sources */,
 				42398AF622938304009CA96E /* BreatheController.swift in Sources */,

@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
     </dependencies>
     <scenes>
         <!--Pet-->
         <scene sceneID="PHB-at-G6T">
             <objects>
-                <controller identifier="Pet" id="Mcp-e9-GQN">
+                <controller identifier="Pet" id="Mcp-e9-GQN" customClass="PetInteractionController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
                         <group width="1" height="0.80000000000000004" alignment="left" layout="vertical" id="gnX-JZ-QTq">
                             <items>
+                                <group width="1" height="0.10000000000000001" alignment="left" id="6tL-rk-FUm">
+                                    <items>
+                                        <imageView width="0.59999999999999998" height="1" alignment="left" image="equip_heart" id="Ru4-YD-VZq"/>
+                                        <label width="0.29999999999999999" height="1" alignment="right" text="0/10" id="8Ih-eb-Hdm"/>
+                                    </items>
+                                </group>
                                 <imageView width="100" height="100" alignment="center" verticalAlignment="bottom" image="halo" id="UTq-xZ-3VF"/>
-                                <imageView width="0.80000000000000004" height="0.10000000000000001" alignment="center" image="equip_heart" id="Ru4-YD-VZq"/>
                             </items>
                         </group>
                         <group width="1" height="0.20000000000000001" alignment="left" id="j7g-tP-HJ0">
                             <items>
                                 <button width="0.5" height="1" alignment="left" title="Food" id="MXQ-mP-u5c">
                                     <color key="backgroundColor" red="0.94117647059999998" green="0.71764705880000002" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="foodButtonAction" destination="Mcp-e9-GQN" id="q84-mf-KyN"/>
+                                    </connections>
                                 </button>
                                 <button width="0.5" height="1" alignment="left" title="Water" id="wAF-ba-A0W">
                                     <color key="backgroundColor" red="0.47486943009999999" green="0.84131890539999998" blue="0.99193710089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="waterButtonAction" destination="Mcp-e9-GQN" id="mHT-PJ-EI1"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="barImage" destination="Ru4-YD-VZq" id="x9P-7m-CL2"/>
+                        <outlet property="numLabel" destination="8Ih-eb-Hdm" id="CeV-Fl-CVm"/>
+                        <outlet property="petImage" destination="UTq-xZ-3VF" id="iYz-gN-9k3"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-9" y="128"/>

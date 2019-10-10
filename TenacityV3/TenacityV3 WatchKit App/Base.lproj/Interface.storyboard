@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EeY-fh-j6m">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EeY-fh-j6m">
     <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
     </dependencies>
     <scenes>
         <!--Main Menu-->
@@ -57,7 +57,11 @@
                         <button alignment="center" verticalAlignment="center" id="XAd-2I-P3x" userLabel="Pet Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="N9L-Sk-9aO">
                                 <items>
-                                    <group width="49" height="45" alignment="right" verticalAlignment="center" backgroundImage="halo" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="ut9-wV-YRS"/>
+                                    <group width="49" height="45" alignment="right" verticalAlignment="center" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="ut9-wV-YRS">
+                                        <items>
+                                            <imageView width="1" height="1" alignment="left" image="axel" id="gJz-kg-aVj"/>
+                                        </items>
+                                    </group>
                                     <label width="79" alignment="center" verticalAlignment="bottom" text="Pet" numberOfLines="2" id="ui5-Ow-nrU">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
@@ -88,6 +92,9 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="petImage" destination="gJz-kg-aVj" id="MjF-Kd-qTN"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="30" y="80.5"/>
@@ -217,7 +224,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="776" y="204"/>
+            <point key="canvasLocation" x="779" y="195"/>
         </scene>
         <!--Breathe Help-->
         <scene sceneID="XZm-RP-N4D">
@@ -246,7 +253,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1230" y="700"/>
+            <point key="canvasLocation" x="1228" y="470"/>
         </scene>
         <!--Lotus Help-->
         <scene sceneID="uLl-cX-KjB">
@@ -265,7 +272,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1453" y="493"/>
+            <point key="canvasLocation" x="1447" y="275"/>
         </scene>
         <!--Rhythm Help-->
         <scene sceneID="E9P-yt-Eaw">
@@ -281,7 +288,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1676" y="37"/>
+            <point key="canvasLocation" x="1672" y="65"/>
         </scene>
         <!--Reminders Main-->
         <scene sceneID="TSn-Yt-pDE">
@@ -303,12 +310,12 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1003" y="115"/>
+            <point key="canvasLocation" x="1004" y="118"/>
         </scene>
     </scenes>
     <resources>
+        <image name="axel" width="501" height="501"/>
         <image name="breathemenu" width="320" height="320"/>
-        <image name="halo" width="501" height="501"/>
         <image name="infinity_symblo_PNG40" width="1500" height="900"/>
         <image name="lotus" width="320" height="320"/>
         <image name="question" width="980" height="980"/>

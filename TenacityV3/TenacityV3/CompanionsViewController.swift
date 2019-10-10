@@ -8,6 +8,7 @@
 
 
 import UIKit
+import WatchConnectivity
 
 let petArray = ["bay", "fjol", "cleo", "eldur", "halo", "sage", "raz", "koko", "rio", "aqua", "royal", "indigo", "mar", "phoenix", "bly", "dioon", "toor", "reese", "navy", "iris", "loch", "river", "bahn", "zbut", "sierra", "echo", "nova", "jade", "koda", "bayou", "kolbi", "liyah", "rye", "qut", "yoko", "trii", "tala", "kitchi", "opal", "paytah", "gou", "axel", "wol", "sigma", "pi"]
 var petOwned = [1]
@@ -79,6 +80,7 @@ class CompanionsViewController: PhoneViewController {
         petEquipped = pet
         UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
         saveToRealm(what: "equip pet: " + petArray[petEquipped])
+        sendAppContext()
     }
     
     override func testUserDefaults(){
@@ -89,5 +91,18 @@ class CompanionsViewController: PhoneViewController {
         petEquipped = defaults.integer(forKey: "petEquipped")
     }
     
+    func sendAppContext(){
+        let session = WCSession.default
+        
+        if session.activationState == .activated {
+            
+            let data = ["pet": petArray[petEquipped]]
+            do {
+                try session.updateApplicationContext(data)
+            } catch {
+                print("Alert! Updating app context failed")
+            }
+        }
+    }
     
 }

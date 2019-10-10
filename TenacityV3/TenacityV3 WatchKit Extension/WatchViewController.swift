@@ -16,8 +16,6 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        print("awoke")
-        
         if WCSession.isSupported(){
             let session = WCSession.default
             session.delegate = self
@@ -28,14 +26,18 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        if WCSession.isSupported(){
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
         
-        print("will activate")
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        print("did deactivate")
+        
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -94,16 +96,20 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        let breathePics = ["classic", "fire", "cloud", "diamond"]
-        let lotusPics = ["lotus", "square", "heart", "circle"]
-        
-        print("recieved")
-        
-        UserDefaults.standard.set(breathePics[applicationContext["bpic"] as! Int], forKey: "breatheTheme")
-        UserDefaults.standard.set(lotusPics[applicationContext["lpic"] as! Int], forKey: "lotusTheme")
-        UserDefaults.standard.set(applicationContext["bcol"], forKey: "breatheColor")
-        UserDefaults.standard.set(applicationContext["lcol"], forKey: "lotusColor")
-       
+        print(applicationContext.count)
+        if applicationContext.count == 4{
+            let breathePics = ["classic", "fire", "cloud", "diamond"]
+            let lotusPics = ["lotus", "square", "heart", "circle"]
+            
+            UserDefaults.standard.set(breathePics[applicationContext["bpic"] as! Int], forKey: "breatheTheme")
+            UserDefaults.standard.set(lotusPics[applicationContext["lpic"] as! Int], forKey: "lotusTheme")
+            UserDefaults.standard.set(applicationContext["bcol"], forKey: "breatheColor")
+            UserDefaults.standard.set(applicationContext["lcol"], forKey: "lotusColor")
+        }
+        else if applicationContext.count == 1{
+            print("recieved pet")
+            UserDefaults.standard.set(applicationContext["pet"] as! String, forKey: "equippedPet")
+        }
     }
     
     

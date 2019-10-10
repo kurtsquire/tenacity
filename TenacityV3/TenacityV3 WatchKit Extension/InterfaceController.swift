@@ -13,6 +13,7 @@ import WatchConnectivity
 
 class InterfaceController: WatchViewController{
 
+    @IBOutlet weak var petImage: WKInterfaceImage!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
     }
@@ -20,6 +21,8 @@ class InterfaceController: WatchViewController{
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        let pet = UserDefaults.standard.string(forKey: "equippedPet") ?? "bay"
+        petImage.setImageNamed(pet)
     }
     
     override func didDeactivate() {
