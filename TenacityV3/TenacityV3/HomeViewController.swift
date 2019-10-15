@@ -194,6 +194,7 @@ class HomeViewController: PhoneViewController {
         
         
         refreshRealmData()
+        testUserDefaults()
         
         // update labels -------------
         updateExp()

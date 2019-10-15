@@ -331,6 +331,7 @@ class LotusController: WatchViewController{
                 if (current != (lotusTheme + "_0")){
                     wrongCount += 1
                     sendData(what: "swipe", correct: "false")
+                    WKInterfaceDevice.current().play(.failure)
                 }
             }
         }
