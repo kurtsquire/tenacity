@@ -48,7 +48,7 @@
                                         </imageView>
                                     </items>
                                 </group>
-                                <imageView width="100" height="100" alignment="center" verticalAlignment="bottom" image="halo" id="UTq-xZ-3VF"/>
+                                <imageView width="0.80000000000000004" height="0.90000000000000002" alignment="center" verticalAlignment="bottom" image="paytah" id="UTq-xZ-3VF"/>
                             </items>
                         </group>
                         <group width="1" height="0.20000000000000001" alignment="left" id="j7g-tP-HJ0">
@@ -87,7 +87,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="halo" width="501" height="501"/>
         <image name="heart1" width="840" height="806"/>
+        <image name="paytah" width="501" height="501"/>
     </resources>
 </document>

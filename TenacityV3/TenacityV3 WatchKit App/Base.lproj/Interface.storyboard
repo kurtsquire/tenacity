@@ -15,7 +15,9 @@
                         <button alignment="center" verticalAlignment="center" id="ggv-I4-0S8" userLabel="Breathe Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="VK2-lK-VeR">
                                 <items>
-                                    <label width="76" alignment="center" verticalAlignment="bottom" text="Breathe Focus" textAlignment="left" numberOfLines="2" id="rvW-z6-qKs">
+                                    <label alignment="left" verticalAlignment="bottom" textAlignment="left" numberOfLines="2" id="rvW-z6-qKs">
+                                        <string key="text"> Breathe
+ Focus</string>
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                     <group width="52" height="45" alignment="right" verticalAlignment="center" backgroundImage="breathemenu" contentMode="scaleAspectFit" layout="overlap" id="q2L-n4-oTe"/>
@@ -30,7 +32,9 @@
                             <group key="contentGroup" width="1" height="60" alignment="left" id="mTd-BP-oRE">
                                 <items>
                                     <group width="49" height="45" alignment="right" verticalAlignment="center" backgroundImage="infinity_symblo_PNG40" contentMode="scaleAspectFit" layout="overlap" spacing="2" id="vGk-cO-Zjf"/>
-                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Breathe Infinite" numberOfLines="2" id="VG7-zf-CDE">
+                                    <label width="79" alignment="left" verticalAlignment="bottom" numberOfLines="2" id="VG7-zf-CDE">
+                                        <string key="text"> Breathe
+ Infinite</string>
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                 </items>
@@ -43,7 +47,9 @@
                         <button alignment="center" verticalAlignment="center" id="AmO-2H-hPA" userLabel="Lotus Button">
                             <group key="contentGroup" width="1" height="60" alignment="left" id="KoG-IG-E6f">
                                 <items>
-                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Lotus Swipe" numberOfLines="2" id="ERe-cv-9Zk">
+                                    <label width="79" alignment="left" verticalAlignment="bottom" numberOfLines="2" id="ERe-cv-9Zk">
+                                        <string key="text"> Lotus
+ Swipe</string>
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                     <group width="50" height="50" alignment="right" verticalAlignment="center" backgroundImage="lotus" contentMode="scaleAspectFill" layout="overlap" spacing="2" id="0ZZ-Ee-8Nb"/>
@@ -62,7 +68,7 @@
                                             <imageView width="1" height="1" alignment="left" image="peticon" id="gJz-kg-aVj"/>
                                         </items>
                                     </group>
-                                    <label width="79" alignment="center" verticalAlignment="bottom" text="Pet" numberOfLines="2" id="ui5-Ow-nrU">
+                                    <label width="79" alignment="left" verticalAlignment="bottom" text=" Pet" numberOfLines="2" id="ui5-Ow-nrU">
                                         <fontDescription key="font" type="system" weight="black" pointSize="17"/>
                                     </label>
                                 </items>
