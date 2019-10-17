@@ -24,7 +24,6 @@ class PetInteractionController: WatchViewController{
     @IBOutlet weak var heart9: WKInterfaceImage!
     @IBOutlet weak var heart10: WKInterfaceImage!
     
-    
     var happiness : Int = 0
     var lastPlayedTime : Date = Date()
     
@@ -33,18 +32,15 @@ class PetInteractionController: WatchViewController{
         if (happiness < 10){
             happiness += 1
         }
-        //numLabel.setText(String(happiness))
-        // CHANGE BAR
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
         UserDefaults.standard.set(Date(), forKey: "lastPlayedTime")
         updateHearts()
     }
+    
     @IBAction func waterButtonAction() {
         if (happiness < 10){
             happiness += 1
         }
-        //numLabel.setText(String(happiness))
-        //CHANGE BAR
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
         UserDefaults.standard.set(Date(), forKey: "lastPlayedTime")
         updateHearts()
@@ -59,8 +55,6 @@ class PetInteractionController: WatchViewController{
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        
     }
     
     override func willActivate() {
@@ -71,6 +65,7 @@ class PetInteractionController: WatchViewController{
         testUserDefaults()
         decreaseHappiness()
         updateHearts()
+        
 //        if #available(watchOSApplicationExtension 6.0, *) {
 //            let heart = UIImage(systemName: "heart")
 //            heart1.setImage(heart)
@@ -78,8 +73,6 @@ class PetInteractionController: WatchViewController{
 //            // Fallback on earlier versions
 //            print("not 6.0")
 //        }
-        
-        
     }
 
     func decreaseHappiness(){
@@ -90,8 +83,6 @@ class PetInteractionController: WatchViewController{
             happiness = 0
         }
         UserDefaults.standard.set(happiness, forKey: "petHappiness")
-        //numLabel.setText(String(happiness))
-        // CHANGE BARS
     }
     
     func updateHearts(){
@@ -102,7 +93,6 @@ class PetInteractionController: WatchViewController{
         for x in 0..<(happiness){
             hlist[x]?.setImageNamed("heart")
         }
-        
     }
     
 }

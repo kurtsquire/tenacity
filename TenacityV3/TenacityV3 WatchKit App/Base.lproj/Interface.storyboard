@@ -112,13 +112,6 @@
             </objects>
             <point key="canvasLocation" x="290" y="17"/>
         </scene>
-        <!--RhythmTap Main-->
-        <scene sceneID="gOD-WM-Iiu">
-            <objects>
-                <controllerPlaceholder referencedIdentifier="RhythmTap Main" id="4Tg-YH-RAE"/>
-            </objects>
-            <point key="canvasLocation" x="307" y="63"/>
-        </scene>
         <!--FreeBreathe Start-->
         <scene sceneID="DHG-to-s6t">
             <objects>
@@ -279,22 +272,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="1447" y="275"/>
-        </scene>
-        <!--Rhythm Help-->
-        <scene sceneID="E9P-yt-Eaw">
-            <objects>
-                <controller identifier="Rhythm Help" id="gUA-XG-l7N">
-                    <items>
-                        <label alignment="left" text="Rhythm Help" id="ccz-BK-D3B"/>
-                        <separator alignment="left" id="3ZW-QT-Fjb"/>
-                        <label alignment="left" numberOfLines="12" id="BvG-rL-SeH">
-                            <string key="text">Think of this app like a drum set. While listening to whatever you want, tap to the rhythm you like. Just press the back button to exit the app.
-</string>
-                        </label>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="1672" y="65"/>
         </scene>
         <!--Reminders Main-->
         <scene sceneID="TSn-Yt-pDE">
