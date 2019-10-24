@@ -147,4 +147,22 @@ class LineChart {
         data.setValueTextColor(UIColor.clear)
         self.lineChartView.data = data
     }
+    
+    public func removeAll( ) {
+        
+        self.lineChartView.clear()
+        
+        for key in self.gamesInfo.keys{
+            self.gamesInfo[key]?.gameData = []
+        }
+    }
+    
+    public func refreshData(  lineChartView: LineChartView!, goalColor: UIColor, gamesInfo: [Int: (gameName: String, gameData: [Double], gameColor: UIColor, gameGoal: Double) ] ) {
+           
+           self.lineChartView = lineChartView
+           
+           self.goalColor = goalColor
+           
+           self.gamesInfo = gamesInfo
+    }
 }
