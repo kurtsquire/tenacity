@@ -17,6 +17,7 @@
 		1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFAB234C044300D5073F /* PetInteraction.storyboard */; };
 		1397AFAE234C103000D5073F /* PetInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397AFAD234C103000D5073F /* PetInteractionController.swift */; };
 		13A3918F23175B4D00809895 /* Companions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3918E23175B4C00809895 /* Companions.swift */; };
+		13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
@@ -111,6 +112,7 @@
 		1397AFAB234C044300D5073F /* PetInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetInteraction.storyboard; sourceTree = "<group>"; };
 		1397AFAD234C103000D5073F /* PetInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInteractionController.swift; sourceTree = "<group>"; };
 		13A3918E23175B4C00809895 /* Companions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companions.swift; sourceTree = "<group>"; };
+		13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetter.storyboard; sourceTree = "<group>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		1BE544A022C2995500620EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				42398AB722938159009CA96E /* Main.storyboard */,
 				4251741F22F0D68600A11551 /* Help.storyboard */,
 				13544EAB231A061300B2D2AB /* Nudges.storyboard */,
+				13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */,
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
 				13544EAD231A076F00B2D2AB /* NudgesViewController.swift */,
 				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
@@ -416,6 +419,7 @@
 				42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */,
 				1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */,
 				4251742022F0D68600A11551 /* Help.storyboard in Resources */,
+				13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */,
 				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
 				42398AB922938159009CA96E /* Main.storyboard in Resources */,
 			);

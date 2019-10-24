@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWz-DJ-dGq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWz-DJ-dGq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,8 +60,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-Fb-zrn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1631"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-XE-ZPP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1550"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-XE-ZPP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1531"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="expUnfill" translatesAutoresizingMaskIntoConstraints="NO" id="AX1-qZ-QU2">
                                                 <rect key="frame" x="2" y="4" width="90" height="20"/>
@@ -86,11 +86,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9g-pG-dRh">
-                                                <rect key="frame" x="22" y="300" width="130" height="130"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="fox"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x17-yf-VsI" userLabel="Quests Title">
                                                 <rect key="frame" x="97" y="905" width="183" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -250,6 +245,38 @@
                                                     <segue destination="qD4-nd-Jn9" kind="show" id="xi7-je-58G"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo2-4L-qGx">
+                                                <rect key="frame" x="48" y="644" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="bf goal"/>
+                                                <connections>
+                                                    <segue destination="py0-M2-d6j" kind="show" id="big-5s-nAN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-FQ-bPs">
+                                                <rect key="frame" x="137" y="800" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="l goal"/>
+                                                <connections>
+                                                    <segue destination="py0-M2-d6j" kind="show" id="djJ-5v-OoD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-yR-yJa">
+                                                <rect key="frame" x="227" y="644" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="bi goal"/>
+                                                <connections>
+                                                    <segue destination="py0-M2-d6j" kind="show" id="fuW-cW-Zbo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9g-pG-dRh">
+                                                <rect key="frame" x="22" y="300" width="130" height="130"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="fox"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1531" id="NA8-Ki-sls"/>
@@ -299,7 +326,7 @@
                                             <segue destination="qHI-pl-AUF" kind="show" id="HcG-ki-jnG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuE-n1-J1J">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuE-n1-J1J" userLabel="Pet Button">
                                         <rect key="frame" x="33" y="357" width="327" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -317,27 +344,6 @@
                                         <rect key="frame" x="78" y="572" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bf/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-Pf-sk7">
-                                        <rect key="frame" x="48" y="644" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="l/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-95-2hA">
-                                        <rect key="frame" x="137" y="800" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bi/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-VA-QpZ">
-                                        <rect key="frame" x="227" y="644" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breathe Infinite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slN-38-lUy">
                                         <rect key="frame" x="207" y="615" width="140" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -383,9 +389,9 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Tab_Home" selectedImage="Tab_Home" id="tUl-uW-ze5"/>
                     <size key="freeformSize" width="375" height="1700"/>
                     <connections>
-                        <outlet property="breatheFMinuteGoalLabel" destination="zeK-Pf-sk7" id="0pa-BB-F2g"/>
+                        <outlet property="breatheFMinuteGoalButton" destination="Xo2-4L-qGx" id="RgY-nu-GNU"/>
                         <outlet property="breatheFocusLabel" destination="9GA-b9-RFb" id="2L1-yI-nlu"/>
-                        <outlet property="breatheIMinuteGoalLabel" destination="aLR-VA-QpZ" id="6DM-8u-1BW"/>
+                        <outlet property="breatheIMinuteGoalButton" destination="Hzb-yR-yJa" id="5rr-YI-orS"/>
                         <outlet property="breatheInfiniteLabel" destination="slN-38-lUy" id="AXM-mA-sIQ"/>
                         <outlet property="expBar1" destination="AX1-qZ-QU2" id="qAO-cR-FQf"/>
                         <outlet property="expBar2" destination="2e5-XY-aUG" id="2h4-Cu-7yt"/>
@@ -394,7 +400,7 @@
                         <outlet property="expLabel" destination="v4D-hV-eMI" id="sRM-T9-6wL"/>
                         <outlet property="homeLineGraph" destination="gU6-Mf-PqP" id="S7k-Es-Nlr"/>
                         <outlet property="homePet" destination="qb9-pY-AbC" id="bAK-jd-Cnc"/>
-                        <outlet property="lotusMinuteGoalLabel" destination="ZsX-95-2hA" id="i5o-Hk-Pit"/>
+                        <outlet property="lotusMinuteGoalButton" destination="0nX-FQ-bPs" id="irg-pW-87C"/>
                         <outlet property="lotusSwipeLabel" destination="SUL-dv-alQ" id="Xwr-KS-hKQ"/>
                         <outlet property="lvlLabel" destination="mmI-wb-50J" id="PRd-ri-5iq"/>
                         <outlet property="mainView" destination="XXv-XE-ZPP" id="efu-4m-N3i"/>
@@ -485,8 +491,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Richie's Place, no touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDd-B2-gQd">
-                                <rect key="frame" x="16" y="234" width="294" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richie's Place, no touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDd-B2-gQd">
+                                <rect key="frame" x="16" y="174" width="269" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="rNb-OY-NYy"/>
                                 </constraints>
@@ -907,8 +913,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-ju-agL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUj-eC-YUY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="996"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUj-eC-YUY">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0f-0S-rLu" userLabel="Game Settings Help Button">
                                                 <rect key="frame" x="330" y="180" width="30" height="30"/>
@@ -2967,6 +2973,16 @@ Press ? for more info.</string>
             </objects>
             <point key="canvasLocation" x="2316" y="-891"/>
         </scene>
+        <!--Goal Setter-->
+        <scene sceneID="BH9-yK-NpS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoalSetter" referencedIdentifier="Goal Setter" id="py0-M2-d6j" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CcI-5h-5Kw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFJ-tz-ogb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="-426"/>
+        </scene>
         <!--Achievements Help-->
         <scene sceneID="gAj-vU-zba">
             <objects>
@@ -3001,13 +3017,13 @@ Press ? for more info.</string>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="vHX-qF-n8j">
-                                                <rect key="frame" x="47" y="63" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="63" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge 2" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-1F-td3">
-                                                <rect key="frame" x="47" y="175" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="175" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge3" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-Ef-7Gc">
-                                                <rect key="frame" x="47" y="287" width="192" height="104"/>
+                                                <rect key="frame" x="46.999999999999986" y="287" width="192.00000000000003" height="104.00000000000003"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-Kb-H33">
                                                 <rect key="frame" x="289" y="92" width="46" height="46"/>
@@ -3317,6 +3333,7 @@ Press ? for more info.</string>
         <image name="zbut shadow" width="501" height="501"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="djJ-5v-OoD"/>
         <segue reference="WIg-jw-Mkb"/>
         <segue reference="qbQ-a6-Vfk"/>
     </inferredMetricsTieBreakers>

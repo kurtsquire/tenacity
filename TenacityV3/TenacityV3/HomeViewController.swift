@@ -73,12 +73,13 @@ class HomeViewController: PhoneViewController {
     // --------------------------- GOALS OUTLETS -----------------------------
     @IBAction func goalsHelpButton(_ sender: Any) {
     }
-    @IBOutlet weak var breatheFMinuteGoalLabel: UILabel!
-    @IBOutlet weak var breatheIMinuteGoalLabel: UILabel!
-    @IBOutlet weak var lotusMinuteGoalLabel: UILabel!
     @IBOutlet weak var breatheFocusLabel: UILabel!
     @IBOutlet weak var breatheInfiniteLabel: UILabel!
     @IBOutlet weak var lotusSwipeLabel: UILabel!
+    
+    @IBOutlet weak var breatheFMinuteGoalButton: UIButton!
+    @IBOutlet weak var breatheIMinuteGoalButton: UIButton!
+    @IBOutlet weak var lotusMinuteGoalButton: UIButton!
     
     // Achievements
 //    @IBOutlet weak var badge1: UIButton!
@@ -470,9 +471,10 @@ class HomeViewController: PhoneViewController {
         }
         
         DispatchQueue.main.async {
-            self.breatheFMinuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins"
-            self.breatheIMinuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
-            self.lotusMinuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
+            self.breatheFMinuteGoalButton.setTitle(String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins", for: .normal)
+            self.breatheIMinuteGoalButton.setTitle(String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins", for: .normal)
+            self.lotusMinuteGoalButton
+                .setTitle(String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins", for: .normal)
             
             breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
