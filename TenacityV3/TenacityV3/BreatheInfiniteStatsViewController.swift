@@ -46,22 +46,12 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         refreshRealmData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        setsPlayedLineChart.clear( )
-        totalBreathsLineChart.clear( )
-        avgBreathsLineChart.clear( )
-        setsPlayedLineChart.clear( )
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         // adds top bar back before we leave
         
-        setsPlayedLineChart.clear( )
+        timePlayedLineChart.clear( )
         totalBreathsLineChart.clear( )
-        avgBreathsLineChart.clear( )
         setsPlayedLineChart.clear( )
         
         //navigationController?.setNavigationBarHidden(false, animated: false)

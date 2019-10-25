@@ -45,6 +45,14 @@ class BreatheFocusStatsViewController: PhoneViewController{
         refreshRealmData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        timePlayedLineChart.clear( )
+        totalBreathsLineChart.clear( )
+        setsPlayedLineChart.clear( )
+    }
+    
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
         super.viewDidLoad()
         

@@ -38,6 +38,14 @@ class LotusStatsViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
+        refreshRealmData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        timePlayedLineChart.clear( )
+        totalRoundsLineChart.clear( )
     }
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
