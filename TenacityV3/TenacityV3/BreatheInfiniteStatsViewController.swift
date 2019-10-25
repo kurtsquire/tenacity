@@ -43,11 +43,27 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
+        refreshRealmData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        setsPlayedLineChart.clear( )
+        totalBreathsLineChart.clear( )
+        avgBreathsLineChart.clear( )
+        setsPlayedLineChart.clear( )
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         // adds top bar back before we leave
+        
+        setsPlayedLineChart.clear( )
+        totalBreathsLineChart.clear( )
+        avgBreathsLineChart.clear( )
+        setsPlayedLineChart.clear( )
+        
         //navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
@@ -104,27 +120,6 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         self.totalBreathsLineChart.xAxis.labelTextColor = UIColor.white
         self.totalBreathsLineChart.rightAxis.labelTextColor = UIColor.white
         self.totalBreathsLineChart.leftAxis.labelTextColor = UIColor.white
-        
-        
-//        self.avgBreathsLineChart.gridBackgroundColor = UIColor.white
-//        
-//        self.avgBreathsLineChart.noDataText = "No data provided"
-//        
-//        self.avgBreathsLineChart.doubleTapToZoomEnabled = false
-//        
-//        self.avgBreathsLineChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-//        
-//        self.avgBreathsLineChart.highlightPerTapEnabled = false
-//        self.avgBreathsLineChart.highlightPerDragEnabled = false
-//        
-//        self.avgBreathsLineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: weekDays)
-//        
-//        self.avgBreathsLineChart.xAxis.granularity = 1
-//        self.avgBreathsLineChart.legend.textColor = UIColor.white
-//        self.avgBreathsLineChart.xAxis.labelTextColor = UIColor.white
-//        self.avgBreathsLineChart.rightAxis.labelTextColor = UIColor.white
-//        self.avgBreathsLineChart.leftAxis.labelTextColor = UIColor.white
-        
         
         self.setsPlayedLineChart.gridBackgroundColor = UIColor.white
         
@@ -391,27 +386,12 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         
         totalBreathsChart.drawWeekGraph()
         
-        
-        //        let avgBreathsChart : LineChart = LineChart(lineChartView: self.avgBreathsLineChart, goalColor: UIColor.red, gamesInfo: avgBreaths)
-        //
-        //        avgBreathsChart.drawWeekGraph()
-        
-        
         let setsPlayedChart : LineChart = LineChart(lineChartView: self.setsPlayedLineChart, goalColor: UIColor.red, gamesInfo: setsPlayed)
         
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
             self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
-            //            self.timePlayedLabel.text = "Week: " + String(Int(breatheITimeWeek/60)) + " min" + "\nToday: " + String(Int(breatheITimeToday)) + " secs"
-            //            self.totalBreathsTakenLabel.text = "Week: " + String(breatheIBreathsWeek) + "\nToday: " + String(breatheIBreathsToday)
-            //            self.averageBreathLengthLabel.text = "Week: " + String(breatheIAvgWeek) + "\nToday: " + String(breatheIAvgToday)
-            //            self.setsPlayedLabel.text = "Today:" + String(breatheITotalToday) + "\nThis Week: " + String(breatheITotalWeek)
-            //            var a = "Breath Cycles  (Length: how many you have done)\n"
-            //            for i in 0..<cyclesTodayArray.count{
-            //                a += String(i) + ": " + String(cyclesTodayArray[i]) + ", "
-            //            }
-            //            self.cyclesLabel.text = a
             
             breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){
