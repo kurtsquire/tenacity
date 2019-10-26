@@ -25,6 +25,8 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     @IBOutlet weak var avgBreathsLineChart: LineChartView!
     @IBOutlet weak var setsPlayedLineChart: LineChartView!
     
+    var breatheIGoalTime = 0.0
+    
     lazy var breatheIGraphCenter = breatheInfiniteLabel.center
     
     // ------------------------- TIME ----------------------------------
@@ -44,6 +46,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
         refreshRealmData()
+        testUserDefaults()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -69,6 +72,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         weekStartTime = calendar.date(from: weekComponents)!
         
         refreshRealmData()
+        testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
         
@@ -381,9 +385,11 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + " mins"
             
-            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
+            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(self.breatheIGoalTime)) + "mins"
+            
+            
+            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/self.breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){
                 breatheIGraphEndAngle = 0.01
             }
@@ -391,5 +397,10 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
             self.mainView.layer.addSublayer(breatheICircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(breatheICircleGraph.progressLayer)
         }
+    }
+    
+    override func testUserDefaults() {
+        // get goal times
+        breatheIGoalTime = Double(UserDefaults.standard.integer(forKey: "breatheIGoalTime"))
     }
 }

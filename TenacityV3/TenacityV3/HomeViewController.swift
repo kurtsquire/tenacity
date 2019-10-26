@@ -10,9 +10,7 @@
 import Charts
 import RealmSwift
 
-//let expFocus = [25.80, 23.00, 30.70, 20.00, 20.45, 30.00]
-//let expFlow = [22.80, 8.30, 12.68, 11.45, 30.00, 19.70]
-//let expLotus = [27.80, 17.30, 20.68, 17.45, 23.00, 30.70]
+
 let weekDays = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."]
 
 
@@ -33,9 +31,9 @@ var lotusGraphEndAngle = CGFloat(0)
 let lotusGraphOutColor = UIColor(red: 0.21, green: 0.15, blue: 0.18, alpha: 1.0).cgColor
 let lotusGraphProgColor = UIColor(red: 0.84, green: 0.22, blue: 0.53, alpha: 1.0).cgColor
 
-var breatheFGoalTime = 30.0
-var breatheIGoalTime = 20.0
-var lotusGoalTime = 20.0
+
+
+var currentGame = "breatheFocus"
 
 class HomeViewController: PhoneViewController {
     
@@ -71,6 +69,10 @@ class HomeViewController: PhoneViewController {
     
     
     // --------------------------- GOALS OUTLETS -----------------------------
+    var breatheFGoalTime = 30.0
+    var breatheIGoalTime = 20.0
+    var lotusGoalTime = 20.0
+    
     @IBAction func goalsHelpButton(_ sender: Any) {
     }
     @IBOutlet weak var breatheFocusLabel: UILabel!
@@ -81,6 +83,15 @@ class HomeViewController: PhoneViewController {
     @IBOutlet weak var breatheIMinuteGoalButton: UIButton!
     @IBOutlet weak var lotusMinuteGoalButton: UIButton!
     
+    @IBAction func breatheFGoalButtonPressed(_ sender: Any) {
+        currentGame = "breatheFocus"
+    }
+    @IBAction func breatheIGoalButtonPressed(_ sender: Any) {
+        currentGame = "breatheInfinite"
+    }
+    @IBAction func lotusGoalButtonPressed(_ sender: Any) {
+        currentGame = "lotus"
+    }
     // Achievements
 //    @IBOutlet weak var badge1: UIButton!
 //    @IBOutlet weak var badge2: UIButton!
@@ -471,22 +482,22 @@ class HomeViewController: PhoneViewController {
         }
         
         DispatchQueue.main.async {
-            self.breatheFMinuteGoalButton.setTitle(String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins", for: .normal)
-            self.breatheIMinuteGoalButton.setTitle(String(Int(breatheITimeToday/60)) + "/" + String(Int(breatheIGoalTime)) + "mins", for: .normal)
+            self.breatheFMinuteGoalButton.setTitle(String(Int(breatheFTimeToday/60)) + "/" + String(Int(self.breatheFGoalTime)) + "mins", for: .normal)
+            self.breatheIMinuteGoalButton.setTitle(String(Int(breatheITimeToday/60)) + "/" + String(Int(self.breatheIGoalTime)) + "mins", for: .normal)
             self.lotusMinuteGoalButton
-                .setTitle(String(Int(lotusTimeToday/60)) + "/" + String(Int(lotusGoalTime)) + "mins", for: .normal)
+                .setTitle(String(Int(lotusTimeToday/60)) + "/" + String(Int(self.lotusGoalTime)) + "mins", for: .normal)
             
-            breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
+            breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/self.breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
                 breatheFGraphEndAngle = 0.01
             }
             
-            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/breatheIGoalTime)
+            breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/self.breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){
                 breatheIGraphEndAngle = 0.01
             }
             
-            lotusGraphEndAngle = CGFloat((lotusTimeToday/60)/lotusGoalTime)
+            lotusGraphEndAngle = CGFloat((lotusTimeToday/60)/self.lotusGoalTime)
             if (lotusGraphEndAngle == 0){
                 lotusGraphEndAngle = 0.01
             }
@@ -557,6 +568,11 @@ class HomeViewController: PhoneViewController {
         else{
             rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1] + " shadow")
         }
+        
+        // get goal times
+        breatheFGoalTime = Double(defaults.integer(forKey: "breatheFGoalTime"))
+        breatheIGoalTime = Double(defaults.integer(forKey: "breatheIGoalTime"))
+        lotusGoalTime = Double(defaults.integer(forKey: "lotusGoalTime"))
         
     }
     

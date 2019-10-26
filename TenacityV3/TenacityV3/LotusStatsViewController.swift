@@ -21,6 +21,8 @@ class LotusStatsViewController: PhoneViewController{
     @IBOutlet weak var timePlayedLineChart: LineChartView!
     @IBOutlet weak var totalRoundsLineChart: LineChartView!
     
+    var lotusGoalTime = 0.0
+    
     lazy var lotusGraphCenter = lotusSwipeLabel.center
     
     // ------------------------- TIME ----------------------------------
@@ -39,6 +41,7 @@ class LotusStatsViewController: PhoneViewController{
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
         refreshRealmData()
+        testUserDefaults()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -60,6 +63,7 @@ class LotusStatsViewController: PhoneViewController{
         weekStartTime = calendar.date(from: weekComponents)!
         
         refreshRealmData()
+        testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
         
@@ -224,10 +228,10 @@ class LotusStatsViewController: PhoneViewController{
         ]
         
         let timePlayed = [
-            0 : (gameName: "Time Played", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: breatheIGoalTime)
+            0 : (gameName: "Time Played", gameData: lotusTimePlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime)
         ]
         let roundsPlayed = [
-            0 : (gameName: "Rounds Played", gameData: lotusRoundsPlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: breatheIGoalTime)
+            0 : (gameName: "Rounds Played", gameData: lotusRoundsPlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime)
         ]
         
         print("foo")
@@ -249,9 +253,9 @@ class LotusStatsViewController: PhoneViewController{
         //        ]
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + " mins"
-            //            self.timePlayedLabel.text = "Week: " + String(lotusTimeWeek) + "\nToday: " + String(lotusTimeToday)
-            //            self.roundsPlayedLabel.text = "Week:\n" + String(lotusRoundsWeek) + "\nToday:\n" + String(lotusRoundsToday)
+            
+            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(self.lotusGoalTime)) + "mins"
+
             var a = ""
                         for i in 0..<lotusArrayToday.count{
                             a += String(i) + " wrong: " + String(lotusArrayToday[i]) + "\n"
@@ -263,6 +267,11 @@ class LotusStatsViewController: PhoneViewController{
             self.mainView.layer.addSublayer(lotusCircleGraph.progressLayer)
         }
         
+    }
+    
+    override func testUserDefaults() {
+        // get goal times
+        lotusGoalTime = Double(UserDefaults.standard.integer(forKey: "lotusGoalTime"))
     }
     
 }

@@ -24,6 +24,8 @@ class BreatheFocusStatsViewController: PhoneViewController{
     @IBOutlet weak var avgBreathsLineChart: LineChartView!
     @IBOutlet weak var setsPlayedLineChart: LineChartView!
     
+    var breatheFGoalTime = 0.0
+    
     lazy var breatheFGraphCenter = breatheFocusLabel.center
     
     // ------------------------- TIME ----------------------------------
@@ -43,6 +45,7 @@ class BreatheFocusStatsViewController: PhoneViewController{
         navigationController?.setNavigationBarHidden(true, animated: false)
         print("viewwillappear")
         refreshRealmData()
+        testUserDefaults()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -64,6 +67,9 @@ class BreatheFocusStatsViewController: PhoneViewController{
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
+        
+        refreshRealmData()
+        testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
         
@@ -394,10 +400,10 @@ class BreatheFocusStatsViewController: PhoneViewController{
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(breatheFGoalTime)) + "mins"
+            self.minuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(self.breatheFGoalTime)) + "mins"
             
             
-            breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/breatheFGoalTime)
+            breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/self.breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
                 breatheFGraphEndAngle = 0.01
             }
@@ -405,6 +411,12 @@ class BreatheFocusStatsViewController: PhoneViewController{
             self.mainView.layer.addSublayer(breatheFCircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(breatheFCircleGraph.progressLayer)
         }
+    }
+    
+    override func testUserDefaults() {
+        // get goal times
+        breatheFGoalTime = Double(UserDefaults.standard.integer(forKey: "breatheFGoalTime"))
+        
     }
     
 }

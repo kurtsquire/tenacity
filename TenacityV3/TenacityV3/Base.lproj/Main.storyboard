@@ -251,6 +251,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="bf goal"/>
                                                 <connections>
+                                                    <action selector="breatheFGoalButtonPressed:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="n4G-CZ-IdO"/>
                                                     <segue destination="py0-M2-d6j" kind="show" id="big-5s-nAN"/>
                                                 </connections>
                                             </button>
@@ -260,6 +261,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="l goal"/>
                                                 <connections>
+                                                    <action selector="lotusGoalButtonPressed:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="WrR-gq-46o"/>
                                                     <segue destination="py0-M2-d6j" kind="show" id="djJ-5v-OoD"/>
                                                 </connections>
                                             </button>
@@ -269,6 +271,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="bi goal"/>
                                                 <connections>
+                                                    <action selector="breatheIGoalButtonPressed:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="5bi-Rb-MmB"/>
                                                     <segue destination="py0-M2-d6j" kind="show" id="fuW-cW-Zbo"/>
                                                 </connections>
                                             </button>
@@ -3017,13 +3020,13 @@ Press ? for more info.</string>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="vHX-qF-n8j">
-                                                <rect key="frame" x="46.999999999999986" y="63" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="63" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge 2" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-1F-td3">
-                                                <rect key="frame" x="46.999999999999986" y="175" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="175" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge3" translatesAutoresizingMaskIntoConstraints="NO" id="FS9-Ef-7Gc">
-                                                <rect key="frame" x="46.999999999999986" y="287" width="192.00000000000003" height="104.00000000000003"/>
+                                                <rect key="frame" x="47" y="287" width="192" height="104"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="HRU-Kb-H33">
                                                 <rect key="frame" x="289" y="92" width="46" height="46"/>

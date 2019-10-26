@@ -162,6 +162,6 @@ class PhoneScheduler: PhoneViewController {
         let defaults = UserDefaults.standard
         dateString = defaults.string(forKey: "dateString" + String(editingNudge)) ?? "No Current Nudge"
     }
-    
+
 }
 

@@ -18,6 +18,7 @@
 		1397AFAE234C103000D5073F /* PetInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397AFAD234C103000D5073F /* PetInteractionController.swift */; };
 		13A3918F23175B4D00809895 /* Companions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3918E23175B4C00809895 /* Companions.swift */; };
 		13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */; };
+		13A9A9A823624FFA006A4A11 /* GoalSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A9A9A723624FFA006A4A11 /* GoalSetter.swift */; };
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
@@ -113,6 +114,7 @@
 		1397AFAD234C103000D5073F /* PetInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInteractionController.swift; sourceTree = "<group>"; };
 		13A3918E23175B4C00809895 /* Companions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companions.swift; sourceTree = "<group>"; };
 		13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalSetter.storyboard; sourceTree = "<group>"; };
+		13A9A9A723624FFA006A4A11 /* GoalSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSetter.swift; sourceTree = "<group>"; };
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		1BE544A022C2995500620EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
 				13544EAD231A076F00B2D2AB /* NudgesViewController.swift */,
 				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
+				13A9A9A723624FFA006A4A11 /* GoalSetter.swift */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
 				42EEE00922F1056300BE02DC /* CompanionsViewController.swift */,
 				42EEE00B22F1058100BE02DC /* GameSettingsViewController.swift */,
@@ -553,6 +556,7 @@
 				13A3918F23175B4D00809895 /* Companions.swift in Sources */,
 				1391C017230F365E00416516 /* Quotes.swift in Sources */,
 				4220938622EBC5B20082834C /* HomeViewController.swift in Sources */,
+				13A9A9A823624FFA006A4A11 /* GoalSetter.swift in Sources */,
 				133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */,
 				42EEE00A22F1056300BE02DC /* CompanionsViewController.swift in Sources */,
 				42B7585E22EA92570023B7A7 /* PageController.swift in Sources */,
