@@ -29,7 +29,6 @@
 		42398AB622938159009CA96E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42398AB522938159009CA96E /* ViewController.swift */; };
 		42398AB922938159009CA96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AB722938159009CA96E /* Main.storyboard */; };
 		42398ABB2293815A009CA96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42398ABA2293815A009CA96E /* Assets.xcassets */; };
-		42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398ABC2293815A009CA96E /* LaunchScreen.storyboard */; };
 		42398AC32293815A009CA96E /* TenacityV3 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */; };
 		42398AC92293815A009CA96E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42398AC72293815A009CA96E /* Interface.storyboard */; };
 		42398ACB2293815B009CA96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42398ACA2293815B009CA96E /* Assets.xcassets */; };
@@ -126,7 +125,6 @@
 		42398AB522938159009CA96E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42398AB822938159009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42398ABA2293815A009CA96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42398ABD2293815A009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42398ABF2293815A009CA96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42398AC22293815A009CA96E /* TenacityV3 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TenacityV3 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42398AC82293815A009CA96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 				42EEE01122F105DB00BE02DC /* LotusStatsViewController.swift */,
 				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
 				42398ABA2293815A009CA96E /* Assets.xcassets */,
-				42398ABC2293815A009CA96E /* LaunchScreen.storyboard */,
 				42B7585D22EA92570023B7A7 /* PageController.swift */,
 				13201FF52319AECA00BF3A01 /* LineChart.swift */,
 				133DA76622FA101C000614A8 /* CircleChart.swift */,
@@ -419,7 +416,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13544EAC231A061300B2D2AB /* Nudges.storyboard in Resources */,
-				42398ABE2293815A009CA96E /* LaunchScreen.storyboard in Resources */,
 				1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */,
 				4251742022F0D68600A11551 /* Help.storyboard in Resources */,
 				13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */,
@@ -606,14 +602,6 @@
 				42398AB822938159009CA96E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42398ABC2293815A009CA96E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42398ABD2293815A009CA96E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		42398AC72293815A009CA96E /* Interface.storyboard */ = {

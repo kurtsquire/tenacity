@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class GoalSetter: PhoneViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var breatheFGoalTime = 0.0
@@ -34,6 +33,7 @@ class GoalSetter: PhoneViewController, UIPickerViewDelegate, UIPickerViewDataSou
         testUserDefaults()
         //goalPicker.reloadAllComponents()
         updateTemp()
+        
     }
         
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,14 +99,26 @@ class GoalSetter: PhoneViewController, UIPickerViewDelegate, UIPickerViewDataSou
         if currentGame == "breatheFocus"{
             tempString = "Breathe Focus Goal: "
             goalLabel.text = tempString + String(Int(breatheFGoalTime))
+            
+            //changes the selection to be current goal
+            let r = Int(breatheFGoalTime) - 10
+            goalPicker.selectRow(r, inComponent: 0, animated: true)
         }
         else if currentGame == "breatheInfinite"{
             tempString = "Breathe Infinite Goal: "
             goalLabel.text = tempString + String(Int(breatheIGoalTime))
+            
+            //changes the selection to be current goal
+            let r = Int(breatheIGoalTime) - 10
+            goalPicker.selectRow(r, inComponent: 0, animated: true)
         }
         else if currentGame == "lotus"{
             tempString = "Lotus Goal: "
             goalLabel.text = tempString + String(Int(lotusGoalTime))
+            
+            //changes the selection to be current goal
+            let r = Int(lotusGoalTime) - 10
+            goalPicker.selectRow(r, inComponent: 0, animated: true)
         }
     }
     
