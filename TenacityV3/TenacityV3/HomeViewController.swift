@@ -582,10 +582,10 @@ class HomeViewController: PhoneViewController {
         if (num <= 60){//Breathe Focus Quests
             let num2 = Int.random(in: 1 ... 3) // no longer want quest 4
             if (num2 == 1){//BF: Spend x minutes at rate y
-                let x = Int.random(in: 5 ... 15) // 5-15
-                let y = Int.random(in: 3 ... 8) // 3-8
+                let x = Int.random(in: 4 ... 12) // 5-15
+                let y = Int.random(in: 3 ... 7) // 3-8
                 dailyQuestData["questType"] = "breathe focus"
-                dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes with rate set to " + String(y) + "."
+                dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes with rate set to " + String(y) + " in one session."
                 dailyQuestData["timeStart"] = startTime
                 dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = questRewardGenerator()
@@ -599,9 +599,9 @@ class HomeViewController: PhoneViewController {
                 buildQuest()
             }
             else if (num2 == 2){//BF: Spend x time playing
-                let x = Int.random(in: 10 ... 30)
+                let x = Int.random(in: 6 ... 15)
                 dailyQuestData["questType"] = "breathe focus"
-                dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes."
+                dailyQuestData["questString"] = "Breathe Focus\nPlay for " + String(x) + " minutes in one session."
                 dailyQuestData["timeStart"] = startTime
                 dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = questRewardGenerator()
@@ -615,8 +615,8 @@ class HomeViewController: PhoneViewController {
                 buildQuest()
             }
             else if (num2 == 3){//BF: Play x games that last at least y minutes
-                let x = Int.random(in: 2 ... 5)
-                let y = Int.random(in: 3 ... 6)
+                let x = Int.random(in: 2 ... 4)
+                let y = Int.random(in: 2 ... 4)
                 dailyQuestData["questType"] = "breathe focus"
                 dailyQuestData["questString"] = "Breathe Focus\nPlay " + String(x) + " games that last at least " + String(y) + " minutes."
                 dailyQuestData["timeStart"] = startTime
@@ -647,7 +647,7 @@ class HomeViewController: PhoneViewController {
 //            }
         }
         else if (num <= 75){//BI: Play for x minutes and complete y cycles of rate z
-            let x = Int.random(in: 5 ... 15)
+            let x = Int.random(in: 5 ... 10)
             let y = Int.random(in: 3 ... 10)
             let z = Int.random(in: 3 ... 8)
             dailyQuestData["questType"] = "breathe infinite"
@@ -664,12 +664,12 @@ class HomeViewController: PhoneViewController {
             buildQuest()
         }
         else if (num <= 90){//Lotus Quests
-            let num2 = Int.random(in: 1 ... 2)//No longer want Quest 2
+            let num2 = Int.random(in: 1 ... 2)
             if (num2 == 1){//L: Play x rounds
-                var x = Int.random(in: 4 ... 8)
+                var x = Int.random(in: 5 ... 20)
                 x *= 5
                 dailyQuestData["questType"] = "lotus"
-                dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " rounds."
+                dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " rounds in one session."
                 dailyQuestData["timeStart"] = startTime
                 dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = questRewardGenerator()
@@ -698,9 +698,9 @@ class HomeViewController: PhoneViewController {
 //                buildQuest()
 //            }
             else if (num2 == 2){//L: Play x games
-                let x = Int.random(in: 2 ... 5)
+                let x = Int.random(in: 2 ... 3)
                 dailyQuestData["questType"] = "lotus"
-                dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " games."
+                dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " sessions."
                 dailyQuestData["timeStart"] = startTime
                 dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
                 dailyQuestData["reward"] = questRewardGenerator()
@@ -714,9 +714,9 @@ class HomeViewController: PhoneViewController {
             }
         }
         else{//PA: Play each game for x minutes
-            let x = Int.random(in: 2 ... 5)
+            let x = Int.random(in: 2 ... 4)
             dailyQuestData["questType"] = "play all"
-            dailyQuestData["questString"] = "Play All\nPlay each game for " + String(x) + " minutes."
+            dailyQuestData["questString"] = "Play All\nPlay each game for " + String(x) + " minutes in one session each."
             dailyQuestData["timeStart"] = startTime
             dailyQuestData["timeEnd"] = calendar.date(byAdding: .day, value: 1, to: startTime)
             dailyQuestData["reward"] = questRewardGenerator()
