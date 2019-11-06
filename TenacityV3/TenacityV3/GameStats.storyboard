@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="1801" y="1195"/>
         </scene>
-        <!--Game Screens-->
+        <!--GameStats-->
         <scene sceneID="u27-V8-v9A">
             <objects>
-                <pageViewController storyboardIdentifier="Main" autoresizesArchivedViewToFullSize="NO" title="Game Screens" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="W29-Ig-vSs" customClass="PageViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="GameStats" autoresizesArchivedViewToFullSize="NO" title="GameStats" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="W29-Ig-vSs" customClass="PageViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Stats" image="Tab_GameStats" selectedImage="Tab_GameStats" id="tHF-vD-tSM"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owa-Rr-pJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
