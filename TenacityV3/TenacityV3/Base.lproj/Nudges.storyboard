@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reminder-->
+        <scene sceneID="bFT-Gx-hP2">
+            <objects>
+                <viewController storyboardIdentifier="Reminder" title="Reminder" id="8vJ-3k-jMH" customClass="PhoneScheduler" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SuF-ey-jdp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
+                                <rect key="frame" x="55" y="88" width="265" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
+                                <rect key="frame" x="27" y="126" width="320" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
+                                    <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
+                                <rect key="frame" x="55" y="300" width="265" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-yg-Chw">
+                                <rect key="frame" x="72" y="400" width="230" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Delete This Nudge"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="UHN-10-F3r" userLabel="Reminder"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="6Hs-y8-qak" id="i2m-Ow-qfh"/>
+                        <outlet property="datePicker" destination="Zhs-RP-H4P" id="ccx-ZJ-D0o"/>
+                        <outlet property="saveButton" destination="NZt-db-Zsr" id="m7n-OZ-WYR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyE-gz-MnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T6Q-Oq-eJ4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4608.8000000000002" y="115.59220389805098"/>
+        </scene>
+        <!--Nudges-->
+        <scene sceneID="x7V-6R-C1J">
+            <objects>
+                <viewController storyboardIdentifier="Nudges" title="Nudges" id="8wf-WF-IWz" customClass="NudgesViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UK4-ud-q7X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-6h-aiO">
+                                <rect key="frame" x="97" y="26" width="180" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="UXb-y7-eca" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="77" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJu-kf-d99" userLabel="Game Settings Help Button">
+                                <rect key="frame" x="329" y="29" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="help"/>
+                                <connections>
+                                    <segue destination="UK1-rh-KPF" kind="show" id="PJF-cJ-Sif"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N67-nC-jan">
+                                <rect key="frame" x="27" y="91" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Olm-YK-Xfc"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="SrC-1d-NQt"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-VY-vjE" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="147" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM6-jg-9Hf">
+                                <rect key="frame" x="27" y="161" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dkf-Jm-qBX"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="gK8-CG-qms"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="SP5-I6-cW8" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="217" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMZ-iG-dva">
+                                <rect key="frame" x="27" y="231" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dge-by-nbq"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="qbQ-a6-Vfk"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="uay-Zq-z85" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="287" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-eW-5Zz">
+                                <rect key="frame" x="27" y="301" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="60N-un-aXk"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="XXj-9S-jat"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-DL-DBG" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="357" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e3-FT-2x1">
+                                <rect key="frame" x="27" y="371" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 4">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="kz1-be-bTF"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="0aW-N6-SMc"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="CLJ-RB-6ZM" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="427" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-s1-CZ5" userLabel="Pet_Line_top">
+                                <rect key="frame" x="5" y="497" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-Q8-2ea">
+                                <rect key="frame" x="27" y="441" width="320" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nudge 5">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="YtN-Yv-ROT"/>
+                                    <segue destination="8vJ-3k-jMH" kind="show" id="pbp-Yx-bRu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="UmJ-5a-l7O"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="HGM-8l-0eY"/>
+                    <connections>
+                        <outletCollection property="nudgeButtons" destination="N67-nC-jan" collectionClass="NSMutableArray" id="b9T-Hw-7iT"/>
+                        <outletCollection property="nudgeButtons" destination="UM6-jg-9Hf" collectionClass="NSMutableArray" id="7uc-WQ-DT8"/>
+                        <outletCollection property="nudgeButtons" destination="MMZ-iG-dva" collectionClass="NSMutableArray" id="USA-0c-Eko"/>
+                        <outletCollection property="nudgeButtons" destination="mbA-eW-5Zz" collectionClass="NSMutableArray" id="S2F-ga-eEn"/>
+                        <outletCollection property="nudgeButtons" destination="0e3-FT-2x1" collectionClass="NSMutableArray" id="iqe-38-d1K"/>
+                        <outletCollection property="nudgeButtons" destination="Qcw-Q8-2ea" collectionClass="NSMutableArray" id="BZH-eN-agj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ph-DR-abh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4608.8000000000002" y="-582.45877061469275"/>
+        </scene>
+        <!--Nudges Help-->
+        <scene sceneID="PDq-vc-taL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Nudges Help" id="UK1-rh-KPF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSd-Th-ZEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5182" y="-982"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Tab_Reminders" width="28" height="28"/>
+        <image name="help" width="150" height="150"/>
+        <image name="line" width="10000" height="60"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qbQ-a6-Vfk"/>
+    </inferredMetricsTieBreakers>
+</document>

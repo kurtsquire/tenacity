@@ -10,8 +10,9 @@
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
-		13544EAC231A061300B2D2AB /* Nudges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13544EAB231A061300B2D2AB /* Nudges.storyboard */; };
 		13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13544EAD231A076F00B2D2AB /* NudgesViewController.swift */; };
+		13751C86237245510014BAD0 /* Nudges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13751C84237245510014BAD0 /* Nudges.storyboard */; };
+		13751C8823724B900014BAD0 /* GameStats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13751C8723724B900014BAD0 /* GameStats.storyboard */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
 		1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFAB234C044300D5073F /* PetInteraction.storyboard */; };
@@ -105,8 +106,9 @@
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
-		13544EAB231A061300B2D2AB /* Nudges.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nudges.storyboard; sourceTree = "<group>"; };
 		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
+		13751C85237245510014BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Nudges.storyboard; sourceTree = "<group>"; };
+		13751C8723724B900014BAD0 /* GameStats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameStats.storyboard; sourceTree = SOURCE_ROOT; };
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		1391C016230F365E00416516 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		1397AFAB234C044300D5073F /* PetInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetInteraction.storyboard; sourceTree = "<group>"; };
@@ -232,29 +234,30 @@
 				1391C016230F365E00416516 /* Quotes.swift */,
 				421307A822DFCBB90007C445 /* Quests.swift */,
 				13A3918E23175B4C00809895 /* Companions.swift */,
-				421B843C22EFB01E008839C5 /* Pet.swift */,
-				42398AB722938159009CA96E /* Main.storyboard */,
-				4251741F22F0D68600A11551 /* Help.storyboard */,
-				13544EAB231A061300B2D2AB /* Nudges.storyboard */,
-				13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */,
+				133DA76622FA101C000614A8 /* CircleChart.swift */,
+				13201FF52319AECA00BF3A01 /* LineChart.swift */,
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
-				13544EAD231A076F00B2D2AB /* NudgesViewController.swift */,
-				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
-				13A9A9A723624FFA006A4A11 /* GoalSetter.swift */,
+				42398AB722938159009CA96E /* Main.storyboard */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
+				4251741F22F0D68600A11551 /* Help.storyboard */,
+				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
+				13A9A9A5236111E7006A4A11 /* GoalSetter.storyboard */,
+				13A9A9A723624FFA006A4A11 /* GoalSetter.swift */,
+				13751C84237245510014BAD0 /* Nudges.storyboard */,
+				13544EAD231A076F00B2D2AB /* NudgesViewController.swift */,
+				13751C8723724B900014BAD0 /* GameStats.storyboard */,
+				42B7585D22EA92570023B7A7 /* PageController.swift */,
+				42711E9A22AF33F400AAABDB /* PhoneScheduler.swift */,
 				42EEE00922F1056300BE02DC /* CompanionsViewController.swift */,
 				42EEE00B22F1058100BE02DC /* GameSettingsViewController.swift */,
 				42EEE00D22F105AB00BE02DC /* BreatheFocusStatsViewController.swift */,
 				42EEE00F22F105C300BE02DC /* BreatheInfiniteStatsViewController.swift */,
 				42EEE01122F105DB00BE02DC /* LotusStatsViewController.swift */,
-				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
 				42398ABA2293815A009CA96E /* Assets.xcassets */,
-				42B7585D22EA92570023B7A7 /* PageController.swift */,
-				13201FF52319AECA00BF3A01 /* LineChart.swift */,
-				133DA76622FA101C000614A8 /* CircleChart.swift */,
-				1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */,
 				1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */,
 				42398AB522938159009CA96E /* ViewController.swift */,
+				421B843C22EFB01E008839C5 /* Pet.swift */,
+				1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */,
 				42398ABF2293815A009CA96E /* Info.plist */,
 				1BE544A022C2995500620EC9 /* GoogleService-Info.plist */,
 			);
@@ -415,9 +418,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13544EAC231A061300B2D2AB /* Nudges.storyboard in Resources */,
+				13751C86237245510014BAD0 /* Nudges.storyboard in Resources */,
 				1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */,
 				4251742022F0D68600A11551 /* Help.storyboard in Resources */,
+				13751C8823724B900014BAD0 /* GameStats.storyboard in Resources */,
 				13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */,
 				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
 				42398AB922938159009CA96E /* Main.storyboard in Resources */,
@@ -596,6 +600,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		13751C84237245510014BAD0 /* Nudges.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13751C85237245510014BAD0 /* Base */,
+			);
+			name = Nudges.storyboard;
+			sourceTree = "<group>";
+		};
 		42398AB722938159009CA96E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
