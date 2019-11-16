@@ -24,6 +24,7 @@ var breatheColor = 0
 var resetColor: UIColor = UIColor(red: 0.96, green: 0.945, blue: 0.35, alpha: 1.0)
 
 class BreatheController: WatchViewController{
+
     
     let startRelativeHeight = 0.5
     let startRelativeWidth = 0.5
@@ -159,6 +160,7 @@ class BreatheController: WatchViewController{
         else if ((context as? String) == "start"){
             updateTheme()
             self.image.setTintColor(resetColor)
+            var isAutorotating: Bool = true
         }
         else if ((context as? String) == "from Menu"){
             
@@ -203,8 +205,6 @@ class BreatheController: WatchViewController{
             
             //sends data
             sendData(what: "end game", correct: "N/A", cycleSettings: FullCycle, timeSettings: sessionTime, timePlayed : time, avgBreathLength : averageFullBreatheTime, totalSets : cycleTotal, correctSets : correctCyclesTotal)
-            
-            
         }
         
     }

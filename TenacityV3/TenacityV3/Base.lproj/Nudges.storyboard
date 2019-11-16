@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="UHN-10-F3r" userLabel="Reminder"/>
+                    <navigationItem key="navigationItem" id="bKL-zc-urd"/>
                     <connections>
                         <outlet property="dateLabel" destination="6Hs-y8-qak" id="i2m-Ow-qfh"/>
                         <outlet property="datePicker" destination="Zhs-RP-H4P" id="ccx-ZJ-D0o"/>
@@ -210,7 +211,9 @@
         <!--Nudges Help-->
         <scene sceneID="PDq-vc-taL">
             <objects>
-                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Nudges Help" id="UK1-rh-KPF" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Nudges Help" id="UK1-rh-KPF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QA7-TF-SUa"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSd-Th-ZEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5182" y="-982"/>
@@ -222,6 +225,6 @@
         <image name="line" width="10000" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qbQ-a6-Vfk"/>
+        <segue reference="SrC-1d-NQt"/>
     </inferredMetricsTieBreakers>
 </document>

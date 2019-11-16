@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -362,6 +362,21 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 <rect key="frame" x="5" y="514" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp3-df-d3r">
+                                <rect key="frame" x="16" y="528" width="343" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Tutorial">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kFm-an-Fjp" kind="show" id="s6y-kl-TUg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="30i-0L-OxH" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="597" width="365" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="auH-G7-S2J"/>
@@ -380,7 +395,7 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-AZ-b7G">
-                                <rect key="frame" x="16" y="58" width="343" height="590"/>
+                                <rect key="frame" x="16" y="79" width="343" height="569"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
 
@@ -547,7 +562,7 @@ Tip: Play fast-paced to train reaction and memory speed. Slow it down like in Br
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kko-b3-l72" firstAttribute="trailing" secondItem="EfP-Vk-ren" secondAttribute="trailing" id="1nU-tY-BTv"/>
                             <constraint firstItem="Kko-b3-l72" firstAttribute="leading" secondItem="EfP-Vk-ren" secondAttribute="leading" id="B4t-nA-d5K"/>
@@ -651,7 +666,7 @@ Attention: If you incorrectly swipe before the 5th breath, or tap instead of swi
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kqe-9C-jCw" firstAttribute="leading" secondItem="YGg-zM-bt6" secondAttribute="leading" id="Dqy-cJ-KK1"/>
                             <constraint firstItem="Kqe-9C-jCw" firstAttribute="bottom" secondItem="YGg-zM-bt6" secondAttribute="bottom" id="Ftf-vp-dIX"/>
@@ -665,6 +680,84 @@ Attention: If you incorrectly swipe before the 5th breath, or tap instead of swi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysY-Jd-QtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4757.6000000000004" y="996.7016491754124"/>
+        </scene>
+        <!--Tutorial 1-->
+        <scene sceneID="eUf-Z5-Giu">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial 1" title="Tutorial 1" id="kFm-an-Fjp" customClass="TutorialViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cif-Fz-TRK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2Z-dW-Nxl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="960"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDg-lI-Bx4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello, Welcome to Tenacity." lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-cb-WcX">
+                                                <rect key="frame" x="16" y="8" width="343" height="402"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILy-6G-uii">
+                                                <rect key="frame" x="172" y="418" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="next"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a2-kK-mTM">
+                                                <rect key="frame" x="268" y="418" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="end"/>
+                                                <connections>
+                                                    <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="CSr-aQ-oU7"/>
+                                                    <segue destination="cJQ-pB-vWA" kind="show" id="ajQ-pM-fn8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="900" id="wz2-Ts-64O"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kDg-lI-Bx4" secondAttribute="trailing" id="2yd-5Z-7gO"/>
+                                    <constraint firstItem="kDg-lI-Bx4" firstAttribute="centerX" secondItem="g2Z-dW-Nxl" secondAttribute="centerX" id="Ojj-vR-U9R"/>
+                                    <constraint firstAttribute="bottom" secondItem="kDg-lI-Bx4" secondAttribute="bottom" id="a2f-b4-zM2"/>
+                                    <constraint firstItem="kDg-lI-Bx4" firstAttribute="leading" secondItem="g2Z-dW-Nxl" secondAttribute="leading" id="hTu-d2-wJ9"/>
+                                    <constraint firstItem="kDg-lI-Bx4" firstAttribute="top" secondItem="g2Z-dW-Nxl" secondAttribute="top" id="o0i-Lq-kEh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g2Z-dW-Nxl" firstAttribute="top" secondItem="cif-Fz-TRK" secondAttribute="top" constant="20" id="2P2-MD-5Xy"/>
+                            <constraint firstItem="g2Z-dW-Nxl" firstAttribute="bottom" secondItem="SVG-3e-oN8" secondAttribute="bottom" id="7u2-PF-UIk"/>
+                            <constraint firstItem="g2Z-dW-Nxl" firstAttribute="leading" secondItem="SVG-3e-oN8" secondAttribute="leading" id="FKH-jN-tBC"/>
+                            <constraint firstItem="g2Z-dW-Nxl" firstAttribute="trailing" secondItem="SVG-3e-oN8" secondAttribute="trailing" id="duv-fF-r2X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SVG-3e-oN8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WTU-vZ-BV6"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNR-ww-20u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wRH-zc-ZIE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="1932"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="AwS-OC-8MU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Main Menu" id="cJQ-pB-vWA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x8k-du-uY9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijX-xt-dIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282" y="1931"/>
         </scene>
     </scenes>
     <resources>

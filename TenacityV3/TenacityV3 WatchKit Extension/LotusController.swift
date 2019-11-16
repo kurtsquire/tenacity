@@ -87,6 +87,7 @@ class LotusController: WatchViewController{
     
 
     @IBAction func swipeUpAction(_ sender: Any) {
+        print("up")
         checkDirection(direction: "up")
     }
     @IBAction func swipeRightAction(_ sender: Any) {
@@ -416,6 +417,8 @@ class LotusController: WatchViewController{
         if session.activationState == .activated{
             let timestamp = NSDate().timeIntervalSince1970
             let date = Date()
+            print(timestamp)
+            print(Date())
             let data = ["game": game,
                         "what": what,
                         "correct": correct,

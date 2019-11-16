@@ -571,8 +571,20 @@ class HomeViewController: PhoneViewController {
         
         // get goal times
         breatheFGoalTime = Double(defaults.integer(forKey: "breatheFGoalTime"))
+        if breatheFGoalTime == 0{
+            breatheFGoalTime = 10
+            defaults.set(10, forKey: "breatheFGoalTime")
+        }
         breatheIGoalTime = Double(defaults.integer(forKey: "breatheIGoalTime"))
+        if breatheIGoalTime == 0{
+            breatheIGoalTime = 10
+            defaults.set(10, forKey: "breatheIGoalTime")
+        }
         lotusGoalTime = Double(defaults.integer(forKey: "lotusGoalTime"))
+        if lotusGoalTime == 0{
+            lotusGoalTime = 10
+            defaults.set(10, forKey: "lotusGoalTime")
+        }
         
     }
     

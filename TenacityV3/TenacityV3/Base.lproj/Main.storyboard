@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWz-DJ-dGq">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,10 +55,10 @@
                 <viewController storyboardIdentifier="Main Menu" title="MainMenu" id="MB6-BM-Ikv" customClass="HomeViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4C4-TH-ncK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-Fb-zrn">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1631"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1607"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-XE-ZPP">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1531"/>
@@ -239,7 +239,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyl-zR-LGh" userLabel="Settings Button">
                                                 <rect key="frame" x="338" y="36" width="29" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="gear"/>
+                                                <state key="normal" image="gear_ui"/>
                                                 <connections>
                                                     <action selector="settingsButton:" destination="MB6-BM-Ikv" eventType="touchUpInside" id="SbX-BS-1Jn"/>
                                                     <segue destination="qD4-nd-Jn9" kind="show" id="xi7-je-58G"/>
@@ -380,9 +380,9 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uDX-Fb-zrn" firstAttribute="top" secondItem="4C4-TH-ncK" secondAttribute="top" constant="20" id="7LO-PV-lgW"/>
+                            <constraint firstItem="uDX-Fb-zrn" firstAttribute="top" secondItem="uFX-1A-EaO" secondAttribute="top" id="7LO-PV-lgW"/>
                             <constraint firstItem="uDX-Fb-zrn" firstAttribute="leading" secondItem="uFX-1A-EaO" secondAttribute="leading" id="CKM-p2-e9e"/>
                             <constraint firstItem="uDX-Fb-zrn" firstAttribute="trailing" secondItem="uFX-1A-EaO" secondAttribute="trailing" id="t1Z-1W-zKX"/>
                             <constraint firstItem="uDX-Fb-zrn" firstAttribute="bottom" secondItem="uFX-1A-EaO" secondAttribute="bottom" id="x78-KK-GAG"/>
@@ -423,16 +423,6 @@
             </objects>
             <point key="canvasLocation" x="1196" y="115"/>
         </scene>
-        <!--Companions Help-->
-        <scene sceneID="pu4-px-ZKc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Companions Help" id="kYc-8h-8pD" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WG5-Bu-kGO"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oBa-ie-vdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1534" y="-1536"/>
-        </scene>
         <!--Instructions-->
         <scene sceneID="AWZ-r7-FHb">
             <objects>
@@ -452,16 +442,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d76-Lf-LE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1789" y="-590"/>
-        </scene>
-        <!--Game Upgrades Help-->
-        <scene sceneID="uCv-t0-r6M">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Help" referencedIdentifier="Game Upgrades Help" id="e0r-Hu-NOW" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="pfE-wu-NPC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J4Y-H2-ihw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3314" y="-1136"/>
         </scene>
         <!--Debug-->
         <scene sceneID="fp8-MJ-cuY">
@@ -688,7 +668,7 @@
         <image name="bay" width="501" height="501"/>
         <image name="expUnfill" width="500" height="93"/>
         <image name="fox" width="438" height="462"/>
-        <image name="gear" width="330" height="341"/>
+        <image name="gear_ui" width="330" height="341"/>
         <image name="help" width="150" height="150"/>
         <image name="line" width="10000" height="60"/>
         <image name="raz shadow" width="501" height="501"/>
