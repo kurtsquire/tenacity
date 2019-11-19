@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
 		13372933237F7EE800C83027 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13372932237F7EE800C83027 /* TutorialViewController.swift */; };
+		133729352383872000C83027 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133729342383872000C83027 /* Tutorial.storyboard */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
 		13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13544EAD231A076F00B2D2AB /* NudgesViewController.swift */; };
@@ -109,6 +110,7 @@
 /* Begin PBXFileReference section */
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		13372932237F7EE800C83027 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		133729342383872000C83027 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				4251741F22F0D68600A11551 /* Help.storyboard */,
+				133729342383872000C83027 /* Tutorial.storyboard */,
 				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
 				13372932237F7EE800C83027 /* TutorialViewController.swift */,
 			);
@@ -495,6 +498,7 @@
 				13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */,
 				13751C95237262810014BAD0 /* GameCosmetics.storyboard in Resources */,
 				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
+				133729352383872000C83027 /* Tutorial.storyboard in Resources */,
 				42398AB922938159009CA96E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
