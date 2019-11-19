@@ -28,7 +28,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xdO-ah-3zY">
             <objects>
-                <tabBarController id="ESo-Es-Xgt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tab Controller" id="ESo-Es-Xgt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="O10-wZ-HFH"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="mDM-I2-Dgv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

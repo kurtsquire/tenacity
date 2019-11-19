@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
-		13246E722374DB9B0095C0F2 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13246E712374DB9B0095C0F2 /* Tutorial.storyboard */; };
 		13372933237F7EE800C83027 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13372932237F7EE800C83027 /* TutorialViewController.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
@@ -109,7 +108,6 @@
 
 /* Begin PBXFileReference section */
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
-		13246E712374DB9B0095C0F2 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		13372932237F7EE800C83027 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 				42398AB322938159009CA96E /* AppDelegate.swift */,
 				133DA76A23049AF8000614A8 /* PhoneViewController.swift */,
 				42398AB722938159009CA96E /* Main.storyboard */,
-				13246E712374DB9B0095C0F2 /* Tutorial.storyboard */,
 				4220938522EBC5B20082834C /* HomeViewController.swift */,
 				13751CA1237265B60014BAD0 /* Utility */,
 				13751C9D237265220014BAD0 /* Companions */,
@@ -498,7 +495,6 @@
 				13A9A9A6236111E7006A4A11 /* GoalSetter.storyboard in Resources */,
 				13751C95237262810014BAD0 /* GameCosmetics.storyboard in Resources */,
 				42398ABB2293815A009CA96E /* Assets.xcassets in Resources */,
-				13246E722374DB9B0095C0F2 /* Tutorial.storyboard in Resources */,
 				42398AB922938159009CA96E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
