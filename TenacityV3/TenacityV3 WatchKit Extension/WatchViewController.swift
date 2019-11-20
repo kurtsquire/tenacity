@@ -96,7 +96,6 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        print(applicationContext.count)
         if applicationContext.count == 4{
             let breathePics = ["classic", "fire", "cloud", "diamond"]
             let lotusPics = ["lotus", "square", "heart", "circle"]

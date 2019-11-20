@@ -40,6 +40,7 @@ class HomeViewController: PhoneViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var homeLineGraph: LineChartView!
+    var tutorialCompleted = false
     
     
     // --------------------------- EXPERIENCE OUTLETS -----------------------------
@@ -165,7 +166,7 @@ class HomeViewController: PhoneViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // take out the graph
+        print("viewdiddisapear")
     }
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
@@ -198,6 +199,8 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
         
         print("viewdidload")
+        
+        
 
     }
     
@@ -249,6 +252,15 @@ class HomeViewController: PhoneViewController {
         }
         
         print("viewdidappear")
+        if !tutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Tutorial 1")
+            
+            self.navigationController?.pushViewController(newViewController, animated: true)
+            // pops up over the screen
+            //self.present(newViewController, animated: true, completion: nil)
+        }
+        
         
     }
     // ----------------------- UTILITY -------------------------------
@@ -534,6 +546,9 @@ class HomeViewController: PhoneViewController {
         
         // get owned pets
         petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
+        
+        // get tutorial completed or not
+        tutorialCompleted = defaults.bool(forKey: "tutorialCompleted")
 
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]

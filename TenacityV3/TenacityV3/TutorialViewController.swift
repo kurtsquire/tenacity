@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
-var tutorialCompleted = true
+
 class TutorialViewController: PhoneViewController{
+    
+    var tutorialCompleted = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -19,11 +21,10 @@ class TutorialViewController: PhoneViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // puts in top bar
+        testUserDefaults()
         if tutorialCompleted{
             navigationController?.setNavigationBarHidden(false, animated: false)
-            
         }
- 
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -36,9 +37,27 @@ class TutorialViewController: PhoneViewController{
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    override func testUserDefaults(){
+        let defaults = UserDefaults.standard
+        tutorialCompleted = defaults.bool(forKey: "tutorialCompleted")
+        print(tutorialCompleted)
+    }
+    
     @IBAction func tutorialEndButtonAction(_ sender: Any) {
-        tutorialCompleted = true
-        print("end tutorial")
+        //tutorialCompleted = true
+        //UserDefaults.standard.set(true, forKey: "tutorialCompleted")
+        //print("true")
         // save that tutorial is finished
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        tutorialCompleted = false
+        UserDefaults.standard.set(false, forKey: "tutorialCompleted")
+        
+    }
+    @IBAction func finish(_ sender: Any) {
+        tutorialCompleted = true
+        UserDefaults.standard.set(true, forKey: "tutorialCompleted")
+        
     }
 }

@@ -42,8 +42,24 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="end"/>
                                                 <connections>
-                                                    <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="CSr-aQ-oU7"/>
+                                                    <action selector="tutorialEndButtonAction:" destination="kFm-an-Fjp" eventType="touchUpInside" id="jUg-xJ-RcE"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="ajQ-pM-fn8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-ad-XeC">
+                                                <rect key="frame" x="70" y="418" width="52" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="undone"/>
+                                                <connections>
+                                                    <action selector="reset:" destination="kFm-an-Fjp" eventType="touchUpInside" id="Hk7-T3-Bku"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Niw-l7-Vsc">
+                                                <rect key="frame" x="79" y="380" width="35" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="done"/>
+                                                <connections>
+                                                    <action selector="finish:" destination="kFm-an-Fjp" eventType="touchUpInside" id="Xbj-7o-Awb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
