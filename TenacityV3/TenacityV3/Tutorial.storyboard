@@ -11,7 +11,7 @@
         <!--Tutorial 1-->
         <scene sceneID="eUf-Z5-Giu">
             <objects>
-                <viewController storyboardIdentifier="Tutorial 1" title="Tutorial 1" id="kFm-an-Fjp" customClass="TutorialViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial 1" title="Tutorial 1" id="kFm-an-Fjp" customClass="Tutorial1ViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cif-Fz-TRK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="1Q6-vQ-p8u"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="QON-Zw-pf4" eventType="touchUpInside" id="FFv-KW-Gu9"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="7fA-W1-xCm"/>
                                                 </connections>
                                             </button>
@@ -173,7 +172,6 @@
                     <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zre-sB-8s7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="QON-Zw-pf4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="526" y="1930"/>
         </scene>
@@ -212,7 +210,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="lyg-JR-mmG" eventType="touchUpInside" id="1P5-4k-cx2"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="dhf-AI-Rbp"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="eQB-XI-kw2"/>
                                                 </connections>
                                             </button>
@@ -284,7 +281,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="UHS-7K-Cjt"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="eRw-HI-pOp" eventType="touchUpInside" id="YdT-jG-NA4"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="dnm-6k-2LA"/>
                                                 </connections>
                                             </button>
@@ -317,7 +313,6 @@
                     <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCS-eU-3TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="eRw-HI-pOp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1897" y="1930"/>
         </scene>
@@ -356,7 +351,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="PUP-VZ-5zJ"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="k6b-Op-J7Y" eventType="touchUpInside" id="YzJ-Bi-fcD"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="3iN-NJ-DQO"/>
                                                 </connections>
                                             </button>
@@ -389,7 +383,6 @@
                     <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yab-GW-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="k6b-Op-J7Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-159" y="2930"/>
         </scene>
@@ -428,7 +421,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="tEp-zp-Xhy" eventType="touchUpInside" id="3Xt-8m-daG"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="oD4-Ml-jXY"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="XW8-a7-AeQ"/>
                                                 </connections>
                                             </button>
@@ -497,7 +489,6 @@
                                                 <state key="normal" title="end"/>
                                                 <connections>
                                                     <action selector="tutorialEndButtonAction:" destination="wRH-zc-ZIE" eventType="touchUpInside" id="iHN-uA-7oM"/>
-                                                    <action selector="tutorialEndButtonAction:" destination="FOP-pX-2j1" eventType="touchUpInside" id="oN7-Rg-lTd"/>
                                                     <segue destination="cJQ-pB-vWA" kind="show" id="5Ex-AK-p4r"/>
                                                 </connections>
                                             </button>
@@ -530,12 +521,11 @@
                     <size key="freeformSize" width="375" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHo-GB-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="FOP-pX-2j1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1214" y="2930"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ajQ-pM-fn8"/>
+        <segue reference="5Ex-AK-p4r"/>
     </inferredMetricsTieBreakers>
 </document>

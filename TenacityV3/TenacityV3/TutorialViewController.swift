@@ -22,9 +22,9 @@ class TutorialViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // puts in top bar
         testUserDefaults()
-        if tutorialCompleted{
-            navigationController?.setNavigationBarHidden(false, animated: false)
-        }
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -60,4 +60,17 @@ class TutorialViewController: PhoneViewController{
         UserDefaults.standard.set(true, forKey: "tutorialCompleted")
         
     }
+}
+
+class Tutorial1ViewController: TutorialViewController{
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // puts in top bar
+        testUserDefaults()
+        if !tutorialCompleted{
+            navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+    }
+    
 }

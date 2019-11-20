@@ -199,8 +199,6 @@ class HomeViewController: PhoneViewController {
         self.homeLineGraph.leftAxis.labelTextColor = UIColor.white
         
         print("viewdidload")
-        
-        
 
     }
     
