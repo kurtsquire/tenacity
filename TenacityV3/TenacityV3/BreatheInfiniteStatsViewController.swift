@@ -29,6 +29,12 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     
     lazy var breatheIGraphCenter = breatheInfiniteLabel.center
     
+    @IBOutlet weak var breatheIMinuteGoalButton: UIButton!
+    
+    @IBAction func breatheIGoalButtonPressed(_ sender: Any) {
+        currentGame = "breatheInfinite"
+    }
+
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
     var today = Date()
@@ -385,9 +391,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
-            
-            self.minuteGoalLabel.text = String(Int(breatheITimeToday/60)) + "/" + String(Int(self.breatheIGoalTime)) + "mins"
-            
+        self.breatheIMinuteGoalButton.setTitle(String(Int(breatheITimeToday/60)) + "/" + String(Int(self.breatheIGoalTime)) + "mins", for: .normal)
             
             breatheIGraphEndAngle = CGFloat((breatheITimeToday/60)/self.breatheIGoalTime)
             if (breatheIGraphEndAngle == 0){

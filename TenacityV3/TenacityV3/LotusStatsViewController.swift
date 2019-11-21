@@ -25,6 +25,11 @@ class LotusStatsViewController: PhoneViewController{
     
     lazy var lotusGraphCenter = lotusSwipeLabel.center
     
+    @IBOutlet weak var lotusMinuteGoalButton: UIButton!
+    @IBAction func lotusGoalButtonPressed(_ sender: Any) {
+        currentGame = "lotus"
+    }
+    
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
     var today = Date()
@@ -254,7 +259,8 @@ class LotusStatsViewController: PhoneViewController{
         
         DispatchQueue.main.async {
             
-            self.minuteGoalLabel.text = String(Int(lotusTimeToday/60)) + "/" + String(Int(self.lotusGoalTime)) + "mins"
+            self.lotusMinuteGoalButton
+            .setTitle(String(Int(lotusTimeToday/60)) + "/" + String(Int(self.lotusGoalTime)) + "mins", for: .normal)
 
             var a = ""
                         for i in 0..<lotusArrayToday.count{

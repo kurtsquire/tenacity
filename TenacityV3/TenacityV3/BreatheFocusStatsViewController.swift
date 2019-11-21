@@ -13,7 +13,6 @@ import Charts
 class BreatheFocusStatsViewController: PhoneViewController{
     
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var minuteGoalLabel: UILabel!
     @IBOutlet weak var timePlayedLabel: UILabel!
     @IBOutlet weak var totalBreathsLabel: UILabel!
     @IBOutlet weak var averageBreathLabel: UILabel!
@@ -27,6 +26,12 @@ class BreatheFocusStatsViewController: PhoneViewController{
     var breatheFGoalTime = 0.0
     
     lazy var breatheFGraphCenter = breatheFocusLabel.center
+    
+    @IBOutlet weak var breatheFMinuteGoalButton: UIButton!
+    
+    @IBAction func breatheFGoalButtonPressed(_ sender: Any) {
+        currentGame = "breatheFocus"
+    }
     
     // ------------------------- TIME ----------------------------------
     var calendar = Calendar.autoupdatingCurrent
@@ -400,8 +405,7 @@ class BreatheFocusStatsViewController: PhoneViewController{
         setsPlayedChart.drawWeekGraph()
         
         DispatchQueue.main.async {
-            self.minuteGoalLabel.text = String(Int(breatheFTimeToday/60)) + "/" + String(Int(self.breatheFGoalTime)) + "mins"
-            
+        self.breatheFMinuteGoalButton.setTitle(String(Int(breatheFTimeToday/60)) + "/" + String(Int(self.breatheFGoalTime)) + "mins", for: .normal)
             
             breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/self.breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){

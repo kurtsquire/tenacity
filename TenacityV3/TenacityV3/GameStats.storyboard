@@ -67,13 +67,6 @@
                                                 <rect key="frame" x="167" y="59" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bf/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRC-Ae-CE8">
-                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="karat" translatesAutoresizingMaskIntoConstraints="NO" id="HyB-hN-FZQ">
                                                 <rect key="frame" x="339" y="96" width="12" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,9 +98,14 @@
                                                 <color key="backgroundColor" red="0.16430306434631348" green="0.17622414231300354" blue="0.19286689162254333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-GD-rmD">
-                                                <rect key="frame" x="164" y="169" width="46" height="30"/>
+                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="breatheFGoalButtonPressed:" destination="0AU-fR-oI8" eventType="touchUpInside" id="HXx-FW-vWq"/>
+                                                    <segue destination="UPH-1S-zbK" kind="show" id="C5g-e9-fDx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -136,9 +134,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
+                        <outlet property="breatheFMinuteGoalButton" destination="pfK-GD-rmD" id="5EE-Eo-6Jw"/>
                         <outlet property="breatheFocusLabel" destination="JHr-ZY-E9c" id="MAR-Et-B3Y"/>
                         <outlet property="mainView" destination="kdB-TE-2gP" id="wmy-4E-GUK"/>
-                        <outlet property="minuteGoalLabel" destination="VRC-Ae-CE8" id="WQk-is-EQ1"/>
                         <outlet property="setsPlayedLineChart" destination="Y78-XI-tzn" id="VxO-Nw-0Xb"/>
                         <outlet property="timePlayedLineChart" destination="oOw-th-P75" id="n5l-sr-AAW"/>
                         <outlet property="totalBreathsLineChart" destination="QNN-tJ-lZx" id="YsW-Kr-w2O"/>
@@ -235,13 +233,6 @@
                                                 <rect key="frame" x="5" y="738" width="365" height="6"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bi/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-hD-7TJ">
-                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="karat" translatesAutoresizingMaskIntoConstraints="NO" id="cgm-6D-Lqj">
                                                 <rect key="frame" x="339" y="96" width="12" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,6 +245,16 @@
                                                 <rect key="frame" x="5" y="478" width="365" height="6"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZP-O9-CPa">
+                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="breatheIGoalButtonPressed:" destination="orx-qF-esb" eventType="touchUpInside" id="rfw-q2-acO"/>
+                                                    <segue destination="UPH-1S-zbK" kind="show" id="46T-3G-FE4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1050" id="C1x-Vk-kUO"/>
@@ -281,9 +282,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
+                        <outlet property="breatheIMinuteGoalButton" destination="UZP-O9-CPa" id="HsL-55-jNN"/>
                         <outlet property="breatheInfiniteLabel" destination="siS-um-FWg" id="Fa7-Pp-rii"/>
                         <outlet property="mainView" destination="toG-nV-9s6" id="qpP-er-WoD"/>
-                        <outlet property="minuteGoalLabel" destination="XNB-hD-7TJ" id="lhu-WR-SxU"/>
                         <outlet property="setsPlayedLineChart" destination="z9L-S3-FOu" id="Mjk-gx-uku"/>
                         <outlet property="timePlayedLineChart" destination="IOf-dx-aS0" id="qjJ-Tr-5kH"/>
                         <outlet property="totalBreathsLineChart" destination="zcH-HU-tmk" id="oOa-4R-US0"/>
@@ -292,6 +293,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEu-gL-TMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2473" y="1195"/>
+        </scene>
+        <!--Goal Setter-->
+        <scene sceneID="qIB-Ex-Fr6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoalSetter" referencedIdentifier="Goal Setter" id="UPH-1S-zbK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nC4-9u-RHl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Om-0u-187" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3754" y="937"/>
         </scene>
         <!--Lotus-->
         <scene sceneID="eR8-RG-skq">
@@ -359,13 +370,6 @@
                                                 <rect key="frame" x="339" y="96" width="12" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="l/30" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noq-g0-qEf">
-                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lotus Swipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpI-WZ-Oam">
                                                 <rect key="frame" x="117" y="102" width="140" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -391,6 +395,16 @@
                                                 <rect key="frame" x="5" y="478" width="365" height="6"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNL-oa-tG1">
+                                                <rect key="frame" x="137" y="131" width="100" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="lotusGoalButtonPressed:" destination="PbK-Xc-79D" eventType="touchUpInside" id="L7J-NC-NLJ"/>
+                                                    <segue destination="UPH-1S-zbK" kind="show" id="jVi-E5-hsP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="vGB-dS-IjA"/>
@@ -418,9 +432,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="lotusMinuteGoalButton" destination="jNL-oa-tG1" id="4Iu-DB-uVl"/>
                         <outlet property="lotusSwipeLabel" destination="rpI-WZ-Oam" id="BiC-BW-jeD"/>
                         <outlet property="mainView" destination="aUj-eC-YUY" id="Dv8-cP-1cF"/>
-                        <outlet property="minuteGoalLabel" destination="noq-g0-qEf" id="F4n-C2-pBd"/>
                         <outlet property="swipesLabel" destination="IwD-LQ-9uG" id="JRT-Mv-Crk"/>
                         <outlet property="timePlayedLineChart" destination="uFg-1U-7UM" id="hoN-ol-mis"/>
                         <outlet property="totalRoundsLineChart" destination="ETO-UI-a2C" id="gVG-fd-0qt"/>
@@ -450,6 +464,7 @@
         <image name="line" width="10000" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rcm-i6-GJw"/>
+        <segue reference="WIg-jw-Mkb"/>
+        <segue reference="jVi-E5-hsP"/>
     </inferredMetricsTieBreakers>
 </document>
