@@ -284,7 +284,7 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erV-JL-dQk">
-                                <rect key="frame" x="16" y="113" width="343" height="61"/>
+                                <rect key="frame" x="16" y="95" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="General">
@@ -295,11 +295,11 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Fzl-mq-hTd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="99" width="365" height="6"/>
+                                <rect key="frame" x="5" y="81" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-yA-feu">
-                                <rect key="frame" x="16" y="196" width="343" height="61"/>
+                                <rect key="frame" x="16" y="178" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Goals">
@@ -310,11 +310,11 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="cd0-Lq-crd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="182" width="365" height="6"/>
+                                <rect key="frame" x="5" y="164" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A24-tE-4Gw">
-                                <rect key="frame" x="16" y="279" width="343" height="61"/>
+                                <rect key="frame" x="16" y="261" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Quests">
@@ -325,11 +325,11 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-Iz-eBK" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="265" width="365" height="6"/>
+                                <rect key="frame" x="5" y="247" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-Cf-X8j">
-                                <rect key="frame" x="16" y="362" width="343" height="61"/>
+                                <rect key="frame" x="16" y="344" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Breathe Modes">
@@ -340,11 +340,11 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-ll-Oo8" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="348" width="365" height="6"/>
+                                <rect key="frame" x="5" y="330" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x4-zE-Yah">
-                                <rect key="frame" x="16" y="445" width="343" height="61"/>
+                                <rect key="frame" x="16" y="427" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Lotus Swipe">
@@ -355,15 +355,15 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zVd-IP-1Jd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="431" width="365" height="6"/>
+                                <rect key="frame" x="5" y="413" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-1X-idS" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="514" width="365" height="6"/>
+                                <rect key="frame" x="5" y="496" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp3-df-d3r">
-                                <rect key="frame" x="16" y="528" width="343" height="61"/>
+                                <rect key="frame" x="16" y="510" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Tutorial">
@@ -374,7 +374,7 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="30i-0L-OxH" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="597" width="365" height="6"/>
+                                <rect key="frame" x="5" y="579" width="365" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

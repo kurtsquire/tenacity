@@ -11,6 +11,12 @@ import WatchConnectivity
 
 class GameSettingsViewController: PhoneViewController{
     
+    // 1 = breathe classic, 2 = breathe fire, 3 = breathe cloud, 4 = breathe diamond, 5 = breathe teal, 6 = breathe saffron, 7 = breathe cherry, 8 = breathe lavender, 9 = lotus flower, 10 = lotus squares, 11 = lotus hearts, 12 = lotus circles, 13 = lotus classic, 14 = lotus forest, 15 = lotus outrun, 16 = lotus poolparty
+    var mtxOwnedBreathe = [0]
+    var mtxOwnedBreatheC = [0]
+    var mtxOwnedLotus = [0]
+    var mtxOwnedLotusC = [0]
+    
     var breathePic = 0
     var breatheColor = 0
     var lotusPic = 0
@@ -44,6 +50,9 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     // --------------------------------------- BREATHE PICS -------------------------------------
+    
+    // one button press only do x if cosmetic is unlocked
+    // otherwise bring up shop screen?
     
     @IBAction func classic(_ sender: UIButton) {
         //sendData(theme: "classic", game: "breathe")

@@ -20,6 +20,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
     var dailyQuestData : Dictionary<String, Any> = [:]
     var exp = 0
     var rerolls = 0
+    var points = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -40,6 +41,10 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         
         exp += addEXP
         UserDefaults.standard.set(exp, forKey: "exp")
+        
+        points = UserDefaults.standard.integer(forKey: "points")
+        points += addEXP
+        UserDefaults.standard.set(points, forKey: "points")
     }
     
     func buildQuest(){

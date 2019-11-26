@@ -10,6 +10,7 @@
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
 		13372933237F7EE800C83027 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13372932237F7EE800C83027 /* TutorialViewController.swift */; };
 		133729352383872000C83027 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133729342383872000C83027 /* Tutorial.storyboard */; };
+		1337293723877C7800C83027 /* ConfirmPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1337293623877C7300C83027 /* ConfirmPopup.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
 		133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76A23049AF8000614A8 /* PhoneViewController.swift */; };
 		13544EAE231A076F00B2D2AB /* NudgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13544EAD231A076F00B2D2AB /* NudgesViewController.swift */; };
@@ -111,6 +112,7 @@
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		13372932237F7EE800C83027 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		133729342383872000C83027 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		1337293623877C7300C83027 /* ConfirmPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopup.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				13751C93237262810014BAD0 /* GameCosmetics.storyboard */,
+				1337293623877C7300C83027 /* ConfirmPopup.swift */,
 				42EEE00B22F1058100BE02DC /* GameSettingsViewController.swift */,
 			);
 			name = Cosmetics;
@@ -625,6 +628,7 @@
 				42EEE00E22F105AB00BE02DC /* BreatheFocusStatsViewController.swift in Sources */,
 				13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */,
 				42398AB622938159009CA96E /* ViewController.swift in Sources */,
+				1337293723877C7800C83027 /* ConfirmPopup.swift in Sources */,
 				42EEE01422F109DD00BE02DC /* HelpViewController.swift in Sources */,
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
 				421B843D22EFB01E008839C5 /* Pet.swift in Sources */,
