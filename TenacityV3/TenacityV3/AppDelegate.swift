@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import RealmSwift
 
 @UIApplicationMain
@@ -19,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
-        
-        let db = Database.database().reference()
-        db.setValue("we got data")
         
         //displays file location path - to view file use realm browser on app store
         if let fileUrl = Realm.Configuration.defaultConfiguration.fileURL{

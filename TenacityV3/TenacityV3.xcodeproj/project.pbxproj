@@ -29,6 +29,8 @@
 		1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */; };
 		1B5530DD22BC08CD009C1B65 /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */; };
 		1BE544A122C2995500620EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE544A022C2995500620EC9 /* GoogleService-Info.plist */; };
+		2258A74006CBA2A40E3F945C /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB292CE1E3E87364AE18C62 /* Pods_TenacityV3_WatchKit_Extension.framework */; };
+		34C360C87C069D4256C985C8 /* Pods_TenacityV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CC450B106B1C2C110FD93E /* Pods_TenacityV3.framework */; };
 		421307A922DFCBB90007C445 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421307A822DFCBB90007C445 /* Quests.swift */; };
 		421B843D22EFB01E008839C5 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421B843C22EFB01E008839C5 /* Pet.swift */; };
 		4220938622EBC5B20082834C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220938522EBC5B20082834C /* HomeViewController.swift */; };
@@ -61,9 +63,7 @@
 		42EEE01422F109DD00BE02DC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEE01322F109DD00BE02DC /* HelpViewController.swift */; };
 		42F38A9D229625DD0067ED4D /* FreeBreathe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */; };
 		42F38A9F2296270C0067ED4D /* FreeBreatheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */; };
-		6187F6862654AA544C468D50 /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5428232675FA21F31A9EFC44 /* Pods_TenacityV3_WatchKit_Extension.framework */; };
-		D3DB86DA39F60EB1BEEBC058 /* libPods-TenacityV3 WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B29F1F2D99DBEEBD0454DBC /* libPods-TenacityV3 WatchKit App.a */; };
-		D737D6560917F805F2AA416E /* Pods_TenacityV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC3B34F8FA96CFB7CBACFDB /* Pods_TenacityV3.framework */; };
+		5E1A06ED0BAF14DB991A75EF /* libPods-TenacityV3 WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13672619B21669D0BC85F382 /* libPods-TenacityV3 WatchKit App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1236F6F0747D4D66CE6E4F10 /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		13372932237F7EE800C83027 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		133729342383872000C83027 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		133DA76A23049AF8000614A8 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		13544EAD231A076F00B2D2AB /* NudgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgesViewController.swift; sourceTree = "<group>"; };
+		13672619B21669D0BC85F382 /* libPods-TenacityV3 WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenacityV3 WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13751C85237245510014BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Nudges.storyboard; sourceTree = "<group>"; };
 		13751C8723724B900014BAD0 /* GameStats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GameStats.storyboard; path = TenacityV3/GameStats.storyboard; sourceTree = SOURCE_ROOT; };
 		13751C91237261E50014BAD0 /* Companions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Companions.storyboard; path = TenacityV3/Companions.storyboard; sourceTree = SOURCE_ROOT; };
@@ -131,6 +133,7 @@
 		1B5530DA22BBFA5E009C1B65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1B5530DC22BC08CD009C1B65 /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		1BE544A022C2995500620EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2AB292CE1E3E87364AE18C62 /* Pods_TenacityV3_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		421307A822DFCBB90007C445 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
 		421B843C22EFB01E008839C5 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		4220938522EBC5B20082834C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -168,15 +171,12 @@
 		42EEE01322F109DD00BE02DC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		42F38A9C229625DD0067ED4D /* FreeBreathe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FreeBreathe.storyboard; sourceTree = "<group>"; };
 		42F38A9E2296270C0067ED4D /* FreeBreatheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeBreatheController.swift; path = "TenacityV3 WatchKit Extension/FreeBreatheController.swift"; sourceTree = SOURCE_ROOT; };
-		4AF186D7CACCA09F09C3A3CA /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
-		5428232675FA21F31A9EFC44 /* Pods_TenacityV3_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AC3B34F8FA96CFB7CBACFDB /* Pods_TenacityV3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B29F1F2D99DBEEBD0454DBC /* libPods-TenacityV3 WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenacityV3 WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0AD717B246E15A754CC114F /* Pods-TenacityV3 WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit App/Pods-TenacityV3 WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		DB1763119D909A37F98CBC2B /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		DD31637B8309B0142BC2AFB8 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		F586D349CDADABBB050A17FC /* Pods-TenacityV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.debug.xcconfig"; sourceTree = "<group>"; };
-		FB8F649561333ACD5879D16D /* Pods-TenacityV3 WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit App/Pods-TenacityV3 WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		546F6C3F423465F77FE70FE4 /* Pods-TenacityV3 WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit App/Pods-TenacityV3 WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		6992B54961BF6A58CB35DF08 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		7399F0FEFAE97B70FEEE86B4 /* Pods-TenacityV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.debug.xcconfig"; sourceTree = "<group>"; };
+		99CC450B106B1C2C110FD93E /* Pods_TenacityV3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenacityV3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD459BB42BC3D0EDDFEFF3DA /* Pods-TenacityV3 WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit App/Pods-TenacityV3 WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		EDE2BEE0C63EB17F5871D326 /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-TenacityV3 WatchKit Extension/Pods-TenacityV3 WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D737D6560917F805F2AA416E /* Pods_TenacityV3.framework in Frameworks */,
+				34C360C87C069D4256C985C8 /* Pods_TenacityV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6187F6862654AA544C468D50 /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */,
+				2258A74006CBA2A40E3F945C /* Pods_TenacityV3_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,13 +200,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3DB86DA39F60EB1BEEBC058 /* libPods-TenacityV3 WatchKit App.a in Frameworks */,
+				5E1A06ED0BAF14DB991A75EF /* libPods-TenacityV3 WatchKit App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009ABF3051EC5DF5C307CB1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99CC450B106B1C2C110FD93E /* Pods_TenacityV3.framework */,
+				13672619B21669D0BC85F382 /* libPods-TenacityV3 WatchKit App.a */,
+				2AB292CE1E3E87364AE18C62 /* Pods_TenacityV3_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		13751C9B237263C40014BAD0 /* Nudges */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,16 +292,6 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		1ABE04D355D4C80E3DC9EB2E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6AC3B34F8FA96CFB7CBACFDB /* Pods_TenacityV3.framework */,
-				9B29F1F2D99DBEEBD0454DBC /* libPods-TenacityV3 WatchKit App.a */,
-				5428232675FA21F31A9EFC44 /* Pods_TenacityV3_WatchKit_Extension.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		42398AA722938159009CA96E = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +300,7 @@
 				42398AD52293815B009CA96E /* TenacityV3 WatchKit Extension */,
 				42398AB122938159009CA96E /* Products */,
 				5F867D5A2BED8ED972272BDB /* Pods */,
-				1ABE04D355D4C80E3DC9EB2E /* Frameworks */,
+				009ABF3051EC5DF5C307CB1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -375,12 +375,12 @@
 		5F867D5A2BED8ED972272BDB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F586D349CDADABBB050A17FC /* Pods-TenacityV3.debug.xcconfig */,
-				4AF186D7CACCA09F09C3A3CA /* Pods-TenacityV3.release.xcconfig */,
-				A0AD717B246E15A754CC114F /* Pods-TenacityV3 WatchKit App.debug.xcconfig */,
-				FB8F649561333ACD5879D16D /* Pods-TenacityV3 WatchKit App.release.xcconfig */,
-				DB1763119D909A37F98CBC2B /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */,
-				DD31637B8309B0142BC2AFB8 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */,
+				7399F0FEFAE97B70FEEE86B4 /* Pods-TenacityV3.debug.xcconfig */,
+				1236F6F0747D4D66CE6E4F10 /* Pods-TenacityV3.release.xcconfig */,
+				CD459BB42BC3D0EDDFEFF3DA /* Pods-TenacityV3 WatchKit App.debug.xcconfig */,
+				546F6C3F423465F77FE70FE4 /* Pods-TenacityV3 WatchKit App.release.xcconfig */,
+				EDE2BEE0C63EB17F5871D326 /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */,
+				6992B54961BF6A58CB35DF08 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -392,12 +392,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42398AEA2293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3" */;
 			buildPhases = (
-				C0058BD4FFD42373531547CB /* [CP] Check Pods Manifest.lock */,
+				2007B0E17702A5D3E4A05E7C /* [CP] Check Pods Manifest.lock */,
 				42398AAC22938159009CA96E /* Sources */,
 				42398AAD22938159009CA96E /* Frameworks */,
 				42398AAE22938159009CA96E /* Resources */,
 				42398AE92293815B009CA96E /* Embed Watch Content */,
-				82D28D5A831196D7C6ADB433 /* [CP] Embed Pods Frameworks */,
+				F6E35003EC3A9C2296DB9372 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,7 +413,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42398AE62293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit App" */;
 			buildPhases = (
-				32B3B0D55798E824731B326B /* [CP] Check Pods Manifest.lock */,
+				F1CA50089E9BE8079F87AADB /* [CP] Check Pods Manifest.lock */,
 				42398AC02293815A009CA96E /* Resources */,
 				42398AE52293815B009CA96E /* Embed App Extensions */,
 				57079B1C9D11269200340A0D /* Frameworks */,
@@ -432,7 +432,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42398AE22293815B009CA96E /* Build configuration list for PBXNativeTarget "TenacityV3 WatchKit Extension" */;
 			buildPhases = (
-				A975C14B95391577CDAF8381 /* [CP] Check Pods Manifest.lock */,
+				F7DDD422C2C5706A61EFADBF /* [CP] Check Pods Manifest.lock */,
 				42398ACD2293815B009CA96E /* Sources */,
 				42398ACE2293815B009CA96E /* Frameworks */,
 				42398ACF2293815B009CA96E /* Resources */,
@@ -531,7 +531,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32B3B0D55798E824731B326B /* [CP] Check Pods Manifest.lock */ = {
+		2007B0E17702A5D3E4A05E7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TenacityV3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1CA50089E9BE8079F87AADB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -553,7 +575,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		82D28D5A831196D7C6ADB433 /* [CP] Embed Pods Frameworks */ = {
+		F6E35003EC3A9C2296DB9372 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -570,7 +592,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TenacityV3/Pods-TenacityV3-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A975C14B95391577CDAF8381 /* [CP] Check Pods Manifest.lock */ = {
+		F7DDD422C2C5706A61EFADBF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -586,28 +608,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TenacityV3 WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0058BD4FFD42373531547CB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TenacityV3-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -833,7 +833,7 @@
 		};
 		42398AE32293815B009CA96E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB1763119D909A37F98CBC2B /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = EDE2BEE0C63EB17F5871D326 /* Pods-TenacityV3 WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -857,7 +857,7 @@
 		};
 		42398AE42293815B009CA96E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD31637B8309B0142BC2AFB8 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = 6992B54961BF6A58CB35DF08 /* Pods-TenacityV3 WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -881,7 +881,7 @@
 		};
 		42398AE72293815B009CA96E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0AD717B246E15A754CC114F /* Pods-TenacityV3 WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = CD459BB42BC3D0EDDFEFF3DA /* Pods-TenacityV3 WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -902,7 +902,7 @@
 		};
 		42398AE82293815B009CA96E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB8F649561333ACD5879D16D /* Pods-TenacityV3 WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 546F6C3F423465F77FE70FE4 /* Pods-TenacityV3 WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -923,7 +923,7 @@
 		};
 		42398AEB2293815B009CA96E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F586D349CDADABBB050A17FC /* Pods-TenacityV3.debug.xcconfig */;
+			baseConfigurationReference = 7399F0FEFAE97B70FEEE86B4 /* Pods-TenacityV3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -944,7 +944,7 @@
 		};
 		42398AEC2293815B009CA96E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AF186D7CACCA09F09C3A3CA /* Pods-TenacityV3.release.xcconfig */;
+			baseConfigurationReference = 1236F6F0747D4D66CE6E4F10 /* Pods-TenacityV3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

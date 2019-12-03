@@ -9,10 +9,6 @@ target 'TenacityV3' do
 
   # Pods for TenacityV3
 pod 'RealmSwift'
-pod 'Firebase/Core'
-pod 'Firebase/Database'
-pod 'Firebase'
-pod 'Firebase/Auth'
 pod 'Charts'
 
 end
