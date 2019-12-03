@@ -9,6 +9,9 @@
 import UIKit
 import WatchConnectivity
 
+
+var mtxNum = 0 //lets purchase screen know which cosmeticgroup was last selected
+
 class GameSettingsViewController: PhoneViewController{
     
     // 1 = breathe classic, 2 = breathe fire, 3 = breathe cloud, 4 = breathe diamond, 5 = breathe teal, 6 = breathe saffron, 7 = breathe cherry, 8 = breathe lavender, 9 = lotus flower, 10 = lotus squares, 11 = lotus hearts, 12 = lotus circles, 13 = lotus classic, 14 = lotus forest, 15 = lotus outrun, 16 = lotus poolparty
@@ -62,6 +65,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        mtxNum = 0
         
     }
     @IBAction func fire(_ sender: UIButton) {
@@ -72,6 +76,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        mtxNum = 0
     }
     @IBAction func cloud(_ sender: UIButton) {
         //sendData(theme: "cloud", game: "breathe")
@@ -81,6 +86,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        mtxNum = 0
     }
     @IBAction func diamond(_ sender: UIButton) {
         //sendData(theme: "diamond", game: "breathe")
@@ -90,6 +96,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breathePicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        mtxNum = 0
     }
     
     // --------------------------------------- BREATHE COLORS -------------------------------------
@@ -102,6 +109,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
+        mtxNum = 2
     }
     @IBAction func blueB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 0)
@@ -111,6 +119,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
+        mtxNum = 2
     }
     @IBAction func saffronB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 2)
@@ -120,6 +129,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
+        mtxNum = 2
     }
     @IBAction func lavenderB(_ sender: UIButton) {
         //sendData(theme: "", game: "breathe", color: 3)
@@ -129,6 +139,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.breatheColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "breatheColor")
+        mtxNum = 2
     }
     
     
@@ -142,6 +153,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
+        mtxNum = 1
     }
     @IBAction func squares(_ sender: UIButton) {
         //sendData(theme: "square", game: "lotus")
@@ -151,6 +163,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
+        mtxNum = 1
     }
     @IBAction func heart(_ sender: UIButton) {
         //sendData(theme: "heart", game: "lotus")
@@ -160,6 +173,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
+        mtxNum = 1
     }
     @IBAction func circle(_ sender: UIButton) {
         //sendData(theme: "circle", game: "lotus")
@@ -169,6 +183,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusPicLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusPic")
+        mtxNum = 1
     }
     
     // --------------------------------------- LOTUS COLORS -------------------------------------
@@ -181,6 +196,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
+        mtxNum = 3
     }
     @IBAction func lotusForest(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 1)
@@ -190,6 +206,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
+        mtxNum = 3
     }
     @IBAction func lotusOutrun(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 2)
@@ -199,6 +216,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
+        mtxNum = 3
     }
     @IBAction func lotusPool(_ sender: UIButton) {
         //sendData(theme: "", game: "lotus", color: 3)
@@ -208,6 +226,7 @@ class GameSettingsViewController: PhoneViewController{
         sendAppContext()
         self.updateLabels(group: self.lotusColorLabels, num: sender.tag)
         UserDefaults.standard.set(sender.tag, forKey: "lotusColor")
+        mtxNum = 3
     }
     
     // -----------------------------------------------------------------------------------------

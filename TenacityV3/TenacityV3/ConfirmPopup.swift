@@ -22,15 +22,19 @@ class ConfirmPopupViewController: PhoneViewController {
     var breatheColor = 0
     var lotusPic = 0
     var lotusColor = 0
-    var mtxNum = 0
+    
     
     @IBOutlet weak var currentPointsLabel: UILabel!
     @IBOutlet weak var confirmationLabel: UILabel!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        currentPointsLabel.text = "Current Points: " + String(points)
         
         testUserDefaults()
+        print(mtxNum)
+        currentPointsLabel.text = "Current Points: " + String(points)
+        
+        
         if mtxNum == 0{
             confirmationLabel.text = "Confirm Purchase of " + breathePicArray[breathePic]
         }
@@ -56,6 +60,8 @@ class ConfirmPopupViewController: PhoneViewController {
     
     override func testUserDefaults(){
         let defaults = UserDefaults.standard
+        
+        points = defaults.integer(forKey: "points")
         
         breathePic = defaults.integer(forKey: "breathePic")
         breatheColor = defaults.integer(forKey: "breatheColor")
