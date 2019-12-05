@@ -86,7 +86,6 @@ class CompanionsViewController: PhoneViewController {
     override func testUserDefaults(){
         let defaults = UserDefaults.standard
 
-
         petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
         petEquipped = defaults.integer(forKey: "petEquipped")
     }
