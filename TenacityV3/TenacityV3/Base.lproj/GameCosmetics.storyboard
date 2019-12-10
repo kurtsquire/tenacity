@@ -578,7 +578,7 @@ Press ? for more info.</string>
         <!--Cosmetics Popup-->
         <scene sceneID="BED-Bh-Eft">
             <objects>
-                <viewController title="Cosmetics Popup" id="W4S-zb-GVV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cosmetics Popup" title="Cosmetics Popup" modalPresentationStyle="overCurrentContext" id="W4S-zb-GVV" customClass="CosmeticsTutorialsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2a-Rg-Q5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,6 +591,9 @@ Press ? for more info.</string>
                                         <rect key="frame" x="128" y="159" width="37" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="DoneButton:" destination="W4S-zb-GVV" eventType="touchUpInside" id="TDG-vQ-r71"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-NA-fg6">
                                         <rect key="frame" x="53" y="8" width="186" height="43"/>

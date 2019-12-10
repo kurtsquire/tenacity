@@ -16,7 +16,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+    var statsTutorialCompleted = false
     var pageControl = UIPageControl()//dots
     
     lazy var orderedViewControllers: [UIViewController] = {
@@ -38,8 +38,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                                animated: true,
                                completion: nil)
         }
-        
+        statsTutorialCompleted = UserDefaults.standard.bool(forKey: "statsTutorialCompleted")
         configurePageControl()//dots
+        
+        if !statsTutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GameStats", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Game Stats Popup")
+
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     func newVc(viewController: String) -> UIViewController {

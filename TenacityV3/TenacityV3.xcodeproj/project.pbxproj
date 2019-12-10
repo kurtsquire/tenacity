@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		13201FF62319AECA00BF3A01 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13201FF52319AECA00BF3A01 /* LineChart.swift */; };
-		13372933237F7EE800C83027 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13372932237F7EE800C83027 /* TutorialViewController.swift */; };
 		133729352383872000C83027 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133729342383872000C83027 /* Tutorial.storyboard */; };
 		1337293723877C7800C83027 /* ConfirmPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1337293623877C7300C83027 /* ConfirmPopup.swift */; };
 		133DA76722FA101C000614A8 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DA76622FA101C000614A8 /* CircleChart.swift */; };
@@ -19,6 +18,7 @@
 		13751C92237261E50014BAD0 /* Companions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13751C91237261E50014BAD0 /* Companions.storyboard */; };
 		13751C95237262810014BAD0 /* GameCosmetics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13751C93237262810014BAD0 /* GameCosmetics.storyboard */; };
 		13751C97237262C10014BAD0 /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13751C96237262C10014BAD0 /* Achievements.storyboard */; };
+		138637D6239EF415007E6108 /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138637D5239EF415007E6108 /* TutorialsViewController.swift */; };
 		1391C015230E156900416516 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C014230E156900416516 /* WatchViewController.swift */; };
 		1391C017230F365E00416516 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1391C016230F365E00416516 /* Quotes.swift */; };
 		1397AFAC234C044300D5073F /* PetInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1397AFAB234C044300D5073F /* PetInteraction.storyboard */; };
@@ -111,7 +111,6 @@
 /* Begin PBXFileReference section */
 		1236F6F0747D4D66CE6E4F10 /* Pods-TenacityV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenacityV3.release.xcconfig"; path = "Target Support Files/Pods-TenacityV3/Pods-TenacityV3.release.xcconfig"; sourceTree = "<group>"; };
 		13201FF52319AECA00BF3A01 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
-		13372932237F7EE800C83027 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		133729342383872000C83027 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		1337293623877C7300C83027 /* ConfirmPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopup.swift; sourceTree = "<group>"; };
 		133DA76622FA101C000614A8 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		13751C91237261E50014BAD0 /* Companions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Companions.storyboard; path = TenacityV3/Companions.storyboard; sourceTree = SOURCE_ROOT; };
 		13751C94237262810014BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameCosmetics.storyboard; sourceTree = "<group>"; };
 		13751C96237262C10014BAD0 /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = SOURCE_ROOT; };
+		138637D5239EF415007E6108 /* TutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
 		1391C014230E156900416516 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		1391C016230F365E00416516 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		1397AFAB234C044300D5073F /* PetInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetInteraction.storyboard; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				4251741F22F0D68600A11551 /* Help.storyboard */,
 				133729342383872000C83027 /* Tutorial.storyboard */,
 				42EEE01322F109DD00BE02DC /* HelpViewController.swift */,
-				13372932237F7EE800C83027 /* TutorialViewController.swift */,
+				138637D5239EF415007E6108 /* TutorialsViewController.swift */,
 			);
 			name = Help;
 			sourceTree = "<group>";
@@ -633,8 +633,8 @@
 				1B5530DB22BBFA5E009C1B65 /* RealmManager.swift in Sources */,
 				421B843D22EFB01E008839C5 /* Pet.swift in Sources */,
 				13A3918F23175B4D00809895 /* Companions.swift in Sources */,
-				13372933237F7EE800C83027 /* TutorialViewController.swift in Sources */,
 				1391C017230F365E00416516 /* Quotes.swift in Sources */,
+				138637D6239EF415007E6108 /* TutorialsViewController.swift in Sources */,
 				4220938622EBC5B20082834C /* HomeViewController.swift in Sources */,
 				13A9A9A823624FFA006A4A11 /* GoalSetter.swift in Sources */,
 				133DA76B23049AF8000614A8 /* PhoneViewController.swift in Sources */,

@@ -455,7 +455,7 @@
         <!--Game Stats Popup-->
         <scene sceneID="SpX-yA-UPw">
             <objects>
-                <viewController title="Game Stats Popup" id="BT4-2N-g8F" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game Stats Popup" title="Game Stats Popup" modalPresentationStyle="overCurrentContext" id="BT4-2N-g8F" customClass="StatsTutorialsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XLb-Lm-Thf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,6 +468,9 @@
                                         <rect key="frame" x="128" y="159" width="37" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="DoneButton:" destination="BT4-2N-g8F" eventType="touchUpInside" id="1Nr-rn-1e9"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Game Stats Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-NP-Pwp">
                                         <rect key="frame" x="53" y="8" width="187" height="43"/>

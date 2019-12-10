@@ -19,7 +19,7 @@ class NudgesViewController: PhoneViewController{
     
     @IBOutlet var nudgeButtons: [UIButton]!
     @IBOutlet var switches: [UISwitch]!
-
+    var nudgesTutorialCompleted = false
     
     @IBAction func nudgePressed(_ sender: UIButton) {
         editingNudge = sender.tag
@@ -29,6 +29,13 @@ class NudgesViewController: PhoneViewController{
         super.viewDidAppear(animated)
         
         testUserDefaults()
+        
+        if !nudgesTutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Nudges", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Nudges Popup")
+
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     // no switches
@@ -51,6 +58,8 @@ class NudgesViewController: PhoneViewController{
             button.setTitle(defaults.string(forKey: "dateString" + String(i)) ?? "No Current Nudge", for: .normal)
             i += 1
         }
+        
+        nudgesTutorialCompleted = UserDefaults.standard.bool(forKey: "nudgesTutorialCompleted")
     }
     
     

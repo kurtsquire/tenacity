@@ -40,7 +40,7 @@ class HomeViewController: PhoneViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var homeLineGraph: LineChartView!
-    var tutorialCompleted = false
+    var homeTutorialCompleted = false
     
     
     // --------------------------- EXPERIENCE OUTLETS -----------------------------
@@ -250,16 +250,12 @@ class HomeViewController: PhoneViewController {
         }
         
         print("viewdidappear")
-        if !tutorialCompleted{
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Tutorial 1")
-            
-            self.navigationController?.pushViewController(newViewController, animated: true)
-            // pops up over the screen
-            //self.present(newViewController, animated: true, completion: nil)
+        if !homeTutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home Popup")
+
+            self.present(newViewController, animated: true, completion: nil)
         }
-        
-        
     }
     // ----------------------- UTILITY -------------------------------
     
@@ -546,7 +542,7 @@ class HomeViewController: PhoneViewController {
         petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
         
         // get tutorial completed or not
-        tutorialCompleted = defaults.bool(forKey: "tutorialCompleted")
+        homeTutorialCompleted = defaults.bool(forKey: "homeTutorialCompleted")
 
         // get quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]

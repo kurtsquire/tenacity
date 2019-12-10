@@ -32,6 +32,7 @@ class GameSettingsViewController: PhoneViewController{
     @IBOutlet var lotusPicLabels: [UILabel]!
     @IBOutlet var lotusColorLabels: [UILabel]!
     
+    var cosmeticsTutorialCompleted = false
     
     // changes the top font to white (time and battery life wifi etc)
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -45,6 +46,13 @@ class GameSettingsViewController: PhoneViewController{
         testUserDefaults()
         updateLabelsOpen()
         print("hi viewwillappear")
+        
+        if !cosmeticsTutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GameCosmetics", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Cosmetics Popup")
+
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -55,6 +63,8 @@ class GameSettingsViewController: PhoneViewController{
         PurchaseManager.shared.firstVC = self
         //testUserDefaults()
         //updateLabelsOpen()
+        
+        
     }
     
     // If mtx not owned open up purchase popup
@@ -414,6 +424,8 @@ class GameSettingsViewController: PhoneViewController{
         mtxOwnedBreatheC = defaults.array(forKey: "mtxOwnedBreatheC") as? [Int] ?? [0]
         mtxOwnedLotus = defaults.array(forKey: "mtxOwnedLotus") as? [Int] ?? [0]
         mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
+        
+        cosmeticsTutorialCompleted = defaults.bool(forKey: "cosmeticsTutorialCompleted")
     }
     
     @IBAction func gimmeMoneyButton(_ sender: Any) {

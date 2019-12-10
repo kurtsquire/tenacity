@@ -18,6 +18,7 @@ class CompanionsViewController: PhoneViewController {
     
     @IBOutlet var equipLabels: [UILabel]!
     @IBOutlet var companionsButtons: [UIButton]!
+    var companionTutorialCompleted = false
     
     @IBAction func companionsButtonPressed(_ sender: UIButton) {
 
@@ -54,6 +55,13 @@ class CompanionsViewController: PhoneViewController {
         super.viewDidAppear(animated)
         
         updatePetData()
+        
+        if !companionTutorialCompleted{
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Companions", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Companions Popup")
+
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     func updatePetData(){
@@ -88,6 +96,8 @@ class CompanionsViewController: PhoneViewController {
 
         petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
         petEquipped = defaults.integer(forKey: "petEquipped")
+        
+        companionTutorialCompleted = defaults.bool(forKey: "companionTutorialCompleted")
     }
     
     func sendAppContext(){

@@ -1453,7 +1453,7 @@
         <!--Companions Popup-->
         <scene sceneID="6Lq-iK-MW8">
             <objects>
-                <viewController title="Companions Popup" id="6aM-mA-DtX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Companions Popup" title="Companions Popup" modalPresentationStyle="overCurrentContext" id="6aM-mA-DtX" customClass="CompanionTutorialsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8N-23-vmH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1466,6 +1466,9 @@
                                         <rect key="frame" x="128" y="159" width="37" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="DoneButton:" destination="6aM-mA-DtX" eventType="touchUpInside" id="H5l-cd-XK6"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on an unlocked companion to select them." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz9-hb-96o">
                                         <rect key="frame" x="8" y="74" width="276" height="48"/>

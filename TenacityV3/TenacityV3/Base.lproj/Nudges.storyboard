@@ -221,55 +221,42 @@
         <!--Nudges Popup-->
         <scene sceneID="aye-I7-2ci">
             <objects>
-                <viewController title="Nudges Popup" id="gd1-ID-THq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Nudges Popup" title="Nudges Popup" modalPresentationStyle="overCurrentContext" id="gd1-ID-THq" customClass="NudgesTutorialsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VXd-En-isL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-CC-NIS">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-CC-NIS">
                                 <rect key="frame" x="41" y="235" width="293" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-On-kEz">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-On-kEz">
                                         <rect key="frame" x="128" y="160" width="37" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="DoneButton:" destination="gd1-ID-THq" eventType="touchUpInside" id="HzN-fL-fka"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Nudges Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-X7-38A">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Nudges Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-X7-38A">
                                         <rect key="frame" x="11" y="8" width="271" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="rxm-zG-1TT"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Here you can create nudges to help you use Tenacity on a set schedule." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-zp-2Os">
-                                        <rect key="frame" x="39" y="64" width="215" height="69"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here you can create nudges to help you use Tenacity on a set schedule." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-zp-2Os">
+                                        <rect key="frame" x="39" y="48" width="214" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="2Cy-zp-2Os" firstAttribute="centerY" secondItem="pMh-CC-NIS" secondAttribute="centerY" id="3wc-B0-kKm"/>
-                                    <constraint firstItem="2DG-X7-38A" firstAttribute="leading" secondItem="pMh-CC-NIS" secondAttribute="leading" constant="11" id="4Ip-Aw-HrI"/>
-                                    <constraint firstItem="2Cy-zp-2Os" firstAttribute="centerX" secondItem="2DG-X7-38A" secondAttribute="centerX" id="5am-g2-2nY"/>
-                                    <constraint firstItem="2Cy-zp-2Os" firstAttribute="centerX" secondItem="cWy-On-kEz" secondAttribute="centerX" id="7bz-xA-beT"/>
-                                    <constraint firstItem="2Cy-zp-2Os" firstAttribute="top" secondItem="2DG-X7-38A" secondAttribute="bottom" constant="32" id="Dzz-bU-0pG"/>
-                                    <constraint firstItem="cWy-On-kEz" firstAttribute="top" secondItem="2Cy-zp-2Os" secondAttribute="bottom" constant="27" id="Ku5-xi-Yby"/>
-                                    <constraint firstItem="cWy-On-kEz" firstAttribute="bottom" secondItem="pMh-CC-NIS" secondAttribute="bottomMargin" id="Mxd-Gs-NUl"/>
-                                    <constraint firstItem="2DG-X7-38A" firstAttribute="centerX" secondItem="pMh-CC-NIS" secondAttribute="centerX" id="Vrg-hI-PAa"/>
-                                    <constraint firstItem="2DG-X7-38A" firstAttribute="top" secondItem="pMh-CC-NIS" secondAttribute="topMargin" id="jwi-xg-IHg"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="0.7537457192" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pMh-CC-NIS" firstAttribute="centerX" secondItem="VXd-En-isL" secondAttribute="centerX" id="KR3-VS-lQF"/>
-                            <constraint firstItem="pMh-CC-NIS" firstAttribute="top" secondItem="B52-KQ-wnp" secondAttribute="top" constant="235" id="Ws5-HO-tNV"/>
-                            <constraint firstItem="pMh-CC-NIS" firstAttribute="centerY" secondItem="VXd-En-isL" secondAttribute="centerY" id="ai4-mh-efz"/>
-                            <constraint firstItem="pMh-CC-NIS" firstAttribute="leading" secondItem="B52-KQ-wnp" secondAttribute="leading" constant="41" id="oYb-rg-VYF"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B52-KQ-wnp"/>
                     </view>
                 </viewController>
