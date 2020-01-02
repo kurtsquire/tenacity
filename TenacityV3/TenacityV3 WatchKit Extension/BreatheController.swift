@@ -355,8 +355,12 @@ class BreatheController: WatchViewController{
     func sendData(game : String = "breathe focus", what : String, correct : String, cycleSettings : Int = FullCycle, timeSettings : Int = sessionTime, timePlayed : Double = 0.0, avgBreathLength : Double = 0.0, totalSets : Int = 0, correctSets : Int = 0){
         let session = WCSession.default
         if session.activationState == .activated{
-            let timestamp = NSDate().timeIntervalSince1970
+            //let timestamp = NSDate().timeIntervalSince1970
+            let timestamp = Date().timeIntervalSince1970
             let date = Date()
+            
+            print(timestamp)
+            print(date)
             
             let data = ["game": game,
                         "what": what,

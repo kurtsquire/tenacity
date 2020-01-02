@@ -11,7 +11,7 @@ import WatchConnectivity
 
 class PetInteractionController: WatchViewController{
     
-    var calendar = Calendar.autoupdatingCurrent
+    //var calendar = Calendar.autoupdatingCurrent
     
     @IBOutlet weak var heart1: WKInterfaceImage!
     @IBOutlet weak var heart2: WKInterfaceImage!

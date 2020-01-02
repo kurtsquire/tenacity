@@ -13,6 +13,8 @@ import WatchConnectivity
 
 class WatchViewController: WKInterfaceController, WCSessionDelegate {
     
+    var calendar = Calendar.autoupdatingCurrent
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
