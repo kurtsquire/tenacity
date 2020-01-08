@@ -119,7 +119,7 @@ class HomeViewController: PhoneViewController {
     @IBAction func questHelpButton(_ sender: Any) {
     }
     @IBOutlet weak var questDetailsLabel: UILabel!
-    @IBOutlet weak var rewardImage: UIImageView!
+    //@IBOutlet weak var rewardImage: UIImageView!
     
     
     // --------------------------- NUDGES -----------------------------
@@ -234,12 +234,12 @@ class HomeViewController: PhoneViewController {
         
         if !dailyQuestData.isEmpty{
             if dailyQuest.complete{
-                if ((dailyQuestData["reward"] as! Int) != 0){
-                    questDetailsLabel.text = "Great job! You've earned " + petArray[(dailyQuestData["reward"] as! Int) - 1].capitalized + "!"
-                }
-                else{
-                    questDetailsLabel.text = "Great job! You've earned bonus EXP!"
-                }
+//                if ((dailyQuestData["reward"] as! Int) != 0){
+//                    questDetailsLabel.text = "Great job! You've earned " + petArray[(dailyQuestData["reward"] as! Int) - 1].capitalized + "!"
+//                }
+                
+                questDetailsLabel.text = "Great job! You've earned bonus EXP and Points!"
+                
             }
             else {
                 questDetailsLabel.text = dailyQuest.questString
@@ -249,7 +249,6 @@ class HomeViewController: PhoneViewController {
             questDetailsLabel.text = "No Current Quest"
         }
         
-        print("viewdidappear")
         if !homeTutorialCompleted{
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home Popup")
@@ -572,10 +571,10 @@ class HomeViewController: PhoneViewController {
         
         // if current quest is/isn't complete show/dont show pet reward
         if (dailyQuestData["complete"] as! Bool){
-            rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1])
+            //rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1])
         }
         else{
-            rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1] + " shadow")
+            //rewardImage.image = UIImage.init(named: petArray[(dailyQuestData["reward"] as! Int) - 1] + " shadow")
         }
         
         // get goal times
@@ -760,7 +759,7 @@ class HomeViewController: PhoneViewController {
             // give exp
         }
         else{ // change mystery pet
-            rewardImage.image = UIImage.init(named: petArray[random - 1] + " shadow")
+            //rewardImage.image = UIImage.init(named: petArray[random - 1] + " shadow")
         }
         return random
     }

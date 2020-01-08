@@ -13,6 +13,7 @@ import WatchConnectivity
 let petArray = ["bay", "fjol", "cleo", "eldur", "halo", "sage", "raz", "koko", "rio", "aqua", "royal", "indigo", "mar", "phoenix", "bly", "dioon", "toor", "reese", "navy", "iris", "loch", "river", "bahn", "zbut", "sierra", "echo", "nova", "jade", "koda", "bayou", "kolbi", "liyah", "rye", "qut", "yoko", "trii", "tala", "kitchi", "opal", "paytah", "gou", "axel", "wol", "sigma", "pi"]
 var petOwned = [1]
 var petEquipped = 0
+var petNumber = 1
 
 class CompanionsViewController: PhoneViewController {
     
@@ -34,6 +35,12 @@ class CompanionsViewController: PhoneViewController {
                     equip.isHidden = false
                 }
             }
+        }
+        else{
+            petNumber = (sender.tag - 1)
+            showPopup()
+            
+            //pop screen plus change label to achievement status
         }
     }
     
@@ -84,6 +91,15 @@ class CompanionsViewController: PhoneViewController {
 
     }
     
+    func showPopup(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Companions", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "Achievements Popup")
+
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    
+    
     func equipPet(pet : Int){
         petEquipped = pet
         UserDefaults.standard.set(petEquipped, forKey: "petEquipped")
@@ -113,5 +129,61 @@ class CompanionsViewController: PhoneViewController {
             }
         }
     }
+    func checkForAchievement(){
+        //will check an achievements list for all completed achievements and make sure appropriate pets are unlocked
+    }
     
+    func checkConditions(){
+        
+    }
+    
+}
+
+class CompanionsPopupController: PhoneViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        changePopupLabel(x: petNumber)
+    }
+    
+    func changePopupLabel(x: Int){
+        // change label based on int
+        if (x == 1){
+        }
+        else if (x == 2){
+        }
+        else if (x == 3){
+        }
+        else if (x == 4){
+        }
+        else if (x == 5){
+        }
+        else if (x == 6){
+        }
+        else if (x == 7){
+        }
+        else if (x == 8){
+        }
+        else if (x == 9){
+        }
+        else if (x == 10){
+        }
+        else if (x == 11){
+        }
+        else if (x == 12){
+        }
+        else if (x == 13){
+        }
+        else if (x == 14){
+        }
+        else if (x == 15){
+        }
+        else{
+            // shldnt be 0 or above 16
+        }
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }

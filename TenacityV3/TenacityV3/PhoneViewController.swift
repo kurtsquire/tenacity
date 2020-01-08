@@ -72,14 +72,18 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
         UserDefaults.standard.set(dailyQuestData, forKey: "dailyQuestData")
     }
     
-    func giveReward(new: Int){
-        if new != 0{
-            petOwned.append(new)
-            UserDefaults.standard.set(petOwned, forKey: "petOwned")
-        }
-        else{
-            saveEXP(addEXP: 100)
-        }
+//    func giveReward(new: Int){
+//        if new != 0{
+//            petOwned.append(new)
+//            UserDefaults.standard.set(petOwned, forKey: "petOwned")
+//        }
+//        else{
+//            saveEXP(addEXP: 100)
+//        }
+//    }
+    
+    func giveReward(){
+        saveEXP(addEXP: 250)
     }
     
     
@@ -171,7 +175,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                     if dailyQuest.checkQuest(data: qdata){
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        giveReward(new: (dailyQuestData["reward"] as! Int))
+                        giveReward()
                         saveToRealm(what: "quest complete")
                         
                     }
@@ -205,7 +209,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                         print("quest complete")
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        giveReward(new: (dailyQuestData["reward"] as! Int))
+                        giveReward()
                         saveToRealm(what: "quest complete")
 
                     }
@@ -245,7 +249,7 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                     if dailyQuest.checkQuest(data: qdata){
                         dailyQuestData["complete"] = true
                         saveEXP(addEXP: (dailyQuestData["exp"] as! Int))
-                        giveReward(new: (dailyQuestData["reward"] as! Int))
+                        giveReward()
                         saveToRealm(what: "quest complete")
                     }
                 }
