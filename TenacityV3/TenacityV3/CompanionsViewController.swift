@@ -129,18 +129,18 @@ class CompanionsViewController: PhoneViewController {
             }
         }
     }
+    
     func checkForAchievement(){
         //will check an achievements list for all completed achievements and make sure appropriate pets are unlocked
     }
     
     func checkConditions(){
-        
     }
-    
 }
 
 class CompanionsPopupController: PhoneViewController {
     
+    @IBOutlet weak var achievementLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         changePopupLabel(x: petNumber)
@@ -149,37 +149,94 @@ class CompanionsPopupController: PhoneViewController {
     func changePopupLabel(x: Int){
         // change label based on int
         if (x == 1){
+            achievementLabel.text = "Try out Breathe Focus"
         }
         else if (x == 2){
+            achievementLabel.text = "Try out all activities on the watch"
         }
+        //
         else if (x == 3){
+            achievementLabel.text = "Use Breathe Focus for 20 minutes total"
         }
         else if (x == 4){
+            achievementLabel.text = "Use Breathe Focus for 1 hours"
         }
         else if (x == 5){
+            achievementLabel.text = "Use Breathe Focus for 3 hours"
         }
+        //
         else if (x == 6){
+            achievementLabel.text = "set a nudge"
         }
         else if (x == 7){
+            achievementLabel.text = "Use Breathe Focus within 5 minutes of a set nudge"
         }
         else if (x == 8){
+            achievementLabel.text = "Use Breathe Focus within 5 minutes of a set nudge 5 times total"
         }
+        //
         else if (x == 9){
+            achievementLabel.text = "Breathe 20 times in Breathe Focus"
         }
         else if (x == 10){
+            achievementLabel.text = "Breathe 100 times in Breathe Focus"
         }
         else if (x == 11){
+            achievementLabel.text = "Breathe 500 times in Breathe Focus"
         }
+        //
         else if (x == 12){
+            achievementLabel.text = "Do 10 sets in Breathe Focus"
         }
         else if (x == 13){
+            achievementLabel.text = "Do 50 sets in Breathe Focus"
         }
         else if (x == 14){
+            achievementLabel.text = "Do 250 sets in Breathe Focus"
         }
+        //
         else if (x == 15){
+            achievementLabel.text = "Reach Rank 2"
         }
+        else if (x == 16){
+            achievementLabel.text = "Reach Rank 5"
+        }
+        else if (x == 17){
+            achievementLabel.text = "Reach Rank 10"
+        }
+        //
+        else if (x == 18){
+            achievementLabel.text = "Set a goal for Breathe Focus"
+        }
+        else if (x == 19){
+            achievementLabel.text = "Reach your goal for Breathe Focus"
+        }
+        else if (x == 20){
+            achievementLabel.text = "Reach your goal for Breathe Focus 5 times"
+        }
+        //
+        else if (x == 21){
+            achievementLabel.text = "Purchase an upgrade from the shop"
+        }
+        else if (x == 22){
+            achievementLabel.text = "Purchase 5 upgrades from the shop"
+        }
+        else if (x == 23){
+            achievementLabel.text = "Purchase all upgrades from the shop"
+        }
+        //
+        else if (x == 24){
+            achievementLabel.text = "Hatch a pet"
+        }
+        else if (x == 25){
+            achievementLabel.text = "Hatch 3 pets"
+        }
+        else if (x == 26){
+            achievementLabel.text = "Hatch all 6 pets"
+        }
+        //
         else{
-            // shldnt be 0 or above 16
+            // shldnt be 0 (1st pet alrdy unlocked)
         }
     }
     

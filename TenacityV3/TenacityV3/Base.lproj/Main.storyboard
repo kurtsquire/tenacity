@@ -271,11 +271,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9g-pG-dRh">
-                                                <rect key="frame" x="22" y="300" width="130" height="130"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="fox"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zwH-MU-cPn">
                                                 <rect key="frame" x="23" y="963" width="205" height="94"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -287,11 +282,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1531" id="NA8-Ki-sls"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="N9g-pG-dRh"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="mtf-xn-iaN" userLabel="Pet_Line_bot">
                                         <rect key="frame" x="5" y="468" width="365" height="6"/>
@@ -750,7 +740,6 @@ You will also find your current Quest, Goals, and Nudges.</string>
         <image name="Tab_Home" width="25" height="24"/>
         <image name="bay" width="501" height="501"/>
         <image name="expUnfill" width="500" height="93"/>
-        <image name="fox" width="438" height="462"/>
         <image name="gear_ui" width="330" height="341"/>
         <image name="help" width="150" height="150"/>
         <image name="line" width="10000" height="60"/>

@@ -1573,6 +1573,9 @@
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="0.7537457192" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="IGU-f2-8lE"/>
                     </view>
+                    <connections>
+                        <outlet property="achievementLabel" destination="tyj-ee-MeM" id="HoG-IN-9mA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOY-ak-2u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
