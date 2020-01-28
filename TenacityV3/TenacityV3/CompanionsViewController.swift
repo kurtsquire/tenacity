@@ -33,6 +33,13 @@ class CompanionsViewController: PhoneViewController {
     var mtxOwnedLotus = [0]
     var mtxOwnedLotusC = [0]
     
+    var nudge1 = ""
+    var nudge2 = ""
+    var nudge3 = ""
+    var nudge4 = ""
+    var nudge5 = ""
+    var nudge6 = ""
+    
     @IBAction func companionsButtonPressed(_ sender: UIButton) {
 
         if (petOwned.contains(sender.tag)){
@@ -134,6 +141,13 @@ class CompanionsViewController: PhoneViewController {
         mtxOwnedBreatheC = defaults.array(forKey: "mtxOwnedBreatheC") as? [Int] ?? [0]
         mtxOwnedLotus = defaults.array(forKey: "mtxOwnedLotus") as? [Int] ?? [0]
         mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
+        
+        nudge1 =  defaults.string(forKey: "dateString0") ?? "No Current Nudge"
+        nudge2 = defaults.string(forKey: "dateString1") ?? "No Current Nudge"
+        nudge3 = defaults.string(forKey: "dateString2") ?? "No Current Nudge"
+        nudge4 = defaults.string(forKey: "dateString3") ?? "No Current Nudge"
+        nudge5 = defaults.string(forKey: "dateString4") ?? "No Current Nudge"
+        nudge6 = defaults.string(forKey: "dateString5") ?? "No Current Nudge"
     }
     
     func sendAppContext(){
@@ -249,6 +263,14 @@ class CompanionsViewController: PhoneViewController {
             //set a nudge
         else if x == 12{
             //set
+            if nudge1 != "No Current Nudge" ||
+            nudge2 != "No Current Nudge" ||
+            nudge3 != "No Current Nudge" ||
+            nudge4 != "No Current Nudge" ||
+            nudge5 != "No Current Nudge" ||
+            nudge6 != "No Current Nudge" {
+                achievementComplete(x: 12)
+            }
         }
         else if x == 13{
             //use

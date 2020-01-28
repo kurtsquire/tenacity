@@ -136,6 +136,9 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
             buildQuest()
         }
         
+        //update current nudges
+        // ******************************
+        
         //Initialize Realm instance
         let realm = try! Realm()
         
@@ -203,6 +206,8 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                 saveEXP(addEXP: Int(breatheFTimePlayed))
                 
                 let qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
+                
+                //check if time started close to any nudge
                 
                 if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
                     if dailyQuest.checkQuest(data: qdata){
