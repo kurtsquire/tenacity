@@ -434,6 +434,7 @@ class GameSettingsViewController: PhoneViewController{
     }
 }
 
+
 class PurchaseManager {
 
     static let shared = PurchaseManager()

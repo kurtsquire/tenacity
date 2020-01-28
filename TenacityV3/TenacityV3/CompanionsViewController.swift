@@ -24,6 +24,15 @@ class CompanionsViewController: PhoneViewController {
     
     var achievementsCompleted: [Int] = []
     
+    let calendar = Calendar.autoupdatingCurrent
+    var today = Date()
+    var startTime = Date()
+    
+    var mtxOwnedBreathe = [0]
+    var mtxOwnedBreatheC = [0]
+    var mtxOwnedLotus = [0]
+    var mtxOwnedLotusC = [0]
+    
     @IBAction func companionsButtonPressed(_ sender: UIButton) {
 
         if (petOwned.contains(sender.tag)){
@@ -63,6 +72,10 @@ class CompanionsViewController: PhoneViewController {
     
     override func viewDidAppear(_ animated: Bool) { //opening back up the tab (works from other tabs)
         super.viewDidAppear(animated)
+        
+        today = Date()
+        startTime = calendar.startOfDay(for: today)
+        
         testUserDefaults()
         checkForAchievements()
         updatePetData()
@@ -91,7 +104,6 @@ class CompanionsViewController: PhoneViewController {
                 button.setImage(UIImage.init(named: petArray[button.tag - 1] + " shadow"), for: .normal)
             }
         }
-
     }
     
     func showPopup(){
@@ -100,8 +112,6 @@ class CompanionsViewController: PhoneViewController {
 
         self.present(newViewController, animated: true, completion: nil)
     }
-    
-    
     
     func equipPet(pet : Int){
         petEquipped = pet
@@ -116,8 +126,14 @@ class CompanionsViewController: PhoneViewController {
         petOwned = defaults.array(forKey: "petOwned") as? [Int] ?? [1]
         petEquipped = defaults.integer(forKey: "petEquipped")
         
+        exp = defaults.integer(forKey: "exp")
         
         companionTutorialCompleted = defaults.bool(forKey: "companionTutorialCompleted")
+        
+        mtxOwnedBreathe = defaults.array(forKey: "mtxOwnedBreathe") as? [Int] ?? [0]
+        mtxOwnedBreatheC = defaults.array(forKey: "mtxOwnedBreatheC") as? [Int] ?? [0]
+        mtxOwnedLotus = defaults.array(forKey: "mtxOwnedLotus") as? [Int] ?? [0]
+        mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
     }
     
     func sendAppContext(){
@@ -136,13 +152,12 @@ class CompanionsViewController: PhoneViewController {
     
     func checkForAchievements(){
         //will check an achievements list for all completed achievements and make sure appropriate pets are unlocked
-        let AList = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+        let AList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
         for i in AList{
-            if !petOwned.contains(i){
+            if !petOwned.contains(i+1){
                 checkConditions(x: i)
             }
         }
-        
     }
     
     func checkConditions(x: Int){
@@ -151,96 +166,184 @@ class CompanionsViewController: PhoneViewController {
         let bfx = realm.objects(GameDataModel.self).filter("gameTitle = %@", "breathe focus")
         let bix = realm.objects(GameDataModel.self).filter("gameTitle = %@", "breathe infinite")
         let lsx = realm.objects(GameDataModel.self).filter("gameTitle = %@", "lotus")
-        if x == 2{
+        if x == 1{
+            //played breatheF
             if bfx.count > 0{
+                achievementComplete(x: 1)
+            }
+        }
+        else if x == 2{
+            //played all activities
+            if bfx.count > 0 && bix.count > 0 && lsx.count > 0{
                 achievementComplete(x: 2)
             }
         }
-        else if x == 3{
-            if bfx.count > 0 && bix.count > 0 && lsx.count > 0{
-                achievementComplete(x: 3)
-            }
-        }
-        else if x >= 4 && x <= 6{
+        else if x >= 3 && x <= 5{
+            // total breatheFocus time
             var time = 0.0
             for item in bfx{
                 time += item.breatheFTimePlayed
             }
-            if x == 4{
+            if x == 3{
                 if time >= 20*60{
+                    achievementComplete(x: 3)
+                }
+            }
+            else if x == 4{
+                if time >= 60*60{
                     achievementComplete(x: 4)
                 }
             }
             else if x == 5{
-                if time >= 60*60{
+                if time >= 180*60{
                     achievementComplete(x: 5)
                 }
             }
-            else if x == 6{
-                if time >= 180*60{
-                    achievementComplete(x: 6)
-                }
-            }
         }
-        else if x >= 7 && x <= 9{
+        else if x >= 6 && x <= 8{
+            //total breaths
             var breaths = 0
             for item in bfx{
                 if item.gameDataType == "stop hold"{
                     breaths += 1
                 }
             }
+            if x == 6{
+                if breaths >= 100{
+                    achievementComplete(x: 6)
+                }
+            }
             if x == 7{
-                if breaths >= 10{
+                if breaths >= 500{
                     achievementComplete(x: 7)
                 }
             }
             if x == 8{
-                if breaths >= 500{
+                if breaths >= 2000{
                     achievementComplete(x: 8)
                 }
             }
-            if x == 9{
-                if breaths >= 2000{
-                    achievementComplete(x: 9)
-                }
-            }
         }
-        else if x >= 10 && x <= 12{
+        else if x >= 9 && x <= 11{
+            //correct breathe sets
             var correct = 0
             for item in bfx{
                 correct += item.breatheFCorrectSets
             }
+            if x == 9{
+                if correct >= 20{
+                    achievementComplete(x: 9)
+                }
+            }
             if x == 10{
-                if correct >= 2{
+                if correct >= 100{
                     achievementComplete(x: 10)
                 }
             }
             if x == 11{
-                if correct >= 100{
+                if correct >= 500{
                     achievementComplete(x: 11)
                 }
             }
-            if x == 12{
-                if correct >= 500{
-                    achievementComplete(x: 12)
-                }
-            }
+        }
+            //set a nudge
+        else if x == 12{
+            //set
         }
         else if x == 13{
-            
+            //use
         }
         else if x == 14{
-            
+            //use 5x
         }
+        //reach rank x
         else if x == 15{
-            
+            if exp > 1000{
+                achievementComplete(x: 15)
+            }
         }
-        //
-        
+        else if x == 16{
+            if exp > 5000{
+                achievementComplete(x: 16)
+            }
+        }
+        else if x == 17{
+            if exp > 10000{
+                achievementComplete(x: 17)
+            }
+        }
+        //set a goal
+        else if x == 18{
+            //15 min
+            let goal = Double(UserDefaults.standard.integer(forKey: "breatheFGoalTime"))
+            if goal >= 15{
+                achievementComplete(x: 18)
+            }
+        }
+        else if x == 19{
+            // reach
+            let goal = Double(UserDefaults.standard.integer(forKey: "breatheFGoalTime"))
+            let bfxtoday = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe focus", startTime)
+            var time = 0.0
+            for i in bfxtoday{
+                time += i.breatheFTimePlayed
+            }
+            if goal >= 15 && time/60 >= goal{
+                achievementComplete(x: 19)
+            }
+        }
+        else if x == 20{
+            // reach 5
+            let goal = Double(UserDefaults.standard.integer(forKey: "breatheFGoalTime"))
+            let bfxtoday = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe focus", startTime)
+            var time = 0.0
+            for i in bfxtoday{
+                time += i.breatheFTimePlayed
+            }
+            if goal >= 30 && time/60 >= goal{
+                achievementComplete(x: 20)
+            }
+        }
+        //purchase upgrades
+        else if x == 21{
+            //1
+            var total = 0
+            total += mtxOwnedBreathe.count
+            total += mtxOwnedBreatheC.count
+            total += mtxOwnedLotus.count
+            total += mtxOwnedLotusC.count
+            if total >= 5{
+                achievementComplete(x: 21)
+            }
+        }
+        else if x == 22{
+            //5
+            var total = 0
+            total += mtxOwnedBreathe.count
+            total += mtxOwnedBreatheC.count
+            total += mtxOwnedLotus.count
+            total += mtxOwnedLotusC.count
+            if total >= 9{
+                achievementComplete(x: 22)
+            }
+        }
+        else if x == 23{
+            //all
+            var total = 0
+            total += mtxOwnedBreathe.count
+            total += mtxOwnedBreatheC.count
+            total += mtxOwnedLotus.count
+            total += mtxOwnedLotusC.count
+            if total >= 16{
+                achievementComplete(x: 23)
+            }
+        }
+
+
     }
     
     func achievementComplete(x: Int){
-        petOwned.append(x)
+        petOwned.append(x + 1)
         UserDefaults.standard.set(petOwned, forKey: "petOwned")
     }
 
@@ -314,13 +417,13 @@ class CompanionsPopupController: PhoneViewController {
         }
         //
         else if (x == 18){
-            achievementLabel.text = "Set a goal for Breathe Focus"
+            achievementLabel.text = "Set a goal of at least 15 minutes for Breathe Focus"
         }
         else if (x == 19){
-            achievementLabel.text = "Reach your goal for Breathe Focus"
+            achievementLabel.text = "Reach your goal for Breathe Focus (while set to at least 15 minutes)"
         }
         else if (x == 20){
-            achievementLabel.text = "Reach your goal for Breathe Focus 5 times"
+            achievementLabel.text = "Reach your goal for Breathe Focus (while set to at least 30 minutes)"
         }
         //
         else if (x == 21){

@@ -460,7 +460,6 @@ class HomeViewController: PhoneViewController {
             lotusTimeSun/60, lotusTimeMon/60, lotusTimeTues/60, lotusTimeWed/60, lotusTimeThurs/60, lotusTimeFri/60, lotusTimeSat/60
         ]
         
-        
         let gamesInfo = [
             1 : ( gameName: "Breathe Infinite", gameData: breatheITimePlayed, gameColor: UIColor(cgColor: breatheIGraphProgColor), gameGoal: breatheFGoalTime ),
             0 : ( gameName: "Breathe Focus", gameData: breatheFTimePlayed, gameColor: UIColor(cgColor: breatheFGraphProgColor), gameGoal: breatheIGoalTime ),
@@ -470,7 +469,6 @@ class HomeViewController: PhoneViewController {
         let timePlayedChart : LineChart = LineChart(lineChartView: self.homeLineGraph, goalColor: UIColor.red, gamesInfo: gamesInfo)
         
         timePlayedChart.drawWeekGraph()
-        
         
         var breatheFTimeToday = 0.0
         var breatheITimeToday = 0.0
