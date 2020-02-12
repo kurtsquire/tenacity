@@ -13,7 +13,7 @@ import UIKit
 class ConfirmPopupViewController: PhoneViewController {
     
     
-    let breathePicArray = ["Breathe Classic", "Breathe Fire", "Breathe Cloud", "Breathe Diamond"]
+    let breathePicArray = ["Breathe Classic", "Breathe Fire", "Breathe Cloud", "Breathe Diamond", "Egg 1", "Egg 2", "Egg 3", "Egg 4", "Egg 5", "Egg 6"]
     let lotusPicArray = ["Lotus Flower", "Lotus Square", "Lotus Heart", "Lotus Circle"]
     let breatheColorArray = ["Breathe Teal", "Breathe Saffron", "Breathe Cherry", "Breathe Lavender"]
     let lotusColorArray = ["Lotus Cassic", "Lotus Forest", "Lotus Outrun", "Lotus Pool Party"]

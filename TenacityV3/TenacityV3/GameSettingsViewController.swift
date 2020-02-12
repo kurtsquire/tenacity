@@ -26,6 +26,7 @@ class GameSettingsViewController: PhoneViewController{
     var breatheColor = 0
     var lotusPic = 0
     var lotusColor = 0
+    //var breatheEgg = 0
     
     @IBOutlet var breathePicLabels: [UILabel]!
     @IBOutlet var breatheColorLabels: [UILabel]!
@@ -70,6 +71,14 @@ class GameSettingsViewController: PhoneViewController{
     // If mtx not owned open up purchase popup
     
     @IBAction func openPurchaseConfirmationBreathePic(_ sender: UIButton) {
+        if !(mtxOwnedBreathe.contains(sender.tag)){
+            let storyBoard: UIStoryboard = UIStoryboard(name: "GameCosmetics", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "confirmPurchasePopup")
+            self.present(newViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func openPurchaseConfirmationEgg(_ sender: UIButton) {
         if !(mtxOwnedBreathe.contains(sender.tag)){
             let storyBoard: UIStoryboard = UIStoryboard(name: "GameCosmetics", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "confirmPurchasePopup")
@@ -141,6 +150,80 @@ class GameSettingsViewController: PhoneViewController{
     @IBAction func diamond(_ sender: UIButton) {
         if mtxOwnedBreathe.contains(sender.tag){
             saveToRealm(what: "breathe: equip diamond theme")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    
+    
+    // --------------------------------------- BREATHE EGGS -------------------------------------
+    
+    @IBAction func egg_1(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 1")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    @IBAction func egg_2(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 2")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    
+    @IBAction func egg_3(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 3")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    
+    @IBAction func egg_4(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 4")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    
+    @IBAction func egg_5(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 5")
+            breathePic = sender.tag
+            sendAppContext()
+            self.updateLabels(group: self.breathePicLabels, num: sender.tag)
+            UserDefaults.standard.set(sender.tag, forKey: "breathePic")
+        }
+        mtxTemp = sender.tag
+        mtxNum = 0
+    }
+    
+    @IBAction func egg_6(_ sender: UIButton) {
+        if mtxOwnedBreathe.contains(sender.tag){
+            saveToRealm(what: "breathe: equip egg 6")
             breathePic = sender.tag
             sendAppContext()
             self.updateLabels(group: self.breathePicLabels, num: sender.tag)
@@ -417,6 +500,7 @@ class GameSettingsViewController: PhoneViewController{
         
         breathePic = defaults.integer(forKey: "breathePic")
         breatheColor = defaults.integer(forKey: "breatheColor")
+        
         lotusPic = defaults.integer(forKey: "lotusPic")
         lotusColor = defaults.integer(forKey: "lotusColor")
         
@@ -424,14 +508,11 @@ class GameSettingsViewController: PhoneViewController{
         mtxOwnedBreatheC = defaults.array(forKey: "mtxOwnedBreatheC") as? [Int] ?? [0]
         mtxOwnedLotus = defaults.array(forKey: "mtxOwnedLotus") as? [Int] ?? [0]
         mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
+        //mtxOwnedEggs = defaults.array(forKey: "mtxOwnedEggs") as? [Int] ?? []
         
         cosmeticsTutorialCompleted = defaults.bool(forKey: "cosmeticsTutorialCompleted")
     }
     
-    @IBAction func gimmeMoneyButton(_ sender: Any) {
-        points += 50
-        UserDefaults.standard.set(points, forKey: "points")
-    }
 }
 
 

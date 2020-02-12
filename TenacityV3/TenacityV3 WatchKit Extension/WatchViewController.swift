@@ -99,7 +99,7 @@ class WatchViewController: WKInterfaceController, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         if applicationContext.count == 4{
-            let breathePics = ["classic", "fire", "cloud", "diamond"]
+            let breathePics = ["classic", "fire", "cloud", "diamond", "Egg_1", "Egg_2", "Egg_3", "Egg_4", "Egg_5", "Egg_6"]
             let lotusPics = ["lotus", "square", "heart", "circle"]
             
             UserDefaults.standard.set(breathePics[applicationContext["bpic"] as! Int], forKey: "breatheTheme")
