@@ -782,12 +782,12 @@ Earn points by using the Tenacity watch app.</string>
         <image name="BDiamond" width="320" height="320"/>
         <image name="BFire1" width="320" height="320"/>
         <image name="Cherry" width="54" height="54"/>
-        <image name="Egg_1" width="624" height="754"/>
-        <image name="Egg_2" width="732" height="736"/>
-        <image name="Egg_3" width="694" height="910"/>
-        <image name="Egg_4" width="698" height="806"/>
-        <image name="Egg_5" width="658" height="822"/>
-        <image name="Egg_6" width="1020" height="1098"/>
+        <image name="Egg_1" width="1020" height="1098"/>
+        <image name="Egg_2" width="624" height="754"/>
+        <image name="Egg_3" width="732" height="736"/>
+        <image name="Egg_4" width="694" height="910"/>
+        <image name="Egg_5" width="698" height="806"/>
+        <image name="Egg_6" width="658" height="822"/>
         <image name="Forest" width="200" height="54"/>
         <image name="Lavender" width="54" height="54"/>
         <image name="Outrun" width="200" height="54"/>

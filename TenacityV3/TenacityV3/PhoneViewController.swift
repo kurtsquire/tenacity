@@ -119,6 +119,11 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
             buildQuest()
             //rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
+        
+        //breathePic = defaults.integer(forKey: "breathePic")
+        
+        
+        //print(breathePic)
 
     }
     
@@ -126,16 +131,17 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
     // ----------------------------------- WATCH CONNECTIVITY -------------------------------
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        testUserDefaults()
         
         let defaults = UserDefaults.standard
-        
-        // update current quest
         dailyQuestData = defaults.dictionary(forKey: "dailyQuestData") ?? [:]
-        if dailyQuestData.isEmpty{}
+        
+        if dailyQuestData.isEmpty{
+        }
         else {
             buildQuest()
+            //rerollButton.setTitle("Reroll x" + String(rerolls), for: .normal)
         }
-        
         //update current nudges
         // ******************************
         
@@ -208,6 +214,39 @@ class PhoneViewController: UIViewController, WCSessionDelegate {
                 let qdata = ["game": game, "timeEnd": date, "timePlayed": Int(breatheFTimePlayed), "correct": breatheFCorrectSets, "total": breatheFTotalSets, "cycle": breatheFCycleSettings] as [String : Any]
                 
                 //check if time started close to any nudge
+                
+                //check if using egg
+                let bPic = UserDefaults.standard.integer(forKey: "breathePic")
+                if bPic == 4{ //eggs start at 4-9
+                    var Time = defaults.double(forKey: "egg1")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg1")
+                }
+                else if bPic == 5{
+                    var Time = defaults.double(forKey: "egg2")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg2")
+                }
+                else if bPic == 6{
+                    var Time = defaults.double(forKey: "egg3")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg3")
+                }
+                else if bPic == 7{
+                    var Time = defaults.double(forKey: "egg4")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg4")
+                }
+                else if bPic == 8{
+                    var Time = defaults.double(forKey: "egg5")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg5")
+                }
+                else if bPic == 9{
+                    var Time = defaults.double(forKey: "egg6")
+                    Time += breatheFTimePlayed
+                    UserDefaults.standard.set(Time, forKey: "egg6")
+                }
                 
                 if !dailyQuestData.isEmpty && !(dailyQuestData["complete"] as! Bool){
                     if dailyQuest.checkQuest(data: qdata){

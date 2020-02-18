@@ -40,6 +40,13 @@ class CompanionsViewController: PhoneViewController {
     var nudge5 = ""
     var nudge6 = ""
     
+    var egg1Time = 0.0
+    var egg2Time = 0.0
+    var egg3Time = 0.0
+    var egg4Time = 0.0
+    var egg5Time = 0.0
+    var egg6Time = 0.0
+    
     @IBAction func companionsButtonPressed(_ sender: UIButton) {
 
         if (petOwned.contains(sender.tag)){
@@ -148,6 +155,21 @@ class CompanionsViewController: PhoneViewController {
         nudge4 = defaults.string(forKey: "dateString3") ?? "No Current Nudge"
         nudge5 = defaults.string(forKey: "dateString4") ?? "No Current Nudge"
         nudge6 = defaults.string(forKey: "dateString5") ?? "No Current Nudge"
+        
+        egg1Time = defaults.double(forKey: "egg1")
+        egg2Time = defaults.double(forKey: "egg2")
+        egg3Time = defaults.double(forKey: "egg3")
+        egg4Time = defaults.double(forKey: "egg4")
+        egg5Time = defaults.double(forKey: "egg5")
+        egg6Time = defaults.double(forKey: "egg6")
+        
+        print(egg1Time)
+        print(egg2Time)
+        print(egg3Time)
+        print(egg4Time)
+        print(egg5Time)
+        print(egg6Time)
+        
     }
     
     func sendAppContext(){
@@ -166,7 +188,7 @@ class CompanionsViewController: PhoneViewController {
     
     func checkForAchievements(){
         //will check an achievements list for all completed achievements and make sure appropriate pets are unlocked
-        let AList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+        let AList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
         for i in AList{
             if !petOwned.contains(i+1){
                 checkConditions(x: i)
@@ -360,7 +382,53 @@ class CompanionsViewController: PhoneViewController {
                 achievementComplete(x: 23)
             }
         }
-
+            //hatch eggs
+        else if x == 24{
+            
+        }
+        else if x == 25{
+            
+        }
+        else if x == 26{
+            
+        }
+        //egg 1
+        else if x == 27{
+            if egg1Time >= 3.0{
+                achievementComplete(x: 27)
+            }
+        }
+        else if x == 28{
+            
+        }
+        else if x == 29{
+            
+        }
+        
+        //egg 2
+        else if x == 30{}
+        else if x == 31{}
+        else if x == 32{}
+        
+        //egg 3
+        else if x == 33{}
+        else if x == 34{}
+        else if x == 35{}
+        
+        //egg 4
+        else if x == 36{}
+        else if x == 37{}
+        else if x == 38{}
+        
+        //egg 5
+        else if x == 39{}
+        else if x == 40{}
+        else if x == 41{}
+        
+        //egg 6
+        else if x == 42{}
+        else if x == 43{}
+        else if x == 44{}
 
     }
     
@@ -459,13 +527,13 @@ class CompanionsPopupController: PhoneViewController {
         }
         //
         else if (x == 24){
-            achievementLabel.text = "Hatch a pet"
+            achievementLabel.text = "Hatch an egg"
         }
         else if (x == 25){
-            achievementLabel.text = "Hatch 3 pets"
+            achievementLabel.text = "Hatch 3 eggs"
         }
         else if (x == 26){
-            achievementLabel.text = "Hatch all 6 pets"
+            achievementLabel.text = "Hatch all 6 eggs"
         }
         else if (x == 27){
             achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 30 minutes to hatch it"

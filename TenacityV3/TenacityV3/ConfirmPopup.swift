@@ -18,7 +18,7 @@ class ConfirmPopupViewController: PhoneViewController {
     let breatheColorArray = ["Breathe Teal", "Breathe Saffron", "Breathe Cherry", "Breathe Lavender"]
     let lotusColorArray = ["Lotus Cassic", "Lotus Forest", "Lotus Outrun", "Lotus Pool Party"]
     
-    var breathePic = 0
+    //var breathePic = 0
     var breatheColor = 0
     var lotusPic = 0
     var lotusColor = 0

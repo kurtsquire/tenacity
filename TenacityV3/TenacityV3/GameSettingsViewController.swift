@@ -64,8 +64,6 @@ class GameSettingsViewController: PhoneViewController{
         PurchaseManager.shared.firstVC = self
         //testUserDefaults()
         //updateLabelsOpen()
-        
-        
     }
     
     // If mtx not owned open up purchase popup
@@ -163,7 +161,7 @@ class GameSettingsViewController: PhoneViewController{
     // --------------------------------------- BREATHE EGGS -------------------------------------
     
     @IBAction func egg_1(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//4
             saveToRealm(what: "breathe: equip egg 1")
             breathePic = sender.tag
             sendAppContext()
@@ -174,7 +172,7 @@ class GameSettingsViewController: PhoneViewController{
         mtxNum = 0
     }
     @IBAction func egg_2(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//5
             saveToRealm(what: "breathe: equip egg 2")
             breathePic = sender.tag
             sendAppContext()
@@ -186,7 +184,7 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func egg_3(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//6
             saveToRealm(what: "breathe: equip egg 3")
             breathePic = sender.tag
             sendAppContext()
@@ -198,7 +196,7 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func egg_4(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//7
             saveToRealm(what: "breathe: equip egg 4")
             breathePic = sender.tag
             sendAppContext()
@@ -210,7 +208,7 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func egg_5(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//8
             saveToRealm(what: "breathe: equip egg 5")
             breathePic = sender.tag
             sendAppContext()
@@ -222,7 +220,7 @@ class GameSettingsViewController: PhoneViewController{
     }
     
     @IBAction func egg_6(_ sender: UIButton) {
-        if mtxOwnedBreathe.contains(sender.tag){
+        if mtxOwnedBreathe.contains(sender.tag){//9
             saveToRealm(what: "breathe: equip egg 6")
             breathePic = sender.tag
             sendAppContext()
