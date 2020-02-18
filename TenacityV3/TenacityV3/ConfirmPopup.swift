@@ -28,7 +28,7 @@ class ConfirmPopupViewController: PhoneViewController {
     var mtxOwnedLotus = [0]
     var mtxOwnedLotusC = [0]
     
-    var pointCost = 5
+    var pointCost = 250
     
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var currentPointsLabel: UILabel!

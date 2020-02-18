@@ -508,7 +508,6 @@ class GameSettingsViewController: PhoneViewController{
         mtxOwnedBreatheC = defaults.array(forKey: "mtxOwnedBreatheC") as? [Int] ?? [0]
         mtxOwnedLotus = defaults.array(forKey: "mtxOwnedLotus") as? [Int] ?? [0]
         mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
-        //mtxOwnedEggs = defaults.array(forKey: "mtxOwnedEggs") as? [Int] ?? []
         
         cosmeticsTutorialCompleted = defaults.bool(forKey: "cosmeticsTutorialCompleted")
     }

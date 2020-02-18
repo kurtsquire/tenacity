@@ -467,6 +467,60 @@ class CompanionsPopupController: PhoneViewController {
         else if (x == 26){
             achievementLabel.text = "Hatch all 6 pets"
         }
+        else if (x == 27){
+            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 28){
+            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 29){
+            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
+        else if (x == 30){
+            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 31){
+            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 32){
+            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
+        else if (x == 33){
+            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 34){
+            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 35){
+            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
+        else if (x == 36){
+            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 37){
+            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 38){
+            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
+        else if (x == 39){
+            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 40){
+            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 41){
+            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
+        else if (x == 42){
+            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+        }
+        else if (x == 43){
+            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 1 hour to hatch it"
+        }
+        else if (x == 44){
+            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 2 hours to hatch it"
+        }
         //
         else{
             // shldnt be 0 (1st pet alrdy unlocked)
