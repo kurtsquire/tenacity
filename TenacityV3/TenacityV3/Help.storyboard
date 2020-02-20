@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +91,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-bX-L4P">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Unlock companions and earn bonus experience points by completing quests. You can use the reroll button to randomize the reward and activity. A new quest is generated everyday. You can only complete one  quest per day. You cannot return to a previous activity or reward, so be sure that you want to reroll.</string>
+                                <string key="text">Earn bonus experience points by completing quests. You can use the reroll button to randomize the reward and activity. A new quest is generated everyday. You can only complete one  quest per day. You cannot return to a previous activity or reward, so be sure that you want to reroll.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-cL-DT4">
                                 <rect key="frame" x="16" y="88" width="343" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Only one companion can be equipped at a time. Simply tap an unlocked pet to equip them. In order to unlock the next pet in the series you must first obtain the previous ones. Pets can only be obtained through quests which can only be completed once a day, so be sure to do your quests!</string>
+                                <string key="text">Only one companion can be equipped at a time. Simply tap an unlocked pet to equip them. Pets can only be obtained through achievements which can be checked by tapping locked pets. Some activities will be easier than others. Try to collect them all!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -477,7 +477,7 @@ Only Breathe Focus has a required time goal.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-7E-UIe">
                                 <rect key="frame" x="16" y="88" width="343" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">You can complete quests to collect special companions. You can complete one quest a day. New quests and rerolls become available at 12 am on the following day. You can reroll the quest and reward to get different ones. You are allowed 3 rerolls a day.</string>
+                                <string key="text">You can complete quests to collect experience points to rank up. You can complete one quest a day. New quests and rerolls become available at 12 am on the following day. You can reroll the quest and reward to get different ones. You are allowed 3 rerolls a day.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -489,10 +489,6 @@ Only Breathe Focus has a required time goal.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instruction pets" translatesAutoresizingMaskIntoConstraints="NO" id="Os8-Yc-fJc">
-                                <rect key="frame" x="25" y="424" width="325" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="H6T-ct-dwj"/>
@@ -741,7 +737,6 @@ Attention: If you incorrectly swipe before the 5th breath, or tap instead of swi
         </scene>
     </scenes>
     <resources>
-        <image name="instruction pets" width="700" height="293"/>
         <image name="line" width="10000" height="60"/>
         <image name="lotus instructions" width="949" height="339"/>
     </resources>

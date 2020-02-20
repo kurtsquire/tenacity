@@ -20,7 +20,7 @@ class GameSettingsViewController: PhoneViewController{
     var mtxOwnedLotus = [0]
     var mtxOwnedLotusC = [0]
     
-    var mtxCost = 5
+    var mtxCost = 250
     
     var breathePic = 0
     var breatheColor = 0

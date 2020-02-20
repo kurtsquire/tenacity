@@ -163,13 +163,6 @@ class CompanionsViewController: PhoneViewController {
         egg5Time = defaults.double(forKey: "egg5")
         egg6Time = defaults.double(forKey: "egg6")
         
-        print(egg1Time)
-        print(egg2Time)
-        print(egg3Time)
-        print(egg4Time)
-        print(egg5Time)
-        print(egg6Time)
-        
     }
     
     func sendAppContext(){
@@ -188,7 +181,7 @@ class CompanionsViewController: PhoneViewController {
     
     func checkForAchievements(){
         //will check an achievements list for all completed achievements and make sure appropriate pets are unlocked
-        let AList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+        let AList = Array(1...44)
         for i in AList{
             if !petOwned.contains(i+1){
                 checkConditions(x: i)
@@ -295,10 +288,52 @@ class CompanionsViewController: PhoneViewController {
             }
         }
         else if x == 13{
-            //use
+            var n = 0
+            if nudge1 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge2 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge3 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge4 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge5 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge6 != "No Current Nudge"{
+                n += 1
+            }
+            if n >= 3{
+                achievementComplete(x: 13)
+            }
         }
         else if x == 14{
-            //use 5x
+            var n = 0
+            if nudge1 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge2 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge3 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge4 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge5 != "No Current Nudge"{
+                n += 1
+            }
+            if nudge6 != "No Current Nudge"{
+                n += 1
+            }
+            if n >= 6{
+                achievementComplete(x: 14)
+            }
         }
         //reach rank x
         else if x == 15{
@@ -384,51 +419,175 @@ class CompanionsViewController: PhoneViewController {
         }
             //hatch eggs
         else if x == 24{
+            if egg1Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
+            else if egg2Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
+            else if egg3Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
+            else if egg4Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
+            else if egg5Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
+            else if egg6Time >= 1800.0{
+                achievementComplete(x: 24)
+            }
             
         }
         else if x == 25{
-            
+            var n = 0
+            if egg1Time >= 1800.0{
+                n += 1
+            }
+            if egg2Time >= 1800.0{
+                n += 1
+            }
+            if egg3Time >= 1800.0{
+                n += 1
+            }
+            if egg4Time >= 1800.0{
+                n += 1
+            }
+            if egg5Time >= 1800.0{
+                n += 1
+            }
+            if egg6Time >= 1800.0{
+                n += 1
+            }
+            if n >= 3{
+                achievementComplete(x: 25)
+            }
         }
         else if x == 26{
-            
+            var n = 0
+            if egg1Time >= 1800.0{
+                n += 1
+            }
+            if egg2Time >= 1800.0{
+                n += 1
+            }
+            if egg3Time >= 1800.0{
+                n += 1
+            }
+            if egg4Time >= 1800.0{
+                n += 1
+            }
+            if egg5Time >= 1800.0{
+                n += 1
+            }
+            if egg6Time >= 1800.0{
+                n += 1
+            }
+            if n == 6{
+                achievementComplete(x: 26)
+            }
         }
         //egg 1
         else if x == 27{
-            if egg1Time >= 3.0{
+            if egg1Time >= 1800.0{
                 achievementComplete(x: 27)
             }
         }
         else if x == 28{
-            
+            if egg1Time >= 3600.0{
+                achievementComplete(x: 28)
+            }
         }
         else if x == 29{
-            
+            if egg1Time >= 7200.0{
+                achievementComplete(x: 29)
+            }
         }
         
         //egg 2
-        else if x == 30{}
-        else if x == 31{}
-        else if x == 32{}
+        else if x == 30{
+            if egg2Time >= 1800.0{
+                achievementComplete(x: 30)
+            }
+        }
+        else if x == 31{
+            if egg2Time >= 3600.0{
+                achievementComplete(x: 31)
+            }
+        }
+        else if x == 32{
+            if egg2Time >= 7200.0{
+                achievementComplete(x: 32)
+            }
+        }
         
         //egg 3
-        else if x == 33{}
-        else if x == 34{}
-        else if x == 35{}
+        else if x == 33{
+            if egg3Time >= 1800.0{
+                achievementComplete(x: 33)
+            }
+        }
+        else if x == 34{
+            if egg3Time >= 3600.0{
+                achievementComplete(x: 34)
+            }
+        }
+        else if x == 35{
+            if egg3Time >= 7200.0{
+                achievementComplete(x: 35)
+            }
+        }
         
         //egg 4
-        else if x == 36{}
-        else if x == 37{}
-        else if x == 38{}
+        else if x == 36{
+            if egg4Time >= 1800.0{
+                achievementComplete(x: 36)
+            }
+        }
+        else if x == 37{
+            if egg4Time >= 3600.0{
+                achievementComplete(x: 37)
+            }
+        }
+        else if x == 38{
+            if egg4Time >= 7200.0{
+                achievementComplete(x: 38)
+            }
+        }
         
         //egg 5
-        else if x == 39{}
-        else if x == 40{}
-        else if x == 41{}
+        else if x == 39{
+            if egg5Time >= 1800.0{
+                achievementComplete(x: 39)
+            }
+        }
+        else if x == 40{
+            if egg5Time >= 3600.0{
+                achievementComplete(x: 40)
+            }
+        }
+        else if x == 41{
+            if egg5Time >= 7200.0{
+                achievementComplete(x: 41)
+            }
+        }
         
         //egg 6
-        else if x == 42{}
-        else if x == 43{}
-        else if x == 44{}
+        else if x == 42{
+            if egg6Time >= 1800.0{
+                achievementComplete(x: 42)
+            }
+        }
+        else if x == 43{
+            if egg6Time >= 3600.0{
+                achievementComplete(x: 43)
+            }
+        }
+        else if x == 44{
+            if egg6Time >= 1.0{
+                achievementComplete(x: 44)
+            }
+        }
 
     }
     
@@ -490,10 +649,10 @@ class CompanionsPopupController: PhoneViewController {
             achievementLabel.text = "set a nudge"
         }
         else if (x == 13){
-            achievementLabel.text = "Use Breathe Focus within 5 minutes of a set nudge"
+            achievementLabel.text = "Have 3 active nudges"
         }
         else if (x == 14){
-            achievementLabel.text = "Use Breathe Focus within 5 minutes of a set nudge 5 times total"
+            achievementLabel.text = "Have 6 active nudges"
         }
         //
         else if (x == 15){
@@ -530,64 +689,64 @@ class CompanionsPopupController: PhoneViewController {
             achievementLabel.text = "Hatch an egg"
         }
         else if (x == 25){
-            achievementLabel.text = "Hatch 3 eggs"
+            achievementLabel.text = "Hatch 3 seperate eggs at least once"
         }
         else if (x == 26){
-            achievementLabel.text = "Hatch all 6 eggs"
+            achievementLabel.text = "Hatch all 6 eggs at least once"
         }
         else if (x == 27){
-            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 1 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 28){
-            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 1 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 29){
-            achievementLabel.text = "Purchase Egg 1 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 1 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         else if (x == 30){
-            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 2 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 31){
-            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 2 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 32){
-            achievementLabel.text = "Purchase Egg 2 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 2 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         else if (x == 33){
-            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 3 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 34){
-            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 3 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 35){
-            achievementLabel.text = "Purchase Egg 3 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 3 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         else if (x == 36){
-            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 4 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 37){
-            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 4 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 38){
-            achievementLabel.text = "Purchase Egg 4 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 4 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         else if (x == 39){
-            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 5 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 40){
-            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 5 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 41){
-            achievementLabel.text = "Purchase Egg 5 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 5 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         else if (x == 42){
-            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 30 minutes to hatch it"
+            achievementLabel.text = "Purchase Egg 6 and breathe with it equipped in Breathe Focus for 30 minutes to hatch it"
         }
         else if (x == 43){
-            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 1 hour to hatch it"
+            achievementLabel.text = "Purchase Egg 6 and breathe with it equipped in Breathe Focus for 1 hour to hatch it"
         }
         else if (x == 44){
-            achievementLabel.text = "Purchase Egg 6 and breathe with it in Breathe Focus for 2 hours to hatch it"
+            achievementLabel.text = "Purchase Egg 6 and breathe with it equipped in Breathe Focus for 2 hours to hatch it"
         }
         //
         else{

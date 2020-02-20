@@ -54,9 +54,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YG-9z-NO4">
-                                        <rect key="frame" x="175" y="156" width="49" height="30"/>
+                                        <rect key="frame" x="166" y="156" width="67" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Buy 5$"/>
+                                        <state key="normal" title="Buy 250$"/>
                                         <connections>
                                             <action selector="buyButtonPressed:" destination="ivG-qU-U5c" eventType="touchUpInside" id="3v9-zF-ucL"/>
                                         </connections>
@@ -243,6 +243,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EA-1p-Z7q">
                                                 <rect key="frame" x="55" y="183" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="breatheAsset"/>
                                                 <connections>
                                                     <action selector="classic:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fan-VO-cy6"/>
@@ -480,7 +481,7 @@ Press ? for more info.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RT-pD-H9b">
-                                                <rect key="frame" x="55" y="782" width="80" height="90"/>
+                                                <rect key="frame" x="50" y="782" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Egg_1"/>
                                                 <connections>
@@ -503,7 +504,7 @@ Press ? for more info.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwu-H2-i6c">
-                                                <rect key="frame" x="241" y="782" width="90" height="90"/>
+                                                <rect key="frame" x="243" y="782" width="80" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Egg_2"/>
                                                 <connections>
@@ -526,7 +527,7 @@ Press ? for more info.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-8d-njw">
-                                                <rect key="frame" x="55" y="960" width="80" height="90"/>
+                                                <rect key="frame" x="55" y="960" width="90" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Egg_3"/>
                                                 <connections>
@@ -594,15 +595,6 @@ Press ? for more info.</string>
                                                 <color key="textColor" red="0.94117647059999998" green="0.71764705880000002" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO1-bI-dZC">
-                                                <rect key="frame" x="236" y="1143" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="Egg_6"/>
-                                                <connections>
-                                                    <action selector="egg_6:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="3AJ-IL-1jG"/>
-                                                    <action selector="openPurchaseConfirmationEgg:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="uEV-Pq-mox"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Egg 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc7-5O-vy0">
                                                 <rect key="frame" x="245" y="1114" width="76" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -667,6 +659,15 @@ Press ? for more info.</string>
                                                 <color key="textColor" red="0.94117647059999998" green="0.71764705880000002" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO1-bI-dZC">
+                                                <rect key="frame" x="242" y="1143" width="80" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Egg_6"/>
+                                                <connections>
+                                                    <action selector="egg_6:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="3AJ-IL-1jG"/>
+                                                    <action selector="openPurchaseConfirmationEgg:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="uEV-Pq-mox"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2200" id="a8A-ud-luX"/>
