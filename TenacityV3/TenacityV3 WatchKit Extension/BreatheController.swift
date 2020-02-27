@@ -44,6 +44,9 @@ class BreatheController: WatchViewController{
     var breatheInTimer = Timer()
     var breatheInTime = 0.0
     var gameLengthTimer = Timer()
+    var hapticTimer = Timer()
+    var hCounter = 0
+    var hCounterHelper = 0
     
     var cycleStep = 0
     
@@ -124,6 +127,8 @@ class BreatheController: WatchViewController{
     
     
     @IBOutlet weak var image: WKInterfaceImage!
+    @IBOutlet weak var breathCountFeedback: WKInterfaceLabel!
+    @IBOutlet weak var responseFeedback: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -239,8 +244,18 @@ class BreatheController: WatchViewController{
                 self.counter += 0.1
             }
         }
-        WKInterfaceDevice.current().play(.directionUp)
+        //WKInterfaceDevice.current().play(.directionUp)
         breatheInTime += 0.1
+    }
+    
+    @objc func hapticCounter(){
+        if (hCounter >= hCounterHelper){
+            WKInterfaceDevice.current().play(.directionUp)
+            hCounterHelper += 2
+            hCounter = 0
+        }
+        hCounter += 1
+        
     }
     
     func resetImage(){
@@ -257,6 +272,7 @@ class BreatheController: WatchViewController{
     }
     
     @IBAction func swipeAction(_ sender: Any) {
+        presentFeedback()
         
         animate(withDuration: 0.1){
             self.image.setRelativeWidth(CGFloat(1), withAdjustment: 0)
@@ -268,10 +284,10 @@ class BreatheController: WatchViewController{
         }
         
         if (cycleStep != FullCycle){
-            let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
-            }
-            presentAlert(withTitle: "Oops", message: "You Swiped When You Should Have Held", preferredStyle: .alert, actions: [continueAlert])
-            sendData(what: "swipe", correct: "false")
+//            let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
+//            }
+//            presentAlert(withTitle: "Oops", message: "You Swiped When You Should Have Held", preferredStyle: .alert, actions: [continueAlert])
+//            sendData(what: "swipe", correct: "false")
             WKInterfaceDevice.current().play(.notification)
         }
         else{
@@ -282,12 +298,43 @@ class BreatheController: WatchViewController{
         cycleReset()
     }
     
+    func presentFeedback(){
+        breathCountFeedback.setHidden(false)
+        responseFeedback.setHidden(false)
+        
+        breathCountFeedback.setText(String(cycleStep)+"/"+String(FullCycle))
+        let diff = abs(FullCycle - cycleStep)
+        if diff == 0{
+            responseFeedback.setText("Perfect!")
+        }
+        else if diff >= 5{
+            responseFeedback.setText("Try Again!")
+        }
+        else if diff >= 3{
+            responseFeedback.setText("Almost!")
+        }
+        else if diff >= 2{
+            responseFeedback.setText("Good!")
+        }
+        else if diff >= 1{
+            responseFeedback.setText("Great!")
+        }
+    }
+    
+    func hideFeedback(){
+        breathCountFeedback.setHidden(true)
+        responseFeedback.setHidden(true)
+    }
+    
     @IBAction func longPressHold(_ gestureRecognizer: WKLongPressGestureRecognizer) {
         
         if gestureRecognizer.state == .began{
             resetImage()
+            hideFeedback()
             counter = 0
+            
             breatheInTime = 0
+            
             if (cycleStep == FullCycle){
                 sendData(what: "start hold", correct: "false")
             }
@@ -295,10 +342,16 @@ class BreatheController: WatchViewController{
                 sendData(what: "start hold", correct: "true")
             }
             breatheInTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.breatheInCounter), userInfo: nil, repeats: true)
+            
+            WKInterfaceDevice.current().play(.directionUp)
+            hCounter = 0
+            hCounterHelper = 0
+            hapticTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (BreatheController.hapticCounter), userInfo: nil, repeats: true)
             cycleStep += 1
         }
         else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled{
             breatheInTimer.invalidate()
+            hapticTimer.invalidate()
             print("breathe in time: " + String(format: "%.3f", breatheInTime))
             totalBreaths += 1
             print("total breaths: " + String(totalBreaths))
@@ -317,12 +370,16 @@ class BreatheController: WatchViewController{
                 self.image.setRelativeWidth(CGFloat(self.startRelativeWidth), withAdjustment: 0)
                 self.image.setRelativeHeight(CGFloat(self.startRelativeHeight), withAdjustment: 0)
             }
-            if (cycleStep == (FullCycle + 1)){
+            if (cycleStep == (FullCycle + 5)){
+                presentFeedback()
                 cycleReset()
                 sendData(what: "stop hold", correct: "false")
                 let continueAlert = WKAlertAction(title: "Continue", style: .cancel){
                 }
-                presentAlert(withTitle: "Oops", message: "You Held When You Should Have Swiped", preferredStyle: .alert, actions: [continueAlert])
+                presentAlert(withTitle: "Remember to Count your breaths!", message: "Try to swipe after " + String(FullCycle) + " breaths", preferredStyle: .alert, actions: [continueAlert])
+            }
+            else if (cycleStep > FullCycle){
+                sendData(what: "stop hold", correct: "false")
             }
             else{
                 animate(withDuration: 1){

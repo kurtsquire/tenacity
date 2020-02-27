@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Breathe Start-->
@@ -129,9 +128,17 @@
             <objects>
                 <controller identifier="Breathe Main" title="Breathe" id="v6R-3x-tji" customClass="BreatheController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="fkg-uR-knb">
+                        <group width="1" height="1" alignment="left" layout="overlap" id="fkg-uR-knb">
                             <items>
-                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="classic" contentMode="scaleAspectFit" id="3F8-Ll-kkf"/>
+                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" image="breathey" contentMode="scaleAspectFit" id="3F8-Ll-kkf"/>
+                                <imageView width="0.5" height="0.45000000000000001" alignment="center" verticalAlignment="center" hidden="YES" image="legendary" contentMode="scaleAspectFit" id="syq-Jh-kyp" userLabel="popup Image"/>
+                                <label height="30" alignment="center" hidden="YES" text="X/5" textAlignment="center" id="ZZq-h6-V58">
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                                <label height="30" alignment="center" verticalAlignment="bottom" hidden="YES" text="Perfect!" textAlignment="center" id="GUW-bE-tfR" userLabel="Feedback">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
                             </items>
                             <gestureRecognizers>
                                 <longPressGestureRecognizer minimumPressDuration="0.20000000000000001" id="p0v-PB-rjT">
@@ -173,7 +180,9 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="breathCountFeedback" destination="ZZq-h6-V58" id="eEg-XH-RRY"/>
                         <outlet property="image" destination="3F8-Ll-kkf" id="6da-U4-HXY"/>
+                        <outlet property="responseFeedback" destination="GUW-bE-tfR" id="uwR-pf-b5S"/>
                     </connections>
                 </controller>
             </objects>
@@ -266,4 +275,8 @@
             <point key="canvasLocation" x="-493" y="290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="breathey" width="254" height="238"/>
+        <image name="legendary" width="253" height="82"/>
+    </resources>
 </document>
