@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -460,37 +460,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-dz-yy7">
-                                <rect key="frame" x="41" y="235" width="292" height="197"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-dz-yy7">
+                                <rect key="frame" x="30" y="183" width="315" height="301"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkR-66-TMG">
-                                        <rect key="frame" x="128" y="159" width="37" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkR-66-TMG">
+                                        <rect key="frame" x="139" y="242" width="37" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eTt-6Q-7Js"/>
+                                        </constraints>
                                         <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="DoneButton:" destination="BT4-2N-g8F" eventType="touchUpInside" id="1Nr-rn-1e9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Game Stats Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-NP-Pwp">
-                                        <rect key="frame" x="53" y="8" width="187" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Game Stats Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-NP-Pwp">
+                                        <rect key="frame" x="61" y="24" width="193" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="qAB-CT-pI3"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here you can track your progress in each game. Swipe left or right to change between games." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-ck-ExU">
-                                        <rect key="frame" x="8" y="67" width="276" height="62"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you can track your progress in each game. Swipe left or right to change between games." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-ck-ExU">
+                                        <rect key="frame" x="16" y="120" width="283" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CkR-66-TMG" secondAttribute="bottom" constant="29" id="HJJ-K9-Wf4"/>
+                                    <constraint firstItem="ye9-NP-Pwp" firstAttribute="top" secondItem="5ge-dz-yy7" secondAttribute="top" constant="24" id="Mdd-tL-x1S"/>
+                                    <constraint firstItem="ye9-NP-Pwp" firstAttribute="leading" secondItem="5ge-dz-yy7" secondAttribute="leading" constant="61" id="OuW-3k-wlI"/>
+                                    <constraint firstItem="ye9-NP-Pwp" firstAttribute="centerX" secondItem="gwb-ck-ExU" secondAttribute="centerX" id="Rvr-uC-7Rs"/>
+                                    <constraint firstItem="ye9-NP-Pwp" firstAttribute="centerX" secondItem="5ge-dz-yy7" secondAttribute="centerX" id="WzP-O9-a4d"/>
+                                    <constraint firstItem="CkR-66-TMG" firstAttribute="top" secondItem="gwb-ck-ExU" secondAttribute="bottom" constant="60" id="aNF-Q3-PZy"/>
+                                    <constraint firstItem="gwb-ck-ExU" firstAttribute="top" secondItem="ye9-NP-Pwp" secondAttribute="bottom" constant="55" id="bLv-UL-Jjm"/>
+                                    <constraint firstItem="gwb-ck-ExU" firstAttribute="leading" secondItem="5ge-dz-yy7" secondAttribute="leading" constant="16" id="jLe-xO-mm9"/>
+                                    <constraint firstItem="gwb-ck-ExU" firstAttribute="centerX" secondItem="CkR-66-TMG" secondAttribute="centerX" id="y5p-Qq-yTJ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.7537457191780822" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ge-dz-yy7" firstAttribute="leading" secondItem="eOp-zz-3uj" secondAttribute="leading" constant="30" id="bcn-Oi-OJo"/>
+                            <constraint firstItem="5ge-dz-yy7" firstAttribute="top" relation="lessThanOrEqual" secondItem="eOp-zz-3uj" secondAttribute="top" constant="183" id="d08-PQ-Yv9"/>
+                            <constraint firstItem="5ge-dz-yy7" firstAttribute="centerY" secondItem="XLb-Lm-Thf" secondAttribute="centerY" id="dHf-2S-PK9"/>
+                            <constraint firstItem="5ge-dz-yy7" firstAttribute="centerX" secondItem="XLb-Lm-Thf" secondAttribute="centerX" id="rQq-Bu-MW0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eOp-zz-3uj"/>
                     </view>
                 </viewController>
@@ -510,7 +529,7 @@
         <image name="line" width="10000" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jXg-hu-vxd"/>
-        <segue reference="46T-3G-FE4"/>
+        <segue reference="WIg-jw-Mkb"/>
+        <segue reference="jVi-E5-hsP"/>
     </inferredMetricsTieBreakers>
 </document>
