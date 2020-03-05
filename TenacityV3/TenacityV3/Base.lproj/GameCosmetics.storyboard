@@ -26,9 +26,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lrc-xc-89c">
-                                <rect key="frame" x="67" y="226" width="242" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrc-xc-89c">
+                                <rect key="frame" x="67" y="226" width="241" height="215"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-sK-xxd">
                                         <rect key="frame" x="15" y="156" width="48" height="30"/>
@@ -63,10 +62,23 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="YrE-on-0FT"/>
+                                    <constraint firstAttribute="width" secondItem="Lrc-xc-89c" secondAttribute="height" multiplier="241:215" id="aFL-uw-dJb"/>
+                                    <constraint firstAttribute="height" constant="215" id="zl3-gb-d9y"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.079152358924873156" green="0.079152358924873156" blue="0.079152358924873156" alpha="0.75104345034246578" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="QuD-Ig-f6m" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lrc-xc-89c" secondAttribute="trailing" priority="750" constant="10" id="GRU-fm-uEO"/>
+                            <constraint firstItem="Lrc-xc-89c" firstAttribute="centerX" secondItem="18A-s8-IRI" secondAttribute="centerX" id="HPa-00-Uqt"/>
+                            <constraint firstItem="QuD-Ig-f6m" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Lrc-xc-89c" secondAttribute="bottom" priority="750" constant="40" id="Hji-LL-pwI"/>
+                            <constraint firstItem="Lrc-xc-89c" firstAttribute="centerY" secondItem="18A-s8-IRI" secondAttribute="centerY" id="Nh9-gk-Z2f"/>
+                            <constraint firstItem="Lrc-xc-89c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QuD-Ig-f6m" secondAttribute="leading" priority="750" constant="10" id="e6F-aF-Oof"/>
+                            <constraint firstItem="Lrc-xc-89c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QuD-Ig-f6m" secondAttribute="top" priority="750" constant="40" id="u8m-Pf-7ko"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QuD-Ig-f6m"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fgy-LE-gyL"/>
@@ -732,44 +744,61 @@ Press ? for more info.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-L8-VgA">
-                                <rect key="frame" x="41" y="168" width="292" height="331"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-L8-VgA">
+                                <rect key="frame" x="12" y="176" width="351" height="315.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-NA-fg6">
-                                        <rect key="frame" x="53" y="8" width="186" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Welcome to the Game Upgrades Screen.
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-Rw-LEo">
+                                        <rect key="frame" x="5" y="20" width="341" height="275.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-NA-fg6">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="41"/>
+                                                <string key="text">Welcome to the Game Upgrades Screen.
 </string>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIB-ie-OKe">
-                                        <rect key="frame" x="8" y="56" width="276" height="229"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Here you can purchase cosmetic upgrades for each of the Tenacity activities. 
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIB-ie-OKe">
+                                                <rect key="frame" x="0.0" y="62" width="341" height="162.5"/>
+                                                <string key="text">Here you can purchase cosmetic upgrades for each of the Tenacity activities. 
 
 Tap on an upgrade to view its cost or purchase it. Once purchased simply tap to equip! 
 
 Earn points by using the Tenacity watch app.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehH-t8-dfG">
-                                        <rect key="frame" x="128" y="293" width="37" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Done"/>
-                                        <connections>
-                                            <action selector="DoneButton:" destination="W4S-zb-GVV" eventType="touchUpInside" id="TDG-vQ-r71"/>
-                                        </connections>
-                                    </button>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehH-t8-dfG">
+                                                <rect key="frame" x="0.0" y="245.5" width="341" height="30"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="DoneButton:" destination="W4S-zb-GVV" eventType="touchUpInside" id="TDG-vQ-r71"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kZE-Rw-LEo" firstAttribute="centerX" secondItem="mQV-L8-VgA" secondAttribute="centerX" id="CB1-Nx-RXz"/>
+                                    <constraint firstItem="kZE-Rw-LEo" firstAttribute="leading" secondItem="mQV-L8-VgA" secondAttribute="leading" constant="5" id="GF8-HT-GRK"/>
+                                    <constraint firstAttribute="bottom" secondItem="kZE-Rw-LEo" secondAttribute="bottom" constant="20" symbolic="YES" id="SXb-pK-46c"/>
+                                    <constraint firstItem="kZE-Rw-LEo" firstAttribute="top" secondItem="mQV-L8-VgA" secondAttribute="top" constant="20" symbolic="YES" id="kRP-cD-sV8"/>
+                                    <constraint firstAttribute="trailing" secondItem="kZE-Rw-LEo" secondAttribute="trailing" constant="5" id="oaq-cE-ZHG"/>
+                                    <constraint firstItem="kZE-Rw-LEo" firstAttribute="centerY" secondItem="mQV-L8-VgA" secondAttribute="centerY" id="zlJ-Qg-RPl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="0.7537457192" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mQV-L8-VgA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uiu-2A-Bz9" secondAttribute="top" constant="20" id="3fc-A0-4Yl"/>
+                            <constraint firstItem="uiu-2A-Bz9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mQV-L8-VgA" secondAttribute="trailing" constant="10" id="9VO-OZ-R1O"/>
+                            <constraint firstItem="mQV-L8-VgA" firstAttribute="centerX" secondItem="c2a-Rg-Q5J" secondAttribute="centerX" id="BYK-Hc-aHZ"/>
+                            <constraint firstItem="mQV-L8-VgA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uiu-2A-Bz9" secondAttribute="leading" constant="10" id="FEx-q8-PZE"/>
+                            <constraint firstItem="uiu-2A-Bz9" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mQV-L8-VgA" secondAttribute="bottom" constant="20" id="f7e-zS-V8M"/>
+                            <constraint firstItem="mQV-L8-VgA" firstAttribute="centerY" secondItem="c2a-Rg-Q5J" secondAttribute="centerY" id="t4M-4X-cgN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uiu-2A-Bz9"/>
                     </view>
                 </viewController>

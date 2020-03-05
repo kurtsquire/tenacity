@@ -16,42 +16,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
-                                <rect key="frame" x="55" y="88" width="265" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
-                                <rect key="frame" x="27" y="126" width="320" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
-                                    <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
-                                </connections>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
-                                <rect key="frame" x="55" y="300" width="265" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-yg-Chw">
-                                <rect key="frame" x="72" y="400" width="230" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Delete This Nudge"/>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-6v-JTV">
+                                <rect key="frame" x="27.5" y="40" width="320" height="567"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-y8-qak">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-RP-H4P">
+                                        <rect key="frame" x="0.0" y="142" width="320" height="141.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="datePickerPicked:" destination="T6Q-Oq-eJ4" eventType="valueChanged" id="WR6-k1-GcS"/>
+                                            <action selector="datePickerPicked:" destination="8vJ-3k-jMH" eventType="valueChanged" id="a9u-Wx-6n1"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZt-db-Zsr">
+                                        <rect key="frame" x="0.0" y="283.5" width="320" height="142"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonpressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="3OP-ZH-nGy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-yg-Chw">
+                                        <rect key="frame" x="0.0" y="425.5" width="320" height="141.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Delete This Nudge"/>
+                                        <connections>
+                                            <action selector="deleteButtonPressed:" destination="8vJ-3k-jMH" eventType="touchUpInside" id="QCc-gE-RuP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6IY-6v-JTV" firstAttribute="centerX" secondItem="SuF-ey-jdp" secondAttribute="centerX" id="3Fl-G5-bUa"/>
+                            <constraint firstItem="6IY-6v-JTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Edv-t9-l5y" secondAttribute="leading" constant="16" id="9bs-P4-Qpq"/>
+                            <constraint firstItem="Edv-t9-l5y" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6IY-6v-JTV" secondAttribute="bottom" constant="40" id="HXw-5K-itJ"/>
+                            <constraint firstItem="6IY-6v-JTV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Edv-t9-l5y" secondAttribute="top" constant="40" id="a1W-PJ-y53"/>
+                            <constraint firstItem="6IY-6v-JTV" firstAttribute="centerY" secondItem="SuF-ey-jdp" secondAttribute="centerY" id="bdv-FT-NGS"/>
+                            <constraint firstItem="Edv-t9-l5y" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6IY-6v-JTV" secondAttribute="trailing" constant="16" id="yzn-V0-Q8P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Edv-t9-l5y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="UHN-10-F3r" userLabel="Reminder"/>
@@ -72,126 +81,117 @@
             <objects>
                 <viewController storyboardIdentifier="Nudges" title="Nudges" id="8wf-WF-IWz" customClass="NudgesViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UK4-ud-q7X">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-6h-aiO">
-                                <rect key="frame" x="97" y="26" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nudges" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzQ-6h-aiO">
+                                <rect key="frame" x="140" y="22" width="95" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="UXb-y7-eca" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="77" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJu-kf-d99" userLabel="Game Settings Help Button">
-                                <rect key="frame" x="329" y="29" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJu-kf-d99" userLabel="Game Settings Help Button">
+                                <rect key="frame" x="329" y="23" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RC1-dH-OPb"/>
+                                    <constraint firstAttribute="width" constant="30" id="Svs-s0-bdT"/>
+                                </constraints>
                                 <state key="normal" image="help"/>
                                 <connections>
                                     <segue destination="UK1-rh-KPF" kind="show" id="PJF-cJ-Sif"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N67-nC-jan">
-                                <rect key="frame" x="27" y="91" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 0">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Olm-YK-Xfc"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="SrC-1d-NQt"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-VY-vjE" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="147" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM6-jg-9Hf">
-                                <rect key="frame" x="27" y="161" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dkf-Jm-qBX"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="gK8-CG-qms"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="SP5-I6-cW8" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="217" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMZ-iG-dva">
-                                <rect key="frame" x="27" y="231" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dge-by-nbq"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="qbQ-a6-Vfk"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="uay-Zq-z85" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="287" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-eW-5Zz">
-                                <rect key="frame" x="27" y="301" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 3">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="60N-un-aXk"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="XXj-9S-jat"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-DL-DBG" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="357" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e3-FT-2x1">
-                                <rect key="frame" x="27" y="371" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 4">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="kz1-be-bTF"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="0aW-N6-SMc"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="CLJ-RB-6ZM" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="427" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-s1-CZ5" userLabel="Pet_Line_top">
-                                <rect key="frame" x="5" y="497" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-Q8-2ea">
-                                <rect key="frame" x="27" y="441" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Nudge 5">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="YtN-Yv-ROT"/>
-                                    <segue destination="8vJ-3k-jMH" kind="show" id="pbp-Yx-bRu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cLY-MA-Kmn">
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="541.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N67-nC-jan">
+                                        <rect key="frame" x="8" y="8" width="359" height="67.5"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 0">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Olm-YK-Xfc"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="SrC-1d-NQt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UM6-jg-9Hf">
+                                        <rect key="frame" x="8" y="99.5" width="359" height="67.5"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dkf-Jm-qBX"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="gK8-CG-qms"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMZ-iG-dva">
+                                        <rect key="frame" x="8" y="191" width="359" height="68"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="Dge-by-nbq"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="qbQ-a6-Vfk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-eW-5Zz">
+                                        <rect key="frame" x="8" y="283" width="359" height="67.5"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="60N-un-aXk"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="XXj-9S-jat"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e3-FT-2x1">
+                                        <rect key="frame" x="8" y="374.5" width="359" height="67.5"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="kz1-be-bTF"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="0aW-N6-SMc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-Q8-2ea">
+                                        <rect key="frame" x="8" y="466" width="359" height="67.5"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Nudge 5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nudgePressed:" destination="8wf-WF-IWz" eventType="touchUpInside" id="YtN-Yv-ROT"/>
+                                            <segue destination="8vJ-3k-jMH" kind="show" id="pbp-Yx-bRu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJu-kf-d99" firstAttribute="top" secondItem="UmJ-5a-l7O" secondAttribute="top" constant="23" id="2ZY-s6-a5v"/>
+                            <constraint firstItem="cLY-MA-Kmn" firstAttribute="leading" secondItem="UmJ-5a-l7O" secondAttribute="leading" id="J8R-EK-pSc"/>
+                            <constraint firstItem="UmJ-5a-l7O" firstAttribute="trailing" secondItem="pJu-kf-d99" secondAttribute="trailing" constant="16" id="MgP-O9-dKk"/>
+                            <constraint firstItem="cLY-MA-Kmn" firstAttribute="top" secondItem="MzQ-6h-aiO" secondAttribute="bottom" constant="40" id="Sez-o3-WWl"/>
+                            <constraint firstItem="UmJ-5a-l7O" firstAttribute="bottom" secondItem="cLY-MA-Kmn" secondAttribute="bottom" constant="30" id="SjI-l7-AuO"/>
+                            <constraint firstItem="cLY-MA-Kmn" firstAttribute="centerX" secondItem="UK4-ud-q7X" secondAttribute="centerX" id="VAV-HU-rOB"/>
+                            <constraint firstItem="MzQ-6h-aiO" firstAttribute="top" secondItem="UmJ-5a-l7O" secondAttribute="top" constant="22" id="gWJ-8A-nt3"/>
+                            <constraint firstItem="UmJ-5a-l7O" firstAttribute="trailing" secondItem="cLY-MA-Kmn" secondAttribute="trailing" id="gp8-sb-mXT"/>
+                            <constraint firstItem="MzQ-6h-aiO" firstAttribute="centerX" secondItem="UK4-ud-q7X" secondAttribute="centerX" id="hRN-48-oDD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UmJ-5a-l7O"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nudges" image="Tab_Reminders" selectedImage="Tab_Reminders" id="HGM-8l-0eY"/>
@@ -226,40 +226,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-CC-NIS">
-                                <rect key="frame" x="41" y="235" width="293" height="197"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-hL-jCN">
+                                <rect key="frame" x="29.5" y="158.5" width="316.5" height="350"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-On-kEz">
-                                        <rect key="frame" x="128" y="160" width="37" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Done"/>
-                                        <connections>
-                                            <action selector="DoneButton:" destination="gd1-ID-THq" eventType="touchUpInside" id="HzN-fL-fka"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Nudges Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-X7-38A">
-                                        <rect key="frame" x="11" y="8" width="271" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-zp-2Os">
-                                        <rect key="frame" x="23" y="48" width="246" height="104"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Here you can create nudges to help you use Tenacity on a set schedule.
+                                    <stackView contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="De8-Eg-ZgU">
+                                        <rect key="frame" x="20" y="0.0" width="276.5" height="350"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Nudges Screen." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-X7-38A">
+                                                <rect key="frame" x="0.0" y="0.0" width="276" height="88"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-zp-2Os">
+                                                <rect key="frame" x="0.0" y="131" width="276.5" height="88"/>
+                                                <string key="text">Here you can create nudges to help you use Tenacity on a set schedule.
 
 Tap to create or edit a nudge!</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-On-kEz">
+                                                <rect key="frame" x="118.5" y="262" width="39" height="88"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="DoneButton:" destination="gd1-ID-THq" eventType="touchUpInside" id="HzN-fL-fka"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="FQJ-ET-3b3"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="De8-Eg-ZgU" secondAttribute="trailing" constant="20" symbolic="YES" id="6TA-uD-a06"/>
+                                    <constraint firstItem="De8-Eg-ZgU" firstAttribute="centerX" secondItem="Eme-hL-jCN" secondAttribute="centerX" id="80r-9Q-gXB"/>
+                                    <constraint firstItem="De8-Eg-ZgU" firstAttribute="centerY" secondItem="Eme-hL-jCN" secondAttribute="centerY" id="CQk-lZ-gwI"/>
+                                    <constraint firstItem="De8-Eg-ZgU" firstAttribute="leading" secondItem="Eme-hL-jCN" secondAttribute="leading" constant="20" symbolic="YES" id="QT1-NC-A3A"/>
+                                    <constraint firstAttribute="bottom" secondItem="De8-Eg-ZgU" secondAttribute="bottom" id="csD-Sh-tCb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="0.7537457192" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eme-hL-jCN" firstAttribute="top" relation="lessThanOrEqual" secondItem="B52-KQ-wnp" secondAttribute="top" constant="158.5" id="NpX-vC-Fqm"/>
+                            <constraint firstItem="B52-KQ-wnp" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Eme-hL-jCN" secondAttribute="bottom" constant="160" id="Qap-QM-gxN"/>
+                            <constraint firstItem="B52-KQ-wnp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Eme-hL-jCN" secondAttribute="trailing" constant="5" id="TSf-Mw-FDB"/>
+                            <constraint firstItem="Eme-hL-jCN" firstAttribute="top" relation="lessThanOrEqual" secondItem="B52-KQ-wnp" secondAttribute="top" constant="160" id="YNB-Pv-S81"/>
+                            <constraint firstItem="Eme-hL-jCN" firstAttribute="centerX" secondItem="VXd-En-isL" secondAttribute="centerX" id="aJ2-lh-hgH"/>
+                            <constraint firstItem="Eme-hL-jCN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B52-KQ-wnp" secondAttribute="leading" constant="5" id="ndS-T2-l4H"/>
+                            <constraint firstItem="Eme-hL-jCN" firstAttribute="centerY" secondItem="VXd-En-isL" secondAttribute="centerY" id="oGS-f0-h2a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B52-KQ-wnp"/>
                     </view>
                 </viewController>
@@ -271,9 +293,8 @@ Tap to create or edit a nudge!</string>
     <resources>
         <image name="Tab_Reminders" width="28" height="28"/>
         <image name="help" width="150" height="150"/>
-        <image name="line" width="10000" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SrC-1d-NQt"/>
+        <segue reference="XXj-9S-jat"/>
     </inferredMetricsTieBreakers>
 </document>
