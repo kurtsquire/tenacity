@@ -16,29 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gin-Sf-oJP">
-                                <rect key="frame" x="97" y="26" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Am-p1-mPd">
-                                <rect key="frame" x="16" y="93" width="343" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Am-p1-mPd">
+                                <rect key="frame" x="16" y="93" width="343" height="535"/>
                                 <string key="text">This is an overview of your hard work! Goals for game modes are indicated by a dotted line. Your rank and experience will go up as you complete sessions and complete quests. Tap your pet to get new inspirational quotes.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gin-Sf-oJP">
+                                <rect key="frame" x="70" y="20" width="235" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="r1n-vR-1Ib"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gin-Sf-oJP" firstAttribute="leading" secondItem="yqm-yc-kLt" secondAttribute="leading" constant="70" id="7bh-9h-FfD"/>
+                            <constraint firstItem="gin-Sf-oJP" firstAttribute="top" secondItem="yqm-yc-kLt" secondAttribute="top" constant="20" id="Skp-UZ-68I"/>
+                            <constraint firstItem="gin-Sf-oJP" firstAttribute="centerX" secondItem="Gm7-vo-nMk" secondAttribute="centerX" id="Yp0-7k-bPK"/>
+                            <constraint firstItem="7Am-p1-mPd" firstAttribute="leading" secondItem="Gm7-vo-nMk" secondAttribute="leadingMargin" id="j3S-9g-YEL"/>
+                            <constraint firstItem="7Am-p1-mPd" firstAttribute="top" secondItem="gin-Sf-oJP" secondAttribute="bottom" constant="37" id="pKb-XW-5r9"/>
+                            <constraint firstItem="yqm-yc-kLt" firstAttribute="bottom" secondItem="7Am-p1-mPd" secondAttribute="bottom" constant="39" id="qFy-2T-Ast"/>
+                            <constraint firstItem="7Am-p1-mPd" firstAttribute="centerX" secondItem="Gm7-vo-nMk" secondAttribute="centerX" id="qKG-YP-mWU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yqm-yc-kLt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBq-TD-QtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159.19999999999999" y="150.67466266866569"/>
+            <point key="canvasLocation" x="-159.375" y="150"/>
         </scene>
         <!--Goals Help-->
         <scene sceneID="II7-SF-XJP">
@@ -48,30 +58,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goals Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeq-E0-eZr">
-                                <rect key="frame" x="97" y="26" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6a-Uk-gIn">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6a-Uk-gIn">
+                                <rect key="frame" x="16" y="88" width="343" height="528"/>
                                 <string key="text">Track progress by using the goal meter. These track how much time you have played today.
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeq-E0-eZr">
+                                <rect key="frame" x="70" y="20" width="235" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="YEr-WA-mWx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eeq-E0-eZr" firstAttribute="centerX" secondItem="Z6a-Uk-gIn" secondAttribute="centerX" id="5AA-nz-zfK"/>
+                            <constraint firstItem="jPA-KJ-pK1" firstAttribute="bottom" secondItem="Z6a-Uk-gIn" secondAttribute="bottom" constant="51" id="7av-7g-5OT"/>
+                            <constraint firstItem="Z6a-Uk-gIn" firstAttribute="top" secondItem="eeq-E0-eZr" secondAttribute="bottom" constant="32" id="CCT-sQ-t6f"/>
+                            <constraint firstItem="Z6a-Uk-gIn" firstAttribute="leading" secondItem="hs6-77-aHr" secondAttribute="leadingMargin" id="Cto-2Q-OGf"/>
+                            <constraint firstItem="Z6a-Uk-gIn" firstAttribute="trailing" secondItem="hs6-77-aHr" secondAttribute="trailingMargin" id="Nqv-iX-OhL"/>
+                            <constraint firstItem="eeq-E0-eZr" firstAttribute="top" secondItem="jPA-KJ-pK1" secondAttribute="top" constant="20" id="dHX-F5-udy"/>
+                            <constraint firstItem="eeq-E0-eZr" firstAttribute="leading" secondItem="jPA-KJ-pK1" secondAttribute="leading" constant="70" id="frc-4O-A6s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jPA-KJ-pK1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ueU-3X-QdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="151"/>
+            <point key="canvasLocation" x="526.875" y="150"/>
         </scene>
         <!--Quests Help-->
         <scene sceneID="fYB-Bk-LTx">
@@ -81,29 +101,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quests Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-f3-AEO">
-                                <rect key="frame" x="97" y="26" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-bX-L4P">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-bX-L4P">
+                                <rect key="frame" x="16" y="88" width="343" height="530"/>
                                 <string key="text">Earn bonus experience points by completing quests. You can use the reroll button to randomize the reward and activity. A new quest is generated everyday. You can only complete one  quest per day. You cannot return to a previous activity or reward, so be sure that you want to reroll.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quests Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-f3-AEO">
+                                <rect key="frame" x="70" y="20" width="235" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="tSD-Nv-J0a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W4M-bX-L4P" firstAttribute="top" secondItem="D4K-f3-AEO" secondAttribute="bottom" constant="32" id="0W7-N1-aod"/>
+                            <constraint firstItem="D4K-f3-AEO" firstAttribute="top" secondItem="iZs-dB-iQR" secondAttribute="top" constant="20" id="AFp-BB-tfw"/>
+                            <constraint firstItem="D4K-f3-AEO" firstAttribute="leading" secondItem="iZs-dB-iQR" secondAttribute="leading" constant="70" id="BWj-AP-FW9"/>
+                            <constraint firstItem="W4M-bX-L4P" firstAttribute="leading" secondItem="cw0-oy-Slk" secondAttribute="leadingMargin" id="CTe-Pf-qLG"/>
+                            <constraint firstItem="D4K-f3-AEO" firstAttribute="centerX" secondItem="W4M-bX-L4P" secondAttribute="centerX" id="DWP-Vj-EDF"/>
+                            <constraint firstItem="iZs-dB-iQR" firstAttribute="bottom" secondItem="W4M-bX-L4P" secondAttribute="bottom" constant="49" id="NhL-yH-w9c"/>
+                            <constraint firstItem="W4M-bX-L4P" firstAttribute="trailing" secondItem="cw0-oy-Slk" secondAttribute="trailingMargin" id="Soz-Bp-Dnx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iZs-dB-iQR"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcW-0U-Iz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="151"/>
+            <point key="canvasLocation" x="1215" y="150"/>
         </scene>
         <!--Nudges Help-->
         <scene sceneID="Db4-el-Mlv">
@@ -113,16 +143,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nudges Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfB-CD-iBp">
-                                <rect key="frame" x="97" y="26" width="180" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nudges Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfB-CD-iBp">
+                                <rect key="frame" x="70" y="20" width="235" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="yl4-aN-mdy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-yU-fSc">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-yU-fSc">
+                                <rect key="frame" x="16" y="82" width="343" height="544"/>
                                 <string key="text">Set nudges to help you consistently use the app and meet your goals. Each nudge can be set for a different time and edited or turned off. Enabled nudges will go off every day at the selected time.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,12 +161,21 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AfB-CD-iBp" firstAttribute="top" secondItem="8um-g9-AZD" secondAttribute="top" constant="20" id="2pl-7e-2aw"/>
+                            <constraint firstItem="eFD-yU-fSc" firstAttribute="top" secondItem="AfB-CD-iBp" secondAttribute="bottom" constant="26" id="E4U-qh-1O1"/>
+                            <constraint firstItem="eFD-yU-fSc" firstAttribute="leading" secondItem="Dqf-m7-Jeb" secondAttribute="leadingMargin" id="J2U-Pt-el0"/>
+                            <constraint firstItem="AfB-CD-iBp" firstAttribute="leading" secondItem="8um-g9-AZD" secondAttribute="leading" constant="70" id="Rpb-Jm-xt9"/>
+                            <constraint firstItem="AfB-CD-iBp" firstAttribute="centerX" secondItem="eFD-yU-fSc" secondAttribute="centerX" id="ePq-UV-EG1"/>
+                            <constraint firstItem="eFD-yU-fSc" firstAttribute="trailing" secondItem="Dqf-m7-Jeb" secondAttribute="trailingMargin" id="uNy-z0-SEA"/>
+                            <constraint firstItem="8um-g9-AZD" firstAttribute="bottom" secondItem="eFD-yU-fSc" secondAttribute="bottom" constant="41" id="v29-Z1-8Z6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8um-g9-AZD"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-vl-pjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="151"/>
+            <point key="canvasLocation" x="1897.5" y="150"/>
         </scene>
         <!--Companions Help-->
         <scene sceneID="brD-lL-jkh">
@@ -145,29 +185,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-cL-DT4">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-cL-DT4">
+                                <rect key="frame" x="16" y="88" width="343" height="546"/>
                                 <string key="text">Only one companion can be equipped at a time. Simply tap an unlocked pet to equip them. Pets can only be obtained through achievements which can be checked by tapping locked pets. Some activities will be easier than others. Try to collect them all!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Companions Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVd-nd-Q5F">
-                                <rect key="frame" x="67" y="27" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Companions Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVd-nd-Q5F">
+                                <rect key="frame" x="40" y="27" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="eNb-jK-h3c"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oVd-nd-Q5F" firstAttribute="centerX" secondItem="ngX-cL-DT4" secondAttribute="centerX" id="1i8-n1-Jka"/>
+                            <constraint firstItem="oVd-nd-Q5F" firstAttribute="centerX" secondItem="hNC-dp-0S0" secondAttribute="centerX" id="AeT-bE-SsI"/>
+                            <constraint firstItem="ngX-cL-DT4" firstAttribute="top" secondItem="oVd-nd-Q5F" secondAttribute="bottom" constant="25" id="Iht-as-FHu"/>
+                            <constraint firstItem="oVd-nd-Q5F" firstAttribute="leading" secondItem="C5c-MK-BVF" secondAttribute="leading" constant="40" id="MoJ-aq-kjc"/>
+                            <constraint firstItem="oVd-nd-Q5F" firstAttribute="top" secondItem="C5c-MK-BVF" secondAttribute="top" constant="27" id="jfG-RX-hk5"/>
+                            <constraint firstItem="C5c-MK-BVF" firstAttribute="bottom" secondItem="ngX-cL-DT4" secondAttribute="bottom" constant="33" id="ubk-76-egi"/>
+                            <constraint firstItem="ngX-cL-DT4" firstAttribute="leading" secondItem="hNC-dp-0S0" secondAttribute="leadingMargin" id="v92-L5-APx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C5c-MK-BVF"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVK-JA-Uiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="525.60000000000002" y="847.82608695652175"/>
+            <point key="canvasLocation" x="525" y="847.5"/>
         </scene>
         <!--Game Stats Help-->
         <scene sceneID="dFs-Q6-drz">
@@ -177,29 +227,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-f3-a4n">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-f3-a4n">
+                                <rect key="frame" x="16" y="88" width="343" height="537"/>
                                 <string key="text">Use the graphs and data to monitor your activity and growth. The previous week’s average will be displayed with a solid red line, push hard on some days to beat that average! You can swipe right or left to view the stats for the other game modes.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Stats Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-Wk-LSf">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Stats Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-Wk-LSf">
+                                <rect key="frame" x="40" y="26" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="nlh-J7-GFD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WCm-1Q-pfI" firstAttribute="bottom" secondItem="b4m-f3-a4n" secondAttribute="bottom" constant="42" id="7j6-Yv-4rq"/>
+                            <constraint firstItem="b4m-f3-a4n" firstAttribute="leading" secondItem="02B-TD-kkb" secondAttribute="leadingMargin" id="JUi-JA-Peb"/>
+                            <constraint firstItem="8yl-Wk-LSf" firstAttribute="centerX" secondItem="b4m-f3-a4n" secondAttribute="centerX" id="aRP-uU-jFj"/>
+                            <constraint firstItem="b4m-f3-a4n" firstAttribute="trailing" secondItem="02B-TD-kkb" secondAttribute="trailingMargin" id="axZ-DH-Teh"/>
+                            <constraint firstItem="b4m-f3-a4n" firstAttribute="top" secondItem="8yl-Wk-LSf" secondAttribute="bottom" constant="26" id="bac-qf-hNn"/>
+                            <constraint firstItem="8yl-Wk-LSf" firstAttribute="leading" secondItem="WCm-1Q-pfI" secondAttribute="leading" constant="40" id="qZm-bn-FWy"/>
+                            <constraint firstItem="8yl-Wk-LSf" firstAttribute="top" secondItem="WCm-1Q-pfI" secondAttribute="top" constant="26" id="v3J-0Y-CsF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WCm-1Q-pfI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLm-jh-E6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.5999999999999" y="847.82608695652175"/>
+            <point key="canvasLocation" x="1213.125" y="847.5"/>
         </scene>
         <!--Achievements Help-->
         <scene sceneID="ZKl-tH-sRt">
@@ -209,29 +269,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-Uw-zaA">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-Uw-zaA">
+                                <rect key="frame" x="16" y="91" width="343" height="526"/>
                                 <string key="text">Complete daily activities to advance achievement medals. You can equip up to three achievements to be displayed on your homepage, but progress will still be tracked the other achievements not being displayed.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achievements Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-p4-BUA">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxA-p4-BUA">
+                                <rect key="frame" x="40" y="20" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="57k-0v-Hc9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HxA-p4-BUA" firstAttribute="leading" secondItem="kTW-2G-ipD" secondAttribute="leading" constant="40" id="Crh-Fs-vgf"/>
+                            <constraint firstItem="F0T-Uw-zaA" firstAttribute="centerX" secondItem="h69-HB-AOh" secondAttribute="centerX" id="WKw-HT-yPB"/>
+                            <constraint firstItem="kTW-2G-ipD" firstAttribute="bottom" secondItem="F0T-Uw-zaA" secondAttribute="bottom" constant="50" id="WkV-H5-6ku"/>
+                            <constraint firstItem="HxA-p4-BUA" firstAttribute="top" secondItem="kTW-2G-ipD" secondAttribute="top" constant="20" id="YSJ-jy-l7y"/>
+                            <constraint firstItem="F0T-Uw-zaA" firstAttribute="leading" secondItem="h69-HB-AOh" secondAttribute="leadingMargin" id="btb-3d-G07"/>
+                            <constraint firstItem="HxA-p4-BUA" firstAttribute="centerX" secondItem="h69-HB-AOh" secondAttribute="centerX" id="nHw-Ip-daI"/>
+                            <constraint firstItem="F0T-Uw-zaA" firstAttribute="top" secondItem="HxA-p4-BUA" secondAttribute="bottom" constant="35" id="sTx-Am-jlP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kTW-2G-ipD"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcY-Kz-O7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="847"/>
+            <point key="canvasLocation" x="1895.625" y="846.25"/>
         </scene>
         <!--Game Upgrades Help-->
         <scene sceneID="MVq-Jd-PYA">
@@ -241,32 +311,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-3A-sge">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-3A-sge">
+                                <rect key="frame" x="16" y="88" width="343" height="551"/>
                                 <string key="text">Customize the game modes as you please. You can equip a shape and a color for each game. Some options for Lotus will change the difficulty (e.g. same shape).
 
 
 It can take up to a few minutes for upgrades to be applied. If you are having trouble try re-equipping the upgrade and/or resetting the watch application.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Upgrades Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-f3-Nic">
-                                <rect key="frame" x="57" y="26" width="261" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Upgrades Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-f3-Nic">
+                                <rect key="frame" x="30" y="27" width="315" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="5Qh-cv-UPh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q8w-3A-sge" firstAttribute="leading" secondItem="Xrq-4o-LRZ" secondAttribute="leadingMargin" id="AMF-Kf-fkT"/>
+                            <constraint firstItem="Q8w-3A-sge" firstAttribute="top" secondItem="NvJ-f3-Nic" secondAttribute="bottom" constant="25" id="Atb-xr-r10"/>
+                            <constraint firstItem="NvJ-f3-Nic" firstAttribute="centerX" secondItem="Xrq-4o-LRZ" secondAttribute="centerX" id="Iwg-c4-CXH"/>
+                            <constraint firstItem="G9d-m7-Jth" firstAttribute="bottom" secondItem="Q8w-3A-sge" secondAttribute="bottom" constant="28" id="NFl-J0-FRF"/>
+                            <constraint firstItem="NvJ-f3-Nic" firstAttribute="leading" secondItem="G9d-m7-Jth" secondAttribute="leading" constant="30" id="bjq-XE-kZh"/>
+                            <constraint firstItem="NvJ-f3-Nic" firstAttribute="top" secondItem="G9d-m7-Jth" secondAttribute="top" constant="27" id="pRn-0d-ecL"/>
+                            <constraint firstItem="NvJ-f3-Nic" firstAttribute="centerX" secondItem="Q8w-3A-sge" secondAttribute="centerX" id="r0b-rY-LWK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G9d-m7-Jth"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IeR-DH-InM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="847"/>
+            <point key="canvasLocation" x="-159.375" y="846.25"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="ShR-2g-p59">
@@ -276,16 +356,20 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-zS-xVv">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-zS-xVv">
+                                <rect key="frame" x="67" y="20" width="240" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="869-bd-cFJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erV-JL-dQk">
-                                <rect key="frame" x="16" y="95" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erV-JL-dQk">
+                                <rect key="frame" x="16" y="89" width="343" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="wq7-9Y-08q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="General">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -294,13 +378,17 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                     <segue destination="8Hf-Aq-mgG" kind="show" id="jK5-5h-7D3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Fzl-mq-hTd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="81" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Fzl-mq-hTd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="75" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="Ob5-58-RU8"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-yA-feu">
-                                <rect key="frame" x="16" y="178" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-yA-feu">
+                                <rect key="frame" x="16" y="172" width="343" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Kmp-Oz-Q50"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Goals">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -309,13 +397,17 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                     <segue destination="AtI-c2-zD7" kind="show" id="YXX-0P-JOX"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="cd0-Lq-crd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="164" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="cd0-Lq-crd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="158" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="lta-2G-QuY"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A24-tE-4Gw">
-                                <rect key="frame" x="16" y="261" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A24-tE-4Gw">
+                                <rect key="frame" x="16" y="255" width="343" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="vQC-oH-vZF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Quests">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -324,13 +416,17 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                     <segue destination="njd-Ot-oBX" kind="show" id="Roa-xq-TOo"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-Iz-eBK" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="247" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-Iz-eBK" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="241" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="RQJ-28-oYM"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-Cf-X8j">
-                                <rect key="frame" x="16" y="344" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-Cf-X8j">
+                                <rect key="frame" x="16" y="338" width="343" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Pgs-Fd-QyB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Breathe Modes">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -339,13 +435,17 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                     <segue destination="VbQ-JU-xi3" kind="show" id="zDn-GH-iSr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-ll-Oo8" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="330" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-ll-Oo8" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="324" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="k2X-9H-3wc"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x4-zE-Yah">
-                                <rect key="frame" x="16" y="427" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x4-zE-Yah">
+                                <rect key="frame" x="16" y="421" width="343" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="IWx-vP-nrO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Lotus Swipe">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -354,31 +454,58 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                                     <segue destination="S2M-vZ-hf3" kind="show" id="ydg-SE-U2s"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zVd-IP-1Jd" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="413" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zVd-IP-1Jd" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="407" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="P34-nE-0YS"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-1X-idS" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="496" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp3-df-d3r">
-                                <rect key="frame" x="16" y="510" width="343" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Tutorial">
-                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Eze-zL-7X5" kind="show" id="s6y-kl-TUg"/>
-                                </connections>
-                            </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="30i-0L-OxH" userLabel="Goal_Line_bot">
-                                <rect key="frame" x="5" y="579" width="365" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-1X-idS" userLabel="Goal_Line_bot">
+                                <rect key="frame" x="5" y="490" width="365" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="QuI-q5-GJ0"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2wm-Cf-X8j" firstAttribute="trailing" secondItem="2x4-zE-Yah" secondAttribute="trailing" id="2KT-5Z-wrK"/>
+                            <constraint firstItem="zVd-IP-1Jd" firstAttribute="leading" secondItem="2tm-1X-idS" secondAttribute="leading" id="6BP-XQ-JiS"/>
+                            <constraint firstItem="cd0-Lq-crd" firstAttribute="leading" secondItem="Lra-Iz-eBK" secondAttribute="leading" id="766-fj-fkL"/>
+                            <constraint firstItem="A24-tE-4Gw" firstAttribute="top" secondItem="Lra-Iz-eBK" secondAttribute="bottom" constant="8" id="7qs-18-qhe"/>
+                            <constraint firstItem="QL3-zS-xVv" firstAttribute="leading" secondItem="auH-G7-S2J" secondAttribute="leading" constant="67" id="Ae7-LX-An8"/>
+                            <constraint firstItem="Fzl-mq-hTd" firstAttribute="trailing" secondItem="cd0-Lq-crd" secondAttribute="trailing" id="AhI-oZ-EEd"/>
+                            <constraint firstItem="erV-JL-dQk" firstAttribute="trailing" secondItem="6dZ-yA-feu" secondAttribute="trailing" id="Bzp-0s-Hzn"/>
+                            <constraint firstItem="Lra-Iz-eBK" firstAttribute="top" secondItem="6dZ-yA-feu" secondAttribute="bottom" constant="8" id="DW4-6s-Obm"/>
+                            <constraint firstItem="QL3-zS-xVv" firstAttribute="top" secondItem="auH-G7-S2J" secondAttribute="top" constant="20" id="EHj-AO-sMT"/>
+                            <constraint firstItem="zVd-IP-1Jd" firstAttribute="top" secondItem="2wm-Cf-X8j" secondAttribute="bottom" constant="8" id="FFW-n7-tpp"/>
+                            <constraint firstItem="erV-JL-dQk" firstAttribute="leading" secondItem="2oh-Nv-sbN" secondAttribute="leadingMargin" id="HLy-h3-QGR"/>
+                            <constraint firstItem="A24-tE-4Gw" firstAttribute="leading" secondItem="2wm-Cf-X8j" secondAttribute="leading" id="HVS-vP-k73"/>
+                            <constraint firstItem="VNy-ll-Oo8" firstAttribute="top" secondItem="A24-tE-4Gw" secondAttribute="bottom" constant="8" id="Hdd-aP-kpa"/>
+                            <constraint firstItem="cd0-Lq-crd" firstAttribute="top" secondItem="erV-JL-dQk" secondAttribute="bottom" constant="8" id="Lzi-bz-VWG"/>
+                            <constraint firstItem="2tm-1X-idS" firstAttribute="top" secondItem="2x4-zE-Yah" secondAttribute="bottom" constant="8" id="MIh-ID-Fq0"/>
+                            <constraint firstItem="Lra-Iz-eBK" firstAttribute="leading" secondItem="VNy-ll-Oo8" secondAttribute="leading" id="O72-Tl-EQC"/>
+                            <constraint firstItem="Lra-Iz-eBK" firstAttribute="trailing" secondItem="VNy-ll-Oo8" secondAttribute="trailing" id="Rra-cW-Zqx"/>
+                            <constraint firstItem="6dZ-yA-feu" firstAttribute="leading" secondItem="A24-tE-4Gw" secondAttribute="leading" id="U0e-Eh-P3T"/>
+                            <constraint firstItem="VNy-ll-Oo8" firstAttribute="trailing" secondItem="zVd-IP-1Jd" secondAttribute="trailing" id="WGn-44-OPE"/>
+                            <constraint firstItem="VNy-ll-Oo8" firstAttribute="leading" secondItem="zVd-IP-1Jd" secondAttribute="leading" id="XdN-WA-1dW"/>
+                            <constraint firstItem="2x4-zE-Yah" firstAttribute="top" secondItem="zVd-IP-1Jd" secondAttribute="bottom" constant="8" id="Yxc-AX-HZs"/>
+                            <constraint firstItem="2wm-Cf-X8j" firstAttribute="top" secondItem="VNy-ll-Oo8" secondAttribute="bottom" constant="8" id="a3k-rw-82w"/>
+                            <constraint firstItem="2wm-Cf-X8j" firstAttribute="leading" secondItem="2x4-zE-Yah" secondAttribute="leading" id="beU-sa-qis"/>
+                            <constraint firstItem="Fzl-mq-hTd" firstAttribute="leading" secondItem="cd0-Lq-crd" secondAttribute="leading" id="btZ-3f-TLY"/>
+                            <constraint firstItem="A24-tE-4Gw" firstAttribute="trailing" secondItem="2wm-Cf-X8j" secondAttribute="trailing" id="e2w-rU-4wR"/>
+                            <constraint firstItem="zVd-IP-1Jd" firstAttribute="trailing" secondItem="2tm-1X-idS" secondAttribute="trailing" id="hlp-Uj-Y3r"/>
+                            <constraint firstItem="erV-JL-dQk" firstAttribute="top" secondItem="Fzl-mq-hTd" secondAttribute="bottom" constant="8" id="iKX-kr-dVS"/>
+                            <constraint firstItem="Fzl-mq-hTd" firstAttribute="centerX" secondItem="erV-JL-dQk" secondAttribute="centerX" id="ibo-MT-TRT"/>
+                            <constraint firstItem="Fzl-mq-hTd" firstAttribute="top" secondItem="QL3-zS-xVv" secondAttribute="bottom" constant="19" id="ioD-bV-eow"/>
+                            <constraint firstItem="Fzl-mq-hTd" firstAttribute="leading" secondItem="auH-G7-S2J" secondAttribute="leading" constant="5" id="sN8-Y9-nAu"/>
+                            <constraint firstItem="QL3-zS-xVv" firstAttribute="centerX" secondItem="Fzl-mq-hTd" secondAttribute="centerX" id="t32-J0-Ens"/>
+                            <constraint firstItem="erV-JL-dQk" firstAttribute="leading" secondItem="6dZ-yA-feu" secondAttribute="leading" id="tst-Px-eYb"/>
+                            <constraint firstItem="6dZ-yA-feu" firstAttribute="top" secondItem="cd0-Lq-crd" secondAttribute="bottom" constant="8" id="wg6-U6-Dda"/>
+                            <constraint firstItem="erV-JL-dQk" firstAttribute="trailing" secondItem="2oh-Nv-sbN" secondAttribute="trailingMargin" id="xod-Py-SKq"/>
+                            <constraint firstItem="cd0-Lq-crd" firstAttribute="trailing" secondItem="Lra-Iz-eBK" secondAttribute="trailing" id="ykF-hJ-SFz"/>
+                            <constraint firstItem="6dZ-yA-feu" firstAttribute="trailing" secondItem="A24-tE-4Gw" secondAttribute="trailing" id="yvt-ZG-2y7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="auH-G7-S2J"/>
                     </view>
                 </viewController>
@@ -394,10 +521,21 @@ It can take up to a few minutes for upgrades to be applied. If you are having tr
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-AZ-b7G">
-                                <rect key="frame" x="16" y="79" width="343" height="569"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2n-Mg-bh8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ll2-wM-dOn">
+                                        <rect key="frame" x="5" y="20" width="365" height="606"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-be-0Vy">
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="33.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvE-AZ-b7G">
+                                                <rect key="frame" x="0.0" y="37.5" width="365" height="568.5"/>
+                                                <string key="text">You will have six weeks to train your brain with Breathe Focus. The first two weeks are designed to get you ready for the last four. During the first two weeks, the minimum required daily play time will be 15 minutes. 
 
 In the last four weeks, the minimum required daily play time will be 30 minutes.  
 
@@ -412,19 +550,36 @@ We recommend that you use the app in silent mode. To do this in your watch go to
 
 Settings &gt; Sound &amp; Haptics &gt; Enable Silent Mode
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-be-0Vy">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dPm-zE-f94"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="lpI-hj-hrQ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ll2-wM-dOn" firstAttribute="leading" secondItem="t2n-Mg-bh8" secondAttribute="leading" constant="5" id="8Uk-82-qAX"/>
+                                    <constraint firstItem="ll2-wM-dOn" firstAttribute="top" secondItem="t2n-Mg-bh8" secondAttribute="top" constant="20" symbolic="YES" id="YXI-BU-7iw"/>
+                                    <constraint firstAttribute="bottom" secondItem="ll2-wM-dOn" secondAttribute="bottom" constant="20" symbolic="YES" id="f6V-ib-7Dt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ll2-wM-dOn" secondAttribute="trailing" constant="5" id="jIS-Ux-uH5"/>
+                                    <constraint firstItem="ll2-wM-dOn" firstAttribute="centerX" secondItem="t2n-Mg-bh8" secondAttribute="centerX" id="qZ1-f7-P9R"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Epv-yl-aAk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Wdf-4I-WWy"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="t2n-Mg-bh8" firstAttribute="top" secondItem="j9h-OY-eC9" secondAttribute="top" id="DPd-Fs-LFz"/>
+                            <constraint firstItem="t2n-Mg-bh8" firstAttribute="centerX" secondItem="hdQ-9k-Fah" secondAttribute="centerX" id="S0M-Da-awh"/>
+                            <constraint firstItem="t2n-Mg-bh8" firstAttribute="leading" secondItem="j9h-OY-eC9" secondAttribute="leading" id="V4C-8C-MWT"/>
+                            <constraint firstItem="t2n-Mg-bh8" firstAttribute="trailing" secondItem="j9h-OY-eC9" secondAttribute="trailing" id="V72-rS-aUH"/>
+                            <constraint firstItem="t2n-Mg-bh8" firstAttribute="bottom" secondItem="j9h-OY-eC9" secondAttribute="bottom" id="cKp-ys-KO4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j9h-OY-eC9"/>
                     </view>
                 </viewController>
@@ -440,9 +595,8 @@ Settings &gt; Sound &amp; Haptics &gt; Enable Silent Mode
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQi-AI-ujP">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQi-AI-ujP">
+                                <rect key="frame" x="16" y="70" width="343" height="543"/>
                                 <string key="text">Playing Tenacity Flow games is going to be hard work! Start off with a small goal and build up over time. Set the amount of minutes you want to achieve daily. Track your progress as the meter fills up.  
 
 Only Breathe Focus has a required time goal.</string>
@@ -450,21 +604,32 @@ Only Breathe Focus has a required time goal.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inst Goals Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxt-25-FlX">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inst Goals Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxt-25-FlX">
+                                <rect key="frame" x="40" y="26" width="295" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="9wm-l1-1s5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gxt-25-FlX" firstAttribute="top" secondItem="3ZC-Rv-f4l" secondAttribute="top" constant="26" id="2gp-wg-IZI"/>
+                            <constraint firstItem="BQi-AI-ujP" firstAttribute="leading" secondItem="R0P-3K-BvS" secondAttribute="leadingMargin" id="9wL-oc-wpf"/>
+                            <constraint firstItem="gxt-25-FlX" firstAttribute="centerX" secondItem="BQi-AI-ujP" secondAttribute="centerX" id="LAL-HE-j3w"/>
+                            <constraint firstItem="gxt-25-FlX" firstAttribute="leading" secondItem="3ZC-Rv-f4l" secondAttribute="leading" constant="40" id="PLc-qY-Npd"/>
+                            <constraint firstItem="BQi-AI-ujP" firstAttribute="trailing" secondItem="R0P-3K-BvS" secondAttribute="trailingMargin" id="SdN-6y-Mbz"/>
+                            <constraint firstItem="3ZC-Rv-f4l" firstAttribute="bottom" secondItem="BQi-AI-ujP" secondAttribute="bottom" constant="34" id="YM6-gu-GJr"/>
+                            <constraint firstItem="BQi-AI-ujP" firstAttribute="top" secondItem="gxt-25-FlX" secondAttribute="bottom" constant="8" id="cG0-NA-F99"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3ZC-Rv-f4l"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5D-5g-ZFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3358" y="175"/>
+            <point key="canvasLocation" x="3356.25" y="175"/>
         </scene>
         <!--Quests-->
         <scene sceneID="UkR-Dm-G0B">
@@ -474,29 +639,39 @@ Only Breathe Focus has a required time goal.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-7E-UIe">
-                                <rect key="frame" x="16" y="88" width="343" height="390"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-7E-UIe">
+                                <rect key="frame" x="16" y="128" width="343" height="519"/>
                                 <string key="text">You can complete quests to collect experience points to rank up. You can complete one quest a day. New quests and rerolls become available at 12 am on the following day. You can reroll the quest and reward to get different ones. You are allowed 3 rerolls a day.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-iM-8Bh">
-                                <rect key="frame" x="67" y="26" width="240" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Quest Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-iM-8Bh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="va0-AF-N1o"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dH2-7E-UIe" firstAttribute="top" secondItem="Rpb-iM-8Bh" secondAttribute="bottom" constant="8" id="8Vq-aV-sEj"/>
+                            <constraint firstItem="dH2-7E-UIe" firstAttribute="leading" secondItem="7MC-d2-rcw" secondAttribute="leadingMargin" id="Qun-zu-dhW"/>
+                            <constraint firstItem="dH2-7E-UIe" firstAttribute="bottom" secondItem="H6T-ct-dwj" secondAttribute="bottom" id="UK5-DB-hH8"/>
+                            <constraint firstItem="Rpb-iM-8Bh" firstAttribute="top" secondItem="H6T-ct-dwj" secondAttribute="top" constant="20" id="UvE-cn-y6E"/>
+                            <constraint firstItem="Rpb-iM-8Bh" firstAttribute="centerX" secondItem="dH2-7E-UIe" secondAttribute="centerX" id="VMK-VZ-Nhq"/>
+                            <constraint firstItem="Rpb-iM-8Bh" firstAttribute="leading" secondItem="H6T-ct-dwj" secondAttribute="leading" id="WO3-f4-yxn"/>
+                            <constraint firstItem="dH2-7E-UIe" firstAttribute="trailing" secondItem="7MC-d2-rcw" secondAttribute="trailingMargin" id="vyj-Um-yaO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H6T-ct-dwj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7W-vZ-AHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.5999999999999" y="1532.3838080959522"/>
+            <point key="canvasLocation" x="3356.25" y="1531.25"/>
         </scene>
         <!--Lotus Swipe-->
         <scene sceneID="vjc-TC-0v8">
@@ -543,6 +718,7 @@ Tip: Play fast-paced to train reaction and memory speed. Slow it down like in Br
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="900" id="wWs-6V-cBM"/>
                                         </constraints>
@@ -598,6 +774,7 @@ Tip: Try to breathe normally. Do not race to breath fast or take the deepest bre
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1850" id="LPE-Ic-7kz"/>
                                         </constraints>
