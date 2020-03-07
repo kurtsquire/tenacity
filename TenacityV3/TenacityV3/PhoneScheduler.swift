@@ -53,7 +53,7 @@ class PhoneScheduler: PhoneViewController {
         
         dateLabel.text = "Current Nudge: " + dateString
         saveButton.setTitle("Save " + dateString, for: .normal)
-       
+        
     }
     
     // ----------------------------------- Actions ---------------------------------------
@@ -78,6 +78,7 @@ class PhoneScheduler: PhoneViewController {
         UserDefaults.standard.set(dateString, forKey: "dateString" + String(editingNudge))
         // tells realm user set a notification
         saveToRealm(what: "nudge set: " + dateString)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
@@ -100,6 +101,7 @@ class PhoneScheduler: PhoneViewController {
                     center.removePendingNotificationRequests(withIdentifiers: ["nudge" + String(editingNudge)])
                 }
             }
+            _ = navigationController?.popToRootViewController(animated: true)
         }
     }
     

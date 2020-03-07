@@ -33,6 +33,8 @@ class GameSettingsViewController: PhoneViewController{
     @IBOutlet var lotusPicLabels: [UILabel]!
     @IBOutlet var lotusColorLabels: [UILabel]!
     
+    @IBOutlet weak var pointsLabel: UILabel!
+    
     var cosmeticsTutorialCompleted = false
     
     // changes the top font to white (time and battery life wifi etc)
@@ -508,6 +510,9 @@ class GameSettingsViewController: PhoneViewController{
         mtxOwnedLotusC = defaults.array(forKey: "mtxOwnedLotusC") as? [Int] ?? [0]
         
         cosmeticsTutorialCompleted = defaults.bool(forKey: "cosmeticsTutorialCompleted")
+        
+        points = defaults.integer(forKey: "points")
+        pointsLabel.text = "Points: " + String(points)
     }
     
 }

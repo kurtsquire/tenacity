@@ -205,11 +205,13 @@ class BreatheController: WatchViewController{
     
     func endGame(){
         if (inGame == true){
-            inGame = false
-            WKInterfaceController.reloadRootControllers(withNames: ["Breathe Results"], contexts: ["Breathe Done"])
-            
             //sends data
             sendData(what: "end game", correct: "N/A", cycleSettings: FullCycle, timeSettings: sessionTime, timePlayed : time, avgBreathLength : averageFullBreatheTime, totalSets : cycleTotal, correctSets : correctCyclesTotal)
+            inGame = false
+            
+            WKInterfaceController.reloadRootControllers(withNames: ["Breathe Results"], contexts: ["Breathe Done"])
+            
+            
         }
         
     }
