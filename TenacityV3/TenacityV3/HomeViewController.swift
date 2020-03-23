@@ -685,7 +685,7 @@ class HomeViewController: PhoneViewController {
             let num2 = Int.random(in: 1 ... 2)
             if (num2 == 1){//L: Play x rounds
                 var x = Int.random(in: 5 ... 20)
-                x *= 5
+                //x *= 5
                 dailyQuestData["questType"] = "lotus"
                 dailyQuestData["questString"] = "Lotus\nPlay " + String(x) + " rounds in one session."
                 dailyQuestData["timeStart"] = startTime
