@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,11 +23,11 @@
             <objects>
                 <viewController storyboardIdentifier="confirmPurchasePopup" modalPresentationStyle="overCurrentContext" id="ivG-qU-U5c" customClass="ConfirmPopupViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="18A-s8-IRI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrc-xc-89c">
-                                <rect key="frame" x="67" y="226" width="241" height="215"/>
+                                <rect key="frame" x="39.5" y="132.5" width="241" height="215"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-sK-xxd">
                                         <rect key="frame" x="15" y="156" width="48" height="30"/>
@@ -98,11 +98,11 @@
             <objects>
                 <viewController storyboardIdentifier="Game Upgrades" title="Game Upgrades" id="hQ8-N8-d6G" customClass="GameSettingsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DjR-yN-K8y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUe-0b-oFe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeV-RZ-Dos">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
@@ -689,31 +689,33 @@ Press ? for more info.</string>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="2300" id="a8A-ud-luX"/>
+                                            <constraint firstAttribute="width" constant="375" id="Oa2-az-NvS"/>
+                                            <constraint firstAttribute="height" constant="2300" id="QbJ-xm-ofz"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="nFi-6O-enl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="YeV-RZ-Dos" firstAttribute="leading" secondItem="RUe-0b-oFe" secondAttribute="leading" id="3XJ-6V-Wmb"/>
-                                    <constraint firstAttribute="bottom" secondItem="YeV-RZ-Dos" secondAttribute="bottom" id="DM9-vo-O90"/>
-                                    <constraint firstAttribute="trailing" secondItem="YeV-RZ-Dos" secondAttribute="trailing" id="c4i-TD-BlF"/>
-                                    <constraint firstItem="YeV-RZ-Dos" firstAttribute="centerX" secondItem="RUe-0b-oFe" secondAttribute="centerX" id="gJ4-OC-eJn"/>
-                                    <constraint firstItem="YeV-RZ-Dos" firstAttribute="top" secondItem="RUe-0b-oFe" secondAttribute="top" id="sKG-eg-yOu"/>
+                                    <constraint firstAttribute="bottom" secondItem="YeV-RZ-Dos" secondAttribute="bottom" id="BdH-mM-PKZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="YeV-RZ-Dos" secondAttribute="trailing" id="IwZ-XQ-TUB"/>
+                                    <constraint firstItem="YeV-RZ-Dos" firstAttribute="top" secondItem="RUe-0b-oFe" secondAttribute="top" id="fhr-TQ-Juc"/>
+                                    <constraint firstItem="YeV-RZ-Dos" firstAttribute="leading" secondItem="RUe-0b-oFe" secondAttribute="leading" id="gYj-xV-IqT"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="RUe-0b-oFe" secondAttribute="bottom" id="BJc-yk-HaB"/>
-                            <constraint firstItem="RUe-0b-oFe" firstAttribute="top" secondItem="UVG-6I-a2k" secondAttribute="top" id="JmE-1s-Nbh"/>
-                            <constraint firstItem="RUe-0b-oFe" firstAttribute="leading" secondItem="UVG-6I-a2k" secondAttribute="leading" id="hi4-EL-sL6"/>
-                            <constraint firstItem="RUe-0b-oFe" firstAttribute="trailing" secondItem="UVG-6I-a2k" secondAttribute="trailing" id="tk0-no-IkW"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="centerY" secondItem="DjR-yN-K8y" secondAttribute="centerY" id="1QF-OU-zOe"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="top" secondItem="UVG-6I-a2k" secondAttribute="top" id="2IA-Iy-r3Z"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="bottom" secondItem="UVG-6I-a2k" secondAttribute="bottom" id="7kU-vS-A5x"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="leading" secondItem="UVG-6I-a2k" secondAttribute="leading" id="KQc-tu-neT"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="centerX" secondItem="DjR-yN-K8y" secondAttribute="centerX" id="Rcc-md-H8Z"/>
+                            <constraint firstItem="RUe-0b-oFe" firstAttribute="trailing" secondItem="UVG-6I-a2k" secondAttribute="trailing" id="gzZ-h7-VJm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVG-6I-a2k"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upgrades" image="Tab_WatchSettings" selectedImage="Tab_WatchSettings" id="edI-a4-kf1"/>
-                    <size key="freeformSize" width="375" height="2300"/>
                     <connections>
                         <outlet property="pointsLabel" destination="pQ6-r1-4Ag" id="jyd-wo-cOi"/>
                         <outletCollection property="breathePicLabels" destination="bJa-FW-jw5" collectionClass="NSMutableArray" id="MLP-eJ-gLI"/>
@@ -749,17 +751,17 @@ Press ? for more info.</string>
             <objects>
                 <viewController storyboardIdentifier="Cosmetics Popup" title="Cosmetics Popup" modalPresentationStyle="overCurrentContext" id="W4S-zb-GVV" customClass="CosmeticsTutorialsViewController" customModule="TenacityV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2a-Rg-Q5J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQV-L8-VgA">
-                                <rect key="frame" x="12" y="176" width="351" height="315.5"/>
+                                <rect key="frame" x="12" y="62" width="296" height="356"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-Rw-LEo">
-                                        <rect key="frame" x="5" y="20" width="341" height="275.5"/>
+                                        <rect key="frame" x="5" y="20" width="286" height="316"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-NA-fg6">
-                                                <rect key="frame" x="0.0" y="0.0" width="341" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="41"/>
                                                 <string key="text">Welcome to the Game Upgrades Screen.
 </string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -767,7 +769,7 @@ Press ? for more info.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIB-ie-OKe">
-                                                <rect key="frame" x="0.0" y="62" width="341" height="162.5"/>
+                                                <rect key="frame" x="0.0" y="62" width="286" height="203"/>
                                                 <string key="text">Here you can purchase cosmetic upgrades for each of the Tenacity activities. 
 
 Tap on an upgrade to view its cost or purchase it. Once purchased simply tap to equip! 
@@ -778,7 +780,7 @@ Earn points by using the Tenacity watch app.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehH-t8-dfG">
-                                                <rect key="frame" x="0.0" y="245.5" width="341" height="30"/>
+                                                <rect key="frame" x="0.0" y="286" width="286" height="30"/>
                                                 <state key="normal" title="Done"/>
                                                 <connections>
                                                     <action selector="DoneButton:" destination="W4S-zb-GVV" eventType="touchUpInside" id="TDG-vQ-r71"/>

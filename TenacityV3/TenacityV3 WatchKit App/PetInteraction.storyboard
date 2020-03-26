@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Pet-->
@@ -12,7 +12,7 @@
             <objects>
                 <controller identifier="Pet" id="Mcp-e9-GQN" customClass="PetInteractionController" customModule="TenacityV3_WatchKit_Extension">
                     <items>
-                        <group width="1" height="0.80000000000000004" alignment="left" layout="vertical" radius="4" id="gnX-JZ-QTq">
+                        <group width="1" height="0.84999999999999998" alignment="left" layout="vertical" radius="4" id="gnX-JZ-QTq">
                             <items>
                                 <group width="1" height="0.10000000000000001" alignment="left" id="6tL-rk-FUm">
                                     <items>
@@ -48,10 +48,10 @@
                                         </imageView>
                                     </items>
                                 </group>
-                                <imageView width="0.80000000000000004" height="0.90000000000000002" alignment="center" verticalAlignment="bottom" image="paytah" id="UTq-xZ-3VF"/>
+                                <imageView width="0.80000000000000004" height="0.90000000000000002" alignment="center" verticalAlignment="bottom" image="paytah" contentMode="scaleAspectFill" id="UTq-xZ-3VF"/>
                             </items>
                         </group>
-                        <group width="1" height="0.20000000000000001" alignment="left" id="j7g-tP-HJ0">
+                        <group width="1" height="0.14999999999999999" alignment="left" verticalAlignment="bottom" id="j7g-tP-HJ0">
                             <items>
                                 <button width="0.5" height="1" alignment="left" title="Food" id="MXQ-mP-u5c">
                                     <color key="backgroundColor" red="0.94117647059999998" green="0.71764705880000002" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
