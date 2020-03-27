@@ -26,9 +26,8 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     @IBOutlet weak var setsPlayedLineChart: LineChartView!
     
     var breatheIGoalTime = 0.0
-    
+    var first = true
     lazy var breatheIGraphCenter = breatheInfiniteLabel.center
-    
     @IBOutlet weak var breatheIMinuteGoalButton: UIButton!
     
     @IBAction func breatheIGoalButtonPressed(_ sender: Any) {
@@ -51,7 +50,10 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
-        refreshRealmData()
+        if !first{
+            refreshRealmData()
+        }
+
         testUserDefaults()
     }
     
@@ -77,7 +79,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
         
-        refreshRealmData()
+        //refreshRealmData()
         testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
@@ -143,8 +145,8 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
-        
-        //refreshRealmData()
+        first = false
+        refreshRealmData()
     }
     
     
@@ -398,6 +400,7 @@ class BreatheInfiniteStatsViewController: PhoneViewController{
                 breatheIGraphEndAngle = 0.01
             }
             let breatheICircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: breatheIGraphEndAngle, center: self.breatheIGraphCenter, lineWidth: circleGraphWidth, outlineColor: breatheIGraphOutColor, progressColor: breatheIGraphProgColor)
+            self.breatheIGraphCenter.x = (self.view.frame.size.width/2)
             self.mainView.layer.addSublayer(breatheICircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(breatheICircleGraph.progressLayer)
         }

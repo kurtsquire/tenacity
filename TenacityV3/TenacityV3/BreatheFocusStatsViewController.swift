@@ -24,9 +24,8 @@ class BreatheFocusStatsViewController: PhoneViewController{
     @IBOutlet weak var setsPlayedLineChart: LineChartView!
     
     var breatheFGoalTime = 0.0
-    
     lazy var breatheFGraphCenter = breatheFocusLabel.center
-    
+    var first = true
     @IBOutlet weak var breatheFMinuteGoalButton: UIButton!
     
     @IBAction func breatheFGoalButtonPressed(_ sender: Any) {
@@ -47,9 +46,14 @@ class BreatheFocusStatsViewController: PhoneViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // takes out top bar
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
         print("viewwillappear")
-        refreshRealmData()
+        if !first{
+            refreshRealmData()
+        }
+        
+        
         testUserDefaults()
     }
     
@@ -63,7 +67,6 @@ class BreatheFocusStatsViewController: PhoneViewController{
     
     override func viewDidLoad() { //opening app (only triggers when quitting and opening app again)
         super.viewDidLoad()
-        
         print("viewdidload")
         // updates date for today
         today = Date()
@@ -72,8 +75,7 @@ class BreatheFocusStatsViewController: PhoneViewController{
         //creates a date at the beginning of the week to compare
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
-        
-        refreshRealmData()
+        //refreshRealmData()
         testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
@@ -139,12 +141,15 @@ class BreatheFocusStatsViewController: PhoneViewController{
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
         print("viewdidappear")
-        //refreshRealmData()
+
+        refreshRealmData()
+        first = false
     }
 
     
     // ---------------------- REALM -----------------------------------
     func refreshRealmData(){
+        print("refreshin")
         let realm = try! Realm()
         
         let bfx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "breathe focus", startTime)
@@ -406,14 +411,16 @@ class BreatheFocusStatsViewController: PhoneViewController{
         
         DispatchQueue.main.async {
         self.breatheFMinuteGoalButton.setTitle(String(Int(breatheFTimeToday/60)) + "/" + String(Int(self.breatheFGoalTime)) + "mins", for: .normal)
-            
+            self.breatheFGraphCenter.x = (self.view.frame.size.width/2)
             breatheFGraphEndAngle = CGFloat((breatheFTimeToday/60)/self.breatheFGoalTime)
             if (breatheFGraphEndAngle == 0){
                 breatheFGraphEndAngle = 0.01
             }
             let breatheFCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: breatheFGraphEndAngle, center: self.breatheFGraphCenter, lineWidth: circleGraphWidth, outlineColor: breatheFGraphOutColor, progressColor: breatheFGraphProgColor)
+            
             self.mainView.layer.addSublayer(breatheFCircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(breatheFCircleGraph.progressLayer)
+            
         }
     }
     

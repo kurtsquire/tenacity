@@ -22,7 +22,7 @@ class LotusStatsViewController: PhoneViewController{
     @IBOutlet weak var totalRoundsLineChart: LineChartView!
     
     var lotusGoalTime = 0.0
-    
+    var first = true
     lazy var lotusGraphCenter = lotusSwipeLabel.center
     
     @IBOutlet weak var lotusMinuteGoalButton: UIButton!
@@ -45,7 +45,9 @@ class LotusStatsViewController: PhoneViewController{
         super.viewWillAppear(animated)
         // takes out top bar
         navigationController?.setNavigationBarHidden(true, animated: false)
-        refreshRealmData()
+        if !first{
+            refreshRealmData()
+        }
         testUserDefaults()
     }
     
@@ -67,7 +69,7 @@ class LotusStatsViewController: PhoneViewController{
         let weekComponents = calendar.dateComponents([.month, .yearForWeekOfYear, .weekOfYear], from: today)
         weekStartTime = calendar.date(from: weekComponents)!
         
-        refreshRealmData()
+        //refreshRealmData()
         testUserDefaults()
         
         // ---------------------- LINES -----------------------------------
@@ -115,8 +117,8 @@ class LotusStatsViewController: PhoneViewController{
     
     override func viewDidAppear(_ animated: Bool) { //openign back up the tab (works from other tabs)
         super.viewDidAppear(animated)
-        
-        //refreshRealmData()
+        first = false
+        refreshRealmData()
     }
     
     
@@ -126,8 +128,6 @@ class LotusStatsViewController: PhoneViewController{
         let lw = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", weekStartTime)
         let lx = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@", "lotus", startTime)
         
-        print("something")
-        print(lw)
         var lotusRoundsToday = 0
         var lotusRoundsWeek = 0
         var lotusTimeToday = 0.0
@@ -155,12 +155,6 @@ class LotusStatsViewController: PhoneViewController{
         let lthurs = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:4), to: weekStartTime, wrappingComponents: false) as Any,calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false) as Any)
         let lfri = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:5), to: weekStartTime, wrappingComponents: false) as Any,calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false) as Any)
         let lsat = realm.objects(GameDataModel.self).filter("gameTitle = %@ AND sessionDate >= %@ AND sessionDate <= %@", "lotus", calendar.date(byAdding: DateComponents(day:6), to: weekStartTime, wrappingComponents: false) as Any,calendar.date(byAdding: DateComponents(day:7), to: weekStartTime, wrappingComponents: false) as Any)
-        
-        print("lololol")
-        print(lsun)
-        
-        print("lololol")
-        print(lsat)
         
         //calculating lotus rounds sunday
         var lotusRoundsSun = 0
@@ -239,11 +233,6 @@ class LotusStatsViewController: PhoneViewController{
             0 : (gameName: "Rounds Played", gameData: lotusRoundsPlayed, gameColor: UIColor(cgColor: lotusGraphProgColor), gameGoal: lotusGoalTime)
         ]
         
-        print("foo")
-        print(timePlayed)
-        print("bar")
-        print(roundsPlayed)
-        
         let timePlayedChart : LineChart = LineChart(lineChartView: self.timePlayedLineChart, goalColor: UIColor.red, gamesInfo: timePlayed)
         
         timePlayedChart.drawGoalGraph(gameNum: 0)
@@ -261,7 +250,7 @@ class LotusStatsViewController: PhoneViewController{
             
             self.lotusMinuteGoalButton
             .setTitle(String(Int(lotusTimeToday/60)) + "/" + String(Int(self.lotusGoalTime)) + "mins", for: .normal)
-
+            self.lotusGraphCenter.x = (self.view.frame.size.width/2)
             var a = ""
                         for i in 0..<lotusArrayToday.count{
                             a += String(i) + " wrong: " + String(lotusArrayToday[i]) + "\n"
@@ -269,6 +258,7 @@ class LotusStatsViewController: PhoneViewController{
                         self.swipesLabel.text = a
             
             let lotusCircleGraph = CircleChart(radius: circleGraphRadius, progressEndAngle: lotusGraphEndAngle, center: self.lotusGraphCenter, lineWidth: circleGraphWidth, outlineColor: lotusGraphOutColor, progressColor: lotusGraphProgColor)
+            
             self.mainView.layer.addSublayer(lotusCircleGraph.outlineLayer)
             self.mainView.layer.addSublayer(lotusCircleGraph.progressLayer)
         }
