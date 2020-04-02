@@ -309,18 +309,13 @@ class BreatheController: WatchViewController{
         if diff == 0{
             responseFeedback.setText("Perfect!")
         }
-        else if diff >= 5{
+        else if diff >= 2{
             responseFeedback.setText("Try Again!")
         }
-        else if diff >= 3{
+        else if diff >= 1{
             responseFeedback.setText("Almost!")
         }
-        else if diff >= 2{
-            responseFeedback.setText("Good!")
-        }
-        else if diff >= 1{
-            responseFeedback.setText("Great!")
-        }
+        
     }
     
     func hideFeedback(){

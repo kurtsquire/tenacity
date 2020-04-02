@@ -195,7 +195,7 @@ Press ? for more info.</string>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-7G-UFZ">
-                                                <rect key="frame" x="279" y="344.66666666666669" width="70" height="80"/>
+                                                <rect key="frame" x="284" y="344.66666666666669" width="70" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CdR-7G-UFZ" secondAttribute="height" multiplier="1:1" constant="-10" id="1dx-vx-bVb"/>
                                                 </constraints>
@@ -352,7 +352,7 @@ Press ? for more info.</string>
                                                     <constraint firstAttribute="width" secondItem="egQ-yV-ArE" secondAttribute="height" multiplier="100:27" id="7ez-JX-ObI"/>
                                                     <constraint firstAttribute="width" constant="200" id="Ji0-Rh-fn4"/>
                                                 </constraints>
-                                                <state key="normal" title="Equip Classic" image="classic"/>
+                                                <state key="normal" title="Equip Classic" image="classiccolor"/>
                                                 <connections>
                                                     <action selector="lotusOG:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="fTR-7t-OFU"/>
                                                     <action selector="openPurchaseConfirmationLotusColor:" destination="hQ8-N8-d6G" eventType="touchUpInside" id="C1t-KI-E67"/>
@@ -653,8 +653,8 @@ Press ? for more info.</string>
                                                 <color key="textColor" red="0.94117647059999998" green="0.71764705880000002" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-gx-YZ4" userLabel="Goal_Line_bot">
-                                                <rect key="frame" x="5" y="756.66666666666663" width="365" height="6"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-gx-YZ4" userLabel="Goal_Line_bot">
+                                                <rect key="frame" x="24.666666666666657" y="756.66666666666663" width="365" height="6"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="365" id="eTc-Ba-024"/>
                                                     <constraint firstAttribute="height" constant="6" id="zch-ZF-IOe"/>
@@ -798,7 +798,6 @@ Press ? for more info.</string>
                                             <constraint firstItem="Z72-nf-hx2" firstAttribute="centerX" secondItem="NCn-Qv-fNC" secondAttribute="centerX" id="GLg-38-JQq"/>
                                             <constraint firstItem="5VH-PW-5uo" firstAttribute="centerY" secondItem="wgc-8d-njw" secondAttribute="centerY" id="GRg-rq-PKZ"/>
                                             <constraint firstItem="4WD-Si-gfY" firstAttribute="centerX" secondItem="ILs-VY-gDd" secondAttribute="centerX" id="GlF-Zs-MS1"/>
-                                            <constraint firstItem="h8d-QL-Q4v" firstAttribute="leading" secondItem="CdR-7G-UFZ" secondAttribute="leading" id="H83-pU-RUE"/>
                                             <constraint firstItem="0EA-1p-Z7q" firstAttribute="top" secondItem="NCn-Qv-fNC" secondAttribute="bottom" constant="6" id="HBU-Ik-wfx"/>
                                             <constraint firstItem="SxY-td-vQ0" firstAttribute="width" secondItem="egQ-yV-ArE" secondAttribute="width" id="HaL-5R-0lI"/>
                                             <constraint firstItem="BtQ-A2-Act" firstAttribute="centerY" secondItem="GMh-gX-Teh" secondAttribute="centerY" id="Hbe-J3-yo7"/>
@@ -834,7 +833,7 @@ Press ? for more info.</string>
                                             <constraint firstItem="omr-pu-Jyy" firstAttribute="width" secondItem="Ujh-Gd-hXS" secondAttribute="width" id="Rc9-Hx-aTA"/>
                                             <constraint firstItem="7dx-sS-o3A" firstAttribute="centerY" secondItem="KkB-K3-a1l" secondAttribute="centerY" id="RhD-x3-XNL"/>
                                             <constraint firstAttribute="trailing" secondItem="dfg-sI-J95" secondAttribute="trailing" constant="60" id="RoT-sV-dJQ"/>
-                                            <constraint firstItem="CdR-7G-UFZ" firstAttribute="centerX" secondItem="yDZ-fM-l6C" secondAttribute="centerX" constant="-5" id="S5a-y3-otc"/>
+                                            <constraint firstItem="CdR-7G-UFZ" firstAttribute="centerX" secondItem="yDZ-fM-l6C" secondAttribute="centerX" id="S5a-y3-otc"/>
                                             <constraint firstItem="z1D-Ni-xbI" firstAttribute="centerX" secondItem="Dw2-G3-SGl" secondAttribute="centerX" id="S6x-Sp-7Qg"/>
                                             <constraint firstItem="dfg-sI-J95" firstAttribute="top" secondItem="1Ms-94-icm" secondAttribute="bottom" constant="37" id="SSC-Ns-tl7"/>
                                             <constraint firstItem="w1w-t2-tOF" firstAttribute="top" secondItem="BtQ-A2-Act" secondAttribute="bottom" constant="6" id="Svr-Lx-Dxw"/>
@@ -847,6 +846,7 @@ Press ? for more info.</string>
                                             <constraint firstItem="wgc-8d-njw" firstAttribute="top" secondItem="fbl-yq-vUk" secondAttribute="bottom" constant="8" id="UcK-f2-e5e"/>
                                             <constraint firstItem="Tg3-Wd-Jc4" firstAttribute="top" secondItem="SxY-td-vQ0" secondAttribute="bottom" constant="18" id="UdP-QZ-FeM"/>
                                             <constraint firstItem="ttD-HG-uUQ" firstAttribute="centerX" secondItem="ILs-VY-gDd" secondAttribute="centerX" id="UdX-gG-Iuk"/>
+                                            <constraint firstItem="PeW-gx-YZ4" firstAttribute="centerX" secondItem="YeV-RZ-Dos" secondAttribute="centerX" id="UwZ-b7-cj6"/>
                                             <constraint firstItem="Dw2-G3-SGl" firstAttribute="leading" secondItem="fbl-yq-vUk" secondAttribute="leading" id="VOg-x8-aCi"/>
                                             <constraint firstItem="Hjj-tA-qAI" firstAttribute="width" secondItem="Ujh-Gd-hXS" secondAttribute="width" id="Vpe-kh-GaX"/>
                                             <constraint firstItem="S6c-xG-Mlk" firstAttribute="baseline" secondItem="eL5-hz-mdJ" secondAttribute="baseline" id="VvW-Qx-YSt"/>
@@ -1110,8 +1110,8 @@ Earn points by using the Tenacity watch app.</string>
         <image name="Safforn" width="54" height="54"/>
         <image name="Tab_WatchSettings" width="21.5" height="30"/>
         <image name="blue" width="108" height="108"/>
-        <image name="breatheAsset" width="96" height="90"/>
-        <image name="classic" width="967" height="261"/>
+        <image name="breatheAsset" width="100" height="100"/>
+        <image name="classiccolor" width="967" height="261"/>
         <image name="equip_circle" width="1072" height="219"/>
         <image name="equip_heart" width="1114" height="191"/>
         <image name="equip_lotus" width="1324" height="201"/>
